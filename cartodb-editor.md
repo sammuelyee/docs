@@ -16,11 +16,11 @@ Your dashboard has two main sections: **tables** and **visualizations**. The ste
 
 _You may stop at step two if you don't need to share your visualization. Keeping visualizations private can be useful for internal data analysis and gaining data insights._
 
-CartoDB lets you easily import your data in many different formats (Excel, CSV, XML, SHP, GeoJSON, [see all](data formats)) and from different sources (see all possibilities in [Importing data]). CartoDB includes interactive wizards that make it easy to show your data on a map. Our wizards enable you to select what type of visualization you want to create, define legends and infowindows ([What is an infowindow?]) and select which information from your database you want to show.
+CartoDB lets you easily import your data in many different formats (Excel, CSV, XML, SHP, GeoJSON, [see all](#supported-data-formats)) and from different sources (see all possibilities in [Importing data](#importing-data)). CartoDB includes interactive wizards that make it easy to show your data on a map. Our wizards enable you to select what type of visualization you want to create, define legends and infowindows ([What is an infowindow?](#infowindows)) and select which information from your database you want to show.
 
 After you have created your visualization with our web interface, you may keep it private, share it with your colleagues, or publish it to the web either by sharing its URL or embedding it in your blog or CMS.
 
-In this guide we'll walk through many of the features available in the CartoDB web interface. If you are ready to experiment with our powerful APIs then go to [CartoDB.js]({{ '/cartodb-js.html' | prepend: site.baseurl }}) and [SQL API]({{ '/sql-api.html' | prepend: site.baseurl }}).
+In this guide we'll walk through many of the features available in the CartoDB web interface. If you are ready to experiment with our powerful APIs then go to [CartoDB.js]({{ '/cartodb-platform/cartodb-js.html' | prepend: site.baseurl }}) and [SQL API]({{ '/cartodb-platform/sql-api.html' | prepend: site.baseurl }}).
 
 ## Tables
 
@@ -223,7 +223,7 @@ You can learn more about map projections in Wikipedia, and read up on all the de
 
 ### CartoDB Sidebar
 
-![]({{ '/img/layout/cartodb-editor/sidebar.png' | prepend: site.baseurl }})
+![CartoDB Sidebar]({{ '/img/layout/cartodb-editor/sidebar.png' | prepend: site.baseurl }})
 
 The CartoDB sidebar is where are all the action is. From here you may access all the tools that enable you to customize how the data is displayed on your maps. The CartoDB sidebar minimizes to the right, so you have the maximum space to view your map and data. If you want to use any tool in the sidebar simply click on the sidebar to expand it.
 
@@ -448,7 +448,7 @@ From the dropdown, you may select from many pre-set color combination options su
 
 To choose which data columns display in the infowindow, toggle the slider to the right of each column name. Once you toggle it on, you may select whether or not the column title is displayed using the checkbox. You may drag columns above/below one another to adjust the display order. You may also change the display name of each column (or item in your infowindow) by selecting the icon at the top of the list of column names. Finally, you may edit your own Custom HTML by clicking on the "</>" button. See the image below for reference.
 
-![]({{ '/img/layout/cartodb-editor/infowindow.png' | prepend: site.baseurl }})
+![On-click infowindows]({{ '/img/layout/cartodb-editor/infowindow.png' | prepend: site.baseurl }})
 
 ##### On-hover infowindows
 
@@ -456,7 +456,7 @@ On-hover infowindows display when a polygon or point is hovered over. They displ
 
 #### CartoCSS
 
-![]({{ '/img/layout/cartodb-editor/cartocss.png' | prepend: site.baseurl }})
+![CartoCSS]({{ '/img/layout/cartodb-editor/cartocss.png' | prepend: site.baseurl }})
 
 CartoCSS is the syntax language that CartoDB uses to allow users greater control over how their data is visualized. When you customize the CartoCSS, you're able to control things like marker size, marker color, line stroke, text display, and much more at a granualar level then when using the Wizards. If you have used Cascading Style Sheets for styling webpages CartoCSS will be quite familiar, but there are some differences to take note of.
 
@@ -469,7 +469,7 @@ Learn the basics of CartoCSS and designing data for your maps with our [Introduc
 
 #### Legends
 
-![]({{ '/img/layout/cartodb-editor/legends.png' | prepend: site.baseurl }})
+![Legends]({{ '/img/layout/cartodb-editor/legends.png' | prepend: site.baseurl }})
 
 The Legends section of the editor allows you to add and edit your map legend. Legends are most meaningful for maps that use wizards other than Simple, as they are best used to explain what different data symbology indicates. You can edit the following elements:
 
@@ -532,7 +532,7 @@ Once you have created a visualization, it's time to share it with the world! Tak
 
 #### Title and description
 
-![]({{ '/img/layout/cartodb-editor/title.png' | prepend: site.baseurl }})
+![Title and description]({{ '/img/layout/cartodb-editor/title.png' | prepend: site.baseurl }})
 
 Before you share your visualization, you can edit the title and description of your map in the upper left-hand corner of your visualization editor. Keep the title concise and you can be more descriptive in the subtitle or description of your map.
 
@@ -540,7 +540,7 @@ Before you share your visualization, you can edit the title and description of y
 
 Once you create a visualization from your table of data, click the Share button at the top right of your screen to pull up your publishing options. Take a look at the image below to get an idea of the parts you can customize.
 
-![]({{ '/img/layout/cartodb-editor/sharesettings.png' | prepend: site.baseurl }})
+![Sharing & privacy options]({{ '/img/layout/cartodb-editor/sharesettings.png' | prepend: site.baseurl }})
 
 Each of these options has a simple toggle on/off functionality. If you wish for the feature to be shown, toggle it on so that the blue shows. If you would like it off, toggle it off so it turns grey. You can control the following items:
 
@@ -565,7 +565,7 @@ Each of these options has a simple toggle on/off functionality. If you wish for 
 
 From the share window, you can also edit privacy settings, which you can view in the screenshot below.
 
-![]({{ '/img/layout/cartodb-editor/privacy.png' | prepend: site.baseurl }})
+![privacy settings]({{ '/img/layout/cartodb-editor/privacy.png' | prepend: site.baseurl }})
 
 ### Supported fonts
 
@@ -678,7 +678,7 @@ There are more advanced indexes you can use in CartoDB. Including multi-column i
 
 ### Common data
 
-![]({{ '/img/layout/cartodb-editor/commondata.png' | prepend: site.baseurl }})
+![Common data]({{ '/img/layout/cartodb-editor/commondata.png' | prepend: site.baseurl }})
 
 From your dashboard, you may also access the Common Data page which gives you access to public datasets. Examples of data you may find there includes World Borders, European Countries, Urban Areas, and Populated Places. From the list you may directly add a table to your dashboard and start mapping it! 
 
