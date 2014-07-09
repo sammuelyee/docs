@@ -2,6 +2,8 @@ node_modules
 .sass-cache
 _site
 .DS_Store
+_cartodb-platform/*
+!_cartodb-platform/.keep
 /lib/css
 /css
 /js
