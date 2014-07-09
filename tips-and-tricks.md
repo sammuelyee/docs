@@ -296,7 +296,7 @@ The [Heads/Tails (PDF)](http://arxiv.org/pdf/1209.2801v1.pdf) method breaks data
 Finding data with mappable data can seem like a daunting task, but there are many resources for aspiring web mappers! Take a look at the list below to get started:
 
 - [Global Administrative areas](http://gadm.org)
-- [Natural Earth data](http://naturalearthdata.org)
+- [Natural Earth data](http://www.naturalearthdata.com/)
 - [OSM Building footprints](http://overpass-turbo.eu/)
 - [International Monetary Fund](http://elibrary-data.imf.org/DataExplorer.aspx)
 - [World Bank](http://data.worldbank.org/)
@@ -307,7 +307,7 @@ Finding data with mappable data can seem like a daunting task, but there are man
 - [US Government](https://data.gov)
 - [US Election data](http://projects.iq.harvard.edu/eda/data)
 - [US Federal Reserve economic data](http://research.stlouisfed.org/fred2/)
-- [US Climate Data](https://climate.data.gov)
+- [US Climate Data](http://www.data.gov/climate/)
 - [Buenos Aires Open Data Portal](http://data.buenosaires.gob.ar/)
 - [New York City data](https://nycopendata.socrata.com/)
 - [New York City polygons](http://www.nyc.gov/html/dcp/html/bytes/dwndistricts.shtml)

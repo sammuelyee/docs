@@ -25,7 +25,7 @@ Here are a couple of our favorites:
 - **[Harvard Election Data Archive](http://projects.iq.harvard.edu/eda/)**:  
   we use this resource a lot. They keep a fantastic collection of elections data for races around the United States.
 
-- **[The Global Biodiversity Information Facility](http://data.gbif.org/welcome.htm/)**:  
+- **[The Global Biodiversity Information Facility](http://data.gbif.org/welcome.htm)**:  
   GBIF provides a portal to thousands of collections and millions of biodiversity records. If you want to map nature, there is no better place to start.
 
 ## Creating a new table
