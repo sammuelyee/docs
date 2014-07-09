@@ -1,0 +1,18 @@
+language: ruby
+rvm:
+- 2.1.2
+before_install:
+  - npm install -g grunt-cli
+install:
+  - bundle install
+  - npm install
+before_script: ./docs_build.sh
+script: grunt build
+after_success: bundle exec s3_website push
+branches:
+  only:
+    - master
+env:
+  global:
+  - secure: cRl1Jk0lTHdfLLyBvTt1YNFfW8IGH07kySFR/sHwO1tr6sPoy7VWoR7ZngTOgLvpWarImH8ah7NmYi+o5fM8QRVFMvEWxBM6S8bc2orcp9K5k+gOH7jVwZOy1N/+khDIg0imoZpZeQhV3BTNTevreTTWIQlD4vRZSdzU38q10xU=
+  - secure: osJIzkFg4+59PSRTlA+YvJCRWAimBMqeisq5Vh4Eff8LFMK9uknWgBKyQVk0ZIR0LWsNciv79xdUmYV6+rj3PYWxYRi1ZgxXAxu/+Vw+sPnrCGnvL/Dsbog9wByzi2/grzhdNJ+5AeGN+xMO4pYbxd8NWcJ0Hk1A/udpailfkRM=

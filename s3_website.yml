@@ -1,0 +1,28 @@
+s3_id: <%= ENV['S3_ACCESS_KEY_ID'] %>
+s3_secret: <%= ENV['S3_SECRET_KEY'] %>
+s3_bucket: docs.cartodb.com
+max_age: 120
+gzip: true
+s3_endpoint: us-east-1
+
+exclude_from_upload:
+  - lib/
+  - node_modules/
+
+s3_reduced_redundancy: true
+concurrency_level: 100
+
+redirects:
+  documentation/using-cartodb.html: cartodb-editor.html
+  documentation/apis-overview.html: cartodb-platform.html
+  documentation/cartodb-js.html: cartodb-platform/cartodb-js.html
+  documentation/sql-api.html: cartodb-platform/sql-api.html
+  documentation/advanced_concepts.html: tips-and-tricks.html
+
+# routing_rules:
+#   - condition:
+#       key_prefix_equals: blog/some_path
+#     redirect:
+#       host_name: blog.example.com
+#       replace_key_prefix_with: some_new_path/
+#       http_redirect_code: 301

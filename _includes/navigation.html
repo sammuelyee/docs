@@ -1,0 +1,34 @@
+<header class="navbar">
+  <div class="nav-header">
+    <p class="nav-brand">
+      <a href="{{ '/' | prepend: site.baseurl }}" class="brand"><span>CartoDB</span></a>
+    </p>
+
+    <a href="#" class="nav-button"></a>
+  </div>
+
+  {% assign platform = false %}
+  {% for platform_item in site.cartodb-platform %}
+    {% if platform_item.url == page.url %}
+      {% assign platform = true %}
+    {% endif %}
+  {% endfor %}
+
+  {% assign tutorials = false %}
+  {% for tutorials_item in site.tutorials %}
+    {% if tutorials_item.url == page.url %}
+      {% assign tutorials = true %}
+    {% endif %}
+  {% endfor %}
+
+  <nav class="nav-collapse">
+    <ul class="nav-inner">
+      <li class="{% if page.slug == 'cartodb-editor' %}selected{% endif %} first"><a href="{{ '/cartodb-editor.html' | prepend: site.baseurl }}">CARTODB EDITOR</a></li>
+      <li class="{% if platform or page.slug == 'cartodb-platform' %}selected{% endif %}"><a href="{{ '/cartodb-platform.html' | prepend: site.baseurl }}">CARTODB PLATFORM</a></li>
+      <li class="{% if tutorials or page.slug == 'tutorials' %}selected{% endif %}"><a href="{{ '/tutorials.html' | prepend: site.baseurl }}">TUTORIALS</a></li>
+      <li class="{% if page.slug == 'tips-and-tricks' %}selected{% endif %}"><a href="{{ '/tips-and-tricks.html' | prepend: site.baseurl }}">TIPS & TRICKS</a></li>
+      <li class="{% if page.slug == 'faqs' %}selected{% endif %}"><a href="{{ '/faqs.html' | prepend: site.baseurl }}">FAQs</a></li>
+      <li class="cartodb-link">go to <a href="{{ site.cartodb-baseurl }}">CartoDB</a></li>
+    </ul>
+  </nav>
+</header>

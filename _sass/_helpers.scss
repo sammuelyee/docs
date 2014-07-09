@@ -1,0 +1,61 @@
+/* =Constants
+----------------------------------------------- */
+
+$max-width: 1111px;
+$large-width: 981px;
+$medium-width: 801px;
+$small-width: 321px;
+
+$principal-color: #397DBA;
+$secondary-color: #8EB83F;
+
+
+/* =Clearfix
+----------------------------------------------- */
+
+%clearfix:before,
+%clearfix:after {
+  content: " ";
+  display: table;
+}
+
+%clearfix:after {
+  clear: both;
+}
+
+
+/* =Layout
+----------------------------------------------- */
+
+.h-left { float: left; }
+.h-right { float: right; }
+.h-pa { position: absolute; }
+.h-pr { position: relative; }
+.h-iblock { display: inline-block; }
+.h-malign { vertical-align: middle; }
+.h-txt-center { text-align: center; }
+.h-txt-left { text-align: left; }
+.h-txt-right { text-align: right; }
+.h-tupper { text-transform: uppercase; }
+
+.inb-list {
+  > li {
+    display: inline;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: -4px;
+  }
+}
+
+.h-valign:before {
+  display: inline-block;
+  vertical-align: middle;
+  content: "";
+  height: 100%;
+  margin-left: -5px;
+}
+
+.h-valigned {
+  display: inline-block;
+  vertical-align: middle;
+}

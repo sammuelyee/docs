@@ -1,0 +1,48 @@
+env: production
+title: "CartoDB Docs"
+description: "Get the most out of CartoDB with our API, examples gallery and documentation. CartoDB is made with love by developers, for everyone"
+baseurl: ""
+url: "http://docs.cartodb.com"
+keywords: "postgresql, postgis, vector, gis, geo, mapping, html5, developer-tools, postgres"
+
+markdown: kramdown
+# permalink: pretty
+encoding: utf-8
+exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'config.rb', 'node_modules', 'Gruntfile.js', 'package.json', 'docs_build.sh', 's3_website.yml']
+highlighter: rouge
+
+cartodb-baseurl: 'http://cartodb.com'
+academy-baseurl: 'http://academy.cartodb.com/'
+blog-baseurl: 'http://blog.cartodb.com/'
+
+analytics_property_id: UA-20934186-3
+mixpanel_token: 9b1d8a4fb14fa98d50615108b8b0161a
+
+collections:
+  tutorials:
+    output: true
+  cartodb-platform:
+    output: true
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: cartodb-platform
+    values:
+      js_assets:
+        - "editor"
+  -
+    scope:
+      path: ""
+      type: tutorials
+    values:
+      tags: "cartodb, learning, tutorials, documentation, advanced, geospatial, functions"
+      js_assets:
+        - "editor"
+  -
+    scope:
+      path: ""
+      type: cartodb-platform
+    values:
+      layout: platform_item

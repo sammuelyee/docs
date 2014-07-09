@@ -1,0 +1,55 @@
+---
+layout: default
+---
+
+<nav class="aside">
+  <div class="aside-inner">
+    <div class="aside-fixed">
+      <ul class="aside-menu">
+        <li class="item tutorials-menu-item">
+          <h3>Basic</h3>
+
+          <ul>
+          {% for tutorials_item in site.tutorials %}
+            {% if tutorials_item.level == 'basic' %}
+              <li><a href="#{{ tutorials_item.title | downcase | replace: ' ', '-' | replace: ',', '' | replace: '.', '' }}">{{ tutorials_item.title }}</a></li>
+            {% endif %}
+          {% endfor %}
+          </ul>
+        </li>
+
+        <li class="item tutorials-menu-item">
+          <h3>Medium</h3>
+
+          <ul>
+          {% for tutorials_item in site.tutorials %}
+            {% if tutorials_item.level == 'medium' %}
+              <li><a href="#{{ tutorials_item.title | downcase | replace: ' ', '-' | replace: ',', '' | replace: '.', '' }}">{{ tutorials_item.title }}</a></li>
+            {% endif %}
+          {% endfor %}
+          </ul>
+        </li>
+
+        <li class="item tutorials-menu-item">
+          <h3>Advanced</h3>
+
+          <ul>
+          {% for tutorials_item in site.tutorials %}
+            {% if tutorials_item.level == 'hard' %}
+              <li><a href="#{{ tutorials_item.title | downcase | replace: ' ', '-' | replace: ',', '' | replace: '.', '' }}">{{ tutorials_item.title }}</a></li>
+            {% endif %}
+          {% endfor %}
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <a href="#" class="up"></a>
+</nav>
+
+<article class="content">
+
+  {{ content }}
+
+</article>

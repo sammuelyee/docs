@@ -1,0 +1,86 @@
+/* =Footer
+----------------------------------------------- */
+
+.footer {
+  background: #384047;
+  font: 15px "Proxima Nova Rg";
+  color: #999;
+}
+
+.footer-inner {
+  max-width: 1046px;
+  padding: 40px 50px 0;
+
+  div {
+    padding: 40px 0;
+    border-top: 1px solid rgba(#fff, .15);
+    font-size: 14px;
+  }
+
+  a {
+    color: rgba(#fff, .7);
+    @include transition(.3s all);
+
+    &:hover {
+      text-decoration: underline;
+      color: #fff;
+    }
+  }
+}
+
+.footer-columns {
+  @extend %clearfix;
+  margin: 0 -10px 40px;
+
+  > li {
+    display: block;
+    float: left;
+    width: 25%;
+  }
+}
+
+.footer-column {
+  dl {
+    padding: 0 10px;
+  }
+
+  dt {
+    margin-bottom: 24px;
+    font-weight: 700;
+    font-family: "Proxima Nova Sb";
+    font-size: 16px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(#fff, .15);
+    color: #fff;
+  }
+
+  dd {
+    margin-bottom: 10px;
+  }
+}
+
+
+@media (max-width: $medium-width) {
+  .content {
+    padding: 40px 20px;
+  }
+
+  .footer-inner {
+    padding: 40px 20px 0;
+  }
+
+  .footer-columns > li {
+    min-height: 264px;
+    width: 50%;
+  }
+
+  .info-footer-contact {
+    width: 100%;
+    padding-top: 20px;
+    text-align: left;
+  }
+
+  .info-footer-credits {
+    float: none;
+  }
+}
