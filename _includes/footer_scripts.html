@@ -71,5 +71,5 @@ window.onload = function(){
 
 <script>
   mixpanel.people.increment('page_views_docs');
-  mixpanel.track("View page", {"Docs": {{ page.title }}});
+  mixpanel.track("View page", {"Docs": "{{ page.title }}"});
 </script>
