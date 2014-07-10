@@ -44,7 +44,7 @@ GEM
       net-http-persistent (>= 2.7)
       net-http-pipeline
     highline (1.6.21)
-    jekyll (2.1.0)
+    jekyll (2.1.1)
       classifier (~> 1.3)
       colorator (~> 0.1)
       jekyll-coffeescript (~> 1.0)
@@ -133,7 +133,7 @@ PLATFORMS
 
 DEPENDENCIES
   compass (~> 0.12.6)
-  jekyll (= 2.1.0)
+  jekyll (= 2.1.1)
   rouge
   s3_website
   travis
