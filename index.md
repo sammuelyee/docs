@@ -9,8 +9,8 @@ js_assets:
 
 CartoDB is a geospatial database on the cloud that allows for the storage and visualization of data on the web. Using CartoDB will allow you to quickly create map based visualizations.
 
-- At its heart, CartoDB is an open source geospatial [Mapping Platform]({{ '/cartodb-platform.html' | prepend: site.baseurl }}). It is a tool we built to make mapping dynamic, scalable, and interesting.
-- At its core, CartoDB is an [ Editor]({{ '/cartodb-editor.html' | prepend: site.baseurl }}) that gives you a user friendly interface so you can start making maps and visualizing data right away.
+- At its heart, CartoDB is an open source geospatial mapping [Platform]({{ '/cartodb-platform.html' | prepend: site.baseurl }}). It is a tool we built to make mapping dynamic, scalable, and interesting.
+- At its core, CartoDB is an [Editor]({{ '/cartodb-editor.html' | prepend: site.baseurl }}) that gives you a user friendly interface so you can start making maps and visualizing data right away.
 
 <!-- TODO: link to 'Use cases' and 'Industries' -->
 

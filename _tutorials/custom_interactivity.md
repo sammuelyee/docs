@@ -10,11 +10,11 @@ cartodbjs: true
 
 ## Summary
 
-If you have mastered the [basics of making maps with CartoDB.js]({{ '/tutorials/create_map_cartodbjs' | prepend: site.baseurl }}), it's now time to start doing more interesting things. Here we will show you how to register click events to data on your maps, and then how to create infowindows using click-events and data contained in your CartoDB tables.
+If you have mastered the [basics of making maps with CartoDB.js]({{ '/tutorials/create_map_cartodbjs.hyml' | prepend: site.baseurl }}), it's now time to start doing more interesting things. Here we will show you how to register click events to data on your maps, and then how to create infowindows using click-events and data contained in your CartoDB tables.
 
 ## Getting started
 
-[In the basic CartoDB.js tutorial]({{ '/tutorials/create_map_cartodbjs' | prepend: site.baseurl }}) we built a basic point map. You can continue this tutorial using the same file we developed last time. If you skipped that tutorial, you can use the `tutorial-1-finished.html` file contained in the [tutorial zip file](http://cartodb.s3.amazonaws.com/static/tutorial_files/cartodbjs_tutorial_create_map.zip). Whichever way you get started, make a copy of your file and call it `tutorial-2.html`. This new file will be the one we use for the rest of this tutorial.
+[In the basic CartoDB.js tutorial]({{ '/tutorials/create_map_cartodbjs.hyml' | prepend: site.baseurl }}) we built a basic point map. You can continue this tutorial using the same file we developed last time. If you skipped that tutorial, you can use the `tutorial-1-finished.html` file contained in the [tutorial zip file](http://cartodb.s3.amazonaws.com/static/tutorial_files/cartodbjs_tutorial_create_map.zip). Whichever way you get started, make a copy of your file and call it `tutorial-2.html`. This new file will be the one we use for the rest of this tutorial.
 
 ## Custom infowindows
 

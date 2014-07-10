@@ -220,7 +220,7 @@ Using NASA imagery as your basemap is as simple as any other feature on CartoDB.
 
 We have a Javascript API that you can use to embed maps on your site and play with their interactivity, and also a very powerful SQL API that lets you modify the information on your map and see it refreshed in real time, or do geospatial queries against the that information to find what you want to show.
 
-Check this at [APIs overview]({{ '/apis-overview' | prepend: site.baseurl }}).
+Check this at [APIs overview]({{ '/cartodb-platform.html' | prepend: site.baseurl }}).
 
 ### How to create dotted lines in CartoDB?
 
