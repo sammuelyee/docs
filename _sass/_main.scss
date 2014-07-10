@@ -12,6 +12,7 @@
   background: image-url("icons/up.png") no-repeat;
 }
 
+
 /* =Header
 ----------------------------------------------- */
 
@@ -719,6 +720,11 @@
   .aside { display: none; }
 
   .content {
+    padding: 40px 20px;
     margin-left: 0;
+  }
+
+  .embed-tutorial {
+    margin: 0 -20px;
   }
 }
