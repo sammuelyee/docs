@@ -8,9 +8,9 @@ module.exports = function(grunt) {
       server: {
         options: {
           base: '_site/',
-          port: 9000,
+          port: 4000,
           open: true,
-          hostname: 'localhost'
+          hostname: '0.0.0.0'
         }
       }
     },
@@ -34,7 +34,11 @@ module.exports = function(grunt) {
         tasks: ['compass','shell:dev'],
       },
       html: {
-        files: ['**/*.html', '!_site/**/*.html'],
+        files: [
+          '**/*.html',
+          '**/*.md',
+          '!_site/**/*.html'
+        ],
         tasks: ['shell:dev']
       }
     },
