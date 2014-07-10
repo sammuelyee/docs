@@ -24,7 +24,7 @@ Now, open `tutorial-1.html` in your code editor. Let's take a look at a couple i
 Using the new CartoDB.js library makes adding layers a breeze. The first thing we are going to need is the layer Viz JSON URL. For the moment we will use one from a demo. Add a variable containing the URL beneath the map initializer on line 17.
 
 {% highlight javascript %}
-var layerUrl = 'http://documentation.cartodb.com/api/v2/viz/236085de-ea08-11e2-958c-5404a6a683d5/viz.json';
+var layerUrl = 'http://documentation.cartodb.com/api/v2/viz/836e37ca-085a-11e4-8834-0edbca4b5057/viz.json';
 {% endhighlight %}
 
 Now, our Javascript code within `tutorial-1.html` should look like this:
@@ -38,7 +38,7 @@ function init(){
     zoom: 2
   })
 
-  var layerUrl = 'http://documentation.cartodb.com/api/v2/viz/236085de-ea08-11e2-958c-5404a6a683d5/viz.json';
+  var layerUrl = 'http://documentation.cartodb.com/api/v2/viz/836e37ca-085a-11e4-8834-0edbca4b5057/viz.json';
 }
 {% endhighlight %}
 
@@ -64,7 +64,7 @@ function init(){
     zoom: 2
   })
 
-  var layerUrl = 'http://documentation.cartodb.com/api/v2/viz/236085de-ea08-11e2-958c-5404a6a683d5/viz.json';
+  var layerUrl = 'http://documentation.cartodb.com/api/v2/viz/836e37ca-085a-11e4-8834-0edbca4b5057/viz.json';
 
   cartodb.createLayer(map, layerUrl)
     .addTo(map)
