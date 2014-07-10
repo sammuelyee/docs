@@ -1,3 +1,4 @@
+env: ''
 title: "CartoDB Docs"
 description: "Get the most out of CartoDB with our API, examples gallery and documentation. CartoDB is made with love by developers, for everyone"
 baseurl: ""
@@ -15,6 +16,7 @@ academy-baseurl: 'http://academy.cartodb.com/'
 blog-baseurl: 'http://blog.cartodb.com/'
 
 analytics_property_id: ''
+mixpanel_token: ''
 
 collections:
   tutorials:
