@@ -23,10 +23,10 @@
     <link rel="stylesheet" href="{{ '/css/docs.min.css' | prepend: site.baseurl }}">
     <script src="{{ '/js/vendor/modernizr-2.6.2.min.js' | prepend: site.baseurl }}"></script>
   {% else %}
-    <link rel="stylesheet" href="{{ '/lib/css/vendor/jquery.jscrollpane.css' | prepend: site.baseurl }}">
-    <link rel="stylesheet" href="{{ '/lib/css/vendor/syntax.css' | prepend: site.baseurl }}">
-    <link rel="stylesheet" href="{{ '/lib/css/docs.css' | prepend: site.baseurl }}">
-    <script src="{{ '/lib/js/vendor/modernizr-2.6.2.min.js' | prepend: site.baseurl }}"></script>
+    <link rel="stylesheet" href="{{ '/css/vendor/jquery.jscrollpane.css' | prepend: site.baseurl }}">
+    <link rel="stylesheet" href="{{ '/css/vendor/syntax.css' | prepend: site.baseurl }}">
+    <link rel="stylesheet" href="{{ '/css/docs.css' | prepend: site.baseurl }}">
+    <script src="{{ '/js/vendor/modernizr-2.6.2.min.js' | prepend: site.baseurl }}"></script>
   {% endif %}
 </head>
 <body>
@@ -53,16 +53,16 @@
       <script src="{{ js_asset | append: '.min.js' | prepend: '/js/' | prepend: site.baseurl }}"></script>
     {% endfor %}
   {% else %}
-    <script src="{{ '/lib/js/vendor/jquery-1.11.1.min.js' | prepend: site.baseurl }}"></script>
-    <script src="{{ '/lib/js/vendor/underscore-min.js' | prepend: site.baseurl }}"></script>
-    <script src="{{ '/lib/js/vendor/backbone-min.js' | prepend: site.baseurl }}"></script>
-    <script src="{{ '/lib/js/vendor/jquery.mousewheel.js' | prepend: site.baseurl }}"></script>
-    <script src="{{ '/lib/js/vendor/jquery.jscrollpane.js' | prepend: site.baseurl }}"></script>
-    <script src="{{ '/lib/js/vendor/waypoints.min.js' | prepend: site.baseurl }}"></script>
-    <script src="{{ '/lib/js/app.js' | prepend: site.baseurl }}"></script>
-    <script src="{{ '/lib/js/ui/navbar.js' | prepend: site.baseurl }}"></script>
+    <script src="{{ '/js/vendor/jquery-1.11.1.min.js' | prepend: site.baseurl }}"></script>
+    <script src="{{ '/js/vendor/underscore-min.js' | prepend: site.baseurl }}"></script>
+    <script src="{{ '/js/vendor/backbone-min.js' | prepend: site.baseurl }}"></script>
+    <script src="{{ '/js/vendor/jquery.mousewheel.js' | prepend: site.baseurl }}"></script>
+    <script src="{{ '/js/vendor/jquery.jscrollpane.js' | prepend: site.baseurl }}"></script>
+    <script src="{{ '/js/vendor/waypoints.min.js' | prepend: site.baseurl }}"></script>
+    <script src="{{ '/js/app.js' | prepend: site.baseurl }}"></script>
+    <script src="{{ '/js/ui/navbar.js' | prepend: site.baseurl }}"></script>
     {% for js_asset in page.js_assets %}
-      <script src="{{ js_asset | append: '.js' | prepend: '/lib/js/' | prepend: site.baseurl }}"></script>
+      <script src="{{ js_asset | append: '.js' | prepend: '/js/' | prepend: site.baseurl }}"></script>
     {% endfor %}
   {% endif %}
 </body>

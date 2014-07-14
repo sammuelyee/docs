@@ -4,6 +4,18 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+    clean: {
+      dist: {
+        files: [{
+          dot: true,
+          src: [
+            '.sass-cache',
+            '.tmp',
+            '_site'
+          ]
+        }]
+      }
+    },
     connect: {
       server: {
         options: {
@@ -21,7 +33,7 @@ module.exports = function(grunt) {
           async: false
         }
       },
-      dev: {
+      dist: {
         command: 'jekyll build',
         options: {
           async: false
@@ -30,8 +42,12 @@ module.exports = function(grunt) {
     },
     watch: {
       css: {
-        files: ['_sass/**/*.scss'],
-        tasks: ['compass','shell:dev'],
+        files: ['_lib/scss/*.scss'],
+        tasks: ['compass:dist'],
+      },
+      js: {
+        files: ['_lib/js/**/*.js'],
+        tasks: ['copy:dist'],
       },
       html: {
         files: [
@@ -39,73 +55,87 @@ module.exports = function(grunt) {
           '**/*.md',
           '!_site/**/*.html'
         ],
-        tasks: ['shell:dev']
+        tasks: ['shell:dist', 'compass:dist', 'copy:dist']
       }
     },
     compass: {
       dist: {
         options: {
-          config: 'config.rb'
+          config: 'config.rb',
+          cssDir: '_site/css'
         }
-      }
+      },
+      prod: {
+        options: {
+          config: 'config.rb',
+          cssDir: '.tmp/css'
+        }
+      },
     },
     copy: {
-      main: {
-        src: 'lib/js/vendor/modernizr-2.6.2.min.js',
-        dest: 'js/vendor/modernizr-2.6.2.min.js',
+      dist: {
+        expand: true,
+        cwd: '_lib/js/',
+        src: '**',
+        dest: '_site/js/'
+      },
+      prod: {
+        src: '_lib/js/vendor/modernizr-2.6.2.min.js',
+        dest: '_site/js/vendor/modernizr-2.6.2.min.js',
       },
     },
     concat: {
       index: {
         src: [
-          'lib/js/vendor/jquery-1.11.1.min.js',
-          'lib/js/vendor/underscore-min.js',
-          'lib/js/vendor/backbone-min.js',
-          'lib/js/vendor/jquery.mousewheel.js',
-          'lib/js/vendor/jquery.jscrollpane.js',
-          'lib/js/vendor/waypoints.min.js',
-          'lib/js/app.js',
-          'lib/js/ui/navbar.js'
+          '_lib/js/vendor/jquery-1.11.1.min.js',
+          '_lib/js/vendor/underscore-min.js',
+          '_lib/js/vendor/backbone-min.js',
+          '_lib/js/vendor/jquery.mousewheel.js',
+          '_lib/js/vendor/jquery.jscrollpane.js',
+          '_lib/js/vendor/waypoints.min.js',
+          '_lib/js/app.js',
+          '_lib/js/ui/navbar.js'
         ],
-        dest: 'js/docs.js',
+        dest: '.tmp/js/docs.js',
       }
     },
     uglify: {
-      dist: {
+      prod: {
         files: {
-          'js/docs.min.js': ['js/docs.js'],
-          'js/index.min.js': ['lib/js/index.js'],
-          'js/editor.min.js': ['lib/js/editor.js'],
-          'js/tutorials.min.js': ['lib/js/tutorials.js']
+          '_site/js/docs.min.js': ['.tmp/js/docs.js'],
+          '_site/js/index.min.js': ['_lib/js/index.js'],
+          '_site/js/editor.min.js': ['_lib/js/editor.js'],
+          '_site/js/tutorials.min.js': ['_lib/js/tutorials.js']
         }
-      }
+      },
     },
     cssmin: {
-      combine: {
+      prod: {
         files: {
-          'css/docs.min.css': [
-            'lib/css/vendor/jquery.jscrollpane.css',
-            'lib/css/vendor/syntax.css',
-            'lib/css/docs.css'
+          '_site/css/docs.min.css': [
+            '.tmp/**/*.css'
           ]
         }
       }
-    }
+    },
   });
 
   grunt.registerTask('build', [
-    'copy',
+    'clean',
+    'shell:prod',
+    'copy:prod',
     'concat',
     'uglify',
-    'compass',
+    'compass:prod',
     'cssmin',
-    'shell:prod',
   ]);
 
   grunt.registerTask('default', [
     // 'test',
-    'compass',
-    'shell:dev',
+    'clean',
+    'shell:dist',
+    'compass:dist',
+    'copy:dist',
     'connect',
     'watch'
   ]);

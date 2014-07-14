@@ -5,10 +5,6 @@ max_age: 31536000
 gzip: true
 s3_endpoint: us-east-1
 
-exclude_from_upload:
-  - lib/
-  - node_modules/
-
 s3_reduced_redundancy: true
 concurrency_level: 100
 
