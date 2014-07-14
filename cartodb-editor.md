@@ -811,6 +811,8 @@ Go to your dashboard.
 Click on your username in the top right corner, and select “Your API keys.”
 Here, you can copy your API key, see use examples, and reset your API key.
 
+![API]({{ '/img/layout/cartodb-editor/API.png' | prepend: site.baseurl }})
+
 ### Quotas and billing
 
 We offer a wide range of plans to fit every user's needs. Each plan comes with different features and storage quotas. Take a look at our [pricing plans]({{ '/pricing' | prepend: site.cartodb-baseurl }}) to pick the best plan for you.
