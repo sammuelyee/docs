@@ -801,6 +801,16 @@ CartoCSS styling is generally very simple, but still it can be easy to include t
 
 ## Your account
 
+###API Key
+
+The API key offers the simplest way to access private data or perform writes and updates to your public data. Remember that your API key protects access to your data, so keep it confidential and only share it if you want others to have this access. If necessary, you can reset your API key in your admin dashboard.
+
+Find your API key:
+
+Go to your dashboard.
+Click on your username in the top right corner, and select “Your API keys.”
+Here, you can copy your API key, see use examples, and reset your API key.
+
 ### Quotas and billing
 
 We offer a wide range of plans to fit every user's needs. Each plan comes with different features and storage quotas. Take a look at our [pricing plans]({{ '/pricing' | prepend: site.cartodb-baseurl }}) to pick the best plan for you.
