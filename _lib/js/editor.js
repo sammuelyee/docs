@@ -40,9 +40,16 @@ docs.Views.Editor = Backbone.View.extend({
     this.$el.find('.anchor').on('click', function(e) {
       e.preventDefault();
 
-      var id_ = this.href.split('#')[1];
+      var href = this.href,
+          id_ = href.split('#')[1];
 
-      that._goTo($('[id="' + id_ + '"]'), { margin: 118 }, function() {  window.location.hash = $(e.target).closest('a').attr('href') });
+      that._goTo($('[id="' + id_ + '"]'), {}, function() {
+        if (history.pushState) {
+          history.pushState(null, null, href);
+        } else {
+          window.location.hash = href;
+        }
+      });
     });
   },
 
@@ -165,13 +172,13 @@ docs.Views.Editor = Backbone.View.extend({
 
     this._onResize();
 
-    this._buildAnchors();
-
     this._buildToc(function() {
       that.api = that.$aside.find('.aside-fixed').jScrollPane({
         contentWidth: '0px'
       }).data().jsp;
     });
+
+    this._buildAnchors();
 
     this.navbar = new docs.ui.Views.Navbar({
       $offcanvas: this.$offcanvas

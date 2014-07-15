@@ -12,7 +12,7 @@ layout: default
           <ul>
           {% for tutorials_item in site.tutorials %}
             {% if tutorials_item.level == 'basic' %}
-              <li><a href="#{{ tutorials_item.title | downcase | replace: ' ', '-' | replace: ',', '' | replace: '.', '' }}">{{ tutorials_item.title }}</a></li>
+              <li><a href="#{{ tutorials_item.title | downcase | replace: ' ', '-' | replace: ',', '' | replace: '.', '' }}" class="anchor">{{ tutorials_item.title }}</a></li>
             {% endif %}
           {% endfor %}
           </ul>
@@ -24,7 +24,7 @@ layout: default
           <ul>
           {% for tutorials_item in site.tutorials %}
             {% if tutorials_item.level == 'medium' %}
-              <li><a href="#{{ tutorials_item.title | downcase | replace: ' ', '-' | replace: ',', '' | replace: '.', '' }}">{{ tutorials_item.title }}</a></li>
+              <li><a href="#{{ tutorials_item.title | downcase | replace: ' ', '-' | replace: ',', '' | replace: '.', '' }}" class="anchor">{{ tutorials_item.title }}</a></li>
             {% endif %}
           {% endfor %}
           </ul>
@@ -36,7 +36,7 @@ layout: default
           <ul>
           {% for tutorials_item in site.tutorials %}
             {% if tutorials_item.level == 'hard' %}
-              <li><a href="#{{ tutorials_item.title | downcase | replace: ' ', '-' | replace: ',', '' | replace: '.', '' }}">{{ tutorials_item.title }}</a></li>
+              <li><a href="#{{ tutorials_item.title | downcase | replace: ' ', '-' | replace: ',', '' | replace: '.', '' }}" class="anchor">{{ tutorials_item.title }}</a></li>
             {% endif %}
           {% endfor %}
           </ul>

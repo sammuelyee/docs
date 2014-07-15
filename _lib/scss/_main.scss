@@ -19,7 +19,7 @@
 .navbar {
   @extend %clearfix;
   position: fixed;
-  z-index: 20;
+  z-index: 30;
   top: 0;
   right: 0;
   width: 100%;
@@ -185,6 +185,14 @@
   h3,
   h4,
   h5 {
+    &:before {
+      display: block;
+      content: " ";
+      margin-top: -123px;
+      height: 123px;
+      visibility: hidden;
+    }
+
     &:hover .header-link {
       @include opacity(1);
     }
@@ -550,6 +558,19 @@
       margin: 24px 0 0;
       padding: 50px 0 0;
       border-top: 1px dotted #ddd;
+    }
+  }
+
+  h2,
+  h3,
+  h4,
+  h5 {
+    &:before {
+      display: block;
+      content: " ";
+      margin-top: -175px;
+      height: 175px;
+      visibility: hidden;
     }
   }
 }

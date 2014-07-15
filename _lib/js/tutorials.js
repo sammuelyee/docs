@@ -29,10 +29,19 @@ docs.Views.Editor = Backbone.View.extend({
         that._onScroll();
       });
 
-    this.$aside.find('a:not(".up")').on('click', function(e) {
+    this.$el.find('.anchor').on('click', function(e) {
       e.preventDefault();
 
-      that._goTo($(this.hash), { margin: 175 }, function() {  window.location.hash = $(e.target).attr('href') });
+      var href = this.href,
+          id_ = href.split('#')[1];
+
+      that._goTo($('[id="' + id_ + '"]'), {}, function() {
+        if (history.pushState) {
+          history.pushState(null, null, href);
+        } else {
+          window.location.hash = href;
+        }
+      });
     });
   },
 
