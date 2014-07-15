@@ -8,7 +8,7 @@ keywords: "postgresql, postgis, vector, gis, geo, mapping, html5, developer-tool
 markdown: kramdown
 # permalink: pretty
 encoding: utf-8
-exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'node_modules', 'Gruntfile.js', 'package.json', 'docs_build.sh', 's3_website.yml']
+exclude: ['README.md', 'CONTRIBUTING.md', 'Gemfile', 'Gemfile.lock', 'node_modules', 'Gruntfile.js', 'package.json', 'docs_build.sh', 's3_website.yml']
 highlighter: rouge
 
 cartodb-baseurl: 'http://cartodb-staging.com'
