@@ -1,5 +1,5 @@
 module.exports = function(grunt) {
-
+  require('time-grunt')(grunt);
   require('load-grunt-tasks')(grunt);
 
   grunt.initConfig({
@@ -85,7 +85,8 @@ module.exports = function(grunt) {
             dest: '_site/',
             src: [
               '*.{ico,png,txt}',
-              'fonts/{,*/}*.*'
+              'fonts/{,*/}*.*',
+              'img/{,**/}*.*'
             ]
           },
           {
@@ -129,16 +130,6 @@ module.exports = function(grunt) {
         }
       }
     },
-    imagemin: {
-      dist: {
-        files: [{
-          expand: true,
-          cwd: '.tmp/img',
-          src: '{,**/}*.{gif,jpeg,jpg,png}',
-          dest: '_site/img'
-        }]
-      }
-    },
     htmlmin: {
       dist: {
         options: {
@@ -152,28 +143,34 @@ module.exports = function(grunt) {
           dest: '_site/'
         }]
       }
+    },
+    concurrent: {
+      prod: [
+        'cssmin',
+        'htmlmin'
+      ],
+      dist: [
+        'compass:dist',
+        'copy:dist'
+      ]
     }
   });
 
   grunt.registerTask('build', [
     'clean',
     'shell:prod',
+    'compass:prod',
     'copy:prod',
     'concat',
     'uglify',
-    'compass:prod',
-    'cssmin',
-    'imagemin',
-    'htmlmin'
+    'concurrent:prod'
   ]);
 
   grunt.registerTask('default', [
     // 'test',
     'clean',
     'shell:dist',
-    'copy:dist',
-    'compass:dist',
-    'copy:dist',
+    'concurrent:dist',
     'connect',
     'watch'
   ]);
