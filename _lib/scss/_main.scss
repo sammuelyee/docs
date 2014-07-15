@@ -126,7 +126,7 @@
   width: 21px;
   height: 18px;
   margin-top: 10px;
-  background: image-url('mobile-nav.png');
+  background: image-url('icons/mobile-nav.png');
   text-indent: -9000px;
 }
 
@@ -179,6 +179,15 @@
   h5 {
     margin-bottom: 12px;
     font: 18px/24px 'Proxima Nova Sb';
+  }
+
+  h2,
+  h3,
+  h4,
+  h5 {
+    &:hover .header-link {
+      @include opacity(1);
+    }
   }
 
   p,
@@ -267,15 +276,6 @@
     }
   }
 
-  .highlight + .highlight {
-    margin-top: -24px;
-    border-top: 1px solid #ddd;
-
-    pre {
-      @include border-radius(0 0 4px 4px);
-    }
-  }
-
   code {
     font: 13px Consolas, Menlo, Courier, monospace;
     padding: 2px;
@@ -303,63 +303,86 @@
       padding: 0;
     }
   }
+}
 
-  .code-title {
-    padding: 18px;
-    font: normal 13px/19px "Monaco", "Courier New", monospace;
-    text-transform: uppercase;
-    background-color: #f8f8f8;
-    color: #666;
-    @include border-top-radius(4px);
+.highlight + .highlight {
+  margin-top: -24px;
+  border-top: 1px solid #ddd;
 
+  pre {
+    @include border-radius(0 0 4px 4px);
+  }
+}
+
+.code-title {
+  padding: 18px;
+  font: normal 13px/19px "Monaco", "Courier New", monospace;
+  text-transform: uppercase;
+  background-color: #f8f8f8;
+  color: #666;
+  @include border-top-radius(4px);
+
+  + .highlight {
+    border-top: 1px solid #ddd;
+
+    pre {
+      @include border-radius(0 0 4px 4px);
+    }
+
+    + .code-title {
+      margin-top: -24px;
+      @include border-radius(0);
+    }
+  }
+
+  &.with-result {
     + .highlight {
-      border-top: 1px solid #ddd;
 
       pre {
-        @include border-radius(0 0 4px 4px);
-      }
-
-      + .code-title {
-        margin-top: -24px;
-        @include border-radius(0);
-      }
-    }
-
-    &.with-result {
-      + .highlight {
-
-        pre {
-          @include border-bottom-radius(0);
-        }
-      }
-    }
-
-    &.notitle {
-      display: none;
-
-      + .highlight {
-        border-top: 0;
-
-        pre {
-          @include border-top-radius(4px);
-        }
+        @include border-bottom-radius(0);
       }
     }
   }
 
-  .code-request {
-    background: #333;
-    color: #999;
+  &.notitle {
+    display: none;
 
     + .highlight {
-      border-top: 1px solid #484848;
+      border-top: 0;
 
-      pre,
-      code {
-        background: #333;
-        color: #999;
+      pre {
+        @include border-top-radius(4px);
       }
     }
+  }
+}
+
+.code-request {
+  background: #333;
+  color: #999;
+
+  + .highlight {
+    border-top: 1px solid #484848;
+
+    pre,
+    code {
+      background: #333;
+      color: #999;
+    }
+  }
+}
+
+.header-link {
+  margin-left: 10px;
+  @include opacity(0);
+  @include transition(opacity .15s ease-in-out);
+
+  i {
+    display: inline-block;
+    vertical-align: middle;
+    width: 31px;
+    height: 10px;
+    background: image-url('icons/link.png') no-repeat;
   }
 }
 

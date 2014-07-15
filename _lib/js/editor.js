@@ -37,10 +37,10 @@ docs.Views.Editor = Backbone.View.extend({
       }).data().jsp;
     }, { offset: 123 });
 
-    this.$aside.find('a:not(".up")').on('click', function(e) {
+    this.$el.find('.anchor').on('click', function(e) {
       e.preventDefault();
 
-      var id_ = this.href.split('#')[1].replace(/'/g, "\\'").replace(/"/g, '\\"');
+      var id_ = this.href.split('#')[1];
 
       that._goTo($('[id="' + id_ + '"]'), { margin: 118 }, function() {  window.location.hash = $(e.target).attr('href') });
     });
@@ -84,7 +84,7 @@ docs.Views.Editor = Backbone.View.extend({
 
   _waypoint: function(direction, el) {
     var $active = $(el),
-        active_id_ = $active.attr('id').replace(/'/g, "\\'").replace(/"/g, '\\"');
+        active_id_ = $active.attr('id');
 
     $('.aside-menu').find('a[href="#' + active_id_ + '"]')
       .closest('li')
@@ -100,6 +100,22 @@ docs.Views.Editor = Backbone.View.extend({
         .addClass('selected')
         .find('h3 a')
         .addClass('selected');
+  },
+
+  _buildAnchors: function() {
+    // http://ben.balter.com/2014/03/13/pages-anchor-links/
+
+    this.$content.find("h2, h3, h4, h5").each(function(i, el) {
+      var $el, icon, id;
+
+      $el = $(el);
+      icon = '<i></i>';
+      id = $el.attr('id');
+
+      if (id) {
+        return $el.append($("<a />").addClass("anchor header-link").attr("href", "#" + id).html(icon));
+      }
+    });
   },
 
   _buildToc: function(callback) {
@@ -119,7 +135,7 @@ docs.Views.Editor = Backbone.View.extend({
         subTitle,
         subLink;
 
-      $item.append("<h3><a href='"+link+"'>"+title+"</a></h3>");
+      $item.append("<h3><a href='anchor "+link+"'>"+title+"</a></h3>");
 
       var $subitem= $('<ul>');
 
@@ -135,7 +151,7 @@ docs.Views.Editor = Backbone.View.extend({
 
         var klass = $subTitle.is('h4') ? 'indent' : '';
 
-        $subitem.append("<li class='"+klass+"'><a href='"+subLink+"'>"+subTitle+"</a></li>");
+        $subitem.append("<li class='"+klass+"'><a href='anchor "+subLink+"'>"+subTitle+"</a></li>");
       });
 
       that.$aside_menu.append($item);
@@ -148,6 +164,8 @@ docs.Views.Editor = Backbone.View.extend({
     var that = this;
 
     this._onResize();
+
+    this._buildAnchors();
 
     this._buildToc(function() {
       that.api = that.$aside.find('.aside-fixed').jScrollPane({
