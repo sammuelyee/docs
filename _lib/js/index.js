@@ -33,7 +33,7 @@ docs.Views.Index = Backbone.View.extend({
 
       var id_ = this.href.split('#')[1];
 
-      that._goTo($('[id="' + id_ + '"]'), { margin: 118 }, function() {  window.location.hash = $(e.target).attr('href') });
+      that._goTo($('[id="' + id_ + '"]'), { margin: 118 }, function() {  window.location.hash = $(e.target).closest('a').attr('href') });
     });
   },
 
