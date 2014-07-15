@@ -135,7 +135,7 @@ docs.Views.Editor = Backbone.View.extend({
         subTitle,
         subLink;
 
-      $item.append("<h3><a href='anchor "+link+"'>"+title+"</a></h3>");
+      $item.append("<h3><a href='"+link+"' class='anchor'>"+title+"</a></h3>");
 
       var $subitem= $('<ul>');
 
@@ -151,7 +151,7 @@ docs.Views.Editor = Backbone.View.extend({
 
         var klass = $subTitle.is('h4') ? 'indent' : '';
 
-        $subitem.append("<li class='"+klass+"'><a href='anchor "+subLink+"'>"+subTitle+"</a></li>");
+        $subitem.append("<li class='"+klass+"'><a href='"+subLink+"' class='anchor'>"+subTitle+"</a></li>");
       });
 
       that.$aside_menu.append($item);
