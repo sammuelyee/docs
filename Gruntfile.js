@@ -46,14 +46,13 @@ module.exports = function(grunt) {
         tasks: ['compass:dist'],
       },
       js: {
-        files: ['_lib/js/**/*.js'],
+        files: ['_lib/js/{,*/}*.js'],
         tasks: ['copy:dist'],
       },
       html: {
         files: [
-          '**/*.html',
-          '**/*.md',
-          '!_site/**/*.html'
+          '{,*/}*.html',
+          '{,*/}*.md'
         ],
         tasks: ['shell:dist', 'compass:dist', 'copy:dist']
       }
@@ -70,18 +69,30 @@ module.exports = function(grunt) {
           config: 'config.rb',
           cssDir: '.tmp/css'
         }
-      },
+      }
     },
     copy: {
       dist: {
         expand: true,
         cwd: '_lib/js/',
-        src: '**',
+        src: '{,*/}*.js',
         dest: '_site/js/'
       },
       prod: {
-        src: '_lib/js/vendor/modernizr-2.6.2.min.js',
-        dest: '_site/js/vendor/modernizr-2.6.2.min.js',
+        files : [
+          {
+            cwd: '.tmp/',
+            dest: '_site/',
+            src: [
+              '*.{ico,png,txt}',
+              'fonts/{,*/}*.*'
+            ]
+          },
+          {
+            src: '_lib/js/vendor/modernizr-2.6.2.min.js',
+            dest: '_site/js/vendor/modernizr-2.6.2.min.js'
+          }
+        ]
       },
     },
     concat: {
@@ -118,6 +129,30 @@ module.exports = function(grunt) {
         }
       }
     },
+    imagemin: {
+      dist: {
+        files: [{
+          expand: true,
+          cwd: '.tmp/img',
+          src: '{,**/}*.{gif,jpeg,jpg,png}',
+          dest: '_site/img'
+        }]
+      }
+    },
+    htmlmin: {
+      dist: {
+        options: {
+          removeComments: true,
+          collapseWhitespace: true
+        },
+        files: [{
+          expand: true,
+          cwd: '.tmp/',
+          src: '{,*/}*.html',
+          dest: '_site/'
+        }]
+      }
+    }
   });
 
   grunt.registerTask('build', [
@@ -128,12 +163,15 @@ module.exports = function(grunt) {
     'uglify',
     'compass:prod',
     'cssmin',
+    'imagemin',
+    'htmlmin'
   ]);
 
   grunt.registerTask('default', [
     // 'test',
     'clean',
     'shell:dist',
+    'copy:dist',
     'compass:dist',
     'copy:dist',
     'connect',
