@@ -22,7 +22,7 @@
   {% endfor %}
 
   <nav class="nav-collapse">
-    <ul class="nav-inner">
+    <ul class="nav-inner inb-list">
       <li class="{% if page.slug == 'cartodb-editor' %}selected{% endif %} first"><a href="{{ '/cartodb-editor.html' | prepend: site.baseurl }}">CARTODB EDITOR</a></li>
       <li class="{% if platform or page.slug == 'cartodb-platform' %}selected{% endif %}"><a href="{{ '/cartodb-platform.html' | prepend: site.baseurl }}">CARTODB PLATFORM</a></li>
       <li class="{% if tutorials or page.slug == 'tutorials' %}selected{% endif %}"><a href="{{ '/tutorials.html' | prepend: site.baseurl }}">TUTORIALS</a></li>
