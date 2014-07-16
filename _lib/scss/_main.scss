@@ -408,7 +408,6 @@
   position: absolute;
   top: 79px;
   bottom: 0;
-  border-bottom: 1px solid #eee;
 
   &.bottom {
     position: absolute;
@@ -428,7 +427,6 @@
 .aside-inner {
   position: fixed;
   top: 79px;
-  bottom: 1px;
   width: 245px;
   border-right: 1px solid #eee;
   background: #fff;
@@ -781,4 +779,12 @@
   .embed-tutorial {
     margin: 0 -20px;
   }
+}
+
+
+/* =Footer
+----------------------------------------------- */
+
+.footer-inner {
+  max-width: 1046px;
 }

@@ -2,28 +2,55 @@
 ----------------------------------------------- */
 
 .footer {
-  background: #384047;
+  background: #f8f8f8;
   font: 15px "Proxima Nova Rg";
-  color: #999;
+  color: #555;
+
+  &.dark {
+    background: #384047;
+    color: #999;
+
+    .footer-inner {
+      padding: 40px 50px 0;
+
+      div {
+        border-top: 1px solid rgba(#fff, .15);
+      }
+
+      a {
+        color: rgba(#fff, .7);
+
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+
+    .footer-column {
+      dt {
+        border-bottom: 1px solid rgba(#fff, .15);
+        color: #fff;
+      }
+    }
+  }
 }
 
 .footer-inner {
-  max-width: 1046px;
   padding: 40px 50px 0;
 
   div {
     padding: 40px 0;
-    border-top: 1px solid rgba(#fff, .15);
+    border-top: 1px solid #ddd;
     font-size: 14px;
   }
 
   a {
-    color: rgba(#fff, .7);
+    color: #397DB8;
     @include transition(.3s all);
 
     &:hover {
+      color: #333;
       text-decoration: underline;
-      color: #fff;
     }
   }
 }
@@ -50,15 +77,17 @@
     font-family: "Proxima Nova Sb";
     font-size: 16px;
     padding-bottom: 24px;
-    border-bottom: 1px solid rgba(#fff, .15);
-    color: #fff;
+    border-bottom: 1px solid #ddd;
   }
 
   dd {
     margin-bottom: 10px;
   }
-}
 
+  a {
+    color: #999;
+  }
+}
 
 @media (max-width: $medium-width) {
   .footer-inner {
