@@ -27,6 +27,9 @@ docs.Views.Editor = Backbone.View.extend({
       })
       .on('resize', function() {
         that._onScroll();
+      })
+      .on('load', function() {
+        that._buildImgWrappers();
       });
 
     this.$content.find('h2, h3, h4').waypoint(function(direction) {
@@ -165,6 +168,12 @@ docs.Views.Editor = Backbone.View.extend({
     });
 
     callback && callback();
+  },
+
+  _buildImgWrappers: function() {
+    this.$content.find("img").each(function(i, el) {
+      return $(el).after('<div class="wrap" style="height: '+$(this).height()+'px"></div>');
+    });
   },
 
   _initViews: function() {

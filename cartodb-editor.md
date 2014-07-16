@@ -605,15 +605,15 @@ Since CartoDB is built on PostgreSQL you can look at their [documentation](http:
 
 To run an SQL query in the CartoDB dashboard open a table or visualization. In the sidebar to the right click the SQL icon. The sidebar will expand and by default you will see the following query:
 
-~~~sql
+{% highlight sql %}
 SELECT * FROM table_name
-~~~
+{% endhighlight %}
 
 You can modify this query and then hit the "Apply query" button or press `cmd + s` on a Mac OS or `ctrl + s` on a Windows OS. An example of a modified query might look like the following:
 
-~~~sql
+{% highlight sql %}
 SELECT * FROM ne_10m_populated_places_simple WHERE featurecla = 'Admin-0 capital'
-~~~
+{% endhighlight %}
 
 This query will select all rows that have a "featurecla" column value of "Admin-0 capital" from the table "ne_10m_populated_places_simple." Only the rows that match this SQL query will appear in the table and map view for this dataset. Additionally when applying SQL queries to Visualizations, only the queried data will be shown in the Visualization.
 
