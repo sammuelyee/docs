@@ -32,3 +32,29 @@ img { display: block; padding: 0; margin: 0; -ms-interpolation-mode: bicubic; }
   margin: 0 auto;
   padding: 0 20px;
 }
+
+.section {
+  background: #fff;
+  padding: 60px 0;
+
+  &.dark {
+    background: #384047;
+    color: #fff;
+
+    a {
+      color: #fff;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.section-inner {
+  margin-bottom: 40px;
+}
+
+.grey-section {
+  background: #f8f8f8;
+}

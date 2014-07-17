@@ -51,7 +51,8 @@ module.exports = function(grunt) {
       html: {
         files: [
           '{,*/}*.html',
-          '{,*/}*.md'
+          '{,*/}*.md',
+          'img/**/*.*'
         ],
         tasks: ['shell:dist', 'compass:dist', 'copy:dist']
       }
@@ -74,7 +75,7 @@ module.exports = function(grunt) {
       dist: {
         expand: true,
         cwd: '_lib/js/',
-        src: '{,*/}*.js',
+        src: '{,*/}*.*',
         dest: '_site/js/'
       },
       prod: {
@@ -85,7 +86,7 @@ module.exports = function(grunt) {
             src: [
               '*.{ico,png,txt}',
               'fonts/{,*/}*.*',
-              'img/{,**/}*.*'
+              'img/**/*.*'
             ]
           },
           {
