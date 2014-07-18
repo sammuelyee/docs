@@ -156,7 +156,20 @@ module.exports = function(grunt) {
         'compass:dist',
         'copy:dist'
       ]
+    },
+    hashres: {
+      options: {
+        fileNameFormat: '${name}.${hash}.${ext}',
+      },
+      prod: {
+        src: [
+          '_site/css/*.css',
+          '_site/js/*.js'
+        ],
+        dest: '_site/**/*.html'
+      }
     }
+
   });
 
   grunt.registerTask('build', [
@@ -166,7 +179,8 @@ module.exports = function(grunt) {
     'copy:prod',
     'concat',
     'uglify',
-    'concurrent:prod'
+    'concurrent:prod',
+    'hashres'
   ]);
 
   grunt.registerTask('default', [
