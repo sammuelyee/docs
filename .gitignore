@@ -4,5 +4,4 @@ _site
 .DS_Store
 _cartodb-platform/*
 !_cartodb-platform/.keep
-/lib
 .tmp/
