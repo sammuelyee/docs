@@ -13,8 +13,8 @@ exclude: ['README.md', 'CONTRIBUTING.md', 'config.rb', 'Gemfile', 'Gemfile.lock'
 highlighter: rouge
 
 cartodb-baseurl: 'http://cartodb.com'
-academy-baseurl: 'http://academy.cartodb.com/'
-blog-baseurl: 'http://blog.cartodb.com/'
+academy-baseurl: 'http://academy.cartodb.com'
+blog-baseurl: 'http://blog.cartodb.com'
 
 analytics_property_id: UA-20934186-3
 mixpanel_token: 9b1d8a4fb14fa98d50615108b8b0161a
