@@ -782,4 +782,11 @@
 
 .footer-inner {
   max-width: 1046px;
+  padding: 40px 50px 0;
+}
+
+@media (max-width: $medium-width) {
+  .footer-inner {
+    padding: 40px 20px 0;
+  }
 }

@@ -11,8 +11,6 @@
     color: #999;
 
     .footer-inner {
-      padding: 40px 50px 0;
-
       div {
         border-top: 1px solid rgba(#fff, .15);
       }
@@ -36,7 +34,7 @@
 }
 
 .footer-inner {
-  padding: 40px 50px 0;
+  padding: 40px 20px 0;
 
   div {
     padding: 40px 0;
@@ -90,10 +88,6 @@
 }
 
 @media (max-width: $medium-width) {
-  .footer-inner {
-    padding: 40px 20px 0;
-  }
-
   .footer-columns > li {
     min-height: 264px;
     width: 50%;
