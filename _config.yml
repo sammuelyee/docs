@@ -3,7 +3,7 @@ destination: '_site'
 title: "CartoDB Docs"
 description: "Get the most out of CartoDB with our API, examples gallery and documentation. CartoDB is made with love by developers, for everyone"
 baseurl: ""
-url: "http://docs-staging.cartodb.com"
+url: "http://docs.cartodb.com"
 keywords: "postgresql, postgis, vector, gis, geo, mapping, html5, developer-tools, postgres"
 
 markdown: kramdown
@@ -12,7 +12,7 @@ encoding: utf-8
 exclude: ['README.md', 'CONTRIBUTING.md', 'config.rb', 'Gemfile', 'Gemfile.lock', 'node_modules', 'Gruntfile.js', 'package.json', 'docs_build.sh', 's3_website.yml']
 highlighter: rouge
 
-cartodb-baseurl: 'http://cartodb-staging.com'
+cartodb-baseurl: 'http://cartodb.com'
 academy-baseurl: 'http://academy.cartodb.com'
 blog-baseurl: 'http://blog.cartodb.com'
 
