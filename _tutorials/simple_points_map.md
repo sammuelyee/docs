@@ -32,7 +32,7 @@ Here are a couple of our favorites:
 
 Uploading your own data is easy. We accept many common data formats such as CSV, Excel, ESRI Shapefiles, and GPX files. If you use SHP files, be sure to create a ZIP archive of all associated files (.shp, .prj, .dbx, etc) and upload the zip with all the files at once. To upload any supported file, either drag it directly onto the dashboard page of your CartoDB account, or click the <span class="ui_element" data-element="create_table">Create your first table</span> button, click 'select a file' and locate the file on your system, finally click 'Create table'.
 
-![Uploading data]({{ '/img/layout/tutorials/simple_points_map/img1.png' | prepend: site.baseurl }})
+<p class="wrap-border"><img src="{{ '/img/layout/simple_points_map/img1.png' | prepend: site.baseurl }}" alt="Uploading data" /></p>
 
 For this tutorial we are going to use some data from our common data directory. From your account dashboard, click <span class="ui_element" data-element="common_data">Common data</span> in the menu. It will show you the list of available datasets ready to be explored using CartoDB, available to all users. You can download this data or import it directly into your account. To import it, click <span class="ui_element" data-element="add_public_table">the plus symbol</span> on the right of your selected element. For this tutorial we will use `Populated places` dataset.
 
@@ -42,7 +42,7 @@ CartoDB will begin the process of creating a new copy of this table for you. Whe
 
 So now you have a dataset you are interested in mapping. Start by selecting the <span class="ui_element" data-element="map_view">Map view</span>, above your table. A map will appear, and your data will be rendered with the default styles. Okay! Points on a map, mission accomplished.
 
-![Our first map]({{ '/img/layout/tutorials/simple_points_map/img2.png' | prepend: site.baseurl }})
+<p class="wrap-border"><img src="{{ '/img/layout/simple_points_map/img2.png' | prepend: site.baseurl }}" alt="Our first map" /></p>
 
 Not so quick, let's look around. You can see above the map an option for <span class="ui_element" data-element="change_baselayer">changing the baselayer</span> of your map. This won't change your data, but it sure can change how your data looks. Click on it and test some of the basemaps we provide as options.
 
@@ -52,11 +52,11 @@ Almost at the top is the <span class="ui_element" data-element="sql_option">SQL 
 
 The next button is the <span class="ui_element" data-element="style_option">Style option</span> which gives you a menu for controlling the look of your visualizations. In this example, we can use options in the menu to change the fill color, width, stroke, labelling, etc. Play around with some of the settings to see what they do. By clicking the button again, you can close the interface and go back to seeing just your map.
 
-![Customization]({{ '/img/layout/tutorials/simple_points_map/img3.png' | prepend: site.baseurl }})
+<p class="wrap-border"><img src="{{ '/img/layout/simple_points_map/img3.png' | prepend: site.baseurl }}" alt="Customization" /></p>
 
 Next is the <span class="ui_element" data-element="infowindow_option">Infowindow option</span>, for customizing the contents of the infowindows that are shown when you click your data on the map. You can modify the style of the infowindow and the information that is shown. You can reorder the list of fields in your infowindows by simple drag & drop of the field names in the menu.
 
-![infowindows settings]({{ '/img/layout/tutorials/simple_points_map/img4.png' | prepend: site.baseurl }})
+<p class="wrap-border"><img src="{{ '/img/layout/simple_points_map/img4.png' | prepend: site.baseurl }}" alt="infowindows settings" /></p>
 
 Take your time playing with the options until you get familiar how map customization works in CartoDB.
 
@@ -64,7 +64,7 @@ Take your time playing with the options until you get familiar how map customiza
 
 When you want to visualize different datasets or just share the map, you must create a visualization. Visualizations are where you will set and store all the filters and styles that you want to use in your published maps. Visualizations also let you add layers from multiple maps, mixing the data without having to write any complex code or queries. They also let you reuse data from the same tables in multiple visualizations without any difficulty. To get started with visualizations, click the orange <span class="ui_element" data-element="visualize">Visualize</span> button on the top right of the page. You will be prompted to add a name for your visualization, don't worry, you will be able to change it later.
 
-![visualize map]({{ '/img/layout/tutorials/simple_points_map/img7.png' | prepend: site.baseurl }})
+<p class="wrap-border"><img src="{{ '/img/layout/simple_points_map/img7.png' | prepend: site.baseurl }}" alt="visualize map" /></p>
 
 Visualizations are similar to tables, you can quickly tell them apart by looking at the icon beside the <span class="ui_element" data-element="table_name">table name</span> and the <span class="ui_element" data-element="visualization_name">visualization name</span> in the <span class="ui_element" data-element="table_view">Table View</span>. Now that you have created your visualization, it will be available on your dashboard.
 
@@ -72,7 +72,7 @@ Visualizations are similar to tables, you can quickly tell them apart by looking
 
 Now that you have a Visualization just the way you want it, let's share it with some friends. Click the green <span class="ui_element" data-element="publish">Publish</span> button in the top right of the page. From here you can customize how your published map is presented, including zoom and center, which interface elements to display, toggling layers, social media links, etc. At the bottom you will find a URL to share your Visualization via Twitter, email, or anywhere else. When you share that link, viewers will only be able to explore it on the map, they will not be able to edit any of your data. For more details, take a look at next tutorial.
 
-![publish map]({{ '/img/layout/tutorials/simple_points_map/img5.png' | prepend: site.baseurl }})
+<p class="wrap-border"><img src="{{ '/img/layout/simple_points_map/img5.png' | prepend: site.baseurl }}" alt="publish map" /></p>
 
 ## Bonus: Most populated cities
 
@@ -86,4 +86,4 @@ WHERE pop_max > 5000000
 
 Paste it in the SQL window and push <span class="ui_element" data-element="apply_query">Apply query</span> to see the results. You will be able to create a table from that query or clear the view. You can check the results in both the <span class="ui_element" data-element="table_view">Table view</span> and in the <span class="ui_element" data-element="map_view">Map view</span>.
 
-![Performed query]({{ '/img/layout/tutorials/simple_points_map/img5.png' | prepend: site.baseurl }})
+<p class="wrap-border"><img src="{{ '/img/layout/simple_points_map/img6.png' | prepend: site.baseurl }}" alt="Performed query" /></p>
