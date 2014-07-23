@@ -28,11 +28,11 @@ To understand the data it is often helpful to look at metadata. In this case, [g
 
 After `nh_shapefile.zip` file is downloaded, drag and drop it on to your CartoDB dashboard for upload. After some seconds CartoDB will show you the <span class="ui_element" data-element="table_view">Table view</span> of the data. Check the column `p_08`, the one that contains the Democratic vote share.
 
-![Table view]({{ '/img/layout/tutorials/electoral_map/img1.png' | prepend: site.baseurl }})
+<p class="wrap-border"><img src="{{ '/img/layout/electoral_map/img1.png' | prepend: site.baseurl }}" alt="Table view" /></p>
 
 Click on <span class="ui_element" data-element="map_view">Map view</span> and you should see basic outlines of the New Hampshire counties.
 
-![Map view]({{ '/img/layout/tutorials/electoral_map/img2.png' | prepend: site.baseurl }})
+<p class="wrap-border"><img src="{{ '/img/layout/electoral_map/img2.png' | prepend: site.baseurl }}" alt="Map view" /></p>
 
 ## Thematic map of results
 
@@ -40,7 +40,7 @@ Let's create a simple choropleth of this data. Click the <span class="ui_element
 
 Below the box you clicked, change Column to `p_08`. For Buckets, choose '5 Buckets', and don't change the quantification method for the moment. For a color ramp, choose any for now. Take a look at your map. Getting closer!
 
-![Cloropeth view]({{ '/img/layout/tutorials/electoral_map/img3.png' | prepend: site.baseurl }})
+<p class="wrap-border"><img src="{{ '/img/layout/electoral_map/img3.png' | prepend: site.baseurl }}" alt="Cloropeth view" /></p>
 
 ## Customizing thematic maps
 
@@ -52,14 +52,14 @@ One great source for finding basic color scales good for mapping is [Color Brewe
 
 Click the <span class="ui_element" data-element="carto_tab">CartoCSS option</span> in the toolbar. This takes you to your CartoCSS editor. Notice the <span class="ui_element" data-element="undo_redo">Undo/Redo buttons</span>  in the lower left. Feel free to play around. Colors on the map are coded in hexidecimal, so `#FFFFFF` is white and `#000000` is black. If you aren't familar with this, we recommend you do a bit of playing around and reading online. We are going to just paste in the cited 5 new colors to start, replacing each hex with the ones we got from ColorBrewer above, and then press <span class="ui_element" data-element="apply_style">Apply style</span> button.
 
-![Customized colors]({{ '/img/layout/tutorials/electoral_map/img4.png' | prepend: site.baseurl }})
+<p class="wrap-border"><img src="{{ '/img/layout/electoral_map/img4.png' | prepend: site.baseurl }}" alt="Customized colors" /></p>
 
 This is still wrong, we have incorrect bins. You'll notice that our colors don't include the far ends of the spectrum, near 1. So, lets edit the bins to be <=1, <=0.6, <=0.52, <=0.48 and <=0.4 (most red), and hit  <span class="ui_element" data-element="apply_style">Apply style</span>.
 
-![Fixed buckets]({{ '/img/layout/tutorials/electoral_map/img5.png' | prepend: site.baseurl }})
+<p class="wrap-border"><img src="{{ '/img/layout/electoral_map/img5.png' | prepend: site.baseurl }}" alt="Fixed buckets" /></p>
 
 Not perfect yet: the white in the areas that are split is too bright compared to the rest. Change the color after `<=0.52` to `#EEEEEE`.
 
-![Fixed middle bucket]({{ '/img/layout/tutorials/electoral_map/img6.png' | prepend: site.baseurl }})
+<p class="wrap-border"><img src="{{ '/img/layout/electoral_map/img6.png' | prepend: site.baseurl }}" alt="Fixed middle bucket" /></p>
 
 Great, now you have a nice looking election map!
