@@ -40,7 +40,7 @@ defaults:
     values:
       tags: "cartodb, learning, tutorials, documentation, advanced, geospatial, functions"
       js_assets:
-        - "editor"
+        - "index"
   -
     scope:
       path: ""

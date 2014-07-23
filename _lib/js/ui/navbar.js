@@ -5,10 +5,10 @@ docs.ui.Models.Navbar = Backbone.Model.extend({
 });
 
 docs.ui.Views.Navbar = Backbone.View.extend({
-  el: '.navbar',
+  el: '.offcanvas-inner',
 
   events: {
-    'click .nav-button': '_toggle'
+    'click .navbar-button': '_toggle'
   },
 
   initialize: function(options) {
@@ -17,9 +17,6 @@ docs.ui.Views.Navbar = Backbone.View.extend({
     this.model = new docs.ui.Models.Navbar();
 
     this.model.on("change:hidden", this._toggleNav, this);
-
-    this.$offcanvas = this.options.$offcanvas;
-    this.$menu = this.$('.navbar-collapse');
   },
 
   _toggle: function(e) {
@@ -30,9 +27,9 @@ docs.ui.Views.Navbar = Backbone.View.extend({
 
   _toggleNav: function() {
     if (this.model.get('hidden')) {
-      this.$offcanvas.removeClass('active');
+      this.$el.removeClass('active');
     } else {
-      this.$offcanvas.addClass('active');
+      this.$el.addClass('active');
     }
   }
 });

@@ -6,7 +6,6 @@ docs.Views.Editor = Backbone.View.extend({
   },
 
   initialize: function() {
-    this.$offcanvas = this.$('.offcanvas-inner');
     this.$aside = this.$('.aside');
     this.navbarHeight = this.$('.navbar').outerHeight();
     this.$footer = this.$('.footer');
@@ -52,8 +51,6 @@ docs.Views.Editor = Backbone.View.extend({
   },
 
   _onScroll: function() {
-    var that = this;
-
     var pos = $(window).scrollTop(),
         asideHeight = this.$aside.find('.aside-inner').outerHeight();
 
@@ -75,23 +72,19 @@ docs.Views.Editor = Backbone.View.extend({
       }
     }
 
-    that.api = that.$aside.find('.aside-fixed').jScrollPane({
+    this.api = this.$aside.find('.aside-fixed').jScrollPane({
       contentWidth: '0px'
     }).data().jsp;
   },
 
   _initViews: function() {
-    var that = this;
-
     this._onResize();
 
-    that.api = that.$aside.find('.aside-fixed').jScrollPane({
+    this.api = this.$aside.find('.aside-fixed').jScrollPane({
       contentWidth: '0px'
     }).data().jsp;
 
-    this.navbar = new docs.ui.Views.Navbar({
-      $offcanvas: this.$el.find('.offcanvas-inner')
-    });
+    this.navbar = new docs.ui.Views.Navbar();
   },
 
   _goToTop: function(e) {
