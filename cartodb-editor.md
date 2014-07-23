@@ -254,16 +254,16 @@ The wizards window lets you choose how your data is styled. Before we go further
 - **Choropleth**  
   This changes the color of each feature based on a secondary numeric value from a column in your table that you choose. This is often most useful with polygon data, and you can use it to compare characteristics of regions, and areas. For example, choropleth mapping is often used to display variables such as income level by neighborhood or other geographic area within a city.
 
-- **Category**
+- **Category**  
   Category visualizations display your data points and polygons in different colors based on a qualitative characteristic (not numeric value) in your table. For example, if your data is showing multiple kinds of a certain characteristic (*i.e.* landuse zoning such as residential, commercial or manufacturing), you would use the category wizard to change the color or style of each category you're interested in showing.
 
-- **Bubble**
+- **Bubble**  
   The Bubble visualization scales the radius of points in your data based on a numeric value from a column in your table that you choose. This is good if you want to compare numerical values associated with a certain point, like population size of cities. Remember that it is not a useful visualization type if your data is in polygon form.
 
-- **Intensity**
+- **Intensity**  
   The Intensity visualization approximates the density of your points by making areas where there are many points, or points overlap darker in color than areas with fewer points. This is useful when you have a point dataset with a large number of points, and when you want to show areas of higher "intensity" as opposed to those with lower intensity. One of the main advantages of this versus a heatmap is that if you start zooming, you can click on your points and get details in your infowindows.
 
-- **Density**
+- **Density**  
   The Density visualization aggregates your data in hexagons and colors them based on the amount of data you have within each unit. Areas with more data points will be darker than those with fewer points. Note that when using a Density map, your infowindows will be disabled. If you want to show an approximation of density, but maintain infowindows, check out the Intensity visualization above.
 
 - **Torque**  
