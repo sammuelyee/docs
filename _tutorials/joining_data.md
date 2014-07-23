@@ -319,7 +319,7 @@ Next, go back to your Dashboard by clicking the <span class="ui_element" data-el
 
 From inside your country borders table create a new column to hold some numerical data. In the  <span class="ui_element" data-element="table_view">Table view</span>, click the drop down arrow beside any regular column name and then click  <span class="ui_element" data-element="add_column">Add new column</span>.
 
-![creating column]({{ '/img/layout/tutorials/joining_data/img1.png' | prepend: site.baseurl }})
+<p class="wrap-border"><img src="{{ '/img/layout/joining_data/img1.png' | prepend: site.baseurl }}" alt="creating column" /></p>
 
 In the options, add `big_rivers` as the column and select `Number` as the type. Finally, click 'Create column'.
 
@@ -357,12 +357,12 @@ SET big_rivers = (
 
 In the above query, we are running the `UPDATE` to our new column `big_rivers`, but running a nested query that selects the count of all rivers that intersect it. Like the above examples, we use an alias for the name of our world borders table name, `wb`. You can see that the alias is then used when we run the `ST_Intersects` function, indicating that for every row in the wb table, we count the rivers that intersect the country geometry. We can check now the column shows the number of rivers that each country intersects with:
 
-![number of rivers]({{ '/img/layout/tutorials/joining_data/img2.png' | prepend: site.baseurl }})
+<p class="wrap-border"><img src="{{ '/img/layout/joining_data/img2.png' | prepend: site.baseurl }}" alt="number of rivers" /></p>
 
 ### Mapping the results
 
 Now, go back to the <span class="ui_element" data-element="map_view">Map View</span> for your world borders table. Click the <span class="ui_element" data-element="style_option">Style option</span> on the right hand side of your map. In the sidebar that slides out, click the overview image of the <span class="ui_element" data-element="cloropeth">Choropleth map</span>. In the menu, for Column select `big_rivers` and customize the look & feel of the map.
 
-![cloropeth]({{ '/img/layout/tutorials/joining_data/img3.png' | prepend: site.baseurl }})
+<p class="wrap-border"><img src="{{ '/img/layout/joining_data/img3.png' | prepend: site.baseurl }}" alt="cloropeth" /></p>
 
 Now take a look at the map and you can see which countries the most rivers in our dataset pass through.
