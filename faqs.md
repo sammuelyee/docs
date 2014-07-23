@@ -10,7 +10,7 @@ js_assets:
 
 ### How to add my own images to infowindows?
 
-![How to add my own images to infowindows]({{ '/img/layout/faqs/image-infowindow.png' | prepend: site.baseurl }})
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/image-infowindow.png' | prepend: site.baseurl }}" alt="How to add my own images to infowindows" /></p>
 
 In order to use your own images for customizing your infowindows at CartoDB, go to the infowindow preferences menu and select "image header" in the Design option. Now you have to be sure you have a column in your dataset of type 'string' whose content must be the URL of the image you want to show in the header. Then, you have to place this column at first place in the infowindow preferences and, of course, you should also activate the specific column of the URL to be shown.
 
@@ -26,7 +26,7 @@ There is no direct way to get printed maps from CartoDB besides just grabbing a 
 
 ### How can I delete legends or combine them?
 
-![How can I delete legends]({{ '/img/layout/faqs/delete-legends.png' | prepend: site.baseurl }})
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/delete-legends.png' | prepend: site.baseurl }}" alt="How can I delete legends" /></p>
 
 You can just disable a legend from a layer by applying to it the "none" template. If you want to merge the legends, you will have to perform a "Custom legend". This option is available in the Template selector of the legends wizard.
 
@@ -40,7 +40,7 @@ You can just disable a legend from a layer by applying to it the "none" template
 
 After you have created, updated, or deleted data from your CartoDB tables, you may want to export them for sharing or use offline. We make that easy for you by providing one-click data export.
 
-![How can I export my data from CartoDB]({{ '/img/layout/faqs/export-data.png' | prepend: site.baseurl }})
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/export-data.png' | prepend: site.baseurl }}" alt="How can I export my data from CartoDB" /></p>
 
 1. From any table you have created, click **Options** in the upper right corner.
 2. Select **Export**  
@@ -84,7 +84,7 @@ Available values to use from the API:
 
 ### How can I have interactivity in a torque layer?
 
-![How can I have interactivity in a torque layer]({{ '/img/layout/faqs/torque-interactivity.png' | prepend: site.baseurl }})
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/torque-interactivity.png' | prepend: site.baseurl }}" alt="How can I have interactivity in a torque layer" /></p>
 
 For the moment, torque layers have no interactivity. The trick that you can do is to have two layers:
 
@@ -109,7 +109,7 @@ Each one of our plans include a free quota of geocodings, but extra charges will
 
 ### How do I embed a map in my site/blog?
 
-![How do I embed a map in my site/blog]({{ '/img/layout/faqs/share-site.png' | prepend: site.baseurl }})
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/share-site.png' | prepend: site.baseurl }}" alt="How do I embed a map in my site/blog" /></p>
 
 The easiest way is embedding a visualization by means of copying the HTML code that is provided in the "Share" option. 
 
@@ -145,7 +145,7 @@ UPDATE your_table SET the_geom = st_setsrid(ST_GeomFromGeoJSON(your_GeoJSON_colu
 
 ### Can I synchronize my tables in real time?
 
-![Can I synchronize my tables in real time]({{ '/img/layout/faqs/force-sync.png' | prepend: site.baseurl }})
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/force-sync.png' | prepend: site.baseurl }}" alt="Can I synchronize my tables in real time" /></p>
 
 By using the feature of sync tables, the shortest automatic syncing interval is 1 hour, but you can force manually a synchronization each 15 minutes.
 
@@ -174,7 +174,7 @@ Unfortunately, CartoDB doesn't allow reading data from a SQL connection in real 
 
 ### How do I perform a map with information that changes in time?
 
-![Torque]({{ '/img/layout/faqs/torque.png' | prepend: site.baseurl }})
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/torque.png' | prepend: site.baseurl }}" alt="Torque" /></p>
 
 If you have a table that contains a column which describes the date when an event occured, you can map this dinamically by using the Torque option that appears in the wizard of the visualization. Just make sure that in the configuration of the Torque map you select the correct column with respect to which you want the map to be changing over time.
 
@@ -290,7 +290,7 @@ In order to unlink your Google Drive account from the importing tool of CartoDB,
 
 ### What does the "Removable brand" feature mean?
 
-![What does the "Removable brand" feature mean]({{ '/img/layout/faqs/share-logo.png' | prepend: site.baseurl }})
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/share-logo.png' | prepend: site.baseurl }}" alt="What does the "Removable brand" /></p>
 
 From the Coronelli plan you will be able to remove CartoDB logo and the "Create your own custom maps with CartoDB" text will not appear below your embedded visualizations if you don't want to. For removing the logo, just deselect the option "Logo" in the sharing wizard. Take into account that this option will be only available if your current plan includes the "Removable brand" feature.
 
