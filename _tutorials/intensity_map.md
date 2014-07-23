@@ -17,13 +17,13 @@ We are going to use data from 2007-2009 bicycle crash reports in Chicago. This i
 
 Start by uploading the data to your CartoDB account. After it has uploaded you should have a table called, `crashes_2007_2009`. Click the <span class="ui_element" data-element="table_name">table name</span> and change it to `crashes_2007_2009_intensity`.
 
-![Basic map]({{ '/img/layout/tutorials/intensity_map/img1.png' | prepend: site.baseurl }})
+<p class="wrap-border"><img src="{{ '/img/layout/intensity_map/img1.png' | prepend: site.baseurl }}" alt="Basic map" /></p>
 
 ## Changing your baselayer
 
 For this map we are going to want a darker basemap. We will just use one of the existing basemaps: the dark map from Google Maps. To change the basemap of your current map just open the <span class="ui_element" data-element="map_view">Map View</span>, then click the <span class="ui_element" data-element="change_baselayer">Baselayer Selector</span> and select `GMaps Dark`.
 
-![Dark baselayer]({{ '/img/layout/tutorials/intensity_map/img2.png' | prepend: site.baseurl }})
+<p class="wrap-border"><img src="{{ '/img/layout/intensity_map/img2.png' | prepend: site.baseurl }}" alt="Dark baselayer" /></p>
 
 ## Styling the data
 
@@ -63,7 +63,7 @@ We are now going to change our style to this:
 
 Hit <span class="ui_element" data-element="apply_style">Apply style</span>. We've done a few things here. First, we changed our color to a green color. Second, we increased the size and decreased the opacity of the marker. We also removed the border line.
 
-![First styling]({{ '/img/layout/tutorials/intensity_map/img3.png' | prepend: site.baseurl }})
+<p class="wrap-border"><img src="{{ '/img/layout/intensity_map/img3.png' | prepend: site.baseurl }}" alt="First styling" /></p>
 
 ### Multiple styles
 
@@ -165,4 +165,4 @@ Hit <span class="ui_element" data-element="apply_style">Apply style</span>. Grea
 
 Hit <span class="ui_element" data-element="apply_style">Apply style</span>. Great! you should now be seeing an interesting intensity cloud in your map!
 
-![Final styling]({{ '/img/layout/tutorials/intensity_map/img4.png' | prepend: site.baseurl }})
+<p class="wrap-border"><img src="{{ '/img/layout/intensity_map/img4.png' | prepend: site.baseurl }}" alt="Final styling" /></p>
