@@ -8,6 +8,21 @@
   background: image-url("icons/up.png") no-repeat;
 }
 
+.wrap-border {
+  display: inline-block;
+
+  &:after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 11;
+    width: 100%;
+    @include box-shadow(0 0 0 1px rgba(#000, .2) inset);
+    @include border-radius(4px);
+  }
+}
 
 /* =Header
 ----------------------------------------------- */
