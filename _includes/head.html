@@ -1,7 +1,11 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>{% if page.title_meta %}{{ page.title_meta }} — {% elsif page.title %}{{ page.title }} — {% endif %}{{ site.title }}</title>
+  {% if page.layout == 'tutorials_item' %}
+    <title>{% if page.title_meta %}{{ page.title_meta }} — {% elsif page.title %}{{ page.title }} — {% endif %}Tutorials — {{ site.title }}</title>
+  {% else %}
+    <title>{% if page.title_meta %}{{ page.title_meta }} — {% elsif page.title %}{{ page.title }} — {% endif %}{{ site.title }}</title>
+  {% endif %}
   <meta name="description" content="{% if page.description_meta %}{{ page.description_meta }}{% elsif page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="keywords" content="{% if page.keywords %}{{ page.keywords }}{% else %}{{ site.keywords }}{% endif %}">
