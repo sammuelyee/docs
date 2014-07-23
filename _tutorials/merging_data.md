@@ -52,7 +52,7 @@ The `SUM` method works a bit different. With `SUM` you will select a single colu
 
 The `AVG` method works very similar to `SUM`, but instead measures the average value in the column from the second table.
 
-![spatial join]({{ '/img/layout/tutorials/merging_data/img1.png' | prepend: site.baseurl }})
+<p class="wrap-border"><img src="{{ '/img/layout/merging_data/img1.png' | prepend: site.baseurl }}" alt="spatial join" /></p>
 
 Go ahead and select `SUM`. You'll see that your list of columns changed to now only let you select numerical columns, that is fine. Select the radio for `pop_max` in the list of `populated_places` columns.
 
@@ -61,4 +61,4 @@ Finally, press <span class="ui_element" data-element="merge_tables">Merge tables
 
 Congratulations, you successfully merged tables in CartoDB. For fun, go ahead and try mapping the values, try creating a choropleth from the <span class="code_variable">intersect_sum</span> column with the <span class="ui_element" data-element="style_option">Style option</span> on the right hand side and customize the look & feel of the map.
 
-![cloropeth]({{ '/img/layout/tutorials/merging_data/img2.png' | prepend: site.baseurl }})
+<p class="wrap-border"><img src="{{ '/img/layout/merging_data/img2.png' | prepend: site.baseurl }}" alt="cloropeth" /></p>

@@ -64,7 +64,7 @@ Head back to your <span class="ui_element" data-element="map_view">Map View</spa
 - Change the opacity (the decimal number to the right of the color) to be 1, fully opaque.
 - Changed the bubble stroke to 0.
 
-![cholera]({{ '/img/layout/tutorials/conditional_styling/img1.png' | prepend: site.baseurl }})
+<p class="wrap-border"><img src="{{ '/img/layout/conditional_styling/img1.png' | prepend: site.baseurl }}" alt="cholera" /></p>
 
 Cool, now we have the intensity of the outbreak mapped. What John Snow did that was so critical to this story, was he mapped the location of water pump stations as well. This gave him the ability to quickly identify a shared source and make the hypothesis that a pump was the source of the outbreak.
 
@@ -105,7 +105,7 @@ Scroll all the way to the bottom of the existing CartoCSS style. At the end, you
 
 What this does is, if the layer column (the one we created in the SQL statement above) contains the value `pump`, we are going to style it differently. After adding that to the very end of your CartoCSS style, hit <span class="ui_element" data-element="apply_style">Apply Style</span> and take a look!
 
-![cholera & pumps]({{ '/img/layout/tutorials/conditional_styling/img2.png' | prepend: site.baseurl }})
+<p class="wrap-border"><img src="{{ '/img/layout/conditional_styling/img2.png' | prepend: site.baseurl }}" alt="cholera & pumps" /></p>
 
 ## Sharing your map
 

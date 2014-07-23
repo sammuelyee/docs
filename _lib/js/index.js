@@ -26,9 +26,6 @@ docs.Views.Index = Backbone.View.extend({
       .on('resize', function() {
         that._onScroll();
       })
-      .on('load', function() {
-        that._buildImgWrappers();
-      });
 
     this.$el.find('.anchor').on('click', function(e) {
       e.preventDefault();
@@ -93,12 +90,6 @@ docs.Views.Index = Backbone.View.extend({
       if (id) {
         return $el.append($("<a />").addClass("anchor header-link").attr("href", "#" + id).html(icon));
       }
-    });
-  },
-
-  _buildImgWrappers: function() {
-    this.$content.find("img").each(function(i, el) {
-      return $(el).after('<div class="wrap" style="height: '+$(this).height()+'px"></div>');
     });
   },
 
