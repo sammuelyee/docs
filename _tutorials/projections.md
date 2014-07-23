@@ -85,7 +85,7 @@ FROM ne_10m_populated_p
 
 After you run the query, click on one of the points and you should see an infowindow that contains the name of the populated place plus a name.
 
-![grid]({{ '/img/layout/tutorials/projections/img1.png' | prepend: site.baseurl }})
+<p class="wrap-border"><img src="{{ '/img/layout/projections/img1.png' | prepend: site.baseurl }}" alt="grid" /></p>
 
 ## Writing the_geom updates
 Just to show you how this comes together if you are updating the table, let's try an update.
