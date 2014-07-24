@@ -23,7 +23,8 @@ a {
 }
 
 strong {
-  font-weight: bold;
+  font-weight: 700;
+  font-family: "Proxima Nova Bd";
 }
 
 em {
@@ -42,11 +43,11 @@ img { display: block; padding: 0; margin: 0; -ms-interpolation-mode: bicubic; }
 }
 
 .content {
-  overflow: hidden;
   background: #fff;
 }
 
 .section {
+  @extend %clearfix;
   padding: 60px 0;
 
   &.dark-section {
