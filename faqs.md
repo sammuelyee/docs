@@ -121,7 +121,9 @@ You have to differentiate between the authoring tool which is the place where yo
 
 ### Which databases are supported by CartoDB?
 
-CartoDB only supports PostgreSQL databases due to making heavy use of PostGIS advanced capabilities, so we don't support MongoDB.
+One of the main components of CartoDB is its geospatial database built on PostgreSQL and PostGIS. This means that by default, the CartoDB platform works over PostgreSQL due to making heavy use of PostGIS advanced capabilities. This way, if the CartoDB built-in features are not enough to perform your analysis, you can take advantage of the full power of PostGIS.
+
+We offer the option of connecting your own database to CartoDB as part of our Enterprise features in order to adapt the platform to your specific needs. If you are interested, let us know at sales@cartodb.com.
 
 ### Can I calculate from/to routes with CartoDB?
 
