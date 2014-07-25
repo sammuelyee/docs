@@ -17,17 +17,17 @@ We are going to use data from 2007-2009 bicycle crash reports in Chicago. This i
 
 Start by uploading the data to your CartoDB account. After it has uploaded you should have a table called, `crashes_2007_2009`. Click the <span class="ui_element" data-element="table_name">table name</span> and change it to `crashes_2007_2009_intensity`.
 
-<p class="wrap-border"><img src="{{ '/img/layout/intensity_map/img1.png' | prepend: site.baseurl }}" alt="Basic map" /></p>
+<p class="wrap-border"><img src="{{ '/img/layout/tutorials/intensity_map/img1.png' | prepend: site.baseurl }}" alt="Basic map" /></p>
 
 ## Changing your baselayer
 
 For this map we are going to want a darker basemap. We will just use one of the existing basemaps: the dark map from Google Maps. To change the basemap of your current map just open the <span class="ui_element" data-element="map_view">Map View</span>, then click the <span class="ui_element" data-element="change_baselayer">Baselayer Selector</span> and select `GMaps Dark`.
 
-<p class="wrap-border"><img src="{{ '/img/layout/intensity_map/img2.png' | prepend: site.baseurl }}" alt="Dark baselayer" /></p>
+<p class="wrap-border"><img src="{{ '/img/layout/tutorials/intensity_map/img2.png' | prepend: site.baseurl }}" alt="Dark baselayer" /></p>
 
 ## Styling the data
 
-If you take a look at the map now you should just see a big cloud of points over the Chicago streets. Each point represents a cycling accident over the 2 year span starting in 2007. 
+If you take a look at the map now you should just see a big cloud of points over the Chicago streets. Each point represents a cycling accident over the 2 year span starting in 2007.
 
 What we want instead is to show some representation of intensity. Click the <span class="ui_element" data-element="style_option">Style option</span> on the right of the map. Here you can see some preset style methods, we are going to make something of our own. To do this open the <span class="ui_element" data-element="carto_tab">CartoCSS option</span>. The default style that you see on the map is the one you see written here:
 
@@ -63,7 +63,7 @@ We are now going to change our style to this:
 
 Hit <span class="ui_element" data-element="apply_style">Apply style</span>. We've done a few things here. First, we changed our color to a green color. Second, we increased the size and decreased the opacity of the marker. We also removed the border line.
 
-<p class="wrap-border"><img src="{{ '/img/layout/intensity_map/img3.png' | prepend: site.baseurl }}" alt="First styling" /></p>
+<p class="wrap-border"><img src="{{ '/img/layout/tutorials/intensity_map/img3.png' | prepend: site.baseurl }}" alt="First styling" /></p>
 
 ### Multiple styles
 
@@ -129,7 +129,7 @@ This is a very useful way for applying multiple styles for the same features. Ho
   second/marker-line-width: 0;
   second/marker-placement: point;
   second/marker-allow-overlap: true;
-  second/marker-comp-op: lighten ; 
+  second/marker-comp-op: lighten ;
 }
 {% endhighlight %}
 
@@ -151,7 +151,7 @@ Hit <span class="ui_element" data-element="apply_style">Apply style</span>. Grea
   second/marker-line-width: 0;
   second/marker-placement: point;
   second/marker-allow-overlap: true;
-  second/marker-comp-op: lighten ; 
+  second/marker-comp-op: lighten ;
 
   third/marker-fill: #00ff00;
   third/marker-opacity: 0.04;
@@ -159,10 +159,10 @@ Hit <span class="ui_element" data-element="apply_style">Apply style</span>. Grea
   third/marker-line-width: 0;
   third/marker-placement: point;
   third/marker-allow-overlap: true;
-  third/marker-comp-op: lighten ; 
+  third/marker-comp-op: lighten ;
 }
 {% endhighlight %}
 
 Hit <span class="ui_element" data-element="apply_style">Apply style</span>. Great! you should now be seeing an interesting intensity cloud in your map!
 
-<p class="wrap-border"><img src="{{ '/img/layout/intensity_map/img4.png' | prepend: site.baseurl }}" alt="Final styling" /></p>
+<p class="wrap-border"><img src="{{ '/img/layout/tutorials/intensity_map/img4.png' | prepend: site.baseurl }}" alt="Final styling" /></p>

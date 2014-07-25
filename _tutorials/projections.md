@@ -52,7 +52,7 @@ One way to perform a query on `the_geom` and get a `the_geom_webmercator` as a r
 
 {% highlight sql %}
 SELECT ST_Transform(the_geom, 3857)
-AS the_geom_webmercator 
+AS the_geom_webmercator
 FROM ne_10m_populated_p
 {% endhighlight %}
 
@@ -63,7 +63,7 @@ After you click <span class="ui_element" data-element="apply_query">Apply query<
 We can use a whole host of cool functions and even your own custom operations on `the_geom` in combination with `ST_Transform` so we can see results at the end. For example, try this:
 
 {% highlight sql %}
-SELECT ST_Transform(ST_SnapToGrid(the_geom, 4, 4), 3857) 
+SELECT ST_Transform(ST_SnapToGrid(the_geom, 4, 4), 3857)
 AS the_geom_webmercator
 FROM ne_10m_populated_p
 {% endhighlight %}
@@ -78,14 +78,14 @@ The trick here is simple, ensure that the result from your query contains `carto
 SELECT
   cartodb_id,
   name,
-  ST_Transform(ST_SnapToGrid(the_geom, 4, 4), 3857) 
+  ST_Transform(ST_SnapToGrid(the_geom, 4, 4), 3857)
 AS the_geom_webmercator
 FROM ne_10m_populated_p
 {% endhighlight %}
 
 After you run the query, click on one of the points and you should see an infowindow that contains the name of the populated place plus a name.
 
-<p class="wrap-border"><img src="{{ '/img/layout/projections/img1.png' | prepend: site.baseurl }}" alt="grid" /></p>
+<p class="wrap-border"><img src="{{ '/img/layout/tutorials/projections/img1.png' | prepend: site.baseurl }}" alt="grid" /></p>
 
 ## Writing the_geom updates
 Just to show you how this comes together if you are updating the table, let's try an update.

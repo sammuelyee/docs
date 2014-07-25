@@ -33,7 +33,7 @@ Now, our Javascript code within `tutorial-1.html` should look like this:
 var map;
 function init(){
   // initiate leaflet map
-  map = new L.Map('cartodb-map', { 
+  map = new L.Map('cartodb-map', {
     center: [0,0],
     zoom: 2
   })
@@ -59,7 +59,7 @@ Go ahead and add this below the line where you create the `layerUrl` variable. S
 var map;
 function init(){
   // initiate leaflet map
-  map = new L.Map('cartodb-map', { 
+  map = new L.Map('cartodb-map', {
     center: [0,0],
     zoom: 2
   })
@@ -78,7 +78,7 @@ function init(){
 
 Save your `tutorial-1.html` file. Open it, or refresh it in your browser. You should be greeted by a great big green go light!
 
-<p class="wrap-border"><img src="{{ '/img/layout/create_map_cartodbjs/img1.png' | prepend: site.baseurl }}" alt="First map" /></p>
+<p class="wrap-border"><img src="{{ '/img/layout/tutorials/create_map_cartodbjs/img1.png' | prepend: site.baseurl }}" alt="First map" /></p>
 
 ## Using your own layer
 
@@ -94,7 +94,7 @@ From your new table, click the orange <span class="ui_element" data-element="vis
 
 Head back over to your code editor and replace `layerUrl` value with your new link. Save your changes and refresh the `tutorial-1.html` page in your browser. You should see all markers from your populated places table in your own map:
 
-<p class="wrap-border"><img src="{{ '/img/layout/create_map_cartodbjs/img2.png' | prepend: site.baseurl }}" alt="Populated places map" /></p>
+<p class="wrap-border"><img src="{{ '/img/layout/tutorials/create_map_cartodbjs/img2.png' | prepend: site.baseurl }}" alt="Populated places map" /></p>
 
 ## Adding client side SQL and CartoCSS
 
@@ -130,7 +130,7 @@ to now look like:
 
 Save your `tutorial-1.html` file and refresh your browser. Your map should now only show populated places in the United States.
 
-<p class="wrap-border"><img src="{{ '/img/layout/create_map_cartodbjs/img3.png' | prepend: site.baseurl }}" alt="USA map" /></p>
+<p class="wrap-border"><img src="{{ '/img/layout/tutorials/create_map_cartodbjs/img3.png' | prepend: site.baseurl }}" alt="USA map" /></p>
 
 ### CartoCSS
 
@@ -145,7 +145,7 @@ var subLayerOptions = {
 
 Here, we are just going to set the markers to generic red color. Save your `template-1.html` and reload it in the browser.
 
-<p class="wrap-border"><img src="{{ '/img/layout/create_map_cartodbjs/img4.png' | prepend: site.baseurl }}" alt="USA map styled" /></p>
+<p class="wrap-border"><img src="{{ '/img/layout/tutorials/create_map_cartodbjs/img4.png' | prepend: site.baseurl }}" alt="USA map styled" /></p>
 
 ## Adding a baselayer
 
@@ -157,7 +157,7 @@ L.tileLayer('https://dnv9my2eseobd.cloudfront.net/v3/cartodb.map-4xtxp73f/{z}/{x
 }).addTo(map);
 {% endhighlight %}
 
-<p class="wrap-border"><img src="{{ '/img/layout/create_map_cartodbjs/img5.png' | prepend: site.baseurl }}" alt="USA map styled with baselayer" /></p>
+<p class="wrap-border"><img src="{{ '/img/layout/tutorials/create_map_cartodbjs/img5.png' | prepend: site.baseurl }}" alt="USA map styled with baselayer" /></p>
 
 Save your file. Now when you refresh your map, you should see Mapbox's street map rendered beneith your data.
 

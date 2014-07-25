@@ -34,7 +34,7 @@ GPX files are a bit different than say, a CSV file, in CartoDB as importing GPXs
 
 Take a look at the <span class="ui_element" data-element="map_view">Map View</span>, zooming in to see some of the individual points. You can now see how the GPX data is in fact points, and not long lines. We'll actually use the points to create lines later in the tutorial.
 
-<p class="wrap-border"><img src="{{ '/img/layout/gps_track/img1.png' | prepend: site.baseurl }}" alt="Tracks as points" /></p>
+<p class="wrap-border"><img src="{{ '/img/layout/tutorials/gps_track/img1.png' | prepend: site.baseurl }}" alt="Tracks as points" /></p>
 
 If you switch back to the <span class="ui_element" data-element="table_view">Table View</span> you can poke around at some of the columns contained in the data. You'll notice that not many of them have data for this table. A couple that we are interested in are, `track_fid` and `track_se_1`. The column `track_fid` is how we can identify which linestring a point belongs to, while `track_se_1` tells us how to order the points within a line.
 
@@ -86,7 +86,7 @@ GROUP BY track_fid
 
 After you run this query click <span class="ui_element" data-element="options_menu">Options</span> and then <span class="ui_element" data-element="table_from_query">Table from query</span>. In the next window call your new table `kachemakbaysp_track_lines`. After that, take a look at the <span class="ui_element" data-element="map_view">Map View</span>, zoom in enough to see your data, and you should see that we have lines now! Congratulations! The table you just created is the same as another file created at GPX upload time, which stores the lines of each track. Still, it was a good exercise to learn how to do it on your own.
 
-<p class="wrap-border"><img src="{{ '/img/layout/gps_track/img2.png' | prepend: site.baseurl }}" alt="Tracks" /></p>
+<p class="wrap-border"><img src="{{ '/img/layout/tutorials/gps_track/img2.png' | prepend: site.baseurl }}" alt="Tracks" /></p>
 
 ### Bonus
 
@@ -102,11 +102,11 @@ WHERE 1000 &lt; ST_NPoints(the_geom)
 
 Let's start by styling the lines we just created. First, open the <span class="ui_element" data-element="style_option">Style option</span> on the right menu of the <span class="ui_element" data-element="map_view">Map view</span>. Scroll through the options until you see Line Stroke, set its value to 1 and then make the line color green.
 
-<p class="wrap-border"><img src="{{ '/img/layout/gps_track/img3.png' | prepend: site.baseurl }}" alt="Styling tracks" /></p>
+<p class="wrap-border"><img src="{{ '/img/layout/tutorials/gps_track/img3.png' | prepend: site.baseurl }}" alt="Styling tracks" /></p>
 
 Alternatively, you can scroll through the options of preset styles and find the one for <span class="ui_element" data-element="lines_cloropeth">Choropleth</span>. A choropleth will color your features by binning them by the value of some column. Here, if you create a choropleth for 7 bins on the `track_fid` column, you get some nice separation in individual trails! Great stuff! I used the red tone color ramp for my choropleth.
 
-<p class="wrap-border"><img src="{{ '/img/layout/gps_track/img4.png' | prepend: site.baseurl }}" alt="Color ramp" /></p>
+<p class="wrap-border"><img src="{{ '/img/layout/tutorials/gps_track/img4.png' | prepend: site.baseurl }}" alt="Color ramp" /></p>
 
 ## Joining two tables
 
@@ -154,7 +154,7 @@ Well, the data came back without errors, but our map hasn't changed. That is bec
 
 Now you should have this statement plus all the other lines that were there already. Click <span class="ui_element" data-element="apply_style">Apply style</span> and take a look at the map.
 
-<p class="wrap-border"><img src="{{ '/img/layout/gps_track/img5.png' | prepend: site.baseurl }}" alt="Line plus points" /></p>
+<p class="wrap-border"><img src="{{ '/img/layout/tutorials/gps_track/img5.png' | prepend: site.baseurl }}" alt="Line plus points" /></p>
 
 The first thing you'll notice is that all your lines turned black! Well... they didn't, what is happening is that we just have too many points so they are cluttering things up. Let's change our SQL to fix that.
 
@@ -230,8 +230,8 @@ Our SQL says, that for every row returned in the first statment, add a column ca
 
 Now you will notice that there are waypoints along the trails. There are also nice big green waypoints at the beginning of each trail.
 
-<p class="wrap-border"><img src="{{ '/img/layout/gps_track/img6.png' | prepend: site.baseurl }}" alt="Final map" /></p>
+<p class="wrap-border"><img src="{{ '/img/layout/tutorials/gps_track/img6.png' | prepend: site.baseurl }}" alt="Final map" /></p>
 
 Be sure to make both `kachemakbaysp_track_points` and `kachemakbaysp_track_lines` public and then click Make viz public and share to publish your map.
 
-<p class="wrap-border"><img src="{{ '/img/layout/gps_track/img7.png' | prepend: site.baseurl }}" alt="Share" /></p>
+<p class="wrap-border"><img src="{{ '/img/layout/tutorials/gps_track/img7.png' | prepend: site.baseurl }}" alt="Share" /></p>

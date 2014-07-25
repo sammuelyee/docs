@@ -78,8 +78,8 @@ This is the type of join you perform when you have a value in two tables (say co
 The above tables give a good example when you will want to use this method. Say you have some nice polygons for your world borders stored in `table_1`, but you have a CSV with a value you need for your map and you've uploaded it seperately to `table_2`. Here is the join command you would run:
 
 {% highlight sql %}
-SELECT table_1.the_geom,table_1.iso_code,table_2.population 
-FROM table_1, table_2 
+SELECT table_1.the_geom,table_1.iso_code,table_2.population
+FROM table_1, table_2
 WHERE table_1.iso_code = table_2.iso
 {% endhighlight %}
 
@@ -91,8 +91,8 @@ Next, check in `table_2` and be sure that under the population column, the type 
 
 {% highlight sql %}
 UPDATE table_1
-SET population = table_2.population 
-FROM table_2 
+SET population = table_2.population
+FROM table_2
 WHERE table_1.iso_code = table_2.iso
 {% endhighlight %}
 
@@ -192,7 +192,7 @@ SELECT
   table_1.the_geom,
   table_1.iso_code,
   SUM(table_2.total) as total
-FROM table_1, table_2 
+FROM table_1, table_2
 WHERE table_1.iso_code = table_2.iso
 GROUP BY table_1.iso_code, table_2.iso
 {% endhighlight %}
@@ -275,8 +275,8 @@ One of the most exciting joins is done by using geospatial intersections. If you
 Let's say we just want to know the total number of points from `table_2` that fall in `table_1`. Easy, let's see the SQL:
 
 {% highlight sql %}
-SELECT table_1.the_geom,table_1.iso_code,COUNT(*) as count 
-FROM table_1, table_2 
+SELECT table_1.the_geom,table_1.iso_code,COUNT(*) as count
+FROM table_1, table_2
 WHERE ST_Intersects(table_1.the_geom, table_2.the_geom)
 GROUP BY table_1.the_geom, table_1.iso_code
 {% endhighlight %}
@@ -299,13 +299,13 @@ Nifty, right? You can now use this in combination with `SUM`, `AVG`, `MAX` and a
 Just a note about doing the above for a map you build on Leaflet or Google Maps. You may not always want to write the result into `table_1`, instead, you may want to query data live from the browser based on something the user is doing. In those cases, use the `SELECT` statements. If you are rendering a map with the results, you just need to remember to include `the_geom_webmercator` is all! It is our hidden reprojection of `the_geom` that makes the final map speedy. Here is the above query modified to include it:
 
 {% highlight sql %}
-SELECT 
+SELECT
   table_1.the_geom,
   table_1.iso_code,
   COUNT(*) as count,
   table_1.the_geom_webmercator
-FROM table_1, table_2 
-WHERE ST_Intersects(table_1.the_geom, table_2.the_geom) 
+FROM table_1, table_2
+WHERE ST_Intersects(table_1.the_geom, table_2.the_geom)
 GROUP BY table_1.the_geom, table_1.iso_code
 {% endhighlight %}
 
@@ -319,7 +319,7 @@ Next, go back to your Dashboard by clicking the <span class="ui_element" data-el
 
 From inside your country borders table create a new column to hold some numerical data. In the  <span class="ui_element" data-element="table_view">Table view</span>, click the drop down arrow beside any regular column name and then click  <span class="ui_element" data-element="add_column">Add new column</span>.
 
-<p class="wrap-border"><img src="{{ '/img/layout/joining_data/img1.png' | prepend: site.baseurl }}" alt="creating column" /></p>
+<p class="wrap-border"><img src="{{ '/img/layout/tutorials/joining_data/img1.png' | prepend: site.baseurl }}" alt="creating column" /></p>
 
 In the options, add `big_rivers` as the column and select `Number` as the type. Finally, click 'Create column'.
 
@@ -350,19 +350,19 @@ SET big_rivers = (
   SELECT COUNT(table_50m_rivers_lake_cen.cartodb_id)
   FROM table_50m_rivers_lake_cen
   WHERE ST_Intersects(
-    wb.the_geom, 
+    wb.the_geom,
     table_50m_rivers_lake_cen.the_geom
   ))
 {% endhighlight %}
 
 In the above query, we are running the `UPDATE` to our new column `big_rivers`, but running a nested query that selects the count of all rivers that intersect it. Like the above examples, we use an alias for the name of our world borders table name, `wb`. You can see that the alias is then used when we run the `ST_Intersects` function, indicating that for every row in the wb table, we count the rivers that intersect the country geometry. We can check now the column shows the number of rivers that each country intersects with:
 
-<p class="wrap-border"><img src="{{ '/img/layout/joining_data/img2.png' | prepend: site.baseurl }}" alt="number of rivers" /></p>
+<p class="wrap-border"><img src="{{ '/img/layout/tutorials/joining_data/img2.png' | prepend: site.baseurl }}" alt="number of rivers" /></p>
 
 ### Mapping the results
 
 Now, go back to the <span class="ui_element" data-element="map_view">Map View</span> for your world borders table. Click the <span class="ui_element" data-element="style_option">Style option</span> on the right hand side of your map. In the sidebar that slides out, click the overview image of the <span class="ui_element" data-element="cloropeth">Choropleth map</span>. In the menu, for Column select `big_rivers` and customize the look & feel of the map.
 
-<p class="wrap-border"><img src="{{ '/img/layout/joining_data/img3.png' | prepend: site.baseurl }}" alt="cloropeth" /></p>
+<p class="wrap-border"><img src="{{ '/img/layout/tutorials/joining_data/img3.png' | prepend: site.baseurl }}" alt="cloropeth" /></p>
 
 Now take a look at the map and you can see which countries the most rivers in our dataset pass through.
