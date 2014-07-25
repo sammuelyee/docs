@@ -270,7 +270,7 @@ Just go to the CartoCSS tag and look for this line:
 
 In order to create your own filter for interacting with your visualizations you would need to use our cartoDB.js API.
 
-You can find an example [here](http://cartodb.github.io/cartodb.js/examples/filters-template/) ([source code](http://cartodb.github.io/cartodb.js/examples/filters-template/))
+You can find an example [here](http://cartodb.github.io/cartodb.js/examples/filters-template/) ([source code](https://github.com/CartoDB/cartodb.js/tree/develop/examples/filters-template))
 
 ### How can I set the position of an embedded visualization?
 
