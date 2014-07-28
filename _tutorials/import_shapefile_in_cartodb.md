@@ -1,13 +1,10 @@
 ---
 layout: tutorials_item
 title: 'How to Import a Shapefile in CartoDB'
-short_description: ''Add polygons to your maps with shapefiles.
-level: Basic
-time_needed: ''10 minutes
-embed_url: ''http://docs.cartodb.com/tutorials/adding_geometries.html
+short_description: 'Add polygons to your maps with shapefiles.'
+level: basic
+time_needed: '10 minutes'
 ---
-
-## Summary
 
 The CartoDB platform is designed for maps of all shapes and sizes. While we appreciate linearity, we understand that many visualizations tell stories that don't follow a straight path. The following tutorial will explain how to introduce complex shapes into your projects with shapefiles.
 
