@@ -1,0 +1,5 @@
+{% if page.url == '/tutorials.html' %}
+  <a href="#{{ tutorials_item.title | downcase | replace: ' ', '-' | replace: ',', '' | replace: '.', '' }}" class="anchor">{{ tutorials_item.title }}</a>
+{% else %}
+  <a href="{{ tutorials_item.url }}">{{ tutorials_item.title }}</a>
+{% endif %}

@@ -26,21 +26,6 @@ docs.Views.Index = Backbone.View.extend({
       .on('resize', function() {
         that._onScroll();
       })
-
-    this.$el.find('.anchor').on('click', function(e) {
-      e.preventDefault();
-
-      var href = this.href,
-          id_ = href.split('#')[1];
-
-      that._goTo($('[id="' + id_ + '"]'), {}, function() {
-        if (history.pushState) {
-          history.pushState(null, null, href);
-        } else {
-          window.location.hash = href;
-        }
-      });
-    });
   },
 
   _onResize: function() {
@@ -77,26 +62,8 @@ docs.Views.Index = Backbone.View.extend({
     }).data().jsp;
   },
 
-  _buildAnchors: function() {
-    // http://ben.balter.com/2014/03/13/pages-anchor-links/
-
-    this.$content.find("h2, h3, h4, h5").each(function(i, el) {
-      var $el, icon, id;
-
-      $el = $(el);
-      icon = '<i></i>';
-      id = $el.attr('id');
-
-      if (id) {
-        return $el.append($("<a />").addClass("anchor header-link").attr("href", "#" + id).html(icon));
-      }
-    });
-  },
-
   _initViews: function() {
     this._onResize();
-
-    this._buildAnchors();
 
     this.api = this.$aside.find('.aside-fixed').jScrollPane({
       contentWidth: '0px'
@@ -109,20 +76,6 @@ docs.Views.Index = Backbone.View.extend({
     e.preventDefault();
 
     $('html, body').animate({scrollTop: 0}, 150);
-  },
-
-  _goTo: function($el, opt, callback) {
-    if ($el) {
-      var speed  = (opt && opt.speed)  || 150;
-      var delay  = (opt && opt.delay)  || 0;
-      var margin = (opt && opt.margin) || 0;
-
-      $('html, body').delay(delay).animate({scrollTop:$el.offset().top - margin}, speed);
-
-      setTimeout(function() {
-        callback && callback();
-      }, delay);
-    }
   }
 });
 
