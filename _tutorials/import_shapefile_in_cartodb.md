@@ -1,11 +1,10 @@
 ---
 layout: tutorials_item
 title: 'How to Import a Shapefile in CartoDB'
-short_description: ''
-level: 
-time_needed: ''
-embed_url: ''
-cartodbjs: 
+short_description: ''Add polygons to your maps with shapefiles.
+level: Basic
+time_needed: ''10 minutes
+embed_url: ''http://docs.cartodb.com/tutorials/adding_geometries.html
 ---
 
 ## Summary
