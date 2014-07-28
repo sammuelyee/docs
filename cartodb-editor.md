@@ -121,7 +121,7 @@ Take into account that different privacy options will appear depending on the cu
 
 ### Viewing tables
 
-Once you've clicked on a table, there are two ways for you two view your table's data: Table and Map View. You may toggle between the two views on the top left under the table name.
+Once you've clicked on a table, there are two ways for you two view your table's data: Table and Visualization. You may toggle between the two views on the top left under the table name.
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/switch.png' | prepend: site.baseurl }}" alt="Viewing tables" /></p>
 
@@ -129,11 +129,11 @@ Once you've clicked on a table, there are two ways for you two view your table's
 
 Table view allows you to inspect, filter, and query your data and see the results in a spread sheet format. The pull out pane on the right of the screen allows you to write SQL queries, apply basic filters, merge two uploaded tables, and add rows and columns.
 
-#### Map view
+#### Visualization
 
-The map view allows you to inspect your data as a layer over a base map. You may apply SQL queries or filters on the view, style the data's symbology using our wizards or by writing your own CartoCSS, and create infowindows.
+The Visualization view allows you to inspect your data as a layer over a base map. You may apply SQL queries or filters on the view, style the data's symbology using our wizards or by writing your own CartoCSS, and create infowindows.
 
-Even though in the Map View you may style and filter your data **but** the Map View is not the same as a shareable visualization. In order to create a visualization, click "Visualize" in the top right corner. Keep on reading to learn what you may do from there!
+Even though in the Visualization view you may style and filter your data **but** this view is not the same as a shareable visualization. In order to create a visualization, click "Visualize" in the top right corner. Keep on reading to learn what you may do from there!
 
 ## Visualizations
 
@@ -155,7 +155,7 @@ This way, you can create visualizations from private tables and make them public
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/vizheader.png' | prepend: site.baseurl }}" alt="Visualization" /></p>
 
-For each visualization you may edit the name, add a description, and add tags to keep them organized and discoverable. You may use the description section to talk about your data sources, or to clarify the content and purpose of your map. Use tags to unite projects or themes.
+For each visualization you may edit the name, add a description, source, license, and add tags to keep them organized and discoverable. You may use the description section to talk about your data sources, or to clarify the content and purpose of your map. Use tags to unite projects or themes.
 
 ### Visualization privacy options
 
@@ -185,7 +185,7 @@ A basemap is a graphical representation of the world showing natural and cultura
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/basemapselect.png' | prepend: site.baseurl }}" alt="Select a basemap" /></p>
 
-When you first create a visualization, it will be given a default "Nokia Day" basemap. To change your basemap simply click on "Basemap" in the upper left of the Map View and select an available style from the dropdown. You may add your own custom basemap in the "Add yours" option and then by linking to the URL for that basemap from MapBox, XYZ, or WMS. Finally, there are options for adding a solid color or a repeating image pattern instead of a basemap. All of these features give you a high level of customization when creating a map visualization.
+When you first create a visualization, it will be given a default “Nokia Day” basemap. To change your basemap simply click on “Nokia Day” below left of the Visualization view and select an available style. You may add your own custom basemap in the “yours” option and then by linking to the URL for that basemap from MapBox, XYZ, or WMS. Finally, there are options for adding a solid color or a repeating image pattern instead of a basemap. All of these features give you a high level of customization when creating a map visualization.
 
 CartoDB offers you a variety of basemaps you may use in your visualization. You may select any one of them, and the change will be applied immediately. You may change your basemap anytime and the rest of your layers will remain unchanged. Take some time to explore our different available basemaps. You'll be able to see that some of them have more detail (such as depicting borders, roads, mountains) while others are more minimalistic. Thus you may choose one that's best suited for the purpose of your visualization.
 
@@ -538,7 +538,7 @@ Before you share your visualization, you can edit the title and description of y
 
 #### Sharing & privacy options
 
-Once you create a visualization from your table of data, click the Share button at the top right of your screen to pull up your publishing options. Take a look at the image below to get an idea of the parts you can customize.
+Once you create a visualization from your table of data, click the **Options** button bellow left of the visualization view to pull up your publishing options. 
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/sharesettings.png' | prepend: site.baseurl }}" alt="Sharing & privacy options" /></p>
 
@@ -562,10 +562,6 @@ Each of these options has a simple toggle on/off functionality. If you wish for 
   Enable or disable the ability of viewers to enter fullscreen mode.
 - **Logo**
   Include or exclude the CartoDB logo on your map.
-
-From the share window, you can also edit privacy settings, which you can view in the screenshot below.
-
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/privacy.png' | prepend: site.baseurl }}" alt="privacy settings" /></p>
 
 ### Supported fonts
 
