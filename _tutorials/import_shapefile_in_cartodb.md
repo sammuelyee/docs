@@ -10,9 +10,9 @@ The CartoDB platform is designed for maps of all shapes and sizes. While we appr
 
 ### What are shapefiles and what do they contain?
 
-A shapefile is the standard format for translating geographic data that you see online. Shapefiles can contain three or more files that represent vector features, such as points, lines, and polygons, each with descriptive attributes like "name" or "temperature". When imported into CartoDB, those attributes will comprise your table. No matter how complex your visualization may appear, this simple format stores the geometric location and attribute information of your map features on the backend.
+A shapefile is a common format for transfering geographic data that you see online. Shapefiles are actually collections of three or more associated files that come together to represent vector features, such as points, lines, and polygons, each with descriptive attributes like "name" or "temperature". When imported into CartoDB, those attributes will comprise your table. 
 
-### Types of shapefiles include:
+### Files extentions necessary for shapefile import:
 
 - **.shp:**  
   This file contains the primary geographic reference data and records of various shape types included, such as points, polygons, or multipatches.
@@ -21,14 +21,14 @@ A shapefile is the standard format for translating geographic data that you see 
   The dBase format stores attributes for each shape, and its size cannot exceed 2GB.
 
 - **.shx:**  
-  The shapefile index format does what its name suggests, which is to organize the records of a shapefile for reference. Using this index, it is possible to review the contents of your shapefile backwards or forwards, as it links to the primary .shp file.
+  The shapefile index format does what its name suggests, which is to organize the records of a shapefile for reference. 
 
 - **.prj:**  
   The projection format is essential because it contains coordinate system and projection information. As a plain text file, it describes your data using markup language, which allows it to sync with many applications.
 
 ### What if I'm missing a .prj file?
 
-Sometimes, projection files don't show up where they should. Usually, they have simply been mislabeled. [Check out our video](http://vimeo.com/100105202) to problem-solve locating and replacing a .prj for use in CartoDB.
+Sometimes, projection files don't show up where they should. Usually, they have simply been mislabeled. [Check out our video](http://vimeo.com/100105202) to problem-solve locating and replacing a .prj for use in CartoDB. If that doesn't work, it can be helpful to contact the organization hosting the original file to request a new .prj file.
 
 ### How to import
 
