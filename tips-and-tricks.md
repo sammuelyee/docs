@@ -315,6 +315,7 @@ Finding data with mappable data can seem like a daunting task, but there are man
 - [Organisation for Economic Co-operation and Development](http://www.oecd.org/)
 - [Portal de Datos abiertos del Ayuntamiento de Madrid](http://datos.madrid.es/portal/site/egob/)
 - [Open Data BCN](http://opendata.bcn.cat/opendata/en/)
+- [Global Terrorism Database](http://www.start.umd.edu/gtd/)
 
 ## Charts & Graphs
 
