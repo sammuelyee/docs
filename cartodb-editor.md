@@ -593,7 +593,7 @@ One crucial step to managing your data is geocoding it. CartoDB gives you three 
 
 Second, you can georeference by administrative regions. To get started, click on "Options" and "Georeference." Select to georeference by administrative regions, and line up the data in your table to the type and location of administrative region you would like to use. CartoDB will automatically load polygons for administrative regions like states, municipalities, and postal codes!
 
-Finally, you can georeference by address. To do this, you will need columns with parts of the address like "address" (which would contain the building number and street name), "city," and "state." Check out our [tutorial on georeferencing addresses]({{ '/tutorials/georeference.html' | prepend: site.baseurl }}) for an in-depth look on how to use this function.
+Finally, you can georeference by address. To do this, you will need columns with parts of the address like "address" (which would contain the building number and street name), "city," and "state." Check out our [tutorial on georeferencing addresses]({{ '/tutorials/how_to_georeference.html' | prepend: site.baseurl }}) for an in-depth look on how to use this function.
 
 ### Running SQL queries
 
