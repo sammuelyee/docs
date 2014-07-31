@@ -2,6 +2,7 @@ language: ruby
 rvm:
 - 2.1.2
 before_install:
+- cp grunt-aws.example.json grunt-aws.json
 - npm install -g grunt-cli
 install:
 - bundle install
