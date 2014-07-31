@@ -2,8 +2,7 @@
 layout: platform_item
 title: FAQs
 slug: faqs
-js_assets:
-  - "editor"
+js_asset: "editor"
 ---
 
 ## CartoDB technical questions

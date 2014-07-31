@@ -1,3 +1,18 @@
+@import "compass/reset";
+@import "compass/css3/border-radius";
+@import "compass/css3/transition";
+@import "compass/css3/opacity";
+@import "compass/css3/box-shadow";
+
+@import "_constants";
+@import "_fonts";
+@import "_buttons";
+@import "_helpers";
+@import "_base";
+
+@import "_footer";
+
+
 .up {
   display: none;
   position: fixed;

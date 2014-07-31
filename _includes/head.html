@@ -15,15 +15,12 @@
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="{{ '/' | prepend: site.baseurl }}"/>
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-
-  <link rel="shortcut icon" href="{{ '/favicon.ico' | prepend: site.baseurl }}">
-
   {% if site.env == 'production' %}
-    <link rel="stylesheet" href="{{ '/css/docs.min.css' | prepend: site.baseurl }}">
+    <link rel="stylesheet" href="{{ '/css/main.css' | prepend: site.baseurl }}">
   {% else %}
     <link rel="stylesheet" href="{{ '/css/vendor/jquery.jscrollpane.css' | prepend: site.baseurl }}">
     <link rel="stylesheet" href="{{ '/css/vendor/syntax.css' | prepend: site.baseurl }}">
-    <link rel="stylesheet" href="{{ '/css/docs.css' | prepend: site.baseurl }}">
+    <link rel="stylesheet" href="{{ '/css/main.css' | prepend: site.baseurl }}">
   {% endif %}
-  <script src="{{ '/js/vendor/modernizr-2.6.2.min.js' | prepend: site.baseurl }}"></script>
+  <script src="{{ '/js/vendor/modernizr.js' | prepend: site.baseurl }}"></script>
 </head>

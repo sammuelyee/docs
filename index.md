@@ -1,8 +1,7 @@
 ---
 layout: index
 title: CartoDB Documentation
-js_assets:
-  - "index"
+js_asset: "index"
 ---
 
 ## What is CartoDB

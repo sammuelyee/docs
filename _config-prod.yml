@@ -1,4 +1,4 @@
-env: production
+env: 'production'
 destination: '.tmp'
 title: "CartoDB Docs"
 description: "Get the most out of CartoDB with our API, examples gallery and documentation. CartoDB is made with love by developers, for everyone"
@@ -9,7 +9,7 @@ keywords: "postgresql, postgis, vector, gis, geo, mapping, html5, developer-tool
 markdown: kramdown
 # permalink: pretty
 encoding: utf-8
-exclude: ['README.md', 'CONTRIBUTING.md', 'config.rb', 'Gemfile', 'Gemfile.lock', 'node_modules', 'Gruntfile.js', 'package.json', 'docs_build.sh', 's3_website.yml']
+exclude: ['README.md', 'CONTRIBUTING.md', 'config.rb', 'Gemfile', 'Gemfile.lock', 'node_modules', 'bower_components', 'Gruntfile.js', 'package.json', 'docs_build.sh', 's3_website.yml', 'grunt-aws.example.json', 'grunt-aws.json']
 highlighter: rouge
 
 cartodb-baseurl: 'http://cartodb.com'
@@ -31,16 +31,14 @@ defaults:
       path: ""
       type: cartodb-platform
     values:
-      js_assets:
-        - "editor"
+      js_asset: "editor"
   -
     scope:
       path: ""
       type: tutorials
     values:
       tags: "cartodb, learning, tutorials, documentation, advanced, geospatial, functions"
-      js_assets:
-        - "index"
+      js_asset: "index"
   -
     scope:
       path: ""
