@@ -8,7 +8,7 @@ docs.ui.Views.Navbar = Backbone.View.extend({
   el: '.offcanvas-inner',
 
   events: {
-    'click .navbar-button': '_toggle'
+    'click .nav-button': '_toggle'
   },
 
   initialize: function(options) {

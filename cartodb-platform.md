@@ -2,8 +2,7 @@
 layout: platform
 title: CartoDB Platform
 slug: cartodb-platform
-js_assets:
-  - "index"
+js_asset: "index"
 ---
 
 ## CartoDB Platform

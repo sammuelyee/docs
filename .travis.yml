@@ -7,12 +7,7 @@ install:
 - bundle install
 - npm install
 before_script: "./docs_build.sh"
-script: grunt build
-after_success: bundle exec s3_website push
+script: grunt
 branches:
   only:
   - master
-env:
-  global:
-  - secure: R8VjmtxMmixjUOE62u1N7iN2Vz5pcIijy+k3cUlgJ6c79V9THmayLUhcjda7XuNsCG8qPZJJMQkhS3ZiFsysOb9SZbgh7eom73hY8fd9Fkp/fPgniFal0Hua6QTfw9RZtcM9hyR/i/1Cl57NsFYHntZ868WyCygKlb2BHAO2I2E=
-  - secure: mtUVPZhlgic8Rrx1S/VmIGMpMYB8W2QEK0YPGShhWztp4eCl++otYqX200SRHYe0iGXdjeeJlspltf38bMLclNwpzbINoIJCkmIxDr+ljnXx6qu4sAi2mq0x8bUvjFvIa3/sAqunPOBsRj2jHdgzx4bJHr/9hNCWJq2UVdcqAY0=

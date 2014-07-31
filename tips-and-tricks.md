@@ -2,8 +2,7 @@
 layout: platform_item
 title: Tips and tricks
 slug: tips-and-tricks
-js_assets:
-  - "editor"
+js_asset: "editor"
 ---
 
 ## The Power of CartoDB
