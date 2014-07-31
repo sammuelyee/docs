@@ -8,7 +8,9 @@ All things docs about CartoDB. This repo contains all that will be found in [doc
 
 If you spot a typo, want to add a FAQ, or contribute a tutorial, just send a Pull Request! Check our [CONTRIBUTING](CONTRIBUTING.md) page.
 
-## How to install
+## Develop
+
+### How to install
 
 CartoDB Docs uses a mix of [Jekyll](http://jekyllrb.com/) and [Grunt](http://gruntjs.com/) tasks for development.
 
@@ -18,13 +20,23 @@ npm install -g grunt-cli
 npm install
 ```
 
-## How to develop
+### Run locally
 
 ```
-grunt
+grunt serve
 ```
 
-A tab in your browser will open and direct you to http://0.0.0.0:4000
+A tab in your browser will open and direct you to http://0.0.0.0:9000
+
+Also, you can run the blog locally as if it was on production with `grunt serve:dist`
+
+## Deploy
+
+```
+grunt deploy:staging|production
+```
+
+You'll need a `grunt-aws.json` credentials file.
 
 ## How to contribute 
 
