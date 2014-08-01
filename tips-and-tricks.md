@@ -17,7 +17,7 @@ CartoDB creates a geometry column called `the_geom` on every table you generate.
 
 ### Number
 
-A number column in CartoDB can contain any numeric value. In the backend we implement number using the [numeric type](http://www.postgresql.org/docs/9.1/static/datatype-numeric.html) in PostgreSQL.
+A number column in CartoDB can contain any numeric value. In the backend we implement number using the [double precision type](http://www.postgresql.org/docs/9.1/static/datatype-numeric.html) in PostgreSQL.
 
 #### Working with numbers
 
