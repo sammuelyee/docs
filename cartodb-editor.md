@@ -153,7 +153,7 @@ This way, you can create visualizations from private tables and make them public
 
 ### Visualization privacy options
 
-When you are creating your CartoDB visualization, you may also edit who is able to access the visualization. In order to edit these settings, click on the padlock from the map created on the “Visualizations” section of your CartoDB dashboard. Here your will also be able to delete your visualization or lock it to prevent any accidentally change in the future. 
+When you are creating your CartoDB visualization, you may also edit who is able to access the visualization. In order to edit these settings, click on the padlock from the map created on the “Visualizations” section of your CartoDB dashboard. Here you will also be able to delete your visualization or lock it to prevent any accidentally change in the future. 
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/padlock.png' | prepend: site.baseurl }}" alt="Privacy settings in your visualization" /></p>
 
@@ -162,7 +162,7 @@ In the window that appears, you will see four options for your privacy settings:
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/privacyoptions.png' | prepend: site.baseurl }}" alt="Privacy settings in your visualization" /></p>
 
 
-- **Public on the web**  
+- **Public**  
   When selected, this setting means that your map will be publically available, and will be displayed in your [CartoDB Public Profile](http://blog.cartodb.com/post/82193209466/interesting-cartodb-profiles).
 
 - **Only people with a link**  
@@ -179,7 +179,9 @@ In the window that appears, you will see four options for your privacy settings:
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/vizheader.png' | prepend: site.baseurl }}" alt="Visualization" /></p>
 
-For each visualization you may edit the name, add a description, source, license, and add tags to keep them organized and discoverable. You may use the description section to talk about your data sources, or to clarify the content and purpose of your map. Use tags to unite projects or themes.
+For each visualization you may edit the name, add a description, source, license, and add tags to keep them organized and discoverable. You will find the "Edit metadata" option under the visualization title. 
+
+You may use the description section to clarify the content and purpose of your map. Use tags to unite projects or themes. Remember to add the data sources. Also there is a space to insert the license information in case you needed. 
 
 ### Add Element 
 
@@ -493,8 +495,10 @@ You can access your map options at the top right of your screen. When you're in 
 - **Merge Table**  
   Merge your current table with another existing one, using either a column join (joins two tables based off of a shared column) or a spatial join (joins two tables based off of their spatial overlaps). For more info, take a look [here]({{ '/tutorials/merging_data.html' | prepend: site.baseurl }}).
 
+- **Change privacy**
+  Allows you to edit who is able to access the table
 
- 
+
 But, once your visualization has been created, the options will only be: duplicate visualization or delete visualization.
 
   
@@ -589,7 +593,7 @@ Once you have created a visualization, it's time to share it with the world! Tak
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/sharevisualization.png' | prepend: site.baseurl }}" alt="Share your visualization" /></p>
 
-You the following options to share your visualization:
+You have the following options to share your visualization:
 
 - **Get the link**
 You will find here the URL to share your Visualization via Twitter, email, or anywhere else. When you share that link, viewers will only be able to explore it on the map, they will not be able to edit any of your data.
