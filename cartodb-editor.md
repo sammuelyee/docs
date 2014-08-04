@@ -113,7 +113,7 @@ You view the list of tables you have uploaded to your CartoDB account on the das
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/privacy-dialog.png' | prepend: site.baseurl }}" alt="Tables privacy" /></p>
 
-To change the privacy setting of a table click the colored label right next to the table's name. You may then choose "Private," "Anyone with a link," or "Public on the web". If a table is set to Private, no one but you will be able to see the table. If it requires a link, only those who have the link will be able to find it. If it's public on the web, anyone may find it on your Public Page or roaming around the internet!
+To change the privacy setting of a table click the colored label right next to the table's name. You may then choose "Public," "Only people with the link," or "Private". If a table is set to public, anyone may find it on your Public Page or roaming around the internet. If it requires a link, only those who have the link will be able to find it. If it's Private no one but you will be able to see the table.
 
 You can also change the privacy setting of a table inside the table view, by using on the 'Options' menu and selecting 'Change privacy', or by clicking on the colored lock button that appears on the top right section of the page.
 
@@ -151,17 +151,16 @@ We've decoupled table privacy from visualization privacy.
 
 This way, you can create visualizations from private tables and make them public, so the map (and any information selected on the infowindows) can be shared without anyone being able to download the whole data from your table.
 
-### Visualization metadata
-
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/vizheader.png' | prepend: site.baseurl }}" alt="Visualization" /></p>
-
-For each visualization you may edit the name, add a description, source, license, and add tags to keep them organized and discoverable. You may use the description section to talk about your data sources, or to clarify the content and purpose of your map. Use tags to unite projects or themes.
-
 ### Visualization privacy options
+
+When you are creating your CartoDB visualization, you may also edit who is able to access the visualization. In order to edit these settings, click on the padlock from the map created on the “Visualizations” section of your CartoDB dashboard. Here your will also be able to delete your visualization or lock it to prevent any accidentally change in the future. 
+
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/padlock.png' | prepend: site.baseurl }}" alt="Privacy settings in your visualization" /></p>
+
+In the window that appears, you will see four options for your privacy settings:
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/privacyoptions.png' | prepend: site.baseurl }}" alt="Privacy settings in your visualization" /></p>
 
-When you are sharing your CartoDB visualization, you may also edit who is able to access the visualization. In order to edit these settings, click on "Share" from the Visualization Editor. In the window that appears, you will see four options for your privacy settings:
 
 - **Public on the web**  
   When selected, this setting means that your map will be publically available, and will be displayed in your [CartoDB Public Profile](http://blog.cartodb.com/post/82193209466/interesting-cartodb-profiles).
@@ -174,6 +173,26 @@ When you are sharing your CartoDB visualization, you may also edit who is able t
 
 - **Private**  
   When this setting is selected, only you are able to view your visualization. It will not appear in your Public Profile.
+
+
+### Visualization metadata
+
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/vizheader.png' | prepend: site.baseurl }}" alt="Visualization" /></p>
+
+For each visualization you may edit the name, add a description, source, license, and add tags to keep them organized and discoverable. You may use the description section to talk about your data sources, or to clarify the content and purpose of your map. Use tags to unite projects or themes.
+
+### Add Element 
+
+You are able to customize your visualization in just a few clicks. Under the "Edit metadata" option, there is the possibility to add an element on your map whether is a title, text or an image item. 
+
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/addelement.png' | prepend: site.baseurl }}" alt="Visualization" /></p>
+
+
+###Configure Canvas 
+
+On CartoDB you can edit your visualization according to the style of your canvas. Choose one of the options depending on the device where your map will be displayed: desktop or mobile.  
+
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/canvas.png' | prepend: site.baseurl }}" alt="Visualization" /></p>
 
 ### CartoDB Sidebar
 
@@ -474,9 +493,11 @@ You can access your map options at the top right of your screen. When you're in 
 - **Merge Table**  
   Merge your current table with another existing one, using either a column join (joins two tables based off of a shared column) or a spatial join (joins two tables based off of their spatial overlaps). For more info, take a look [here]({{ '/tutorials/merging_data.html' | prepend: site.baseurl }}).
 
- 
-  But, once your visualization has been created, the options will only be: duplicate visualization or delete visualization.
 
+ 
+But, once your visualization has been created, the options will only be: duplicate visualization or delete visualization.
+
+  
   <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/optionvisualization.png' | prepend: site.baseurl }}" alt="Options" /></p>
 
 
@@ -557,6 +578,8 @@ Each of these options has a simple toggle on/off functionality. If you wish for 
   Enable or disable zoom using a mouse scroll wheel.
 - **Layer selector**
   Allow viewers to toggle different layers on/off.
+- **CartoDB logo**
+  Whether or not the CartoDB logo appears
 - **Legends**
   Turn the appearance of legends on/off.
 
