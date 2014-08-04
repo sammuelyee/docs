@@ -121,7 +121,7 @@ Take into account that different privacy options will appear depending on the cu
 
 ### Viewing tables
 
-Once you've clicked on a table, there are two ways for you two view your table's data: Data view and Visualization. You may toggle between the two views next to the table name.
+Once you've clicked on a table, there are two ways for you to view your table's data: Data view and Visualization. You may toggle between the two views next to the table name.
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/switch.png' | prepend: site.baseurl }}" alt="Viewing tables" /></p>
 
@@ -153,7 +153,7 @@ This way, you can create visualizations from private tables and make them public
 
 ### Visualization privacy options
 
-When you are creating your CartoDB visualization, you may also edit who is able to access the visualization. In order to edit these settings, click on the padlock from the map created on the “Visualizations” section of your CartoDB dashboard. Here you will also be able to delete your visualization or lock it to prevent any accidentally change in the future. 
+When you are creating your CartoDB visualization, you may also edit who is able to access to it. In order to edit these settings, click on the padlock from the map created on the “Visualizations” section of your CartoDB dashboard. Here you will also be able to delete your visualization or lock it to prevent any accidentally change in the future. 
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/padlock.png' | prepend: site.baseurl }}" alt="Privacy settings in your visualization" /></p>
 
@@ -495,8 +495,8 @@ You can access your map options at the top right of your screen. When you're in 
 - **Merge Table**  
   Merge your current table with another existing one, using either a column join (joins two tables based off of a shared column) or a spatial join (joins two tables based off of their spatial overlaps). For more info, take a look [here]({{ '/tutorials/merging_data.html' | prepend: site.baseurl }}).
 
-- **Change privacy**
-  Allows you to edit who is able to access the table
+- **Change privacy**  
+  Allows you to edit who is able to access the table. 
 
 
 But, once your visualization has been created, the options will only be: duplicate visualization or delete visualization.
