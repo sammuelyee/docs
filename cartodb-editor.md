@@ -189,6 +189,15 @@ You are able to customize your visualization in just a few clicks. Under the "Ed
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/addelement.png' | prepend: site.baseurl }}" alt="Visualization" /></p>
 
+- **Add title item**
+ When you add this item, a text box with a title format will appear on your map. You can place the title box wherever you want and edit the style. 
+
+- **Add text item**
+ Text boxes will give you control over the position of a block of text on your map. You can place text boxes anywhere in your visualization and edit them. You can change the text align, style, width, font and even the box style.
+
+- **Add image item**
+ An image can give extra value to your visualization. You will only need to add the image link to the box and it will pop up on your visualization. You can edit the box style color, the position, and also change the width. 
+
 
 ###Configure Canvas 
 
