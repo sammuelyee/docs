@@ -11,6 +11,8 @@ markdown: kramdown
 encoding: utf-8
 exclude: ['README.md', 'CONTRIBUTING.md', 'config.rb', 'Gemfile', 'Gemfile.lock', 'node_modules', 'bower_components', 'Gruntfile.js', 'package.json', 'docs_build.sh', 's3_website.yml', 'grunt-aws.example.json', 'grunt-aws.json']
 highlighter: rouge
+gems:
+  - jekyll-redirect-from
 
 cartodb-baseurl: 'http://cartodb.com'
 academy-baseurl: 'http://academy.cartodb.com'

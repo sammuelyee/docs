@@ -3,6 +3,8 @@ layout: platform_item
 title: Tips and tricks
 slug: tips-and-tricks
 js_asset: "editor"
+redirect_from:
+- "/documentation/advanced_concepts.html"
 ---
 
 ## The Power of CartoDB
