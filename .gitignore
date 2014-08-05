@@ -6,4 +6,3 @@ _cartodb-platform/*
 !_cartodb-platform/.keep
 .tmp/
 grunt-aws.json
-bower_components/
