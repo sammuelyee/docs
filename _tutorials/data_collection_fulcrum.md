@@ -1,7 +1,7 @@
 ---
 layout: tutorials_item
-title: 'How CartoDB and Fulcrum Work Together'
-short_description: 'Customize apps for use in your data collection'
+title: 'Mobile data collection and visualization with Fulcrum and CartoDB'
+short_description: 'Create custom mobile apps for data collection on the ground, and sync to CartoDB to have a real time visualization'
 level: medium
 time_needed: '15 minutes'
 embed_url: '//player.vimeo.com/video/102835991?title=0&amp;byline=0&amp;portrait=0'
@@ -57,12 +57,15 @@ For this next segment, we will show you how to take data you've collected with F
 For our visualization, we were most interested in displaying the images that our dataset collected. To do this, we set up infowindows that display the pictures of graffiti that we collected. Follow along with the video or text below to learn how.
 
 The way Fulcrum works with pictures, is that it gives each photo a unique picture ID. This can be found in the "picture" column in our data. In order to call or reach a picture, you need the data share URL with "/photos/" appended to it (in the place of the file ending), and then the photo ID. Therefore, each unique picture URL would look something like this:
+
 ```
 https://web.fulcrumapp.com/shares/{{your share ID}}/photos/{{unique picture ID}}
 ```
+
 With this in mind, we went ahead and created infowindows that feature each picture we took. Since the table is read-only (as it is syncing with Fulcrum), the easiest way to link directly to the picture is to build a custom infowindow in our infowindow wizard. We kept it simple, and built it so that each on-click infowindow featured our picture, and a click of the image would take you to the image in a separate window. Our HTML looked like this:
 
-```<div class="cartodb-popup v2">
+{% highlight html %}
+<div class="cartodb-popup v2">
   <a href="#close" class="cartodb-popup-close-button close">x</a>
   <div class="cartodb-popup-content-wrapper">
     <div class="cartodb-popup-content">
@@ -71,7 +74,7 @@ With this in mind, we went ahead and created infowindows that feature each pictu
   </div>
   <div class="cartodb-popup-tip-container"></div>
 </div>
-```
+{% endhighlight %}
 
 Notice that the HTML above is based on a simple infowindow, and that it builds the picture URL inline using {{picture}} to call the column containing each unique picture ID. Our URL, then, looks like this: 
 ```https://web.fulcrumapp.com/shares/ac8d04babb8279c0/photos/{{picture}}```
