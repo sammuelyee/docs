@@ -5,3 +5,4 @@ _site
 _cartodb-platform/*
 !_cartodb-platform/.keep
 .tmp/
+grunt-aws.json

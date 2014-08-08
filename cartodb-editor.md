@@ -2,8 +2,9 @@
 layout: platform_item
 title: CartoDB Editor
 slug: cartodb-editor
-js_assets:
-  - "editor"
+js_asset: "editor"
+redirect_from:
+- "/documentation/using-cartodb.html"
 ---
 
 ## One-minute introduction

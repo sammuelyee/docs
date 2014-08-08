@@ -2,8 +2,9 @@
 layout: platform_item
 title: Tips and tricks
 slug: tips-and-tricks
-js_assets:
-  - "editor"
+js_asset: "editor"
+redirect_from:
+- "/documentation/advanced_concepts.html"
 ---
 
 ## The Power of CartoDB
@@ -18,7 +19,7 @@ CartoDB creates a geometry column called `the_geom` on every table you generate.
 
 ### Number
 
-A number column in CartoDB can contain any numeric value. In the backend we implement number using the [numeric type](http://www.postgresql.org/docs/9.1/static/datatype-numeric.html) in PostgreSQL.
+A number column in CartoDB can contain any numeric value. In the backend we implement number using the [double precision type](http://www.postgresql.org/docs/9.1/static/datatype-numeric.html) in PostgreSQL.
 
 #### Working with numbers
 
@@ -315,6 +316,7 @@ Finding data with mappable data can seem like a daunting task, but there are man
 - [Organisation for Economic Co-operation and Development](http://www.oecd.org/)
 - [Portal de Datos abiertos del Ayuntamiento de Madrid](http://datos.madrid.es/portal/site/egob/)
 - [Open Data BCN](http://opendata.bcn.cat/opendata/en/)
+- [Global Terrorism Database](http://www.start.umd.edu/gtd/)
 
 ## Charts & Graphs
 

@@ -8,12 +8,10 @@ docs.ui.Views.Navbar = Backbone.View.extend({
   el: '.offcanvas-inner',
 
   events: {
-    'click .navbar-button': '_toggle'
+    'click .nav-button': '_toggle'
   },
 
-  initialize: function(options) {
-    this.options = options;
-
+  initialize: function() {
     this.model = new docs.ui.Models.Navbar();
 
     this.model.on("change:hidden", this._toggleNav, this);

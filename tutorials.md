@@ -2,8 +2,7 @@
 layout: tutorials
 title: Tutorials
 slug: tutorials
-js_assets:
-  - "tutorials"
+js_asset: "tutorials"
 ---
 
 <ul class="tutorials-list">

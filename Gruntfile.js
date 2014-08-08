@@ -1,8 +1,99 @@
 module.exports = function(grunt) {
   require('load-grunt-tasks')(grunt);
+  require('time-grunt')(grunt);
+
+  var config = {
+    app: '.tmp',
+    dist: '_site'
+  };
 
   grunt.initConfig({
-    pkg: grunt.file.readJSON('package.json'),
+    config: config,
+
+    aws: grunt.file.readJSON('grunt-aws.json'),
+    s3: {
+      options: {
+        accessKeyId: "<%= aws.accessKeyId %>",
+        secretAccessKey: "<%= aws.secretAccessKey %>",
+        headers: {
+          "CacheControl": "max-age=630720000, public",
+          "Expires": new Date(Date.now() + 63072000000).toUTCString()
+        },
+        gzip: true,
+        src: ["css/{,*/}*", "js/{,*/}*", "fonts/{,*/}*", "img/**/*"]
+      },
+      staging: {
+        options: {
+          bucket: '<%= aws.stagingBucket %>'
+        },
+        cwd: "<%= config.dist %>",
+        src: "**"
+      },
+      production: {
+        options: {
+          bucket: '<%= aws.productionBucket %>'
+        },
+        cwd: "<%= config.dist %>",
+        src: "**"
+      }
+    },
+    connect: {
+      options: {
+        port: 9000,
+        open: true,
+        livereload: 35729,
+        // Change this to '0.0.0.0' to access the server from outside
+        hostname: 'localhost'
+      },
+      livereload: {
+        options: {
+          middleware: function(connect) {
+            return [
+              connect.static(config.dist),
+              connect().use('/bower_components', connect.static('./bower_components')),
+            ];
+          }
+        }
+      },
+      dist: {
+        options: {
+          base: '<%= config.dist %>',
+          livereload: false
+        }
+      }
+    },
+    watch: {
+      css: {
+        files: ['_lib/scss/*.scss'],
+        tasks: ['compass:server'],
+      },
+      js: {
+        files: ['_lib/js/{,*/}*.js'],
+        tasks: ['copy:server'],
+      },
+      html: {
+        files: [
+          '{,*/}*.html',
+          '{,*/}*.md',
+          'img/**/*'
+        ],
+        tasks: ['shell:server', 'compass:server', 'copy:server']
+      },
+      gruntfile: {
+        files: ['Gruntfile.js']
+      },
+      livereload: {
+        options: {
+          livereload: '<%= connect.options.livereload %>'
+        },
+        files: [
+          '{,*/}*.html',
+          '{,*/}*.md',
+          'img/**/*',
+          '_lib/scss/*.scss'
+        ]
+      }
+    },
     clean: {
       dist: {
         files: [{
@@ -10,61 +101,104 @@ module.exports = function(grunt) {
           src: [
             '.sass-cache',
             '.tmp',
-            '_site'
+            '<%= config.dist %>/*',
+            '!<%= config.dist %>/.git*'
           ]
         }]
       }
     },
-    connect: {
-      server: {
-        options: {
-          base: '_site/',
-          port: 4001,
-          open: true,
-          hostname: '0.0.0.0'
-        }
-      }
-    },
     shell: {
-      prod: {
-        command: "jekyll build --config '_config-prod.yml'",
-        options: {
-          async: false
-        }
-      },
-      dist: {
+      server: {
         command: 'jekyll build',
         options: {
           async: false
         }
-      }
-    },
-    watch: {
-      css: {
-        files: ['_lib/scss/*.scss'],
-        tasks: ['compass:dist'],
       },
-      js: {
-        files: ['_lib/js/{,*/}*.js'],
-        tasks: ['copy:dist'],
-      },
-      html: {
-        files: [
-          '{,*/}*.html',
-          '{,*/}*.md',
-          'img/**/*.*'
-        ],
-        tasks: ['shell:dist', 'compass:dist', 'copy:dist']
-      }
-    },
-    compass: {
       dist: {
+        command: "jekyll build --config '_config-prod.yml'",
         options: {
-          config: 'config.rb',
-          cssDir: '_site/css'
+          async: false
+        }
+      }
+    },
+    filerev: {
+      files: {
+        src: [
+          '<%= config.dist %>/js/**/*.js',
+          '<%= config.dist %>/css/{,*/}*.css',
+          '<%= config.dist %>/img/**/*.*',
+          '<%= config.dist %>/fonts/{,*/}*.*',
+          '<%= config.dist %>/*.{ico,png}'
+        ]
+      }
+    },
+    cssmin: {
+      dist: {
+        files: {
+          '<%= config.dist %>/css/main.css': [
+            '_lib/scss/{,*/}*.css',
+            '<%= config.app %>/css/{,*/}*.css'
+          ]
+        }
+      }
+    },
+    uglify: {
+      dist: {
+        files: {
+          '_site/js/main.js': ['.tmp/js/main.js'],
+          '_site/js/vendor.js': ['.tmp/js/vendor.js'],
+          '_site/js/index.js': ['_lib/js/index.js'],
+          '_site/js/editor.js': ['_lib/js/editor.js'],
+          '_site/js/tutorials.js': ['_lib/js/tutorials.js']
         }
       },
-      prod: {
+    },
+    concat: {
+      dist: {
+        files: {
+          '.tmp/js/vendor.js': [
+            'bower_components/jquery/dist/jquery.js',
+            'bower_components/underscore/underscore.js',
+            'bower_components/backbone/backbone.js',
+            '_lib/js/vendor/jquery.mousewheel.js',
+            '_lib/js/vendor/jquery.jscrollpane.js',
+            '_lib/js/vendor/waypoints.min.js',
+          ],
+          '.tmp/js/main.js': [
+            '_lib/js/app.js',
+            '_lib/js/ui/navbar.js'
+          ]
+        }
+      }
+    },
+    useminPrepare: {
+      options: {
+        dest: '<%= config.dist %>'
+      },
+      html: '<%= config.dist %>/**/*.html',
+      css: '<%= config.app %>/css/{,*/}*.css'
+    },
+    usemin: {
+      options: {
+        assetsDirs: ['<%= config.dist %>', '<%= config.dist %>/img'],
+        patterns: {
+          css: [
+            [/(fonts\/.*?\.(?:eot|woff|ttf|svg))/gm, 'Update the css to reference revved fonts'],
+            [/(img\/.*?\.(?:gif|jpeg|jpg|png|webp|svg))/gm, 'Update the css to reference revved images']
+          ]
+        }
+      },
+      html: ['<%= config.dist %>/**/*.html'],
+      css: ['<%= config.dist %>/css/{,*/}*.css']
+    },
+    compass: {
+      server: {
+        options: {
+          config: 'config.rb',
+          cssDir: '<%= config.dist %>/css'
+        }
+      },
+      dist: {
         options: {
           config: 'config.rb',
           cssDir: '.tmp/css'
@@ -72,123 +206,144 @@ module.exports = function(grunt) {
       }
     },
     copy: {
-      dist: {
-        expand: true,
-        cwd: '_lib/js/',
-        src: '{,*/}*.*',
-        dest: '_site/js/'
-      },
-      prod: {
-        files : [
-          {
-            cwd: '.tmp/',
-            dest: '_site/',
-            src: [
-              '*.{ico,png,txt}',
-              'fonts/{,*/}*.*',
-              'img/**/*.*'
-            ]
-          },
-          {
-            src: '_lib/js/vendor/modernizr-2.6.2.min.js',
-            dest: '_site/js/vendor/modernizr-2.6.2.min.js'
-          }
-        ]
-      },
-    },
-    concat: {
-      index: {
-        src: [
-          '_lib/js/vendor/jquery-1.11.1.min.js',
-          '_lib/js/vendor/underscore-min.js',
-          '_lib/js/vendor/backbone-min.js',
-          '_lib/js/vendor/jquery.mousewheel.js',
-          '_lib/js/vendor/jquery.jscrollpane.js',
-          '_lib/js/vendor/waypoints.min.js',
-          '_lib/js/app.js',
-          '_lib/js/ui/navbar.js'
-        ],
-        dest: '.tmp/js/docs.js',
-      }
-    },
-    uglify: {
-      prod: {
-        files: {
-          '_site/js/docs.min.js': ['.tmp/js/docs.js'],
-          '_site/js/index.min.js': ['_lib/js/index.js'],
-          '_site/js/editor.min.js': ['_lib/js/editor.js'],
-          '_site/js/tutorials.min.js': ['_lib/js/tutorials.js']
-        }
-      },
-    },
-    cssmin: {
-      prod: {
-        files: {
-          '_site/css/docs.min.css': [
-            '.tmp/**/*.css'
-          ]
-        }
-      }
-    },
-    htmlmin: {
-      dist: {
-        options: {
-          removeComments: true,
-          collapseWhitespace: true,
-          conservativeCollapse: true,
-          minifyJS: true,
-          minifyCSS: true
-        },
+      server: {
         files: [{
           expand: true,
-          cwd: '.tmp/',
-          src: '{,*/}*.html',
-          dest: '_site/'
+          dot: true,
+          cwd: '_lib/scss',
+          dest: '<%= config.dist %>/css/',
+          src: '{,*/}*.css'
+        }, {
+          expand: true,
+          dot: true,
+          cwd: '_lib/js',
+          src: ['{,*/}*.*'],
+          dest: '<%= config.dist %>/js/'
+        },
+        {
+          src: 'bower_components/jquery/dist/jquery.js',
+          dest: '<%= config.dist %>/js/vendor/jquery.js'
+        },
+        {
+          src: 'bower_components/underscore/underscore.js',
+          dest: '<%= config.dist %>/js/vendor/underscore.js'
+        },
+        {
+          src: 'bower_components/backbone/backbone.js',
+          dest: '<%= config.dist %>/js/vendor/backbone.js'
+        },
+        {
+          src: 'bower_components/modernizr/modernizr.js',
+          dest: '<%= config.dist %>/js/vendor/modernizr.js'
+        }]
+      },
+      dist: {
+        files: [{
+          expand: true,
+          dot: true,
+          cwd: '<%= config.app %>',
+          dest: '<%= config.dist %>',
+          src: [
+            '*.{ico,png,txt}',
+            '{,*/}*.html',
+            'fonts/{,*/}*.*',
+            'img/**/*.{gif,jpeg,jpg,png}'
+          ]
+        }]
+      },
+      styles: {
+        expand: true,
+        dot: true,
+        cwd: '_lib/scss',
+        dest: '<%= config.app %>/css/',
+        src: '{,*/}*.css'
+      },
+      scripts: {
+        files: [{
+          expand: true,
+          dot: true,
+          cwd: '_lib/js',
+          src: ['{,*/}*.*'],
+          dest: '<%= config.app %>/js/'
+        },
+        {
+          src: 'bower_components/modernizr/modernizr.js',
+          dest: '<%= config.dist %>/js/vendor/modernizr.js'
         }]
       }
     },
     concurrent: {
-      prod: [
-        'cssmin',
-        'htmlmin'
+      server: [
+        'compass:server',
+        'copy:styles',
+        'copy:server'
       ],
       dist: [
         'compass:dist',
-        'copy:dist'
+        'copy:styles',
+        'copy:scripts'
       ]
     },
-    hashres: {
-      options: {
-        fileNameFormat: '${name}.${hash}.${ext}',
-      },
-      prod: {
-        src: [
-          '_site/css/*.css',
-          '_site/js/*.js'
-        ],
-        dest: '_site/**/*.html'
+    htmlmin: {
+      dist: {
+        options: {
+          collapseWhitespace: true,
+          conservativeCollapse: true
+        },
+        files: [{
+          expand: true,
+          cwd: '<%= config.dist %>',
+          src: '{,*/}*.html',
+          dest: '<%= config.dist %>'
+        }]
       }
+    },
+  });
+
+  grunt.registerTask('serve', function (target) {
+    if (target === 'dist') {
+      return grunt.task.run(['build', 'connect:dist:keepalive']);
     }
 
+    grunt.task.run([
+      'clean',
+      'shell:server',
+      'concurrent:server',
+      'connect:livereload',
+      'watch'
+    ]);
+  });
+
+  grunt.registerTask('server', function (target) {
+    grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
+    grunt.task.run([target ? ('serve:' + target) : 'serve']);
   });
 
   grunt.registerTask('build', [
     'clean',
-    'shell:prod',
-    'compass:prod',
-    'copy:prod',
+    'shell:dist',
+    'concurrent:dist',
+    'useminPrepare',
     'concat',
+    'cssmin',
     'uglify',
-    'concurrent:prod',
-    'hashres'
+    'copy:dist',
+    'filerev',
+    'usemin',
+    // 'htmlmin'
+  ]);
+
+  grunt.registerTask('deploy:staging', [
+    'build',
+    's3:staging'
+  ]);
+
+  grunt.registerTask('deploy:production', [
+    'build',
+    's3:production'
   ]);
 
   grunt.registerTask('default', [
-    // 'test',
-    'clean',
-    'shell:dist',
-    'concurrent:dist',
-    'connect',
-    'watch'
+    'build'
   ]);
-};
+}

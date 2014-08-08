@@ -13,6 +13,7 @@
 .btn {
   display: inline-block;
   text-align: center;
+  white-space: nowrap;
   @include border-radius(50px);
   @include transition(all .15s);
 
