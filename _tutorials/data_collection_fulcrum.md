@@ -79,8 +79,11 @@ With this in mind, we went ahead and created infowindows that feature each pictu
 {% endhighlight %}
 
 Notice that the HTML above is based on a simple infowindow, and that it builds the picture URL inline using {{picture}} to call the column containing each unique picture ID. Our URL, then, looks like this: 
-```https://web.fulcrumapp.com/shares/ac8d04babb8279c0/photos/{{picture}}```
+```
+https://web.fulcrumapp.com/shares/ac8d04babb8279c0/photos/{{picture}}
+```
 
-Once you click "Apply," this will work so that each pop-up infowindow contains a picture and links to a full-size version.
+Once you click "Apply," this will work so that each pop-up infowindow contains a picture and links to a full-size version. Check it out below.
+![Final version.](http://imgur.com/UBmxKdG)
 
 This is just one quick example of what Fulcrum and CartoDB can be used to create. We would love to see the examples you come up with!
