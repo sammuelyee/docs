@@ -7,6 +7,8 @@ time_needed: '15 minutes'
 embed_url: '//player.vimeo.com/video/102835991?title=0&amp;byline=0&amp;portrait=0'
 video: true
 ---
+## Why mobile data collection?
+There are many instances in which you may not have the data you need already neatly collected. You need to go out in to the field and collect geospatial data that you wish to map later. This could be locations of potholes or stores, individual surveys, or routine recordings of weather conditions in different areas. Everyone from aid workers interested in the needs of a community, to surfers sharing surf conditions in different locations can leverage this kind of live data collection and recording. [Fulcrum](http://fulcrumapp.com/features/) is a platform that allows you to collect data in exactly this way. It enables you to create a survey, take it in to the field, record conditions, take photos, and input many data types. You can then use Fulcrum with CartoDB to create powerful, live-updating visualizations. 
 
 ## What is Fulcrum?
 
