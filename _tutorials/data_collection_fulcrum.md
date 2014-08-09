@@ -43,7 +43,7 @@ Once you have built your app, collected data, and have data shares all set up, y
 
 On the screen that appears, click "Enable Data Share." The URL on the next screen is a live link to the data collected by that particular app. You can use it with CartoDB's sync feature to have a real-time map of your data.
 
-To set up the sync, navigate to your tables dashboard in CartoDB and click the "+" to create a new table. In the field that appears, paste the URL from  the Fulcrum app for which you enabled data share. You can choose how often your data syncs, and then can get started in customizing your map vizualization.(Note that each time you disable and re-enable your data share, it will generate a new link. This is important if you have the sync set up and would like to keep it live.)
+Take a look at [this tutorial example](http://docs.cartodb.com/tutorials/realtime_maps_sync.html) to learn more about the sync option in CartoDB. For now, to set up the sync, navigate to your tables dashboard in CartoDB and click the "+" to create a new table. In the field that appears, paste the URL from  the Fulcrum app for which you enabled data share. You can choose how often your data syncs, and then can get started in customizing your map vizualization.(Note that each time you disable and re-enable your data share, it will generate a new link. This is important if you have the sync set up and would like to keep it live.)
 
 ## Downloading your data
 If you do not have the sync function on your CartoDB account, or if you don't need your data to automatically sync, you also have the option to export your data from Fulcrum and upload it to CartoDB manually. To do this, just click the down arrow and download your data in your file of choice. 
