@@ -37,9 +37,23 @@ For general rights on content see: [http://cartodb.com/terms#subscriber](For gen
 
 ### I have a column with the coordinates but my data is not georeferenced
 
-​This is happening because you have both coordinates in the same column, and as you see in the wizard for georeferencing, it asks about two columns, one with longitude and another with the latitude.
+​This may be happening because you have both coordinates in the same column, and as you see in the wizard for georeferencing, it asks about two columns, one with longitude and another with the latitude.
 ​
 ​If you split this unique coordinates column in two, and apply again the georeferencing process by taking into account the both columns, your data will be georeferenced.
+
+You can achieve this easily by following these steps:
+
+1. Create two new columns in your table, of type string, with names "latitude" and "longitude".
+
+2. Use the following SQL queries that will split your unique coordinates column into two:
+
+{% highlight sql %}
+UPDATE _tablename_ SET _latitude_ = split_part(_coordinates_, ', ', 1)
+
+UPDATE _tablename_ SET _longitude_ = split_part(_coordinates_, ', ', 2)
+{% endhighlight %}
+
+Notice that these SQL functions are expecting the value of the coordinates column to be similar to: "lat, long". If you use a different separator or your coordinates are in different order, you will have to customize the previous queries.
 
 ### How can I change the privacy of my tables without using the UI?
 
