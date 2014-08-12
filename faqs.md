@@ -33,6 +33,8 @@ http://{USERNAME}.cartodb.com/api/v2/sql?format=csv&q=SELECT+*+FROM+tm_world_bor
 
 ### Are there any licenses on the data I upload to CartoDB?
 
+For general rights on content see: [http://cartodb.com/terms#subscriber](For general rights on content see: http://cartodb.com/terms#subscriber).
+
 ### I have a column with the coordinates but my data is not georeferenced
 
 ​This is happening because you have both coordinates in the same column, and as you see in the wizard for georeferencing, it asks about two columns, one with longitude and another with the latitude.
