@@ -47,10 +47,11 @@ You can achieve this easily by following these steps:
 
 2. Use the following SQL queries that will split your unique coordinates column into two:
 
-````
+{% highlight sql %}
 UPDATE _tablename_ SET _latitude_ = split_part(_coordinates_, ', ', 1)
 
 UPDATE _tablename_ SET _longitude_ = split_part(_coordinates_, ', ', 2)
+{% endhighlight %}
 
 Notice that these SQL functions are expecting the value of the coordinates column to be similar to: "lat, long". If you use a different separator or your coordinates are in different order, you will have to customize the previous queries.
 
