@@ -160,7 +160,7 @@ No. Each layer is related to some kind of geometry, so if you need to map polygo
 
 ## Manipulating your data
 
-### How do I perform a map with information that changes in time?
+### How do I create an animated map?
 
 <p class="wrap-border"><img src="{{ '/img/layout/faqs/torque.png' | prepend: site.baseurl }}" alt="Torque" /></p>
 
@@ -245,6 +245,10 @@ Each one of our plans include a free quota of geocodings, but extra charges will
 ### What does the table quota mean for the different plans?
 
 Several tiers of usage are available for CartoDB, ranging from a free account to a fully dedicated instance. The difference between these accounts is in their physical storage size, memory size, and several CartoDB features. You can find full details on these differences over on the [pricing](http://cartodb.com/pricing) page.
+
+### What is a map view?
+
+A new map view happens everytime a visualization is shown. In a very simple way: map views count how many times your map has been visited, regardless of if it was shown in your public CartoDB page, in the CartoDB Editor, or if the map was embedded in your own site.
 
 ### How can I know how many map views has a specific visualization?
 
