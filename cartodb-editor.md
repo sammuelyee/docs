@@ -114,7 +114,7 @@ You view the list of tables you have uploaded to your CartoDB account on the das
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/privacy-dialog.png' | prepend: site.baseurl }}" alt="Tables privacy" /></p>
 
-To change the privacy setting of a table click the colored label right next to the table's name. You may then choose "Private," "Anyone with a link," or "Public on the web". If a table is set to Private, no one but you will be able to see the table. If it requires a link, only those who have the link will be able to find it. If it's public on the web, anyone may find it on your Public Page or roaming around the internet!
+To change the privacy setting of a table click the colored label right next to the table's name. You may then choose "Public," "Only people with the link," or "Private". If a table is set to public, anyone may find it on your Public Page or roaming around the internet. If it requires a link, only those who have the link will be able to find it. If it's Private no one but you will be able to see the table.
 
 You can also change the privacy setting of a table inside the table view, by using on the 'Options' menu and selecting 'Change privacy', or by clicking on the colored lock button that appears on the top right section of the page.
 
@@ -122,19 +122,19 @@ Take into account that different privacy options will appear depending on the cu
 
 ### Viewing tables
 
-Once you've clicked on a table, there are two ways for you two view your table's data: Table and Map View. You may toggle between the two views on the top left under the table name.
+Once you've clicked on a table, there are two ways for you to view your table's data: Data view and Visualization. You may toggle between the two views next to the table name.
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/switch.png' | prepend: site.baseurl }}" alt="Viewing tables" /></p>
 
-#### Table
+#### Data view
 
-Table view allows you to inspect, filter, and query your data and see the results in a spread sheet format. The pull out pane on the right of the screen allows you to write SQL queries, apply basic filters, merge two uploaded tables, and add rows and columns.
+Data view allows you to inspect, filter, and query your data and see the results in a spread sheet format. The pull out pane on the right of the screen allows you to write SQL queries, apply basic filters, merge two uploaded tables, and add rows and columns.
 
 #### Map view
 
-The map view allows you to inspect your data as a layer over a base map. You may apply SQL queries or filters on the view, style the data's symbology using our wizards or by writing your own CartoCSS, and create infowindows.
+Map view allows you to inspect your data as a layer over a base map. You may apply SQL queries or filters on the view, style the data's symbology using our wizards or by writing your own CartoCSS, and create infowindows.
 
-Even though in the Map View you may style and filter your data **but** the Map View is not the same as a shareable visualization. In order to create a visualization, click "Visualize" in the top right corner. Keep on reading to learn what you may do from there!
+Even though in the map view you may style and filter your data **but** this view is not the same as a shareable visualization. In order to create a visualization, click "Visualize" in the top right corner. Keep on reading to learn what you may do from there!
 
 ## Visualizations
 
@@ -152,75 +152,62 @@ We've decoupled table privacy from visualization privacy.
 
 This way, you can create visualizations from private tables and make them public, so the map (and any information selected on the infowindows) can be shared without anyone being able to download the whole data from your table.
 
-### Visualization metadata
-
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/vizheader.png' | prepend: site.baseurl }}" alt="Visualization" /></p>
-
-For each visualization you may edit the name, add a description, and add tags to keep them organized and discoverable. You may use the description section to talk about your data sources, or to clarify the content and purpose of your map. Use tags to unite projects or themes.
-
 ### Visualization privacy options
+
+When you are creating your CartoDB visualization, you may also edit who is able to access to it. In order to edit these settings, click on the padlock from the map created on the “Visualizations” section of your CartoDB dashboard. Here you will also be able to delete your visualization or lock it to prevent any accidentally change in the future. 
+
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/padlock.png' | prepend: site.baseurl }}" alt="Privacy settings in your visualization" /></p>
+
+In the window that appears, you will see four options for your privacy settings:
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/privacyoptions.png' | prepend: site.baseurl }}" alt="Privacy settings in your visualization" /></p>
 
-When you are sharing your CartoDB visualization, you may also edit who is able to access the visualization. In order to edit these settings, click on "Share" from the Visualization Editor. In the window that appears, you will see four options for your privacy settings:
 
-- **Public on the web**  
+- **Public**  
   When selected, this setting means that your map will be publically available, and will be displayed in your [CartoDB Public Profile](http://blog.cartodb.com/post/82193209466/interesting-cartodb-profiles).
 
-- **Anyone with a link**  
+- **Only people with a link**  
   With this setting, only users who have the visualization URL will be able to find your map visualization. These visualizations will not appear in your CartoDB Public Profile.
 
-- **Anyone with a password**  
+- **Password protected**  
   These visualizations will require a password entry from anyone visiting the visualization URL before they are able to view the visualization. These visualizations will not appear in your CartoDB Public Profile.
 
 - **Private**  
   When this setting is selected, only you are able to view your visualization. It will not appear in your Public Profile.
 
-### Basemaps
 
-#### What is a basemap?
+### Visualization metadata
 
-A basemap is a graphical representation of the world showing natural and cultural features such as water bodies, topography, park areas, points of interest, geopolitical borders, roads, streets and sometimes buildings. CartoDB provides you with a selection of basemap options and providers (such as Google and Nokia). You may import your own custom basemap (from MapBox, an XYZ tileset (e.g. Stamen maps), or WMS.)  or use a solid background color, repeating image or pattern. With the easy-to-use basemap selector, you can focus on the an aesthetically pleasing way of visualizing your data.
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/vizheader.png' | prepend: site.baseurl }}" alt="Visualization" /></p>
 
-#### Selecting your basemap
+For each visualization you may edit the name, add a description, source, license, and add tags to keep them organized and discoverable. You will find the "Edit metadata" option under the visualization title. 
 
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/basemapselect.png' | prepend: site.baseurl }}" alt="Select a basemap" /></p>
+You may use the description section to clarify the content and purpose of your map. Use tags to unite projects or themes. Remember to add the data sources. Also there is a space to insert the license information in case you needed. 
 
-When you first create a visualization, it will be given a default "Nokia Day" basemap. To change your basemap simply click on "Basemap" in the upper left of the Map View and select an available style from the dropdown. You may add your own custom basemap in the "Add yours" option and then by linking to the URL for that basemap from MapBox, XYZ, or WMS. Finally, there are options for adding a solid color or a repeating image pattern instead of a basemap. All of these features give you a high level of customization when creating a map visualization.
+### Add Element 
 
-CartoDB offers you a variety of basemaps you may use in your visualization. You may select any one of them, and the change will be applied immediately. You may change your basemap anytime and the rest of your layers will remain unchanged. Take some time to explore our different available basemaps. You'll be able to see that some of them have more detail (such as depicting borders, roads, mountains) while others are more minimalistic. Thus you may choose one that's best suited for the purpose of your visualization.
+You are able to customize your visualization in just a few clicks. Under the "Edit metadata" option, there is the possibility to add an element on your map whether is a title, text or an image item. 
 
-#### Including an external basemap
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/addelement.png' | prepend: site.baseurl }}" alt="Visualization" /></p>
 
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/addbasemap.png' | prepend: site.baseurl }}" alt="Add your own NASA basemap" /></p>
+- **Add title item**
 
-Apart from the default basemaps offered in CartoDB, you may integrate third-party basemaps to customize your visualizations even further. You have four options (we're always striving to add more):
+ When you add this item, a text box with a title format will appear on your map. You can place the title box wherever you want and edit the style. 
 
-1. **MapBox**  
-  MapBox is a service which lets you customize the design of a basemap with colors and elements you choose, and integrate easily to CartoDB. Just select the URL from your MapBox map and paste it in the configuration window.
+- **Add text item**
 
-2. **XYZ Template**  
-  XYZ Templates allow you to access many other basemaps, including those from OpenStreetMap and Stamen. In order to use these basemaps, you need their tile URLs. Give it a try with these:
-  - **Stamen Toner:** `http://{s}.stamen.com/toner/{z}/{x}/{y}.jpg`
-  - **Stamen Terrain:** `http://{s}.stamen.com/terrain/{z}/{x}/{y}.jpg`
-  - **Stamen Watercolor:** `http://tile.stamen.com/watercolor/{z}/{x}/{y}.jpg`
-  - **OSM:** `http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png`
+ Text boxes will give you control over the position of a block of text on your map. You can place text boxes anywhere in your visualization and edit them. You can change the text align, style, width, font and even the box style.
 
-3. **WMS Base URL**  
-  A WMS, or Web Map Service, allows you to connect to map images generated online by a map server using data from a GIS database. You may use these as basemaps, and they can often contain very interesting information that could be harder to find with other basemaps. You can find URLs for different WMS online, but you often have to look closely to make sure you're getting what  you want. Take a look at these WMS URLs, if you want to see what kinds of things you can do with a [WMS baselayer](http://nationalatlas.gov/infodocs/wms_intro.html).
+- **Add image item**
 
-4. **NASA**  
-  With this option, you may easily use  NASA Global Imagery Browse Services satellite imagery as a basemap for your visualizations. Just select the date you're interested in, and whether you'd like a day map (which changes based on the day selected) or a night map, and add it to your visualization.
+ An image can give extra value to your visualization. You will only need to add the image link to the box and it will pop up on your visualization. You can edit the box style color, the position, and also change the width. 
 
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/nasabase.png' | prepend: site.baseurl }}" alt="Add your own NASA basemap" /></p>
 
-#### About map projections
+###Configure Canvas 
 
-The earth has a three-dimensional ellipsoid like shape, but maps are two-dimensional representations of the earth. This means that some distortion must be applied in order to visualize the earth on a two-dimensional plane. During this process several types of distortions may occur which impacts how map features are represented. The methods used to distort the three-dimensional form of the earth into a two-dimensional representation is referred to as [map projections](http://en.wikipedia.org/wiki/Map_projection). There are many types of projections used to represent the earth at various scales. Some depict the whole world, others a continent or country, and still others a region or state / province. Each type of projection attempts to preserve certain properties at the expense of others such as area, direction, shape and distance.
+On CartoDB you can edit your visualization according to the style of your canvas. Choose one of the options depending on the device where your map will be displayed: desktop or mobile.  
 
-The majority of maps used in the web are using a variant of the [Mercator Projection](https://en.wikipedia.org/wiki/Mercator_projection) that is commonly referred to as the Web-Mercator. That is the projection you will be using when you create your visualizations in CartoDB. Changing the map projection is currently not feasible, as it would imply changing all the basemaps and all the information of how your data is stored in CartoDB.
-
-You can learn more about map projections in Wikipedia, and read up on all the details about how CartoDB handles [projections internally]({{ '/tutorials/projections.html' | prepend: site.baseurl }}).
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/canvas.png' | prepend: site.baseurl }}" alt="Visualization" /></p>
 
 ### CartoDB Sidebar
 
@@ -503,11 +490,11 @@ In the background for all of these types, CartoDB is using SQL to pull different
 
 For a quick video primer, take a look at our [filter tutorial]({{ '/tutorials/filters.html' | prepend: site.baseurl }}).
 
-### Options
+### Options [Header]
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/options.png' | prepend: site.baseurl }}" alt="Options" /></p>
 
-You can access your map options at the top right of your screen. When you're in the Table view, you have many options:
+You can access your map options at the top right of your screen. When you're in the Data view, you have many options:
 
 - **Export**  
   Allows you to export your data as a .csv, .shp, .kml, .svg and .geojson
@@ -521,52 +508,114 @@ You can access your map options at the top right of your screen. When you're in 
 - **Merge Table**  
   Merge your current table with another existing one, using either a column join (joins two tables based off of a shared column) or a spatial join (joins two tables based off of their spatial overlaps). For more info, take a look [here]({{ '/tutorials/merging_data.html' | prepend: site.baseurl }}).
 
+- **Change privacy**  
+  Allows you to edit who is able to access the table. 
+
+
+But, once your visualization has been created, the options will only be: duplicate visualization or delete visualization.
+
+  
+  <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/optionvisualization.png' | prepend: site.baseurl }}" alt="Options" /></p>
+
+
+### Basemaps
+
+#### What is a basemap?
+
+A basemap is a graphical representation of the world showing natural and cultural features such as water bodies, topography, park areas, points of interest, geopolitical borders, roads, streets and sometimes buildings. CartoDB provides you with a selection of basemap options and providers (such as Google and Nokia). You may import your own custom basemap (from MapBox, an XYZ tileset (e.g. Stamen maps), or WMS.)  or use a solid background color, repeating image or pattern. With the easy-to-use basemap selector, you can focus on the an aesthetically pleasing way of visualizing your data.
+
+#### Selecting your basemap
+
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/basemapselect.png' | prepend: site.baseurl }}" alt="Select a basemap" /></p>
+
+When you first create a visualization, it will be given a default “Nokia Day” basemap. To change your basemap simply click on “Nokia Day” below left of the Visualization view and select an available style. You may add your own custom basemap in the “yours” option and then by linking to the URL for that basemap from MapBox, XYZ, or WMS. Finally, there are options for adding a solid color or a repeating image pattern instead of a basemap. All of these features give you a high level of customization when creating a map visualization.
+
+CartoDB offers you a variety of basemaps you may use in your visualization. You may select any one of them, and the change will be applied immediately. You may change your basemap anytime and the rest of your layers will remain unchanged. Take some time to explore our different available basemaps. You'll be able to see that some of them have more detail (such as depicting borders, roads, mountains) while others are more minimalistic. Thus you may choose one that's best suited for the purpose of your visualization.
+
+#### Including an external basemap
+
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/addbasemap.png' | prepend: site.baseurl }}" alt="Add your own NASA basemap" /></p>
+
+Apart from the default basemaps offered in CartoDB, you may integrate third-party basemaps to customize your visualizations even further. You have four options (we're always striving to add more):
+
+1. **MapBox**  
+  MapBox is a service which lets you customize the design of a basemap with colors and elements you choose, and integrate easily to CartoDB. Just select the URL from your MapBox map and paste it in the configuration window.
+
+2. **XYZ Template**  
+  XYZ Templates allow you to access many other basemaps, including those from OpenStreetMap and Stamen. In order to use these basemaps, you need their tile URLs. Give it a try with these:
+  - **Stamen Toner:** `http://{s}.stamen.com/toner/{z}/{x}/{y}.jpg`
+  - **Stamen Terrain:** `http://{s}.stamen.com/terrain/{z}/{x}/{y}.jpg`
+  - **Stamen Watercolor:** `http://tile.stamen.com/watercolor/{z}/{x}/{y}.jpg`
+  - **OSM:** `http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png`
+
+3. **WMS Base URL**  
+  A WMS, or Web Map Service, allows you to connect to map images generated online by a map server using data from a GIS database. You may use these as basemaps, and they can often contain very interesting information that could be harder to find with other basemaps. You can find URLs for different WMS online, but you often have to look closely to make sure you're getting what  you want. Take a look at these WMS URLs, if you want to see what kinds of things you can do with a [WMS baselayer](http://nationalatlas.gov/infodocs/wms_intro.html).
+
+4. **NASA**  
+  With this option, you may easily use  NASA Global Imagery Browse Services satellite imagery as a basemap for your visualizations. Just select the date you're interested in, and whether you'd like a day map (which changes based on the day selected) or a night map, and add it to your visualization.
+
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/nasabase.png' | prepend: site.baseurl }}" alt="Add your own NASA basemap" /></p>
+
+#### About map projections
+
+The earth has a three-dimensional ellipsoid like shape, but maps are two-dimensional representations of the earth. This means that some distortion must be applied in order to visualize the earth on a two-dimensional plane. During this process several types of distortions may occur which impacts how map features are represented. The methods used to distort the three-dimensional form of the earth into a two-dimensional representation is referred to as [map projections](http://en.wikipedia.org/wiki/Map_projection). There are many types of projections used to represent the earth at various scales. Some depict the whole world, others a continent or country, and still others a region or state / province. Each type of projection attempts to preserve certain properties at the expense of others such as area, direction, shape and distance.
+
+The majority of maps used in the web are using a variant of the [Mercator Projection](https://en.wikipedia.org/wiki/Mercator_projection) that is commonly referred to as the Web-Mercator. That is the projection you will be using when you create your visualizations in CartoDB. Changing the map projection is currently not feasible, as it would imply changing all the basemaps and all the information of how your data is stored in CartoDB.
+
+You can learn more about map projections in Wikipedia, and read up on all the details about how CartoDB handles [projections internally]({{ '/tutorials/projections.html' | prepend: site.baseurl }}).
+
 - **Change Privacy**  
   Edit who may view your table of data.
 
 - **Delete this table**  
   Entirely delete your data table. Note that this will also delete any visualizations that rely on the current table!
 
-### Share your visualization
 
-Once you have created a visualization, it's time to share it with the world! Take a look at our [written tutorial]({{ '/tutorials/sharing_maps.html' | prepend: site.baseurl }}) or [video tutorial](http://vimeo.com/80472123) for a guide to publishing and sharing your visualizations. Read on for a description of the CartoDB sharing interface!
+### Options
 
-#### Title and description
-
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/title.png' | prepend: site.baseurl }}" alt="Title and description" /></p>
-
-Before you share your visualization, you can edit the title and description of your map in the upper left-hand corner of your visualization editor. Keep the title concise and you can be more descriptive in the subtitle or description of your map.
-
-#### Sharing & privacy options
-
-Once you create a visualization from your table of data, click the Share button at the top right of your screen to pull up your publishing options. Take a look at the image below to get an idea of the parts you can customize.
+Once you create a visualization from your table of data, click the **Options** button bellow left of the visualization view to pull up your publishing options. 
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/sharesettings.png' | prepend: site.baseurl }}" alt="Sharing & privacy options" /></p>
 
 Each of these options has a simple toggle on/off functionality. If you wish for the feature to be shown, toggle it on so that the blue shows. If you would like it off, toggle it off so it turns grey. You can control the following items:
 
-- **Map title**
+- **Default title**
   Whether or not the title appears.
-- **Description**
+- **Default description**
   Whether or not the map description appears.
-- **Shareable**
-  Whether quick links for sharing appear.
 - **Search box**
   Turn the appearance of a search box on/off.
-- **Layer selector**
-  Allow viewers to toggle different layers on/off.
-- **Scroll wheel zoom**
-  Enable or disable zoom using a mouse scroll wheel.
-- **Legends**
-  Turn the appearance of legends on/off.
 - **Fullscreen**
   Enable or disable the ability of viewers to enter fullscreen mode.
-- **Logo**
-  Include or exclude the CartoDB logo on your map.
+- **Shareable**
+  Whether quick links for sharing appear.
+- **Zoom**
+  Enable or disable zoom
+- **Scroll wheel zoom**
+  Enable or disable zoom using a mouse scroll wheel.
+- **Layer selector**
+  Allow viewers to toggle different layers on/off.
+- **CartoDB logo**
+  Whether or not the CartoDB logo appears
+- **Legends**
+  Turn the appearance of legends on/off.
 
-From the share window, you can also edit privacy settings, which you can view in the screenshot below.
+### Share your visualization
 
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/privacy.png' | prepend: site.baseurl }}" alt="privacy settings" /></p>
+Once you have created a visualization, it's time to share it with the world! Take a look at our [written tutorial]({{ '/tutorials/sharing_maps.html' | prepend: site.baseurl }}) or [video tutorial](http://vimeo.com/80472123) for a guide to publishing and sharing your visualizations. Read on for a description of the CartoDB sharing interface!
+
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/sharevisualization.png' | prepend: site.baseurl }}" alt="Share your visualization" /></p>
+
+You have the following options to share your visualization:
+
+- **Get the link**
+You will find here the URL to share your Visualization via Twitter, email, or anywhere else. When you share that link, viewers will only be able to explore it on the map, they will not be able to edit any of your data.
+
+- **Embed it**
+You will find here the embed code to get your map into your blog, website or simple application.
+
+- **CartoDB.js**
+This URL will allow you to add your map to your applications. Read more [here](http://docs.cartodb.com/cartodb-platform/cartodb-js.html).
 
 ### Supported fonts
 
