@@ -357,12 +357,16 @@ module.exports = function(grunt) {
 
   grunt.registerTask('deploy:staging', [
     'build',
-    's3:staging'
+    's3:staging',
+    's3:stagingAssets',
+    's3:stagingRobots'
   ]);
 
   grunt.registerTask('deploy:production', [
     'build',
-    's3:production'
+    's3:production',
+    's3:productionAssets',
+    's3:productionRobots'
   ]);
 
   grunt.registerTask('default', [
