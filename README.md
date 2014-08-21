@@ -2,11 +2,13 @@
 
 [![Build Status](https://travis-ci.org/CartoDB/docs.svg?branch=master)](https://travis-ci.org/CartoDB/docs)
 
+
 ## About
 
 All things docs about CartoDB. This repo contains all that will be found in [docs.cartodb.com](http://docs.cartodb.com/) - It's meant to be an open resource so that anyone can contribute information to our docs. It features a guide of the CartoDB Editor, Tutorials, Tips and Tricks, and CartoDB Platform. 
 
 If you spot a typo, want to add a FAQ, or contribute a tutorial, just send a Pull Request! Check our [CONTRIBUTING](CONTRIBUTING.md) page.
+
 
 ## Develop
 
@@ -20,6 +22,7 @@ npm install -g grunt-cli
 npm install
 ```
 
+
 ### Run locally
 
 ```
@@ -30,6 +33,7 @@ A tab in your browser will open and direct you to http://0.0.0.0:9000
 
 Also, you can run the blog locally as if it was on production with `grunt serve:dist`
 
+
 ## Deploy
 
 ```
@@ -37,6 +41,9 @@ grunt deploy:staging|production
 ```
 
 You'll need a `grunt-aws.json` credentials file.
+
+**There's a hook set up so when pushing to _master_ it is automatically deployed to production**
+
 
 ## How to contribute 
 
