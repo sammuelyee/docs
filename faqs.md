@@ -8,7 +8,7 @@ js_asset: "editor"
 
 ### Which databases are supported by CartoDB?
 
-One of the main components of CartoDB is its geospatial database built on PostgreSQL and PostGIS. This means that by default, the CartoDB platform works over PostgreSQL due to making heavy use of PostGIS advanced capabilities. This way, if the CartoDB built-in features are not enough to perform your analysis, you can take advantage of the full power of PostGIS.
+One of the main components of CartoDB is its geospatial database built on PostgreSQL and PostGIS. This means that by default the CartoDB platform works over PostgreSQL due to making heavy use of PostGIS advanced capabilities. This way, if the CartoDB built-in features are not enough to perform your analysis, you can take advantage of the full power of PostGIS.
 
 We offer the option of connecting your own database to CartoDB as part of our Enterprise features in order to adapt the platform to your specific needs. If you are interested, let us know at sales@cartodb.com.
 
@@ -33,7 +33,7 @@ http://{USERNAME}.cartodb.com/api/v2/sql?format=csv&q=SELECT+*+FROM+tm_world_bor
 
 ### Are there any licenses on the data I upload to CartoDB?
 
-For general rights on content see: [http://cartodb.com/terms#subscriber](For general rights on content see: http://cartodb.com/terms#subscriber).
+For general rights on content, see: [http://cartodb.com/terms#subscriber](http://cartodb.com/terms#subscriber).
 
 ### I have a column with the coordinates but my data is not georeferenced
 
@@ -53,7 +53,7 @@ UPDATE _tablename_ SET _latitude_ = split_part(_coordinates_, ', ', 1)
 UPDATE _tablename_ SET _longitude_ = split_part(_coordinates_, ', ', 2)
 {% endhighlight %}
 
-Notice that these SQL functions are expecting the value of the coordinates column to be similar to: "lat, long". If you use a different separator or your coordinates are in different order, you will have to customize the previous queries.
+Notice that these SQL functions are expecting the value of the coordinates column to be similar to: "lat, long". If you use a different separator or your coordinates are in different order, you will have to adapt the previous queries to your specific syntax.
 
 ### How can I change the privacy of my tables without using the UI?
 
@@ -104,7 +104,7 @@ In order to use your own images for customizing your infowindows at CartoDB, go 
 
 ### How to customize infowindows?
 
-The HMTL code of the infowindows can be edited directly in the "Custom HTML" option.  This let you tweak content layout, write static content, and embed external resources. 
+The HTML code of the infowindows can be edited directly in the "Custom HTML" option.  This lets you tweak content layout, write static content, and embed external resources. 
 
 You can check our blogpost about this topic here: http://blog.cartodb.com/post/61664564416/full-editing-of-infowindow-html
 
@@ -130,7 +130,7 @@ You can just disable a legend from a layer by applying to it the "none" template
 
 ### How to create custom filters for a visualization?
 
-In order to create your own filter for interacting with your visualizations you would need to use our cartoDB.js API.
+In order to create your own filter for interacting with your visualizations you would need to use our CartoDB.js Javascript API.
 
 You can find an example [here](http://cartodb.github.io/cartodb.js/examples/filters-template/) ([source code](https://github.com/CartoDB/cartodb.js/tree/develop/examples/filters-template))
 
@@ -166,7 +166,7 @@ Just go to the CartoCSS tag and look for this line:
 }
 {% endhighlight %}
 
-​In your case, it will have a value different than 0, so you should just only give to it a zero-value. 
+​In your case, it will have a value different than 0, so you should only give to it a zero-value. 
 
 ### Can I have different geometries in the same layer?
 
