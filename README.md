@@ -40,9 +40,7 @@ Also, you can run the blog locally as if it was on production with `grunt serve:
 grunt deploy:staging|production
 ```
 
-You'll need a `grunt-aws.json` credentials file. You can copy 
-
-**There's a hook set up so when pushing to _master_ it is automatically deployed to production**
+You'll need a `grunt-aws.json` credentials file. You can copy the grunt-aws.example.json to grunt-aws.json to work locally.
 
 
 ## How to contribute 
