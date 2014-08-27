@@ -40,11 +40,21 @@ Also, you can run the blog locally as if it was on production with `grunt serve:
 grunt deploy:staging|production
 ```
 
-You'll need a `grunt-aws.json` credentials file.
+You'll need a `grunt-aws.json` credentials file. You can copy 
 
 **There's a hook set up so when pushing to _master_ it is automatically deployed to production**
 
 
 ## How to contribute 
 
-If you are interested in helping us develop the documentation, see [CONTRIBUTING](CONTRIBUTING.md) for more information.
+CartoDB Docs is in itself an open project, and we welcome contributions. If you spot a typo, want to expand some explanation, add some [trick](http://docs.cartodb.com/tips-and-tricks.html) or [FAQ](http://docs.cartodb.com/faqs.html) you see missing, or event create a [Tutorial](http://docs.cartodb.com/tutorials.html), we welcome you to do so. We would need that everything you contribute follow the style of what's already on place. If you want to contribute something and have doubts about how to so, you can contact support@cartodb.com
+
+To send your contributions you can follow the standard workflow: 
+
+- Fork it ( https://github.com/cartodb/docs/fork )
+- Create your feature branch (`git checkout -b my-new-feature`)
+- Commit your changes (`git commit -am 'Add some feature'`)
+- Push to the branch (`git push origin my-new-feature`)
+- Create a new Pull Request
+
+We'll review the Pull Request and comment on it. 
