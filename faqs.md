@@ -240,11 +240,26 @@ You will be able to insert CartoDB maps in WordPress, Joomla, Drupal, etc. if yo
 
 ### How to print maps in CartoDB?
 
-There is no direct way to get printed maps from CartoDB besides just grabbing a screenshot. You can do that pretty easily on a Mac or PC with a keyboard shortcut (cmd shift 3 in mac). Or, if you are looking at a public map you can just it 'print' in your browser and should be able to get it in a PDF.
+There is no direct way to get printed maps from CartoDB besides just grabbing a screenshot. You can do that pretty easily on a Mac or PC with a keyboard shortcut (Cmd + Shift + 3 in Mac). Or, if you are looking at a public map you can just it 'print' in your browser and should be able to get it in a PDF.
 
 ### How can I set the position of an embedded visualization?
 
-In order to set the initial position of a map that you want to embed, you just need to adjust this position and the zoom value in the preview map that appears in the sharing option. The URLs that appear for sharing will show the map just as it is shown in the preview.
+In order to set the initial position of a map that you want to embed, you just need to adjust this position and the zoom value in the  map of the visualization. If you want to edit the way that your links and embed maps are centered/zoomed after sharing, you can add the zoom, latitude and longitude parameters to the simple URL as follows:
+
+{% highlight bash %}
+http://<username>.cartodb.com/viz/<viz_id>/embed_map?zoom=3&center_lat=0&center_lon=0
+{% endhighlight %}
+
+You can also use the same trick in the HTML code that is given to embed your maps.
+
+In case you're using [CartoDB.js](http://docs.cartodb.com/cartodb-platform/cartodb-js.html), you can include these values in the options of the createVis method:
+
+{% highlight javascript %}
+cartodb.createVis('map', 'http://documentation.cartodb.com/api/v2/viz/2b13c956-e7c1-11e2-806b-5404a6a683d5/viz.json', {
+      center_lat: 43.90,
+      center_lon: -97.55,
+      zoom: 5
+        }){% endhighlight %}
 
 ## Your account
 
