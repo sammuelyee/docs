@@ -537,27 +537,29 @@
   @include border-radius(4px);
 
   ul {
-    margin: 0;
+    margin-left: -10px;
+    margin-right: -10px;
+    margin-bottom: 0;
 
     > li {
-      margin: 0;
-      width: 100%;
-    }
-
-    p {
-      display: inline-block;
-      margin-bottom: 20px;
-      padding-left: 60px;
-      background: image-url('icons/subscribe.png') no-repeat 0 center;
-      color: #fff;
+      width: 50%;
     }
   }
+
+  p {
+    color: #fff;
+    background: image-url('icons/subscribe.png') no-repeat 0 center;
+    padding-left: 60px;
+  }
+}
+
+.subscribe-block-inner {
+  margin: 0 10px;
 }
 
 .subscribe-block-field {
   padding-top: 10px;
 }
-
 
 /* =Platform
 ----------------------------------------------- */
@@ -831,6 +833,25 @@
     p.platform-lst-content {
       min-height: 0;
     }
+  }
+}
+
+@media (max-width: $large-width) {
+  .subscribe-block {
+    ul {
+      > li {
+        width: 100%;
+      }
+    }
+
+    p {
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+  }
+
+  .subscribe-block-inner {
+    text-align: center;
   }
 }
 
