@@ -39,9 +39,10 @@
     <script src="{{ '/js/vendor/waypoints.min.js' | prepend: site.baseurl }}"></script>
     <script src="{{ '/js/app.js' | prepend: site.baseurl }}"></script>
     <script src="{{ '/js/ui/navbar.js' | prepend: site.baseurl }}"></script>
-    {% if page.js_asset %}
-      <script src="{{ page.js_asset | append: '.js' | prepend: '/js/' | prepend: site.baseurl }}"></script>
-    {% endif %}
+  {% endif %}
+
+  {% if page.js_asset %}
+    <script src="{{ page.js_asset | append: '.js' | prepend: '/js/' | prepend: site.baseurl }}"></script>
   {% endif %}
 </body>
 </html>

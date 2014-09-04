@@ -530,6 +530,34 @@
   }
 }
 
+.subscribe-block {
+  padding: 20px;
+  font: 18px 'Proxima Nova Sb';
+  background: #384047;
+  @include border-radius(4px);
+
+  ul {
+    margin: 0;
+
+    > li {
+      margin: 0;
+      width: 100%;
+    }
+
+    p {
+      display: inline-block;
+      margin-bottom: 20px;
+      padding-left: 60px;
+      background: image-url('icons/subscribe.png') no-repeat 0 center;
+      color: #fff;
+    }
+  }
+}
+
+.subscribe-block-field {
+  padding-top: 10px;
+}
+
 
 /* =Platform
 ----------------------------------------------- */
@@ -689,6 +717,19 @@
   }
 }
 
+
+/* =Footer
+----------------------------------------------- */
+
+.footer-inner {
+  max-width: 1046px;
+  padding: 40px 50px 0;
+}
+
+
+/* =Media queries
+----------------------------------------------- */
+
 @media (max-width: $max-width) {
   .nav-inner {
     > li {
@@ -804,18 +845,7 @@
   .embed-tutorial {
     margin: 0 -20px;
   }
-}
 
-
-/* =Footer
------------------------------------------------ */
-
-.footer-inner {
-  max-width: 1046px;
-  padding: 40px 50px 0;
-}
-
-@media (max-width: $medium-width) {
   .footer-inner {
     padding: 40px 20px 0;
   }

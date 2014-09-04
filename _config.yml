@@ -20,6 +20,7 @@ blog-baseurl: 'http://blog.cartodb.com'
 
 analytics_property_id: ''
 mixpanel_token: ''
+tech_newsletter_id: ''
 
 collections:
   tutorials:
