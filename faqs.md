@@ -256,10 +256,11 @@ In case you're using [CartoDB.js](http://docs.cartodb.com/cartodb-platform/carto
 
 {% highlight javascript %}
 cartodb.createVis('map', 'http://documentation.cartodb.com/api/v2/viz/2b13c956-e7c1-11e2-806b-5404a6a683d5/viz.json', {
-      center_lat: 43.90,
-      center_lon: -97.55,
-      zoom: 5
-        }){% endhighlight %}
+  center_lat: 43.90,
+  center_lon: -97.55,
+  zoom: 5
+});
+{% endhighlight %}
 
 ## Your account
 
