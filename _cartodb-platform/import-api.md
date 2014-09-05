@@ -1,6 +1,5 @@
 ---
 title: Import API
-permalink: /import-api/
 ---
 
 ## Import API
@@ -22,6 +21,7 @@ For this example (and the rest ones illustrated in this document) we will be usi
 
 Suppose we have a CartoDB account whose username is *documentation* and we want to upload a local file named *prism_tour.csv* located in the *Documents* folder. Doing so would require executing the following command on a Terminal window:
 
+<div class="code-title code-request">REQUEST</div>
 {% highlight bash %}
 curl -F file=@/home/documentation/Documents/prism_tour.csv 
 "https://documentation.cartodb.com/api/v1/imports/?api_key=3102343c42da0f1ffe6014594acea8b1c4e7fd64"`
@@ -31,6 +31,7 @@ Note that the *api_key* element has an alphanumeric value that is exclusive to t
 
 The response to this request would have the following format, yielding a success import:
 
+<div class="code-title">RESPONSE</div>
 {% highlight javascript %}
 {
   "item_queue_id": "efa9925c-31dd-11e4-a95e-0edbca4b5057",
