@@ -24,7 +24,24 @@
   <nav class="nav-collapse">
     <ul class="nav-inner inb-list">
       <li class="{% if page.slug == 'cartodb-editor' %}selected{% endif %} first"><a href="{{ '/cartodb-editor.html' | prepend: site.baseurl }}">CARTODB EDITOR</a></li>
-      <li class="{% if platform or page.slug == 'cartodb-platform' %}selected{% endif %}"><a href="{{ '/cartodb-platform.html' | prepend: site.baseurl }}">CARTODB PLATFORM</a></li>
+      <li class="tooltip-container {% if platform %}selected{% endif %}">
+        <a href="#" class="tooltip-link">
+          CARTODB PLATFORM
+          <i class="icon i-xs icons-arrow-down-white h-malign i-medium"></i>
+        </a>
+
+        <div class="tooltip h-pa">
+          <h2 class="tooltip-header">All APIs</h2>
+
+          <div class="tooltip-inner">
+            <ul>
+              {% for platform_item in site.cartodb-platform %}
+              <li class="{% if platform_item.url == page.url %}selected{% endif %}"><a href="{{ platform_item.url}}" class="tooltip-item">{{ platform_item.title }}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </li>
       <li class="{% if tutorials or page.slug == 'tutorials' %}selected{% endif %}"><a href="{{ '/tutorials.html' | prepend: site.baseurl }}">TUTORIALS</a></li>
       <li class="{% if page.slug == 'tips-and-tricks' %}selected{% endif %}"><a href="{{ '/tips-and-tricks.html' | prepend: site.baseurl }}">TIPS & TRICKS</a></li>
       <li class="{% if page.slug == 'faqs' %}selected{% endif %}"><a href="{{ '/faqs.html' | prepend: site.baseurl }}">FAQs</a></li>

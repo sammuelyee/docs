@@ -202,7 +202,10 @@ module.exports = function(grunt) {
             '_js/vendor/waypoints.min.js',
           ],
           '.tmp/js/main.js': [
+            'bower_components/cdbui/js/cdbui/cdbui.js',
+            'bower_components/cdbui/js/cdbui/cdbui.tooltip.js',
             '_js/app.js',
+            '_js/home.js',
             '_js/ui/navbar.js'
           ]
         }

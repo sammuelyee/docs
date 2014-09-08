@@ -8,7 +8,7 @@
 
 <body>
   <div class="offcanvas">
-  <div class="offcanvas-inner">
+  <div class="offcanvas-inner white_layout">
     {% include navigation.html %}
 
     <div class="wrapper">
@@ -35,7 +35,10 @@
     <script src="{{ '/js/vendor/jquery.jscrollpane.js' | prepend: site.baseurl }}"></script>
     <script src="{{ '/js/vendor/waypoints.min.js' | prepend: site.baseurl }}"></script>
     <script src="{{ '/js/app.js' | prepend: site.baseurl }}"></script>
+    <script src="{{ '/js/home.js' | prepend: site.baseurl }}"></script>
     <script src="{{ '/js/ui/navbar.js' | prepend: site.baseurl }}"></script>
+    <script src="/bower_components/cdbui/js/cdbui/cdbui.js"></script>
+    <script src="/bower_components/cdbui/js/cdbui/cdbui.tooltip.js"></script>
   {% endif %}
 
   {% if page.js_asset %}
