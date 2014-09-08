@@ -6,8 +6,9 @@ js_asset: "editor"
 redirect_from:
 - "/documentation/using-cartodb.html"
 ---
-
 ## One-minute introduction
+
+<p class="wrap-border"><img src="/img/layout/cartodb-editor/editor.png" alt="Using sync tables" /></p>
 
 Your dashboard is your baseline. It has two main sections: **tables** and **visualizations**. To get started, you will need to create a visualization from your data by following these simple steps:
 
@@ -43,11 +44,11 @@ The most common import method is to upload a local file or pull data from a publ
 
 If you plan to insert data by hand or programmatically, then create a blank table with the default CartoDB columns and indexes already in-place.
 
-CartoDB streamlines mapping tweets with direct access to Twitter API data.  Highlights of this feature include:
+CartoDB streamlines mapping tweets with direct access to Twitter API data. Highlights of this feature:
 
-..* Go to the source for high-quality data—no third party solutions or scraping techniques necessary
-..* Search by term or hashtag
-..* Analyze tweets in a defined timeframe or real-time
+* Go to the source for high-quality data—no third party solutions or scraping techniques necessary
+* Search by term or hashtag
+* Analyze tweets in a defined timeframe or real-time
 
 To use Twitter data in a visualization, select the Twitter icon in the upload window. Next, you will be prompted to search for data you want within a specific time period.  Remember that your number of available Twitter credits will update automatically and you can always add more.
 
