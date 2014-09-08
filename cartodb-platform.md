@@ -6,7 +6,6 @@ js_asset: "index"
 redirect_from:
 - "/documentation/apis-overview.html"
 ---
-
 ## CartoDB Platform
 
 CartoDB is heavily API driven. Most users will design their visualizations from within the CartoDB website, and then embed those visualizations using our API into their own websites or applications.

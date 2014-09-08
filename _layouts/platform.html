@@ -6,17 +6,11 @@ layout: default
   <div class="aside-inner">
     <div class="aside-fixed">
       <ul class="aside-menu">
+        {% for platform_item in site.cartodb-platform %}
         <li class="item">
-          <h3><a href="{{ '/cartodb-platform/cartodb-js.html' | prepend: site.baseurl }}">CartoDB.js</a></h3>
+          <h3><a href="{{ platform_item.url }}">{{ platform_item.title }}</a></h3>
         </li>
-
-        <li class="item">
-          <h3><a href="{{ '/cartodb-platform/sql-api.html' | prepend: site.baseurl }}">SQL API</a></h3>
-        </li>
-
-        <li class="item">
-          <h3><a href="{{ '/cartodb-platform/maps-api.html' | prepend: site.baseurl }}">Maps API</a></h3>
-        </li>
+        {% endfor %}
       </ul>
     </div>
   </div>
