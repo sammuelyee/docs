@@ -1,14 +1,13 @@
 ---
 title: Import API
+description: The CartoDB Importer API allows you to upload files to your CartoDB account and manipulate them by using a set of HTTP commands from a terminal window.
 ---
-
 ## Import API
 
 The CartoDB Import API allows you to upload files to a CartoDB account, check on their current status as well as deleting and listing importing processes on the given account. This API consists of several HTTP requests targeted at a set of CartoDB endpoints which deal with the conversion and import of the sent files. CartoDB tables can be classified into two categories:
 
 - **Standard tables**  
   The default tables used to store the data of the uploaded files that will be used to create maps and visualisations. Any CartoDB user may create, manipulate and delete such tables.
-  
 
 - **Sync tables**  
   Available to certain CartoDB plans, these tables store data from a remote file and refresh their own contents during periodic intervals specified by the user. The base files from which the sync tables retrieve their contents may come from Google Drive, Dropbox or a public URL. In this document we will deal with the simplest case: public URL.

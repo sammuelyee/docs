@@ -35,6 +35,7 @@ defaults:
       type: cartodb-platform
     values:
       js_asset: "editor"
+      layout: platform_item
   -
     scope:
       path: ""
@@ -42,9 +43,3 @@ defaults:
     values:
       tags: "cartodb, learning, tutorials, documentation, advanced, geospatial, functions"
       js_asset: "index"
-  -
-    scope:
-      path: ""
-      type: cartodb-platform
-    values:
-      layout: platform_item
