@@ -34,7 +34,7 @@ docs.Views.Editor = Backbone.View.extend({
       var href = this.href,
           id_ = href.split('#')[1];
 
-      that._goTo($('[id="' + id_ + '"]'), {}, function() {
+      that._goTo($('[id="' + id_ + '"]'), { margin: 171 }, function() {
         if (history.pushState) {
           history.pushState(null, null, href);
         } else {

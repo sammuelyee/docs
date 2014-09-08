@@ -208,14 +208,6 @@
   h3,
   h4,
   h5 {
-    &:before {
-      display: block;
-      content: " ";
-      margin-top: -119px;
-      height: 119px;
-      visibility: hidden;
-    }
-
     &:hover .header-link {
       @include opacity(1);
     }
@@ -617,19 +609,6 @@
       margin: 24px 0 0;
       padding: 50px 0 0;
       border-top: 1px dotted #ddd;
-    }
-  }
-
-  h2,
-  h3,
-  h4,
-  h5 {
-    &:before {
-      display: block;
-      content: " ";
-      margin-top: -171px;
-      height: 171px;
-      visibility: hidden;
     }
   }
 }
