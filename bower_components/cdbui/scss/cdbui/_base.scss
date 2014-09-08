@@ -1,0 +1,86 @@
+/* =Base
+----------------------------------------------- */
+
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font: 18px/25px "Proxima Nova Rg", "Helvetica Neue", "Helvetica", Arial, sans-serif;
+  color: #333;
+}
+
+a {
+  color: #397dba;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+strong {
+  font-weight: 700;
+  font-family: "Proxima Nova Bd";
+}
+
+em {
+  font-style: italic;
+}
+
+img { display: block; padding: 0; margin: 0; -ms-interpolation-mode: bicubic; }
+
+.inner {
+  @extend %clearfix;
+  position: relative;
+  z-index: 1;
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.content {
+  background: #fff;
+}
+
+.section {
+  @extend %clearfix;
+  padding: 60px 0;
+
+  &.dark-section {
+    background: #384047;
+    color: #fff;
+
+    a {
+      color: #fff;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &.btn-white {
+        &:hover {
+          color: #333;
+        }
+      }
+
+      &.btn {
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+.grey-section {
+  background: #f8f8f8;
+}
+
+.offcanvas {
+  overflow: hidden;
+  background: #2C3338;
+}
