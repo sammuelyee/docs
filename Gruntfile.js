@@ -235,13 +235,12 @@ module.exports = function(grunt) {
       server: {
         options: {
           config: 'config.rb',
-          cssDir: '<%= config.dist %>/css'
+          fontsDir: 'bower_components/cdbui/fonts'
         }
       },
       dist: {
         options: {
           config: 'config.rb',
-          cssDir: '.tmp/css'
         }
       }
     },
@@ -322,7 +321,7 @@ module.exports = function(grunt) {
           dest: '<%= config.dist %>'
         }]
       }
-    },
+    }
   });
 
   grunt.registerTask('serve', function (target) {
@@ -332,8 +331,10 @@ module.exports = function(grunt) {
 
     grunt.task.run([
       'clean',
+      'compass:server',
       'shell:server',
-      'concurrent:server',
+      'copy:styles',
+      'copy:server',
       'connect:livereload',
       'watch'
     ]);
@@ -346,8 +347,9 @@ module.exports = function(grunt) {
 
   grunt.registerTask('build', [
     'clean',
+    'compass:dist',
     'shell:dist',
-    'concurrent:dist',
+    'copy:styles',
     'useminPrepare',
     'concat',
     'cssmin',

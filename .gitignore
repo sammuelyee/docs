@@ -7,3 +7,4 @@ _cartodb-platform/*
 !_cartodb-platform/import-api.md
 .tmp/
 grunt-aws.json
+css/
