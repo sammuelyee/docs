@@ -47,6 +47,14 @@ You'll need a `grunt-aws.json` credentials file. You can copy the grunt-aws.exam
 
 CartoDB Docs is in itself an open project, and we welcome contributions. If you spot a typo, want to expand some explanation, add some [trick](http://docs.cartodb.com/tips-and-tricks.html) or [FAQ](http://docs.cartodb.com/faqs.html) you see missing, or event create a [Tutorial](http://docs.cartodb.com/tutorials.html), we welcome you to do so. We would need that everything you contribute follow the style of what's already on place. If you want to contribute something and have doubts about how to so, you can contact support@cartodb.com
 
+Documentation for the components of the CartoDB platform rely on their own project, so make the edit in their corresponding documentation and then run `sh docs_build.sh` to pull them:
+
+- [Cartodb.js](https://github.com/CartoDB/cartodb.js/blob/develop/doc/API.md)
+- [SQL API](https://github.com/CartoDB/CartoDB-SQL-API/blob/master/doc/API.md)
+- [Maps API](https://github.com/CartoDB/Windshaft-cartodb/blob/master/docs/Map-API.md)
+
+[Import API](https://github.com/CartoDB/docs/blob/master/_cartodb-platform/import-api.md) documentation is the only that must be edited in this project.
+
 To send your contributions you can follow the standard workflow: 
 
 - Fork it ( https://github.com/cartodb/docs/fork )
