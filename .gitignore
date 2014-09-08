@@ -4,5 +4,6 @@ _site
 .DS_Store
 _cartodb-platform/*
 !_cartodb-platform/.keep
+!_cartodb-platform/import-api.md
 .tmp/
 grunt-aws.json

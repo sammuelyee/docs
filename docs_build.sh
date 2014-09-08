@@ -1,6 +1,8 @@
 #!/bin/sh
 
-rm -rf _cartodb-platform/*
+rm _cartodb-platform/cartodb-js.md
+rm _cartodb-platform/sql-api.md
+rm _cartodb-platform/maps-api.md
 
 wget -O API-js.md https://raw.githubusercontent.com/CartoDB/cartodb.js/develop/doc/API.md
 wget -O API-sql.md https://raw.githubusercontent.com/CartoDB/CartoDB-SQL-API/master/doc/API.md
