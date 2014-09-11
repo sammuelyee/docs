@@ -428,6 +428,10 @@
     font: 16px/1.5 'Proxima Nova Rg';
     margin-bottom: 24px;
     color: #555;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   ul,
@@ -732,6 +736,7 @@
 }
 
 .subscribe-block {
+  margin-top: 24px;
   padding: 20px;
   background: #384047;
   @include border-radius(4px);
