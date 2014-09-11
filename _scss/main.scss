@@ -760,8 +760,9 @@
 }
 
 .subscribe-block-field {
-  padding-top: 10px;
+  padding-top: 5px;
 }
+
 
 /* =Platform
 ----------------------------------------------- */
@@ -1123,9 +1124,12 @@
       }
     }
 
-    p {
-      display: inline-block;
-      margin-bottom: 20px;
+    .subscribe-block-inner {
+      p {
+        display: inline-block;
+        margin-bottom: 20px;
+        text-align: left;
+      }
     }
   }
 
