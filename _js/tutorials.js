@@ -15,6 +15,8 @@ docs.Views.Editor = Backbone.View.extend({
 
     this._initViews();
     this._initBindings();
+
+    this.$('input, textarea').placeholder();
   },
 
   _initBindings: function() {

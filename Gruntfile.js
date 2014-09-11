@@ -200,6 +200,7 @@ module.exports = function(grunt) {
             '_js/vendor/jquery.mousewheel.js',
             '_js/vendor/jquery.jscrollpane.js',
             '_js/vendor/waypoints.min.js',
+            '_js/vendor/jquery.placeholder.js'
           ],
           '.tmp/js/main.js': [
             'bower_components/cdbui/js/cdbui/cdbui.js',
