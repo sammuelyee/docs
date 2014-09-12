@@ -169,8 +169,6 @@ You can perform the following administrative actions in the Options menu:
 - **Delete this table**  
   Entirely delete your table. But note that this will also delete any visualizations that rely on the table!
 
-
-
 ## Visualizations
 
 ### What is a visualization?
@@ -212,7 +210,6 @@ When you share a visualization, you may also edit who is able to access it and u
 - **Private**  
   You alone are able to view your visualization, and it will not appear on your public profile.
 
-
 ### Visualization metadata
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/vizheader.png' | prepend: site.baseurl }}" alt="Visualization" /></p>
@@ -221,32 +218,28 @@ For each visualization you may edit the name, add a description, source, license
 
 You may use the description section to clarify the content and purpose of your map. Use tags to unite projects or themes. Remember to add the data sources. Also there is a space to insert the license information in case you needed. 
 
+### Add Element
 
-### Add Element 
-
-You are able to customize your visualization in just a few clicks. Under the "Edit metadata" option, there is the possibility to add an element on your map whether is a title, text or an image item. 
+You are able to customize your visualization in just a few clicks. Under the "Edit metadata" option, there is the possibility to add an element on your map whether is a title, text or an image item.
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/addelement.png' | prepend: site.baseurl }}" alt="Visualization" /></p>
 
 - **Add title item**
- When you add this item, a text box with a title format will appear on your map. You can place the title box wherever you want and edit the style. 
+ When you add this item, a text box with a title format will appear on your map. You can place the title box wherever you want and edit the style.
 
 - **Add text item**
  Text boxes will give you control over the position of a block of text on your map. You can place text boxes anywhere in your visualization and edit them. You can change the text align, style, width, font and even the box style.
 
 - **Add image item**
- An image can give extra value to your visualization. You will only need to add the image link to the box and it will pop up on your visualization. You can edit the box style color, the position, and also change the width. 
+ An image can give extra value to your visualization. You will only need to add the image link to the box and it will pop up on your visualization. You can edit the box style color, the position, and also change the width.
 
-
-### Configure Canvas 
+### Configure Canvas
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/canvas.png' | prepend: site.baseurl }}" alt="Visualization" /></p>
 
 We use our mobiles frequently to consume content, so there is chance that many people visits your visualizations using a mobile device. And that means a small screen in which not many elements will fit right. That's why we let you create responsive maps: you can design your visualization for desktop and mobiles. We offer you two canvases so you can design your visualization for each type of screen. 
 
 By default you are in Desktop view; if you switch to the Mobile view, you'll see that we crop the viewable area. If you include elements for the Desktop view, you'll see that they are not present when you switch to Mobile, so that you can create specific elements for this new view, and viceversa. 
-
-
 
 ### CartoDB sidebar
 
@@ -527,8 +520,7 @@ CartoDB uses SQL to pull different data sets from your data table. Click on the 
 
 For a quick video primer, take a look at our [filter tutorial]({{ '/tutorials/filters.html' | prepend: site.baseurl }}).
 
-
-### Options [Header]
+### Options
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/optionvisualization.png' | prepend: site.baseurl }}" alt="Options" /></p>
 
@@ -537,7 +529,6 @@ For a quick video primer, take a look at our [filter tutorial]({{ '/tutorials/fi
 
 - **Delete Visualization**  
   Entirely delete your visualization. This will not remove any table linked to this visualization.
-
 
 ### Basemaps
 
@@ -552,7 +543,6 @@ A basemap is a graphical representation of the world showing natural and cultura
 When you first create a visualization, it will be given a default “Nokia Day” basemap. To change your basemap simply click on “Nokia Day” below left of the Visualization view and select an available style. You may add your own custom basemap in the “yours” option and then by linking to the URL for that basemap from MapBox, XYZ, or WMS. Finally, there are options for adding a solid color or a repeating image pattern instead of a basemap. All of these features give you a high level of customization when creating a map visualization.
 
 CartoDB offers you a variety of basemaps you may use in your visualization. You may select any one of them, and the change will be applied immediately. You may change your basemap anytime and the rest of your layers will remain unchanged. Take some time to explore our different available basemaps. You'll be able to see that some of them have more detail (such as depicting borders, roads, mountains) while others are more minimalistic. Thus you may choose one that's best suited for the purpose of your visualization.
-
 
 #### Including an external basemap
 
@@ -576,7 +566,6 @@ Apart from the default basemaps offered in CartoDB, you may integrate third-part
 4. **NASA**  
   With this option, you may easily use  NASA Global Imagery Browse Services satellite imagery as a basemap for your visualizations. Just select the date you're interested in, and whether you'd like a day map (which changes based on the day selected) or a night map, and add it to your visualization.
 
-
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/nasabase.png' | prepend: site.baseurl }}" alt="Add your own NASA basemap" /></p>
 
 #### About map projections
@@ -588,8 +577,6 @@ The majority of online maps are a variant of the [Mercator Projection](https://e
 Learn more about map projections in Wikipedia, and read up on how CartoDB handles [projections internally]({{ '/tutorials/projections.html' | prepend: site.baseurl }}).
 
 You can learn more about map projections in Wikipedia, and read up on all the details about how CartoDB handles [projections internally]({{ '/tutorials/projections.html' | prepend: site.baseurl }}).
-
-
 
 ### Options
 
@@ -608,7 +595,6 @@ Besides the Basemap selector, you have an Options selector which will give you a
 * **Fullscreen** Enable or disable the ability of viewers to enter fullscreen mode.
 * **CartoDB Logo** Include or exclude the CartoDB logo on your map.
 
-
 ### Share your visualization
 
 Once you have created a visualization, it's time to share it with the world! Take a look at our [written tutorial]({{ '/tutorials/sharing_maps.html' | prepend: site.baseurl }}) or [video tutorial](http://vimeo.com/80472123) for a guide to publishing and sharing your visualizations. Read on for a description of the CartoDB sharing interface!
@@ -625,9 +611,6 @@ You will find here the embed code to get your map into your blog, website or sim
 
 - **CartoDB.js**
 This URL will allow you to add your map to your applications. Read more [here](http://docs.cartodb.com/cartodb-platform/cartodb-js.html).
-
-
-
 
 ### Supported fonts
 
