@@ -673,7 +673,13 @@ IP Georeferencing is an important toolbox item on today's web environment. If yo
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/geo6.png' | prepend: site.baseurl }}" alt="Geocoding data" /></p>
 
 
-Finally, you may georeference by address. To do this, your columns will need to be organized into categories such as "address" (which would contain the building number and street name), "state" and "country," if its known. 
+Finally, you may georeference by address. To do this, your columns will need to be organized into categories such as "address" (which would contain the building number and street name), "state" and "country," if its known.
+
+Matching addresses with geographic coordinates consumes geocoding credits. Every time geocoding is done in string format, geocoding credit is used (for example, if you geocode a table with 20 records, 20 geocoding credits are used). All CartoDB plans include a number of geocoding credits that can be used every month. After exceeding the geocoding limits, a fixed fee is charged per 1000 credits. 
+
+On the upper left side of the window, you will see the operation cost and you must accept the price to be able to continue.
+
+CartoDB may use a third party to provide geocoding and reverse geocoding services. Geocoding Services are subject to the third parties [terms and conditions](http://developer.here.com/terms-conditions).
 
 
 ### Running SQL queries
