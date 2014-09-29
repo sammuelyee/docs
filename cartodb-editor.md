@@ -628,15 +628,55 @@ Whew, you're almost a CartoDB expert! As you know by now, there are a variety of
 
 ### Geocoding data
 
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/georeference-data.png' | prepend: site.baseurl }}" alt="Geocoding data" /></p>
+CartoDB is more than a styler- we're also a behind-the-scenes geocoder. We understand that geocoding is essential to data management and facilitate six methods for this process. To begin, click  "Options" and "Georeference" and then select one of the alternatives that allow you to georeference your data in the best possible way.
 
-CartoDB is more than a styler-- we're also a behind-the-scenes geocoder. We understand that geocoding is essential to data management and facilitate three methods for this process. 
 
-Our import function is the fastest. Importing your data with latitude and longitude coordinates already included renders a map that automatically displays your markers and polygons from the coordinates uploaded to your table.
+**By Lon/Lat columns**
 
-Alternatively, you may georeference by administrative region. To begin, click  "Options" and "Georeference." Select to georeference by administrative regions, and line up the data in your table to the type and location of whatever administrative region you like. CartoDB will access our comprehensive cloud databases to automatically load polygons for administrative regions like states, municipalities, and postal codes.
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/geo1.png' | prepend: site.baseurl }}" alt="Geocoding data" /></p>
 
-Finally, you may georeference by address. To do this, your columns will need to be organized into categories such as "address" (which would contain the building number and street name), "city," and "state." Check out our [tutorial on georeferencing addresses]({{ '/tutorials/how_to_georeference.html' | prepend: site.baseurl }}) for an in-depth walkthrough of this function.
+Importing your data with latitude and longitude coordinates already included renders a map that automatically displays your markers and polygons from the coordinates uploaded to your table.  To georeference, just select the longitude and latitude columns in your table and click continue. 
+
+**By City Names** 
+
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/geo2.png' | prepend: site.baseurl }}" alt="Geocoding data" /></p>
+ 
+Alternatively, you may georeference by City Names. Select the column that contains the city names and also select the country to which the cities belong to if you want to be more accurate.
+
+
+**By Admin. Regions** 
+
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/geo3.png' | prepend: site.baseurl }}" alt="Geocoding data" /></p>
+
+
+You may also georeference by Administrative Regions. Select to georeference by Admin. Regions, and line up the data in your table to the type and location of whatever administrative region you like. CartoDB will access our comprehensive cloud databases to automatically load polygons for regions like states and municipalities.
+
+**By Postal Codes**
+
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/geo4.png' | prepend: site.baseurl }}" alt="Geocoding data" /></p>
+
+Postal code systems have been set up in many countries and these often provide a high level of spatial precision. On CartoDB you have the option to georeference your data by postal codes. Just select the column where your information is stored and the country where the zip codes are from and immediately press continue. 
+
+**By IP Addresses** 
+
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/geo5.png' | prepend: site.baseurl }}" alt="Geocoding data" /></p>
+
+IP Georeferencing is an important toolbox item on today's web environment. If you select this option, CartoDB will take your IP address column and convert it into location points on your map.
+
+
+**By Street Addresses** 
+
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/geo6.png' | prepend: site.baseurl }}" alt="Geocoding data" /></p>
+
+
+Finally, you may georeference by address. To do this, your columns will need to be organized into categories such as "address" (which would contain the building number and street name), "state" and "country," if its known.
+
+Matching addresses with geographic coordinates consumes geocoding credits. Every time geocoding is done in string format, geocoding credit is used (for example, if you geocode a table with 20 records, 20 geocoding credits are used). All CartoDB plans include a number of geocoding credits that can be used every month. After exceeding the geocoding limits, a fixed fee is charged per 1000 credits. 
+
+On the upper left side of the window, you will see the operation cost and you must accept the price to be able to continue.
+
+CartoDB may use a third party to provide geocoding and reverse geocoding services. Geocoding Services are subject to the third parties [terms and conditions](http://developer.here.com/terms-conditions).
+
 
 ### Running SQL queries
 
