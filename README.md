@@ -22,7 +22,6 @@ npm install -g grunt-cli
 npm install
 ```
 
-
 ### Run locally
 
 ```
@@ -32,6 +31,14 @@ grunt serve
 A tab in your browser will open and direct you to http://0.0.0.0:9000
 
 Also, you can run the blog locally as if it was on production with `grunt serve:dist`
+
+In case you stuble upon the next error:
+
+```
+Error: Unable to read "grunt-aws.json" file (Error code: ENOENT).
+```
+
+you'll need a `grunt-aws.json` credentials file, find more info in [deploy](#deploy) section.
 
 
 ## Deploy
