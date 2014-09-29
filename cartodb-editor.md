@@ -102,10 +102,6 @@ We encourage you to compress your files before importing them. Currently, suppor
       <td>.ODS</td>
       <td>OpenDocument Spreadsheet</td>
     </tr>
-    <tr>
-      <td>.SQL</td>
-      <td>Experimental SQL format dumped from CartoDB</td>
-    </tr>
   </tbody>
 </table>
 
