@@ -8,14 +8,16 @@ js_asset: "index"
 
 CartoDB is a geospatial database on the cloud that allows for the storage and visualization of data on the web. Using CartoDB will allow you to quickly create map based visualizations.
 
-- At its heart, CartoDB is an open source geospatial mapping [Platform]({{ '/cartodb-platform.html' | prepend: site.baseurl }}). It is a tool we built to make mapping dynamic, scalable, and interesting.
-- At its core, CartoDB is an [Editor]({{ '/cartodb-editor.html' | prepend: site.baseurl }}) that gives you a user friendly interface so you can start making maps and visualizing data right away.
+- At its heart, CartoDB is an open source geospatial mapping [Platform](/cartodb-platform.html). It is a tool we built to make mapping dynamic, scalable, and interesting.
+- At its core, CartoDB is an [Editor](/cartodb-editor.html) that gives you a user friendly interface so you can start making maps and visualizing data right away.
 
 <!-- TODO: link to 'Use cases' and 'Industries' -->
 
 Below, we split our introduction into two parts: the CartoDB Platform and the CartoDB Editor. If you are looking for a scalable geospatial system to build tools or power your applications, jump down to the CartoDB Platform section. If you are looking for a drag & drop interface where you can style and customize maps in minutes, head to the CartoDB Editor section. If you want both, keep reading; it's all right here waiting for you!
 
 ### CartoDB Editor
+
+<p class="wrap-border"><img src="/img/layout/cartodb-editor/cartodb-editor.png" alt="CartoDB Editor" /></p>
 
 So we hear you've been out there trying different mapping tools on your computer and on the web. I bet most of them look a bit stuck in 2004, right? That probably concerns you because if a tool looks stuck in 2004 you can only *imagine* what the maps it produces look like. When we started CartoDB a few years ago this was a major challenge we set out to fix. We built the editor from the ground-up, with beautiful design and good user-experience at the top of our list of guiding principles. What you see on the surface doesn't stop there, we make the same effort to ensure that the maps themselves are also beautiful and easy to use.
 
