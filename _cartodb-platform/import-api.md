@@ -775,7 +775,7 @@ curl -v -H "Content-Type: application/json" -d '{"interval":"604800","service_it
   "error_message":null,
   "retried_times":0,
   "service_name":"arcgis",
-  "service_item_id":"http://url.to.arcgis.layer
+  "service_item_id":"http://url.to.arcgis.layer"
 }
 {% endhighlight %}
 
