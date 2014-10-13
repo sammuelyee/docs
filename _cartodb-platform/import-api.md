@@ -16,7 +16,7 @@ The CartoDB Import API allows you to upload files to a CartoDB account, check on
 Additionnaly, CartoDB offers a set of connectors to import specific types of datasets:
 
 - **ArcGIS**  
-  Allows to import ArcGIS layers into a CartoDB account as tables from an ArcGIS server (required version 10 or greater). Note that **this connector is disabled by default** in the CartoDB importer options. If you are interested in enabling it, please contact [mailto:support@cartodb.com](support@cartodb.com) to gain insight into further details.
+  Allows to import ArcGIS layers into a CartoDB account as tables from an ArcGIS server (required version 10 or greater). Note that **this connector is disabled by default** in the CartoDB importer options. If you are interested in enabling it, please contact [support@cartodb.com](mailto:support@cartodb.com) to gain insight into further details.
 
 
 ## Quickstart
