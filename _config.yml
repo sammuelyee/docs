@@ -17,6 +17,7 @@ gems:
 cartodb-baseurl: 'http://cartodb.com'
 academy-baseurl: 'http://academy.cartodb.com'
 blog-baseurl: 'http://blog.cartodb.com'
+github-baseurl: 'http://github.com/CartoDB/cartodb'
 
 analytics_property_id: ''
 mixpanel_token: ''
