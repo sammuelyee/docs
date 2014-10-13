@@ -2,6 +2,7 @@
 title: Import API
 description: The CartoDB Importer API allows you to upload files to your CartoDB account and manipulate them by using a set of HTTP commands from a terminal window.
 ---
+
 ## Import API
 
 The CartoDB Import API allows you to upload files to a CartoDB account, check on their current status as well as deleting and listing importing processes on the given account. This API consists of several HTTP requests targeted at a set of CartoDB endpoints which deal with the conversion and import of the sent files. CartoDB tables can be classified into two categories:
@@ -11,6 +12,11 @@ The CartoDB Import API allows you to upload files to a CartoDB account, check on
 
 - **Sync tables**  
   Available to certain CartoDB plans, these tables store data from a remote file and refresh their own contents during periodic intervals specified by the user. The base files from which the sync tables retrieve their contents may come from Google Drive, Dropbox or a public URL. In this document we will deal with the simplest case: public URL.
+
+Additionnaly, CartoDB offers a set of connectors to import specific types of datasets:
+
+- **ArcGIS**: allows to import ArcGIS layers into a CartoDB account as tables from an ArcGIS server. Note that **this connector is disabled by default** in the CartoDB importer options. If you are interested in enabling it, please contact [support@cartodb.com](support@cartodb.com) to gain insight into further details.
+
 
 ## Quickstart
 
@@ -39,6 +45,7 @@ The response to this request would have the following format, yielding a success
 {% endhighlight %}
 
 The `item_queue_id` value is a unique identifier that references the imported table in the targeted CartoDB account and allows to manipulate this new table in future requests.
+
 
 ## General Concepts
 
@@ -71,6 +78,7 @@ Errors are reported using standard HTTP codes and extended information encoded i
 
 Depending on the specific case, additional information regarding the errors may be presented.
 
+
 ## Standard Tables
 
 Standard tables store the data you upload from normal files with the valid formats as specified [here](http://docs.cartodb.com/cartodb-editor.html).
@@ -81,7 +89,7 @@ Standard tables store the data you upload from normal files with the valid forma
 
 <div class="code-title notitle code-request"></div>
 {% highlight bash %}
-POST   api/v1/imports 
+POST api/v1/imports 
 {% endhighlight %}
 
 #### Params
@@ -96,10 +104,10 @@ POST   api/v1/imports
 
 The response includes:
 
-- **item_queue_id**   
+- **item_queue_id**  
   A unique alphanumeric identifier referencing the imported file in the targeted account.
   
-- **success**   
+- **success**  
   A boolean value indicating whether the file import succeeded or not.
 
 #### Example
@@ -223,10 +231,10 @@ GET /api/v1/imports/
 
 The response includes:
 
-- **item_queue_id**   
+- **item_queue_id**  
   A unique alphanumeric identifier referencing the import process in the targeted CartoDB account.
   
-- **success**   
+- **success**  
   A boolean value indicating whether the file import succeeded or not.
 
 #### Example
@@ -242,6 +250,7 @@ curl -v "https://{account}.cartodb.com/api/v1/imports/?api_key={account API Key}
   "success": true
 }
 {% endhighlight %}
+
 
 ## Sync tables
 
@@ -584,5 +593,243 @@ curl -v --request "PUT" "https://{account}.cartodb.com/api/v1/synchronizations/<
 {
   "enqueued": true,
   "synchronization_id": "1234abcd-aaaa-2222-4444-dcba4321a1b2"
+}
+{% endhighlight %}
+
+
+## The ArcGIS connector
+
+### Import an ArcGIS layer
+
+ArcGIS layers stored in an ArcGIS server can get imported as CartoDB tables. Such layers must be accessible via an **ArcGIS API REST URL** whose structure is as follows:
+{% highlight html %}
+http://<host>/<site>/rest/services/<folder>/<serviceName>/<serviceType>/<layer_ID>
+{% endhighlight %}
+
+#### Definition
+
+<div class="code-title notitle code-request"></div>
+{% highlight bash %}
+POST   api/v1/imports 
+{% endhighlight %}
+
+#### Params
+
+- **interval**  
+  This value **MUST** be set to *0*. **Different values do not guarantee correct imports**.
+
+- **service_item_id**  
+  The ArcGIS API REST URL where the ArcGIS layer is located.
+
+- **service_name**  
+  This value **MUST** be set to *arcgis* to make use of this connector.
+
+- **value**  
+  Same URL as specified in the *service_item_id* parameter
+
+#### Response
+
+The response includes:
+
+- **item_queue_id**  
+  A unique alphanumeric identifier referencing the imported file in the targeted account.
+  
+- **success**  
+  A boolean value indicating whether the file import succeeded or not.
+
+#### Example
+
+<div class="code-title code-request with-result">REQUEST</div>
+{% highlight bash %}
+curl -v -H "Content-Type: application/json" -d '{"interval":"0","service_item_id": "http://url.to.arcgis.server.layer", "service_name": "arcgis", "value": "http://url.to.arcgis.server.layer"}' "https://{account}.cartodb.com/api/v1/imports?api_key={API_KEY}"
+{% endhighlight %}
+<div class="code-title">RESPONSE</div>
+{% highlight javascript %}
+{
+  "item_queue_id": "d676fd50-b774-4052-a4f1-e56ac6a4300e",
+  "success": true
+}
+{% endhighlight %}
+
+### Syncing an ArcGIS layer
+
+An ArcGIS layer can get imported to a CartoDB account as a synchronised table. The target ArcGIS layer must be accessible via an ArcGIS API REST URL having the following structure:
+{% highlight html %}
+http://<host>/<site>/rest/services/<folder>/<serviceName>/<serviceType>/<layer_ID>
+{% endhighlight %}
+
+#### Definition
+
+<div class="code-title notitle code-request"></div>
+{% highlight bash %}
+POST /api/v1/synchronizations
+{% endhighlight %}
+
+#### Params
+
+- **interval**  
+  The number of seconds for the synchronisation period. CartoDB supports the following values: 0 (never synched), *3600* (sync each hour), *86400* (sync each day), *604800* (sync each week) or *2592000* (sync each month).
+
+- **service_item_id**  
+  The ArcGIS API REST URL where the ArcGIS dataset is located.
+
+- **service_name**  
+  This value **MUST** be set to *arcgis* to make use of this connector.
+
+- **url**  
+  This value **MUST** be empty.
+
+#### Response
+
+The response includes the following items:
+
+- **endpoint**  
+  This item refers to the internal CartoDB controller code responsible for performing the import.
+  
+- **item_queue_id**  
+  A unique alphanumeric identifier that refers to the import process. It can be used to retrieve data related to the the created table.
+  
+- **id**  
+  An alphanumeric identifier used internally by CartoDB as a reference to the import process.
+  
+- **name**  
+  This item is currently deprecated.
+  
+- **interval**  
+  An integer value that stores the number of seconds between synchronisations.
+
+- **url**  
+  This value is empty in this case.
+
+- **state**  
+  A string value indicating the current condition of the importing process.
+  
+- **user_id**  
+  A unique alphanumeric identifier to reference the user in the CartoDB platform.
+  
+- **created_at**  
+  The date time at which the table was created in the CartoDB database.
+  
+- **updated_at**  
+  The date time at which the table had its contents modified.
+  
+- **run_at**  
+  The date time at which the table will get its contents synched with the source file.
+  
+- **ran_at**  
+  The date time at which the table **had** its contents synched with the source file.
+  
+- **modified**  
+  Not used as synced tables cannot be modified manually from CartoDB.
+  
+- **etag**  
+  This element is currently deprecated.
+  
+- **checksum**  
+  This element is currently deprecated.
+  
+- **log_id**  
+  A unique alphanumeric identifier to locate the log traces of the given table.
+  
+- **error_code**  
+  An integer value representing a unique error identifier.
+  
+- **error_message**  
+  A string value indicating the message related to the *error_code* element.
+  
+- **retried_times**  
+  An integer value indicating the number of attempts that were performed to sync the table.
+  
+- **service_name**  
+  This value is set to *arcgis*.
+
+- **service_item_id**  
+  This item contains the ArcGIS API REST URL targeting the imported ArcGIS layer.
+
+#### Example
+
+<div class="code-title code-request with-result">REQUEST</div>
+{% highlight bash %}
+curl -v -H "Content-Type: application/json" -d '{"interval":"604800","service_item_id": "http://url.to.arcgis.server.layer", "service_name": "arcgis", "url":""}' "https://{account}.cartodb.com/api/v1/synchronizations?api_key={API_KEY}"
+{% endhighlight %}
+<div class="code-title">RESPONSE</div>
+{% highlight javascript %}
+{
+  "data_import":{
+    "endpoint":"/api/v1/imports",
+    "item_queue_id":"4ff4abdd-9d37-4b7a-8e13-fb00376e2a58"
+    },
+  "id":"d4bc05e8-5063-11e4-9886-0e018d66dc29",
+  "name":null,
+  "interval":604800,
+  "url":"",
+  "state":"created",
+  "user_id":"4884b545-07f4-4ce4-a62f-fe9e2412098f",
+  "created_at":"2014-10-10T09:57:22+00:00",
+  "updated_at":"2014-10-10T09:57:22+00:00",
+  "run_at":"2014-10-17T09:57:22+00:00",
+  "ran_at":"2014-10-10T09:57:22+00:00",
+  "modified_at":null,
+  "etag":null,
+  "checksum":"",
+  "log_id":"6aa19bf6-42db-477a-9b69-2c4f74fd8c31",
+  "error_code":null,
+  "error_message":null,
+  "retried_times":0,
+  "service_name":"arcgis",
+  "service_item_id":"http://url.to.arcgis.layer"
+}
+{% endhighlight %}
+
+
+### Import an ArcGIS dataset
+
+This option allows to import **at once** a complete set of layers belonging to an ArcGIS dataset. Such a dataset must be accessible via an ArcGIS API REST URL with the following structure:
+{% highlight html %}
+http://<host>/<site>/rest/services/<folder>/<serviceName>/<serviceType>/
+{% endhighlight %}
+
+#### Definition
+
+<div class="code-title notitle code-request"></div>
+{% highlight bash %}
+POST   api/v1/imports 
+{% endhighlight %}
+
+#### Params
+
+- **interval**  
+  This value **MUST** be set to *0*. **Different values do not guarantee correct imports**.
+
+- **service_item_id**  
+  The ArcGIS API REST URL where the ArcGIS dataset is located.
+
+- **service_name**  
+  This value **MUST** be set to *arcgis* to make use of this connector.
+
+- **value**  
+  Same URL as specified in the *service_item_id* parameter
+
+#### Response
+
+The response includes:
+
+- **item_queue_id**  
+  A unique alphanumeric identifier referencing the imported file in the targeted account.
+  
+- **success**  
+  A boolean value indicating whether the file import succeeded or not.
+
+#### Example
+
+<div class="code-title code-request with-result">REQUEST</div>
+{% highlight bash %}
+curl -v -H "Content-Type: application/json" -d '{"interval":"0","service_item_id": "http://url.to.arcgis.server.dataset", "service_name": "arcgis", "value": "http://url.to.arcgis.server.dataset"}' "https://{account}.cartodb.com/api/v1/imports?api_key={API_KEY}"
+{% endhighlight %}
+<div class="code-title">RESPONSE</div>
+{% highlight javascript %}
+{
+  "item_queue_id": "c478fd50-f984-4091-d1f2-e72ac6c4333e",
+  "success": true
 }
 {% endhighlight %}
