@@ -2,6 +2,7 @@
 title: Import API
 description: The CartoDB Importer API allows you to upload files to your CartoDB account and manipulate them by using a set of HTTP commands from a terminal window.
 ---
+
 ## Import API
 
 The CartoDB Import API allows you to upload files to a CartoDB account, check on their current status as well as deleting and listing importing processes on the given account. This API consists of several HTTP requests targeted at a set of CartoDB endpoints which deal with the conversion and import of the sent files. CartoDB tables can be classified into two categories:
@@ -14,7 +15,7 @@ The CartoDB Import API allows you to upload files to a CartoDB account, check on
 
 Additionnaly, CartoDB offers a set of connectors to import specific types of datasets:
 
-- **ArcGIS**: allows to import ArcGIS layers into a CartoDB account as tables from an ArcGIS server. Note that **this connector is disabled by default** in the CartoDB importer options. If you are interested in enabling it, please contact support@cartodb.com to gain insight into further details.
+- **ArcGIS**: allows to import ArcGIS layers into a CartoDB account as tables from an ArcGIS server. Note that **this connector is disabled by default** in the CartoDB importer options. If you are interested in enabling it, please contact [support@cartodb.com](support@cartodb.com) to gain insight into further details.
 
 
 ## Quickstart
@@ -44,6 +45,7 @@ The response to this request would have the following format, yielding a success
 {% endhighlight %}
 
 The `item_queue_id` value is a unique identifier that references the imported table in the targeted CartoDB account and allows to manipulate this new table in future requests.
+
 
 ## General Concepts
 
@@ -76,6 +78,7 @@ Errors are reported using standard HTTP codes and extended information encoded i
 
 Depending on the specific case, additional information regarding the errors may be presented.
 
+
 ## Standard Tables
 
 Standard tables store the data you upload from normal files with the valid formats as specified [here](http://docs.cartodb.com/cartodb-editor.html).
@@ -86,7 +89,7 @@ Standard tables store the data you upload from normal files with the valid forma
 
 <div class="code-title notitle code-request"></div>
 {% highlight bash %}
-POST   api/v1/imports 
+POST api/v1/imports 
 {% endhighlight %}
 
 #### Params
@@ -101,10 +104,10 @@ POST   api/v1/imports
 
 The response includes:
 
-- **item_queue_id**   
+- **item_queue_id**  
   A unique alphanumeric identifier referencing the imported file in the targeted account.
   
-- **success**   
+- **success**  
   A boolean value indicating whether the file import succeeded or not.
 
 #### Example
@@ -228,10 +231,10 @@ GET /api/v1/imports/
 
 The response includes:
 
-- **item_queue_id**   
+- **item_queue_id**  
   A unique alphanumeric identifier referencing the import process in the targeted CartoDB account.
   
-- **success**   
+- **success**  
   A boolean value indicating whether the file import succeeded or not.
 
 #### Example
@@ -247,6 +250,7 @@ curl -v "https://{account}.cartodb.com/api/v1/imports/?api_key={account API Key}
   "success": true
 }
 {% endhighlight %}
+
 
 ## Sync tables
 
@@ -595,7 +599,6 @@ curl -v --request "PUT" "https://{account}.cartodb.com/api/v1/synchronizations/<
 
 ## The ArcGIS connector
 
-
 ### Import an ArcGIS layer
 
 ArcGIS layers stored in an ArcGIS server can get imported as CartoDB tables. Such layers must be accessible via an **ArcGIS API REST URL** whose structure is as follows:
@@ -628,10 +631,10 @@ POST   api/v1/imports
 
 The response includes:
 
-- **item_queue_id**   
+- **item_queue_id**  
   A unique alphanumeric identifier referencing the imported file in the targeted account.
   
-- **success**   
+- **success**  
   A boolean value indicating whether the file import succeeded or not.
 
 #### Example
@@ -647,7 +650,6 @@ curl -v -H "Content-Type: application/json" -d '{"interval":"0","service_item_id
   "success": true
 }
 {% endhighlight %}
-
 
 ### Syncing an ArcGIS layer
 
@@ -812,10 +814,10 @@ POST   api/v1/imports
 
 The response includes:
 
-- **item_queue_id**   
+- **item_queue_id**  
   A unique alphanumeric identifier referencing the imported file in the targeted account.
   
-- **success**   
+- **success**  
   A boolean value indicating whether the file import succeeded or not.
 
 #### Example
