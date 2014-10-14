@@ -14,7 +14,7 @@ If you spot a typo, want to add a FAQ, or contribute a tutorial, just send a Pul
 
 ### How to install
 
-CartoDB Docs uses a mix of [Jekyll](http://jekyllrb.com/) and [Grunt](http://gruntjs.com/) tasks for development.
+CartoDB Docs uses a mix of [Jekyll](http://jekyllrb.com/) and [Grunt](http://gruntjs.com/) tasks for development. Thus you'll need Ruby and a Node.js version `>= 0.10.0` installed, as well as [Bundlr](http://bundler.io/).
 
 ```
 bundle install
@@ -40,6 +40,8 @@ Error: Unable to read "grunt-aws.json" file (Error code: ENOENT).
 
 you'll need a `grunt-aws.json` credentials file, find more info in [deploy](#deploy) section.
 
+If you can't find the docs for CartoDB.js, the SQL API or Maps API it's possible you didn't run `docs_build.sh` yet. Check how to do this in the [How to contribute](#how-to-contribute) section.
+
 
 ## Deploy
 
@@ -62,7 +64,7 @@ Documentation for the components of the CartoDB platform rely on their own proje
 
 [Import API](https://github.com/CartoDB/docs/blob/master/_cartodb-platform/import-api.md) documentation is the only that must be edited in this project.
 
-To send your contributions you can follow the standard workflow: 
+To send your contributions you can follow the standard workflow:
 
 - Fork it ( https://github.com/cartodb/docs/fork )
 - Create your feature branch (`git checkout -b my-new-feature`)
@@ -70,4 +72,4 @@ To send your contributions you can follow the standard workflow:
 - Push to the branch (`git push origin my-new-feature`)
 - Create a new Pull Request
 
-We'll review the Pull Request and comment on it. 
+We'll review the Pull Request and comment on it.
