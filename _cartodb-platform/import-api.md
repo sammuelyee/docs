@@ -13,10 +13,10 @@ The CartoDB Import API allows you to upload files to a CartoDB account, check on
 - **Sync tables**  
   Available to certain CartoDB plans, these tables store data from a remote file and refresh their own contents during periodic intervals specified by the user. The base files from which the sync tables retrieve their contents may come from Google Drive, Dropbox or a public URL. In this document we will deal with the simplest case: public URL.
 
-Additionnaly, CartoDB offers a set of connectors to import specific types of datasets:
+Additionally, CartoDB offers a set of connectors to import specific types of datasets:
 
 - **ArcGIS**  
-  Allows to import ArcGIS layers into a CartoDB account as tables from an ArcGIS server (required version 10 or greater). Note that **this connector is disabled by default** in the CartoDB importer options. If you are interested in enabling it, please contact [support@cartodb.com](mailto:support@cartodb.com) to gain insight into further details.
+  Allows to import ArcGIS layers into a CartoDB account as tables from an ArcGIS server (version 10.1 or higher is required). Note that **this connector is disabled by default** in the CartoDB importer options. If you are interested in enabling it, please contact [support@cartodb.com](mailto:support@cartodb.com) to gain further details.
 
 
 ## Quickstart
@@ -651,6 +651,7 @@ curl -v -H "Content-Type: application/json" -d '{"interval":"0","service_item_id
   "success": true
 }
 {% endhighlight %}
+
 
 ### Syncing an ArcGIS layer
 
