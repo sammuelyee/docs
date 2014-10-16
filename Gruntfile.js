@@ -174,7 +174,12 @@ module.exports = function(grunt) {
         files: {
           '<%= config.dist %>/css/main.css': [
             '_scss/{,*/}*.css',
-            '<%= config.app %>/css/{,*/}*.css'
+            '<%= config.app %>/css/{,*/}*.css',
+            '!<%= config.app %>/css/404.css'
+          ],
+          '<%= config.dist %>/css/404.css': [
+            'bower_components/cdbui/dist/css/cdbui-flat.css',
+            '<%= config.app %>/css/404.css'
           ]
         }
       }
@@ -183,6 +188,7 @@ module.exports = function(grunt) {
       dist: {
         files: {
           '_site/js/main.js': ['.tmp/js/main.js'],
+          '_site/js/404.js': ['.tmp/js/404.js'],
           '_site/js/vendor.js': ['.tmp/js/vendor.js'],
           '_site/js/index.js': ['_js/index.js'],
           '_site/js/editor.js': ['_js/editor.js'],
@@ -208,6 +214,10 @@ module.exports = function(grunt) {
             '_js/app.js',
             '_js/home.js',
             '_js/ui/navbar.js'
+          ],
+          '.tmp/js/404.js': [
+            '_js/app.js',
+            '_js/404.js'
           ]
         }
       }
@@ -283,7 +293,7 @@ module.exports = function(grunt) {
             '*.{ico,png,txt}',
             '{,*/}*.html',
             'fonts/{,*/}*.*',
-            'img/**/*.{gif,jpeg,jpg,png}'
+            'img/**/*.{gif,jpeg,jpg,png,svg}'
           ]
         }, {
           src: 'bower_components/modernizr/modernizr.js',
