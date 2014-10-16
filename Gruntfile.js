@@ -35,7 +35,7 @@ module.exports = function(grunt) {
           },
         },
         gzip: true,
-        src: ["css/{,*/}*", "js/{,*/}*", "fonts/{,*/}*", "img/**/*.{gif,jpeg,jpg,png}"],
+        src: ["css/{,*/}*", "js/{,*/}*", "fonts/{,*/}*", "img/**/*.{gif,jpeg,jpg,png,svg}"],
         cwd: "<%= config.dist %>"
       },
       stagingRobots: {
@@ -64,7 +64,7 @@ module.exports = function(grunt) {
           },
         },
         gzip: true,
-        src: ["css/{,*/}*", "js/{,*/}*", "fonts/{,*/}*", "img/**/*.{gif,jpeg,jpg,png}"],
+        src: ["css/{,*/}*", "js/{,*/}*", "fonts/{,*/}*", "img/**/*.{gif,jpeg,jpg,png,svg}"],
         cwd: "<%= config.dist %>"
       },
       productionRobots: {
