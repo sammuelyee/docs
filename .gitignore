@@ -8,3 +8,4 @@ _cartodb-platform/*
 .tmp/
 grunt-aws.json
 css/
+!bower_components/cdbui/dist/css/
