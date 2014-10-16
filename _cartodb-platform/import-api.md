@@ -130,6 +130,28 @@ POST api/v1/imports
 - **quoted_fields_guessing**  
   If set to *false* disables type guessing of CSV fields double quoted and of Excel files. Optional. Default is *true*.  
 
+- **table_name**  
+  Used to duplicate one of your existing tables. **Do not mix with File/URL imports**.
+
+- **table_copy**  
+  Similar to *table_name*, internally used for table copying. **Do not set**.
+
+- **table_id**  
+  Internal usage for table migrations. **Do not set**.
+
+- **append**  
+  Reserved for future usage. **Do not set**.
+
+- **sql**  
+  Used to create a new table from a SQL query applied to one of your tables. **Do not mix with File/URL imports**.
+
+- **service_name**  
+  Used to upload from datasources, indicates which datasource to use. Check [here](https://github.com/CartoDB/cartodb/tree/master/services/datasources/lib/datasources) for an updated list of available datasources to use. **Initially intended for CartoDB Web Editor usage**.
+
+- **service_item_id**  
+  Used to upload from datasources, indicates data of the datasource. Check [here](https://github.com/CartoDB/cartodb/tree/master/services/datasources/lib/datasources) for an updated list of available datasources to use. **Initially intended for CartoDB Web Editor usage**.
+
+
 #### Response
 
 The response includes:
