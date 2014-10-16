@@ -11,7 +11,7 @@ The CartoDB Import API allows you to upload files to a CartoDB account, check on
   The default tables used to store the data of the uploaded files that will be used to create maps and visualisations. Any CartoDB user may create, manipulate and delete such tables.
 
 - **Sync tables**  
-  Available to certain CartoDB plans, these tables store data from a remote file and refresh their own contents during periodic intervals specified by the user. The base files from which the sync tables retrieve their contents may come from Google Drive, Dropbox or a public URL. In this document we will deal with the simplest case: public URL.
+  Available to certain CartoDB plans, these tables store data from a remote file and refresh their contents during periodic intervals specified by the user. The base files from which the sync tables retrieve their contents may come from Google Drive, Dropbox or a public URL. In this document we will deal with the simplest case: public URL.
 
 Additionally, CartoDB offers a set of connectors to import specific types of datasets:
 
@@ -46,6 +46,26 @@ The response to this request would have the following format, yielding a success
 {% endhighlight %}
 
 The `item_queue_id` value is a unique identifier that references the imported table in the targeted CartoDB account and allows to manipulate this new table in future requests.
+
+### Uploading from a remote URL
+
+Suppose we have a server at the hostname *examplehost.com* with a csv named *sample.csv* already uploaded. To create a table from it requires executing the following command on a Terminal window:
+
+<div class="code-title code-request">REQUEST</div>
+{% highlight bash %}
+curl -v -H "Content-Type: application/json" -d '{"url":"https://examplehost.com/sample.csv"}'
+"https://documentation.cartodb.com/api/v1/imports/?api_key=3102343c42da0f1ffe6014594acea8b1c4e7fd64"`
+{% endhighlight %}
+
+The response to this request would have the following format, yielding a success import:
+
+<div class="code-title">RESPONSE</div>
+{% highlight javascript %}
+{
+  "item_queue_id": "efa9925c-31dd-11e4-a95e-0edbca4b5057",
+  "success": true
+}
+{% endhighlight %}
 
 
 ## General Concepts
@@ -82,7 +102,7 @@ Depending on the specific case, additional information regarding the errors may 
 
 ## Standard Tables
 
-Standard tables store the data you upload from normal files with the valid formats as specified [here](http://docs.cartodb.com/cartodb-editor.html).
+A standard import will store the data you upload from files with the valid formats as specified [here](http://docs.cartodb.com/cartodb-editor.html), creating tables at CartoDB.
 
 ### Upload file
 
@@ -98,8 +118,17 @@ POST api/v1/imports
 - **auth_token**  
   The target CartoDB account API key.
 
-- **Path to local file**  
-  The absolute path of the local file that will be uploaded.
+- **Local file upload**  
+  When importing local files, you need to perform a POST with a file (see below an example call with CURL).
+
+- **url**  
+  When importing remote files, the full url to the publicly accessible file.
+
+- **type_guessing**  
+  If set to *false* disables field type guessing (for Excel and CSVs). Optional. Default is *true*.
+
+- **quoted_fields_guessing**  
+  If set to *false* disables type guessing of CSV fields double quoted and of Excel files. Optional. Default is *true*.  
 
 #### Response
 
@@ -111,7 +140,7 @@ The response includes:
 - **success**  
   A boolean value indicating whether the file import succeeded or not.
 
-#### Example
+#### Local File Upload Example
 
 <div class="code-title code-request with-result">REQUEST</div>
 {% highlight bash %}
@@ -124,6 +153,22 @@ curl -v -F file=@/path/to/local/file "https://{account}.cartodb.com/api/v1/impor
   "success": true
 }
 {% endhighlight %}
+
+#### URL Upload Example
+
+<div class="code-title code-request with-result">REQUEST</div>
+{% highlight bash %}
+curl -v -H "Content-Type: application/json" -d '{"url":"https://remotehost.url/path/to/remotefile"}'
+"https://{account}.cartodb.com/api/v1/imports/?api_key={account API Key}"`
+{% endhighlight %}
+<div class="code-title">RESPONSE</div>
+{% highlight javascript %}
+{
+  "item_queue_id": "9906bce0-f1a3-4b07-be71-818f4bfd7673",
+  "success": true
+}
+{% endhighlight %}
+
 
 ### Check the status of an import process
 
@@ -382,6 +427,12 @@ POST /api/v1/synchronizations
   
 - **interval**  
   The number of seconds for the synchronisation period. CartoDB supports the following values: 0 (never synched), *3600* (sync each hour), *86400* (sync each day), *604800* (sync each week) or *2592000* (sync each month).
+
+- **type_guessing**  
+  If set to *false* disables field type guessing (for Excel and CSVs). Optional. Default is *true*.
+
+- **quoted_fields_guessing**  
+  If set to *false* disables type guessing of CSV fields double quoted and of Excel files. Optional. Default is *true*. 
 
 #### Response
 
