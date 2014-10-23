@@ -227,7 +227,7 @@ You are able to customize your visualization in just a few clicks. Under the "Ed
  Text boxes will give you control over the position of a block of text on your map. You can place text boxes anywhere in your visualization and edit them. You can change the text align, style, width, font and even the box style.
 
  - **Add annotation item**
- Annotations are text overlays linked to a coordinate and a zoom range. They allow users to explain and point to specific map elements. You can change the orientation and the text align, color, style, width. Also, you can modify the box and the line style. 
+ Annotations are text overlays linked to a coordinate and a zoom range. They allow users to explain and point to specific map elements. You can change the orientation and the text alignment, color, style and width, plus the box and line styles.
 
 - **Add image item**
  An image can give extra value to your visualization. You will only need to add the image link to the box and it will pop up on your visualization. You can edit the box style color, the position, and also change the width.
