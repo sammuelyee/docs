@@ -533,7 +533,7 @@ For a quick video primer, take a look at our [filter tutorial]({{ '/tutorials/fi
 
 #### What is a basemap?
 
-A basemap is a graphical representation of the world showing natural and cultural features such as water bodies, topography, park areas, points of interest, geopolitical borders, roads, streets and sometimes buildings. CartoDB provides you with a selection of basemap options and providers (such as Google and Nokia). You may import your own custom basemap (from MapBox, an XYZ tileset (e.g. Stamen maps), or WMS.)  or use a solid background color, repeating image or pattern. With the easy-to-use basemap selector, you can focus on the an aesthetically pleasing way of visualizing your data.
+A basemap is a graphical representation of the world showing natural and cultural features such as water bodies, topography, park areas, points of interest, geopolitical borders, roads, streets and sometimes buildings. CartoDB provides you with a selection of basemap options and providers (such as Stamen or Here). You may import your own custom basemap (from MapBox, an XYZ tileset (e.g. Stamen maps), or WMS.)  or use a solid background color, repeating image or pattern. With the easy-to-use basemap selector, you can focus on the an aesthetically pleasing way of visualizing your data.
 
 #### Selecting your basemap
 
