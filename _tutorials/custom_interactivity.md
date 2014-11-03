@@ -43,7 +43,7 @@ A common way to define the content is through the use of templates. For a discus
 </script>
 {% endhighlight %}
 
-This is basically HTML stored in a script tag. It also has a template value, `{{content.data.name}}`. Just like how we used `{{table_name}}` in the previous tutorial, this value will be swapped out by values from the objects we click in our maps. You can use any HTML markup for your infowindows, but you'll have to define the CSS for how it will look. The HTML used here is designed to use CSS contained inside the `cartodb.css` file we include.
+This is basically HTML stored in a script tag. It also has a template value, `{% raw %}{{content.data.name}}{% endraw %}`. Just like how we used `{% raw %}{{table_name}}{% endraw %}` in the previous tutorial, this value will be swapped out by values from the objects we click in our maps. You can use any HTML markup for your infowindows, but you'll have to define the CSS for how it will look. The HTML used here is designed to use CSS contained inside the `cartodb.css` file we include.
 
 ## Passing templates to CartoDB.js layers
 
