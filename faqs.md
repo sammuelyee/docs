@@ -339,3 +339,11 @@ You have to differentiate between the authoring tool which is the place where yo
 ### Has CartoDB multi-user functionalities?
 
 If you are interested in multi-user accounts, we offer Teams through our enterprise plans, just let us know at sales@cartodb.com.
+
+### Do Torque maps move polygons/polylines?
+
+The Torque wizard is only available for **points**. So, Torque doesn't work with polygons. 
+
+But, fortunately, there are other options that you could use to show different polygons with respect of time:
+We offer a Javascript API, [CartoDB.js](http://docs.cartodb.com/cartodb-platform/cartodb-js.html), that you can use to add interactivity to your visualizations. In combination with our [SQL API](http://docs.cartodb.com/cartodb-platform/sql-api.html), you could build a time-slider and show different polygons depending on how they evolve with respect to time.
+You can check an example in this [link](https://github.com/CartoDB/cartodb.js/blob/develop/examples/time_slider.html).
