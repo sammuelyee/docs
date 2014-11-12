@@ -296,7 +296,7 @@ Nifty, right? You can now use this in combination with `SUM`, `AVG`, `MAX` and a
 
 ## Join two tables dynamically
 
-Just a note about doing the above for a map you build on Leaflet or Google Maps. You may not always want to write the result into `table_1`, instead, you may want to query data live from the browser based on something the user is doing. In those cases, use the `SELECT` statements. If you are rendering a map with the results, you just need to remember to include `the_geom_webmercator` is all! It is our hidden reprojection of `the_geom` that makes the final map speedy. Here is the above query modified to include it:
+Just a note about doing the above for a map you build on Leaflet. You may not always want to write the result into `table_1`, instead, you may want to query data live from the browser based on something the user is doing. In those cases, use the `SELECT` statements. If you are rendering a map with the results, you just need to remember to include `the_geom_webmercator` is all! It is our hidden reprojection of `the_geom` that makes the final map speedy. Here is the above query modified to include it:
 
 {% highlight sql %}
 SELECT
