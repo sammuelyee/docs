@@ -244,7 +244,7 @@ Much like the CDB_HexagonGrid above, here you can create a mesh grid that covers
 
 ### Webmercator and TMS functions
 
-Webmercator is the common projection of Google Maps, Leaflet, and a host of other online mapping tools. While those tools can pretty effortlessly handle latitude and longitude values, what you are actually seeing on map tiles is different. We manage several functions to make measuring and creating tiles simple. 
+Webmercator is the common projection of Leaflet, and a host of other online mapping tools. While those tools can pretty effortlessly handle latitude and longitude values, what you are actually seeing on map tiles is different. We manage several functions to make measuring and creating tiles simple.
 
 <div class="code-title">TILE EXTENT</div>
 {% highlight sql %}

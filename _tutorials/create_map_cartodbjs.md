@@ -11,7 +11,7 @@ embed_url: '//cartodb.github.com/cartodb.js/examples/tutorials/tutorial-1.html'
 
 In this tutorial, we are going to show you how to create a basic map of your CartoDB data using cartodb.js. We'll walk you through creating a map, using the Viz JSON link to your table, and customizing SQL and CartoCSS for your maps.
 
-CartoDB.js tutorials will require some knowledge about HTML, and Javascript. If you haven't had a chance to start learning some of these prerequisites, we recommend you browse [Google](http://www.google.com) or [StackOverflow](http://www.stackoverflow.com) for some suggested reading and tutorials.
+CartoDB.js tutorials will require some knowledge about HTML, and Javascript. If you haven't had a chance to start learning some of these prerequisites, we recommend you browse [StackOverflow](http://www.stackoverflow.com) for some suggested reading and tutorials.
 
 ## Getting started
 
