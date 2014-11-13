@@ -203,7 +203,7 @@ Using NASA imagery as your basemap is as simple as any other feature on CartoDB.
 
 ### I have topographical maps in JPG and pdf formats. How can I convert these to add as base layers on the map?
 
-there is not a direct or easy way to do that from CartoDB. What I recommend you is to use CartoDB.js in combination with eaflet to create overlays with images.
+there is not a direct or easy way to do that from CartoDB. What I recommend you is to use CartoDB.js in combination with Leaflet to create overlays with images.
 
 Here you can find an example:
 
