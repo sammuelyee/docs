@@ -128,7 +128,10 @@ POST api/v1/imports
   If set to *false* disables field type guessing (for Excel and CSVs). Optional. Default is *true*.
 
 - **quoted_fields_guessing**  
-  If set to *false* disables type guessing of CSV fields double quoted and of Excel files. Optional. Default is *true*.  
+  If set to *false* disables type guessing of CSV fields double quoted and of Excel files. Optional. Default is *true*.
+
+- **content_guessing**  
+  Set it to *true* to enable content guessing and automatic geocoding based on results. Currently it only implemenents geocoding of countries. Optional. Default is *false*.
 
 - **table_name**  
   Used to duplicate one of your existing tables. **Do not mix with File/URL imports**.
@@ -454,7 +457,10 @@ POST /api/v1/synchronizations
   If set to *false* disables field type guessing (for Excel and CSVs). Optional. Default is *true*.
 
 - **quoted_fields_guessing**  
-  If set to *false* disables type guessing of CSV fields double quoted and of Excel files. Optional. Default is *true*. 
+  If set to *false* disables type guessing of CSV fields double quoted and of Excel files. Optional. Default is *true*.
+
+- **content_guessing**  
+  Set it to *true* to enable content guessing and automatic geocoding based on results. Currently it only implemenents geocoding of countries. Optional. Default is *false*.
 
 #### Response
 
