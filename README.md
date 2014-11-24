@@ -42,6 +42,8 @@ you'll need a `grunt-aws.json` credentials file, find more info in [deploy](#dep
 
 If you can't find the docs for CartoDB.js, the SQL API or Maps API it's possible you didn't run `docs_build.sh` yet. Check how to do this in the [How to contribute](#how-to-contribute) section.
 
+You'll need `wget`and `sed` in order for the script work.
+
 
 ## Deploy
 
