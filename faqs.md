@@ -291,15 +291,25 @@ In CartoDB we have a special pricing for academic purposes. We offer a FREE Acad
 
 If you are a journalist and you have special needs about CartoDB, let us know at sales@cartodb.com
 
-### How can I unlink my GDrive account from CartoDB?
-
-In order to unlink your Google Drive account from the importing tool of CartoDB, you will have to deny the permissions in the account settings of your Google account.
-
 ### What does the "Removable brand" feature mean?
 
 <p class="wrap-border"><img src="{{ '/img/layout/faqs/share-logo.png' | prepend: site.baseurl }}" alt="What does the Removable brand" /></p>
 
 From the Coronelli plan you will be able to remove CartoDB logo and the "Create your own custom maps with CartoDB" text will not appear below your embedded visualizations if you don't want to. For removing the logo, just deselect the option "Logo" in the sharing wizard. Take into account that this option will be only available if your current plan includes the "Removable brand" feature.
+
+## GDrive
+
+### How can I unlink my GDrive account from CartoDB?
+
+In order to unlink your Google Drive account from the importing tool of CartoDB, you will have to deny the permissions in the account settings of your Google account.
+
+### I'm getting "There was an error trying to get your service token or you didn't finish the oAuth process. Try again please." errors
+
+That error is caused by permission configuration at your GDrive Google account. Try this:
+
+* If you're using a corporate account:
+  * Please check with your administrator that you have Drive enabled.
+  * Ask your administrator whether "Allow users to install Google Drive apps" is enabled at "Google Apps > Settings for Drive".
 
 ## Other technical questions
 
