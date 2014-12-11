@@ -573,9 +573,7 @@ We all know by now that the earth isn't flat. Maps, however, are. As 2D represen
 
 The majority of online maps are a variant of the [Mercator Projection](https://en.wikipedia.org/wiki/Mercator_projection), commonly referred to as the Web-Mercator. Currently, CartoDB relies on this projection.
 
-Learn more about map projections in Wikipedia, and read up on how CartoDB handles [projections internally]({{ '/tutorials/projections.html' | prepend: site.baseurl }}).
-
-You can learn more about map projections in Wikipedia, and read up on all the details about how CartoDB handles [projections internally]({{ '/tutorials/projections.html' | prepend: site.baseurl }}).
+You can learn more about [map projections in Wikipedia](http://en.wikipedia.org/wiki/Map_projection), and read up on all the details about how CartoDB handles [projections internally]({{ '/tutorials/projections.html' | prepend: site.baseurl }}).
 
 ### Options
 
