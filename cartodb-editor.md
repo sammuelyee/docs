@@ -922,3 +922,110 @@ In the Account Settings window, you may view your current plan and click "Change
 ### Deleting your account
 
 Navigate to Account Settings, and scroll to the bottom of the page where you will see a link to "Delete my account." If you have any questions or concerns (we enjoy compliments, too!), please reach out to our support team at <support@cartodb.com> before deleting your account.
+
+## **CartoDB Enterprise**
+
+#### About Multiuser Enterprise
+
+CartoDB designed the Multiuser (MU) Enterprise to enhance the scale and scope of collaboration on our platform. The service provides multiuser environments that allow users to upload and manipulate data sets securely, and share them with specific team members or publish them directly on the web. 
+
+With CartoDB MU, no custom software installation is necessary to access high-performance GIS capabilities. Take advantage of this web-based feature to work alongside colleagues on projects in real-time from a central, 24/7 accessible database- the cloud! Here is an overview of the Multiuser features.
+
+#### Users, Owners and Organizations
+
+CartoDB Enterprise works as a hub for many users or teams working together. An "organization" refers to the name of the group of collaborators that will be interacting on Enterprise, for instance the name of your business or project team. A user is the individual that is part of a given organization. 
+
+If you have been using a normal CartoDB account and are starting to use CartoDB Enterprise with Multiuser, you will see that you are using the same CartoDB Editor with some new options. These new options is what we'll cover in these sections. For general documentation about the CartoDB Editor please refer to the [corresponding sections in docs.cartodb.com](http://docs.cartodb.com/cartodb-editor.html)
+
+A special type of user is the "Owner" of an organization, who has the privileges to do some admin-related tasks of the organization (create users for the organization, assign quotas, etc)
+
+### **Users**
+
+#### Dashboard
+
+After login, the Enterprise main page is a mosaic of team activity. This is your home-base, a.k.a. the page where you are able to view and access data sets and visualizations published by team members in addition to monitoring your own activity and quota availability. Order by "modified" or “created” to see what’s been added by either latest edit or the date of original posting. If you’re feeling inspired, click the “New table” icon to add your own map. 
+
+<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_0.png" alt="Using sync tables" /></p>
+
+Also, you may filter your view to see only the tables you have created or to search by table name or tag.
+
+<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_1.png" alt="Using sync tables" /></p>
+
+When you are in the Visualizations section of your dashboard you will also be able to filter between **All visualizations** and **Your visualizations**. **All visualizations** will list your visualizations plus all the visualizations that your Organization team mates have selected to share with you. 
+
+#### Creating tables and visualizations
+
+The workflow to create tables and visualizations is the same as in the normal edition of the CartoDB Editor. 
+
+#### Tables: General and Team privacy settings
+
+Once you have created a new table, you have new privacy options compared to the standalone version of the CartoDB Editor. You can manage them from the same place, with the lock in the upper left corner of any table.
+
+<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_2.png" alt="Using sync tables" /></p>
+
+By clicking in the lock, a modal window will appear: 
+
+<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_3.png" alt="Using sync tables" /></p>
+
+You have two sections in this window: 
+
+1. **General privacy**: as well as in the standalone CartoDB Editor, by default a table will be only accessible by yourself. You can choose it to be **only visible to people with the link**, or make it **public** (it will get listed in your Public Page)
+
+<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_4.png" alt="Using sync tables" /></p>
+
+2. **Team privacy**: in the lower part of this modal window you will see a list of your Organization's teammates. With the control in the right you can give read access to this table (the table will appear in those person's dashboards and they will be able to open it and create visualizations with it, but only in read mode - that is, they won't be able to modify the content of this table). If you also want to give write access, you can select the corresponding checkbox beside. With the controls in the top you can give write and/or read access to all members of your Organization.
+
+<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_5.png" alt="Using sync tables" /></p>
+
+#### Visualizations: General and Team privacy settings
+
+As well as with tables, the interface for creating visualizations is the same as in the standalone CartoDB Editor, with some extra options to manage how you collaborate with your teammates. 
+
+Once you are editing a Visualization, you can also use the lock in the upper left corner to view the privacy settings. 
+
+<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_6.png" alt="Using sync tables" /></p>
+
+You have two sections in this window: 
+
+1. **General privacy**: as well as in the standalone CartoDB Editor, by default a visualization will be accessible to **people with the link**. You can choose it to be **Private** (only accessible by yourself), **Password protected** (you'll be able to set a password), or **Public** (it will be listed in your Public Page)**.**
+
+<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_7.png" alt="Using sync tables" /></p>
+
+2. **Team privacy**: in the lower part of this modal window you will see a list of your Organization's teammates. You can give read access to this visualization so it appears in their dashboard. If the general privacy of the Visualization is set to Public, they will be able to access it from the Public Page (the same as any other user)
+
+<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_8.png" alt="Using sync tables" /></p>
+
+### **Owners**
+
+As the Owner of an Organization, you will be able to do all the admin-related tasks of a team account: manage users, assign quotas, customize the Organization's Public Page, update account details, etc. When you login you will see a normal CartoDB dashboard with a list of tables. You can access the admin area by clicking on the drop down menu located in the upper right corner, and selecting "Organization". 
+
+<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_9.png" alt="Using sync tables" /></p>
+
+#### Organization admin area
+
+Once in the Organization admin area you'll be able to **Manage your seats**, the **Public Dashboard**, and **Account Details.**
+
+<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_10.png" alt="Using sync tables" /></p>
+
+#### Manage your seats
+
+A seat is an available slot for a user. You'll be able to give access to as many users as seats you have in your contract. You may expand the number of seats at any time by contacting our Customer Support. 
+
+#### Adding a user
+
+Once your organization’s MU account has been created, you have the option to add new team members. From your Organization admin page, you can click in the **Create new user** button. From here, fill in the user’s information, which includes a name for log-in, an email address to associate with the account, and a password. You can also assign and update a user’s data quota here and select whether to allow geo-referencing capability.
+
+At any time, you may change the storage availability for your team members by upgrading your plan. The activity of your team members is accessible via clicking on their respective profile pages.
+
+<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_11.png" alt="Using sync tables" /></p>
+
+#### Public dashboard
+
+In this sections you can customize how your Public Dashboard will look like, being able to choose your website URL, a company logo, a description, and your Twitter username.
+
+<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_12.png" alt="Using sync tables" /></p>
+
+#### Account settings
+
+In the Account Settings page you can update settings regarding your administrative user (the owner of the account).
+
