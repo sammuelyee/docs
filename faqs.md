@@ -63,7 +63,7 @@ This is an example CURL call to do it (for setting "With link" privacy, see cons
 
 <div class="code-title notitle code-request"></div>
 {% highlight bash %}
-curl -H 'Content-Type: application/json' -H 'Accept: application/json' -X PUT -d '{"privacy":"LINK"}' "http://{USERNAME}.cartodb.com/api/v1/viz/{VISUALIZATIONID}?api_key={APIKEY}"
+curl -H 'Content-Type: application/json' -H 'Accept: application/json' -X PUT -d '{"privacy":"LINK"}' "https://{USERNAME}.cartodb.com/api/v1/viz/{VISUALIZATIONID}?api_key={APIKEY}"
 {% endhighlight %}
 
 It is pretty self-explanatory, but basically you need to execute a PUT http call and set, using JSON, the "privacy" visualization field to the literal "LINK" (careful, it's case-sensitive).
@@ -239,7 +239,7 @@ You will be able to insert CartoDB maps in WordPress, Joomla, Drupal, etc. if yo
 
 ### How to print maps in CartoDB?
 
-There is no direct way to get printed maps from CartoDB besides just grabbing a screenshot. You can do that pretty easily on a Mac or PC with a keyboard shortcut (Cmd + Shift + 3 in Mac). Or, if you are looking at a public map you can just it 'print' in your browser and should be able to get it in a PDF.
+There is no direct way to get printed maps from CartoDB besides just grabbing a screenshot. You can do that pretty easily on a Mac or PC with a keyboard shortcut (Cmd + Shift + 3 in Mac).
 
 ### How can I set the position of an embedded visualization?
 
