@@ -6,6 +6,7 @@ js_asset: "editor"
 redirect_from:
 - "/documentation/using-cartodb.html"
 ---
+
 ## One-minute introduction
 
 <p class="wrap-border"><img src="/img/layout/cartodb-editor/editor.png" alt="Using sync tables" /></p>
@@ -18,6 +19,8 @@ Your dashboard is your baseline. It has two main sections: **tables** and **visu
 4. Share it (publicly or privately)
 
 CartoDB accepts data in different formats (Excel, CSV, XML, SHP, GeoJSON, [see all](#supported-data-formats)) and from different sources (see all possibilities for [Importing data](#importing-data)). Our interactive wizards make it easy and fun to map your data. Choose a basemap, define legends and infowindows ([What is an infowindow?](#infowindows)), and select how to show your data with custom display options.
+
+_XML files are not directly supported, we support KML and GPX files instead._
 
 When your visualization is complete, you may keep it private, share it with your colleagues, or publish it to the web by circulating its custom URL or embedding it in your blog.
 
