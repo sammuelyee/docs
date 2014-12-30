@@ -1032,3 +1032,113 @@ In this section, you can customize how your Public Dashboard will look by choosi
 
 On the Account Settings page, you can update settings regarding your administrative user (the owner of the account).
 
+## **Official Twitter Datasource**
+
+#### About the Twitter Datasource
+
+CartoDB has access to the complete Twitter firehose providing it with official Twitter data. For our users, it is really easy to obtain the data and map it. Once the user clicks on +new table, the menu, which you can also see in this screenshot, will open. 
+
+<p class="wrap-border"><img src="/img/layout/cartodb-editor/twitter_0.png" alt="New import dialog" /></p>
+
+After you click on the Twitter icon, you will be able to see the following window:
+
+<p class="wrap-border"><img src="/img/layout/cartodb-editor/twitter_1.png" alt="Twitter feature" /></p>
+
+You can begin your search by jotting down different hashtags or keywords separated by a comma under each category (they will work as an OR, e.g. “santa,xmas” would work like “santa OR xmas”). You can use the valid character #should you choose to for hashtags. Spaces before and after commas are removed, but if you put a multi-sentence word it will perform a  search (e.g. “cars, bikes motorbikes, planes” is a 3 term search, do not mistake with “cars, bikes, motorbikes, planes”). You will be able to see how many Twitter credits you have remaining. 
+
+The total number of search terms you can have is 29 per category. The maximum number of categories is 4 per search request. You can also select the time frame you want your request to cover under the category column. By default it will search the last 30 days.
+
+The search results will only contain tweets where the location was either explicitly turned on by the user, or the user has filled his/her Twitter profile Location field. Otherwise, the tweets cannot be plotted on a map as there is no location element in them. Approximately 5% of the tweets are geolocated. However, we have introduced geo-enrichment capabilities bringing the sample up to 15% to 20% making the results much more richer. 
+
+### Three Official Twitter API's:
+
+* **Search API**: The search API is the one the user has direct access to as shown above.This API allows the user to pull geolocated Twitter data from the past 30 days. Once you do the search, the tweets will be imported straight to your CartoDB account. You can then go directly to map view and work on customising your map.
+
+
+* **Streaming**: CartoDB has access to Twitter’s streaming API  allowing you to retrieve data up to the last minute in which you performed your search. This at the moment is only available on request. Contact sales@cartodb.com to get more info.
+
+
+* **Historical API**: This API gives access to tweets beyond 30 days going all the way back to 2006. Contact sales@cartodb.com for further details. 
+
+The real time tweets feature is coming soon and will be added to CartoDB for the user’s to access it. It will allow for the map to be updated automatically with live tweets as they are posted.
+
+### Knowing your data
+
+Which information does a tweet include? The most important data retrieved from Twitter is listed as follows:
+
+* `id`: Tweet id.
+* `verb`: Lets you know if a tweet has been directly posted or if it’s a retweet.
+* `link`: Direct link to the tweet.
+* `body`: Content of the tweet.
+* `postedtime`: Time at which the tweet was posted. (UTC).
+* `favoritescount`: Number of times the tweet has been favorited.
+* `twitter_lang`: Language of the tweet.
+* `retweetcount`: Number of times the tweet has been retweeted.
+* `actor_link`: Direct URL to user profile.
+* `actor_displayname`: Name of the user.
+* `actor_image`: Direct URL to a minimized version of the avatar.
+* `actor_summary`: Description of the Twitter user.
+* `actor_languages`: Language configured by the Twitter user.
+* `actor_verified`: Flag for verified users.
+* `generator_displayname`: Client from which the tweet was sent.
+* `geo`: Information of the geolocated tweet.
+* `category_name`: Number of the category described in the search.
+* `category_terms`: Terms which have been searched inside the corresponding category.
+
+Besides the previous parameters, you’ll also obtain: `objecttype`, `twitter_filter_level`, `actor_objecttype`, `actor_id`, `actor_postedtime`, `actor_links`, `actor_location`, `actor_utcoffset`, `actor_preferredusername`, `actor_twittertimezone`, `actor_friendscount`, `actor_followerscount`, `actor_listedcount`, `actor_statusescount`, `generator_link`, `provider_objecttype`, `provider_displayname`, `provider_link`, `inreplyto_link`, `twitter_entities`, `object_objecttype`, `object_id`, `object_summary`, `object_postedtime`, `object_link`, `location_objecttype`, `location_displayname`, `location_link`, `location_geo`, `location_streetaddress` and `location_name`.
+
+### Analyzing and querying your data
+
+Your tweets table has been finally created. Let’s take a look at some tricks that will allow you to get the insights you are looking for.
+
+You can use the CartoDB Editor filter tool in order to get easy queries, for example: 
+
+To solve the question “Which tweets have been written by a famous (verified) person?” you just need to apply a filter to the `actor_verified` column. This process will be similar to generating the following query:
+
+`SELECT * FROM table_twitter WHERE actor_verified is true`
+
+Another one: “Which tweets have got the largest number of retweets?”
+
+`SELECT * FROM table_twitter ORDER BY retweetcount DESC` 
+
+Creating a simple category map will give you a better idea about your data. For example, you can use the column `twitter_lang` to compare tweet languages with their locations, or you can use the `postedtime` column to perform a dynamic Torque map.
+
+<p class="wrap-border"><img src="/img/layout/cartodb-editor/twitter_2.png" alt="Retweets map" /></p>
+
+Let’s write some slightly advanced queries now:
+
+Imagine you have 2 categories, one is “Vector”, the second is “Raster”. What if you want to know which tweets are saying “Vector yes”, or “Vector no”? This is easy:
+
+`SELECT * FROM table_twitter WHERE body ilike ‘%yes%’ AND category_name = 1`
+
+Or, correspondingly, for “Vector no”:
+
+`SELECT * FROM table_twitter WHERE body ilike ‘%no%’ AND category_name = 1`
+
+Let’s go further: imagine that now you want to create two new categories in your table based on the obtained results. One will be for those results that say “Vector yes”, the other one will be for “Vector no”. You just need to apply the previous queries, but this time you’ll include some updates in the table.
+
+The following query will search all the tweets which include “Vector yes” and will update the category to be ‘3’.
+
+`UPDATE table_twitter SET category_name = 3 where body ilike ‘%yes%’ AND category_name = 1`
+
+In the same way, we could build category number 4 to “Vector no”:
+
+`UPDATE table_twitter SET category_name = 4 where body ilike ‘%no%’ AND category_name = 1`
+
+But… what if the results are not so straightforward? You can add a new constraint and create a new category by this query which searches “yes” and “no” in the same tweet.
+
+`UPDATE table_twitter SET category_name = 5 where body ilike ‘%no%’ AND body ilike ‘%yes%’ AND category_name = 1`
+
+If we follow this approach with the “Raster” option, we’ll have several categories that will allow us to conclude if a tweet was supporting a topic or not. This is a very simple example, but remember that CartoDB runs over the power of PostgreSQL, in which you can insert more advanced queries on the text of the tweets to better understand the data and gain insights.
+
+_Remember: perform a duplicate of the table prior to modifying it with statements like UPDATE, INSERT or DELETE. This way your original data will always be safe._
+
+### Tips and tricks
+
+* Ensure that you select the right time frame which suits your needs. You can save on Twitter credits by not importing extra data.
+* Search terms are treated like full words: “car” won’t match tweets with “cars”, you should add both terms if you want both cases.
+* Search terms are not case-sensitive. e.g. “Cars” equals “cars” and “CARS”
+* You can search by hashtags or account names. e.g. “gis, @cartodb, #mapping”.
+* Once the search starts you cannot stop the import. Be careful to not search for really broad terms (e.g. “love”) as hundreds of thousands or even millions of geolocalized tweets might end up being retrieved.
+* For security, the search will stop if you run out of credits, returning you all the tweets that the system was able to retrieve before the credits finished.
+* Enterprise multi-accounts share the same organization-wide pool of Twitter credits.
