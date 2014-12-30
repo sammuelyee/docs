@@ -1044,19 +1044,17 @@ After you click on the Twitter icon, you will be able to see the following windo
 
 <p class="wrap-border"><img src="/img/layout/cartodb-editor/twitter_1.png" alt="Twitter feature" /></p>
 
-You can begin your search by jotting down different hashtags or keywords separated by a comma under each category (they will work as an OR, e.g. “santa,xmas” would work like “santa OR xmas”). You can use the valid character #should you choose to for hashtags. Spaces before and after commas are removed, but if you put a multi-sentence word it will perform a  search (e.g. “cars, bikes motorbikes, planes” is a 3 term search, do not mistake with “cars, bikes, motorbikes, planes”). You will be able to see how many Twitter credits you have remaining. 
+You can begin your search by jotting down different hashtags or keywords separated by a comma under each category (they will work as an OR, e.g. “santa,xmas” would work like “santa OR xmas”). You can use the valid character #should you choose to for hashtags. Spaces before and after commas are removed, but if you put a multi-sentence word it will perform a  search (e.g. “cars, bikes motorbikes, planes” is a 3 term search, do not mistake with “cars, bikes, motorbikes, planes”). You will be able to see how many Twitter credits you have remaining.
 
 The total number of search terms you can have is 29 per category. The maximum number of categories is 4 per search request. You can also select the time frame you want your request to cover under the category column. By default it will search the last 30 days.
 
-The search results will only contain tweets where the location was either explicitly turned on by the user, or the user has filled his/her Twitter profile Location field. Otherwise, the tweets cannot be plotted on a map as there is no location element in them. Approximately 5% of the tweets are geolocated. However, we have introduced geo-enrichment capabilities bringing the sample up to 15% to 20% making the results much more richer. 
+The search results will only contain tweets where the location was either explicitly turned on by the user, or the user has filled his/her Twitter profile Location field. Otherwise, the tweets cannot be plotted on a map as there is no location element in them. Approximately 5% of the tweets are geolocated. However, we have introduced geo-enrichment capabilities bringing the sample up to 15% to 20% making the results much more richer.
 
 ### Three Official Twitter API's:
 
 * **Search API**: The search API is the one the user has direct access to as shown above.This API allows the user to pull geolocated Twitter data from the past 30 days. Once you do the search, the tweets will be imported straight to your CartoDB account. You can then go directly to map view and work on customising your map.
 
-
 * **Streaming**: CartoDB has access to Twitter’s streaming API  allowing you to retrieve data up to the last minute in which you performed your search. This at the moment is only available on request. Contact sales@cartodb.com to get more info.
-
 
 * **Historical API**: This API gives access to tweets beyond 30 days going all the way back to 2006. Contact sales@cartodb.com for further details. 
 
@@ -1095,11 +1093,15 @@ You can use the CartoDB Editor filter tool in order to get easy queries, for exa
 
 To solve the question “Which tweets have been written by a famous (verified) person?” you just need to apply a filter to the `actor_verified` column. This process will be similar to generating the following query:
 
-`SELECT * FROM table_twitter WHERE actor_verified is true`
+{% highlight sql %}
+SELECT * FROM table_twitter WHERE actor_verified is true
+{% endhighlight %}
 
 Another one: “Which tweets have got the largest number of retweets?”
 
-`SELECT * FROM table_twitter ORDER BY retweetcount DESC` 
+{% highlight sql %}
+SELECT * FROM table_twitter ORDER BY retweetcount DESC
+{% endhighlight %}
 
 Creating a simple category map will give you a better idea about your data. For example, you can use the column `twitter_lang` to compare tweet languages with their locations, or you can use the `postedtime` column to perform a dynamic Torque map.
 
@@ -1109,25 +1111,35 @@ Let’s write some slightly advanced queries now:
 
 Imagine you have 2 categories, one is “Vector”, the second is “Raster”. What if you want to know which tweets are saying “Vector yes”, or “Vector no”? This is easy:
 
-`SELECT * FROM table_twitter WHERE body ilike ‘%yes%’ AND category_name = 1`
+{% highlight sql %}
+SELECT * FROM table_twitter WHERE body ilike ‘%yes%’ AND category_name = 1
+{% endhighlight %}
 
 Or, correspondingly, for “Vector no”:
 
-`SELECT * FROM table_twitter WHERE body ilike ‘%no%’ AND category_name = 1`
+{% highlight sql %}
+SELECT * FROM table_twitter WHERE body ilike ‘%no%’ AND category_name = 1
+{% endhighlight %}
 
 Let’s go further: imagine that now you want to create two new categories in your table based on the obtained results. One will be for those results that say “Vector yes”, the other one will be for “Vector no”. You just need to apply the previous queries, but this time you’ll include some updates in the table.
 
 The following query will search all the tweets which include “Vector yes” and will update the category to be ‘3’.
 
-`UPDATE table_twitter SET category_name = 3 where body ilike ‘%yes%’ AND category_name = 1`
+{% highlight sql %}
+UPDATE table_twitter SET category_name = 3 where body ilike ‘%yes%’ AND category_name = 1
+{% endhighlight %}
 
 In the same way, we could build category number 4 to “Vector no”:
 
-`UPDATE table_twitter SET category_name = 4 where body ilike ‘%no%’ AND category_name = 1`
+{% highlight sql %}
+UPDATE table_twitter SET category_name = 4 where body ilike ‘%no%’ AND category_name = 1
+{% endhighlight %}
 
 But… what if the results are not so straightforward? You can add a new constraint and create a new category by this query which searches “yes” and “no” in the same tweet.
 
-`UPDATE table_twitter SET category_name = 5 where body ilike ‘%no%’ AND body ilike ‘%yes%’ AND category_name = 1`
+{% highlight sql %}
+UPDATE table_twitter SET category_name = 5 where body ilike ‘%no%’ AND body ilike ‘%yes%’ AND category_name = 1
+{% endhighlight %}
 
 If we follow this approach with the “Raster” option, we’ll have several categories that will allow us to conclude if a tweet was supporting a topic or not. This is a very simple example, but remember that CartoDB runs over the power of PostgreSQL, in which you can insert more advanced queries on the text of the tweets to better understand the data and gain insights.
 
