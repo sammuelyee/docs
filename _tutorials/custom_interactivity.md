@@ -35,7 +35,7 @@ A common way to define the content is through the use of templates. For a discus
        <div class="cartodb-popup-content">
          <!-- content.data contains the field info -->
          <h4>City: </h4>
-         <p>{{content.data.name}}</p>
+         <p>{% raw %}{{content.data.name}}{% endraw %}</p>
        </div>
      </div>
      <div class="cartodb-popup-tip-container"></div>
