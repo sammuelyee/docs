@@ -36,12 +36,11 @@ CartoDB operates a database that is capable of storing geospatial information, o
 
 Importing your data to CartoDB is a seamless and flexible process. Pick your preferred method from the following options:
 
-1. **Create an empty table**
-2. **Upload a local file**
-3. **Import directly from a public URL**
-4. **Import direct from Twitter**
-4. **Sync using Google Drive**
-5. **Sync using Dropbox**
+1. **Upload a local file** or **import directly from a public URL**
+2. **Sync using Google Drive**
+3. **Sync using Dropbox**
+4. **Import directly from Twitter**
+5. **Create an empty table**
 
 The most common import method is to upload a local file or pull data from a public URL. To upload a file, navigate to your Dashboard and click **New Table**. In the automatic pop-up window, click **Select a File** and navigate to the data you want to upload. Alternatively, you may paste a URL in this field, and CartoDB will upload that data. For larger, paid accounts, our interface offers an option to sync your data here. You may also import directly from Dropbox or Google Drive.
 
@@ -54,6 +53,14 @@ CartoDB streamlines mapping tweets with direct access to Twitter API data. Highl
 * Analyze tweets in a defined timeframe or real-time
 
 To use Twitter data in a visualization, select the Twitter icon in the upload window. Next, you will be prompted to search for data you want within a specific time period.  Remember that your number of available Twitter credits will update automatically and you can always add more.
+
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/addtable_2.png' | prepend: site.baseurl }}" alt="Adding tables from other sources" /></p>
+
+You also have to option to import from:
+
+1. **ArcGIS online**
+2. **Salesforce**
+3. **Mailchimp**
 
 ### Syncing tables
 
