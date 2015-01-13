@@ -60,6 +60,7 @@ You also have to option to import from:
 
 1. **ArcGIS online**
 2. **Salesforce**
+3. **Mailchimp**
 
 ### Syncing tables
 
