@@ -36,7 +36,7 @@ Named maps are part of CartoDB's [Maps API](http://docs.cartodb.com/cartodb-plat
 
 ## Loading data, making table private
 
-To get started, we'll be using the Populated Places data found in Common Data. Copy the following link and import it into your account:
+To get started, we'll be using the Populated Places data found in [Common Data](http://docs.cartodb.com/cartodb-editor.html#common-data). Copy the following link and import it into your account:
 
 {% highlight html %}
 https://common-data.cartodb.com/api/v2/sql?q=select%20*%20from%20ne_10m_populated_places_simple&filename=ne_10m_populated_places_simple&format=shp
@@ -48,11 +48,11 @@ Once the data is imported, set it to `private` (see [privacy setting](http://doc
 
 ## Constructing a config file
 
-Now that we have a private table to work from, we will style the data in the Editor and copy the CartoCSS code to use for the configuration file we will send to the server to setup the named map. You can use any style you would like, but I am using the following settings, and then copying them to the config file.
+Now that we have a private table to work from, we will style the data in the Editor and copy the CartoCSS code to use for the configuration file we will send to the server to setup the named map. You can use any style you would like, but I am using the following settings.
 
 <p class="wrap-border"><img src="{{ '/img/layout/tutorials/named_maps/img1.png' | prepend: site.baseurl }}" alt="map stylings used for named map" /></p>
 
-By clicking on the CartoCSS tab, you can see the stylings applied to the map. We will be needing this later.
+By clicking on the CartoCSS tab, you can see the stylings that you chose by using the Visualization Wizard.
 
 Now open a text editor and paste the following text into it. Call the file `config.json`.
 
