@@ -69,6 +69,8 @@ Now that we have a private table to work from, we will style the data in the [Ed
 
 By clicking on the [CartoCSS tab](http://docs.cartodb.com/cartodb-editor.html#cartocss), you can see the stylings that you chose by using the Visualization Wizard.
 
+
+<a name="config-script"></a>
 Now open a text editor and paste the following text into it. Notice the CartoCSS corresponds to what was done in the Editor above. Name the file `config.json`.
 
 {% highlight javascript %}
@@ -98,7 +100,7 @@ If you're familiar with the `cartodb.createLayer(...)` method from CartoDB.js, t
 
 + there is a table in your account named `named_map_tutorial_table`
 + the table is set to "private"
-+ you have a file named `config.json` with the JSON object above in it
++ you have a file named `config.json` with the [JSON object above](#config-script) in it
 
 Now that we have our private table and a config file that says how we want that data to be visualized, we need to send the information to the server. Make sure you have your API key on hand. You can get your API key through your [account dashboard](http://docs.cartodb.com/cartodb-editor.html#find-your-api-key).
 
