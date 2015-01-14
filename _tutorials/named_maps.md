@@ -280,7 +280,7 @@ curl -X DELETE 'https://{your_account_name}.cartodb.com/api/v1/map/named/{templa
 ## Summary
 
 #### Files used in this tutorial
-
+1. [HTML template]() *** link to repo where this is stored
 
 ## Moving foward
 
@@ -288,7 +288,7 @@ curl -X DELETE 'https://{your_account_name}.cartodb.com/api/v1/map/named/{templa
 
 + Named maps documentation is in the [Maps API documentation page](http://docs.cartodb.com/cartodb-platform/maps-api.html)
 + [Anonymous maps](http://docs.cartodb.com/cartodb-platform/maps-api.html#anonymous-maps-1) are a similar type of map, but not from private data
-+ [CartoDB.js](http://docs.cartodb.com/cartodb-platform/cartodb-js.html) methodsrelated to named maps:
++ [CartoDB.js](http://docs.cartodb.com/cartodb-platform/cartodb-js.html) methods related to named maps:
     1. [layer.setAuthToken()](http://docs.cartodb.com/cartodb-platform/cartodb-js.html#layersetauthtokenauthtoken)
 	2. [layer.setParams()](http://docs.cartodb.com/cartodb-platform/cartodb-js.html#layersetparamskey-value)
 + Need more info about CartoDB.js? Check out the [docs](http://docs.cartodb.com/cartodb-platform/cartodb-js.html), [tutorials](http://docs.cartodb.com/tutorials.html), and [Map Academy lessons](http://academy.cartodb.com/courses/03-cartodbjs-ground-up.html)
