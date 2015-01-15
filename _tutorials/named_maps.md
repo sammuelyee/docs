@@ -201,6 +201,8 @@ Copy this code block and place it between the `<script>` tags near the end of th
 ### 3.2 Advanced named map
 To create a more advanced version that has a basemap and interactivity on the data layer, we will use createLayer along with the Leaflet library similar to what was done in the [second Map Academy lesson](http://academy.cartodb.com/courses/03-cartodbjs-ground-up/lesson-2.html) on CartoDB.js.
 
+This is the suggested way to use named maps because the maps are instantiated on the fly so you do not need to worry about the temporal URLs.
+
 To get started, start with the [HTML template](https://raw.githubusercontent.com/CartoDB/docs/master/templates/named-maps-template.html) again, and place the following code between the `<script>` tags:
 
 {% highlight javascript %}
