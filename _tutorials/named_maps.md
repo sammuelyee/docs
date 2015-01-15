@@ -38,7 +38,7 @@ There are four main steps:
 
 #### HTML Template
 
-[HTML template]({{ '/templates/named-maps-template.html' | prepend: site.baseurl }}) used in this tutorial. *** This needs to be changed to go to the raw html file in the repo
+[HTML template](https://raw.githubusercontent.com/CartoDB/docs/master/templates/named-maps-template.html) used in this tutorial.
 
 #### Tools
 
@@ -144,7 +144,9 @@ You will receive a response from the server that looks similar to this:
 }
 {% endhighlight %}
 
-Now that we have the information from the two server responses to construct our public maps out of the private table `named_map_tutorial_table`. One thing to keep in mind about named maps is that, once instantiated, they are temporal. This means that the layergroupid will only work for a short period of time--no longer than a couple of days. Therefore, if you create a map today and try it again in a couple of days with the same `layergroupid`, you will find that it no longer pulls tiles from CartoDB. This is by design, and the general rule is _use the URL after you instantiated the map._
+Now we have the information from the two server responses needed to construct our public maps out of the private table `named_map_tutorial_table`. 
+
+One thing to keep in mind about named maps is that, once instantiated, they are _temporal_. This means that the `layergroupid` will only work for a short period of time--no longer than a couple of days. Therefore, if you create a map today and try it again in a couple of days with the same `layergroupid`, you will find that it no longer pulls tiles from CartoDB. This is by design, and the general rule is _use the URL soon after you instantiated the map._
 
 ## 3. Creating named maps
 
@@ -166,7 +168,7 @@ Based on the above server response, we get the following URL template:
 http://documentation.cartodb.com/api/v1/map/documentation@4f5962ec@44bf1af16551a08a46009653208ea6a8:1421261983620/{z}/{x}/{y}.png
 {% endhighlight %}
 
-We're going to use our new XYZ template in [Leaflet's](L.tileLayer()) method to create a map where the only layer is your named map data. The use is pretty basic:
+We're going to use our new XYZ template in [Leaflet's](http://leafletjs.com) `L.tileLayer()` method to create a map where the only layer is your named map data. The use is pretty basic:
 
 {% highlight javascript %}
 function main() {
@@ -191,15 +193,15 @@ function main() {
 window.onload = main; 
 {% endhighlight %}
 
-Copy this code block and place it between the `<script>` tags near the end of the [HTML template]({{ '/templates/named-maps-template.html' | prepend: site.baseurl }}). Save your HTML file and open it in your browser (Edit > Open File...).
+Copy this code block and place it between the `<script>` tags near the end of the [HTML template](https://raw.githubusercontent.com/CartoDB/docs/master/templates/named-maps-template.html). Save your HTML file and open it in your browser (Edit > Open File...).
 
-![Screenshot of basic named map](/img/layout/tutorials/named-map/img2.png)
+![Screenshot of basic named map](/img/layout/tutorials/named_maps/img2.png)
 
 
 ### 3.2 Advanced named map
-To create a more advanced version that has a basemap and interactivity on the data layer, we will use createLayer along with the Leaflet library similiar to what was done in the second Map Academy lesson on CartoDB.js.
+To create a more advanced version that has a basemap and interactivity on the data layer, we will use createLayer along with the Leaflet library similar to what was done in the [second Map Academy lesson](http://academy.cartodb.com/courses/03-cartodbjs-ground-up/lesson-2.html) on CartoDB.js.
 
-To get started, start with the blank template again, and place the following code between the `<script>` tags:
+To get started, start with the [HTML template](https://raw.githubusercontent.com/CartoDB/docs/master/templates/named-maps-template.html) again, and place the following code between the `<script>` tags:
 
 {% highlight javascript %}
 function main() {
@@ -294,9 +296,9 @@ curl -X DELETE 'https://{your_account_name}.cartodb.com/api/v1/map/named/{templa
 ## Summary
 
 #### Files used in this tutorial
-1. [HTML template]() *** link to repo where this is stored
+1. [HTML template](https://raw.githubusercontent.com/CartoDB/docs/master/templates/named-maps-template.html)
 
-## Moving foward
+## Moving forward
 
 #### See also
 
