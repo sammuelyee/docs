@@ -82,7 +82,7 @@ Now open a text editor and paste the following text into it. Notice the CartoCSS
   },
   "layergroup": {
     "layers": [{
-      "type": "named",
+      "type": "cartodb",
       "options": {
         "cartocss_version": "2.1.1",
         "cartocss": "#named_map_tutorial_table{ marker-fill-opacity: 0.5; marker-line-color: #FFF; marker-line-width: 0; marker-line-opacity: 1; marker-placement: point; marker-type: ellipse; marker-width: 10; marker-fill: #FFCC00; marker-allow-overlap: true; marker-comp-op: multiply; }",
