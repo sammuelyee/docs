@@ -134,31 +134,39 @@ You will receive a response from the server that looks similar to this:
 
 {% highlight javascript %}
 {
-	"layergroupid": "documentation@4f5962ec@44bf1af16551a08a46009653208ea6a8:1421261983620",
-	"cdn_url": 
-		{
-			"http":"ashbu.cartocdn.com", 
-			"https":"cartocdn-ashbu.global.ssl.fastly.net"
-		},
-	"last_updated":"2015-01-14T18:59:43.620Z"
+  "layergroupid": "documentation@4f5962ec@44bf1af16551a08a46009653208ea6a8:1421261983620",
+  "cdn_url": 
+  {
+    "http":"ashbu.cartocdn.com", 
+    "https":"cartocdn-ashbu.global.ssl.fastly.net"
+  },
+  "last_updated":"2015-01-14T18:59:43.620Z"
 }
 {% endhighlight %}
 
-Now that we have the information from the two server responses to construct our public maps out of the private table `named_map_tutorial_table`.
+Now that we have the information from the two server responses to construct our public maps out of the private table `named_map_tutorial_table`. One thing to keep in mind about named maps is that, once instantiated, they are temporal. This means that the layergroupid will only work for a short period of time--no longer than a couple of days. Therefore, if you create a map today and try it again in a couple of days with the same `layergroupid`, you will find that it no longer pulls tiles from CartoDB. This is by design, and the general rule is _use the URL after you instantiated the map._
 
 ## 3. Creating named maps
 
-Having already instantiated a named map, we will now look at two ways to use the CartoDB.js library to bring the map's tiles to a webpage.
+Having already created and instantiated a named map, we will now look at two ways to use the CartoDB.js library to bring the map's tiles to a webpage.
 
 ### 3.1 Basic named map
 
-The most basic map you can create using named maps uses the `layergroupid` returned from the server. It can be used to create a template URL that tells JavaScript libraries like [Leaflet](http://leafletjs.com), [OpenLayers](http://openlayers.org/), or [ModestMaps](http://modestmaps.com/) to pull different tiles at different locations and zoom levels. It's called an XYZ template, and is structured like:
+The most basic map you can create using named maps uses the `layergroupid` returned from the server after instantiation. It can be used to create a template URL that tells JavaScript libraries like [Leaflet](http://leafletjs.com), [OpenLayers](http://openlayers.org/), or [ModestMaps](http://modestmaps.com/) to pull different tiles at different locations and zoom levels. It's called an XYZ template, and is structured like:
 
 {% highlight html %}
-http://{your_account_name}.cartodb.com/api/v1/map/{layergroupid}/z/x/y.png
+http://{your_account_name}.cartodb.com/api/v1/map/{layergroupid}/{z}/{x}/{y}.png
 {% endhighlight %}
 
-We're going to use it in [Leaflet's](L.tileLayer) method to create a basemap. The use is pretty basic:
+If you are not used to XYZ templates, libraries like [Leaflet](http://leafletjs.com) replace the `{z}` by the zoom level, and the `{x}` and `{y}` are replaced by the longitude and latitude, respectively. Keep the curly brackets around the z, x, and y, and only replace your account name and `layergroupid`.
+
+Based on the above server response, we get the following URL template:
+
+{% highlight html %}
+http://documentation.cartodb.com/api/v1/map/documentation@4f5962ec@44bf1af16551a08a46009653208ea6a8:1421261983620/{z}/{x}/{y}.png
+{% endhighlight %}
+
+We're going to use our new XYZ template in [Leaflet's](L.tileLayer()) method to create a map where the only layer is your named map data. The use is pretty basic:
 
 {% highlight javascript %}
 function main() {
@@ -185,6 +193,9 @@ window.onload = main;
 
 Copy this code block and place it between the `<script>` tags near the end of the [HTML template]({{ '/templates/named-maps-template.html' | prepend: site.baseurl }}). Save your HTML file and open it in your browser (Edit > Open File...).
 
+![Screenshot of basic named map](/img/layout/tutorials/named-map/img2.png)
+
+
 ### 3.2 Advanced named map
 To create a more advanced version that has a basemap and interactivity on the data layer, we will use createLayer along with the Leaflet library similiar to what was done in the second Map Academy lesson on CartoDB.js.
 
@@ -192,43 +203,44 @@ To get started, start with the blank template again, and place the following cod
 
 {% highlight javascript %}
 function main() {
-  // define map options
-  var options = { 
+  // create leaflet map
+  var map = L.map('map', { 
     zoomControl: false,
     scrollWheelZoom: false,
     center: [0, 0],
     zoomControl: true,
     zoom: 3
-  }
-
-  // create leaflet map
-  var map_object = L.map('map', options);
+   });
 
   // add a base layer
   L.tileLayer('http://tile.stamen.com/toner/{z}/{x}/{y}.png', {
     attribution: 'Stamen'
-  }).addTo(map_object);
+  }).addTo(map);
 
   // add cartodb layer with one sublayer
-  cartodb.createLayer(map_object, {
-    user_name: 'your_user_name',
+  cartodb.createLayer(map, {
+    user_name: '{your_user_name}',
     type: 'namedmap',
     named_map: {
-      name: "namedmap_ex_test_interactive", // same as the template_id
+      name: "namedmap_tutorial",
       layers: [{
         layer_name: "t",
         interactivity: "cartodb_id, name, pop_max"
-      }]
-      }
-  })
-  .addTo(map_object)
-  .done(function(layer) {
-    layer.getSubLayer(0).setInteraction(true);
-    layer.getSubLayer(0).on('featureOver', function(e, pos, pixel, data) {
-      console.log("Event #" + data.cartodb_id + ", magnitude " + data.mag);
-    });
-    cdb.vis.Vis.addInfowindow(map, layer.getSubLayer(0), ['cartodb_id','mag'])
-  });
+       }]
+     }
+    })
+    .addTo(map)
+    .done(function(layer) {
+      layer.getSubLayer(0).setInteraction(true);
+
+	  // on mouseover
+      layer.getSubLayer(0).on('featureOver', function(e, pos, pixel, data) {
+        // print data to console log
+		console.log("Event #" + data.cartodb_id + ", name " + data.name + ", max population: " + data.pop_max);
+      });
+      // show infowindows on click
+	  cdb.vis.Vis.addInfowindow(map, layer.getSubLayer(0), ['cartodb_id','name', 'pop_max']);
+      });
 }
 
 window.onload = main; 
