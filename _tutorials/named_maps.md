@@ -195,7 +195,7 @@ window.onload = main;
 
 Copy this code block and place it between the `<script>` tags near the end of the [HTML template](https://raw.githubusercontent.com/CartoDB/docs/master/templates/named-maps-template.html). Save your HTML file and open it in your browser (Edit > Open File...).
 
-![Screenshot of basic named map](/img/layout/tutorials/named_maps/img2.png)
+<p class="wrap-border"><img src="{{ '/img/layout/tutorials/named_maps/img2.png' | prepend: site.baseurl }}" alt="Named map using a temporal URL" /></p>
 
 
 ### 3.2 Advanced named map
