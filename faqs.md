@@ -65,6 +65,24 @@ This has a couple reasons. First and foremost is simply that a database table ha
 
 By using the feature of sync tables, the shortest automatic syncing interval is 1 hour, but you can force manually a synchronization each 15 minutes.
 
+### I have a sync table, how can I modify the column types?
+
+When you are working with a sync table, your data is not editable while your table is still connected to the source. If you need your columns to have some specific data type, you can achieve that by using an SQL query that casts your columns to the type you need to use.
+
+The following query works by selecting all the columns you need and casting the ones you need to change the type using the syntax: `CAST (column_name as type)`. 
+
+Notice that the different types that you can use to cast your columns are: text, int, date or boolean.
+
+{% highlight sql %} 
+SELECT cartodb_id, the_geom_webmercator, the_geom, CAST (number_column AS text), CAST (text_column as int) FROM tablename
+{% endhighlight %}
+
+Alternativelly, you can also use the syntax `column_name::type`, which could be specially useful when casting date columns:
+
+{% highlight sql %} 
+SELECT cartodb_id, the_geom_webmercator, the_geom, my_date_column::timestamp FROM tablename
+{% endhighlight %}
+
 ### How can I lock a table/visualization?
 
 To prevent your tables and visualizations from undesired changes you can lock your tables and visualizations. To lock a table or a visualization, just go to your dashboard, put the cursor over the desired item and click on the small L icon. You can lock and unlock any item as many times as you would like.
