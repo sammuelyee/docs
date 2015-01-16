@@ -8,9 +8,10 @@ embed_url: 'http://bl.ocks.org/ohasselblad/raw/d1a45b8ff5e7bd90cd68/'
 cartodbjs: true
 ---
 
+
 ## Summary
 
-_Named maps_ allow you to make public maps out of private data. Unlike other maps created through our APIs, named maps need to be pre-configured; you set the SQL and CartoCSS ahead of time on the server, not in the browser as in normal CartoDB.js usage. Updates to and deletions of the map need to be run with future API calls. On the surface, named maps look the same as other maps created through CartoDB.js, but if you inspect how your browser interacts with the server, you will see that it only pulls the information that you pre-configure.
+_Named maps_ allow you to make public maps out of private data. Unlike other maps created through our APIs, named maps need to be pre-configured; you set the SQL and CartoCSS ahead of time on the server, not in the browser as in normal CartoDB.js usage. Updates to and deletions of the map need to be run with future authenticated API calls. On the surface, named maps look the same as other maps created through CartoDB.js, but if you inspect how your browser interacts with the server, you will see that it only pulls the information that you pre-configure so you can control which data remains private.
 
 #### Lesson goal 
 
@@ -25,11 +26,11 @@ There are four main steps:
     1. Basic
 	2. Advanced
 
-4. Manage map
+4. Managing named maps
 
 #### Objectives
 
-1. Create a named map that allows for user interaction with infowindows
+1. Create a named map that allows for user interaction with infowindows that show pre-selected data from your table
 2. Manage named maps (create, update, list, and delete)
 
 #### Data
@@ -118,7 +119,7 @@ curl 'https://documentation.cartodb.com/api/v1/map/named?api_key=01a418d3a45d113
 A successful call will result in the following response from the server:
 {% highlight javascript %}
 {
-	"template_id":"documentation@namedmap_tutorial"
+  "template_id":"documentation@namedmap_tutorial"
 }
 {% endhighlight %}
 
@@ -201,7 +202,7 @@ Copy this code block and place it between the `<script>` tags near the end of th
 ### 3.2 Advanced named map
 To create a more advanced version that has a basemap and interactivity on the data layer, we will use createLayer along with the Leaflet library similar to what was done in the [second Map Academy lesson](http://academy.cartodb.com/courses/03-cartodbjs-ground-up/lesson-2.html) on CartoDB.js.
 
-This is the suggested way to use named maps because the maps are instantiated on the fly so you do not need to worry about the temporal URLs.
+This is the recommended way to use named maps because the maps are instantiated on the fly so you do not need to worry about the temporal URLs.
 
 To get started, start with the [HTML template](https://raw.githubusercontent.com/CartoDB/docs/master/templates/named-maps-template.html) again, and place the following code between the `<script>` tags:
 
@@ -237,20 +238,21 @@ function main() {
     .done(function(layer) {
       layer.getSubLayer(0).setInteraction(true);
 
-	  // on mouseover
+      // on mouseover
       layer.getSubLayer(0).on('featureOver', function(e, pos, pixel, data) {
         // print data to console log
-		console.log("Event #" + data.cartodb_id + ", name " + data.name + ", max population: " + data.pop_max);
+        console.log("Event #" + data.cartodb_id + ", name " + data.name + ", max population: " + data.pop_max);
       });
+ 
       // show infowindows on click
-	  cdb.vis.Vis.addInfowindow(map, layer.getSubLayer(0), ['cartodb_id','name', 'pop_max']);
-      });
+      cdb.vis.Vis.addInfowindow(map, layer.getSubLayer(0), ['cartodb_id','name', 'pop_max']);
+    });
 }
 
 window.onload = main; 
 {% endhighlight %}
 
-The only information you need to replace is the `user_name` value. Other than that, the layer source object already contains the name for map we created. Save the file and open it in your browser. It should look like the map at the top of this tutorial.
+The only information you need to replace is the `user_name` value. Other than that, the layer source object already contains the name for map we created. Save the file and open it in your browser. It should look like the map at the <a href="#">top of this tutorial</a>.
 
 
 ## 4. Managing named maps
