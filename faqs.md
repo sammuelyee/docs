@@ -55,29 +55,6 @@ UPDATE _tablename_ SET _longitude_ = split_part(_coordinates_, ', ', 2)
 
 Notice that these SQL functions are expecting the value of the coordinates column to be similar to: "lat, long". If you use a different separator or your coordinates are in different order, you will have to adapt the previous queries to your specific syntax.
 
-### How can I change the privacy of my tables without using the UI?
-
-In order to change the privacy of an existing visualization to "With Link"/"Private"/"Public", you need to use our internal REST API, which is undocumented, but for now the only way to do programmatically this feature.
-
-This is an example CURL call to do it (for setting "With link" privacy, see constants below for the case of Public or Private):
-
-<div class="code-title notitle code-request"></div>
-{% highlight bash %}
-curl -H 'Content-Type: application/json' -H 'Accept: application/json' -X PUT -d '{"privacy":"LINK"}' "https://{USERNAME}.cartodb.com/api/v1/viz/{VISUALIZATIONID}?api_key={APIKEY}"
-{% endhighlight %}
-
-It is pretty self-explanatory, but basically you need to execute a PUT http call and set, using JSON, the "privacy" visualization field to the literal "LINK" (careful, it's case-sensitive).
-
-The call will return a JSON containing all current visualization fields so you can check that indeed the privacy changed to "LINK".
-
-Available values to use from the API:
-
-- PUBLIC
-
-- LINK
-
-- PRIVATE
-
 ### Why the size of my tables has increased after uploading them to CartoDB?
 
 This has a couple reasons. First and foremost is simply that a database table has a lot more storage considerations than a CSV. For example, indexes. On top of that though, the actual way that data is stored on disk is optimized for lookup and retrieval speed over storage space. This makes sense because a CSV is made so you can optimally store data and if you open it load it all into a program for a limited amout of time while you edit it, then save it and be done. The database has things like data types etc. 
