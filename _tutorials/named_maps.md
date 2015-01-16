@@ -4,7 +4,7 @@ title: 'Named Maps'
 short_description: 'Make public maps with private data'
 level: hard
 time_needed: '30 minutes'
-embed_url: 'http://bl.ocks.org/ohasselblad/raw/d1a45b8ff5e7bd90cd68/'
+embed_url: 'http://cartodb.github.com/cartodb.js/examples/tutorials/named-maps-example.html'
 cartodbjs: true
 ---
 
@@ -39,7 +39,7 @@ There are four main steps:
 
 #### HTML Template
 
-[HTML template](https://raw.githubusercontent.com/CartoDB/docs/master/templates/named-maps-template.html) used in this tutorial.
+[HTML template](https://github.com/CartoDB/cartodb.js/blob/master/examples/tutorials/named-maps-template.html) used in this tutorial.
 
 #### Tools
 
@@ -194,7 +194,7 @@ function main() {
 window.onload = main; 
 {% endhighlight %}
 
-Copy this code block and place it between the `<script>` tags near the end of the [HTML template](https://raw.githubusercontent.com/CartoDB/docs/master/templates/named-maps-template.html). Save your HTML file and open it in your browser (Edit > Open File...).
+Copy this code block and place it between the `<script>` tags near the end of the [HTML template](https://github.com/CartoDB/cartodb.js/blob/master/examples/tutorials/named-maps-template.html). Save your HTML file and open it in your browser (Edit > Open File...).
 
 <p class="wrap-border"><img src="{{ '/img/layout/tutorials/named_maps/img2.png' | prepend: site.baseurl }}" alt="Named map using a temporal URL" /></p>
 
@@ -204,7 +204,7 @@ To create a more advanced version that has a basemap and interactivity on the da
 
 This is the recommended way to use named maps because the maps are instantiated on the fly so you do not need to worry about the temporal URLs.
 
-To get started, start with the [HTML template](https://raw.githubusercontent.com/CartoDB/docs/master/templates/named-maps-template.html) again, and place the following code between the `<script>` tags:
+To get started, start with the [HTML template](https://github.com/CartoDB/cartodb.js/blob/master/examples/tutorials/named-maps-template.html) again, and place the following code between the `<script>` tags:
 
 {% highlight javascript %}
 function main() {
@@ -252,7 +252,7 @@ function main() {
 window.onload = main; 
 {% endhighlight %}
 
-The only information you need to replace is the `user_name` value. Other than that, the layer source object already contains the name for map we created. Save the file and open it in your browser. It should look like the map at the <a href="#">top of this tutorial</a>.
+The only information you need to replace is the `user_name` value. Other than that, the layer source object already contains the name for map we created. Save the file and open it in your browser. It should look like the map at the <a href="#">top of this tutorial</a> and the code is [here](https://github.com/CartoDB/cartodb.js/blob/namedMapsExample/examples/named-maps-example.html).
 
 
 ## 4. Managing named maps
@@ -300,7 +300,7 @@ curl -X DELETE 'https://{your_account_name}.cartodb.com/api/v1/map/named/{templa
 ## Summary
 
 #### Files used in this tutorial
-1. [HTML template](https://raw.githubusercontent.com/CartoDB/docs/master/templates/named-maps-template.html)
+1. [HTML template](https://github.com/CartoDB/cartodb.js/blob/master/examples/tutorials/named-maps-template.html)
 
 ## Moving forward
 
