@@ -22,10 +22,6 @@ There are four main steps:
 1. Loading data, making table private
 2. Constructing a config file, sending it to the server
 3. Creating named maps
-
-    1. Basic
-	2. Advanced
-
 4. Managing named maps
 
 #### Objectives
@@ -151,55 +147,8 @@ One thing to keep in mind about named maps is that, once instantiated, they are 
 
 ## 3. Creating named maps
 
-Having already created and instantiated a named map, we will now look at two ways to use the CartoDB.js library to bring the map's tiles to a webpage.
+Having already created and instantiated a named map, we will now look at how to use the CartoDB.js library to bring the map's tiles to a webpage.
 
-### 3.1 Basic named map
-
-The most basic map you can create using named maps uses the `layergroupid` returned from the server after instantiation. It can be used to create a template URL that tells JavaScript libraries like [Leaflet](http://leafletjs.com), [OpenLayers](http://openlayers.org/), or [ModestMaps](http://modestmaps.com/) to pull different tiles at different locations and zoom levels. It's called an XYZ template, and is structured like:
-
-{% highlight html %}
-http://{your_account_name}.cartodb.com/api/v1/map/{layergroupid}/{z}/{x}/{y}.png
-{% endhighlight %}
-
-If you are not used to XYZ templates, libraries like [Leaflet](http://leafletjs.com) replace the `{z}` by the zoom level, and the `{x}` and `{y}` are replaced by the longitude and latitude, respectively. Keep the curly brackets around the z, x, and y, and only replace your account name and `layergroupid`.
-
-Based on the above server response, we get the following URL template:
-
-{% highlight html %}
-http://documentation.cartodb.com/api/v1/map/documentation@4f5962ec@44bf1af16551a08a46009653208ea6a8:1421261983620/{z}/{x}/{y}.png
-{% endhighlight %}
-
-We're going to use our new XYZ template in [Leaflet's](http://leafletjs.com) `L.tileLayer()` method to create a map where the only layer is your named map data. The use is pretty basic:
-
-{% highlight javascript %}
-function main() {
-
-  // define map options
-  var options = { 
-    zoomControl: false,
-    scrollWheelZoom: false,
-    center: [0, 0],
-    zoomControl: true,
-    zoom: 3
-  }
-
-  // Instantiate map object for the 'map' div element
-  var map_object = new L.Map('map', options);
-
-  // Add a tile layer to the map object
-  L.tileLayer('replace this with your XYZ template')
-    .addTo(map_object);
-}
-
-window.onload = main; 
-{% endhighlight %}
-
-Copy this code block and place it between the `<script>` tags near the end of the [HTML template](https://github.com/CartoDB/cartodb.js/blob/master/examples/tutorials/named-maps-template.html). Save your HTML file and open it in your browser (Edit > Open File...).
-
-<p class="wrap-border"><img src="{{ '/img/layout/tutorials/named_maps/img2.png' | prepend: site.baseurl }}" alt="Named map using a temporal URL" /></p>
-
-
-### 3.2 Advanced named map
 To create a more advanced version that has a basemap and interactivity on the data layer, we will use [createLayer](http://docs.cartodb.com/cartodb-platform/cartodb-js.html#cartodbcartodblayer) along with the [Leaflet library](http://leafletjs.com) similar to what was done in the [second Map Academy lesson](http://academy.cartodb.com/courses/03-cartodbjs-ground-up/lesson-2.html) on CartoDB.js.
 
 This is the recommended way to use named maps because the maps are instantiated on the fly so you do not need to worry about the temporal URLs.
