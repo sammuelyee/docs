@@ -131,9 +131,9 @@ Now we have the information from the server response needed to construct our pub
 
 ## 3. Creating named maps
 
-Having already created and instantiated a named map, we will now look at how to use the CartoDB.js library to bring the map's tiles to a webpage.
+Having already created a named map, we will now look at how to use the CartoDB.js library to bring the map's tiles to a webpage.
 
-To create a more advanced version that has a basemap and interactivity on the data layer, we will use [createLayer](http://docs.cartodb.com/cartodb-platform/cartodb-js.html#cartodbcartodblayer) along with the [Leaflet library](http://leafletjs.com) similar to what was done in the [second Map Academy lesson](http://academy.cartodb.com/courses/03-cartodbjs-ground-up/lesson-2.html) on CartoDB.js.
+To create a basic version that has a basemap and interactivity on the data layer, we will use [createLayer](http://docs.cartodb.com/cartodb-platform/cartodb-js.html#cartodbcartodblayer) along with the [Leaflet library](http://leafletjs.com) similar to what was done in the [second Map Academy lesson](http://academy.cartodb.com/courses/03-cartodbjs-ground-up/lesson-2.html) on CartoDB.js.
 
 This is the recommended way to use named maps because the maps are instantiated on the fly so you do not need to worry about temporal URLs.
 
@@ -185,7 +185,7 @@ function main() {
 window.onload = main; 
 {% endhighlight %}
 
-The only information you need to replace is the `user_name` value. Other than that, the layer source object already contains the name for map we created. Save the file and open it in your browser (File > Open...). It should look like the map at the <a href="#">top of this tutorial</a> and the code is [here](https://github.com/CartoDB/cartodb.js/blob/namedMapsExample/examples/named-maps-example.html).
+The only information you need to replace is the `user_name` value. Other than that, the layer source object already contains the name for map we created. Save the file and open it in your browser (File > Open...). It should look like the map at the <a href="#">top of this tutorial</a> and the code is [here](https://github.com/CartoDB/cartodb.js/blob/gh-pages/examples/tutorials/named-maps-example.html).
 
 
 ## 4. Managing named maps
@@ -211,7 +211,7 @@ curl -X GET 'https://{your_account_name}.cartodb.com/api/v1/map/named?api_key={y
 }
 {% endhighlight %}
 
-Notice that the entries in the response are in the format `account_name&#64;template_name`.
+Notice that the entries in the response are in the format `account_name`&#64;`template_name`.
 
 #### Updating named maps
 
@@ -244,6 +244,7 @@ curl -X DELETE 'https://{your_account_name}.cartodb.com/api/v1/map/named/{templa
 
 #### Files used in this tutorial
 1. [HTML template](https://github.com/CartoDB/cartodb.js/blob/gh-pages/examples/tutorials/named-maps-template.html)
+2. [Named map example](https://github.com/CartoDB/cartodb.js/blob/gh-pages/examples/tutorials/named-maps-example.html)
 
 ## Moving forward
 
