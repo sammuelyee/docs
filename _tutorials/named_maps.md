@@ -13,6 +13,10 @@ cartodbjs: true
 
 _Named maps_ allow you to make public maps out of private data. Unlike other maps created through our APIs, named maps need to be pre-configured; you set the SQL and CartoCSS ahead of time on the server, not in the browser as in normal CartoDB.js usage. Updates to and deletions of the map need to be run with future authenticated API calls. On the surface, named maps look the same as other maps created through CartoDB.js, but if you inspect how your browser interacts with the server, you will see that it only pulls the information that you pre-configure so you can control which data remains private.
 
+If you're a developer who is working with data to which you don't own the license or for which you don't have the license to distribute publicly, or if you want to protect your data from misuse and modification, this tutorial is for you.
+
+**This tutorial only works for users with paid accounts.** Check out [our plans](http://cartodb.com/pricing) for upgrade options.
+
 #### Lesson goal 
 
 By the end of this lesson, you will be able to create a public map with private data that has user interaction enabled on select columns of your data table. The map at the top of this page is an example of the named map we will be creating.
@@ -101,7 +105,7 @@ If you're familiar with the `cartodb.createLayer(...)` method from CartoDB.js, t
 
 Now that we have our private table and a config file that says how we want that data to be visualized, we need to send the information to the server. Make sure you have your API key on hand. You can get your API key through your [account dashboard](http://docs.cartodb.com/cartodb-editor.html#find-your-api-key).
 
-Using the command line tool [curl](http://curl.haxx.se/), we create the map using an authenticated call. Scroll horizontally to see the full command.
+Using the command line tool [curl](http://curl.haxx.se/), we create the map using an authenticated call. Scroll horizontally to see the full command. Also make sure that your working directory in your terminal is the same place where you stored `config.json`.
 
 {% highlight sh %}
 curl 'https://{your_account_name}.cartodb.com/api/v1/map/named?api_key={your_api_key}' -H 'Content-Type: application/json' -d @config.json
@@ -121,29 +125,7 @@ A successful call will result in the following response from the server:
 
 This indicates that your map has been successfully created. The name after the &#64; symbol is referred to as the `template_name`.
 
-To instantiate your map--that is, make it so that you can request tiles--run the following command:
-
-{% highlight sh %}
-curl -X POST 'http://{your_account_name}.cartodb.com/api/v1/map/named/{template_id}' -H 'Content-Type: application/json'
-{% endhighlight %}
-
-You will receive a response from the server that looks similar to this:
-
-{% highlight javascript %}
-{
-  "layergroupid": "documentation@4f5962ec@44bf1af16551a08a46009653208ea6a8:1421261983620",
-  "cdn_url": 
-  {
-    "http":"ashbu.cartocdn.com", 
-    "https":"cartocdn-ashbu.global.ssl.fastly.net"
-  },
-  "last_updated":"2015-01-14T18:59:43.620Z"
-}
-{% endhighlight %}
-
-Now we have the information from the two server responses needed to construct our public maps out of the private table `named_map_tutorial_table`. 
-
-One thing to keep in mind about named maps is that, once instantiated, they are _temporal_. This means that the `layergroupid` will only work for a short period of time--no longer than a couple of days. Therefore, if you create a map today and try it again in a couple of days with the same `layergroupid`, you will find that it no longer pulls tiles from CartoDB. This is by design, and the general rule is _use the URL soon after you instantiated the map._
+Now we have the information from the server response needed to construct our public maps out of the private table `named_map_tutorial_table`. 
 
 ## 3. Creating named maps
 
@@ -240,6 +222,12 @@ curl -X PUT \
   -d @new_config.json
 {% endhighlight %}
 
+This would be useful if you later want to update your map with a different CartoCSS style or SQL statement. Try changing your `cartocss` key to the following instead, but use all other options previously used.
+
+```css
+#named_map_tutorial_table{ marker-fill-opacity: 0.5; marker-line-color: #c994c7; marker-line-width: 0; marker-line-opacity: 1; marker-placement: point; marker-type: ellipse; marker-width: 10; marker-fill: #dd1c77; marker-allow-overlap: true; marker-comp-op: multiply; }
+```
+
 #### Deleting named maps
 
 {% highlight sh %}
@@ -257,7 +245,7 @@ curl -X DELETE 'https://{your_account_name}.cartodb.com/api/v1/map/named/{templa
 
 + Named maps documentation is in the [Maps API documentation page](http://docs.cartodb.com/cartodb-platform/maps-api.html)
 + [Anonymous maps](http://docs.cartodb.com/cartodb-platform/maps-api.html#anonymous-maps-1) are a similar type of map, but not from private data
-+ [CartoDB.js](http://docs.cartodb.com/cartodb-platform/cartodb-js.html) methods related to named maps:
++ Take your named maps further with [CartoDB.js's](http://docs.cartodb.com/cartodb-platform/cartodb-js.html) related methods:
     1. [layer.setAuthToken()](http://docs.cartodb.com/cartodb-platform/cartodb-js.html#layersetauthtokenauthtoken)
 	2. [layer.setParams()](http://docs.cartodb.com/cartodb-platform/cartodb-js.html#layersetparamskey-value)
 + Need more info about CartoDB.js? Check out the [docs](http://docs.cartodb.com/cartodb-platform/cartodb-js.html), [tutorials](http://docs.cartodb.com/tutorials.html), and [Map Academy lessons](http://academy.cartodb.com/courses/03-cartodbjs-ground-up.html)
