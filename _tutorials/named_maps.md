@@ -39,7 +39,7 @@ There are four main steps:
 
 #### HTML Template
 
-[HTML template](https://github.com/CartoDB/cartodb.js/blob/master/examples/tutorials/named-maps-template.html) used in this tutorial.
+[HTML template](https://github.com/CartoDB/cartodb.js/blob/gh-pages/examples/tutorials/named-maps-template.html) used in this tutorial.
 
 #### Tools
 
@@ -137,7 +137,7 @@ To create a more advanced version that has a basemap and interactivity on the da
 
 This is the recommended way to use named maps because the maps are instantiated on the fly so you do not need to worry about temporal URLs.
 
-To get started, start with the [HTML template](https://github.com/CartoDB/cartodb.js/blob/master/examples/tutorials/named-maps-template.html) again, and place the following code between the `<script>` tags:
+To get started, start with the [HTML template](https://github.com/CartoDB/cartodb.js/blob/gh-pages/examples/tutorials/named-maps-template.html) again, and place the following code between the `<script>` tags:
 
 {% highlight javascript %}
 function main() {
@@ -243,7 +243,7 @@ curl -X DELETE 'https://{your_account_name}.cartodb.com/api/v1/map/named/{templa
 ## Summary
 
 #### Files used in this tutorial
-1. [HTML template](https://github.com/CartoDB/cartodb.js/blob/master/examples/tutorials/named-maps-template.html)
+1. [HTML template](https://github.com/CartoDB/cartodb.js/blob/gh-pages/examples/tutorials/named-maps-template.html)
 
 ## Moving forward
 
