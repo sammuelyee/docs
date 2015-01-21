@@ -97,6 +97,8 @@ Now open a text editor and paste the following text into it. Notice the CartoCSS
 
 If you're familiar with the `cartodb.createLayer(...)` method from CartoDB.js, this JSON object will [look somewhat familiar](http://docs.cartodb.com/cartodb-platform/cartodb-js.html#creating-visualizations-at-runtime). A layer source JSON object was also discussed in the [Map Academy course on CartoDB.js](http://academy.cartodb.com/courses/03-cartodbjs-ground-up/lesson-2.html#adding-multiple-layers-from-different-visualizations).
 
+A major difference between what was previously seen in createLayer and the object above is the presence of the `"name"` key. This is where the term "named maps" comes from. The name of your map can be changed to whatever you want, but here we will just use `namedmap_tutorial`.
+
 **Before moving on,** make sure that:
 
 + there is a table in your account named `named_map_tutorial_table`
@@ -133,7 +135,7 @@ Having already created and instantiated a named map, we will now look at how to 
 
 To create a more advanced version that has a basemap and interactivity on the data layer, we will use [createLayer](http://docs.cartodb.com/cartodb-platform/cartodb-js.html#cartodbcartodblayer) along with the [Leaflet library](http://leafletjs.com) similar to what was done in the [second Map Academy lesson](http://academy.cartodb.com/courses/03-cartodbjs-ground-up/lesson-2.html) on CartoDB.js.
 
-This is the recommended way to use named maps because the maps are instantiated on the fly so you do not need to worry about the temporal URLs.
+This is the recommended way to use named maps because the maps are instantiated on the fly so you do not need to worry about temporal URLs.
 
 To get started, start with the [HTML template](https://github.com/CartoDB/cartodb.js/blob/master/examples/tutorials/named-maps-template.html) again, and place the following code between the `<script>` tags:
 
@@ -183,7 +185,7 @@ function main() {
 window.onload = main; 
 {% endhighlight %}
 
-The only information you need to replace is the `user_name` value. Other than that, the layer source object already contains the name for map we created. Save the file and open it in your browser. It should look like the map at the <a href="#">top of this tutorial</a> and the code is [here](https://github.com/CartoDB/cartodb.js/blob/namedMapsExample/examples/named-maps-example.html).
+The only information you need to replace is the `user_name` value. Other than that, the layer source object already contains the name for map we created. Save the file and open it in your browser (File > Open...). It should look like the map at the <a href="#">top of this tutorial</a> and the code is [here](https://github.com/CartoDB/cartodb.js/blob/namedMapsExample/examples/named-maps-example.html).
 
 
 ## 4. Managing named maps
@@ -209,7 +211,7 @@ curl -X GET 'https://{your_account_name}.cartodb.com/api/v1/map/named?api_key={y
 }
 {% endhighlight %}
 
-Notice that the entries in the response are in the format `account_name`&#64;`template_name`.
+Notice that the entries in the response are in the format `account_name&#64;template_name`.
 
 #### Updating named maps
 
@@ -222,11 +224,15 @@ curl -X PUT \
   -d @new_config.json
 {% endhighlight %}
 
-This would be useful if you later want to update your map with a different CartoCSS style or SQL statement. Try changing your `cartocss` key to the following instead, but use all other options previously used.
+This would be useful if you later want to update your map with a different CartoCSS style or SQL statement. 
+
+Copy your previous configuration file into a new file called `new_config.json`. Now change your `cartocss` key to the following instead, but use all other options previously used.
 
 ```css
 #named_map_tutorial_table{ marker-fill-opacity: 0.5; marker-line-color: #c994c7; marker-line-width: 0; marker-line-opacity: 1; marker-placement: point; marker-type: ellipse; marker-width: 10; marker-fill: #dd1c77; marker-allow-overlap: true; marker-comp-op: multiply; }
 ```
+
+Send your new config file to the server to update your map.
 
 #### Deleting named maps
 
