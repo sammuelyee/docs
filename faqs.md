@@ -300,8 +300,9 @@ In order to unlink your Google Drive account from the importing tool of CartoDB,
 
 ### I'm getting "There was an error trying to get your service token or you didn't finish the oAuth process. Try again please." errors
 
-That error is caused by permission configuration at your GDrive Google account. Try this:
+That error is caused by the permission configuration at your GDrive Google account. Try this:
 
+* Make sure that pop-up windows are enabled in your browser as the authorization window is opened in one of them. Your browser will raise a warning about this if you have pop-ups blocked: enabling them temporarily for the CartoDB site will solve the issue.
 * If you're using a corporate account:
   * Please check with your administrator that you have Drive enabled.
   * Ask your administrator whether "Allow users to install Google Drive apps" is enabled at "Google Apps > Settings for Drive".
