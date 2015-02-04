@@ -15,7 +15,7 @@ We keep talking about how much CartoDB can help you build applications and share
 
 ### Geometry
 
-CartoDB creates a geometry column called `the_geom` on every table you generate. The column is where you will store your geometry information, either POINTS, MULTILINESTRINGS, or MULTIPOLYGONS. PostGIS supports [many geometry types](http://postgis.refractions.net/docs/using_postgis_dbmanagement.html#Geography_Basics), but to simplify visualization and analysis, CartoDB turns all geometries into one of the three listed. For the time-being, you can only have one geometry type per column.
+CartoDB creates a geometry column called `the_geom` on every table you generate. The column is where you will store your geometry information, either POINTS, MULTILINESTRINGS, or MULTIPOLYGONS. PostGIS supports [many geometry types](http://postgis.net/docs/using_postgis_dbmanagement.html#Geography_Basics), but to simplify visualization and analysis, CartoDB turns all geometries into one of the three listed. For the time-being, you can only have one geometry type per column.
 
 ### Number
 
@@ -75,7 +75,7 @@ SELECT * FROM {table_name} WHERE cartodb_id = 1
 
 ### Working with the_geom
 
-The primary geometry column in any CartoDB table is called, `the_geom`. When you upload a SHP file, or any other supported file, any geospatial data ends up in this column. The `the_geom` column is projected in WGS 84 (EPSG:4326), and is built with a spatial index for fast querying and sorting. Geometries are stored in the database in a format called well-known binary. This is useful for many things, but if you want to view your data, it is handy to convert `the_geom` using [ST_AsText](http://postgis.org/docs/ST_AsText.html) or [ST_AsGeoJSON](http://postgis.org/docs/ST_AsGeoJSON.html). Sometimes it can be useful to turn polygons into points or points into polygons. There are many ways to do this, here are a couple.
+The primary geometry column in any CartoDB table is called, `the_geom`. When you upload a SHP file, or any other supported file, any geospatial data ends up in this column. The `the_geom` column is projected in WGS 84 (EPSG:4326), and is built with a spatial index for fast querying and sorting. Geometries are stored in the database in a format called well-known binary. This is useful for many things, but if you want to view your data, it is handy to convert `the_geom` using [ST_AsText](http://postgis.net/docs/ST_AsText.html) or [ST_AsGeoJSON](http://postgis.net/docs/ST_AsGeoJSON.html). Sometimes it can be useful to turn polygons into points or points into polygons. There are many ways to do this, here are a couple.
 
 <div class="code-title">POLYGON CENTROID</div>
 {% highlight sql %}
@@ -93,7 +93,7 @@ SELECT ST_Buffer(the_geom,0.001) FROM {table_name}
 
 ### About the_geom_webmercator
 
-CartoDB uses an invisible column called, `the_geom_webmercator`, to speed up the rendering of tiles for our mapping services. We are working to deprecate the use of this column, but it will take some time. For now, if you want to run an analysis on your data and then see the result in the Map tab, you need to have a column called `the_geom_webmercator` in the result. The `the_geom_webmercator` column is the same geometry as your `the_geom` column, but projected in Web Mercator (EPSG:3857). Any operation you run on `the_geom`, can be wrapped in an [ST_Transform](http://postgis.org/docs/ST_Transform.html) function to reproject it. If you tell PostgreSQL to call the result of that reprojection, `the_geom_webmercator`, the Maps API and tiler will work perfectly.
+CartoDB uses an invisible column called, `the_geom_webmercator`, to speed up the rendering of tiles for our mapping services. We are working to deprecate the use of this column, but it will take some time. For now, if you want to run an analysis on your data and then see the result in the Map tab, you need to have a column called `the_geom_webmercator` in the result. The `the_geom_webmercator` column is the same geometry as your `the_geom` column, but projected in Web Mercator (EPSG:3857). Any operation you run on `the_geom`, can be wrapped in an [ST_Transform](http://postgis.net/docs/ST_Transform.html) function to reproject it. If you tell PostgreSQL to call the result of that reprojection, `the_geom_webmercator`, the Maps API and tiler will work perfectly.
 
 <div class="code-title">THE_GEOM_WEBMERCATOR</div>
 {% highlight sql %}
@@ -115,7 +115,7 @@ First, we created a point. Remember, PostGIS always expects longitude followed b
 
 ### Calculate area of a polygon
 
-Knowing the size of a polygon can be very useful. PostGIS works in coordinate systems, so anytime you calculate distances and sizes in PostGIS, be aware that it may be in the units of the coordinate system. You can use [geography types](http://postgis.refractions.net/docs/using_postgis_dbmanagement.html#Geography_Basics) to have PostGIS quickly convert those results into more familiar meters.
+Knowing the size of a polygon can be very useful. PostGIS works in coordinate systems, so anytime you calculate distances and sizes in PostGIS, be aware that it may be in the units of the coordinate system. You can use [geography types](http://postgis.net/docs/using_postgis_dbmanagement.html#Geography_Basics) to have PostGIS quickly convert those results into more familiar meters.
 
 <div class="code-title">POLYGON SIZE</div>
 {% highlight sql %}
@@ -137,7 +137,7 @@ This use of ST_Intersects allows you to JOIN the data from two tables at each po
 
 ### Measuring distance
 
-Measuring distance has the same consideration as measuring size: knowing what units the measurement is in. You can use the same _geography_ typing trick as we used above to measure area. Then you just have to use a simple PostGIS function, [ST_Distance](http://postgis.refractions.net/docs/ST_Distance.html), to get a distance in meters.
+Measuring distance has the same consideration as measuring size: knowing what units the measurement is in. You can use the same _geography_ typing trick as we used above to measure area. Then you just have to use a simple PostGIS function, [ST_Distance](http://postgis.net/docs/ST_Distance.html), to get a distance in meters.
 
 <div class="code-title">DISTANCE</div>
 {% highlight sql %}
@@ -265,7 +265,7 @@ It can be useful to know the resolution of tiles presented on your maps. Interna
 SELECT CDB_TransformToWebmercator(geometry)
 {% endhighlight %}
 
-Transformations happen all the time on CartoDB. In the process of developing the tool, it became apparent that the more common function, [ST_Transform](http://postgis.org/docs/ST_Transform.html), could result in errors. In the case of CartoDB, transformations happy on a copy of user's data, so a lossy transformation was preferrable to an error producing function. The above function allows us to consistently transform geometries behind the scenes in CartoDB.
+Transformations happen all the time on CartoDB. In the process of developing the tool, it became apparent that the more common function, [ST_Transform](http://postgis.net/docs/ST_Transform.html), could result in errors. In the case of CartoDB, transformations happy on a copy of user's data, so a lossy transformation was preferrable to an error producing function. The above function allows us to consistently transform geometries behind the scenes in CartoDB.
 
 ### Statistical functions
 

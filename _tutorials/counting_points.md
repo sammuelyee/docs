@@ -19,4 +19,4 @@ UPDATE polygon_table SET point_count = (SELECT count(*)
 FROM points_table WHERE ST_Intersects(points_table.the_geom, polygon_table.the_geom))
 {% endhighlight %}
 
-- [PostGIS ST_Intersects Documentation](http://postgis.refractions.net/docs/ST_Buffer.html)
+- [PostGIS ST_Intersects Documentation](http://postgis.net/docs/ST_Buffer.html)
