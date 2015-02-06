@@ -228,9 +228,9 @@ This would be useful if you later want to update your map with a different Carto
 
 Copy your previous configuration file into a new file called `new_config.json`. Now change your `cartocss` key to the following instead, but use all other options previously used.
 
-```css
+{% highlight css %}
 #named_map_tutorial_table{ marker-fill-opacity: 0.5; marker-line-color: #c994c7; marker-line-width: 0; marker-line-opacity: 1; marker-placement: point; marker-type: ellipse; marker-width: 10; marker-fill: #dd1c77; marker-allow-overlap: true; marker-comp-op: multiply; }
-```
+{% endhighlight %}
 
 Send your new config file to the server to update your map.
 
