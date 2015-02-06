@@ -175,6 +175,14 @@ You can perform the following administrative actions in the Options menu:
 - **Delete this table**  
   Entirely delete your table. But note that this will also delete any visualizations that rely on the table!
 
+### Supported Data Types
+
+When you upload your data to CartoDB, it will automatically assign a data type to your data such as string, number, date or boolean. It's important to check the correct data type was assigned. It is especially important to make sure CartoDB knows if a column is a date type so visualizations that rely on temporal information such as Torque animate correctly.
+
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/datetype.png' | prepend: site.baseurl }}" alt="Visualizations" /></p>
+
+The date type is located under the column name. It can be changed by clicking on the date type name under the column name to open a secondary navigation window from which you can select the correct data type.
+
 ## Visualizations
 
 ### What is a visualization?
@@ -218,7 +226,7 @@ When you share a visualization, you may also edit who is able to access it and u
 
 ### Visualization metadata
 
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/vizheader.png' | prepend: site.baseurl }}" alt="Visualization" /></p>
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/vizheader.png' | prepend: site.baseurl }}" alt="Visualization Metadata" /></p>
 
 For each visualization you may edit the name, add a description, source, license, and add tags to keep them organized and discoverable. You will find the "Edit metadata" option under the visualization title. 
 
@@ -250,13 +258,11 @@ We use our mobiles frequently to consume content, so there is chance that many p
 
 By default you are in Desktop view; if you switch to the Mobile view, you'll see that we crop the viewable area. If you include elements for the Desktop view, you'll see that they are not present when you switch to Mobile, so that you can create specific elements for this new view, and viceversa. 
 
-### CartoDB sidebar
+### CartoDB Sidebar
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/sidebar.png' | prepend: site.baseurl }}" alt="CartoDB Sidebar" /></p>
 
 The CartoDB sidebar is a toolkit that enables you to customize how data is displayed on your maps. Expand it to access your tools, and retract it to view your progress. Upon opening the sidebar, you'll notice a default data layer that syncs to your table. Add more layers to reveal more of your data at will.  
-
-Now let's unpack the sidebar tools:
 
 #### Custom SQL
 
@@ -296,11 +302,16 @@ The Density visualization aggregates your data in hexagons and colors them based
 - **Torque**  
 Torque is ideal for the display of temporal data. This tool animates a progression of points based on a table column containing the time stamp. The standard format of the date column is `YYYY-DD-MMThh:mm:ss`, but Torque also visualizes data that contains a year, year/month, or year/month/day characteristics.
 
-Beware that different types of data enables and disables certain wizards. Experiment with your data to discover the optimal tools for your visualization.
+- **Torque Heat**  
+Torque heat is a variation of Torque to create an animated heatmap of temporal data. Areas of greater color intensity indicate greater density of data. 
 
-Now let's become more familiar with how these wizards perform:
+- **Torque Category**  
+In addition to Torque and Torque Heat, Torque Category displays data points in different colors based on qualitative characteristics in your table. If your data shows different characteristics (such as land-use zones), use this wizard to customize the color of each characteristic.
+
+Beware that different types of data enable and disable certain wizards. Experiment with your data to discover the optimal tools for your visualization.
 
 #### Simple
+Display data as simple marker points 
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/simple.png' | prepend: site.baseurl }}" alt="Simple Wizard" /></p>
 
@@ -311,7 +322,7 @@ This tool adjusts three point properties: the size of the marker (a numeric valu
 The marker stroke allows you to edit the width of your points' border or outline (a value between 0-40), their color (using Hex codes or by selecting from the color palettex), and their opacity (a value between 0-1).
 
 - **Composite operation**  
-Change how the colors of overlapping geometries will interact with one another. You can select from: multiply, screen, overlay, darken, and lighten. Each of these operations has a different effect on how the overlapping sections of markers are displayed. You can explore some them [here](https://www.mapbox.com/tilemill/docs/guides/comp-op/).
+Change how the colors of overlapping geometries will interact with one another. You can select from: multiply, screen, overlay, darken, lighten, color-dodge and color-burn. Each of these operations has a different effect on how the overlapping sections of markers are displayed. Refer to [Composite Operations](http://docs.cartodb.com/cartodb-editor.html#composite-operations) for a deeper overview on how blend modes work. You can explore the options available [here](https://www.mapbox.com/tilemill/docs/guides/comp-op/).
 
 - **Label text**  
 Select the field that you would like to act as a label (if any).
@@ -335,57 +346,64 @@ When set to "true", labels may overlap one another. When set to "false", not all
   - _Line_ will align the label to a line or to the border of a polygon; this will repeat the label.
 
 #### Cluster
+Group data into clusters
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/cluster.png' | prepend: site.baseurl }}" alt="Cluster Wizard" /></p>
 
 - **Buckets**  
-Define how many groupings your data will have. Fewer buckets means that  data shows at less granular levels.
+Define how many groupings your data will have. Fewer buckets means that data shows at less granular levels.
 
-- **Described in earlier section**  
-  - Marker fill
-  - Marker stroke
-  - Marker size
-  - Label font
-  - Label halo
+- **Label font**  
+Change your label's font.
+
+- **Label halo**  
+Change the color and width of the outline around your text. This can be helpful for increasing readability.
+
+Refer to [CartoCSS documentation](http://docs.cartodb.com/cartodb-editor.html#cartocss) for an explanation of marker fill, marker size and marker stroke.
 
 #### Choropleth
+Thematic map with regions different colors in proportion to the data 
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/choro.png' | prepend: site.baseurl }}" alt="Choropleth Wizard" /></p>
 
 - **Column**  
 Select the numeric value column(s) that you want to display.
 
+- **Buckets**  
+Define how many groupings your data will have. Fewer buckets means that data shows at less granular levels.
+
 - **Quantification**  
 Choose the way that data is divided into buckets. You can select from: Jenks, Equal Interval, Heads/Tails, and Quantile. Read more [here](http://blog.cartographica.com/blog/2010/8/16/gis-data-classifications-in-cartographica.html), or take a look at the descriptions below.
 
-  -**Jenks** method aims to increase the standard deviation between each group of data while decreasing the standard deviation within each group. In other words, it increases the similarity within a given group in conjunction with the differences from each of the other groups. The Jenks method does this by shuffling data across each group until it detects an optimization.
+  - **Jenks** method aims to increase the standard deviation between each group of data while decreasing the standard deviation within each group. In other words, it increases the similarity within a given group in conjunction with the differences from each of the other groups. The Jenks method does this by shuffling data across each group until it detects an optimization.
   - **Equal interval** calculates the range of your data and divides the total into equally-sized subranges for your desired number of groups.
-  -**Quantile** creates each group with an equal number of discrete units. The discrete units are gathered from the distinct possible values of your data.
+  - **Quantile** creates each group with an equal number of discrete units. The discrete units are gathered from the distinct possible values of your data.
   - **Heads/Tails** breaks can be powerful for data with a long-tail distribution. The Heads/Tails method will create a break-point at the mean of your data, remove all data below the break-point, and create the next break-point from the data above the first break-point. It will repeat the process until either a single value is left above the break-point or if it reaches the desired number of breaks.
 
 - **Color Ramp**  
 Select the colors of your dataset. You can customize these using CartoCSS, which we will cover more in-depth, but take a quick look [here](https://www.mapbox.com/tilemill/docs/manual/carto/) in the meantime.
 
-- **Described in earlier section**  
-  - Buckets
-  - Marker width
-  - Marker stroke
+- **Described under [Simple](http://docs.cartodb.com/cartodb-editor.html#simple)**  
   - Composite operation
   - Label text
 
+Refer to [CartoCSS documentation](http://docs.cartodb.com/cartodb-editor.html#cartocss) for an explanation of marker width, and marker stroke.
+
 #### Category
+Display data in different colors based on categories 
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/category.png' | prepend: site.baseurl }}" alt="Category Wizard" /></p>
 
 - **Map/Legend Items**  
 A list of the different categories that will appear on your map and in your legend can be found under Marker Stroke. Here, you can edit their color or add an image marker.
 
-- **Described in earlier section**  
-  - Column
-  - Marker fill
-  - Marker stroke
+- **Column**  
+Select the numeric value column(s) that you want to display.
+
+Refer to [CartoCSS documentation](http://docs.cartodb.com/cartodb-editor.html#cartocss) for an explanation of marker fill, and marker stroke.
 
 #### Bubble
+Scale radius of markers based on numeric data in your table
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/bubble.png' | prepend: site.baseurl }}" alt="Bubble Wizard" /></p>
 
@@ -398,20 +416,22 @@ Set the color and opacity of bubble markers.
 - **Bubble stroke**  
 Edits multiple values: the width of your bubble stroke, a.k.a. its border or outline (a value between 0-40); the color (using Hex codes or by selecting from the color palette), and the opacity (a value between 0-1).
 
-- **Described in earlier section**  
+- **Composite operation**  
+Change how the colors of overlapping geometries will interact with one another. You can select from: multiply, screen, overlay, darken, lighten, color-dodge and color-burn. Each of these operations has a different effect on how the overlapping sections of markers are displayed. Refer to [Composite Operations](http://docs.cartodb.com/cartodb-editor.html#composite-operations) for a deeper overview on how blend modes work. You can explore the options available [here](https://www.mapbox.com/tilemill/docs/guides/comp-op/).
+
+- **Described under [Choropleth](http://docs.cartodb.com/cartodb-editor.html#choropleth)**
   - Column
   - Quantification
-  - Composite Operation
 
 #### Intensity
+Show density of points much like a heatmap
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/intensity.png' | prepend: site.baseurl }}" alt="Intensity Wizard" /></p>
 
-- **Described in earlier section**  
-  - Marker fill
-  - Marker stroke
+Refer to [CartoCSS documentation](http://docs.cartodb.com/cartodb-editor.html#cartocss) for an explanation of marker fill, and marker stroke.
 
 #### Density
+Data is aggregated into hexagons colored based on intensity of data in each cell. Infowindows will be disabled.
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/density.png' | prepend: site.baseurl }}" alt="Density Wizard" /></p>
 
@@ -424,20 +444,23 @@ Edits multiple values: the width of your polygon stroke, a.k.a. its border or ou
 - **Polygon Size**  
   Adjust the size of the polygons on your map.
 
-- **Described in earlier section**  
+- **Composite operation**  
+Change how the colors of overlapping geometries will interact with one another. You can select from: multiply, screen, overlay, darken, lighten, color-dodge and color-burn. Each of these operations has a different effect on how the overlapping sections of markers are displayed. Refer to [Composite Operations](http://docs.cartodb.com/cartodb-editor.html#composite-operations) for a deeper overview on how blend modes work. You can explore the options available [here](https://www.mapbox.com/tilemill/docs/guides/comp-op/).
+
+- **Described under [Choropleth](http://docs.cartodb.com/cartodb-editor.html#choropleth)**
   - Buckets
-  - Color ramp
-  - Composite operation
+  - Color Ramp
 
 #### Torque
+Data animation of a progression of points, requires time-series data
 
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/torque.png' | prepend: site.baseurl }}" alt="Torque Wizard" /></p>
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/torque1.png' | prepend: site.baseurl }}" alt="Torque Wizard" /></p>
 
 - **Cumulative**  
 Determines whether points stay on your map throughout the animation or fade away.
 
-- **Column**  
-Select the data column that you would like to display. The column must contain either date-type or numerical data (so long as it reflects the passage of time) to be used in the Torque visualization.
+- **Time Column**  
+Select the date column that you would like to display. The column must contain either date-type or numerical data (so long as it reflects the passage of time) to be used in the Torque visualization. Refer to the [Supported Data Types](http://docs.cartodb.com/cartodb-editor.html#supported-data-types) documentation on how to change the data type for columns. Refer to the [PostgreSQL documentation](http://www.postgresql.org/docs/9.2/static/datatype-datetime.html) for more information on the date and time data types supported by CartoDB.
 
 - **Marker Type**  
 Select whether you'd like to display points as rectangles or ellipses.
@@ -448,20 +471,59 @@ Adjust three properties: the size of the marker (a numberical value between 0-40
 - **Marker Stroke**  
 The marker stroke allows you to edit the width of your point, a.k.a. its border or outline (a value between 0-40), the color (using Hex codes or by selecting from the color palette), and the opacity (a value between 0-1).
 
-- **Duration**  
-Edit the total length of your visualization.
+- **Duration (secs)**  
+Set the total length of your visualization.
 
 - **Steps**  
 Edit the number of animation groupings. Fewer steps will create a more step-by-step or choppy visualization with more data in each "step." A greater number of steps will look smoother. This correlates to whether your data is being displayed by day, week, month, etc.
 
 - **Blend Mode**  
-This tool is related to composite operations (see above descriptions) and affects how layered data is displayed.
+Style effects for how layered data is blended during the animation. Blend modes use color composite operations. Available modes include lighter, multiply, source-over, and xor. Refer to [Composite Operations](http://docs.cartodb.com/cartodb-editor.html#composite-operations) for a deeper overview on how blend modes work. You can explore the options available [here](https://www.mapbox.com/tilemill/docs/guides/comp-op/).
 
 - **Trails**  
 Select whether data points display a "trail," or faded image after they disappear from your map. Choose a value between 0 and 5: 5 will display a longer, more-lasting trail and 0 will not show a trail.
 
 - **Resolution**  
-Defines the grid resolution that bins your data. Behind-the-scenes torque visualizations organize data into bins according to screen pixels. So, a resolution of 2 would bin your data into 2x2 pixel cells.
+Torque creates a grid of your data and aggregates data to each cell of that grid. The resolution parameter determines the width and height of each cell. Larger numbers will make your data more gridded. 
+
+Torque visualizations also have [Torque CartoCSS](http://docs.cartodb.com/cartodb-editor.html#cartocss) options to further customize the look of your visualization.
+
+#### Torque Heat
+A variation of Torque allowing for an animated heatmap of temporal data where areas of greater color intensity indicate greater density of data. 
+
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/torqueheat.png' | prepend: site.baseurl }}" alt="Torque Heat Wizard" /></p>
+
+Much of the interface options for Torque Heat are the same for Torque and are explained in the [Torque documentation](http://docs.cartodb.com/cartodb-editor.html#torque).
+
+Options that are unique to Torque Heat:
+
+- **Marker Size**  
+Choose the size of your markers.
+
+- **Threshold**  
+Set the transparency of the heat map markers.
+
+- **Animated**  
+Activate this slider to turn your temporal data into a linear torque animation.
+
+- **Cumulative**  
+Activate this slider to accumulate your heat marker data over time leaving a trail of past data locations on your map. 
+
+Torque visualizations also have [Torque CartoCSS](http://docs.cartodb.com/cartodb-editor.html#cartocss) options to further customize the look of your visualization.
+
+#### Torque Category
+A variation of Torque, which allows for an animation of points whose color relates to categories in your dataset
+
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/torquecategory.png' | prepend: site.baseurl }}" alt="Torque Category Wizard" /></p>
+
+Much of the interface options for Torque Category are the same for Torque and are explained in the Torque documentation.
+
+Options that are unique to Torque Category:
+
+- **Category Column**  
+Choose data from your table you would like to appear as categories on your map and in your legend. You can edit their color or add an image marker underneath the Resolution menu option.
+
+Torque visualizations also have [Torque CartoCSS](http://docs.cartodb.com/cartodb-editor.html#cartocss) options to further customize the look of your visualization.
 
 #### Info-windows
 
@@ -493,6 +555,77 @@ CartoDB uses a flavor of CartoCSS developed by [Mapbox](https://www.mapbox.com/)
 - [CartoCSS API](https://www.mapbox.com/carto/api/2.3.0/)
 
 Learn the basics of CartoCSS and designing data for your maps with our [Introduction to map design]({{ '/courses/02-design-for-beginners.html' | prepend: site.academy-baseurl }}) course.
+
+CartoCSS options available to edit from the CartoDB editor wizards include:
+
+-__Marker-fill:__ choose the color of your markers, the size of your markers and the transparency level of your markers (from 0 to 1)
+
+-__Marker-size:__ adjust the size of your markers
+
+-__Marker-stroke:__ adjust the border color of your markers, thickness of the border, and transparency (from 0 to 1)
+
+#### Torque CartoCSS
+In addition to being able to customize the look of your visualizations using CartoCSS, torque visualizations have specific options you can change.
+
+- **Torque**
+
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/torquecartoCSS.png' | prepend: site.baseurl }}" alt="Torque CartoCSS" /></p>
+
+-__Torque Frame Count:__ the number of steps in your torque animation.
+
+-__Torque Animation Duration:__ the length of your animation.
+
+-__Torque Time Attribute:__ the name of the date column in your table.
+
+-__Torque Aggregation Function:__ Torque renders your data in clusters, choose what value to show such as max values only, or count how many values are in each cluster.
+
+__Example functions:__ count(column_name), max(column_name), sum(column_name). Column data type must be numeric. 
+
+Learn more about [how spatial aggregation works](https://github.com/CartoDB/torque/wiki/How-spatial-aggregation-works).
+
+-__Torque Resolution:__ Torque creates a grid from your data and aggregates data to each cell of that grid. Torque resolution determines width and height of each cell. Larger numbers will make your data more gridded.  
+
+-__Torque Data Aggregation:__ two options, linear which does not leave a trace of past data, and cumulative which draws data markers cumulatively to show past data.
+
+- **Torque Category**
+
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/torquecartoCSScat.png' | prepend: site.baseurl }}" alt="Torque Category CartoCSS" /></p>
+
+Torque Category has much of the same Torque CartoCSS in addition to a few different options available for customization.
+
+-__Torque Aggregation Function:__ Torque renders your data in clusters. Torque Category uses a postgreSQL command, CDB_Math_Mode(torque_category) to find the values that appear most often in your data in order to cluster your data accordingly.
+
+Learn more about [how spatial aggregation works](https://github.com/CartoDB/torque/wiki/How-spatial-aggregation-works).
+
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/torquecartoCSSframeoffset.png' | prepend: site.baseurl }}" alt="Torque CartoCSS Frame Offset" /></p>
+
+Once your data is aggregated, you can further customize your torque animation options by changing the marker styles for each frame of your animation by customizing the options found under the frame-offsets and adding additional frame-offsets.
+
+You can also select each cluster value to change marker styles based on your data categories. For instance, if you want to style the maximum value in your dataset to have different marker styles, you would change the marker styles for the maximum value in your animation, which you will find by looking at the values in your CartoCSS.
+
+- **Torque Heat**
+
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/torquecartoCSSheat.png' | prepend: site.baseurl }}" alt="Torque Heat CartoCSS" /></p>
+
+Torque Heat has much of the same Torque CartoCSS in addition to a few different options available for customization.
+
+-__Image Filters:__ this option lets you determine the color stop for your heat map visualization.
+
+-__Marker File:__ CartoDB provides marker files for you, this option can’t be changed.
+
+-__Marker Fill Opacity:__ Change the opacity of the markers.
+
+-__Marker Width:__ Change the width of the markers.
+
+#### Composite Operations
+
+Composite operations style the way colors of overlapping markers interact with each other. You can think of them as blend modes or filters, similar to blend operations in Photoshop. Composite operations are available in the Simple, Choropleth, Bubble, Density and Torque visualizations. 
+
+The available options within the wizards interface include multiply, screen, overlay, darken, lighten, color-dodge and color-burn. In addition, blend modes specific to Torque include lighter, multiply, source-over, and xor. For more information on the different options available, refer to the documentation on [Mapbox](https://www.mapbox.com/tilemill/docs/guides/comp-op/).
+
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/markercompop.png' | prepend: site.baseurl }}" alt="Marker CartoCSS Composite Operations" /></p>
+
+Customize the marker composite operations within the CartoCSS by editing the marker-comp-op option.
 
 #### Legends
 
