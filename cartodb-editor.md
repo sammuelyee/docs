@@ -266,9 +266,15 @@ The CartoDB sidebar is a toolkit that enables you to customize how data is displ
 
 #### Custom SQL
 
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/sqlquery.png' | prepend: site.baseurl }}" alt="SQL Query" /></p>
+
 [SQL](https://en.wikipedia.org/wiki/SQL) (Structured Query Language) is the way that many applications request data from a database. They can ask simple queries (*i.e.* "give me all records from this table"), queries that match certain conditions (*i.e.*  "give me all records in which this field equals a certain value"), or more complex queries that combine data from two or more tables. 
 
-Remember that when you create a visualization and link a table to it, all of the data in that table will be displayed. To curate what data is shown, you may write a custom SQL query or use our filter functions.
+CartoDB is built on a database called [PostgreSQL](http://www.postgresql.org/), and the geospatial extension called [PostGIS](http://postgis.net/). PostGIS allows you to perform geospatial queries such as finding data points within a given radius, the area of polygons in your table, etc. The available queries and documentation can be found on the reference pages of [PostgreSQL](http://www.postgresql.org/docs/9.2/static/reference.html) and [PostGIS](http://postgis.net/docs/manual-2.0/reference.html). 
+
+When you create a visualization and link a table to it, all of the data in that table will be displayed. To curate what data is shown, you may write a custom SQL query or use our filter functions. 
+
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/filters.png' | prepend: site.baseurl }}" alt="Filters" /></p>
 
 In the SQL window, you are shown which query is being applied to your data and given the ability to modify it. Automatically, you will see the query that has been produced from the applied filter (sidenote: this is also a fun way to learn SQL!).
 
@@ -303,7 +309,7 @@ The Density visualization aggregates your data in hexagons and colors them based
 Torque is ideal for the display of temporal data. This tool animates a progression of points based on a table column containing the time stamp. The standard format of the date column is `YYYY-DD-MMThh:mm:ss`, but Torque also visualizes data that contains a year, year/month, or year/month/day characteristics.
 
 - **Torque Heat**  
-Torque heat is a variation of Torque to create an animated heatmap of temporal data. Areas of greater color intensity indicate greater density of data. 
+Torque heat is a variation of Torque to create interactive heat maps or animated heatmaps when you have temporal data. Areas of greater color intensity indicate greater density of data. 
 
 - **Torque Category**  
 In addition to Torque and Torque Heat, Torque Category displays data points in different colors based on qualitative characteristics in your table. If your data shows different characteristics (such as land-use zones), use this wizard to customize the color of each characteristic.
@@ -506,9 +512,6 @@ Set the transparency of the heat map markers.
 - **Animated**  
 Activate this slider to turn your temporal data into a linear torque animation.
 
-- **Cumulative**  
-Activate this slider to accumulate your heat marker data over time leaving a trail of past data locations on your map. 
-
 Torque visualizations also have [Torque CartoCSS](http://docs.cartodb.com/cartodb-editor.html#cartocss) options to further customize the look of your visualization.
 
 #### Torque Category
@@ -551,7 +554,6 @@ CartoCSS is the syntax language that CartoDB uses to allow users greater control
 
 CartoDB uses a flavor of CartoCSS developed by [Mapbox](https://www.mapbox.com/). Follow the links to check out some of their excellent documentation:
 
-- [CartoCSS manual](https://www.mapbox.com/tilemill/docs/manual/carto/)
 - [CartoCSS API](https://www.mapbox.com/carto/api/2.3.0/)
 
 Learn the basics of CartoCSS and designing data for your maps with our [Introduction to map design]({{ '/courses/02-design-for-beginners.html' | prepend: site.academy-baseurl }}) course.
