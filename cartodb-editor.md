@@ -560,42 +560,42 @@ Learn the basics of CartoCSS and designing data for your maps with our [Introduc
 
 CartoCSS options available to edit from the CartoDB editor wizards include:
 
--__Marker-fill:__ choose the color of your markers, the size of your markers and the transparency level of your markers (from 0 to 1)
+- __Marker-fill:__ choose the color of your markers, the size of your markers and the transparency level of your markers (from 0 to 1)
 
--__Marker-size:__ adjust the size of your markers
+- __Marker-size:__ adjust the size of your markers
 
--__Marker-stroke:__ adjust the border color of your markers, thickness of the border, and transparency (from 0 to 1)
+- __Marker-stroke:__ adjust the border color of your markers, thickness of the border, and transparency (from 0 to 1)
 
 #### Torque CartoCSS
 In addition to being able to customize the look of your visualizations using CartoCSS, torque visualizations have specific options you can change.
 
-- **Torque**
+##### Torque
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/torquecartoCSS.png' | prepend: site.baseurl }}" alt="Torque CartoCSS" /></p>
 
--__Torque Frame Count:__ the number of steps in your torque animation.
+- __Torque Frame Count:__ the number of steps in your torque animation.
 
--__Torque Animation Duration:__ the length of your animation.
+- __Torque Animation Duration:__ the length of your animation.
 
--__Torque Time Attribute:__ the name of the date column in your table.
+- __Torque Time Attribute:__ the name of the date column in your table.
 
--__Torque Aggregation Function:__ Torque renders your data in clusters, choose what value to show such as max values only, or count how many values are in each cluster.
+- __Torque Aggregation Function:__ Torque renders your data in clusters, choose what value to show such as max values only, or count how many values are in each cluster.
 
 __Example functions:__ count(column_name), max(column_name), sum(column_name). Column data type must be numeric. 
 
 Learn more about [how spatial aggregation works](https://github.com/CartoDB/torque/wiki/How-spatial-aggregation-works).
 
--__Torque Resolution:__ Torque creates a grid from your data and aggregates data to each cell of that grid. Torque resolution determines width and height of each cell. Larger numbers will make your data more gridded.  
+- __Torque Resolution:__ Torque creates a grid from your data and aggregates data to each cell of that grid. Torque resolution determines width and height of each cell. Larger numbers will make your data more gridded.  
 
--__Torque Data Aggregation:__ two options, linear which does not leave a trace of past data, and cumulative which draws data markers cumulatively to show past data.
+- __Torque Data Aggregation:__ two options, linear which does not leave a trace of past data, and cumulative which draws data markers cumulatively to show past data.
 
-- **Torque Category**
+##### Torque Category
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/torquecartoCSScat.png' | prepend: site.baseurl }}" alt="Torque Category CartoCSS" /></p>
 
 Torque Category has much of the same Torque CartoCSS in addition to a few different options available for customization.
 
--__Torque Aggregation Function:__ Torque renders your data in clusters. Torque Category uses a postgreSQL command, CDB_Math_Mode(torque_category) to find the values that appear most often in your data in order to cluster your data accordingly.
+- __Torque Aggregation Function:__ Torque renders your data in clusters. Torque Category uses a postgreSQL command, CDB_Math_Mode(torque_category) to find the values that appear most often in your data in order to cluster your data accordingly.
 
 Learn more about [how spatial aggregation works](https://github.com/CartoDB/torque/wiki/How-spatial-aggregation-works).
 
@@ -605,19 +605,19 @@ Once your data is aggregated, you can further customize your torque animation op
 
 You can also select each cluster value to change marker styles based on your data categories. For instance, if you want to style the maximum value in your dataset to have different marker styles, you would change the marker styles for the maximum value in your animation, which you will find by looking at the values in your CartoCSS.
 
-- **Torque Heat**
+##### Torque Heat
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/torquecartoCSSheat.png' | prepend: site.baseurl }}" alt="Torque Heat CartoCSS" /></p>
 
 Torque Heat has much of the same Torque CartoCSS in addition to a few different options available for customization.
 
--__Image Filters:__ this option lets you determine the color stop for your heat map visualization.
+- __Image Filters:__ this option lets you determine the color stop for your heat map visualization.
 
--__Marker File:__ CartoDB provides marker files for you, this option can’t be changed.
+- __Marker File:__ CartoDB provides marker files for you, this option can’t be changed.
 
--__Marker Fill Opacity:__ Change the opacity of the markers.
+- __Marker Fill Opacity:__ Change the opacity of the markers.
 
--__Marker Width:__ Change the width of the markers.
+- __Marker Width:__ Change the width of the markers.
 
 #### Composite Operations
 
