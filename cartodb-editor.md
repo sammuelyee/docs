@@ -72,7 +72,7 @@ Once you select the file that you want to work with, you will need to allow Cart
 
 Following import and sync selection, you will click "Create Table", and our importer will start building your database. We pride ourselves on speediness, but bigger files sometimes require a little patience.
 
-### Supported data formats
+### Supported file formats
 
 CartoDB supports an ever-growing number of data types and file formats.
 
@@ -151,6 +151,14 @@ Map view allows you to inspect your data as a layer over a base map. You may app
 
 Even though in the map view you may style and filter your data **but** this view is not the same as a shareable visualization. In order to create a visualization, click "Visualize" in the top right corner. Keep on reading to learn what you may do from there!
 
+### Supported Data Types
+
+When you upload your data to CartoDB, it will automatically assign a data type to your data such as string, number, date or boolean. It's important to check the correct data type was assigned. It is especially important to make sure CartoDB knows if a column is a date type so visualizations that rely on temporal information such as Torque animate correctly.
+
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/datetype.png' | prepend: site.baseurl }}" alt="Visualizations" /></p>
+
+The date type is located under the column name. It can be changed by clicking on the date type name under the column name to open a secondary navigation window from which you can select the correct data type.
+
 ### Options
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/options.png' | prepend: site.baseurl }}" alt="Options" /></p>
@@ -174,14 +182,6 @@ You can perform the following administrative actions in the Options menu:
 
 - **Delete this table**  
   Entirely delete your table. But note that this will also delete any visualizations that rely on the table!
-
-### Supported Data Types
-
-When you upload your data to CartoDB, it will automatically assign a data type to your data such as string, number, date or boolean. It's important to check the correct data type was assigned. It is especially important to make sure CartoDB knows if a column is a date type so visualizations that rely on temporal information such as Torque animate correctly.
-
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/datetype.png' | prepend: site.baseurl }}" alt="Visualizations" /></p>
-
-The date type is located under the column name. It can be changed by clicking on the date type name under the column name to open a secondary navigation window from which you can select the correct data type.
 
 ## Visualizations
 
