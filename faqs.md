@@ -234,7 +234,7 @@ You will be able to insert CartoDB maps in WordPress, Joomla, Drupal, etc. if yo
 
 ### How to print maps in CartoDB?
 
-There is no direct way to get printed maps from CartoDB besides just grabbing a screenshot. You can do that pretty easily on a Mac or PC with a keyboard shortcut (Cmd + Shift + 3 in Mac).
+In the map view of your visualization, the option "Export image" will allow you to get a .png image from your map. Don't forget to add proper attributions if you publish your map as an image! You can find more information about our Static Maps in [this blogpost](http://blog.cartodb.com/static-maps/).
 
 ### How can I set the position of an embedded visualization?
 
