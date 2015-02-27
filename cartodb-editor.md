@@ -18,7 +18,7 @@ Your dashboard is your baseline. It has two main sections: **tables** and **visu
 3. Create a new **visualization** from your table
 4. Share it (publicly or privately)
 
-CartoDB accepts data in different formats (Excel, CSV, XML, SHP, GeoJSON, [see all](#supported-data-formats)) and from different sources (see all possibilities for [Importing data](#importing-data)). Our interactive wizards make it easy and fun to map your data. Choose a basemap, define legends and infowindows ([What is an infowindow?](#infowindows)), and select how to show your data with custom display options.
+CartoDB accepts data in different formats (Excel, CSV, XML, SHP, GeoJSON, [see all](#supported-file-formats)) and from different sources (see all possibilities for [Importing data](#importing-data)). Our interactive wizards make it easy and fun to map your data. Choose a basemap, define legends and infowindows ([What is an infowindow?](#infowindows)), and select how to show your data with custom display options.
 
 _XML files are not directly supported, we support KML and GPX files instead._
 
