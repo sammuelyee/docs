@@ -1,7 +1,7 @@
 ---
 title: Import API
 description: The CartoDB Importer API allows you to upload files to your CartoDB account and manipulate them by using a set of HTTP commands from a terminal window.
----
+---A standard import will store the data you upload from files with the valid formats as specified
 
 ## Import API
 
@@ -132,6 +132,9 @@ POST api/v1/imports
 
 - **content_guessing**  
   Set it to *true* to enable content guessing and automatic geocoding based on results. Currently it only implemenents geocoding of countries. Optional. Default is *false*.
+
+- **create_vis**
+- Set it to *true* to flag the import so when it finishes, it creates automatically Map after importing the Dataset. Optional. Default is *false* for API calls or old dashboard imports . If importing from the new dashboard it will automatically set this parameter to *true*.
 
 - **table_name**  
   Used to duplicate one of your existing tables. **Do not mix with File/URL imports**.
