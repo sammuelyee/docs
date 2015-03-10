@@ -13,7 +13,7 @@ Maps can be important to your business and convey key information like the locat
 
 First, create a CartoDB visualization you want to embed in your Sharepoint website and copy its embed code.
 
-Then, [login to Sharepoint](https://portal.office.com/Home) and go to the Sharepoint site you'd like to add your a map to. This might be a URL like https://yourOrgName-public.sharepoint.com/. Hit the "Page" tab, and hit the "Edit" button on the far left to enable editing mode and the editing tab.
+Then, [login to Sharepoint](https://portal.office.com/Home) and go to the Sharepoint site you'd like to add your a map to. This might be a URL like <https://yourOrgName-public.sharepoint.com/>. Hit the "Page" tab, and hit the "Edit" button on the far left to enable editing mode and the editing tab.
 
 <p class="wrap-border"><img src="{{ '/img/layout/tutorials/sharepoint/img1.png' | prepend: site.baseurl }}" alt="Edit button" /></p>
 
