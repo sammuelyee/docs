@@ -89,6 +89,15 @@ To prevent your tables and visualizations from undesired changes you can lock yo
 
 For visualizing your locked items, go to either your visualizations or tables dashboard and click on the View your X locked tables link at the bottom of your list.
 
+### Why isn’t my shapefile importing?
+
+CartoDB creates tables from shapefiles by importing a single zipped file. If your shapefile is not importing, make sure that:
+1. You’re uploading a zipped file and not just one of the files it contains, such as a .shp file.
+2. Your zipped file contains .shp, .dbf, .shx, and .prj files.
+3. Your file names all have the same prefix, for example myshapefile.zip, myshapefile.shp, myshapefile.dbf, myshapefile.shx, and myshapefile.prj.
+
+You can check this tutorial about importing shapefiles for more detail: [http://docs.cartodb.com/tutorials/import_shapefile_in_cartodb.html](http://docs.cartodb.com/tutorials/import_shapefile_in_cartodb.html).
+
 ## Visualizations
 
 ### How to add my own images to infowindows?
