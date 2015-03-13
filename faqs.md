@@ -190,7 +190,7 @@ All maps created with CartoDB have our “Powered by CartoDB” logo in the bott
 
 ### Why is my infowindow showing an error?
 
-If you're working on your visualization through a connection which is behind a firewall or proxy, some requests may be blocked by it. If requests are blocked, some parts of your map will not load. In some cases this can mean that the information you’re trying to show in your infowindow will not appear.
+If you're working on your visualization through a connection which is behind a firewall or proxy, some requests may be blocked by it. If requests are blocked some parts of your map will not load. In some cases this can mean that the information you’re trying to show in your infowindow will not appear.
 
 A solution for this is to use an HTTPS connection. HTTPS will encrypt your data, so that your firewall or proxy won’t block those specific CartoDB requests.
 
