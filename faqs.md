@@ -200,7 +200,7 @@ If some of your label's words are appearing cut off at tile edges, this can be c
 
 {% highlight scss %}
 Map {
-  buffer-size:512;
+  buffer-size:128;
 }
 {% endhighlight %}
 
