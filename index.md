@@ -6,7 +6,7 @@ js_asset: "index"
 
 ## What is CartoDB
 
-CartoDB is a geospatial database on the cloud that allows for the storage and visualization of data on the web. Using CartoDB will allow you to quickly create map based visualizations.
+CartoDB is a geospatial database on the cloud that allows for the storage and visualization of data on the web and the creation of maps. Using CartoDB will allow you to quickly create map based visualizations.
 
 - For new users, CartoDB is an [Editor](/cartodb-editor.html) that gives you a user friendly interface so you can start making maps and visualizing data right away.
 - For developers, CartoDB is an open source geospatial mapping [Platform](/cartodb-platform.html). It is a tool we built to make mapping dynamic, scalable, and interesting.
@@ -21,7 +21,7 @@ Below, we split our introduction into two parts: the CartoDB Platform and the Ca
 
 So we hear you've been out there trying different mapping tools on your computer and on the web. I bet most of them look a bit stuck in 2004, right? That probably concerns you because if a tool looks stuck in 2004 you can only *imagine* what the maps it produces look like. When we started CartoDB a few years ago this was a major challenge we set out to fix. We built the editor from the ground-up, with beautiful design and good user-experience at the top of our list of guiding principles. What you see on the surface doesn't stop there, we make the same effort to ensure that the maps themselves are also beautiful and easy to use.
 
-The CartoDB interface allows you to drag and drop geospatial data (e.g. CSVs, ESRI Shapefiles, etc.) into your browser and have an interactive map in seconds. There is no download or installation needed. With your data and maps in hand, you can quickly filter, customize looks, and publish maps on the web. The editor gives you simple interfaces for publishing maps as public URLs, password protected visualizations for collaborations, embeddable maps, or even API endpoints to build CartoDB delivered maps directly into your own websites.
+The CartoDB interface allows you to drag and drop geospatial data (e.g. CSVs, ESRI Shapefiles, etc.) into your browser and have an interactive map in seconds. There is no download or installation needed. With your data and maps in hand, you can quickly filter data, customize, and publish maps on the web. The editor gives you simple interfaces for publishing maps as public URLs, password protected visualizations for collaborations, embeddable maps, or even API endpoints to build CartoDB delivered maps directly into your own websites.
 
 Some of the best parts of the CartoDB Editor are the parts that you might never even notice, like scalablility. Our platform supports maps that can be viewed by a few close friends or colleagues, and those that fly to the top of Twitter feeds, Reddit, or other sources where they are viewed by thousands, even millions! CartoDB scales with you, making sure that your maps are enjoyed by all of your viewers.
 
