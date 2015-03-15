@@ -44,7 +44,7 @@ Once you select "Torque Heat," automatic styles will be applied to your data. Yo
 
 <p class="wrap-border"><img src="{{ '/img/layout/tutorials/heatmap/img7.png' | prepend: site.baseurl }}" alt="Animated Torque Menu" /></p>
 
-In the "Time Column,"" select the column in your dataset that contains temporal data, in this case, select the column called "service_da." Your animation will now be based on the date the Low Power FM Station came into service. 
+In the "Time Column," select the column in your dataset that contains temporal data, in this case, select the column called "service_da." Your animation will now be based on the date the Low Power FM Station came into service. 
 
 Additional menu options you can change include the length of your animation by changing the number of seconds under the "Duration" menu option, the number of "Steps" of your animation, and whether your data points should accumulate over time by turning on the "Cumulated" menu option.
 
