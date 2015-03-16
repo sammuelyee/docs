@@ -890,7 +890,7 @@ There is a pro-tip for accessing downloads by using your direct table URL. You c
 DOWNLOAD BY URL
 
 {% highlight bash %}
-http://{USERNAME}.cartodb.com/api/v2/sql?format=csv&q=SELECT+*+FROM+tm_world_borders_sim
+https://{USERNAME}.cartodb.com/api/v2/sql?format=csv&q=SELECT+*+FROM+tm_world_borders_sim
 {% endhighlight %}
 
 ### Creating indexes
