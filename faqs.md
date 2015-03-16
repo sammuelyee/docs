@@ -92,6 +92,7 @@ For visualizing your locked items, go to either your visualizations or tables da
 ### Why isn’t my shapefile importing?
 
 CartoDB creates tables from shapefiles by importing a single zipped file. If your shapefile is not importing, make sure that:
+
 1. You’re uploading a zipped file and not just one of the files it contains, such as a .shp file.
 2. Your zipped file contains .shp, .dbf, .shx, and .prj files.
 3. Your file names all have the same prefix, for example myshapefile.zip, myshapefile.shp, myshapefile.dbf, myshapefile.shx, and myshapefile.prj.
