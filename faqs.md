@@ -89,6 +89,21 @@ To prevent your tables and visualizations from undesired changes you can lock yo
 
 For visualizing your locked items, go to either your visualizations or tables dashboard and click on the View your X locked tables link at the bottom of your list.
 
+### Why isn’t my shapefile importing?
+
+CartoDB creates tables from shapefiles by importing a single zipped file. If your shapefile is not importing, make sure that:
+1. You’re uploading a zipped file and not just one of the files it contains, such as a .shp file.
+2. Your zipped file contains .shp, .dbf, .shx, and .prj files.
+3. Your file names all have the same prefix, for example myshapefile.zip, myshapefile.shp, myshapefile.dbf, myshapefile.shx, and myshapefile.prj.
+
+You can check this tutorial about importing shapefiles for more detail: [http://docs.cartodb.com/tutorials/import_shapefile_in_cartodb.html](http://docs.cartodb.com/tutorials/import_shapefile_in_cartodb.html).
+
+### Why is my URL-imported table empty?
+
+When you create a table in the CartoDB Editor by importing data from a public URL, in some cases an empty table will be generated if the proper files are not imported from that data.
+
+Download the URL file and check that it contains information. If the URL provides you with a .zip containing more than one file, CartoDB will only upload one of them. To create your table properly you can import only the data file you need via CartoDB’s Import window (keep in mind that if you’re working with a shapefile it’s components must be uploaded in one [zip](http://docs.cartodb.com/tutorials/import_shapefile_in_cartodb.html). A list of data file formats that CartoDB accepts for upload is [here](http://docs.cartodb.com/cartodb-editor.html#supported-file-formats). We also recommend checking our [Common Data](http://docs.cartodb.com/cartodb-editor.html#common-data) section to see if your public URL’s data is already easily available through our site.
+
 ## Visualizations
 
 ### How to add my own images to infowindows?
@@ -166,6 +181,30 @@ Just go to the CartoCSS tag and look for this line:
 ### Can I have different geometries in the same layer?
 
 No. Each layer is related to some kind of geometry, so if you need to map polygons and points in the same map, you should use two different layers for each one of them.
+
+### How do I remove the CartoDB logo from my map?
+
+All maps created with CartoDB have our “Powered by CartoDB” logo in the bottom left corner by default. If your account uses our Coronelli, Mercator, or Enterprise plans, you have the option to remove this branding. Just click on the Options button in your Map View and toggle CartoDB Logo to it’s gray OFF state. "Powered by CartoDB" will no longer appear in your visualization.
+
+<p class="wrap-border"><img src="{{ '/img/layout/faqs/remove-logo.png' | prepend: site.baseurl }}" alt="Remove CartoDB logo" /></p>
+
+### Why is my infowindow showing an error?
+
+If you're working on your visualization through a connection which is behind a firewall or proxy, some requests may be blocked by it. If requests are blocked some parts of your map will not load. In some cases this can mean that the information you’re trying to show in your infowindow will not appear.
+
+A solution for this is to use an HTTPS connection. HTTPS will encrypt your data, so that your firewall or proxy won’t block those specific CartoDB requests.
+
+### Why are my map labels cut off?
+
+If some of your label's words are appearing cut off at tile edges, this can be caused by too small of a buffer area in your visualization. To fix this you need to increase the buffer-size value. Click on the CartoCSS button in Map View at the top of the CartoCSS code include:
+
+{% highlight scss %}
+Map {
+  buffer-size:128;
+}
+{% endhighlight %}
+
+Take into account that in order to be valid, the buffer-size value needs to be a power of 2.
 
 ## Manipulating your data
 
