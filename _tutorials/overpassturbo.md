@@ -76,8 +76,4 @@ Add the attribution tag to the metadata description.
 
 <p class="wrap-border"><img src="{{ '/img/layout/tutorials/overpassturbo/img12.png' | prepend: site.baseurl }}" alt="Uploading data" /></p>
 
-Attribution will automatically be added and linked to [OpenStreetMap's copyright page](http://www.openstreetmap.org/copyright) in the lower right corner of your map! View the attribution by switching to Map View in the CartoDB Editor.
-
-<p class="wrap-border"><img src="{{ '/img/layout/tutorials/overpassturbo/img10.png' | prepend: site.baseurl }}" alt="Uploading data" /></p>
-
 That's it! Now you can easily use OpenStreetMap data in any of your maps from within the CartoDB Editor.

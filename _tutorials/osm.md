@@ -40,10 +40,6 @@ Add the attribution tag to the metadata description.
 
 <p class="wrap-border"><img src="{{ '/img/layout/tutorials/osm/img5.png' | prepend: site.baseurl }}" alt="Uploading data" /></p>
 
-Attribution will automatically be added and linked to [OpenStreetMap's copyright page](http://www.openstreetmap.org/copyright) in the lower right corner of your map! View the attribution by switching to Map View in the CartoDB Editor.
-
-<p class="wrap-border"><img src="{{ '/img/layout/tutorials/osm/img4.png' | prepend: site.baseurl }}" alt="Uploading data" /></p>
-
 That's it! Now you can easily use OpenStreetMap data in any of your maps from within the CartoDB Editor.
 
 Interested in learning more? Check out our [Overpass Turbo](http://docs.cartodb.com/tutorials/overpassturbo.html) tutorial, which allows you to search for and download OSM map features. The [OpenStreetMap wiki](http://wiki.openstreetmap.org/wiki/Using_OpenStreetMap) also has detailed information on using OSM.
