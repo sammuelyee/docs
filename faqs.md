@@ -55,6 +55,8 @@ UPDATE _tablename_ SET _longitude_ = split_part(_coordinates_, ', ', 2)
 
 Notice that these SQL functions are expecting the value of the coordinates column to be similar to: "lat, long". If you use a different separator or your coordinates are in different order, you will have to adapt the previous queries to your specific syntax.
 
+### Which format uses CartoDB for the coordinates?
+
 ### Why the size of my tables has increased after uploading them to CartoDB?
 
 This has a couple reasons. First and foremost is simply that a database table has a lot more storage considerations than a CSV. For example, indexes. On top of that though, the actual way that data is stored on disk is optimized for lookup and retrieval speed over storage space. This makes sense because a CSV is made so you can optimally store data and if you open it load it all into a program for a limited amout of time while you edit it, then save it and be done. The database has things like data types etc. 
@@ -331,6 +333,8 @@ If you are a journalist and you have special needs about CartoDB, let us know at
 <p class="wrap-border"><img src="{{ '/img/layout/faqs/share-logo.png' | prepend: site.baseurl }}" alt="What does the Removable brand" /></p>
 
 From the Coronelli plan you will be able to remove CartoDB logo and the "Create your own custom maps with CartoDB" text will not appear below your embedded visualizations if you don't want to. For removing the logo, just deselect the option "Logo" in the sharing wizard. Take into account that this option will be only available if your current plan includes the "Removable brand" feature.
+
+### How to disconnect my Google account from which I logged into CartoDB?
 
 ## GDrive
 
