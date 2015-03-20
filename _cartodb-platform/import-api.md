@@ -456,7 +456,7 @@ POST /api/v1/synchronizations
   The **public** URL address where the file to be imported is located.
   
 - **interval**  
-  The number of seconds for the synchronisation period. CartoDB supports the following values: 0 (never synched), *3600* (sync each hour), *86400* (sync each day), *604800* (sync each week) or *2592000* (sync each month).
+  The number of seconds for the synchronisation period. CartoDB supports the following values: *3600* (sync each hour), *86400* (sync each day), *604800* (sync each week) or *2592000* (sync each month). *Note*: Sync interval must be at least 900 (15 minutes).
 
 - **type_guessing**  
   If set to *false* disables field type guessing (for Excel and CSVs). Optional. Default is *true*.
@@ -754,7 +754,7 @@ POST /api/v1/synchronizations
 #### Params
 
 - **interval**  
-  The number of seconds for the synchronisation period. CartoDB supports the following values: 0 (never synched), *3600* (sync each hour), *86400* (sync each day), *604800* (sync each week) or *2592000* (sync each month).
+  The number of seconds for the synchronisation period. CartoDB supports the following values: *3600* (sync each hour), *86400* (sync each day), *604800* (sync each week) or *2592000* (sync each month). *Note*: Sync interval must be at least 900 (15 minutes).
 
 - **service_item_id**  
   The ArcGIS API REST URL where the ArcGIS dataset is located.
