@@ -204,7 +204,7 @@ By using the CartoDB wizards you'll be able to set icons as the markers for your
 
 If you have added a text element in your visualization and you want to include a link on it you need to use the Markdown syntax. The link text will be delimited by square brackets. To create a link, use a set of regular parentheses immediately after the closing square bracket. Inside the parentheses, put the URL where you want the link to point, as follows:
 
-{% highlight scss %}
+{% highlight bash %}
 You can check an example [here](http://www.cartodb.com).
 {% endhighlight %}
 
