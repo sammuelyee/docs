@@ -57,6 +57,8 @@ Notice that these SQL functions are expecting the value of the coordinates colum
 
 ### Which format uses CartoDB for the coordinates?
 
+CartoDB understands and utilizes the geographic coordinates written as [decimal degrees](http://en.wikipedia.org/wiki/Decimal_degrees). This way to express the latitude and the longitude is an alternative to using degrees, minutes and seconds, and it's used in most of the web mapping applications nowadays.
+
 ### Why the size of my tables has increased after uploading them to CartoDB?
 
 This has a couple reasons. First and foremost is simply that a database table has a lot more storage considerations than a CSV. For example, indexes. On top of that though, the actual way that data is stored on disk is optimized for lookup and retrieval speed over storage space. This makes sense because a CSV is made so you can optimally store data and if you open it load it all into a program for a limited amout of time while you edit it, then save it and be done. The database has things like data types etc. 
@@ -184,6 +186,27 @@ Just go to the CartoCSS tag and look for this line:
 ### Can I have different geometries in the same layer?
 
 No. Each layer is related to some kind of geometry, so if you need to map polygons and points in the same map, you should use two different layers for each one of them.
+
+### How can I set different colors for my icon markers?
+
+By using the CartoDB wizards you'll be able to set icons as the markers for your points. If you're using SVG images and/or any of the icons we offer in the icon set, you can also select different colors for a single icon by combining the CartoCSS options `marker-file` and `marker-fill` in the CartoCSS tab. 
+
+{% highlight scss %}
+#dataset {
+   marker-fill-opacity: 0.9;
+   marker-file: url(http://com.cartodb.users-assets.production.s3.amazonaws.com/simpleicon/map43.svg);
+   marker-width: 10;
+   marker-fill: #F11810;
+}
+{% endhighlight %}
+
+### How can I add an hyperlink in a text element?
+
+If you have added a text element in your visualization and you want to include a link on it you need to use the Markdown syntax. The link text will be delimited by square brackets. To create a link, use a set of regular parentheses immediately after the closing square bracket. Inside the parentheses, put the URL where you want the link to point, as follows:
+
+{% highlight scss %}
+You can check an example [here](http://www.cartodb.com).
+{% endhighlight %}
 
 ### How do I remove the CartoDB logo from my map?
 
@@ -335,6 +358,8 @@ If you are a journalist and you have special needs about CartoDB, let us know at
 From the Coronelli plan you will be able to remove CartoDB logo and the "Create your own custom maps with CartoDB" text will not appear below your embedded visualizations if you don't want to. For removing the logo, just deselect the option "Logo" in the sharing wizard. Take into account that this option will be only available if your current plan includes the "Removable brand" feature.
 
 ### How to disconnect my Google account from which I logged into CartoDB?
+
+If you are logged into CartoDB through your Google account and you want to unlink your accounts, you can do it from your Account Settings by clicking the option "Disconnect your Google+ account". You'll be automatically prompted to set a new password as you will need it to access to your CartoDB account once you disconnect it from your Google session.
 
 ## GDrive
 
