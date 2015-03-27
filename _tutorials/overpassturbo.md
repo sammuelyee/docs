@@ -61,11 +61,11 @@ CartoDB is setup to easily handle the import of data. Simply navigate to the Dat
 
 <p class="wrap-border"><img src="{{ '/img/layout/tutorials/overpassturbo/img11.png' | prepend: site.baseurl }}" alt="Uploading data" /></p>
 
-Once your data is uploaded, don't forget to cite the source of the data back to OpenStreetMap and Overpass Turbo in the descripton of your dataset. As part of using OpenStreetMap data, you must give credit to OpenStreetMap per their [Copyright and License agreement](http://www.openstreetmap.org/copyright).
+Once your data is uploaded, don't forget to cite the source of the data back to OpenStreetMap and Overpass Turbo in the descripton of your dataset. As part of using OpenStreetMap data, you must give credit to OpenStreetMap per their [Copyright and License agreement](http://www.openstreetmap.org/copyright). You should add an OpenStreetMap link and credit if you don't plan on using an OSM basemap where the credit is already included by CartoDB. 
 
 {% highlight html %}
-Data © OpenStreetMap contributors
-Data mining by Overpass API
+Data © [OpenStreetMap](http://www.openstreetmap.org/copyright) contributors
+Data mining by [Overpass API](http://overpass-api.de/)
 {% endhighlight %}
 
 You can add attribution to OpenStreetMap by editing the metadata associated with your dataset by selecting the "Edit metadata" link in the upper left corner of your dataset in the Data View of the CartoDB Editor. 
