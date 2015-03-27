@@ -401,4 +401,6 @@ A simple way to isolate IPs is to run a couple of SQL queries and store the valu
 
 You can use a query like:
 
-{% highlight sql %}UPDATE tablename SET new_ip_column = substring(your_log_column, '(?:\d{1,3}\.){3}\d{1,3}'){% endhighlight %} 
+{% highlight sql %}UPDATE tablename SET new_ip_column = substring(old_column_name, '(?:\d{1,3}\.){3}\d{1,3}'){% endhighlight %} 
+
+While still in table view, you will then click on Edit and then choose Georeference layer. You will then choose by IP Addresses and select the column where your IP Addresses are located. 
