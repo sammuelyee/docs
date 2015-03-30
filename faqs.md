@@ -81,8 +81,6 @@ Alternativelly, you can also use the syntax `column_name::type`, which could be 
 
 {% highlight sql %} 
 SELECT cartodb_id, the_geom_webmercator, the_geom, my_date_column::timestamp FROM tablename
-
-
 {% endhighlight %}
 
 ###How do I geocode IP addresses that are included in my data?
