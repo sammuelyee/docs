@@ -81,7 +81,21 @@ Alternativelly, you can also use the syntax `column_name::type`, which could be 
 
 {% highlight sql %} 
 SELECT cartodb_id, the_geom_webmercator, the_geom, my_date_column::timestamp FROM tablename
+
+
 {% endhighlight %}
+
+###How do I geocode IP addresses that are included in my data?
+
+CartoDB requires that IP addresses be in an isolated column in order to be able to recognize and geocode them.
+
+A simple way to isolate IPs is to run a couple of SQL queries and store the values in a new column.
+
+You can use a query like:
+
+{% highlight sql %}UPDATE tablename SET new_ip_column = substring(old_ip_address_column_name, '(?:\d{1,3}\.){3}\d{1,3}'){% endhighlight %} 
+
+While still in table view, you will then click on Edit and then choose Georeference layer. You will then choose by IP Addresses and select the column where your IP Addresses are located. 
 
 ### How can I lock a table/visualization?
 
@@ -393,14 +407,4 @@ But, fortunately, there are other options that you could use to show different p
 We offer a Javascript API, [CartoDB.js](http://docs.cartodb.com/cartodb-platform/cartodb-js.html), that you can use to add interactivity to your visualizations. In combination with our [SQL API](http://docs.cartodb.com/cartodb-platform/sql-api.html), you could build a time-slider and show different polygons depending on how they evolve with respect to time.
 You can check an example in this [link](https://github.com/CartoDB/cartodb.js/blob/develop/examples/time_slider.html).
 
-###How do I geocode IP addresses?
 
-CartoDB requires that IP addresses be in an isolated column in order to be able to recognize and geocode them.
-
-A simple way to isolate IPs is to run a couple of SQL queries and store the values in a new column.
-
-You can use a query like:
-
-{% highlight sql %}UPDATE tablename SET new_ip_column = substring(old_column_name, '(?:\d{1,3}\.){3}\d{1,3}'){% endhighlight %} 
-
-While still in table view, you will then click on Edit and then choose Georeference layer. You will then choose by IP Addresses and select the column where your IP Addresses are located. 
