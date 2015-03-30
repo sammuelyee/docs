@@ -55,6 +55,10 @@ UPDATE _tablename_ SET _longitude_ = split_part(_coordinates_, ', ', 2)
 
 Notice that these SQL functions are expecting the value of the coordinates column to be similar to: "lat, long". If you use a different separator or your coordinates are in different order, you will have to adapt the previous queries to your specific syntax.
 
+### Which format uses CartoDB for the coordinates?
+
+CartoDB understands and utilizes the geographic coordinates written as [decimal degrees](http://en.wikipedia.org/wiki/Decimal_degrees). This way to express the latitude and the longitude is an alternative to using degrees, minutes and seconds, and it's used in most of the web mapping applications nowadays.
+
 ### Why the size of my tables has increased after uploading them to CartoDB?
 
 This has a couple reasons. First and foremost is simply that a database table has a lot more storage considerations than a CSV. For example, indexes. On top of that though, the actual way that data is stored on disk is optimized for lookup and retrieval speed over storage space. This makes sense because a CSV is made so you can optimally store data and if you open it load it all into a program for a limited amout of time while you edit it, then save it and be done. The database has things like data types etc. 
@@ -88,6 +92,22 @@ SELECT cartodb_id, the_geom_webmercator, the_geom, my_date_column::timestamp FRO
 To prevent your tables and visualizations from undesired changes you can lock your tables and visualizations. To lock a table or a visualization, just go to your dashboard, put the cursor over the desired item and click on the small L icon. You can lock and unlock any item as many times as you would like.
 
 For visualizing your locked items, go to either your visualizations or tables dashboard and click on the View your X locked tables link at the bottom of your list.
+
+### Why isn’t my shapefile importing?
+
+CartoDB creates tables from shapefiles by importing a single zipped file. If your shapefile is not importing, make sure that:
+
+1. You’re uploading a zipped file and not just one of the files it contains, such as a .shp file.
+2. Your zipped file contains .shp, .dbf, .shx, and .prj files.
+3. Your file names all have the same prefix, for example myshapefile.zip, myshapefile.shp, myshapefile.dbf, myshapefile.shx, and myshapefile.prj.
+
+You can check this tutorial about importing shapefiles for more detail: [http://docs.cartodb.com/tutorials/import_shapefile_in_cartodb.html](http://docs.cartodb.com/tutorials/import_shapefile_in_cartodb.html).
+
+### Why is my URL-imported table empty?
+
+When you create a table in the CartoDB Editor by importing data from a public URL, in some cases an empty table will be generated if the proper files are not imported from that data.
+
+Download the URL file and check that it contains information. If the URL provides you with a .zip containing more than one file, CartoDB will only upload one of them. To create your table properly you can import only the data file you need via CartoDB’s Import window (keep in mind that if you’re working with a shapefile it’s components must be uploaded in one [zip](http://docs.cartodb.com/tutorials/import_shapefile_in_cartodb.html). A list of data file formats that CartoDB accepts for upload is [here](http://docs.cartodb.com/cartodb-editor.html#supported-file-formats). We also recommend checking our [Common Data](http://docs.cartodb.com/cartodb-editor.html#common-data) section to see if your public URL’s data is already easily available through our site.
 
 ## Visualizations
 
@@ -166,6 +186,51 @@ Just go to the CartoCSS tag and look for this line:
 ### Can I have different geometries in the same layer?
 
 No. Each layer is related to some kind of geometry, so if you need to map polygons and points in the same map, you should use two different layers for each one of them.
+
+### How can I set different colors for my icon markers?
+
+By using the CartoDB wizards you'll be able to set icons as the markers for your points. If you're using SVG images and/or any of the icons we offer in the icon set, you can also select different colors for a single icon by combining the CartoCSS options `marker-file` and `marker-fill` in the CartoCSS tab. 
+
+{% highlight scss %}
+#dataset {
+   marker-fill-opacity: 0.9;
+   marker-file: url(http://com.cartodb.users-assets.production.s3.amazonaws.com/simpleicon/map43.svg);
+   marker-width: 10;
+   marker-fill: #F11810;
+}
+{% endhighlight %}
+
+### How can I add an hyperlink in a text element?
+
+If you have added a text element in your visualization and you want to include a link on it you need to use the Markdown syntax. The link text will be delimited by square brackets. To create a link, use a set of regular parentheses immediately after the closing square bracket. Inside the parentheses, put the URL where you want the link to point, as follows:
+
+{% highlight bash %}
+You can check an example [here](http://www.cartodb.com).
+{% endhighlight %}
+
+### How do I remove the CartoDB logo from my map?
+
+All maps created with CartoDB have our “Powered by CartoDB” logo in the bottom left corner by default. If your account uses our Coronelli, Mercator, or Enterprise plans, you have the option to remove this branding. Just click on the Options button in your Map View and toggle CartoDB Logo to it’s gray OFF state. "Powered by CartoDB" will no longer appear in your visualization.
+
+<p class="wrap-border"><img src="{{ '/img/layout/faqs/remove-logo.png' | prepend: site.baseurl }}" alt="Remove CartoDB logo" /></p>
+
+### Why is my infowindow showing an error?
+
+If you're working on your visualization through a connection which is behind a firewall or proxy, some requests may be blocked by it. If requests are blocked some parts of your map will not load. In some cases this can mean that the information you’re trying to show in your infowindow will not appear.
+
+A solution for this is to use an HTTPS connection. HTTPS will encrypt your data, so that your firewall or proxy won’t block those specific CartoDB requests.
+
+### Why are my map labels cut off?
+
+If some of your label's words are appearing cut off at tile edges, this can be caused by too small of a buffer area in your visualization. To fix this you need to increase the buffer-size value. Click on the CartoCSS button in Map View at the top of the CartoCSS code include:
+
+{% highlight scss %}
+Map {
+  buffer-size:128;
+}
+{% endhighlight %}
+
+Take into account that in order to be valid, the buffer-size value needs to be a power of 2.
 
 ## Manipulating your data
 
@@ -291,6 +356,10 @@ If you are a journalist and you have special needs about CartoDB, let us know at
 <p class="wrap-border"><img src="{{ '/img/layout/faqs/share-logo.png' | prepend: site.baseurl }}" alt="What does the Removable brand" /></p>
 
 From the Coronelli plan you will be able to remove CartoDB logo and the "Create your own custom maps with CartoDB" text will not appear below your embedded visualizations if you don't want to. For removing the logo, just deselect the option "Logo" in the sharing wizard. Take into account that this option will be only available if your current plan includes the "Removable brand" feature.
+
+### How to disconnect my Google account from which I logged into CartoDB?
+
+If you are logged into CartoDB through your Google account and you want to unlink your accounts, you can do it from your Account Settings by clicking the option "Disconnect your Google+ account". You'll be automatically prompted to set a new password as you will need it to access to your CartoDB account once you disconnect it from your Google session.
 
 ## GDrive
 

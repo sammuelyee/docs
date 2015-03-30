@@ -30,7 +30,7 @@ A common way to define the content is through the use of templates. For a discus
     <a href="#close" class="cartodb-popup-close-button close">x</a>
      <div class="cartodb-popup-content-wrapper">
        <div class="cartodb-popup-header">
-         <img style="width: 100%" src="http://cartodb.com/assets/logos/logos_full_cartodb_light-5ef5e4ff558f4f8d178ab2c8faa231c1.png"></src>
+         <img style="width: 100%" src="http://cartodb.com/assets/logos/logos_full_cartodb_light.png"></src>
        </div>
        <div class="cartodb-popup-content">
          <!-- content.data contains the field info -->
@@ -75,18 +75,26 @@ cartodb.createLayer(map, layerUrl, layerOptions)
 With CartoDB maps and many others mapping tools, interactivity is very important. In CartoDB maps we handle it by using click events, so when a object on your map is clicked we perform an action. In CartoDB.js you can add click events at the same time you create your new CartoDB layer. Change the `createLayer` portion of the code to look like this:
 
 {% highlight javascript %}
-cartodb.createLayer(map, layerUrl, layerOptions)
-  .on('done', function(layer) {
-  // get sublayer 0 and set the infowindow template
+cartodb.createLayer(map, layerUrl)
+       .addTo(map)
+       .on('done', function(layer) {
+        
+  // change the query for the first layer
+  var subLayerOptions = {
+      sql: "SELECT * FROM example_cartodbjs_1 where pop_other::float > 1000000",
+      cartocss: "#example_cartodbjs_1{marker-fill: #109DCD; marker-width: 5; marker-line-color: white; marker-line-width: 0;}"
+        }
+
   var sublayer = layer.getSubLayer(0);
+  sublayer.set(subLayerOptions);
 
   sublayer.infowindow.set('template', $('#infowindow_template').html());
-
-  sublayer.on('featureClick', function(e, pos, latlng, data) {
-    alert("Hey! You clicked " + data.cartodb_id);
-  });
-}).on('error', function() {
-  //log the error
+        
+  sublayer.on('featureClick', function(e, latlng, pos, data) {
+          alert("Hey! You clicked " + data.cartodb_id);
+    });
+  }).on('error', function() {
+        //log the error
 });
 {% endhighlight %}
 
