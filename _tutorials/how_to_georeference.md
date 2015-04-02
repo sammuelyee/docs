@@ -25,7 +25,7 @@ You can manually enter or update data in your CartoDB account very easily. First
 
 ## Georeference your data
 
-To turn this new row into a geometry, we will georeference it. To start, click the <span class="ui_element" data-element="georeference">Georeference</span> link in the dropdown under the options menu in the upper-right of the screen. The selected option is to turn longitude and latitude values into `the_geom`. You can use this if you import data where the columns weren't automatically detected and converted to `the_geom`. In this example though we are going to use the last option, 'By Street Addresses'. After clicking the option, you will see several selectors for telling CartoDB what to georeference.
+To turn this new row into a geometry, we will georeference it. To start, click the <span class="ui_element" data-element="georeference">Georeference</span> link in the dropdown under the options menu in the upper-right of the screen. The selected option is to turn longitude and latitude values into `the_geom`. You can use this if you import data where the columns weren't automatically detected and converted to `the_geom`. In this example though we are going to use the last option, **By Street Addresses**. After clicking the option, you will see several selectors for telling CartoDB what to georeference.
 
 <p class="wrap-border"><img src="{{ '/img/layout/tutorials/how_to_georeference/img3.png' | prepend: site.baseurl }}" alt="Georeference dialog" /></p>
 
@@ -46,3 +46,19 @@ Next it would try to find the coordinates of this location. With the correspondi
 <p class="wrap-border"><img src="{{ '/img/layout/tutorials/how_to_georeference/img5.png' | prepend: site.baseurl }}" alt="Resulting map" /></p>
 
 Try to repeat the process with several different rows in your table, or on a dataset without any geospatial information but a country name.
+
+CartoDB also gives you options to georeference instead **By City Names**, **By Admin. Regions**, **By Postal Code**, and **By IP Addresses**. If you’d like to use **By City Names**, in the first selector you should choose the name of the column in your table that contains them. Keep in mind that your cities should be entered in a consistent format, and it is best if the city name is alone in the column as opposed to including other information (for example, “New York” instead of “New York, NY”). Choose your table column containing the country names for each of your cities in the second selector. If you don’t have one, you can choose “Free text input” and type in one value that will apply to all of your cities, such as “USA”. Hit the Continue button, and you will see an option to “Georeference your data with points” or “Georeference your data with polygons”. CartoDB chooses one of these for you by default, as indicated with a blue background, based on what information we have available for the datatype you’re trying to geocode. For example, if you’re using placenames in a city column, you will see that “no polygon data is available for your selection”. CartoDB provides points for placenames instead. 
+
+<p class="wrap-border"><img src="{{ '/img/layout/tutorials/how_to_georeference/img6.png' | prepend: site.baseurl }}" alt="Georeference by points" /></p>
+
+If you want to georeference by county, province, state, or other administrative regions, click on **By Admin. Regions** tab and choose the name of your region names column in the first selector. The data in your region names column can be countries. If it is, then leave the second selector empty. If it isn’t then you can specify another column containing country data in the second selector. As with **By City Names**, if you don’t have one you can choose “Free text input” and type in a country name. Hit the Continue button here, to see your options to georeference with points or polygons based on what data CartoDB has available for the data you’re trying to geocode.
+
+<p class="wrap-border"><img src="{{ '/img/layout/tutorials/how_to_georeference/img7.png' | prepend: site.baseurl }}" alt="By Admin. Regions" /></p>
+
+Georeferencing **By Postal Code** works similarly. Choose your postal code data column of type “number” in the **By Postal Code** tab’s first selector. If you have another table column containing the data for countries where your postal codes are located, choose it in the second selector. If you don’t have a separate column with that country data and all of your postal codes are in one country, you can enter that country’s name in “Free text input”. If you don’t know the country or countries where your postal codes are located, just leave the second selector on it’s default state. Hit continue to see the same “Georeference your data with points” or “Georeference your data with polygons” as mentioned above.
+
+<p class="wrap-border"><img src="{{ '/img/layout/tutorials/how_to_georeference/img8.png' | prepend: site.baseurl }}" alt="By Postal Code" /></p>
+
+Georeferencing by IP address is as simple as choosing the name of the column containing them in the **By IP Addresses** tab’s first selector.
+
+<p class="wrap-border"><img src="{{ '/img/layout/tutorials/how_to_georeference/img9.png' | prepend: site.baseurl }}" alt="By IP Address" /></p>
