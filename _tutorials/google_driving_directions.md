@@ -12,6 +12,10 @@ This tutorial will show you how to use CartoDB, the [Google Maps JavaScript API 
 ## The Data
 We will be using a dataset of locations of public schools in San Francisco, California. The final map will generate a driving direction route to San Francisco’s Exploratorium museum from any public school location the user selects on the map by using Google's Directions API.
 
+If you want to work from your own account, import this data, style it to your liking, and grab the viz.json file for later. Alternatively, you can use the viz.json files we link to below as an example. 
+
+One of the viz.json files will be pulling from a map with private data, while the other will be from a map with public data. Public maps from private tables are called Named Maps, and form the basis of a [tutorial](http://docs.cartodb.com/tutorials/named_maps.html). Private come with paid accounts, while public tables are for all accounts. Named maps can be made in the editor whenever you choose to visualize a private table.
+
 ## Resources
 * [Google Developer Console Help](https://developers.google.com/console/help/new)
 * [Google Maps JavaScript API v3](https://developers.google.com/maps/documentation/javascript/tutorial)
