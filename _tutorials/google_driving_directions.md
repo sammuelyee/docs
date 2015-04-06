@@ -178,7 +178,7 @@ When a user selects a school location by clicking on one of the points on the ma
 
 Here is the full code if you need directions generated from exact locations in your dataset. Sample code is also stored here.
 
-{% highlight html %}
+{% highlight javascript %}
 // Our CartoDB visualization
 var vizjson_url = "http://documentation.cartodb.com/api/v2/viz/9f645d04-da1b-11e4-9cd9-0e0c41326911/viz.json";
 
