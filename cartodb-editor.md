@@ -13,7 +13,7 @@ redirect_from:
 
 Your dashboard is your baseline. It has two main sections: **tables** and **visualizations**. To get started, you will need to create a visualization from your data by following these simple steps:
 
-1. Add a new **table** 
+1. Add a new **table**
 2. Import a dataset (or "Start from scratch" by selecting "Create empty table")
 3. Create a new **visualization** from your table
 4. Share it (publicly or privately)
@@ -68,7 +68,7 @@ You also have to option to import from:
 
 Users subscribed to "John Snow" or larger, paid plans can benefit from CartoDB's sync tables feature. In order to sync your tables via Google Drive or Dropbox, click "New Table" from your Dashboard followed by the tab for Google Drive or Dropbox, depending on which one you want to use.
 
-Once you select the file that you want to work with, you will need to allow CartoDB access. After, you may choose how often CartoDB should sync your data with your hosted table- from never to every hour, day, week or month. 
+Once you select the file that you want to work with, you will need to allow CartoDB access. After, you may choose how often CartoDB should sync your data with your hosted table- from never to every hour, day, week or month.
 
 Following import and sync selection, you will click "Create Table", and our importer will start building your database. We pride ourselves on speediness, but bigger files sometimes require a little patience.
 
@@ -123,7 +123,7 @@ _XLS and XSLX may take longer than .csv files. We highly recommend that you expo
 
 ### Manage your tables
 
-You may view all of your uploaded tables on your dashboard's landing page. Feel free to order them by the date modified or created, or go your own way with custom tagging. 
+You may view all of your uploaded tables on your dashboard's landing page. Feel free to order them by the date modified or created, or go your own way with custom tagging.
 
 #### Table privacy settings
 
@@ -163,7 +163,7 @@ The date type is located under the column name. It can be changed by clicking on
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/options.png' | prepend: site.baseurl }}" alt="Options" /></p>
 
-You can perform the following administrative actions in the Options menu: 
+You can perform the following administrative actions in the Options menu:
 
 - **Export**  
   Allows you to export your data as a .csv, .shp, .kml, .svg and .geojson
@@ -178,7 +178,7 @@ You can perform the following administrative actions in the Options menu:
   Merge your current table with another existing table using either a "column join" (joins two tables based off of a shared column) or a "spatial join" (joins two tables based off of their spatial overlaps). For more on how to perform this function, take a look [here]({{ '/tutorials/merging_data.html' | prepend: site.baseurl }}).
 
 - **Change privacy**  
-  Allows you to edit who is able to access the table. 
+  Allows you to edit who is able to access the table.
 
 - **Delete this table**  
   Entirely delete your table. But note that this will also delete any visualizations that rely on the table!
@@ -199,11 +199,11 @@ We've decoupled table privacy from visualization privacy to give you ultimate co
 
 ### Visualization privacy options
 
-When you are creating your CartoDB visualization, you may also edit who is able to access to it. In order to edit these settings, click on the padlock from the map created on the “Visualizations” section of your CartoDB dashboard. Here you will also be able to delete your visualization or lock it to prevent any accidentally change in the future. 
+When you are creating your CartoDB visualization, you may also edit who is able to access to it. In order to edit these settings, click on the padlock from the map created on the “Visualizations” section of your CartoDB dashboard. Here you will also be able to delete your visualization or lock it to prevent any accidentally change in the future.
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/padlock.png' | prepend: site.baseurl }}" alt="Privacy settings in your visualization" /></p>
 
-Every visualization is editable. At any time, you may change titles, update descriptions to clarify the content and purpose of your maps, or add tags to keep your projects organized and discoverable. 
+Every visualization is editable. At any time, you may change titles, update descriptions to clarify the content and purpose of your maps, or add tags to keep your projects organized and discoverable.
 
 
 In the window that appears, you will see four options for your privacy settings:
@@ -228,13 +228,21 @@ When you share a visualization, you may also edit who is able to access it and u
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/vizheader.png' | prepend: site.baseurl }}" alt="Visualization Metadata" /></p>
 
-For each visualization you may edit the name, add a description, source, license, and add tags to keep them organized and discoverable. You will find the "Edit metadata" option under the visualization title. 
+For each visualization you may edit the name, add a description, source, license, and add tags to keep them organized and discoverable. You will find the "Edit metadata" option under the visualization title.
 
-You may use the description section to clarify the content and purpose of your map. Use tags to unite projects or themes. Remember to add the data sources. Also there is a space to insert the license information in case you needed. 
+You may use the description section to clarify the content and purpose of your map. Use tags to unite projects or themes. Remember to add the data sources. Also there is a space to insert the license information in case you needed.
 
-### Add Element
+###Toolbars
 
-You are able to customize your visualization in just a few clicks. Under the "Edit metadata" option, there is the possibility to add an element on your map whether is a title, text or an image item.
+The tool bar is located at the top of the map editor, directly beneath your visualization name and metadata visualization option.
+
+<p class="wrap-border"><img src="/img/layout/cartodb-editor/toolbar.png" alt="The toolbar" /></p>
+
+From this tool bar, you can accomplish a variety of visualization tasks such as add title, text, image overlays; configure your default views in the browser and for portable devices; and export static images of your map.
+
+#### Add Element
+
+In Add Element, it is easy to add overlays on top of your map that help to better showcase your map and clarify the design. With this function you can quickly add fully customizable titles, texts, annotations and images.
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/addelement.png' | prepend: site.baseurl }}" alt="Visualization" /></p>
 
@@ -242,21 +250,39 @@ You are able to customize your visualization in just a few clicks. Under the "Ed
  When you add this item, a text box with a title format will appear on your map. You can place the title box wherever you want and edit the style.
 
 - **Add text item**
- Text boxes will give you control over the position of a block of text on your map. You can place text boxes anywhere in your visualization and edit them. You can change the text align, style, width, font and even the box style.
+ Similar to titles, text boxes will give you control over the position of a block of text on your map. You can place text boxes anywhere in your visualization and edit them.
+
+ For annotation, title, and text box overlays, double clicking an element allows you to change the content. Clicking on the element opens the overlay customization tool bar. From here, the text size, colors, fonts, alignment, and box properties can be tailored to fit your map. The toolbar also allows for additional actions with your overlays such as bringing a layer forward or backward, duplicating a layer, or deleting an element entirely.
+
+<p class="wrap-border"><img src="/img/layout/cartodb-editor/edittext.png" alt="Text Edit Toolbar" /></p><br>
 
  - **Add annotation item**
- Annotations are text overlays linked to a coordinate and a zoom range. They allow users to explain and point to specific map elements. You can change the orientation and the text alignment, color, style and width, plus the box and line styles.
+ Annotations are text overlays linked to a coordinate and a zoom range. They allow users to explain and point to specific map elements. These overlays will remain fixed on a position on the map, and are excellent for annotating information, telling stories, or highlighting interesting information. 
+
+ Similar to the title and text overlays, clicking an annotation element brings up the customization toolbar. You will notcie that a **Zoom (min-max)** option has been added. This allows for dynamic annotations and zoom-dependent labeling of map items.
+
+ <p class="wrap-border"><img src="/img/layout/cartodb-editor/annotation.png" alt="The toolbar" /></p><br>
 
 - **Add image item**
- An image can give extra value to your visualization. You will only need to add the image link to the box and it will pop up on your visualization. You can edit the box style color, the position, and also change the width.
+ An image can give extra value to your visualization. You will only need to add the image link to the box and it will pop up on your visualization. You can edit the box style color, the position, and also change the width with the customization toolbar.
 
-### Configure Canvas
+####Preview Map
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/canvas.png' | prepend: site.baseurl }}" alt="Visualization" /></p>
 
-We use our mobiles frequently to consume content, so there is chance that many people visits your visualizations using a mobile device. And that means a small screen in which not many elements will fit right. That's why we let you create responsive maps: you can design your visualization for desktop and mobiles. We offer you two canvases so you can design your visualization for each type of screen. 
+We use our portable devices frequently to consume content, so there is chance that many people visits your visualizations using a mobile device. And that means a small screen in which not many elements will fit right. That's why we let you create responsive maps: you can design your visualization for desktop and mobiles. We offer you two canvases so you can design your visualization for each type of screen.
 
-By default you are in Desktop view; if you switch to the Mobile view, you'll see that we crop the viewable area. If you include elements for the Desktop view, you'll see that they are not present when you switch to Mobile, so that you can create specific elements for this new view, and viceversa. 
+By default you are in Desktop view; if you switch to the Mobile view, you'll see that we crop the viewable area.
+
+<p class="wrap-border"><img src="/img/layout/cartodb-editor/mobile.png" alt="mobile" /></p>
+
+If you include elements for the Desktop view, you'll see that they are not present when you switch to Mobile, so that you can create specific elements for this new view, and vice-versa.
+
+####Export Image
+
+The Export Image option allows for users to export a static image of a map in png format. From the 'Configure export options' screen you can select the width and height in pixels for your export. make sure your pop-up blocker is disabled!
+
+<p class="wrap-border"><img src="/img/layout/cartodb-editor/export-image.png" alt="The toolbar" /></p>
 
 ### CartoDB Sidebar
 
@@ -268,11 +294,11 @@ The CartoDB sidebar is a toolkit that enables you to customize how data is displ
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/sqlquery.png' | prepend: site.baseurl }}" alt="SQL Query" /></p>
 
-[SQL](https://en.wikipedia.org/wiki/SQL) (Structured Query Language) is the way that many applications request data from a database. They can ask simple queries (*i.e.* "give me all records from this table"), queries that match certain conditions (*i.e.*  "give me all records in which this field equals a certain value"), or more complex queries that combine data from two or more tables. 
+[SQL](https://en.wikipedia.org/wiki/SQL) (Structured Query Language) is the way that many applications request data from a database. They can ask simple queries (*i.e.* "give me all records from this table"), queries that match certain conditions (*i.e.*  "give me all records in which this field equals a certain value"), or more complex queries that combine data from two or more tables.
 
-CartoDB is built on a database called [PostgreSQL](http://www.postgresql.org/), and the geospatial extension called [PostGIS](http://postgis.net/). PostGIS allows you to perform geospatial queries such as finding data points within a given radius, the area of polygons in your table, etc. The available queries and documentation can be found on the reference pages of [PostgreSQL](http://www.postgresql.org/docs/9.2/static/reference.html) and [PostGIS](http://postgis.net/docs/manual-2.0/reference.html). 
+CartoDB is built on a database called [PostgreSQL](http://www.postgresql.org/), and the geospatial extension called [PostGIS](http://postgis.net/). PostGIS allows you to perform geospatial queries such as finding data points within a given radius, the area of polygons in your table, etc. The available queries and documentation can be found on the reference pages of [PostgreSQL](http://www.postgresql.org/docs/9.2/static/reference.html) and [PostGIS](http://postgis.net/docs/manual-2.0/reference.html).
 
-When you create a visualization and link a table to it, all of the data in that table will be displayed. To curate what data is shown, you may write a custom SQL query or use our filter functions. 
+When you create a visualization and link a table to it, all of the data in that table will be displayed. To curate what data is shown, you may write a custom SQL query or use our filter functions.
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/filters.png' | prepend: site.baseurl }}" alt="Filters" /></p>
 
@@ -297,7 +323,7 @@ This tool changes the color of each feature based on a secondary numeric value f
 Category visualizations display your points and polygons in different colors based on a qualitative characteristic in your table. For example, if your data shows multiple kinds of a certain characteristic (*i.e.* land-use zones), you would use the category wizard to change the color of each characteristic (*i.e.* blue for residential, red for commercial, and purple for mixed-use districts).
 
 - **Bubble**  
-The Bubble visualization scales the radius of points in your data based on a numeric value from a column in your table. This is useful for comparing numeric values associated with a certain point, like population sizes of cities. Remember that this tool is not designed to work with polygons. 
+The Bubble visualization scales the radius of points in your data based on a numeric value from a column in your table. This is useful for comparing numeric values associated with a certain point, like population sizes of cities. Remember that this tool is not designed to work with polygons.
 
 - **Intensity**  
 The Intensity visualization measures the density of your points by darkening areas with many points in contrast to those with fewer points. This is useful when you have a dataset with a large number of points and want to stratify their occurrence. With the addition of the infowindow function, this tool can be understood as a more dynamic heatmap.
@@ -309,7 +335,7 @@ The Density visualization aggregates your data in hexagons and colors them based
 Torque is ideal for the display of temporal data. This tool animates a progression of points based on a table column containing the time stamp. The standard format of the date column is `YYYY-DD-MMThh:mm:ss`, but Torque also visualizes data that contains a year, year/month, or year/month/day characteristics.
 
 - **Torque Heat**  
-Torque heat is a variation of Torque to create interactive heat maps or animated heatmaps when you have temporal data. Areas of greater color intensity indicate greater density of data. 
+Torque heat is a variation of Torque to create interactive heat maps or animated heatmaps when you have temporal data. Areas of greater color intensity indicate greater density of data.
 
 - **Torque Category**  
 In addition to Torque and Torque Heat, Torque Category displays data points in different colors based on qualitative characteristics in your table. If your data shows different characteristics (such as land-use zones), use this wizard to customize the color of each characteristic.
@@ -317,7 +343,7 @@ In addition to Torque and Torque Heat, Torque Category displays data points in d
 Beware that different types of data enable and disable certain wizards. Experiment with your data to discover the optimal tools for your visualization.
 
 #### Simple
-Display data as simple marker points 
+Display data as simple marker points
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/simple.png' | prepend: site.baseurl }}" alt="Simple Wizard" /></p>
 
@@ -368,7 +394,7 @@ Change the color and width of the outline around your text. This can be helpful 
 Refer to [CartoCSS documentation](http://docs.cartodb.com/cartodb-editor.html#cartocss) for an explanation of marker fill, marker size and marker stroke.
 
 #### Choropleth
-Thematic map with regions different colors in proportion to the data 
+Thematic map with regions different colors in proportion to the data
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/choro.png' | prepend: site.baseurl }}" alt="Choropleth Wizard" /></p>
 
@@ -396,7 +422,7 @@ Select the colors of your dataset. You can customize these using CartoCSS, which
 Refer to [CartoCSS documentation](http://docs.cartodb.com/cartodb-editor.html#cartocss) for an explanation of marker width, and marker stroke.
 
 #### Category
-Display data in different colors based on categories 
+Display data in different colors based on categories
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/category.png' | prepend: site.baseurl }}" alt="Category Wizard" /></p>
 
@@ -490,12 +516,12 @@ Style effects for how layered data is blended during the animation. Blend modes 
 Select whether data points display a "trail," or faded image after they disappear from your map. Choose a value between 0 and 5: 5 will display a longer, more-lasting trail and 0 will not show a trail.
 
 - **Resolution**  
-Torque creates a grid of your data and aggregates data to each cell of that grid. The resolution parameter determines the width and height of each cell. Larger numbers will make your data more gridded. 
+Torque creates a grid of your data and aggregates data to each cell of that grid. The resolution parameter determines the width and height of each cell. Larger numbers will make your data more gridded.
 
 Torque visualizations also have [Torque CartoCSS](http://docs.cartodb.com/cartodb-editor.html#cartocss) options to further customize the look of your visualization.
 
 #### Torque Heat
-A variation of Torque allowing for an animated heatmap of temporal data where areas of greater color intensity indicate greater density of data. 
+A variation of Torque allowing for an animated heatmap of temporal data where areas of greater color intensity indicate greater density of data.
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/torqueheat.png' | prepend: site.baseurl }}" alt="Torque Heat Wizard" /></p>
 
@@ -536,7 +562,7 @@ Torque visualizations also have [Torque CartoCSS](http://docs.cartodb.com/cartod
 
 On-click info-windows will appear when a point or polygon is clicked. They display data of your choosing, and you may customize the way your windows appear by selecting from a variety of color combinations via the drop-down menu. To the right, you will notice a numeric selector that allows you to adjust the width (in pixels) of your info-windows.
 
-To choose which data columns to display, toggle the slider to the right of each column title. Once your column is "on", you may select to show the column title on your visualization by checking the box. 
+To choose which data columns to display, toggle the slider to the right of each column title. Once your column is "on", you may select to show the column title on your visualization by checking the box.
 
 Further customization features include display order adjustments via column drags, changing column names by selecting the icon above the list, and the option to use Custom HTML by clicking on the "</>" button. See the image below for reference.
 
@@ -581,7 +607,7 @@ In addition to being able to customize the look of your visualizations using Car
 
 - __Torque Aggregation Function:__ Torque renders your data in clusters, choose what value to show such as max values only, or count how many values are in each cluster.
 
-__Example functions:__ count(column_name), max(column_name), sum(column_name). Column data type must be numeric. 
+__Example functions:__ count(column_name), max(column_name), sum(column_name). Column data type must be numeric.
 
 Learn more about [how spatial aggregation works](https://github.com/CartoDB/torque/wiki/How-spatial-aggregation-works).
 
@@ -621,7 +647,7 @@ Torque Heat has much of the same Torque CartoCSS in addition to a few different 
 
 #### Composite Operations
 
-Composite operations style the way colors of overlapping markers interact with each other. You can think of them as blend modes or filters, similar to blend operations in Photoshop. Composite operations are available in the Simple, Choropleth, Bubble, Density and Torque visualizations. 
+Composite operations style the way colors of overlapping markers interact with each other. You can think of them as blend modes or filters, similar to blend operations in Photoshop. Composite operations are available in the Simple, Choropleth, Bubble, Density and Torque visualizations.
 
 The available options within the wizards interface include multiply, screen, overlay, darken, lighten, color-dodge and color-burn. In addition, blend modes specific to Torque include lighter, multiply, source-over, and xor. For more information on the different options available, refer to the documentation on [Mapbox](https://www.mapbox.com/tilemill/docs/guides/comp-op/).
 
@@ -724,7 +750,7 @@ You can learn more about [map projections in Wikipedia](http://en.wikipedia.org/
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/vizz_options.png' | prepend: site.baseurl }}" alt="Options for your visualization" /></p>
 
-Besides the Basemap selector, you have an Options selector which will give you access to control what elements are shown in your visualization: 
+Besides the Basemap selector, you have an Options selector which will give you access to control what elements are shown in your visualization:
 
 * **Fixed title** Whether or not the title appears.
 * **Fixed description** Whether or not the description appears.
@@ -770,7 +796,7 @@ Regular, Bold, Semibold, Light, Italic, Bold Italic, Semibold Italic, Light Ital
 
 ## Managing your data
 
-Whew, you're almost a CartoDB expert! As you know by now, there are a variety of methods for managing and visualizing your data with our Editor, Wizards, and SQL tools-- to name a few. In earlier sections, we discussed using filters on your data and merging tables. Below is a quick introduction to a few more techniques that we host for your creative convenience. 
+Whew, you're almost a CartoDB expert! As you know by now, there are a variety of methods for managing and visualizing your data with our Editor, Wizards, and SQL tools-- to name a few. In earlier sections, we discussed using filters on your data and merging tables. Below is a quick introduction to a few more techniques that we host for your creative convenience.
 
 ### Geocoding data
 
@@ -781,16 +807,16 @@ CartoDB is more than a styler- we're also a behind-the-scenes geocoder. We under
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/geo1.png' | prepend: site.baseurl }}" alt="Geocoding data" /></p>
 
-Importing your data with latitude and longitude coordinates already included renders a map that automatically displays your markers and polygons from the coordinates uploaded to your table.  To georeference, just select the longitude and latitude columns in your table and click continue. 
+Importing your data with latitude and longitude coordinates already included renders a map that automatically displays your markers and polygons from the coordinates uploaded to your table.  To georeference, just select the longitude and latitude columns in your table and click continue.
 
-**By City Names** 
+**By City Names**
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/geo2.png' | prepend: site.baseurl }}" alt="Geocoding data" /></p>
- 
+
 Alternatively, you may georeference by City Names. Select the column that contains the city names and also select the country to which the cities belong to if you want to be more accurate.
 
 
-**By Admin. Regions** 
+**By Admin. Regions**
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/geo3.png' | prepend: site.baseurl }}" alt="Geocoding data" /></p>
 
@@ -801,23 +827,23 @@ You may also georeference by Administrative Regions. Select to georeference by A
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/geo4.png' | prepend: site.baseurl }}" alt="Geocoding data" /></p>
 
-Postal code systems have been set up in many countries and these often provide a high level of spatial precision. On CartoDB you have the option to georeference your data by postal codes. Just select the column where your information is stored and the country where the zip codes are from and immediately press continue. 
+Postal code systems have been set up in many countries and these often provide a high level of spatial precision. On CartoDB you have the option to georeference your data by postal codes. Just select the column where your information is stored and the country where the zip codes are from and immediately press continue.
 
-**By IP Addresses** 
+**By IP Addresses**
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/geo5.png' | prepend: site.baseurl }}" alt="Geocoding data" /></p>
 
 IP Georeferencing is an important toolbox item on today's web environment. If you select this option, CartoDB will take your IP address column and convert it into location points on your map.
 
 
-**By Street Addresses** 
+**By Street Addresses**
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/geo6.png' | prepend: site.baseurl }}" alt="Geocoding data" /></p>
 
 
 Finally, you may georeference by address. To do this, your columns will need to be organized into categories such as "address" (which would contain the building number and street name), "state" and "country," if its known.
 
-Matching addresses with geographic coordinates consumes geocoding credits. Every time geocoding is done in string format, geocoding credit is used (for example, if you geocode a table with 20 records, 20 geocoding credits are used). All CartoDB plans include a number of geocoding credits that can be used every month. After exceeding the geocoding limits, a fixed fee is charged per 1000 credits. 
+Matching addresses with geographic coordinates consumes geocoding credits. Every time geocoding is done in string format, geocoding credit is used (for example, if you geocode a table with 20 records, 20 geocoding credits are used). All CartoDB plans include a number of geocoding credits that can be used every month. After exceeding the geocoding limits, a fixed fee is charged per 1000 credits.
 
 On the upper left side of the window, you will see the operation cost and you must accept the price to be able to continue.
 
@@ -852,7 +878,7 @@ It is possible to create a new table from an SQL query. After applying your modi
 
 ### Merging data
 
-Whether you are using data from public repositories or your own datasets, sometimes it is useful to join information from two tables. You can always do this via your own SQL, but CartoDB makes it easier with our merge tool. 
+Whether you are using data from public repositories or your own datasets, sometimes it is useful to join information from two tables. You can always do this via your own SQL, but CartoDB makes it easier with our merge tool.
 
 The most basic way to join two tables is by a shared unique value, or a "Regular Join." For example, country ISO codes are often used to merge the_geom from one table and population count from another. Regular Joins are also very useful for attributes like, shared IDs, country names, or dates.
 
@@ -871,7 +897,7 @@ Regular Joins are useful if you have two datasets that share a common value in r
 
 #### Merge by Spatial Join
 
-Spatial Join calculates the intersecting geospatial records between two tables (ex. points in polygons). You'll need to decide the operation to perform. 
+Spatial Join calculates the intersecting geospatial records between two tables (ex. points in polygons). You'll need to decide the operation to perform.
 
 Similar to Excel, **COUNT** calculates the number of intersecting records, **SUM** adds together a column value for all intersecting records, and **AVG** provides the average value of a column for all intersecting records.
 
@@ -907,7 +933,7 @@ In most cases, a single column index is the safe way to go. For Torque visualiza
 CREATE INDEX idx_{TABLE NAME}_{COLUMN_NAME} ON {TABLE_NAME} ({COLUMN_NAME})
 {% endhighlight %}
 
-There are more advanced indexes you can use in CartoDB, such as multi-column indexes. However, they are not a magic wand (our Wizard maintains that glory), so we recommend that you read the full documentation on [PostgreSQL Indexes](http://www.postgresql.org/docs/9.1/static/sql-createindex.html) before proceeding. 
+There are more advanced indexes you can use in CartoDB, such as multi-column indexes. However, they are not a magic wand (our Wizard maintains that glory), so we recommend that you read the full documentation on [PostgreSQL Indexes](http://www.postgresql.org/docs/9.1/static/sql-createindex.html) before proceeding.
 
 Indexes will take space from your quota. But CartoDB adds some of our own indexes that are not counted against your quota, so there is no need to index the automatically generated columns in CartoDB (e.g. the_geom and cartodb_id).
 
@@ -1032,7 +1058,7 @@ When executing SQL either in the user interface or through the SQL API, you may 
 
 ### CartoCSS errors
 
-CartoCSS styling is generally simple, making typos or forgetting quotations are common oversights. In cases when you are editing CartoCSS through the user interface, errors are reported back the the CartoCSS input window. From there, it is typically not difficult to discover where you messed up. More often than not, users forget to end lines with semi-colons, use quotes, and close brackets and braces. Simple proof-reading is best practice. 
+CartoCSS styling is generally simple, making typos or forgetting quotations are common oversights. In cases when you are editing CartoCSS through the user interface, errors are reported back the the CartoCSS input window. From there, it is typically not difficult to discover where you messed up. More often than not, users forget to end lines with semi-colons, use quotes, and close brackets and braces. Simple proof-reading is best practice.
 
 ## Your account
 
@@ -1062,7 +1088,7 @@ You may experience extra charges besides the monthly cost of your plan if you ex
 
 All of our plans have a fourteen-day free trial, during which you may experiment with one of our plans to see if it's a good fit. Once you create an account, you may choose to change your plan from "Account Settings," accessed from your dashboard.
 
-In the Account Settings window, you may view your current plan and click "Change your current plan" to choose a new one. Note that the charges will be pro-rated, so you may change your account type whenever you like. 
+In the Account Settings window, you may view your current plan and click "Change your current plan" to choose a new one. Note that the charges will be pro-rated, so you may change your account type whenever you like.
 
 ### Deleting your account
 
@@ -1078,7 +1104,7 @@ With CartoDB MU, no custom software installation is necessary to access high-per
 
 #### Users, Owners, and Organizations
 
-CartoDB Enterprise works as a hub for many users or teams working together. An "organization" refers to the name of the group of collaborators that will be interacting on Enterprise, for instance the name of your business or project team. A user is the individual that is part of a given organization. 
+CartoDB Enterprise works as a hub for many users or teams working together. An "organization" refers to the name of the group of collaborators that will be interacting on Enterprise, for instance the name of your business or project team. A user is the individual that is part of a given organization.
 
 If you have been using a normal CartoDB account and are starting to use CartoDB Enterprise with Multiuser, you will see that you are using the same CartoDB Editor with some new options. These new options is what we'll cover in the following sections. For general documentation about the CartoDB Editor please refer to the [corresponding sections in docs.cartodb.com](http://docs.cartodb.com/cartodb-editor.html)
 
@@ -1088,7 +1114,7 @@ An "Owner" of an organization has privileges to perform admin-related tasks of t
 
 #### Dashboard
 
-After login, the Enterprise main-page is a mosaic of team activity. This is your home-base, a.k.a. the page where you are able to view and access data sets and visualizations published by team members in addition to monitoring your own activity and quota availability. Order by "modified" or “created” to see what’s been added by either latest edit or the date of original posting. If you’re feeling inspired, click the “New table” icon to add your own map. 
+After login, the Enterprise main-page is a mosaic of team activity. This is your home-base, a.k.a. the page where you are able to view and access data sets and visualizations published by team members in addition to monitoring your own activity and quota availability. Order by "modified" or “created” to see what’s been added by either latest edit or the date of original posting. If you’re feeling inspired, click the “New table” icon to add your own map.
 
 <p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_0.png" alt="Using sync tables" /></p>
 
@@ -1096,11 +1122,11 @@ Also, you may filter your view to see only the tables you have created or to sea
 
 <p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_1.png" alt="Using sync tables" /></p>
 
-When you are in the Visualizations section of your dashboard you will also be able to filter between **All visualizations** and **Your visualizations**. **All visualizations** will list your visualizations plus all the visualizations that your Organization teammates have selected to share with you. 
+When you are in the Visualizations section of your dashboard you will also be able to filter between **All visualizations** and **Your visualizations**. **All visualizations** will list your visualizations plus all the visualizations that your Organization teammates have selected to share with you.
 
 #### Creating tables and visualizations
 
-The workflow to create tables and visualizations is the same as in the normal edition of the CartoDB Editor. 
+The workflow to create tables and visualizations is the same as in the normal edition of the CartoDB Editor.
 
 #### Tables: General and Team privacy settings
 
@@ -1108,11 +1134,11 @@ Once you have created a new table, you have new privacy options compared to the 
 
 <p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_2.png" alt="Using sync tables" /></p>
 
-By clicking in the lock, a modal window will appear: 
+By clicking in the lock, a modal window will appear:
 
 <p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_3.png" alt="Using sync tables" /></p>
 
-You have two sections in this window: 
+You have two sections in this window:
 
 1. **General privacy**: As well as in the standalone CartoDB Editor, by default a table will be only accessible by yourself. You can choose it to be **only visible to people with the link**, or make it **public** (it will get listed on your Public Page).
 
@@ -1124,13 +1150,13 @@ You have two sections in this window:
 
 #### Visualizations: General and Team privacy settings
 
-As well as with tables, the interface for creating visualizations is the same as in the standalone CartoDB Editor, with some extra options to manage how you collaborate with your teammates. 
+As well as with tables, the interface for creating visualizations is the same as in the standalone CartoDB Editor, with some extra options to manage how you collaborate with your teammates.
 
 Once you are editing a visualization, you can also use the lock in the upper left corner to view the privacy settings.  
 
 <p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_6.png" alt="Using sync tables" /></p>
 
-You have two sections in this window: 
+You have two sections in this window:
 
 1. **General privacy**: As well as in the standalone CartoDB Editor, by default, a visualization will be accessible to **people with the link**. You can select it to be **Private** (only accessible to you), **Password protected** (you'll be able to set a password), or **Public** (it will be listed on your Public Page)**.**
 
@@ -1154,7 +1180,7 @@ Once in the Organization admin area you'll be able to **Manage your seats**, the
 
 #### Manage your seats
 
-A seat is an available slot for a user. You'll be able to give access to as many users and seats that you have in your contract. You may expand the number of seats at any time by contacting our Customer Support. 
+A seat is an available slot for a user. You'll be able to give access to as many users and seats that you have in your contract. You may expand the number of seats at any time by contacting our Customer Support.
 
 #### Adding a user
 
@@ -1178,7 +1204,7 @@ On the Account Settings page, you can update settings regarding your administrat
 
 #### About the Twitter Datasource
 
-CartoDB has access to the complete Twitter firehose providing it with official Twitter data. For our users, it is really easy to obtain the data and map it. Once the user clicks on +new table, the menu, which you can also see in this screenshot, will open. 
+CartoDB has access to the complete Twitter firehose providing it with official Twitter data. For our users, it is really easy to obtain the data and map it. Once the user clicks on +new table, the menu, which you can also see in this screenshot, will open.
 
 <p class="wrap-border"><img src="/img/layout/cartodb-editor/twitter_0.png" alt="New import dialog" /></p>
 
@@ -1198,7 +1224,7 @@ The search results will only contain tweets where the location was either explic
 
 * **Streaming**: CartoDB has access to Twitter’s streaming API  allowing you to retrieve data up to the last minute in which you performed your search. This at the moment is only available on request. Contact sales@cartodb.com to get more info.
 
-* **Historical API**: This API gives access to tweets beyond 30 days going all the way back to 2006. Contact sales@cartodb.com for further details. 
+* **Historical API**: This API gives access to tweets beyond 30 days going all the way back to 2006. Contact sales@cartodb.com for further details.
 
 The real time tweets feature is coming soon and will be added to CartoDB for the user’s to access it. It will allow for the map to be updated automatically with live tweets as they are posted.
 
@@ -1231,7 +1257,7 @@ Besides the previous parameters, you’ll also obtain: `objecttype`, `twitter_fi
 
 Your tweets table has been finally created. Let’s take a look at some tricks that will allow you to get the insights you are looking for.
 
-You can use the CartoDB Editor filter tool in order to get easy queries, for example: 
+You can use the CartoDB Editor filter tool in order to get easy queries, for example:
 
 To solve the question “Which tweets have been written by a famous (verified) person?” you just need to apply a filter to the `actor_verified` column. This process will be similar to generating the following query:
 
