@@ -89,7 +89,7 @@ SELECT cartodb_id, the_geom_webmercator, the_geom, my_date_column::timestamp FRO
 
 ###How do I geocode IP addresses that are included in my data?
 
-CartoDB requires that IP addresses be in an isolated column in order to be able to recognize and geocode them.
+CartoDB requires that IP addresses are in an isolated column in order to be able to recognize and geocode them.
 
 A simple way to isolate IPs is to run a couple of SQL queries and store the values in a new column.
 
