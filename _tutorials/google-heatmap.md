@@ -11,6 +11,8 @@ This tutorial will show you how to create a Google heatmap visualization using C
 
 This tutorial is for users who are familiar with JavaScript and have mastered the basics of creating a map with CartoDB.js. If you're not familiar with CartoDB.js, checkout the [documentation](http://docs.cartodb.com/cartodb-platform/cartodb-js.html), [Map Academy course](http://academy.cartodb.com/courses/03-cartodbjs-ground-up.html) on CartoDB.js, or a basic [tutorial](http://docs.cartodb.com/tutorials/create_map_cartodbjs.html).
 
+You can also create heatmaps using CartoDB. Check out this tutorial on how to use the [CartoDB Editor to create heatmaps](http://docs.cartodb.com/tutorials/heatmap.html).
+
 ## The Data
 This tutorial uses a dataset containing coordinates for bike trips made in New York City. The final map will generate a Google heatmap layer using our bike trip data. If you want to work from your own account, [import the data](https://documentation.cartodb.com/viz/d5b846c0-da31-11e4-b74f-0e4fddd5de28/table), style it to your liking, and grab the viz.json file for later. Alternatively, you can use the viz.json files we link to below as an example.
 
