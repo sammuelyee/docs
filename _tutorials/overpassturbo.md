@@ -57,8 +57,23 @@ Once you have the OpenStreetMap data you wish to use in CartoDB, select the "Exp
 
 <p class="wrap-border"><img src="{{ '/img/layout/tutorials/overpassturbo/img8.png' | prepend: site.baseurl }}" alt="Exporting OSM Data" /></p>
 
-CartoDB is setup to easily handle the import of data. Simply navigate to the Datasets section of your dashboard, select "Connect Dataset" and upload the downloaded file.
+CartoDB is setup to easily handle the import of data. Simply navigate to the Datasets section of your dashboard, select "Connect Dataset" and upload the downloaded file. Once the data is imported, you will be able to view it from the Data View of the CartoDB Editor.
 
-<p class="wrap-border"><img src="{{ '/img/layout/tutorials/osm/img2.png' | prepend: site.baseurl }}" alt="Uploading data" /></p>
+<p class="wrap-border"><img src="{{ '/img/layout/tutorials/overpassturbo/img11.png' | prepend: site.baseurl }}" alt="Uploading data" /></p>
 
-That's it! Once the data is imported, you will be able to view it from the Data View of the CartoDB Editor. Now you can easily use OpenStreetMap data in any of your maps from within the CartoDB Editor.
+Once your data is uploaded, don't forget to cite the source of the data back to OpenStreetMap and Overpass Turbo in the descripton of your dataset. As part of using OpenStreetMap data, you must give credit to OpenStreetMap per their [Copyright and License agreement](http://www.openstreetmap.org/copyright). You should add an OpenStreetMap link and credit if you don't plan on using an OSM basemap where the credit is already included by CartoDB. 
+
+{% highlight html %}
+Data © [OpenStreetMap](http://www.openstreetmap.org/copyright) contributors
+Data mining by [Overpass API](http://overpass-api.de/)
+{% endhighlight %}
+
+You can add attribution to OpenStreetMap by editing the metadata associated with your dataset by selecting the "Edit metadata" link in the upper left corner of your dataset in the Data View of the CartoDB Editor. 
+
+<p class="wrap-border"><img src="{{ '/img/layout/tutorials/overpassturbo/img9.png' | prepend: site.baseurl }}" alt="Uploading data" /></p>
+
+Add the attribution tag to the metadata description.
+
+<p class="wrap-border"><img src="{{ '/img/layout/tutorials/overpassturbo/img12.png' | prepend: site.baseurl }}" alt="Uploading data" /></p>
+
+That's it! Now you can easily use OpenStreetMap data in any of your maps from within the CartoDB Editor.
