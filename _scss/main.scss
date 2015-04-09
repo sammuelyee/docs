@@ -749,6 +749,7 @@
     > li {
       width: 50%;
       margin-bottom: 0;
+      vertical-align: middle;
     }
   }
 
@@ -919,6 +920,45 @@
 }
 
 
+/* =Newsletter
+----------------------------------------------- */
+
+.Newsletter {
+  position: relative;
+  width: 100%;
+  margin-top: 7px;
+
+  .hs-form{
+    position: relative;
+
+    .hs-input {
+      padding: 12px 108px 12px 16px !important;
+    }
+  }
+}
+
+.hs-newsletter {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  bottom: 0;
+  width: 100px;
+  border: 0;
+  font: 500 12px "Proxima Nova Sb";
+  color: #fff;
+  background: $secondary-color;
+  border-radius: 0 4px 4px 0;
+  text-transform: uppercase;
+  transition: all .15s;
+  cursor: pointer;
+  outline: none;
+
+  &:hover {
+    background: darken($secondary-color, 5%);
+  }
+}
+
+
 /* =Media queries
 ----------------------------------------------- */
 
@@ -1075,6 +1115,10 @@
       color: #eee;
       color: rgba(#fff, .8);
     }
+  }
+
+  .Newsletter {
+    margin-top: 0;
   }
 }
 
