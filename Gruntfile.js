@@ -147,16 +147,10 @@ module.exports = function(grunt) {
     },
     shell: {
       server: {
-        command: 'bundle exec jekyll build',
-        options: {
-          async: false
-        }
+        command: 'bundle exec jekyll build'
       },
       dist: {
-        command: "bundle exec jekyll build --config _config.yml,_config-prod.yml",
-        options: {
-          async: false
-        }
+        command: "bundle exec jekyll build --config _config.yml,_config-prod.yml"
       }
     },
     filerev: {
