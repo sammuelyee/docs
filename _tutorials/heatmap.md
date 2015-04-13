@@ -4,7 +4,7 @@ title: 'Create a torque heatmap'
 short_description: 'Upload data, and create a torque heatmap in the CartoDB Editor '
 level: basic
 time_needed: '15 minutes'
-embed_url: 'http://team.cartodb.com/u/chandra/viz/c7910524-b2cb-11e4-9ac4-0e4fddd5de28/embed_map'
+embed_url: 'https://documentation.cartodb.com/viz/d7604750-e203-11e4-94cd-0e018d66dc29/embed_map'
 ---
 
 ## Summary
