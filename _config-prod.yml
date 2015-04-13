@@ -2,5 +2,3 @@ env: 'production'
 destination: '.tmp'
 
 analytics_property_id: UA-20934186-3
-tech_newsletter_id: 'b85d5d7d87'
-hubspot_id: '474999'

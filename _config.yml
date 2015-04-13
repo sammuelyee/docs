@@ -20,8 +20,7 @@ blog-baseurl: 'http://blog.cartodb.com'
 github-baseurl: 'http://github.com/CartoDB/cartodb'
 
 analytics_property_id: ''
-tech_newsletter_id: ''
-hubspot_id: '62515'
+hubspot_id: '474999'
 
 collections:
   tutorials:
