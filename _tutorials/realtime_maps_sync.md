@@ -1,7 +1,7 @@
 ---
 layout: tutorials_item
-title: 'Real-time maps with CartoDB sync tables'
-short_description: 'Learn how to create a real-time map by syncing shapefiles'
+title: 'Real-time visualizations with CartoDB sync tables'
+short_description: 'Learn how to create a real-time visualization by syncing shapefiles'
 level: medium
 time_needed: '10 minutes'
 embed_url: '//player.vimeo.com/video/78298157?title=0&amp;byline=0&amp;portrait=0'
@@ -14,7 +14,7 @@ In this tutorial we’ll show you how to create a visualization that stays updat
 ## Tips
 + To have synced tables automatically geocoded, make sure they contain either a country column, a latitude column and a separate longitude column, or a column of IP addresses.
 
-+ Synced tables can only be directly edited while disconnected from their datasource, but you can use SQL to manipulate the dataset while it’s connected. For example, you can write a SQL statement that changes a column’s data type from string to number, so it can be used to create a Choropleth map.
++ Synced tables can only be directly edited while disconnected from their datasource, but you can use SQL to manipulate the dataset while it’s connected. For example, you can write a SQL statement that changes a column’s data type from string to number, so it can be used to create a Choropleth visualization.
 
 + You can either create synced tables through the CartoDB Editor, or through our import API.
 ---
