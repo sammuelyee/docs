@@ -11,6 +11,8 @@ embed_url: 'http://documentation.cartodb.com/viz/81d928bc-e9c9-11e2-b5ac-5404a6a
 
 Joining data in CartoDB is a very common task. Not all joins are equal though, and the one you use is going to depend a lot on your data and what you want to create. Here we are going to walk you through some common `JOIN` methods on CartoDB. In each section we will show you how to join the data using SQL on-the-fly and then show you how to write the result of a join into your table.
 
+If you are not familiar with SQL, you might want to try our course [SQL and PostGIS in CartoDB](http://academy.cartodb.com/courses/04-sql-postgis.html) before getting started. This tutorial forms part of the third lesson in that course.
+
 ## Join two tables by a shared value in each row
 
 This is the type of join you perform when you have a value in two tables (say country ISO codes) and you want to match rows from one table to the next (e.g. `iso_code='USA'`) from one table with the same value in a second table (e.g. `iso='USA'`). Column name doesn't matter, just the content!
@@ -366,3 +368,7 @@ Now, go back to the <span class="ui_element" data-element="map_view">Map View</s
 <p class="wrap-border"><img src="{{ '/img/layout/tutorials/joining_data/img3.png' | prepend: site.baseurl }}" alt="cloropeth" /></p>
 
 Now take a look at the map and you can see which countries the most rivers in our dataset pass through.
+
+### Moving forward
+
+You can find more resources on using SQL and PostGIS in CartoDB at our [Map Academy](http://academy.cartodb.com), our site for long form lessons in basic skills that will make you an even more awesome map maker.
