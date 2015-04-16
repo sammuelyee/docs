@@ -353,7 +353,7 @@ A new map view happens everytime a visualization is shown. In a very simple way:
 
 ### How can I know how many map views has a specific visualization?
 
-In the "Visualizations" page you can find graphs of the individual map views for each of your visualizations. If you hover the graph, a popup will appear showing the total map views of the month and of the day for a specific visualization. 
+In the "Visualizations" page you can find graphs of the individual map views for each of your visualizations. You're also able to see the number of likes your visualization has next to its heart icon. The datasets your map uses also show their number of likes when viewed in your "Datasets" page. From there you can also sort your datasets by number of visits by clicking on the jagged line icon near the "New Dataset" button.
 
 ### I'm a student/researcher, do you offer discounts for education?
 
