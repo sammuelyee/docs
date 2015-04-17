@@ -38,6 +38,14 @@ Strings are any combination of numbers and characters in UTF-8. There is no limi
 
 Strings can be very useful for categorizing, grouping, or excluding data from your SQL queries. The string columns in CartoDB are case-sensitive, meaning you can use them for precision queries. There are also ways to query them for less precise comparisons of data. See the following for an example of non-case-sensitive matching of only part of a string field.
 
+If you’re editing your table’s string column by completely deleting text from one of it’s fields, the field will stay blank instead of becoming “null”. To make it “null”, you can apply this SQL query:
+
+{% highlight sql %}
+SELECT * FROM {table_name} WHERE country_name ilike 'united%'
+{% endhighlight %}
+
+Just replace my_table with your table’s name and my_column with your string column’s name.
+
 <div class="code-title">PARTIAL MATCH</div>
 {% highlight sql %}
 SELECT * FROM {table_name} WHERE country_name ilike 'united%'
