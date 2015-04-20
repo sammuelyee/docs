@@ -225,7 +225,7 @@ Take into account that in order to be valid, the buffer-size value needs to be a
 
 <p class="wrap-border"><img src="{{ '/img/layout/faqs/torque.png' | prepend: site.baseurl }}" alt="Torque" /></p>
 
-If you have a table that contains a column which describes the date when an event occured, you can map this dinamically by using the Torque option that appears in the wizard of the visualization. Just make sure that in the configuration of the Torque map you select the correct column with respect to which you want the map to be changing over time.
+If you have a dataset that contains a column which describes the date when an event occured, you can map this dinamically by using the Torque option that appears in the wizard of the visualization. Just make sure that in the configuration of the Torque map you select the correct column with respect to which you want the map to be changing over time.
 
 ### How can I show only one country/area/region on a map?
 
@@ -237,7 +237,7 @@ SELECT * FROM tablename WHERE name = 'country/region/area'
 
 <p class="wrap-border"><img src="{{ '/img/layout/isolate_country.png' | prepend: site.baseurl }}" alt="How to isolate country" /></p>
 
-You would then create a new table from query and choose a solid color as your base map so that only your selected area will be displayed. 
+You would then create a new dataset from query and choose a solid color as your base map so that only your selected area will be displayed. 
 
 If you are comfortable working with the the viz.json object, you can add some custom code to your JS file to set the zoom level and disable panning. An example of this can be found [here.]{http://bl.ocks.org/iriberri/3c1b32c58a5fe4f4a886} 
 
