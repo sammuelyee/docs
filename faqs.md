@@ -239,7 +239,7 @@ SELECT * FROM tablename WHERE name = 'country/region/area'
 
 You would then create a new dataset from query and choose a solid color as your base map so that only your selected area will be displayed. 
 
-If you are comfortable working with the the viz.json object, you can add some custom code to your JS file to set the zoom level and disable panning. An example of this can be found [here.]{http://bl.ocks.org/iriberri/3c1b32c58a5fe4f4a886} 
+If you are comfortable working with the the viz.json object, you can add some custom code to your JS file to set the zoom level and disable panning. An example of this can be found [here.](http://bl.ocks.org/iriberri/3c1b32c58a5fe4f4a886)
 
 ### How can I have interactivity in a torque layer?
 
