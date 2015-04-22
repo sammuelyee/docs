@@ -971,6 +971,10 @@ Here, we try to anticipate your needs and provide a set of errors with possible 
       <td>File I/O error</td>
     </tr>
     <tr>
+      <td>1001</td>
+      <td>Download error - The remote URL returned an error. Please verify your file is available at that URL.</td>
+    </tr>
+    <tr>
       <td>1002</td>
       <td>Unsupported file type - Check our list of supported files. See if you can convert your file to one of these file types.</td>
     </tr>
@@ -981,6 +985,26 @@ Here, we try to anticipate your needs and provide a set of errors with possible 
     <tr>
       <td>1004</td>
       <td>File encoding error - Sometimes we have difficulty with non UTF-8 files, so try converting your file to UTF-8. You can do this in Excel by exporting your data as Unicode Text.</td>
+    </tr>
+    <tr>
+      <td>1005</td>
+      <td>Zero byte file - The file appears to have no information. Double check using a local tool such as QGIS that the file is indeed correct.</td>
+    </tr>
+    <tr>
+      <td>1006</td>
+      <td>Invalid SHP file - Your file appears broken. Double check that all the necessary parts of the file are included in your ZIP archive (including .shp, .prj etc.). Also, try opening the file locally using QGIS or another tool.</td>
+    </tr>
+    <tr>
+      <td>1007</td>
+      <td>Too many nodes - You requested too many nodes. Either request a smaller area, or use planet.osm.</td>
+    </tr>
+    <tr>
+      <td>1010</td>
+      <td>Private Google Spreadsheet - his spreadsheet seems to be private. Please check in Google Spreadsheet sharing options that the file is public or accessible for those who know the link.</td>
+    </tr>
+    <tr>
+      <td>1020</td>
+      <td>Data download timed out. Check the source is not running slow and/or try again.</td>
     </tr>
     <tr>
       <td>2000</td>
