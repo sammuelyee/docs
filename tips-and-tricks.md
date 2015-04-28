@@ -15,7 +15,7 @@ We keep talking about how much CartoDB can help you build applications and share
 
 ### Geometry
 
-CartoDB creates a geometry column called `the_geom` on every table you generate. The column is where you will store your geometry information, either POINTS, MULTILINESTRINGS, or MULTIPOLYGONS. PostGIS supports [many geometry types](http://postgis.net/docs/using_postgis_dbmanagement.html#Geography_Basics), but to simplify visualization and analysis, CartoDB turns all geometries into one of the three listed. For the time-being, you can only have one geometry type per column.
+CartoDB creates a geometry column called `the_geom` on every table you generate. The column is where you will store your geometry information, either POINTS, MULTILINESTRINGS, or MULTIPOLYGONS. PostGIS supports [many geometry types](http://postgis.net/docs/using_postgis_dbmanagement.html#Geography_Basics), but to simplify visualization and analysis, CartoDB turns all geometries into one of the three listed. For the time being, you can only have one geometry type per column.
 
 ### Number
 
@@ -23,7 +23,7 @@ A number column in CartoDB can contain any numeric value. In the backend we impl
 
 #### Working with numbers
 
-Where would any data analysis be without using numeric analysis? The first thing to remember in CartoDB is that every column has a type and sometimes during import numbers are interpreted as strings. Be sure that the column you are trying to analyze is properly a number, and if it is not, change it. PostgreSQL has [comprehensive documentation](http://www.postgresql.org/docs/9.1/static/functions-math.html) for [all the analyses](http://www.postgresql.org/docs/9.1/static/functions.html) you want to do.
+Where would any data analysis be without using numeric analysis? The first thing to remember in CartoDB is that every column has a type and sometimes during import, numbers are interpreted as strings. Be sure that the column you are trying to analyze is properly a number, and if it is not, change it. PostgreSQL has [comprehensive documentation](http://www.postgresql.org/docs/9.1/static/functions-math.html) for [all the analyses](http://www.postgresql.org/docs/9.1/static/functions.html) you want to do.
 
 <div class="code-title">LOG VALUE</div>
 {% highlight sql %}
@@ -60,7 +60,7 @@ DELETE FROM {table_name} WHERE (NOW() - INTERVAL '1 day') < created_at
 
 ### Non-default data types
 
-The above types, geometry, number, string, and date are the default data types we use in CartoDB. You may want to use more advanced types, such as [Arrays](http://www.postgresql.org/docs/9.1/static/arrays.html) or specific numeric types. Go ahead! We won’t stop you, you’ll just need to create those fields using SQL.
+The above types, geometry, number, string, and date are the default data types we use in CartoDB. You may want to use more advanced types, such as [Arrays](http://www.postgresql.org/docs/9.1/static/arrays.html) or specific numeric types. Go ahead! We won't stop you, you'll just need to create those fields using SQL.
 
 ## Geospatial analysis
 
@@ -93,7 +93,7 @@ SELECT ST_Buffer(the_geom,0.001) FROM {table_name}
 
 ### About the_geom_webmercator
 
-CartoDB uses an invisible column called, `the_geom_webmercator`, to speed up the rendering of tiles for our mapping services. We are working to deprecate the use of this column, but it will take some time. For now, if you want to run an analysis on your data and then see the result in the Map tab, you need to have a column called `the_geom_webmercator` in the result. The `the_geom_webmercator` column is the same geometry as your `the_geom` column, but projected in Web Mercator (EPSG:3857). Any operation you run on `the_geom`, can be wrapped in an [ST_Transform](http://postgis.net/docs/ST_Transform.html) function to reproject it. If you tell PostgreSQL to call the result of that reprojection, `the_geom_webmercator`, the Maps API and tiler will work perfectly.
+CartoDB uses an invisible column called, `the_geom_webmercator`, to speed up the rendering of tiles for our mapping services. We are working to deprecate the use of this column, but it will take some time. For now, if you want to run an analysis on your data and then see the result in the Map tab, you need to have a column called `the_geom_webmercator` in the result. The `the_geom_webmercator` column is the same geometry as your `the_geom` column but projected in Web Mercator (EPSG:3857). Any operation you run on `the_geom`, can be wrapped in a [ST_Transform](http://postgis.net/docs/ST_Transform.html) function to reproject it. If you tell PostgreSQL to call the result of that reprojection, `the_geom_webmercator`, the Maps API and tiler will work perfectly.
 
 <div class="code-title">THE_GEOM_WEBMERCATOR</div>
 {% highlight sql %}
@@ -133,7 +133,7 @@ Very similar to the JOIN performed above, spatial intersections can be used to j
 SELECT {table_name_1}.cartodb_id, {table_name_2}.the_geom  FROM {table_name_1}, {table_name_2} WHERE ST_Intersects({table_name_1}.the_geom, {table_name_2}.the_geom)
 {% endhighlight %}
 
-This use of ST_Intersects allows you to JOIN the data from two tables at each point where the geometry of the first insects the geometry of the second. This is a geometric variation of the common join in PostgreSQL.
+This use of ST_Intersects allows you to JOIN the data from two tables at each point where the geometry of the first intersects the geometry of the second. This is a geometric variation of the common join in PostgreSQL.
 
 ### Measuring distance
 
@@ -196,7 +196,7 @@ In this statement, we extract the longitude and latitude from geometries using t
 
 The Common Table Expression (CTE) is a really useful tool for making SQL more readable. It has a drawback if you are not 100% sure what you are doing, it puts constraints on the query planner. Unlike nested queries, CTEs force the order of execution to follow the way you write you queries. 
 
-We **strong recommend not using CTE statements** in your CartoDB queries. This is expecially true in maps, where the Maps API wraps your queries in further query statements to optimize the creation of tiles from your data. If the query planner cannot access the full statement, it cannot make it fast! 
+We **strongly recommend not using CTE statements** in your CartoDB queries. This is especially true in maps, where the Maps API wraps your queries in further query statements to optimize the creation of tiles from your data. If the query planner cannot access the full statement, it cannot make it fast! 
 
 
 ## CartoDB functions
@@ -214,11 +214,11 @@ Sometimes we see SQL run so much that it seems to make sense to provide a simpli
 SELECT CDB_LatLng(float, float)
 {% endhighlight %}
 
-There are a few ways to make a WGS84 point geometry using PostGIS, all of them take a lot of keystrokes. We decided to wrap it up in a very simple function, where you provide very simply, a float latitude valuea and a float longitude value. The function returns a valid, projected, point geometry.
+There are a few ways to make a WGS84 point geometry using PostGIS, all of them take a lot of keystrokes. We decided to wrap it up in a very simple function, where you provide very simply, a float latitude value and a float longitude value. The function returns a valid, projected, point geometry.
 
 ### Grid visualization functions
 
-CartoDB makes use of several functions to create density grids of point data. Each of the functions below can be used as part of that workflow or independantly.
+CartoDB makes use of several functions to create density grids of point data. Each of the functions below can be used as part of that workflow or independently.
 
 <div class="code-title">MAKE A HEXAGON</div>
 {% highlight sql %}
@@ -232,14 +232,14 @@ Return an hexagon geometry from a given center (point) and side (or maximal radi
 SELECT CDB_HexagonGrid(polygon, side) AS the_geom FROM table_name
 {% endhighlight %}
 
-The CDB_HexagonGrid takes a geometry that descrives the coverage are of your grid (a polygon) and the size of each hexagon cell. The size is in the same units of your projected geometry, so for example, if you use the_geom and so WGS84, your size will be in degrees. An optional third parameter can be passed to the function, a geometry for the origin of the grid to be placed.
+The CDB_HexagonGrid takes a geometry that describes the coverage area of your grid (a polygon) and the size of each hexagon cell. The size is in the same units of your projected geometry, so for example, if you use the_geom and so WGS84, your size will be in degrees. An optional third parameter can be passed to the function, a geometry for the origin of the grid to be placed.
 
 <div class="code-title">A RECTANGLE GRID</div>
 {% highlight sql %}
 SELECT CDB_RectangleGrid(polygon, width, height)
 {% endhighlight %}
 
-Much like the CDB_HexagonGrid above, here you can create a mesh grid that covers an area. The function takes three parameters: the area you want your grid to cover (a polygon), the width of your cells, and height of your cells. An optional third parameter can be passed to the function, a geometry for the origin of the grid to be placed
+Much like the CDB_HexagonGrid above, here you can create a mesh grid that covers an area. The function takes three parameters: the area you want your grid to cover (a polygon), the width of your cells, and height of your cells. An optional third parameter can be passed to the function, a geometry for the origin of the grid to be placed.
 
 
 ### Webmercator and TMS functions
@@ -265,7 +265,7 @@ It can be useful to know the resolution of tiles presented on your maps. Interna
 SELECT CDB_TransformToWebmercator(geometry)
 {% endhighlight %}
 
-Transformations happen all the time on CartoDB. In the process of developing the tool, it became apparent that the more common function, [ST_Transform](http://postgis.net/docs/ST_Transform.html), could result in errors. In the case of CartoDB, transformations happy on a copy of user's data, so a lossy transformation was preferrable to an error producing function. The above function allows us to consistently transform geometries behind the scenes in CartoDB.
+Transformations happen all the time on CartoDB. In the process of developing the tool, it became apparent that the more common function, [ST_Transform](http://postgis.net/docs/ST_Transform.html), could result in errors. In the case of CartoDB, transformations happen on a copy of a user's data, so a lossy transformation was preferrable to an error producing function. The above function allows us to consistently transform geometries behind the scenes in CartoDB.
 
 ### Statistical functions
 
