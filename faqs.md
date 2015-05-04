@@ -450,6 +450,6 @@ You can check an example in this [link](https://github.com/CartoDB/cartodb.js/bl
 
 ### Why won't my heatmap work in IE9?
 
-In order for a heatmap to work, the browser it's being viewed in needs to support cross domain requests to images. Internet Explorer 9 supports cross domain requests to documents, but not images. However, they are supported in IE10 and up. 
+In order for a heatmap to work, the browser it's being viewed in needs to support cross domain requests for images. Internet Explorer 9 supports cross domain requests for documents, but not images. However, cross domain requests for images are supported in IE10 and up. Therefore, heatmaps will work from that version of Internet Explorer up.
 
 
