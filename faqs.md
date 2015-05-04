@@ -448,4 +448,8 @@ But, fortunately, there are other options that you could use to show different p
 We offer a JavaScript API, [CartoDB.js](http://docs.cartodb.com/cartodb-platform/cartodb-js.html), that you can use to add interactivity to your visualizations. In combination with our [SQL API](http://docs.cartodb.com/cartodb-platform/sql-api.html), you could build a time-slider and show different polygons depending on how they evolve with respect to time.
 You can check an example in this [link](https://github.com/CartoDB/cartodb.js/blob/develop/examples/time_slider.html).
 
+### Why won't my heatmap work in IE9?
+
+In order for a heatmap to work, the browser it's being viewed in needs to support cross domain requests for images. Internet Explorer 9 supports cross domain requests for documents, but not images. However, cross domain requests for images are supported in IE10 and up. Therefore, heatmaps will work from that version of Internet Explorer up.
+
 
