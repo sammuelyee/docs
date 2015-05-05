@@ -402,7 +402,7 @@ That error is caused by the permission configuration of your GDrive Google accou
   * Please check with your administrator that you have Drive enabled.
   * Ask your administrator whether "Allow users to install Google Drive apps" is enabled at "Google Apps > Settings for Drive".
 
-### I'm getting Token is not present" errors
+### I'm getting "Token is not present" errors
 
 This error happens because Google gives one token per application. If you connect your CartoDB account with Google Drive, it remains connected, so if you try to connect another CartoDB account with the same Google Drive account you will get an error. This is happening because Google Drive considers CartoDB a single application, and is not able to differentiate that requests are coming from two separate accounts within that application. 
 
