@@ -797,7 +797,7 @@ You will find here the URL to share your map via Twitter, email, or anywhere els
 You will find here the embed code to get your map into your blog, website or simple application.
 
 - **CartoDB.js**
-This URL will allow you to add your map to your applications. Read more [here](http://docs.cartodb.com/cartodb-platform/cartodb-js.html). Learn about it in our Map Academy [here](http://academy.cartodb.com/courses/03-cartodbjs-ground-up.html).
+This URL will allow you to add your map to your applications. Read the [documentation here](http://docs.cartodb.com/cartodb-platform/cartodb-js.html), or learn about it in our [Map Academy](http://academy.cartodb.com/courses/03-cartodbjs-ground-up.html).
 
 ### Supported fonts
 
