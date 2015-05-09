@@ -157,7 +157,7 @@ You can just disable a legend from a layer by applying to it the "none" template
 
 ### How to create custom filters for a visualization?
 
-In order to create your own filter for interacting with your visualizations you would need to use our CartoDB.js JavaScript API.
+In order to create your own filter for interacting with your visualizations you would need to use our CartoDB.js JavaScript API. Learn more about CartoDB.js in our [Map Academy course](http://academy.cartodb.com/courses/03-cartodbjs-ground-up.html).
 
 You can find an example [here](http://cartodb.github.io/cartodb.js/examples/filters-template/) ([source code](https://github.com/CartoDB/cartodb.js/tree/develop/examples/filters-template))
 
@@ -289,7 +289,7 @@ Using NASA imagery as your basemap is as simple as any other feature on CartoDB.
 
 ### I have topographical maps in JPG and pdf formats. How can I convert these to add as base layers on the map?
 
-There is not a direct or easy way to do that from CartoDB. I recommend you use CartoDB.js in combination with Leaflet to create overlays with images.
+There is not a direct or easy way to do that from CartoDB. I recommend you use CartoDB.js in combination with Leaflet to create overlays with images. You can learn more about CartoDB.js in our [Map Academy course](http://academy.cartodb.com/courses/03-cartodbjs-ground-up.html).
 
 Here you can find an example:
 
@@ -451,7 +451,7 @@ If you are interested in multi-user accounts, we offer Teams through our enterpr
 The Torque wizard is only available for **points**. So, Torque doesn't work with polygons. 
 
 But, fortunately, there are other options that you could use to show different polygons with respect of time:
-We offer a JavaScript API, [CartoDB.js](http://docs.cartodb.com/cartodb-platform/cartodb-js.html), that you can use to add interactivity to your visualizations. In combination with our [SQL API](http://docs.cartodb.com/cartodb-platform/sql-api.html), you could build a time-slider and show different polygons depending on how they evolve with respect to time.
+We offer a JavaScript API, [CartoDB.js](http://docs.cartodb.com/cartodb-platform/cartodb-js.html), that you can use to add interactivity to your visualizations. Learn the basics of CartoDB.js in our [Map Academy course](http://academy.cartodb.com/courses/03-cartodbjs-ground-up.html). In combination with our [SQL API](http://docs.cartodb.com/cartodb-platform/sql-api.html), you could build a time-slider and show different polygons depending on how they evolve with respect to time.
 You can check an example in this [link](https://github.com/CartoDB/cartodb.js/blob/develop/examples/time_slider.html).
 
 ### Why won't my heatmap work in IE9?
