@@ -7,13 +7,13 @@ A standard import will store the data you upload from files with the valid forma
 
 ## Import API
 
-The CartoDB Import API allows you to upload files to a CartoDB account, check on their current status as well as deleting and listing importing processes on the given account. This API consists of several HTTP requests targeted at a set of CartoDB endpoints which deal with the conversion and import of the sent files. CartoDB tables can be classified into two categories:
+The CartoDB Import API allows you to upload files to a CartoDB account, check on their current upload status as well as deleting and listing importing processes on the given account. This API consists of several HTTP requests targeted at a set of CartoDB endpoints which deal with the conversion and import of the sent files. CartoDB tables can be classified into two categories:
 
 - **Standard tables**  
-  The default tables used to store the data of the uploaded files that will be used to create maps and visualisations. Any CartoDB user may create, manipulate and delete such tables.
+  The default tables used to store the data of the uploaded files that will be used to create tables and maps. Any CartoDB user may create, manipulate and delete such tables.
 
 - **Sync tables**  
-  Available to certain CartoDB plans, these tables store data from a remote file and refresh their contents during periodic intervals specified by the user. The base files from which the sync tables retrieve their contents may come from Google Drive, Dropbox or a public URL. In this document we will deal with the simplest case: public URL.
+  Available to certain CartoDB plans, these tables store data from a remote file and refresh their contents during periodic intervals specified by the user. The base files from which the sync tables retrieve their contents may come from Google Drive, Dropbox or a public URL. In this document we will deal with the simplest case: public URLs.
 
 Additionally, CartoDB offers a set of connectors to import specific types of datasets:
 
@@ -47,11 +47,11 @@ The response to this request would have the following format, yielding a success
 }
 {% endhighlight %}
 
-The `item_queue_id` value is a unique identifier that references the imported table in the targeted CartoDB account and allows to manipulate this new table in future requests.
+The `item_queue_id` value is a unique identifier that references the import process. Once this process has started, its information can be obtained doing a request to the imports endpoint as explained in the ["Check the status of an import process](http://docs.cartodb.com/cartodb-platform/import-api.html#check-the-status-of-an-import-process) section.
 
 ### Uploading from a remote URL
 
-Suppose we have a server at the hostname *examplehost.com* with a csv named *sample.csv* already uploaded. To create a table from it requires executing the following command on a Terminal window:
+Suppose we have a server at the hostname *examplehost.com* with a csv named *sample.csv* already uploaded. Creating a table from it requires executing the following command on a Terminal window:
 
 <div class="code-title code-request">REQUEST</div>
 {% highlight bash %}
