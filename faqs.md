@@ -31,6 +31,8 @@ There is a pro-tip for accessing downloads directly using your table URL. You ca
 http://{USERNAME}.cartodb.com/api/v2/sql?format=csv&q=SELECT+*+FROM+tm_world_borders_sim
 {% endhighlight %}
 
+For more background on SQL, check out our [Map Academy](http://academy.cartodb.com/courses/04-sql-postgis.html) course.
+
 ### Are there any licenses on the data I upload to CartoDB?
 
 For general rights on content, see: [http://cartodb.com/terms#subscriber](http://cartodb.com/terms#subscriber).
@@ -53,7 +55,7 @@ UPDATE _tablename_ SET _latitude_ = split_part(_coordinates_, ', ', 1)
 UPDATE _tablename_ SET _longitude_ = split_part(_coordinates_, ', ', 2)
 {% endhighlight %}
 
-Notice that these SQL functions are expecting the value of the coordinates column to be similar to: "lat, long". If you use a different separator or your coordinates are in different order, you will have to adapt the previous queries to your specific syntax.
+Notice that these SQL functions are expecting the value of the coordinates column to be similar to: "lat, long". If you use a different separator or your coordinates are in different order, you will have to adapt the previous queries to your specific syntax. To learn more about SQL check out this [Map Academy](http://academy.cartodb.com/courses/04-sql-postgis.html) course.
 
 ### Which format uses CartoDB for the coordinates?
 
@@ -264,7 +266,7 @@ SELECT * FROM tablename WHERE name = 'country/region/area'
 
 You would then create a new dataset from query and choose a solid color as your base map so that only your selected area will be displayed. 
 
-If you are comfortable working with the viz.json object, you can add some custom code to your JS file to set the zoom level and disable panning. An example of this can be found [here.](http://bl.ocks.org/iriberri/3c1b32c58a5fe4f4a886)
+If you are comfortable working with the viz.json object, you can add some custom code to your JS file to set the zoom level and disable panning. An example of this can be found [here.](http://bl.ocks.org/iriberri/3c1b32c58a5fe4f4a886) For more background on SQL, check out our [Map Academy](http://academy.cartodb.com/courses/04-sql-postgis.html) course.
 
 ### How can I have interactivity in a Torque layer?
 

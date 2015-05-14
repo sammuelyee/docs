@@ -321,7 +321,7 @@ When you create a map and link a dataset to it, all of the data in that dataset 
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/filters.png' | prepend: site.baseurl }}" alt="Filters" /></p>
 
-In the SQL window, you are shown which query is being applied to your data and given the ability to modify it. Automatically, you will see the query that has been produced from the applied filter (sidenote: this is also a fun way to learn SQL!).
+In the SQL window, you are shown which query is being applied to your data and given the ability to modify it. Automatically, you will see the query that has been produced from the applied filter (sidenote: this is also a fun way to learn SQL! We also have a SQL course in our [Map Academy](http://academy.cartodb.com/courses/04-sql-postgis.html)).
 
 #### Map Wizards
 
