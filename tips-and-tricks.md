@@ -60,7 +60,7 @@ DELETE FROM {table_name} WHERE (NOW() - INTERVAL '1 day') < created_at
 
 ### Non-default data types
 
-The above types, geometry, number, string, and date are the default data types we use in CartoDB. You may want to use more advanced types, such as [Arrays](http://www.postgresql.org/docs/9.1/static/arrays.html) or specific numeric types. Go ahead! We won't stop you, you'll just need to create those fields using SQL.
+The above types, geometry, number, string, and date are the default data types we use in CartoDB. You may want to use more advanced types, such as [Arrays](http://www.postgresql.org/docs/9.1/static/arrays.html) or specific numeric types. Go ahead! We won't stop you, you'll just need to create those fields using SQL. For more background on SQL, check out our [Map Academy](http://academy.cartodb.com/courses/04-sql-postgis.html) course.
 
 ## Geospatial analysis
 
@@ -150,7 +150,7 @@ Here, we measure the distance from our geometry, <i>the_geom</i>, and a geometry
 
 ### Get all records at a point
 
-One of the most common geospatial queries web-services experience is one to find all records that occur at a given location. CartoDB makes this very simple, with just a few parameters and the SQL API, you can quickly build the results of these queries into your application.
+One of the most common geospatial queries web-services experience is one to find all records that occur at a given location. CartoDB makes this very simple, with just a few parameters and the SQL API, you can quickly build the results of these queries into your application. To learn more about SQL check out this [Map Academy](http://academy.cartodb.com/courses/04-sql-postgis.html) course.
 
 <div class="code-title">RECORDS AT A POINT</div>
 {% highlight sql %}
