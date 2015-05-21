@@ -101,11 +101,9 @@ You can use a query like:
 
 While still in table view, you will then click on Edit and then choose Georeference layer. You will then choose by IP Addresses and select the column where your IP Addresses are located. 
 
-### How can I lock a table/visualization?
+### How can I lock a dataset/map?
 
-To prevent your tables and visualizations from undesired changes you can lock your tables and visualizations. To lock a table or a visualization, just go to your dashboard, put the cursor over the desired item and click on the small 'L' icon. You can lock and unlock any item as many times as you would like.
-
-For visualizing your locked items, go to either your visualizations or tables dashboard and click on the View your X locked tables link at the bottom of your list.
+To prevent your data from undesired changes you can lock your datasets and maps. To lock a them, just go to your dashboard, select the element and click on the "Lock map" or "Lock dataset" options that will appear in the top menu. Once a map or dataset is locked, you will find it in the sections "Your locked maps" or "Your locked datasets", respectively.
 
 ### Why isn’t my shapefile importing?
 
@@ -123,7 +121,7 @@ When you create a table in the CartoDB Editor by importing data from a public UR
 
 Download the URL file and check that it contains information. If the URL provides you with a .zip containing more than one file, CartoDB will only upload one of them. To create your table properly you can import only the data file you need via CartoDB’s Import window (keep in mind that if you’re working with a shapefile it’s components must be uploaded in one [zip](http://docs.cartodb.com/tutorials/import_shapefile_in_cartodb.html). A list of data file formats that CartoDB accepts for upload is [here](http://docs.cartodb.com/cartodb-editor.html#supported-file-formats). We also recommend checking our [Common Data](http://docs.cartodb.com/cartodb-editor.html#common-data) section to see if your public URL’s data is already easily available through our site.
 
-## Visualizations
+## Maps
 
 ### How to add my own images to infowindows?
 
@@ -157,13 +155,13 @@ You can just disable a legend from a layer by applying to it the "none" template
 ​
 ​Notice that in the code it is divided by 1000 because the values of the column are very big. You can adjust this to your data by applying divisions or multiplications depending on how you want to visualize the points.
 
-### How to create custom filters for a visualization?
+### How to create custom filters for a map?
 
-In order to create your own filter for interacting with your visualizations you would need to use our CartoDB.js JavaScript API. Learn more about CartoDB.js in our [Map Academy course](http://academy.cartodb.com/courses/03-cartodbjs-ground-up.html).
+In order to create your own filter for interacting with your maps you would need to use our CartoDB.js JavaScript API. Learn more about CartoDB.js in our [Map Academy course](http://academy.cartodb.com/courses/03-cartodbjs-ground-up.html).
 
 You can find an example [here](http://cartodb.github.io/cartodb.js/examples/filters-template/) ([source code](https://github.com/CartoDB/cartodb.js/tree/develop/examples/filters-template))
 
-### How many layers can my visualization have?
+### How many layers can my map have?
 
 The maximum number of layers per map depends on your CartoDB plan. For Magellan plan, this maximum is 4. You can get up to 5 layers with the John Snow and Coronelli plans, and 6 with the Mercator plan. 
 
@@ -216,7 +214,7 @@ By using the CartoDB wizards you'll be able to set icons as the markers for your
 
 ### How can I add an hyperlink in a text element?
 
-If you have added a text element in your visualization and you want to include a link on it you need to use the Markdown syntax. The link text will be delimited by square brackets. To create a link, use a set of regular parentheses immediately after the closing square bracket. Inside the parentheses, put the URL where you want the link to point, as follows:
+If you have added a text element in your map and you want to include a link on it you need to use the Markdown syntax. The link text will be delimited by square brackets. To create a link, use a set of regular parentheses immediately after the closing square bracket. Inside the parentheses, put the URL where you want the link to point, as follows:
 
 {% highlight bash %}
 You can check an example [here](http://www.cartodb.com).
@@ -224,19 +222,19 @@ You can check an example [here](http://www.cartodb.com).
 
 ### How do I remove the CartoDB logo from my map?
 
-All maps created with CartoDB have our “Powered by CartoDB” logo in the bottom-left corner by default. If your account uses our Coronelli, Mercator, or Enterprise plans, you have the option to remove this branding. Just click on the Options button in your Map View and toggle CartoDB Logo to it's gray OFF state. "Powered by CartoDB" will no longer appear on your visualization.
+All maps created with CartoDB have our “Powered by CartoDB” logo in the bottom-left corner by default. If your account uses our Coronelli, Mercator, or Enterprise plans, you have the option to remove this branding. Just click on the Options button in your Map View and toggle CartoDB Logo to it's gray OFF state. "Powered by CartoDB" will no longer appear on your map.
 
 <p class="wrap-border"><img src="{{ '/img/layout/faqs/remove-logo.png' | prepend: site.baseurl }}" alt="Remove CartoDB logo" /></p>
 
 ### Why is my infowindow showing an error?
 
-If you're working on your visualization through a connection which is behind a firewall or proxy, some requests may be blocked by it. If requests are blocked some parts of your map will not load. In some cases this can mean that the information you're trying to show in your infowindow will not appear.
+If you're working on your map through a connection which is behind a firewall or proxy, some requests may be blocked by it. If requests are blocked some parts of your map will not load. In some cases this can mean that the information you're trying to show in your infowindow will not appear.
 
 A solution for this is to use an HTTPS connection. HTTPS will encrypt your data, so that your firewall or proxy won't block those specific CartoDB requests.
 
 ### Why are my map labels cut off?
 
-If some of your label's words are appearing cut off at tile edges, this can be caused by too small of a buffer area in your visualization. To fix this you need to increase the buffer-size value. Click on the CartoCSS button in Map View at the top of the CartoCSS code include:
+If some of your label's words are appearing cut off at tile edges, this can be caused by too small of a buffer area in your map. To fix this you need to increase the buffer-size value. Click on the CartoCSS button in Map View at the top of the CartoCSS code include:
 
 {% highlight scss %}
 Map {
@@ -252,7 +250,7 @@ Take into account that in order to be valid, the buffer-size value needs to be a
 
 <p class="wrap-border"><img src="{{ '/img/layout/faqs/torque.png' | prepend: site.baseurl }}" alt="Torque" /></p>
 
-If you have a dataset that contains a column that describes the date when an event occured, you can map this dynamically by using the Torque option that appears in the wizard of the visualization. Just make sure that in the configuration of the Torque map you select the correct column with respect to the map you want to change over time.
+If you have a dataset that contains a column that describes the date when an event occured, you can map this dynamically by using the Torque option that appears in the wizard of the map. Just make sure that in the configuration of the Torque map you select the correct column with respect to the map you want to change over time.
 
 ### How can I show only one country/area/region on a map?
 
@@ -299,11 +297,11 @@ Here you can find an example:
 
 ## Sharing maps
 
-### How do I share a visualization?
+### How do I share a map?
 
-Once you have created and customized your visualization, you should click on the "Share" option.
+Once you have created and customized your map, you should click on the "Share" option.
 
-There are different ways of sharing a visualization:
+There are different ways of sharing a map:
 
 - **Get the link**
   Used in order to share your map directly as it appears in your CartoDB public profile.
@@ -321,17 +319,17 @@ There are different ways of sharing a visualization:
 
 <p class="wrap-border"><img src="{{ '/img/layout/faqs/share-site.png' | prepend: site.baseurl }}" alt="How do I embed a map in my site/blog" /></p>
 
-The easiest way is embedding a visualization by means of copying the HTML code that is provided in the "Share" option. 
+The easiest way is embedding a map by means of copying the HTML code that is provided in the "Share" option. 
 
 You will be able to insert CartoDB maps in WordPress, Joomla, Drupal, etc. if you just include the iframe in a HTML code editor.
 
 ### How to print maps in CartoDB?
 
-In the map view of your visualization, the option "Export image" will allow you to get a .png image from your map. Don't forget to add proper attributions if you publish your map as an image! You can find more information about our Static Maps in [this blogpost](http://blog.cartodb.com/static-maps/).
+In the map view of your map, the option "Export image" will allow you to get a .png image from your map. Don't forget to add proper attributions if you publish your map as an image! You can find more information about our Static Maps in [this blogpost](http://blog.cartodb.com/static-maps/).
 
-### How can I set the position of an embedded visualization?
+### How can I set the position of an embedded map?
 
-In order to set the initial position of a map that you want to embed, you need to adjust this position and the zoom value in the  map of the visualization. If you want to edit the way that your links and embed maps are centered/zoomed after sharing, you can add the zoom, latitude, and longitude parameters to the simple URL as follows:
+In order to set the initial position of a map that you want to embed, you need to adjust this position and the zoom value in the map itself: once you share it, the map will be shown in the same position that it is in your Editor. If you want to edit the way that your links and embed maps are centered/zoomed after sharing, you can add the zoom, latitude, and longitude parameters to the simple URL as follows:
 
 {% highlight bash %}
 http://<username>.cartodb.com/viz/<viz_id>/embed_map?zoom=3&center_lat=0&center_lon=0
@@ -365,11 +363,11 @@ Several tiers of usage are available for CartoDB, ranging from a free account to
 
 ### What is a map view?
 
-A new map view happens everytime a visualization is shown. In a very simple way: map views count how many times your map has been visited, regardless of if it was shown in your public CartoDB page, in the CartoDB Editor, or if the map was embedded in your own site.
+A new map view happens everytime a map is shown. In a very simple way: map views count how many times your map has been visited, regardless of if it was shown in your public CartoDB page, in the CartoDB Editor, or if the map was embedded in your own site.
 
-### How can I know how many map views has a specific visualization?
+### How can I know how many map views has a specific map?
 
-In the "Visualizations" page you can find graphs of the individual map views for each of your visualizations. You're also able to see the number of likes your visualization has next to its heart icon. The datasets your map uses also show their number of likes when viewed in your "Datasets" page. From there you can also sort your datasets by number of visits by clicking on the jagged line icon near the "New Dataset" button.
+In the "Maps" page you can find graphs of the individual map views for each of your published maps. You're also able to see the number of likes your map has next to its heart icon. The datasets your map uses also show their number of likes when viewed in your "Datasets" page. From there you can also sort your datasets by number of visits by clicking on the jagged line icon near the "New Dataset" button.
 
 ### I'm a student/researcher, do you offer discounts for education?
 
@@ -383,7 +381,7 @@ If you are a journalist and you have special needs for CartoDB, let us know at s
 
 <p class="wrap-border"><img src="{{ '/img/layout/faqs/share-logo.png' | prepend: site.baseurl }}" alt="What does the Removable brand" /></p>
 
-From the Coronelli plan you will be able to remove the CartoDB logo and the "Create your own custom maps with CartoDB" text will not appear below your embedded visualizations if you don't want it to. For removing the logo, just deselect the option "Logo" in the sharing wizard. Take into account that this option will only be available if your current plan includes the "Removable brand" feature.
+From the Coronelli plan you will be able to remove the CartoDB logo and the "Create your own custom maps with CartoDB" text will not appear below your embedded maps if you don't want it to. For removing the logo, just deselect the option "Logo" in the sharing wizard. Take into account that this option will only be available if your current plan includes the "Removable brand" feature.
 
 ### How to disconnect my Google account that I logged into CartoDB with?
 
@@ -453,7 +451,7 @@ If you are interested in multi-user accounts, we offer Teams through our enterpr
 The Torque wizard is only available for **points**. So, Torque doesn't work with polygons. 
 
 But, fortunately, there are other options that you could use to show different polygons with respect of time:
-We offer a JavaScript API, [CartoDB.js](http://docs.cartodb.com/cartodb-platform/cartodb-js.html), that you can use to add interactivity to your visualizations. Learn the basics of CartoDB.js in our [Map Academy course](http://academy.cartodb.com/courses/03-cartodbjs-ground-up.html). In combination with our [SQL API](http://docs.cartodb.com/cartodb-platform/sql-api.html), you could build a time-slider and show different polygons depending on how they evolve with respect to time.
+We offer a JavaScript API, [CartoDB.js](http://docs.cartodb.com/cartodb-platform/cartodb-js.html), that you can use to add interactivity to your maps. Learn the basics of CartoDB.js in our [Map Academy course](http://academy.cartodb.com/courses/03-cartodbjs-ground-up.html). In combination with our [SQL API](http://docs.cartodb.com/cartodb-platform/sql-api.html), you could build a time-slider and show different polygons depending on how they evolve with respect to time.
 You can check an example in this [link](https://github.com/CartoDB/cartodb.js/blob/develop/examples/time_slider.html).
 
 ### Why won't my heatmap work in IE9?
