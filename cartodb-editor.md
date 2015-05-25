@@ -23,7 +23,7 @@ _XML files are not directly supported, we support KML and GPX files instead._
 
 When your map is complete, you may keep it private, share it with your colleagues, or publish it to the web by circulating its custom URL or embedding it in your blog.
 
-In this guide, we'll walk through many features of the CartoDB web interface. If you are ready to experiment with our powerful APIs, then go to [CartoDB.js]({{ '/cartodb-platform/cartodb-js.html' | prepend: site.baseurl }}) and [SQL API]({{ '/cartodb-platform/sql-api.html' | prepend: site.baseurl }}).
+In this guide, we'll walk through many features of the CartoDB web interface. Our [Map Academy](http://academy.cartodb.com/) lessons will get you started with the basics of map creation. If you are ready to experiment with our powerful APIs, then go to [CartoDB.js]({{ '/cartodb-platform/cartodb-js.html' | prepend: site.baseurl }}) and [SQL API]({{ '/cartodb-platform/sql-api.html' | prepend: site.baseurl }}).
 
 ## Datasets
 
@@ -321,7 +321,7 @@ When you create a map and link a dataset to it, all of the data in that dataset 
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/filters.png' | prepend: site.baseurl }}" alt="Filters" /></p>
 
-In the SQL window, you are shown which query is being applied to your data and given the ability to modify it. Automatically, you will see the query that has been produced from the applied filter (sidenote: this is also a fun way to learn SQL!).
+In the SQL window, you are shown which query is being applied to your data and given the ability to modify it. Automatically, you will see the query that has been produced from the applied filter (sidenote: this is also a fun way to learn SQL! We also have a SQL course in our [Map Academy](http://academy.cartodb.com/courses/04-sql-postgis.html)).
 
 #### Map Wizards
 
@@ -797,7 +797,7 @@ You will find here the URL to share your map via Twitter, email, or anywhere els
 You will find here the embed code to get your map into your blog, website or simple application.
 
 - **CartoDB.js**
-This URL will allow you to add your map to your applications. Read more [here](http://docs.cartodb.com/cartodb-platform/cartodb-js.html).
+This URL will allow you to add your map to your applications. Read the [documentation here](http://docs.cartodb.com/cartodb-platform/cartodb-js.html), or learn about it in our [Map Academy](http://academy.cartodb.com/courses/03-cartodbjs-ground-up.html).
 
 ### Supported fonts
 
@@ -971,6 +971,10 @@ Here, we try to anticipate your needs and provide a set of errors with possible 
       <td>File I/O error</td>
     </tr>
     <tr>
+      <td>1001</td>
+      <td>Download error - The remote URL returned an error. Please verify your file is available at that URL.</td>
+    </tr>
+    <tr>
       <td>1002</td>
       <td>Unsupported file type - Check our list of supported files. See if you can convert your file to one of these file types.</td>
     </tr>
@@ -981,6 +985,26 @@ Here, we try to anticipate your needs and provide a set of errors with possible 
     <tr>
       <td>1004</td>
       <td>File encoding error - Sometimes we have difficulty with non UTF-8 files, so try converting your file to UTF-8. You can do this in Excel by exporting your data as Unicode Text.</td>
+    </tr>
+    <tr>
+      <td>1005</td>
+      <td>Zero byte file - The file appears to have no information. Double check using a local tool such as QGIS that the file is indeed correct.</td>
+    </tr>
+    <tr>
+      <td>1006</td>
+      <td>Invalid SHP file - Your file appears broken. Double check that all the necessary parts of the file are included in your ZIP archive (including .shp, .prj etc.). Also, try opening the file locally using QGIS or another tool.</td>
+    </tr>
+    <tr>
+      <td>1007</td>
+      <td>Too many nodes - You requested too many nodes. Either request a smaller area, or use planet.osm.</td>
+    </tr>
+    <tr>
+      <td>1010</td>
+      <td>Private Google Spreadsheet - his spreadsheet seems to be private. Please check in Google Spreadsheet sharing options that the file is public or accessible for those who know the link.</td>
+    </tr>
+    <tr>
+      <td>1020</td>
+      <td>Data download timed out. Check the source is not running slow and/or try again.</td>
     </tr>
     <tr>
       <td>2000</td>
