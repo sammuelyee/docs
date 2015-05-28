@@ -630,7 +630,7 @@ __Example functions:__ count(column_name), max(column_name), sum(column_name). C
 
 Learn more about [how spatial aggregation works](https://github.com/CartoDB/torque/wiki/How-spatial-aggregation-works).
 
-- __Torque Resolution:__ Torque creates a grid from your data and aggregates data to each cell of that grid. Torque resolution determines width and height of each cell. Larger numbers will make your data more gridded. 
+- __Torque Resolution:__ Torque creates a grid from your data and aggregates data to each cell of that grid. Torque resolution determines width and height of each cell. Larger numbers will make your data more gridded.
 
 - __Torque Data Aggregation:__ two options, linear which does not leave a trace of past data, and cumulative which draws data markers cumulatively to show past data.
 
@@ -751,6 +751,8 @@ Apart from the default basemaps offered in CartoDB, you may integrate third-part
 
 3. **WMS Base URL**  
   A WMS, or Web Map Service, allows you to connect to map images generated online by a map server using data from a GIS database. You may use these as basemaps, and they can often contain very interesting information that could be harder to find with other basemaps. You can find URLs for different WMS online, but you often have to look closely to make sure you're getting what  you want. Take a look at these WMS URLs, if you want to see what kinds of things you can do with a [WMS baselayer](http://nationalatlas.gov/infodocs/wms_intro.html).
+
+  Currently, we're only supporting WMS files that contain data that uses [EPSG:900913 (Web Mercator)](https://en.wikipedia.org/wiki/Web_Mercator) or [EPSG:3857](http://en.wikipedia.org/wiki/Web_Mercator#EPSG:3857) coordinates.
 
 4. **NASA**  
   With this option, you may easily use  NASA Global Imagery Browse Services satellite imagery as a basemap. Just select the date you're interested in, and whether you'd like a day map (which changes based on the day selected) or a night map, and add it to your map.
