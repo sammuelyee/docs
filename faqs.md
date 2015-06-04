@@ -115,6 +115,10 @@ CartoDB creates tables from shapefiles by importing a single zipped file. If you
 
 You can check this tutorial about importing shapefiles for more detail: [http://docs.cartodb.com/tutorials/import_shapefile_in_cartodb.html](http://docs.cartodb.com/tutorials/import_shapefile_in_cartodb.html).
 
+### Why isn’t my file geodatabase importing?
+
+If you are uploading a file geodatabase, our importer assumes only one layer per upload. To work around this you can unzip your file geodatabase, and re-zip each individual shapefile's components together. For example, a file geodatabase zip containing buildings.cpg, buildings.dbf, buildings.prj, buildings.shp, buildings.shx, streets.cpg, streets.dbf, streets.prj, streets.shp, streets.shx should be unzipped, then you can (1) zip up buildings.cpg, buildings.dbf, buildings.prj, buildings.shp, buildings.shx together and name it buildings.shp; (2) zip up streets.cpg, streets.dbf, streets.prj, streets.shp, streets.shx as streets.shp; and (3) import both shapefiles individually to your CartoDB account.
+
 ### Why is my URL-imported table empty?
 
 When you create a table in the CartoDB Editor by importing data from a public URL, in some cases an empty table will be generated if the proper files are not imported from that data.
