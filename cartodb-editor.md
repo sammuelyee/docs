@@ -1151,13 +1151,13 @@ Navigate to Account Settings, and scroll to the bottom of the page where you wil
 
 CartoDB designed the Multiuser (MU) Enterprise to enhance the scale and scope of collaboration on our platform. The service provides multiuser environments that allow users to upload and manipulate datasets securely, and share them with specific team members or publish them directly on the web.
 
-With CartoDB Multiuser Enterprise, no custom software installation is necessary to access high-performance GIS capabilities. Take advantage of this web-based feature to work alongside colleagues on projects in real-time from a central, 24/7 accessible database - the cloud! Here is an overview of the Multiuser features.
+With CartoDB Multiuser Enterprise, no custom software installation is necessary to access high-performance GIS capabilities. Take advantage of this web-based feature to work alongside colleagues on projects in real time from a central, 24/7 accessible database - the cloud! Here is an overview of the Multiuser features.
 
 #### Users, Owners, and Organizations
 
-CartoDB Enterprise works as a hub for many users or teams working together. An "organization" refers to the name of the group of collaborators that will be interacting on Enterprise, for instance the name of your business or project team. A user is the individual that is part of a given organization.
+CartoDB Enterprise works as a hub for many users or teams working together. An "organization" refers to the name of the group of collaborators that will be interacting on Enterprise. For instance, the name of your business or project team. A user is the individual that is part of a given organization.
 
-If you have been using a normal CartoDB account and are starting to use CartoDB Enterprise with Multiuser, you will see that you are using the same CartoDB Editor with some new options. These new options are what we'll cover in the following sections. For general documentation about the CartoDB Editor please refer to the [corresponding sections in docs.cartodb.com](http://docs.cartodb.com/cartodb-editor.html)
+If you have been using a normal CartoDB account and are starting to use CartoDB Enterprise with Multiuser, you will notice that you are using the same CartoDB Editor with some new options. These new options are what we'll cover in the following sections. For general documentation about the CartoDB Editor please refer to the [corresponding sections in docs.cartodb.com](http://docs.cartodb.com/cartodb-editor.html)
 
 An "Owner" of an organization has privileges to perform admin-related tasks of the organization (i.e. create users, assign quotas, etc.).
 
@@ -1168,7 +1168,7 @@ An "Owner" of an organization has privileges to perform admin-related tasks of t
 After login, the Enterprise main-page allows you to quickly and easily navigate team activity. The dashboard is your home-base, a.k.a. the page where you are able to view and monitor your own activity maps and data, as well as access datasets and visualizations published or shared with you by team members.
 
 ####Your Maps
-On the left side of your browser you can search for maps by tag or name, view maps you have created, view maps that have been made public to the organization or shared with you for collaboration, or see maps you have liked from the community. The icons on the left allow you to order personal or shared maps by date, number of visits, number of likes, or create a new map from scratch. You can also access your own or shared data sets by selecting the drop down menu in the upper left.
+On the left side of your browser you can search for maps by tag or name, view maps you have created, view maps that have been made public to the organization or shared with you for collaboration, or see maps you have liked from the community. The icons on the left allow you to order personal or shared maps by date, number of visits, number of likes, or create a new map from scratch. You can also access your own or shared datasets by selecting the drop down menu in the upper left.
 
 <p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_00.png" alt="dash" /></p>
 
@@ -1179,11 +1179,11 @@ Similar to your Maps dashboard, your Datasets dashboard allows you to easily sea
 
 #### Creating Datasets and Maps
 
-The workflow to create tables and maps is the same as in the normal edition of the CartoDB Editor.
+The workflow to create datasets and maps is the same as in the normal edition of the CartoDB Editor.
 
 #### Datasets: General and Team Privacy Settings
 
-With your enterprise account, once you have created a new table, you have new privacy options compared to the stand alone version of the CartoDB Editor.
+With your Enterprise account, once you have created a new dataset, you have new privacy options compared to the stand alone version of the CartoDB Editor.
 
 There are many ways of managing your privacy settings. From your maps or datasets dashboard, you can quickly change privacy by clicking the privacy icon on a map or dataset, or by selecting a map or dataset and chosing "Change Privacy" in the upper right hand corner. From here you can also lock or delete a selected entry.
 
@@ -1203,11 +1203,11 @@ By choosing any of these options, a modal window will appear:
 
 You have two sections in this window:
 
-1. **General privacy**: As well as in the standalone CartoDB Editor, by default a table will be only accessible by yourself. You can choose it to be **only visible to people with the link**, or make it **public** (it will be available to anyone on your Public Page).
+1. **General privacy**: Similiar to the standalone CartoDB Editor, by default a dataset will only be available to you when you import it. You can choose to make it **only visible to people with the link**, or **public** (it will be available to anyone on your Public Page).
 
 <p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_04.png" alt="privacy modal" /></p>
 
-2. **Team privacy**: In the lower part of this modal window you will see a list of your Organization's teammates. With the control in the right you can give read access to this table (the table will appear in those person's dashboards and they will be able to open it and create visualizations with it, but only in read mode; that is, they won't be able to modify the content of this table). If you also want to give write access, you can select the corresponding checkbox. Grant write and/or read access to all members of your Organization with the top controls.
+2. **Team privacy**: In the lower part of this modal window you will see a list of your Organization's teammates. With the control in the right you can give read access to this dataset (the dataset will appear in those person's dashboards and they will be able to open it and create visualizations with it, but only in read mode; that is, they won't be able to modify the content of this dataset). If you also want to give write access, you can select the corresponding checkbox. Grant write and/or read access to all members of your Organization with the top controls.
 
 <p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_05.png" alt="users" /></p>
 
@@ -1231,7 +1231,7 @@ You have two sections in this window:
 
 ### **Owners**
 
-As the Owner of an Organization, you will be able to perform all admin-related tasks of a team account: manage users, assign quotas, customize the Organization's Public Page, update account details, etc. When you login, you will see a normal CartoDB dashboard with a list of tables. You can access the admin area by clicking on the drop-down menu located in the upper-right corner, and selecting "Your Organization".
+As the Owner of an Organization, you will be able to perform all admin-related tasks of a team account: manage users, assign quotas, customize the Organization's Public Page, update account details, etc. When you login, you will see a normal CartoDB dashboard with a list of tables. You can access the admin area by clicking on the drop-down menu located in the upper-right corner and selecting "Your Organization".
 
 <p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_09.png" alt="Using sync tables" /></p>
 
@@ -1247,7 +1247,7 @@ A seat is an available slot for a user. You'll be able to give access to as many
 
 #### Adding a user
 
-Once your organization’s multiple user account has been created, you have the option to add new team members. From your Organization dashboard, you can click in the **Create new user** button at the bottom right pf the **Manage Your Seats** page. From here, fill in the user’s information, which includes a name for log-in, an email address to associate with the account, and a password. You can also assign and update a user’s data quota here and select whether to allow geo-referencing capability.
+Once your organization’s multiple user account has been created, you have the option to add new team members. From your Organization dashboard, you can click in the **Create new user** button at the bottom right of the **Manage Your Seats** page. From here, fill in the user's information, which includes a name for log-in, an email address to associate with the account, and a password. You can also assign and update a user's data quota here and select whether to allow geo-referencing capability.
 
 At any time, you may change the storage availability for your team members by upgrading your plan. The activity of your team members is accessible via clicking on their respective profile pages.
 
@@ -1261,13 +1261,13 @@ In this section, you can customize how your Public Page will look by choosing yo
 
 #### Your Plan
 
-On the "Your Plan" page, you can see information about your company, users, data storage, and resources. Here you can also contact us with questions or changes to your account.
+On the "Your Plan" page, you can see information about your company, users, data storage, and resources. You can also contact us with questions or changes to your account.
 
 ## **Official Twitter Datasource**
 
 #### About the Twitter Datasource
 
-CartoDB has access to the complete Twitter firehose providing it with official Twitter data. For our users, it is really easy to obtain the data and map it. Once the user clicks on "Connect dataset" within the Datasets section of their dashboard, the menu, which you can also see in this screenshot, will open.
+CartoDB has access to the complete Twitter firehose, providing it with official Twitter data. For our users, it is really easy to obtain Twitter data and map it. Once the user clicks on "Connect dataset" within the Datasets section of their dashboard, the menu that you see in this screenshot, will open.
 
 <p class="wrap-border"><img src="/img/layout/cartodb-editor/twitter_0.png" alt="New import dialog" /></p>
 
@@ -1275,7 +1275,7 @@ After you click on the Twitter icon, you will be able to see the following windo
 
 <p class="wrap-border"><img src="/img/layout/cartodb-editor/twitter.png" alt="New import dialog" /></p>
 
-You can begin your search by jotting down different hashtags or keywords separated by a comma under each category (they will work as an OR, e.g. “santa,xmas” would work like “santa OR xmas”). You can use the valid character #should you choose to for hashtags. Spaces before and after commas are removed, but if you put a multi-sentence word it will perform a  search (e.g. “cars, bikes motorbikes, planes” is a 3 term search, do not mistake with “cars, bikes, motorbikes, planes”). You will be able to see how many Twitter credits you have remaining.
+You can begin your search by jotting down different hashtags or keywords separated by a comma under each category (they will work as an OR, e.g. “santa,xmas” would work like “santa OR xmas”). You can use the valid character #should you choose to for hashtags. Spaces before and after commas are removed, but if you put a multi-sentence word it will perform a  search (e.g. "cars, bikes motorbikes, planes" is a 3 term search, do not mistake with "cars, bikes, motorbikes, planes"). You will be able to see how many Twitter credits you have remaining.
 
 The total number of search terms you can have is 29 per category. The maximum number of categories is 4 per search request. You can also select the time frame you want your request to cover under the category column. By default it will search the last 30 days.
 
@@ -1378,10 +1378,10 @@ _Remember: perform a duplicate of the dataset prior to modifying it with stateme
 
 ### Tips and tricks
 
-* Ensure that you select the right time frame which suits your needs. You can save on Twitter credits by not importing extra data.
-* Search terms are treated like full words: “car” won’t match tweets with “cars”, you should add both terms if you want both cases.
-* Search terms are not case-sensitive. e.g. “Cars” equals “cars” and “CARS”
+* Ensure that you select the right time frame that suits your needs. You can save on Twitter credits by not importing extra data.
+* Search terms are treated like full words: "car" won't match tweets with "cars," you should add both terms if you want both cases.
+* Search terms are not case-sensitive. e.g. "Cars" equals "cars" and "CARS"
 * You can search by hashtags or account names. e.g. “gis, @cartodb, #mapping”.
-* Once the search starts you cannot stop the import. Be careful to not search for really broad terms (e.g. “love”) as hundreds of thousands or even millions of geolocalized tweets might end up being retrieved.
+* Once the search starts you cannot stop the import. Be careful to not search for really broad terms (e.g. "love") as hundreds of thousands or even millions of geolocalized tweets might end up being retrieved.
 * For security, the search will stop if you run out of credits, returning you all the tweets that the system was able to retrieve before the credits finished.
 * Enterprise multi-accounts share the same organization-wide pool of Twitter credits.
