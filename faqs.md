@@ -4,17 +4,17 @@ title: FAQs
 slug: faqs
 js_asset: "editor"
 ---
-## Tables and data
+## Tables and Data
 
 ### Which databases are supported by CartoDB?
 
-One of the main components of CartoDB is its geospatial database built on PostgreSQL and PostGIS. This means that by default the CartoDB platform works over PostgreSQL due to making heavy use of PostGIS advanced capabilities. This way, if the CartoDB built-in features are not enough to perform your analysis, you can take advantage of the full power of PostGIS.
+One of the main components of CartoDB is its geospatial database built on PostgreSQL and PostGIS. By default the CartoDB platform works over PostgreSQL due to making heavy use of PostGIS advanced capabilities. This way, if the CartoDB built-in features are not enough to perform your analysis, you can take advantage of the full power of PostGIS.
 
 We offer the option of connecting your own database to CartoDB as part of our Enterprise features in order to adapt the platform to your specific needs. If you are interested, let us know at sales@cartodb.com.
 
 ### How can I export my data from CartoDB?
 
-After you have created, updated, or deleted data from your CartoDB tables, you may want to export them for sharing or use offline. We make that easy for you by providing one-click data export.
+After you have created, updated, or deleted data from your CartoDB tables, you may want to export them for sharing or use offline. We make that easy for you by providing a one-click data export.
 
 <p class="wrap-border"><img src="{{ '/img/layout/faqs/export-data.png' | prepend: site.baseurl }}" alt="How can I export my data from CartoDB" /></p>
 
@@ -55,7 +55,7 @@ UPDATE _tablename_ SET _latitude_ = split_part(_coordinates_, ', ', 1)
 UPDATE _tablename_ SET _longitude_ = split_part(_coordinates_, ', ', 2)
 {% endhighlight %}
 
-Notice that these SQL functions are expecting the value of the coordinates column to be similar to: "lat, long". If you use a different separator or your coordinates are in different order, you will have to adapt the previous queries to your specific syntax. To learn more about SQL check out this [Map Academy](http://academy.cartodb.com/courses/04-sql-postgis.html) course.
+Notice that these SQL functions are expecting the value of the coordinates column to be similar to: "lat, long". If you use a different separator or your coordinates are in a different order, you will have to adapt the previous queries to your specific syntax. To learn more about SQL check out this [Map Academy](http://academy.cartodb.com/courses/04-sql-postgis.html) course.
 
 ### Which format uses CartoDB for the coordinates?
 
@@ -63,27 +63,25 @@ CartoDB understands and utilizes the geographic coordinates written as [decimal 
 
 ### Why have the size of my tables increased after uploading them to CartoDB?
 
-This happens for several reasons. First and foremost, a database table has a lot more storage considerations than a CSV. For example, indexes. It is also important to consider that the actual way that data is stored on disks is optimized for lookup and retrieval speed over storage space. A CSV is made so you can optimally store data - you open it, load it all into a program for a limited amout of time while you edit it, then save it, and be done. The database has things like data types, etc. 
+ First and foremost, a database table has a lot more storage considerations than a CSV. For example, indexes. It is also important to consider that the actual way that data is stored on disks is optimized for lookup and retrieval speed over storage space. A CSV is made so you can optimally store data - you open it, load it all into a program for a limited amount of time while you edit it, then save it, and are done. The database has things like data types, etc. 
 
-### Can I synchronize my tables in real-time?
+### Can I synchronize my datasets in real time?
 
 <p class="wrap-border"><img src="{{ '/img/layout/faqs/force-sync.png' | prepend: site.baseurl }}" alt="Can I synchronize my tables in real time" /></p>
 
-By using the feature of sync tables, the shortest automatic syncing interval is 1 hour, but you can force a manual synchronization each 15 minutes.
+By using the sync dataset feature, the shortest automatic syncing interval is 1 hour, but you can force a manual synchronization each 15 minutes.
 
-### I have a sync table, how can I modify the column types?
+### I have a sync dataset, how can I modify the column types?
 
-When you are working with a sync table, your data is not editable while your table is still connected to the source. If you need your columns to have some specific data type, you can achieve that by using an SQL query that casts your columns to the type you need to use.
-
-The following query works by selecting all the columns you need and casting the ones you need to change the type using the syntax: `CAST (column_name as type)`. 
+When you are working with a synced dataset, your data is not editable while your dataset is still connected to the source. If you need your columns to have a specific data type, you can use the following query. It selects only the columns you need from your original dataset. You can change their type using the syntax: `CAST (column_name as type)`. 
 
 Notice that the different types that you can use to cast your columns are: text, int, date, or boolean.
 
 {% highlight sql %} 
-SELECT cartodb_id, the_geom_webmercator, the_geom, CAST (number_column AS text), CAST (text_column as int) FROM tablename
+SELECT cartodb_id, the_geom_webmercator, the_geom, CAST (_number_column_name_ AS _text__), CAST (_text_column_ as _int_) FROM tablename
 {% endhighlight %}
 
-Alternativelly, you can also use the syntax `column_name::type`, which could be specially useful when casting date columns:
+Alternatively, you can also use the syntax `column_name::type`, which could be especially useful when casting date columns:
 
 {% highlight sql %} 
 SELECT cartodb_id, the_geom_webmercator, the_geom, my_date_column::timestamp FROM tablename
@@ -99,31 +97,31 @@ You can use a query like:
 
 {% highlight sql %}UPDATE tablename SET new_ip_column = substring(old_ip_address_column_name, '(?:\d{1,3}\.){3}\d{1,3}'){% endhighlight %} 
 
-While still in table view, you will then click on Edit and then choose Georeference layer. You will then choose by IP Addresses and select the column where your IP Addresses are located. 
+While still in dataset view, you will then click on "Edit" and choose the Georeference layer. You will then choose "IP Addresses" and select the column where your IP Addresses are located. 
 
 ### How can I lock a dataset/map?
 
-To prevent your data from undesired changes you can lock your datasets and maps. To lock a them, just go to your dashboard, select the element and click on the "Lock map" or "Lock dataset" options that will appear in the top menu. Once a map or dataset is locked, you will find it in the sections "Your locked maps" or "Your locked datasets", respectively.
+To prevent your data from undesired changes you can lock your datasets and maps. To lock them, just go to your dashboard, select the element and click on the "Lock map" or "Lock dataset" options that will appear in the top menu. Once a map or dataset is locked, you will find it in the sections "Your locked maps" or "Your locked datasets," respectively.
 
-### Why isn’t my shapefile importing?
+### Why isn't my shapefile importing?
 
-CartoDB creates tables from shapefiles by importing a single zipped file. If your shapefile is not importing, make sure that:
+CartoDB creates datasets from shapefiles by importing a single zipped file. If your shapefile is not importing, make sure that:
 
-1. You’re uploading a zipped file and not just one of the files it contains, such as a .shp file.
+1. You're uploading a zipped file and not just one of the files it contains, such as a .shp file.
 2. Your zipped file contains .shp, .dbf, .shx, and .prj files.
 3. Your file names all have the same prefix, for example myshapefile.zip, myshapefile.shp, myshapefile.dbf, myshapefile.shx, and myshapefile.prj.
 
 You can check this tutorial about importing shapefiles for more detail: [http://docs.cartodb.com/tutorials/import_shapefile_in_cartodb.html](http://docs.cartodb.com/tutorials/import_shapefile_in_cartodb.html).
 
-### Why isn’t my file geodatabase importing?
+### Why isn't my file geodatabase importing?
 
 If you are uploading a file geodatabase, our importer assumes only one layer per upload. To work around this you can unzip your file geodatabase, and re-zip each individual shapefile's components together. For example, a file geodatabase zip containing buildings.cpg, buildings.dbf, buildings.prj, buildings.shp, buildings.shx, streets.cpg, streets.dbf, streets.prj, streets.shp, streets.shx should be unzipped, then you can (1) zip up buildings.cpg, buildings.dbf, buildings.prj, buildings.shp, buildings.shx together and name it buildings.shp; (2) zip up streets.cpg, streets.dbf, streets.prj, streets.shp, streets.shx as streets.shp; and (3) import both shapefiles individually to your CartoDB account.
 
-### Why is my URL-imported table empty?
+### Why is my URL-imported dataset empty?
 
-When you create a table in the CartoDB Editor by importing data from a public URL, in some cases an empty table will be generated if the proper files are not imported from that data.
+When you create a dataset in the CartoDB Editor by importing data from a public URL, in some cases an empty dataset will be generated if the proper files are not imported from that data.
 
-Download the URL file and check that it contains information. If the URL provides you with a .zip containing more than one file, CartoDB will only upload one of them. To create your table properly you can import only the data file you need via CartoDB’s Import window (keep in mind that if you’re working with a shapefile it’s components must be uploaded in one [zip](http://docs.cartodb.com/tutorials/import_shapefile_in_cartodb.html). A list of data file formats that CartoDB accepts for upload is [here](http://docs.cartodb.com/cartodb-editor.html#supported-file-formats). We also recommend checking our [Common Data](http://docs.cartodb.com/cartodb-editor.html#common-data) section to see if your public URL’s data is already easily available through our site.
+Download the URL file and check that it contains information. If the URL provides you with a .zip containing more than one file, CartoDB will only upload one of them. To create your dataset properly you can import only the data file you need via CartoDB’s Import window (keep in mind that if you’re working with a shapefile it's components must be uploaded in one [zip](http://docs.cartodb.com/tutorials/import_shapefile_in_cartodb.html). A list of data file formats that CartoDB accepts for upload is [here](http://docs.cartodb.com/cartodb-editor.html#supported-file-formats). We also recommend checking our [Common Data](http://docs.cartodb.com/cartodb-editor.html#common-data) section to see if your public URL's data is already easily available through our site.
 
 ## Maps
 
@@ -143,11 +141,11 @@ You can check our blogpost about this topic here: http://blog.cartodb.com/post/6
 
 <p class="wrap-border"><img src="{{ '/img/layout/faqs/delete-legends.png' | prepend: site.baseurl }}" alt="How can I delete legends" /></p>
 
-You can just disable a legend from a layer by applying to it the "none" template. If you want to merge the legends, you will have to perform a "Custom legend". This option is available in the Template selector of the legends wizard.
+You can disable a legend from a layer by applying to it the "none" template. If you want to merge the legends, you will have to perform a "Custom legend". This option is available in the Template selector of the legends wizard.
 
 ### How to modify the size of the marker in a non-bubble map?
 
-​First, select in the wizard the Category map or the one you are interested in and customize it to correspond to what you want to do referring categories.
+​First, select in the wizard the Category map or the one you are interested in and customize it to correspond to what you want to do referring to categories.
 ​
 ​With respect to size, you should add this line to the CartoCSS window inside the general parameters of your table:
 ​
@@ -167,7 +165,7 @@ You can find an example [here](http://cartodb.github.io/cartodb.js/examples/filt
 
 ### How many layers can my map have?
 
-The maximum number of layers per map depends on your CartoDB plan. For Magellan plan, this maximum is 4. You can get up to 5 layers with the John Snow and Coronelli plans, and 6 with the Mercator plan. 
+The maximum number of layers per map depends on your CartoDB plan. For Magellan plan, the maximum is 4. You can get up to 5 layers with the John Snow and Coronelli plans, and 6 with the Mercator plan. 
 
 If you have special needs for layers, contact us at support@cartodb.com and we'll see how we can help you.
 
@@ -197,7 +195,7 @@ Just go to the CartoCSS tag and look for this line:
 }
 {% endhighlight %}
 
-​In your case, it will have a value different than 0, so you should only give to it a zero-value. 
+​It will have a value different than 0, so you should only give it a zero-value. 
 
 ### Can I have different geometries in the same layer?
 
@@ -218,7 +216,7 @@ By using the CartoDB wizards you'll be able to set icons as the markers for your
 
 ### How can I add an hyperlink in a text element?
 
-If you have added a text element in your map and you want to include a link on it you need to use the Markdown syntax. The link text will be delimited by square brackets. To create a link, use a set of regular parentheses immediately after the closing square bracket. Inside the parentheses, put the URL where you want the link to point, as follows:
+If you have added a text element in your map and you want to include a link, you need to use Markdown syntax. The link text will be delimited by square brackets. To create a link, use a set of regular parentheses immediately after the closing square bracket. Inside the parentheses, put the URL where you want the link to point, as follows:
 
 {% highlight bash %}
 You can check an example [here](http://www.cartodb.com).
@@ -226,19 +224,19 @@ You can check an example [here](http://www.cartodb.com).
 
 ### How do I remove the CartoDB logo from my map?
 
-All maps created with CartoDB have our “Powered by CartoDB” logo in the bottom-left corner by default. If your account uses our Coronelli, Mercator, or Enterprise plans, you have the option to remove this branding. Just click on the Options button in your Map View and toggle CartoDB Logo to it's gray OFF state. "Powered by CartoDB" will no longer appear on your map.
+All maps created with CartoDB have our "Powered by CartoDB" logo in the bottom-left corner by default. If your account uses our Coronelli, Mercator, or Enterprise plans, you have the option to remove this branding. Click on the "Options" button in your Map View and toggle the CartoDB Logo to it's gray OFF state. "Powered by CartoDB" will no longer appear on your map.
 
 <p class="wrap-border"><img src="{{ '/img/layout/faqs/remove-logo.png' | prepend: site.baseurl }}" alt="Remove CartoDB logo" /></p>
 
 ### Why is my infowindow showing an error?
 
-If you're working on your map through a connection which is behind a firewall or proxy, some requests may be blocked by it. If requests are blocked some parts of your map will not load. In some cases this can mean that the information you're trying to show in your infowindow will not appear.
+If you're working on your map through a connection that is behind a firewall or proxy, some requests may be blocked by it. If requests are blocked some parts of your map will not load. In some cases this can mean that the information you're trying to show in your infowindow will not appear.
 
 A solution for this is to use an HTTPS connection. HTTPS will encrypt your data, so that your firewall or proxy won't block those specific CartoDB requests.
 
 ### Why are my map labels cut off?
 
-If some of your label's words are appearing cut off at tile edges, this can be caused by too small of a buffer area in your map. To fix this you need to increase the buffer-size value. Click on the CartoCSS button in Map View at the top of the CartoCSS code include:
+If some of your labels have words that appear cut off at tile edges, this can be caused by too small of a buffer area in your map. To fix this you need to increase the buffer-size value. Click on the "CartoCSS" button in Map View at the top of the CartoCSS code include:
 
 {% highlight scss %}
 Map {
@@ -248,7 +246,7 @@ Map {
 
 Take into account that in order to be valid, the buffer-size value needs to be a power of 2.
 
-## Manipulating your data
+## Manipulating Your Data
 
 ### How do I create an animated map?
 
@@ -258,7 +256,7 @@ If you have a dataset that contains a column that describes the date when an eve
 
 ### How can I show only one country/area/region on a map?
 
-If you would like to have a map featuring only one region or a given set of boundaries, the easiest place to start is by using the SQL wizard in your editor. You could use a SQL statement like: 
+If you would like to have a map featuring only one region or a given set of boundaries, the easiest place to start is by using the SQL wizard in your editor. For example, you can use the SQL statement: 
 
 {% highlight sql %} 
 SELECT * FROM tablename WHERE name = 'country/region/area'
@@ -266,9 +264,9 @@ SELECT * FROM tablename WHERE name = 'country/region/area'
 
 <p class="wrap-border"><img src="{{ '/img/layout/faqs/isolate_country.png' | prepend: site.baseurl }}" alt="How to isolate country" /></p>
 
-You would then create a new dataset from query and choose a solid color as your base map so that only your selected area will be displayed. 
+You would then create a new dataset from query and choose a solid color as your basemap so that only your selected area will be displayed. 
 
-If you are comfortable working with the viz.json object, you can add some custom code to your JS file to set the zoom level and disable panning. An example of this can be found [here.](http://bl.ocks.org/iriberri/3c1b32c58a5fe4f4a886) For more background on SQL, check out our [Map Academy](http://academy.cartodb.com/courses/04-sql-postgis.html) course.
+If you are comfortable working with the viz.json object, you can add some custom code to your js file to set the zoom level and disable panning. An example of this can be found [here.](http://bl.ocks.org/iriberri/3c1b32c58a5fe4f4a886) For more background on SQL, check out our [Map Academy](http://academy.cartodb.com/courses/04-sql-postgis.html) course.
 
 ### How can I have interactivity in a Torque layer?
 
@@ -283,13 +281,13 @@ In order to keep all points on the map, just use the cumulative option.
 
 ### Can I calculate from/to routes with CartoDB?
 
-CartoDB doesn't include a functionality for performing routing between different locations nor getting real driving distances for those routes. If you need to include or construct that kind of information for your spatial application, we recommend you to use external APIs as the ones from [Project OSM](http://project-osrm.org/) or [HERE Maps](http://developer.nokia.com/community/wiki/HERE_Maps_API_-_Advanced_Routing) and integrate their results with CartoDB.
+CartoDB doesn't include a functionality for performing routing between different locations nor getting real driving distances for those routes. If you need to include or construct that kind of information for your spatial application, we recommend you use external APIs as the ones from [Project OSM](http://project-osrm.org/) or [HERE Maps](http://developer.nokia.com/community/wiki/HERE_Maps_API_-_Advanced_Routing) and integrate their results with CartoDB.
 
 ## Basemaps
 
 ### How can I use NASA imagery?
 
-Using NASA imagery as your basemap is as simple as any other feature on CartoDB. It will take you just seconds to be up and running. In Map View, click on the basemap selector, select "Add yours", and there you'll see a NASA tab. In this tab you will have a date selector, where you will be able to choose the day you want to use, as well as a day/night option.
+Using NASA imagery as your basemap is as simple as any other feature on CartoDB. It will take you just seconds to be up and running. In Map View, click on the basemap selector, select "Add yours", and you'll see a NASA tab. In this tab you will have a date selector, where you will be able to choose the day you want to use, as well as a day/night option.
 
 ### I have topographical maps in JPG and pdf formats. How can I convert these to add as base layers on the map?
 
@@ -299,7 +297,7 @@ Here you can find an example:
 
 - [Leaflet](http://leafletjs.com/reference.html#imageoverlay)
 
-## Sharing maps
+## Sharing Maps
 
 ### How do I share a map?
 
@@ -329,7 +327,7 @@ You will be able to insert CartoDB maps in WordPress, Joomla, Drupal, etc. if yo
 
 ### How to print maps in CartoDB?
 
-In the map view of your map, the option "Export image" will allow you to get a .png image from your map. Don't forget to add proper attributions if you publish your map as an image! You can find more information about our Static Maps in [this blogpost](http://blog.cartodb.com/static-maps/).
+In the map view, the option "Export image" will allow you to get a .png image from your map. Don't forget to add proper attributions if you publish your map as an image! You can find more information about our Static Maps in [this blogpost](http://blog.cartodb.com/static-maps/).
 
 ### How can I set the position of an embedded map?
 
@@ -351,15 +349,15 @@ cartodb.createVis('map', 'http://documentation.cartodb.com/api/v2/viz/2b13c956-e
 });
 {% endhighlight %}
 
-## Your account
+## Your Account
 
 ### What are the geocoding credits?
 
 The geocoding credits are the quota for performing geocodings. With our geoocoding service you can translate addresses into coordinates for points that will be shown in your map. Each geocoding wastes one geocoding credit, so if you geocode a table with 100 rows, 100 credits will be wasted.
 
-You should take into account that the georeference tool that converts ZIP codes, IP addresses, counties, countries or cities doesn't count as geocoding but as georeferencing, so this way, you will be able to georeference your data in the map without using the credits.
+You should take into account that the georeference tool that convert ZIP codes, IP addresses, counties, countries, or cities doesn't count as geocoding but as georeferencing, so this way, you will be able to georeference your data in the map without using the credits.
 
-Each one of our plans include a free quota of geocodings, but extra charges will be applied if this quota exceeds according to our Terms of Service.
+Each one of our plans includes a free quota of geocodings, but extra charges will apply if this quota exceeds according to our Terms of Service.
 
 ### What does the table quota mean for the different plans?
 
@@ -369,15 +367,15 @@ Several tiers of usage are available for CartoDB, ranging from a free account to
 
 A new map view happens everytime a map is shown. In a very simple way: map views count how many times your map has been visited, regardless of if it was shown in your public CartoDB page, in the CartoDB Editor, or if the map was embedded in your own site.
 
-### How can I know how many map views has a specific map?
+### How can I know how many map views a specific map has?
 
 In the "Maps" page you can find graphs of the individual map views for each of your published maps. You're also able to see the number of likes your map has next to its heart icon. The datasets your map uses also show their number of likes when viewed in your "Datasets" page. From there you can also sort your datasets by number of visits by clicking on the jagged line icon near the "New Dataset" button.
 
 ### I'm a student/researcher, do you offer discounts for education?
 
-In CartoDB we have a special pricing for academic purposes. We offer a FREE Academy plan that allows you to have unlimited tables, as well as a discount of 20% on the rest of our plans. Pricing page for education can be found [here]({{ '/industries/education-and-research/' | prepend: site.cartodb-baseurl }}).
+In CartoDB we have a special pricing for academic purposes. We offer a FREE Academy plan that allows you to have unlimited tables, as well as a discount of 20% on the rest of our plans. The pricing page for education can be found [here]({{ '/industries/education-and-research/' | prepend: site.cartodb-baseurl }}).
 
-### Which are the special plans for journalism of CartoDB?
+### Are there special plans for journalist and news media on CartoDB?
 
 If you are a journalist and you have special needs for CartoDB, let us know at sales@cartodb.com
 
@@ -385,11 +383,11 @@ If you are a journalist and you have special needs for CartoDB, let us know at s
 
 <p class="wrap-border"><img src="{{ '/img/layout/faqs/share-logo.png' | prepend: site.baseurl }}" alt="What does the Removable brand" /></p>
 
-From the Coronelli plan you will be able to remove the CartoDB logo and the "Create your own custom maps with CartoDB" text will not appear below your embedded maps if you don't want it to. For removing the logo, just deselect the option "Logo" in the sharing wizard. Take into account that this option will only be available if your current plan includes the "Removable brand" feature.
+On the Coronelli plan you will be able to remove the CartoDB logo and the "Create your own custom maps with CartoDB" text will not appear below your embedded maps if you don't want it to. To remove the logo, just de-select the option "Logo" in the sharing wizard. Take into account that this option will only be available if your current plan includes the "Removable brand" feature.
 
-### How to disconnect my Google account that I logged into CartoDB with?
+### How do I disconnect my Google account that I logged into CartoDB with?
 
-If you are logged into CartoDB through your Google account and you want to unlink your accounts you can do it from your Account Settings by clicking the option "Disconnect your Google+ account." You'll be automatically prompted to set a new password as you will need it to access to your CartoDB account once you disconnect it from your Google session.
+If you are logged into CartoDB through your Google account and you want to unlink your accounts you can do it from your Account Settings by clicking the option "Disconnect your Google+ account." You'll be automatically prompted to set a new password as you will need it to access your CartoDB account once you disconnect it from your Google session.
 
 ## GDrive
 
@@ -408,17 +406,17 @@ That error is caused by the permission configuration of your GDrive Google accou
 
 ### I'm getting "Token is not present" errors
 
-This error happens because Google gives one token per application. If you connect your CartoDB account with Google Drive, it remains connected, so if you try to connect another CartoDB account with the same Google Drive account you will get an error. This is happening because Google Drive considers CartoDB a single application, and is not able to differentiate that requests are coming from two separate accounts within that application. 
+This error happens because Google gives one token per application. If you connect your CartoDB account with Google Drive, it remains connected, so if you try to connect another CartoDB account with the same Google Drive account you will get an error. This happens because Google Drive considers CartoDB a single application, and is not able to differentiate that requests are coming from two separate accounts within that application. 
 
 To connect Google Drive to a second CartoDB account, you can either revoke access to the first CartoDB account, or create another Google Drive account to add your dataset from.
 
-## Other technical questions
+## Other Technical Questions
 
 ### Can CartoDB display real time data from a SQL database connection?
 
 Unfortunately, CartoDB doesn't allow reading data from a SQL connection in real time. Nevertheless, you can use the SQL API for writing data into CartoDB.
 
-### How can I use CartoDB.js and Mapbox.js together
+### How can I use CartoDB.js and Mapbox.js together?
 
 If you want to use all the features of CartoDB (infowindows, legends, dynamic layers) with Mapbox basemaps take a look at the following example:
 
@@ -446,9 +444,9 @@ We recommend you install the software yourself as it is open source.
 
 You have to differentiate between the authoring tool, which is the place where you perform the maps, which requires modern browsers, and the published maps, which people consume. Those maps actually work down to IE7 in most cases. 
 
-### Has CartoDB multi-user functionalities?
+### Does CartoDB have multi-user functionalities?
 
-If you are interested in multi-user accounts, we offer Teams through our enterprise plans, just let us know at sales@cartodb.com.
+If you are interested in multi-user accounts, we offer Teams through our Enterprise plans, just let us know at sales@cartodb.com.
 
 ### Do Torque maps move polygons/polylines?
 
@@ -460,6 +458,6 @@ You can check an example in this [link](https://github.com/CartoDB/cartodb.js/bl
 
 ### Why won't my heatmap work in IE9?
 
-In order for a heatmap to work, the browser it's being viewed in needs to support cross domain requests for images. Internet Explorer 9 supports cross domain requests for documents, but not images. However, cross domain requests for images are supported in IE10 and up. Therefore, heatmaps will work from that version of Internet Explorer up.
+In order for a heatmap to work the browser it's being viewed in needs to support cross domain requests for images. Internet Explorer 9 supports cross domain requests for documents, but not images. However, cross domain requests for images are supported in IE10 and up. Therefore, heatmaps will work from that version of Internet Explorer and up.
 
 
