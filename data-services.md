@@ -25,4 +25,4 @@ CartoDB's built-in integration with Here's geocoder will allow you to geocode St
 
 ### Twitter search
 
-CartoDB's exclusive integration with Twitter will allow you to interactively create new tweet datasets. Filter by keyword, hashtag or mention, select a timeframe and get your set of geolocalized tweets with all the information needed to create an insightful map. Not activated the integration yet? Contact [sales](mailto:sales@cartodb.com?subject:Activate twitter integration) start mapping tweets!
+CartoDB's exclusive integration with Twitter will allow you to interactively create new tweet datasets. Filter by keyword, hashtag or mention, select a timeframe and get your set of geolocalized tweets with all the information needed to create an insightful map. Not activated the integration yet? Contact [sales](mailto:sales@cartodb.com) start mapping tweets!
