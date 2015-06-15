@@ -17,11 +17,11 @@ The free data library contains public sets of pre-processed data ready to be use
 
 ### Free geocoding
 
-Have you ever dragged and dropped a file without coordinates into CartoDB and seen it suddenly become a beautiful map full of orange dots? It's not magic, it's CartoDB's geocoder! CartoDB automatically geocodes your cities, postal codes, ip addresses, administrative regions and street addresses thanks to its ultimate geocoding technology. Forget about longitudes and latitudes and enjoy mapping.
+Have you ever dragged and dropped a file without coordinates into CartoDB and seen it suddenly become a beautiful map full of orange dots or polygons? It's not magic, it's CartoDB's geocoder! CartoDB automatically geocodes your Cities, IP Addresses and Administrative Regions thanks to its ultimate geocoding opensource technology. Forget about longitudes and latitudes and enjoy mapping.
 
 ### Street address geocoding
 
-todo
+CartoDB's built-in integration with Here's geocoder will allow you to geocode Street Addresses as easily as you geocode your Cities or IP Addresses with the free geocoder.  
 
 ### Twitter search
 
