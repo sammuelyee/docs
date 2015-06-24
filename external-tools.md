@@ -17,7 +17,7 @@ todo
 
 ## OGR
 
-The release of GDAL/OGR 2.0.0 now includes an easy to use cartoDB driver, fully supporting CartoDB table imports, exports, custom queries, and data synchronization. OGR can connect to services implementing [CartoDB APIs](http://docs.cartodb.com/cartodb-platform.html). GDAL/OGR must be built with Curl support in order for the CartoDB driver to be compiled properly.
+The release of [GDAL/OGR 2.0.0](http://www.gdal.org/) now includes an easy to use cartoDB driver, fully supporting CartoDB table imports, exports, custom queries, and data synchronization. OGR can connect to services implementing [CartoDB APIs](http://docs.cartodb.com/cartodb-platform.html). GDAL/OGR must be built with Curl support in order for the CartoDB driver to be compiled properly.
 
 The CartoDB driver is supported the same as other formats in OGR, and allows for users to use OGR and it's tools with the full range of available features.
 
@@ -112,7 +112,7 @@ continent: String (0.0)
 ```
 ###Exporting Data
 
-Just like any other supported format, the OGR tool OGR2OGR allows users export data from CartoDB locally in any OGR supported format. It is also possible to query specific columns and data using the `-sql` tag.
+Just like any other supported format, the OGR tool [OGR2OGR](http://www.gdal.org/ogr2ogr.html) allows users export data from CartoDB locally in any OGR supported format. It is also possible to query specific columns and data using the `-sql` tag.
 
 For example:
 ```
