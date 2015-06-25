@@ -153,7 +153,7 @@ ogr2ogr \
 The commandline syntax of ogr2ogr is not the most obvious thing in the world.
 
 * The API key is required to allow write access into the database.
-* The ``-t_srs EPSG:4326` option tells OGR2OGR reproject the data to geographic coordinates, which is **required** for data to be published via the CartoDB Editor.
+* The `-t_srs EPSG:4326` option tells OGR2OGR reproject the data to geographic coordinates, which is **required** for data to be published via the CartoDB Editor.
 * The `-f CartoDB` option tells OGR2OGR to use the CartoDB driver for writing.
 * The `CartoDB:santiagoa` entry is the destination CartoDB account
 * `new_railroad.shp` entry is the source data.
@@ -236,7 +236,7 @@ Finally, run a scheduled job to delete all records you consider too old to map. 
 
 The following configuration options are available in OGR:
 * CARTODB_API_URL: defaults to https://{CartoDB username}.cartodb.com/api/v2/sql. Can be used to point to another server.
-* CARTODB_HTTPS: can be set to NO to use http:// protocol instead of https:// (only if CARTODB_API_URL is not defined).
+* CARTODB_HTTPS: Can be set to NO to use http:// protocol instead of https:// (only if CARTODB_API_URL is not defined).
 * CARTODB_API_KEY: Most operations, in particular write operations, require an authenticated access.
 * CARTODB_PAGE_SIZE: Features are retrieved from the server by chunks of 500 by default.
 
