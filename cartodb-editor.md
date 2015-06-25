@@ -55,9 +55,9 @@ To use Twitter data in a map, select the Twitter icon in the upload window. Next
 
 **You also have the option to import from:**
 
-1. **ArcGIS online**
+1. **ArcGIS Server (10.1 or higher)**
 2. **Salesforce**
-3. **Mailchimp**
+3. **MailChimp**
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/connectdataset2.png' | prepend: site.baseurl }}" alt="Adding datasets from other sources" /></p>
 
