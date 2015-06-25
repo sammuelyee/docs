@@ -15,6 +15,10 @@ todo
 
 todo
 
+## ArcGIS Connector
+
+It is easy to import ArcGIS layers stored in an ArcGIS Server as CartoDB tables using CartoDB's [Import API](http://docs.cartodb.com/cartodb-platform/import-api.html#import-api). Such layers must be accessible via an ArcGIS API REST URL. Please refer to the full [ArcGIS Connector documentation](http://docs.cartodb.com/cartodb-platform/import-api.html#the-arcgis-connector) located on our main [documentation page](http://docs.cartodb.com/) for complete overview.
+
 ## OGR
 
 The release of [GDAL/OGR 2.0.0](http://www.gdal.org/) now includes an easy to use cartoDB driver, fully supporting CartoDB table imports, exports, custom queries, and data synchronization. OGR can connect to services implementing [CartoDB APIs](http://docs.cartodb.com/cartodb-platform.html). GDAL/OGR must be built with Curl support in order for the CartoDB driver to be compiled properly.
@@ -76,6 +80,7 @@ INFO: Open of `CartoDB:santiagoa tables=ne_10m_railroads'
  -sql "SELECT * FROM ne_10m_railroads" -fid 0
  ```
  Returns:
+
  ```
 INFO: Open of `cartodb:santiagoa tables=ne_10m_railroads'
       using driver `CartoDB' successful.
@@ -115,10 +120,12 @@ continent: String (0.0)
 Just like any other supported format, the OGR tool [OGR2OGR](http://www.gdal.org/ogr2ogr.html) allows users export data from CartoDB locally in any OGR supported format. It is also possible to query specific columns and data using the `-sql` tag.
 
 For example:
+
 ```
 $ ogr2ogr new_railroad.shp "cartodb:santiagoa tables=ne_10m_railroads" \
 -sql "SELECT the_geom, mult_track AS Multiple_Tracks, electric FROM ne_10m_railroads WHERE continent = 'Europe'"
 ```
+
 Creates a local ESRI Shapefile from the CartoDB table 'ne_10m_railroads' and renamed it 'new_railroads.shp' with all the necessary dependencies within the directory specified on the commandline. This new file only contains the columns specified in the SQL query following the `-sql` tag where the column continent is equal to 'Europe'. We can see the results with the following command:
 
 ```
