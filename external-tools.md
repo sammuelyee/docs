@@ -7,17 +7,13 @@ redirect_from:
 - "/documentation/external-tools.html"
 ---
 
-## Cesium
-
-todo
-
-## QGIS Plugin
-
-todo
-
 ## ArcGIS Connector
 
 It is easy to import ArcGIS layers stored in an ArcGIS Server as CartoDB tables using CartoDB's [Import API](http://docs.cartodb.com/cartodb-platform/import-api.html#import-api). Such layers must be accessible via an ArcGIS API REST URL. Please refer to the full [ArcGIS Connector documentation](http://docs.cartodb.com/cartodb-platform/import-api.html#the-arcgis-connector) located on our main [documentation page](http://docs.cartodb.com/) for complete overview.
+
+## Cesium
+
+todo
 
 ## OGR
 
@@ -253,3 +249,7 @@ The following configuration options are available in OGR:
 * GEOMETRY_NULLABLE=YES/NO: Whether the values of the geometry column can be NULL. Defaults to YES.
 * CARTODBFY=YES/NO: Whether the created layer should be "CartoDBifi'ed" (i.e. registered in dashboard). Defaults to YES.
 * LAUNDER=YES/NO: This may be "YES" to force new fields created on this layer to have their field names "laundered" into a form more compatible with PostgreSQL. This converts to lower case and converts some special characters like "-" and "#" to "_". If "NO" exact names are preserved. The default value is "YES". If enabled the table (layer) name will also be laundered.
+
+## QGIS Plugin
+
+todo
