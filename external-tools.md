@@ -16,6 +16,10 @@ It is easy to import ArcGIS layers stored in an ArcGIS Server as CartoDB tables 
 
 todo
 
+## FIWARE Connector
+
+todo
+
 ## OGR
 
 The release of [GDAL/OGR 2.0.0](http://www.gdal.org/) now includes an easy to use cartoDB driver, fully supporting CartoDB table imports, exports, custom queries, and data synchronization. OGR can connect to services implementing [CartoDB APIs](http://docs.cartodb.com/cartodb-platform.html). GDAL/OGR must be built with Curl support in order for the CartoDB driver to be compiled properly.
