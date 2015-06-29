@@ -6,6 +6,7 @@ js_asset: "editor"
 redirect_from:
 - "/documentation/external-tools.html"
 ---
+<!-- GOOD PRACTICE: If you're adding a tool, add it in alphabetical order for ease of navigation! -->
 
 ## ArcGIS Connector
 
