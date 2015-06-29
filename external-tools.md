@@ -251,6 +251,10 @@ The following configuration options are available in OGR:
 * CARTODBFY=YES/NO: Whether the created layer should be "CartoDBifi'ed" (i.e. registered in dashboard). Defaults to YES.
 * LAUNDER=YES/NO: This may be "YES" to force new fields created on this layer to have their field names "laundered" into a form more compatible with PostgreSQL. This converts to lower case and converts some special characters like "-" and "#" to "_". If "NO" exact names are preserved. The default value is "YES". If enabled the table (layer) name will also be laundered.
 
+## Microsoft Sharepoint
+
+It is easy to embed CartoDB maps in Microsoft Sharepoint sites. Please check out [our tutorial on Sharepoint](http://docs.cartodb.com/tutorials/sharepoint.html) in the Tutorials section.
+
 ## QGIS Plugin
 
 todo
