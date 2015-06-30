@@ -125,6 +125,17 @@ When you create a table in the CartoDB Editor by importing data from a public UR
 
 Download the URL file and check that it contains information. If the URL provides you with a .zip containing more than one file, CartoDB will only upload one of them. To create your table properly you can import only the data file you need via CartoDB’s Import window (keep in mind that if you’re working with a shapefile it’s components must be uploaded in one [zip](http://docs.cartodb.com/tutorials/import_shapefile_in_cartodb.html). A list of data file formats that CartoDB accepts for upload is [here](http://docs.cartodb.com/cartodb-editor.html#supported-file-formats). We also recommend checking our [Common Data](http://docs.cartodb.com/cartodb-editor.html#common-data) section to see if your public URL’s data is already easily available through our site.
 
+### How can I export latitude and longitude?
+
+CartoDB point datasets contain the_geom column with latitude and longitude coordinates. Exporting the_geom will render a column in WellKnownBinary format, or WKB. For example a field containing "-73.9696, 40.6754" will show in a CSV as "0101000020E6100000000000800D7E52C0E128A68274564440". You can export the_geom as latitude and longitude instead by modifying your dataset with SQL first. Create a new number type column for latitude, and one for longitude. In the Editor's Custom SQL query panel, type:
+
+{% highlight sql %} 
+UPDATE my_dataset
+SET lon_column = ST_X(the_geom), lat_column = ST_Y(the_geom)
+{% endhighlight %}
+
+Substitute your dataset's name for my_dataset, your new blank longitude column for lon_column, and your new blank latitude column for lat_column. When you apply that query, the_geom's coordinates will be split into the appropriate latitude and longitude columns. If you export your dataset now as a CSV their values will appear as numbers.
+
 ## Maps
 
 ### How to add my own images to infowindows?
