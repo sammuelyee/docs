@@ -20,6 +20,40 @@ todo
 
 todo
 
+##oEmbed
+
+CartoDB now has an oEmbed API endpoint. This allows an embedded representation of a CartoDB public map URL on oEmbed enabled third party sites. The oEmbed API allows a website to display embedded maps when a user posts a link to that resource, without having to parse the resource directly, or where an iframe embed is not supported user-side.
+
+###How It Works
+
+oEmbed dictates a standard format where you send a URL and the host site provides the embed code. The host site, where the url intended for embed is posted such as [Twitter](https://twitter.com/) or [Medium](https://medium.com/), processes the entered URL and then queries the originating service’s API to get back any additional info needed to generate embed content.
+
+As an example, A user enter a CartoDB URL such as `https://osm2.cartodb.com/viz/08aef918-94da-11e4-ad83-0e0c41326911/public_map` the service then sends a request to cartoDB's oEmbed API endpoint as `http://services.cartodb.com/oembed?url=https://osm2.cartodb.com/viz/08aef918-94da-11e4-ad83-0e0c41326911/public_map`. The source site then sends back all the necessary information in JSON format for the host site to embed the image automatically. In this case the return is:
+```json
+{
+  "type": "rich",
+  "version": "1.0",
+  "width": "100%",
+  "height": "520px",
+  "title": null,
+  "html": "<iframe width='100%' height='520px' frameborder='0' src='https://osm2.cartodb.com/viz/08aef918-94da-11e4-ad83-0e0c41326911/embed_map' allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>",
+  "author_name": "osm2",
+  "author_url": "https://osm2.cartodb.com",
+  "provider_name": "CartoDB",
+  "provider_url": "https://www.cartodb.com/"
+}
+```
+###Embeds In 2 Steps: Copy & Paste
+
+From CartoDB, any publicly accessible map can be easily embeded by simply copying a public view URL...
+
+<p class="wrap-border"><img src="/img/layout/external-tools/oembed_link.gif" alt="copy link" /></p>
+
+...and pasting the URL into a supported host.
+
+<p class="wrap-border"><img src="/img/layout/external-tools/oembed_paste.gif" alt="paste link" /></p>
+
+
 ## OGR
 
 The release of [GDAL/OGR 2.0.0](http://www.gdal.org/) now includes an easy to use cartoDB driver, fully supporting CartoDB table imports, exports, custom queries, and data synchronization. OGR can connect to services implementing [CartoDB APIs](http://docs.cartodb.com/cartodb-platform.html). GDAL/OGR must be built with Curl support in order for the CartoDB driver to be compiled properly.
