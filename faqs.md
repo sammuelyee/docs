@@ -264,7 +264,7 @@ If you would like to have a map featuring only one region or a given set of boun
 SELECT * FROM tablename WHERE name = 'country/region/area'
 {% endhighlight %}
 
-<p class="wrap-border"><img src="{{ '/img/layout/faqs/isolate_country.png' | prepend: site.baseurl }}" alt="How to isolate country" /></p>
+<p class="wrap-border"><img src="{{ '/img/layout/faqs/isolatecountry.png' | prepend: site.baseurl }}" alt="How to isolate country" /></p>
 
 You would then create a new dataset from query and choose a solid color as your base map so that only your selected area will be displayed. 
 
