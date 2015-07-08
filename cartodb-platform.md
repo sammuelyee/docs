@@ -8,9 +8,9 @@ redirect_from:
 ---
 ## CartoDB Platform
 
-CartoDB is heavily API driven. Most users will design their maps from within the online CartoDB editor, and then embed those maps using our API into their own websites or applications.
+CartoDB is heavily API driven. Most users will design their maps from within the online CartoDB Editor, and then embed those maps using our API into their own websites or applications.
 
-Additionally, we provide a SQL API to interact with your data, so that you can query your datasets, insert, update or delete records, and CartoDB.js, a javascript library that helps you to develop your spatial applications.
+Additionally, we provide a SQL API to interact with your data, so that you can query your datasets, insert, update or delete records, and CartoDB.js, a JavaScript library that helps you to develop your spatial applications.
 
 <ul class="platform-list">
   {% for platform_item in site.cartodb-platform %}
@@ -27,6 +27,6 @@ Additionally, we provide a SQL API to interact with your data, so that you can q
   {% endfor %}
 </ul>
 
-The combination of these APIs gives you a powerful geospatial engine for your applications. Discover methods and functions of these APIs in the following sections or head to the [Advanced analysis]({{ '/tips-and-tricks.html#advanced-analysis' | prepend: site.baseurl }}) section which talks about sophisticated queries for analysis on data management.
+The combination of these APIs gives you a powerful geospatial engine for your applications. Discover methods and functions of these APIs in the following sections or head to the [Advanced analysis]({{ '/tips-and-tricks.html#advanced-analysis' | prepend: site.baseurl }}) section, which talks about sophisticated queries for analysis on data management.
 
 If you have any questions using these APIs or using CartoDB in general, you can always send a message to our [support service]({{ '/docs#support' | prepend: site.cartodb-baseurl }}).
