@@ -3,7 +3,7 @@ title: Import API
 description: The CartoDB Importer API allows you to upload files to your CartoDB account and manipulate them by using a set of HTTP commands from a terminal window.
 ---
 
-A standard import will store the data you upload from files with the valid formats as specified
+A standard import will store the data you upload from files with the valid formats as specified.
 
 ## Import API
 
@@ -23,7 +23,7 @@ Additionally, CartoDB offers a set of connectors to import specific types of dat
 
 ## Quickstart
 
-For this example (and the rest ones illustrated in this document) we will be using a command-line tool known as `cURL`. For more info about this tool see [this blog post](http://quickleft.com/blog/command-line-tutorials-curl) or type `man curl` in bash.
+For this example (and the rest of the ones illustrated in this document) we will be using a command-line tool known as `cURL`. For more info about this tool see [this blog post](http://quickleft.com/blog/command-line-tutorials-curl) or type `man curl` in bash.
 
 ### Uploading a local file
 
@@ -76,7 +76,7 @@ The following concepts are the same for every endpoint in the API except when it
 
 ### Auth
 
-Manipulating data on a CartoDB account requires prior authentication using a unique identifier as a password. For the import API, a special identifier known as the API Key is used as a proof of authentication for each user account to authorise access to its data.  
+Manipulating data on a CartoDB account requires prior authentication using a unique identifier as a password. For the import API, a special identifier known as the API Key is used as a proof of authentication for each user account to authorize access to its data.  
 
 To execute an authorized request, api_key=YOURAPIKEY should be added to the request URL. The param can be also passed as POST param. We **strongly advise** using HTTPS when you are performing requests that include your `api_key`.
 
@@ -133,10 +133,10 @@ POST api/v1/imports
   If set to *false* disables type guessing of CSV fields that come inside double quotes. Optional. Default is *true*.
 
 - **content_guessing**  
-  Set it to *true* to enable content guessing and automatic geocoding based on results. Currently it only implemenents geocoding of countries. Optional. Default is *false*.
+  Set it to *true* to enable content guessing and automatic geocoding based on results. Currently it only implements geocoding of countries. Optional. Default is *false*.
 
 - **create_vis**
-  Set it to *true* to flag the import so when it finishes, it creates automatically Map after importing the Dataset. Optional. Default is *false* for API calls or old dashboard imports . If importing from the new dashboard it will automatically set this parameter to *true*.
+  Set it to *true* to flag the import so that when it finishes it creates a Map automatically after importing the Dataset. Optional. Default is *false* for API calls or old dashboard imports. If importing from the new dashboard it will automatically set this parameter to *true*.
 
 - **table_name**  
   Used to duplicate one of your existing tables. **Do not mix with File/URL imports**.
@@ -157,7 +157,7 @@ POST api/v1/imports
   Used to upload from datasources, indicates which datasource to use. Check [here](https://github.com/CartoDB/cartodb/tree/master/services/datasources/lib/datasources) for an updated list of available datasources to use. **Initially intended for CartoDB Web Editor usage**.
 
 - **service_item_id**  
-  Used to upload from datasources, indicates data of the datasource. Check [here](https://github.com/CartoDB/cartodb/tree/master/services/datasources/lib/datasources) for an updated list of available datasources to use. **Initially intended for CartoDB Web Editor usage**.
+  Used to upload from datasources and indicates data of the datasource. Check [here](https://github.com/CartoDB/cartodb/tree/master/services/datasources/lib/datasources) for an updated list of available datasources to use. **Initially intended for CartoDB Web Editor usage**.
 
 
 #### Response
@@ -236,10 +236,10 @@ The response includes the following items:
   This element is currently deprecated.
   
 - **table_name**  
-  The final name of the created table in the targeted CartoDB account. It usually has the same name as the uploaded file unless there already exists a table with the same name (in this case, an integer number is appended to the table name).
+  The final name of the created table in the targeted CartoDB account. It usually has the same name as the uploaded file, unless there already exists a table with the same name (in this case, an integer number is appended to the table name).
   
 - **state**  
-  A string value indicating the current state of the importing process. It can have any of the following values: *uploading*, *importing*, *complete* or *failure*.
+  A string value indicating the current state of the importing process. It can have any of the following values: *uploading*, *importing*, *complete*, or *failure*.
   
 - **error_code**  
   A string containing an error message to be outputted in case of a failure during the import process, that is, when the *success* item has a *false* value (see below).
@@ -355,7 +355,7 @@ The response includes an **array** of items, each one containing the following e
   The actual name of the created sync table.
   
 - **interval**  
-  An integer value representing the number of seconds between synchronisations of the table contents.
+  An integer value representing the number of seconds between synchronizations of the table contents.
   
 - **url**  
   This element is currently deprecated.
@@ -465,7 +465,7 @@ POST /api/v1/synchronizations
   If set to *false* disables type guessing of CSV fields that come inside double quotes. Optional. Default is *true*.
 
 - **content_guessing**  
-  Set it to *true* to enable content guessing and automatic geocoding based on results. Currently it only implemenents geocoding of countries. Optional. Default is *false*.
+  Set it to *true* to enable content guessing and automatic geocoding based on results. Currently it only implements geocoding of countries. Optional. Default is *false*.
 
 #### Response
 
@@ -475,7 +475,7 @@ The response includes the following items:
   This item refers to the internal CartoDB controller code responsible for performing the import.
   
 - **item_queue_id**  
-  A unique alphanumeric identifier that refers to the import process. It can be used to retrieve data related to the the created table.
+  A unique alphanumeric identifier that refers to the import process. It can be used to retrieve data related to the created table.
   
 - **id**  
   An alphanumeric identifier used internally by CartoDB as a reference to the import process.
@@ -484,7 +484,7 @@ The response includes the following items:
   This item is currently deprecated.
   
 - **interval**  
-  An integer value that stores the number of seconds between synchronisations.
+  An integer value that stores the number of seconds between synchronizations.
   
 - **state**  
   A string value indicating the current condition of the importing process.
@@ -568,7 +568,7 @@ curl -v -H "Content-Type: application/json" -d '{"url":"https://public.url.to.fi
 
 ### Removing the synchronisation feature from a given table
 
-A sync table can be converted to a standard table (that is, a table that does get never synced).
+A sync table can be converted to a standard table (that is, a table that never gets synced).
 
 #### Definition
 
@@ -596,12 +596,12 @@ curl -v -X "DELETE" https://{account}.cartodb.com/api/v1/synchronizations/<impor
 
 #### Response
 
-A HTTP 204 response should result as a confirmation for the removal of the synchronisation feature for the target table.
+An HTTP 204 response should result as a confirmation for the removal of the synchronization feature for the target table.
 
 
 ### Check whether a sync table is syncing or not
 
-A large synced table may take up some time to get fully synced so it could be useful to check whether it finished refreshing its contents.
+A large synced table may take some time to get fully synced. IN the meantime, it could be useful to check whether it finished refreshing its contents.
 
 #### Definition
 
@@ -623,7 +623,7 @@ GET /api/v1/synchronizations/<import_id>/sync_now
 The response includes the following items:
 
 - **state**  
-  A string value indicating the whether the request succeeded or not.
+  A string value indicating whether the request succeeded or not.
 
 #### Example
 
@@ -638,9 +638,9 @@ curl -v -X "GET" "https://{account}.cartodb.com/api/v1/synchronizations/1234abcd
 }
 {% endhighlight %}
 
-### Force a synchronisation action on a sync table
+### Force a synchronization action on a sync table
 
-Sync tables have their contents synchronised with the source file in periodic time intervals as specified by the user during the creation process. However, one could desire having a table synchronised at an arbitrary moment of time.
+Sync tables have their contents synchronized with the source file in periodic time intervals as specified by the user during the creation process. However, a table can be synchronized at an arbitrary moment in time if desired.
 
 #### Definition
 
@@ -739,7 +739,7 @@ curl -v -H "Content-Type: application/json" -d '{"interval":"0","service_item_id
 
 ### Syncing an ArcGIS layer
 
-An ArcGIS layer can get imported to a CartoDB account as a synchronised table. The target ArcGIS layer must be accessible via an ArcGIS API REST URL having the following structure:
+An ArcGIS layer can get imported to a CartoDB account as a synchronized table. The target ArcGIS layer must be accessible via an ArcGIS API REST URL with the following structure:
 {% highlight html %}
 http://<host>/<site>/rest/services/<folder>/<serviceName>/<serviceType>/<layer_ID>
 {% endhighlight %}
@@ -754,7 +754,7 @@ POST /api/v1/synchronizations
 #### Params
 
 - **interval**  
-  The number of seconds for the synchronisation period. CartoDB supports the following values: *3600* (sync each hour), *86400* (sync each day), *604800* (sync each week) or *2592000* (sync each month). *Note*: Sync interval must be at least 900 (15 minutes).
+  The number of seconds for the synchronization period. CartoDB supports the following values: *3600* (sync each hour), *86400* (sync each day), *604800* (sync each week) or *2592000* (sync each month). *Note*: Sync interval must be at least 900 (15 minutes).
 
 - **service_item_id**  
   The ArcGIS API REST URL where the ArcGIS dataset is located.
@@ -773,7 +773,7 @@ The response includes the following items:
   This item refers to the internal CartoDB controller code responsible for performing the import.
   
 - **item_queue_id**  
-  A unique alphanumeric identifier that refers to the import process. It can be used to retrieve data related to the the created table.
+  A unique alphanumeric identifier that refers to the import process. It can be used to retrieve data related to the created table.
   
 - **id**  
   An alphanumeric identifier used internally by CartoDB as a reference to the import process.
@@ -782,7 +782,7 @@ The response includes the following items:
   This item is currently deprecated.
   
 - **interval**  
-  An integer value that stores the number of seconds between synchronisations.
+  An integer value that stores the number of seconds between synchronizations.
 
 - **url**  
   This value is empty in this case.
@@ -870,7 +870,7 @@ curl -v -H "Content-Type: application/json" -d '{"interval":"604800","service_it
 
 ### Import an ArcGIS dataset
 
-This option allows to import **at once** a complete set of layers belonging to an ArcGIS dataset. Such a dataset must be accessible via an ArcGIS API REST URL with the following structure:
+This option allows you to import **at once** a complete set of layers belonging to an ArcGIS dataset. Such a dataset must be accessible via an ArcGIS API REST URL with the following structure:
 {% highlight html %}
 http://<host>/<site>/rest/services/<folder>/<serviceName>/<serviceType>/
 {% endhighlight %}
