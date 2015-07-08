@@ -23,7 +23,7 @@ _XML files are not directly supported, we support KML and GPX files instead._
 
 When your map is complete, you may keep it private, share it with your colleagues, or publish it to the web by circulating its custom URL or embedding it in your blog.
 
-In this guide, we'll walk through many features of the CartoDB web interface. If you are ready to experiment with our powerful APIs, then go to [CartoDB.js]({{ '/cartodb-platform/cartodb-js.html' | prepend: site.baseurl }}) and [SQL API]({{ '/cartodb-platform/sql-api.html' | prepend: site.baseurl }}).
+In this guide, we'll walk through many features of the CartoDB web interface. Our [Map Academy](http://academy.cartodb.com/) lessons will get you started with the basics of map creation. If you are ready to experiment with our powerful APIs, then go to [CartoDB.js]({{ '/cartodb-platform/cartodb-js.html' | prepend: site.baseurl }}) and [SQL API]({{ '/cartodb-platform/sql-api.html' | prepend: site.baseurl }}).
 
 ## Datasets
 
@@ -55,9 +55,9 @@ To use Twitter data in a map, select the Twitter icon in the upload window. Next
 
 **You also have the option to import from:**
 
-1. **ArcGIS online**
+1. **ArcGIS Server (10.1 or higher)**
 2. **Salesforce**
-3. **Mailchimp**
+3. **MailChimp**
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/connectdataset2.png' | prepend: site.baseurl }}" alt="Adding datasets from other sources" /></p>
 
@@ -319,7 +319,7 @@ When you create a map and link a dataset to it, all of the data in that dataset 
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/filters.png' | prepend: site.baseurl }}" alt="Filters" /></p>
 
-In the SQL window, you are shown which query is being applied to your data and given the ability to modify it. Automatically, you will see the query that has been produced from the applied filter (sidenote: this is also a fun way to learn SQL!).
+In the SQL window, you are shown which query is being applied to your data and given the ability to modify it. Automatically, you will see the query that has been produced from the applied filter (sidenote: this is also a fun way to learn SQL! We also have a SQL course in our [Map Academy](http://academy.cartodb.com/courses/04-sql-postgis.html)).
 
 #### Map Wizards
 
@@ -628,7 +628,7 @@ __Example functions:__ count(column_name), max(column_name), sum(column_name). C
 
 Learn more about [how spatial aggregation works](https://github.com/CartoDB/torque/wiki/How-spatial-aggregation-works).
 
-- __Torque Resolution:__ Torque creates a grid from your data and aggregates data to each cell of that grid. Torque resolution determines width and height of each cell. Larger numbers will make your data more gridded. 
+- __Torque Resolution:__ Torque creates a grid from your data and aggregates data to each cell of that grid. Torque resolution determines width and height of each cell. Larger numbers will make your data more gridded.
 
 - __Torque Data Aggregation:__ two options, linear which does not leave a trace of past data, and cumulative which draws data markers cumulatively to show past data.
 
@@ -750,6 +750,8 @@ Apart from the default basemaps offered in CartoDB, you may integrate third-part
 3. **WMS Base URL**  
   A WMS, or Web Map Service, allows you to connect to map images generated online by a map server using data from a GIS database. You may use these as basemaps, and they can often contain very interesting information that could be harder to find with other basemaps. You can find URLs for different WMS online, but you often have to look closely to make sure you're getting what you want. Take a look at these WMS URLs, if you want to see what kinds of things you can do with a [WMS baselayer](http://nationalatlas.gov/infodocs/wms_intro.html).
 
+  Currently, we're only supporting WMS files that contain data that uses [EPSG:900913 (Web Mercator)](https://en.wikipedia.org/wiki/Web_Mercator) or [EPSG:3857](http://en.wikipedia.org/wiki/Web_Mercator#EPSG:3857) coordinates.
+
 4. **NASA**  
   With this option, you can easily use  NASA Global Imagery Browse Services satellite imagery as a basemap. Just select the date you're interested in, and whether you'd like a day map (which changes based on the day selected) or a night map, and add it to your map.
 
@@ -795,7 +797,7 @@ You will find here the URL to share your map via Twitter, email, or anywhere els
 You will find here the embed code to get your map into your blog, website, or simple application.
 
 - **CartoDB.js**
-This URL will allow you to add your map to your applications. Read more [here](http://docs.cartodb.com/cartodb-platform/cartodb-js.html).
+This URL will allow you to add your map to your applications. Read the [documentation here](http://docs.cartodb.com/cartodb-platform/cartodb-js.html), or learn about it in our [Map Academy](http://academy.cartodb.com/courses/03-cartodbjs-ground-up.html).
 
 ### Supported fonts
 
@@ -969,6 +971,10 @@ Here, we try to anticipate your needs and provide a set of errors with possible 
       <td>File I/O error</td>
     </tr>
     <tr>
+      <td>1001</td>
+      <td>Download error - The remote URL returned an error. Please verify your file is available at that URL.</td>
+    </tr>
+    <tr>
       <td>1002</td>
       <td>Unsupported file type - Check our list of supported files. See if you can convert your file to one of these file types.</td>
     </tr>
@@ -979,6 +985,26 @@ Here, we try to anticipate your needs and provide a set of errors with possible 
     <tr>
       <td>1004</td>
       <td>File encoding error - Sometimes we have difficulty with non UTF-8 files, so try converting your file to UTF-8. You can do this in Excel by exporting your data as Unicode Text.</td>
+    </tr>
+    <tr>
+      <td>1005</td>
+      <td>Zero byte file - The file appears to have no information. Double check using a local tool such as QGIS that the file is indeed correct.</td>
+    </tr>
+    <tr>
+      <td>1006</td>
+      <td>Invalid SHP file - Your file appears broken. Double check that all the necessary parts of the file are included in your ZIP archive (including .shp, .prj etc.). Also, try opening the file locally using QGIS or another tool.</td>
+    </tr>
+    <tr>
+      <td>1007</td>
+      <td>Too many nodes - You requested too many nodes. Either request a smaller area, or use planet.osm.</td>
+    </tr>
+    <tr>
+      <td>1010</td>
+      <td>Private Google Spreadsheet - his spreadsheet seems to be private. Please check in Google Spreadsheet sharing options that the file is public or accessible for those who know the link.</td>
+    </tr>
+    <tr>
+      <td>1020</td>
+      <td>Data download timed out. Check the source is not running slow and/or try again.</td>
     </tr>
     <tr>
       <td>2000</td>
@@ -1127,9 +1153,9 @@ With CartoDB MU, no custom software installation is necessary to access high-per
 
 #### Users, Owners, and Organizations
 
-CartoDB Enterprise works as a hub for many users or teams working together. An "organization" refers to the name of the group of collaborators that will be interacting on Enterprise, for instance the name of your business or project team. A user is the individual that is part of a given organization.
+CartoDB Enterprise works as a hub for many users or teams working together. An "organization" refers to the name of the group of collaborators that will be interacting on Enterprise. For instance, the name of your business or project team. A user is the individual that is part of a given organization.
 
-If you have been using a normal CartoDB account and are starting to use CartoDB Enterprise with Multiuser, you will see that you are using the same CartoDB Editor with some new options. These new options are what we'll cover in the following sections. For general documentation about the CartoDB Editor please refer to the [corresponding sections in docs.cartodb.com](http://docs.cartodb.com/cartodb-editor.html)
+If you have been using a normal CartoDB account and are starting to use CartoDB Enterprise with Multiuser, you will notice that you are using the same CartoDB Editor with some new options. These new options are what we'll cover in the following sections. For general documentation about the CartoDB Editor please refer to the [corresponding sections in docs.cartodb.com](http://docs.cartodb.com/cartodb-editor.html)
 
 An "Owner" of an organization has privileges to perform admin-related tasks of the organization (i.e. create users, assign quotas, etc.).
 
@@ -1137,69 +1163,81 @@ An "Owner" of an organization has privileges to perform admin-related tasks of t
 
 #### Dashboard
 
-After login, the Enterprise main-page is a mosaic of team activity. This is your home-base, a.k.a. the page where you are able to view and access data sets and visualizations published by team members in addition to monitoring your own activity and quota availability. Order by "modified" or "created" to see what's been added by either latest edit or the date of original posting. If you're feeling inspired, click the "New table" icon to add your own map.
+After login, the Enterprise main-page allows you to quickly and easily navigate team activity. The dashboard is your home-base, a.k.a. the page where you are able to view and monitor your own activity maps and data, as well as access datasets and visualizations published or shared with you by team members.
 
-<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_0.png" alt="Using sync tables" /></p>
+####Your Maps
+On the left side of your browser you can search for maps by tag or name, view maps you have created, view maps that have been made public to the organization or shared with you for collaboration, or see maps you have liked from the community. The icons on the left allow you to order personal or shared maps by date, number of visits, number of likes, or create a new map from scratch. You can also access your own or shared datasets by selecting the drop down menu in the upper left.
 
-Also, you may filter your view to see only the tables you have created or to search by table name or tag.
+<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_00.png" alt="dash" /></p>
 
-<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_1.png" alt="Using sync tables" /></p>
+####Your Datasets
+Similar to your Maps dashboard, your Datasets dashboard allows you to easily search for datasets by name or tag, view your own and shared datasets, see datasets you have liked, and access our ever growing and free to use **data library**. You can also order your datasets by size, or add new datasets from your computer, the web, or from scratch.
 
-When you are in the Visualizations section of your dashboard you will also be able to filter between **All visualizations** and **Your visualizations**. **All visualizations** will list your visualizations plus all the visualizations that your Organization teammates have selected to share with you.
+<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_01.png" alt="data dash" /></p>
 
-#### Creating tables and visualizations
+#### Creating Datasets and Maps
 
-The workflow to create tables and visualizations is the same as in the normal edition of the CartoDB Editor.
+The workflow to create datasets and maps is the same as in the normal edition of the CartoDB Editor.
 
-#### Tables: General and Team privacy settings
+#### Datasets: General and Team Privacy Settings
 
-Once you have created a new table, you have new privacy options compared to the standalone version of the CartoDB Editor. You can manage them from the same place, with the lock in the upper left corner of any table.
+With your Enterprise account, once you have created a new dataset, you have new privacy options compared to the stand alone version of the CartoDB Editor.
 
-<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_2.png" alt="Using sync tables" /></p>
+There are many ways of managing your privacy settings. From your maps or datasets dashboard, you can quickly change privacy by clicking the privacy icon on a map or dataset, or by selecting a map or dataset and chosing "Change Privacy" in the upper right hand corner. From here you can also lock or delete a selected entry.
 
-By clicking on the lock, a modal window will appear:
+<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_privacy_1.png" alt="map privacy" /></p>
 
-<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_3.png" alt="Using sync tables" /></p>
+The privacy pop-up window then allows you to share and collaborate with people in the organization by selecting the "Share it with your colleagues" button at the bottom.
+
+<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_privacy_2.png" alt="map privacy" /></p>
+
+You can also manage privacy directly from a data view, map view, or visualization by using the lock in the upper left corner of any map or data view.
+
+<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_02.png" alt="lock" /></p>
+
+By choosing any of these options, a modal window will appear:
+
+<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_03.png" alt="modal window" /></p>
 
 You have two sections in this window:
 
-1. **General privacy**: As well as in the standalone CartoDB Editor, by default a table will be only accessible to you. You can choose it to be **only visible to people with the link**, or make it **public** (it will get listed on your Public Page).
+1. **General privacy**: Similiar to the standalone CartoDB Editor, by default a dataset will only be available to you when you import it. You can choose to make it **only visible to people with the link**, or **public** (it will be available to anyone on your Public Page).
 
-<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_4.png" alt="Using sync tables" /></p>
+<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_04.png" alt="privacy modal" /></p>
 
-2. **Team privacy**: In the lower part of this modal window you will see a list of your Organization's teammates. With the control in the right you can give read access to this table (the table will appear in those person's dashboards and they will be able to open it and create visualizations with it, but only in read mode; that is, they won't be able to modify the content of this table). If you also want to give write access, you can select the corresponding checkbox. Grant write and/or read access to all members of your Organization with the top controls.
+2. **Team privacy**: In the lower part of this modal window you will see a list of your Organization's teammates. With the control in the right you can give read access to this dataset (the dataset will appear in those person's dashboards and they will be able to open it and create visualizations with it, but only in read mode; that is, they won't be able to modify the content of this dataset). If you also want to give write access, you can select the corresponding checkbox. Grant write and/or read access to all members of your Organization with the top controls.
 
-<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_5.png" alt="Using sync tables" /></p>
+<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_05.png" alt="users" /></p>
 
-#### Visualizations: General and Team privacy settings
+#### Maps: General and Team privacy settings
 
 As well as with tables, the interface for creating visualizations is the same as in the stand-alone CartoDB Editor, with some extra options to manage how you collaborate with your teammates.
 
 Once you are editing a visualization, you can also use the lock in the upper-left corner to view the privacy settings.
 
-<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_6.png" alt="Using sync tables" /></p>
+<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_06.png" alt="Using sync tables" /></p>
 
 You have two sections in this window:
 
 1. **General privacy**: As well as in the stand-alone CartoDB Editor, by default, a visualization will be accessible to **people with the link**. You can select it to be **Private** (only accessible to you), **Password protected** (you'll be able to set a password), or **Public** (it will be listed on your Public Page)**.**
 
-<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_7.png" alt="Using sync tables" /></p>
+<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_07.png" alt="map privacy" /></p>
 
 2. **Team privacy**: In the lower part of this modal window, you will see a list of your Organization's teammates. You can give read access to this visualization so it appears in their dashboard. If the general privacy of the visualization is set to Public, then they will be able to access it from the Public Page (the same as any other user).
 
-<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_8.png" alt="Using sync tables" /></p>
+<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_08.png" alt="map privacy" /></p>
 
 ### **Owners**
 
-As the Owner of an Organization, you will be able to perform all admin-related tasks of a team account: manage users, assign quotas, customize the Organization's Public Page, update account details, etc. When you login, you will see a normal CartoDB dashboard with a list of tables. You can access the admin area by clicking on the drop-down menu located in the upper-right corner, and selecting "Organization."
+As the Owner of an Organization, you will be able to perform all admin-related tasks of a team account: manage users, assign quotas, customize the Organization's Public Page, update account details, etc. When you login, you will see a normal CartoDB dashboard with a list of tables. You can access the admin area by clicking on the drop-down menu located in the upper-right corner and selecting "Your Organization".
 
-<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_9.png" alt="Using sync tables" /></p>
+<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_09.png" alt="Using sync tables" /></p>
 
-#### Organization admin area
+#### Organization Administrator Area
 
-Once in the Organization admin area you'll be able to **Manage your seats**, the **Public Dashboard**, and **Account Details.**
+Once in the Organization admin area you'll be able to change your **Organization Settings**, **Manage your seats**, and review or update **Your Plan**.
 
-<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_10.png" alt="Using sync tables" /></p>
+<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_010.png" alt="admin" /></p>
 
 #### Manage your seats
 
@@ -1207,27 +1245,27 @@ A seat is an available slot for a user. You'll be able to give access to as many
 
 #### Adding a user
 
-Once your organization's MU account has been created, you have the option to add new team members. From your Organization admin page, you can click in the **Create new user** button. From here, fill in the user's information, which includes a name for log-in, an email address to associate with the account, and a password. You can also assign and update a user's data quota here and select whether to allow geo-referencing capability.
+Once your organization’s multiple user account has been created, you have the option to add new team members. From your Organization dashboard, you can click in the **Create new user** button at the bottom right of the **Manage Your Seats** page. From here, fill in the user's information, which includes a name for log-in, an email address to associate with the account, and a password. You can also assign and update a user's data quota here and select whether to allow geo-referencing capability.
 
 At any time, you may change the storage availability for your team members by upgrading your plan. The activity of your team members is accessible via clicking on their respective profile pages.
 
-<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_11.png" alt="Using sync tables" /></p>
+<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_011.png" alt="adding user" /></p>
 
-#### Public dashboard
+#### Organization Settings
 
-In this section, you can customize how your Public Dashboard will look by choosing your website URL, a company logo, a description, and your Twitter username.
+In this section, you can customize how your Public Page will look by choosing your website URL, a company logo, a description, and your Twitter username.
 
-<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_12.png" alt="Using sync tables" /></p>
+<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_012.png" alt="Org settings" /></p>
 
-#### Account settings
+#### Your Plan
 
-On the Account Settings page, you can update settings regarding your administrative user (the owner of the account).
+On the "Your Plan" page, you can see information about your company, users, data storage, and resources. You can also contact us with questions or changes to your account.
 
 ## **Official Twitter Datasource**
 
 #### About the Twitter Datasource
 
-CartoDB has access to the complete Twitter firehose providing it with official Twitter data. For our users, it is really easy to obtain the data and map it. Once the user clicks on "Connect dataset" within the Datasets section of their dashboard, the menu, which you can also see in this screenshot, will open.
+CartoDB has access to the complete Twitter firehose, providing it with official Twitter data. For our users, it is really easy to obtain Twitter data and map it. Once the user clicks on "Connect dataset" within the Datasets section of their dashboard, the menu that you see in this screenshot, will open.
 
 <p class="wrap-border"><img src="/img/layout/cartodb-editor/twitter_0.png" alt="New import dialog" /></p>
 
@@ -1235,7 +1273,7 @@ After you click on the Twitter icon, you will be able to see the following windo
 
 <p class="wrap-border"><img src="/img/layout/cartodb-editor/twitter.png" alt="New import dialog" /></p>
 
-You can begin your search by jotting down different hashtags or keywords separated by a comma under each category (they will work as an OR, e.g. "santa,xmas" would work like "santa OR xmas"). You can use the valid character #should you choose to for hashtags. Spaces before and after commas are removed, but if you put a multi-sentence word it will perform a search (e.g. "cars, bikes motorbikes, planes" is a 3 term search, do not mistake with "cars, bikes, motorbikes, planes"). You will be able to see how many Twitter credits you have remaining.
+You can begin your search by jotting down different hashtags or keywords separated by a comma under each category (they will work as an OR, e.g. "santa,xmas" would work like "santa OR xmas"). You can use the valid character #should you choose to for hashtags. Spaces before and after commas are removed, but if you put a multi-sentence word it will perform a  search (e.g. "cars, bikes motorbikes, planes" is a 3 term search, do not mistake with "cars, bikes, motorbikes, planes"). You will be able to see how many Twitter credits you have remaining.
 
 The total number of search terms you can have is 29 per category. The maximum number of categories is 4 per search request. You can also select the time frame you want your request to cover under the category column. By default it will search the last 30 days.
 
@@ -1338,10 +1376,10 @@ _Remember: perform a duplicate of the dataset prior to modifying it with stateme
 
 ### Tips and tricks
 
-* Ensure that you select the right time frame which suits your needs. You can save on Twitter credits by not importing extra data.
-* Search terms are treated like full words: "car" won't match tweets with "cars", you should add both terms if you want both cases.
-* Search terms are not case-sensitive. e.g. "Cars" equals "cars" and "CARS".
-* You can search by hashtags or account names. e.g. "gis, @cartodb, #mapping".
+* Ensure that you select the right time frame that suits your needs. You can save on Twitter credits by not importing extra data.
+* Search terms are treated like full words: "car" won't match tweets with "cars," you should add both terms if you want both cases.
+* Search terms are not case-sensitive. e.g. "Cars" equals "cars" and "CARS"
+* You can search by hashtags or account names. e.g. “gis, @cartodb, #mapping”.
 * Once the search starts you cannot stop the import. Be careful to not search for really broad terms (e.g. "love") as hundreds of thousands or even millions of geolocalized tweets might end up being retrieved.
 * For security, the search will stop if you run out of credits, returning you all the tweets that the system was able to retrieve before the credits finished.
 * Enterprise multi-accounts share the same organization-wide pool of Twitter credits.
