@@ -31,7 +31,7 @@ Suppose we have a CartoDB account whose username is *documentation* and we want 
 
 <div class="code-title code-request">REQUEST</div>
 {% highlight bash %}
-curl -v -d -F file=@/home/documentation/Documents/prism_tour.csv 
+curl -v -F file=@/home/documentation/Documents/prism_tour.csv
 "https://documentation.cartodb.com/api/v1/imports/?api_key=3102343c42da0f1ffe6014594acea8b1c4e7fd64"
 {% endhighlight %}
 
