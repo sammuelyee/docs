@@ -17,8 +17,8 @@ The CartoDB Import API allows you to upload files to a CartoDB account, check on
 
 Additionally, CartoDB offers a set of connectors to import specific types of datasets:
 
-- **ArcGIS Server**  
-  Allows to import ArcGIS layers into a CartoDB account as tables from ArcGIS Server (version 10.1 or higher is required). Note that **this connector is disabled by default** in the CartoDB importer options. If you are interested in enabling it, please contact [support@cartodb.com](mailto:support@cartodb.com) to gain further details.
+- **ArcGIS&trade; Server**  
+  Allows to import ArcGIS&trade; layers into a CartoDB account as tables from ArcGIS Server&trade; (version 10.1 or higher is required). Note that **this connector is disabled by default** in the CartoDB importer options. If you are interested in enabling it, please contact [support@cartodb.com](mailto:support@cartodb.com) to gain further details.
 
 
 ## Quickstart
@@ -682,11 +682,11 @@ curl -v --request "PUT" "https://{account}.cartodb.com/api/v1/synchronizations/<
 {% endhighlight %}
 
 
-## The ArcGIS connector
+## The ArcGIS&trade; connector
 
-### Import an ArcGIS layer
+### Import an ArcGIS&trade; layer
 
-ArcGIS layers stored in ArcGIS Server can get imported as CartoDB tables. Such layers must be accessible via an **ArcGIS API REST URL** whose structure is as follows:
+ArcGIS&trade; layers stored in ArcGIS Server&trade; can get imported as CartoDB tables. Such layers must be accessible via an **ArcGIS&trade; API REST URL** whose structure is as follows:
 {% highlight html %}
 http://<host>/<site>/rest/services/<folder>/<serviceName>/<serviceType>/<layer_ID>
 {% endhighlight %}
@@ -704,7 +704,7 @@ POST   api/v1/imports
   This value **MUST** be set to *0*. **Different values do not guarantee correct imports**.
 
 - **service_item_id**  
-  The ArcGIS API REST URL where the ArcGIS layer is located.
+  The ArcGIS&trade; API REST URL where the ArcGIS&trade; layer is located.
 
 - **service_name**  
   This value **MUST** be set to *arcgis* to make use of this connector.
@@ -737,9 +737,9 @@ curl -v -H "Content-Type: application/json" -d '{"interval":"0","service_item_id
 {% endhighlight %}
 
 
-### Syncing an ArcGIS layer
+### Syncing an ArcGIS&trade; layer
 
-An ArcGIS layer can get imported to a CartoDB account as a synchronized table. The target ArcGIS layer must be accessible via an ArcGIS API REST URL with the following structure:
+An ArcGIS&trade; layer can get imported to a CartoDB account as a synchronized table. The target ArcGIS&trade; layer must be accessible via an ArcGIS&trade; API REST URL with the following structure:
 {% highlight html %}
 http://<host>/<site>/rest/services/<folder>/<serviceName>/<serviceType>/<layer_ID>
 {% endhighlight %}
@@ -757,7 +757,7 @@ POST /api/v1/synchronizations
   The number of seconds for the synchronization period. CartoDB supports the following values: *3600* (sync each hour), *86400* (sync each day), *604800* (sync each week) or *2592000* (sync each month). *Note*: Sync interval must be at least 900 (15 minutes).
 
 - **service_item_id**  
-  The ArcGIS API REST URL where the ArcGIS dataset is located.
+  The ArcGIS&trade; API REST URL where the ArcGIS&trade; dataset is located.
 
 - **service_name**  
   This value **MUST** be set to *arcgis* to make use of this connector.
@@ -830,7 +830,7 @@ The response includes the following items:
   This value is set to *arcgis*.
 
 - **service_item_id**  
-  This item contains the ArcGIS API REST URL targeting the imported ArcGIS layer.
+  This item contains the ArcGIS&trade; API REST URL targeting the imported ArcGIS&trade; layer.
 
 #### Example
 
@@ -868,9 +868,9 @@ curl -v -H "Content-Type: application/json" -d '{"interval":"604800","service_it
 {% endhighlight %}
 
 
-### Import an ArcGIS dataset
+### Import an ArcGIS&trade; dataset
 
-This option allows you to import **at once** a complete set of layers belonging to an ArcGIS dataset. Such a dataset must be accessible via an ArcGIS API REST URL with the following structure:
+This option allows you to import **at once** a complete set of layers belonging to an ArcGIS&trade; dataset. Such a dataset must be accessible via an ArcGIS&trade; API REST URL with the following structure:
 {% highlight html %}
 http://<host>/<site>/rest/services/<folder>/<serviceName>/<serviceType>/
 {% endhighlight %}
@@ -888,7 +888,7 @@ POST   api/v1/imports
   This value **MUST** be set to *0*. **Different values do not guarantee correct imports**.
 
 - **service_item_id**  
-  The ArcGIS API REST URL where the ArcGIS dataset is located.
+  The ArcGIS&trade; API REST URL where the ArcGIS&trade; dataset is located.
 
 - **service_name**  
   This value **MUST** be set to *arcgis* to make use of this connector.
