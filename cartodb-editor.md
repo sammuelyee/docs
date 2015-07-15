@@ -55,7 +55,7 @@ To use Twitter data in a map, select the Twitter icon in the upload window. Next
 
 **You also have the option to import from:**
 
-1. **ArcGIS Server (10.1 or higher)**
+1. **ArcGIS Server&trade; (10.1 or higher)**
 2. **Salesforce**
 3. **MailChimp**
 
@@ -1030,7 +1030,7 @@ Here, we try to anticipate your needs and provide a set of errors with possible 
     </tr>
     <tr>
       <td>3100</td>
-      <td>Projection error - CartoDB supports many projections, but sometimes your file will have one we don't recognize. In these cases, please try re-projecting your file in QGIS or ArcGIS. Or, if you want to use this projection many times, submit a query to the support page.</td>
+      <td>Projection error - CartoDB supports many projections, but sometimes your file will have one we don't recognize. In these cases, please try re-projecting your file in QGIS or ArcGIS&trade;. Or, if you want to use this projection many times, submit a query to the support page.</td>
     </tr>
     <tr>
       <td>3101</td>
