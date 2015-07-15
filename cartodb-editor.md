@@ -327,7 +327,7 @@ In the SQL window, you are shown which query is being applied to your data and g
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/wizards.png' | prepend: site.baseurl }}" alt="Wizards" /></p>
 
-CartoDB's Wizards give you magic powers to style your data layers. Variousmap map styles provide different ways of presenting your data:
+CartoDB's Wizards give you magic powers to style your data layers. Various map styles provide different ways of presenting your data:
 
 - **Simple**  
 The Simple map is exactly what it sounds like. You may add labels, adjust the size and color of your points, and change the appearance of your polygons, but there's no conditional formatting. We recommend this level for those beginning to explore their data.
