@@ -18,7 +18,7 @@ todo
 
 ## FIWARE Connector
 
-todo
+The [Fi-Ware](https://www.fiware.org/) Development team at Telefonica has recently built a connector for CartoDB. The python script parses data from a Fi-Ware “Context Broker” (A service which allows for easy publishing of/subscribing to frequently updated data). By leveraging CartoDB’s SQL API, the connector updates rows in a CartoDB table with the latest data from the context broker, keeping the map’s underlying data as fresh as possible. [Check out the connector on github](https://github.com/telefonicaid/fiware-orion2cartodb).
 
 ##oEmbed
 
