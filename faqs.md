@@ -121,7 +121,7 @@ When you create a table in the CartoDB Editor by importing data from a public UR
 
 Download the URL file and check that it contains information. If the URL provides you with a .zip containing more than one file, CartoDB will only upload one of them. To create your table properly you can import only the data file you need via CartoDB’s Import window (keep in mind that if you’re working with a shapefile it’s components must be uploaded in one [zip](http://docs.cartodb.com/tutorials/import_shapefile_in_cartodb.html). A list of data file formats that CartoDB accepts for upload is [here](http://docs.cartodb.com/cartodb-editor.html#supported-file-formats). We also recommend checking our [Common Data](http://docs.cartodb.com/cartodb-editor.html#common-data) section to see if your public URL’s data is already easily available through our site.
 
-### How can I export my table without it’s georeference data?
+### How can I export my table without it’s georeferenced data?
 
 In some cases you might want to export your data out of CartoDB without including it’s location information. You’re not able to manually delete the_geom column from your table, but you can use SQL to create a new table with only the data you need exported. In the Editor’s Custom SQL query panel, write
 
@@ -130,6 +130,16 @@ SELECT {column name}, {another column name} FROM {tablename}
 {% endhighlight %}
 
 Replace {column name} and {another column name} with names of columns you want to include in your export. You can add more columns to your result by comma adding more comma-separated column names. Replace {tablename} with the name of your current table. Hit Apply query, then you will be able to click “Edit” and export a CSV of the current result.
+
+### How can I export my dataset without it’s georeference data?
+
+In some cases you might want to export your data out of CartoDB without including it’s location information. You’re not able to manually delete the_geom column from your table, but you can use SQL to create a new dataset with only the data you need exported. In the Editor’s Custom SQL query panel, write
+
+{% highlight sql %}
+SELECT {column name}, {another column name} FROM {dataset name}
+{% endhighlight %}
+
+Replace {column name} and {another column name} with names of columns you want to include in your export. You can add more columns to your result by comma adding more comma-separated column names. Replace {dataset name} with the name of your current table. Hit Apply query, then you will be able to click “Edit” and export a CSV of the current result.
 
 ## Visualizations
 
