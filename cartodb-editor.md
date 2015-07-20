@@ -1017,6 +1017,30 @@ Here, we try to anticipate your needs and provide a set of errors with possible 
       <td>Unable to parse data - Please contact support and we will help you sanitize it.</td>
     </tr>
     <tr>
+      <td>2002</td>
+      <td>File encoding detection error - Try saving your file with encoding UTF-8 or contact support and we will help you to load your data.</td>
+    </tr>    
+    <tr>
+      <td>2003</td>
+      <td>The CSV or converted XLS/XLSX to CSV file contains malformed or invalid characters. Some reasons for this error can be for example multiline header fields or multiline cells at Excel files or unquoted CSV.</td>
+    </tr>
+    <tr>
+      <td>2004</td>
+      <td>Data has too many columns. You can only import up to 1600 columns. You can delete the columns you're not interested in, or split the file into smaller ones.</td>
+    </tr>
+    <tr>
+      <td>2005</td>
+      <td>File has the same header for two or more columns. Please make column names unique and try again.</td>
+    </tr>
+    <tr>
+      <td>2006</td>
+      <td>Problem reading the file. Encoding seems wrong, probably because there's a wrong character. In order to sort it out, open your file with a text editor, save it with encoding UTF-8 and try again.</td>
+    </tr>
+    <tr>
+      <td>2007</td>
+      <td>Import failed due to encoding issues. To fix this, force the encoding of your file using a text editor or a tool like QGis. You just need to export your files in UTF-8 format.</td>
+    </tr>    
+    <tr>
       <td>3000</td>
       <td>Geometry error.</td>
     </tr>
@@ -1083,6 +1107,14 @@ Here, we try to anticipate your needs and provide a set of errors with possible 
     <tr>
       <td>8002</td>
       <td>Over account dataset limit - The file you tried to upload is putting you over your dataset quota. You can upgrade your account easily by accessing your account settings page. Alternatively, you may be able to delete some unused datasets to make room.</td>
+    </tr>
+    <tr>
+      <td>8003</td>
+      <td>Error creating table from SQL query - Check it doesn't return duplicate column names, or contact support if you need help editing your query.</td>
+    </tr>
+    <tr>
+      <td>8004</td>
+      <td>Merge with unmatching column types - The columns chosen don't have the same column type in both tables. Please change the types so the columns will have the same type and try again.</td>
     </tr>
     <tr>
       <td>9999</td>
