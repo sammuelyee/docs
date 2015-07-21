@@ -7,18 +7,18 @@ A standard import will store the data you upload from files with the valid forma
 
 ## Import API
 
-The CartoDB Import API allows you to upload files to a CartoDB account, check on their current upload status as well as deleting and listing importing processes on the given account. This API consists of several HTTP requests targeted at a set of CartoDB endpoints which deal with the conversion and import of the sent files. CartoDB tables can be classified into two categories:
+The CartoDB Import API allows you to upload files to a CartoDB account, check on their current upload status, as well as deleting and listing importing processes on the given account. This API consists of several HTTP requests targeted at a set of CartoDB endpoints that deal with the conversion and import of the sent files. CartoDB tables can be classified into two categories:
 
-- **Standard tables**  
-  The default tables used to store the data of the uploaded files that will be used to create tables and maps. Any CartoDB user may create, manipulate and delete such tables.
+- **standard tables**  
+  The default tables used to store the data of the uploaded files that will be used to create datasets and maps. Any CartoDB user may create, manipulate, and delete such datasets.
 
-- **Sync tables**  
-  Available to certain CartoDB plans, these tables store data from a remote file and refresh their contents during periodic intervals specified by the user. The base files from which the sync tables retrieve their contents may come from Google Drive, Dropbox or a public URL. In this document we will deal with the simplest case: public URLs.
+- **Sync Tables**  
+  Available to certain CartoDB plans, these tables store data from a remote file and refresh their contents during periodic intervals specified by the user. The base files from which the sync tables retrieve their contents may come from Google Drive, Dropbox, or a public URL. In this document we will deal with the simplest case: public URLs.
 
 Additionally, CartoDB offers a set of connectors to import specific types of datasets:
 
 - **ArcGIS Server**  
-  Allows to import ArcGIS layers into a CartoDB account as tables from ArcGIS Server (version 10.1 or higher is required). Note that **this connector is disabled by default** in the CartoDB importer options. If you are interested in enabling it, please contact [support@cartodb.com](mailto:support@cartodb.com) to gain further details.
+  Allows you to import ArcGIS layers into a CartoDB account as tables from ArcGIS Server (version 10.1 or higher is required). Note that **this connector is disabled by default** in the CartoDB importer options. If you are interested in enabling it, please contact [support@cartodb.com](mailto:support@cartodb.com) to gain further details.
 
 
 ## Quickstart
@@ -124,7 +124,7 @@ POST api/v1/imports
   When importing local files, you need to perform a POST with a file (see below an example call with CURL).
 
 - **url**  
-  When importing remote files, the full url to the publicly accessible file.
+  When importing remote files, the full URL to the publicly accessible file.
 
 - **type_guessing**  
   If set to *false* disables field type guessing (for Excel and CSVs). Optional. Default is *true*.
@@ -251,7 +251,7 @@ The response includes the following items:
   This element has a *null* value in this case.
   
 - **service_name**  
-  This element identifies the service type used to import the file. It can have any of these three values: *gdrive* for Google Drive imports, *dropbox* for Dropbox imports and *public_url* for url or local file imports.
+  This element identifies the service type used to import the file. It can have any of these three values: *gdrive* for Google Drive imports, *dropbox* for Dropbox imports and *public_url* for URL or local file imports.
   
 - **service_item_id**  
   A unique identifier that references the service item of the targeted import.
@@ -328,9 +328,9 @@ curl -v "https://{account}.cartodb.com/api/v1/imports/?api_key={account API Key}
 {% endhighlight %}
 
 
-## Sync tables
+## Sync Tables
 
-### List all the synchronised tables in a given account
+### List all the synchronized tables in a given account
 
 #### Definition
 
@@ -438,7 +438,7 @@ curl -v "https://{account}.cartodb.com/api/v1/synchronizations/?api_key={account
 }
 {% endhighlight %}
 
-### Syncing a file from an URL
+### Syncing a file from a URL
 
 #### Definition
 
@@ -456,7 +456,7 @@ POST /api/v1/synchronizations
   The **public** URL address where the file to be imported is located.
   
 - **interval**  
-  The number of seconds for the synchronisation period. CartoDB supports the following values: *3600* (sync each hour), *86400* (sync each day), *604800* (sync each week) or *2592000* (sync each month). *Note*: Sync interval must be at least 900 (15 minutes).
+  The number of seconds for the synchronization period. CartoDB supports the following values: *3600* (sync each hour), *86400* (sync each day), *604800* (sync each week) or *2592000* (sync each month). *Note*: Sync interval must be at least 900 (15 minutes).
 
 - **type_guessing**  
   If set to *false* disables field type guessing (for Excel and CSVs). Optional. Default is *true*.
@@ -566,9 +566,9 @@ curl -v -H "Content-Type: application/json" -d '{"url":"https://public.url.to.fi
 }
 {% endhighlight %}
 
-### Removing the synchronisation feature from a given table
+### Removing the synchronization feature from a given table
 
-A sync table can be converted to a standard table (that is, a table that never gets synced).
+A sync table can be converted to a standard table (a table that never gets synced).
 
 #### Definition
 
@@ -682,11 +682,11 @@ curl -v --request "PUT" "https://{account}.cartodb.com/api/v1/synchronizations/<
 {% endhighlight %}
 
 
-## The ArcGIS connector
+## The ArcGIS&trade; Connector
 
-### Import an ArcGIS layer
+### Import an ArcGIS&trade; layer
 
-ArcGIS layers stored in ArcGIS Server can get imported as CartoDB tables. Such layers must be accessible via an **ArcGIS API REST URL** whose structure is as follows:
+ArcGIS&trade; layers stored in ArcGIS&trade; Server can get imported as CartoDB tables. Such layers must be accessible via an **ArcGIS&trade; API REST URL** whose structure is as follows:
 {% highlight html %}
 http://<host>/<site>/rest/services/<folder>/<serviceName>/<serviceType>/<layer_ID>
 {% endhighlight %}
@@ -704,7 +704,7 @@ POST   api/v1/imports
   This value **MUST** be set to *0*. **Different values do not guarantee correct imports**.
 
 - **service_item_id**  
-  The ArcGIS API REST URL where the ArcGIS layer is located.
+  The ArcGIS&trade; API REST URL where the ArcGIS&trade; layer is located.
 
 - **service_name**  
   This value **MUST** be set to *arcgis* to make use of this connector.
@@ -737,9 +737,9 @@ curl -v -H "Content-Type: application/json" -d '{"interval":"0","service_item_id
 {% endhighlight %}
 
 
-### Syncing an ArcGIS layer
+### Syncing an ArcGIS&trade; layer
 
-An ArcGIS layer can get imported to a CartoDB account as a synchronized table. The target ArcGIS layer must be accessible via an ArcGIS API REST URL with the following structure:
+An ArcGIS&trade; layer can get imported to a CartoDB account as a synchronized table. The target ArcGIS&trade; layer must be accessible via an ArcGIS&trade; API REST URL with the following structure:
 {% highlight html %}
 http://<host>/<site>/rest/services/<folder>/<serviceName>/<serviceType>/<layer_ID>
 {% endhighlight %}
@@ -757,7 +757,7 @@ POST /api/v1/synchronizations
   The number of seconds for the synchronization period. CartoDB supports the following values: *3600* (sync each hour), *86400* (sync each day), *604800* (sync each week) or *2592000* (sync each month). *Note*: Sync interval must be at least 900 (15 minutes).
 
 - **service_item_id**  
-  The ArcGIS API REST URL where the ArcGIS dataset is located.
+  The ArcGIS&trade; API REST URL where the ArcGIS&trade; dataset is located.
 
 - **service_name**  
   This value **MUST** be set to *arcgis* to make use of this connector.
@@ -868,9 +868,9 @@ curl -v -H "Content-Type: application/json" -d '{"interval":"604800","service_it
 {% endhighlight %}
 
 
-### Import an ArcGIS dataset
+### Import an ArcGIS&trade; dataset
 
-This option allows you to import **at once** a complete set of layers belonging to an ArcGIS dataset. Such a dataset must be accessible via an ArcGIS API REST URL with the following structure:
+This option allows you to import **at once** a complete set of layers belonging to an ArcGIS&trade; dataset. Such a dataset must be accessible via an ArcGIS&trade; API REST URL with the following structure:
 {% highlight html %}
 http://<host>/<site>/rest/services/<folder>/<serviceName>/<serviceType>/
 {% endhighlight %}
@@ -888,7 +888,7 @@ POST   api/v1/imports
   This value **MUST** be set to *0*. **Different values do not guarantee correct imports**.
 
 - **service_item_id**  
-  The ArcGIS API REST URL where the ArcGIS dataset is located.
+  The ArcGIS&trade; API REST URL where the ArcGIS dataset is located.
 
 - **service_name**  
   This value **MUST** be set to *arcgis* to make use of this connector.
