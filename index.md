@@ -4,7 +4,7 @@ title: CartoDB Documentation
 js_asset: "index"
 ---
 
-## What is CartoDB
+## What is CartoDB?
 
 CartoDB is a geospatial database on the cloud that allows for the storage and visualization of data on the web and the creation of maps. Using CartoDB will allow you to quickly create map based visualizations.
 
