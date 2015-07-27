@@ -149,11 +149,48 @@ You can also change the privacy settings of a dataset at any time within the dat
 Keep in mind that different privacy options will appear depending on your account plan.
 
 #### Delete Dataset
-To delete a dataset from the Dashboard, navigate to the Dataset page. Select the dataset you wish to delete, which will reveal a second menu with the option to "Delete dataset." You can also delete a dataset from the Data view page, within the Options menu located in the top-right menu.
 
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/deletetable.png' | prepend: site.baseurl }}" alt="Dataset privacy" /></p>
+There are multiple ways to delete a dataset with the CartoDB Editor. You can delete a dataset from your dashboard or directly from your Data View.
 
-Keep in mind that deleted datasets cannot be recovered and are permanently removed.
+To delete a dataset from your dashboard:
+- Click *Your Dataset* from the drop-down menu
+
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/Select Your Dataset.png'}}" alt="Select Dataset" /></p>
+
+The page refreshes displaying a list of your datasets. 
+- Select a dataset so that is it highlighted.
+**Tip:** You can select multiple datasets to be deleted.
+The dataset options appear at the top of the list.
+- Click *Delete dataset* from the datasets options
+
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/dashboard_delete dataset.png'}}" alt="Delete Dataset" /></p>
+
+A confirmation dialog appears indicating the number and/or name of the dataset(s) that you are deleting.
+
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/delete data confirmation.png'}}" alt="Delete Dataset Confirmation" /></p>
+
+- Click *OK,DELETE*
+The dataset(s) is deleted and removed from your dashboard.
+
+**Note:** Deleted datasets cannot be recovered and are permanently removed.  It is recommended to export your dataset before deleting if it is important to you.
+<add hypertext link to external topic>
+	http://docs.cartodb.com/cartodb-editor.html#export-data
+
+To delete a dataset from your Data View:
+- Click *Your Dataset* from the drop-down menu
+The page refreshes displaying a list of your datasets. 
+- Select the name of the dataset to view.
+
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/selected dataset name.png'}}" alt="Select name of Dataset" /></p>
+
+The page refreshes displaying the Data View for the selected dataset. 
+- Select *Delete this dataset* from the Edit drop-down menu
+
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/edit_delete this dataset.png'}}" alt="Delete this dataset" /></p>
+
+A confirmation dialog appears and indicates the name of the selected dataset that are deleting.
+- Click *OK,DELETE*
+The dataset is deleted and page refreshes to your datasets dashboard.
 
 ### Viewing Datasets
 
@@ -221,7 +258,7 @@ We've decoupled dataset privacy from map privacy to give you ultimate control ov
 
 ### Map Privacy Options
 
-When you are creating your CartoDB visualization you may also edit who has access to it. In order to edit these settings, click on the padlock from the map created on the "Visualizations" section of your CartoDB Dashboard. Here you will also be able to delete your visualization or lock it to prevent any accidental changes in the future.
+When you are creating your CartoDB visualization you may also edit who has access to it. In order to edit these settings, click on the padlock from the map created on the "Visualizations" section of your CartoDB dashboard. Here you will also be able to delete your visualization or lock it to prevent any accidental changes in the future.
 
 When you create a map with CartoDB, you can customize who can access it. You can edit the privacy settings for your map from a few places. In the "Maps" section of the dashboard, edit the privacy settings of individual maps by selecting the privacy link in the lower left-hand corner of each listed map.
 
@@ -1205,7 +1242,7 @@ On the left side of your browser you can search for maps by tag or name, view ma
 <p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_00.png" alt="dash" /></p>
 
 ####Your Datasets
-Similar to your Maps Dashboard, your Datasets Dashboard allows you to easily search for datasets by name or tag, view your own and shared datasets, see datasets you have liked, and access our ever growing and free to use **Data Library**. You can also order your datasets by size, or add new datasets from your computer, the web, or from scratch.
+Similar to your Maps dashboard, your Datasets dashboard allows you to easily search for datasets by name or tag, view your own and shared datasets, see datasets you have liked, and access our ever growing and free to use **Data Library**. You can also order your datasets by size, or add new datasets from your computer, the web, or from scratch.
 
 <p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_01.png" alt="data dash" /></p>
 
