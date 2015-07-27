@@ -372,10 +372,6 @@ You should take into account that the georeference tool that converts ZIP codes,
 
 Each one of our plans include a free quota of geocodings, but extra charges will be applied if this quota exceeds according to our Terms of Service.
 
-### What does the table quota mean for the different plans?
-
-Several tiers of usage are available for CartoDB, ranging from a free account to a fully dedicated instance. The difference between these accounts is in their physical storage size, memory size, and several CartoDB features. You can find full details on these differences over on the [pricing](http://cartodb.com/pricing) page.
-
 ### What is a map view?
 
 A new map view happens everytime a map is shown. In a very simple way: map views count how many times your map has been visited, regardless of if it was shown in your public CartoDB page, in the CartoDB Editor, or if the map was embedded in your own site.
