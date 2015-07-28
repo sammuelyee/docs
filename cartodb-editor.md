@@ -150,47 +150,60 @@ Keep in mind that different privacy options will appear depending on your accoun
 
 #### Delete Dataset
 
-There are multiple ways to delete a dataset with the CartoDB Editor. You can delete a dataset from your dashboard or directly from your Data View.
+There are multiple ways to delete a dataset with the CartoDB Editor. You can delete a dataset from your [dashboard](http://localhost:9000/cartodb-editor.html#to-delete-a-dataset-from-your-dashboard) or directly from your [Data View](http://localhost:9000/cartodb-editor.html#to-delete-a-dataset-from-your-data-view).
 
-To delete a dataset from your dashboard:
-- Click *Your Dataset* from the drop-down menu
+#####To Delete a Dataset from your Dashboard
 
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/Select Your Dataset.png'}}" alt="Select Dataset" /></p>
+1. Click *Your Dataset* from the dashboard drop-down menu  
 
-The page refreshes displaying a list of your datasets. 
-- Select a dataset so that is it highlighted.
-**Tip:** You can select multiple datasets to be deleted.
-The dataset options appear at the top of the list.
-- Click *Delete dataset* from the datasets options
+    <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/Select_Your_Dataset.png' | prepend: site.baseurl }}" alt="Select Dataset" /></p>
 
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/dashboard_delete dataset.png'}}" alt="Delete Dataset" /></p>
+    The page refreshes, displaying a list of your datasets.
 
-A confirmation dialog appears indicating the number and/or name of the dataset(s) that you are deleting.
+2. Select a dataset so that is it highlighted.  
+    **Tip:** You can select multiple datasets to be deleted.
 
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/delete data confirmation.png'}}" alt="Delete Dataset Confirmation" /></p>
+    The dataset options appear at the top of the list.
 
-- Click *OK,DELETE*
-The dataset(s) is deleted and removed from your dashboard.
+3. Click *Delete dataset* from the datasets options  
+ 
+    <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/dashboard_delete_dataset.png' | prepend: site.baseurl }}" alt="Delete Dataset" /></p>
 
-**Note:** Deleted datasets cannot be recovered and are permanently removed.  It is recommended to export your dataset before deleting if it is important to you.
-<add hypertext link to external topic>
-	http://docs.cartodb.com/cartodb-editor.html#export-data
+    A confirmation dialog appears indicating the number and/or name of the dataset(s) that you are deleting.
 
-To delete a dataset from your Data View:
-- Click *Your Dataset* from the drop-down menu
-The page refreshes displaying a list of your datasets. 
-- Select the name of the dataset to view.
+    <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/delete_dataset_confirmation.png' | prepend: site.baseurl }}" alt="Delete Dataset Confirmation" /></p>
 
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/selected dataset name.png'}}" alt="Select name of Dataset" /></p>
+4. Click *OK,DELETE*  
 
-The page refreshes displaying the Data View for the selected dataset. 
-- Select *Delete this dataset* from the Edit drop-down menu
+    The dataset(s) is deleted and removed from your dashboard.
 
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/edit_delete this dataset.png'}}" alt="Delete this dataset" /></p>
+    **Note:** Deleted datasets cannot be recovered and are permanently removed.  It is recommended to [export](http://localhost:9000/faqs.html#how-to-export-datasets-from-cartodb) your dataset before deleting it if is important to you.
 
-A confirmation dialog appears and indicates the name of the selected dataset that are deleting.
-- Click *OK,DELETE*
-The dataset is deleted and page refreshes to your datasets dashboard.
+#####To Delete a Dataset from your Data View
+
+1. Click *Your Dataset* from the dashboard drop-down menu  
+
+    <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/Select_Your_Dataset.png' | prepend: site.baseurl }}" alt="Select Dataset" /></p>
+
+    The page refreshes displaying a list of your datasets. 
+
+2. Select the name of the dataset to view  
+
+    <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/selected_dataset_name.png' | prepend: site.baseurl }}" alt="Select Name of Dataset" /></p>
+
+    The page refreshes displaying the Data View for the selected dataset. 
+
+3. Select *Delete this dataset* from the Edit drop-down menu  
+
+    <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/edit_delete_this_dataset.png' | prepend: site.baseurl }}" alt="Delete this Dataset" /></p>
+
+    A confirmation dialog appears and indicates the name of the selected dataset that you are deleting.
+
+    <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/delete_dataset_confirmation.png' | prepend: site.baseurl }}" alt="Delete Dataset Confirmation" /></p>
+
+4. Click *OK,DELETE*  
+
+    The dataset is deleted and the page refreshes, displaying your datasets dashboard.
 
 ### Viewing Datasets
 
