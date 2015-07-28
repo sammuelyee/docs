@@ -12,17 +12,37 @@ One of the main components of CartoDB is its geospatial database built on Postgr
 
 We offer the option of connecting your own database to CartoDB as part of our Enterprise features in order to adapt the platform to your specific needs. If you are interested, let us know at sales@cartodb.com.
 
-### How can I export my data from CartoDB?
+### How to Export Datasets from CartoDB?
 
-After you have created, updated, or deleted data from your CartoDB tables, you may want to export them for sharing or use offline. We make that easy for you by providing one-click data export.
+You can export any of your datasets for use offline. The Export option is available from the Edit menu of your Data View.
+  
+1. Click *Your Dataset* from the dashboard drop-down menu  
 
-<p class="wrap-border"><img src="{{ '/img/layout/faqs/export-data.png' | prepend: site.baseurl }}" alt="How can I export my data from CartoDB" /></p>
+    <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/Select_Your_Dataset.png' | prepend: site.baseurl }}" alt="Select Dataset" /></p>
 
-1. From any table you have created, click **Options** in the upper right corner.
-2. Select **Export**  
-  From there, you should see a menu of export formats that CartoDB supports, including Comma separated (CSV), KML, ESRI Shape Files (SHP), and SQL.
+    The page refreshes displaying a list of your datasets. 
 
-3. Click the format you would like to download.
+2. Select the name of the dataset to view  
+
+    <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/export_selectdatasetname.png' | prepend: site.baseurl }}" alt="Select Name of Dataset" /></p>
+
+    The page refreshes displaying the Data View for the selected dataset. 
+
+3. Select *Export* from the Edit drop-down menu  
+
+    <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/export_dataset_menu_option.png' | prepend: site.baseurl }}" alt="Export Option from Edit Menu" /></p>
+
+    The export dataset options appear. 
+
+3. Select the preferred file format  
+
+    <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/export_dataset.png' | prepend: site.baseurl }}" alt="Export Dataset File Type" /></p>
+
+    **Note:** CartoDB supports the following [Supported File Formats.](http://docs.cartodb.com/cartodb-editor.html?__hstc=181257784.3dc04f00a6e2b270f27ca62681fe59f6.1437747025723.1438089650929.1438108963825.5&__hssc=181257784.33.1438108963825&__hsfp=1878368218#supported-file-formats)
+
+    The dataset is downloaded. 
+
+**Tip:** If you are using the SQL API, you can access downloads directly using your table URL by...
 
 There is a pro-tip for accessing downloads directly using your table URL. You can make use of the SQL API to run any query and ask for the results to be retrieved in different formats. For example:
 
@@ -31,7 +51,7 @@ There is a pro-tip for accessing downloads directly using your table URL. You ca
 http://{USERNAME}.cartodb.com/api/v2/sql?format=csv&q=SELECT+*+FROM+tm_world_borders_sim
 {% endhighlight %}
 
-For more background on SQL, check out our [Map Academy](http://academy.cartodb.com/courses/04-sql-postgis.html) course.
+For more background on SQL, see the [Map Academy](http://academy.cartodb.com/courses/04-sql-postgis.html) course.
 
 ### Are there any licenses on the data I upload to CartoDB?
 
