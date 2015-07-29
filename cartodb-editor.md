@@ -835,21 +835,11 @@ Besides the Basemap selector, you have an Options selector which will give you a
 * **CartoDB Logo:** include or exclude the CartoDB logo on your map.
 
 ### Share Your Map
+<div style="font-size:12pt;color:pink;">Writer Note_csobier: Add Include file here? 
+	This content is shared beween the cartodb-editor.md and the faqs.md. I have created a new html file in the CartoDB/docs/_includes folder "sharingmaps.html". It is a copy of the platform.html include file that I copied.
+</div>
 
-Once you have created a map, it's time to share it with the world! Take a look at our [written tutorial]({{ '/tutorials/sharing_maps.html' | prepend: site.baseurl }}) or [video tutorial](http://vimeo.com/80472123) for a guide to publishing and sharing your maps. Read on for a description of the CartoDB sharing interface!
-
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/sharevisualization.png' | prepend: site.baseurl }}" alt="Share your map" /></p>
-
-You have the following options to share your map:
-
-- **Get the Link**  
-You will find here the URL to share your map via Twitter, email, or anywhere else. When you share that link, viewers will only be able to explore it on the map, they will not be able to edit any of your data.
-
-- **Embed It**
-You will find here the embed code to get your map into your blog, website, or simple application.
-
-- **CartoDB.js**
-This URL will allow you to add your map to your applications. Read the [documentation here](http://docs.cartodb.com/cartodb-platform/cartodb-js.html), or learn about it in our [Map Academy](http://academy.cartodb.com/courses/03-cartodbjs-ground-up.html).
+{% sharingmaps.html %}
 
 ### Supported Fonts
 

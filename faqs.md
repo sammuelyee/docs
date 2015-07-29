@@ -6,13 +6,13 @@ js_asset: "editor"
 ---
 ## Tables and Data
 
-### What Databases are Supported by CartoDB?
+### What databases are supported by CartoDB?
 
 The CartoDB geospatial database is built on the [PostgreSQL](http://www.postgresql.org/docs/9.1/static/) platform and supports advanced  [PostGIS](http://postgis.net/docs/manual-2.0/) capabilities. All of our tables include `the_geom` column, which is a geometry field that indexes geometries in the EPSG:4326 (WGS 1984) coordinate system. All tables also automatically generate and update `the_geom_webmercator` column, which references the column internally to quickly create tiles for maps.  The CartoDB Platform connects your database with the Map API and the SQL APIs so that you can interact with data remotely and access the most recent data libraries.
 
 Optionally, CartoDB offers an Enterprise solution enabling you to connect your own database to our platform. Contact [Sales](mailto:sales@cartodb.com) for more information.
 
-### How to Export Datasets from CartoDB?
+### How to export datasets from CartoDB?
 
 You can export any of your datasets for use offline. The Export option is available from the Edit menu of your Data View.
   
@@ -84,7 +84,7 @@ CartoDB understands and utilizes the geographic coordinates written as [decimal 
 
 This happens for several reasons. First and foremost, a database table has a lot more storage considerations than a CSV. For example, indexes. It is also important to consider that the actual way that data is stored on disks is optimized for lookup and retrieval speed over storage space. A CSV is made so you can optimally store data - you open it, load it all into a program for a limited amout of time while you edit it, then save it, and be done. The database has things like data types, etc. 
 
-### Can I synchronize my tables in real-time?
+### Can I synchronize my tables in real time?
 
 <p class="wrap-border"><img src="{{ '/img/layout/faqs/force-sync.png' | prepend: site.baseurl }}" alt="Can I synchronize my tables in real time" /></p>
 
@@ -124,7 +124,7 @@ While still in table view, you will then click on Edit and then choose Georefere
 
 To prevent your data from undesired changes you can lock your datasets and maps. To lock a them, just go to your dashboard, select the element and click on the "Lock map" or "Lock dataset" options that will appear in the top menu. Once a map or dataset is locked, you will find it in the sections "Your locked maps" or "Your locked datasets", respectively.
 
-### Why isn’t my shapefile importing?
+### Why isn’t my Shapefile importing?
 
 CartoDB creates tables from shapefiles by importing a single zipped file. If your shapefile is not importing, make sure that:
 
@@ -330,6 +330,9 @@ Here you can find an example:
 - [Leaflet](http://leafletjs.com/reference.html#imageoverlay)
 
 ## Sharing maps
+<div style="font-size:12pt;color:pink;">Writer Note_csobier: Add Include file here? 
+	This content is shared beween the cartodb-editor.md and the faqs.md. I have created a new html file in the CartoDB/docs/_includes folder "sharingmaps.html". It is a copy of the platform.html include file that I copied.
+</div>
 
 ### How do I share a map?
 
@@ -349,9 +352,12 @@ There are different ways of sharing a map:
 - **API**  
   Gives you a link to your viz.json. You will need this URL if you are working on a more advanced way of using CartoDB.js.
 
-### How do I embed a map in my site/blog?
+### How do I embed a map in my site or blog?
 
 <p class="wrap-border"><img src="{{ '/img/layout/faqs/share-site.png' | prepend: site.baseurl }}" alt="How do I embed a map in my site/blog" /></p>
+
+<div style="font-size:12pt;color:red;">Reviewer question: Shouldn't these options show my public profile name (which is different then my actual user name?)
+</div>
 
 The easiest way is embedding a map by means of copying the HTML code that is provided in the "Share" option. 
 
