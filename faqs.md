@@ -4,13 +4,13 @@ title: FAQs
 slug: faqs
 js_asset: "editor"
 ---
-## Tables and data
+## Tables and Data
 
-### Which databases are supported by CartoDB?
+### What Databases are Supported by CartoDB?
 
-One of the main components of CartoDB is its geospatial database built on PostgreSQL and PostGIS. This means that by default the CartoDB platform works over PostgreSQL due to making heavy use of PostGIS advanced capabilities. This way, if the CartoDB built-in features are not enough to perform your analysis, you can take advantage of the full power of PostGIS.
+The CartoDB geospatial database is built on the [PostgreSQL](http://www.postgresql.org/docs/9.1/static/) platform and supports advanced  [PostGIS](http://postgis.net/docs/manual-2.0/) capabilities. All of our tables include `the_geom` column, which is a geometry field that indexes geometries in the EPSG:4326 (WGS 1984) coordinate system. All tables also automatically generate and update `the_geom_webmercator` column, which references the column internally to quickly create tiles for maps.  The CartoDB Platform connects your database with the Map API and the SQL APIs so that you can interact with data remotely and access the most recent data libraries.
 
-We offer the option of connecting your own database to CartoDB as part of our Enterprise features in order to adapt the platform to your specific needs. If you are interested, let us know at sales@cartodb.com.
+Optionally, CartoDB offers an Enterprise solution enabling you to connect your own database to our platform. Contact [Sales](mailto:sales@cartodb.com) for more information.
 
 ### How to Export Datasets from CartoDB?
 
@@ -38,20 +38,19 @@ You can export any of your datasets for use offline. The Export option is availa
 
     <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/export_dataset.png' | prepend: site.baseurl }}" alt="Export Dataset File Type" /></p>
 
-    **Note:** CartoDB supports the following [Supported File Formats.](http://docs.cartodb.com/cartodb-editor.html?__hstc=181257784.3dc04f00a6e2b270f27ca62681fe59f6.1437747025723.1438089650929.1438108963825.5&__hssc=181257784.33.1438108963825&__hsfp=1878368218#supported-file-formats)
+    **Note:** CartoDB supports the following file formats for exporting geospatial data: *CSV, Shapefile, KML, GeoJSON*, and *SVG* formats.
+	
+	The dataset is downloaded based on your web browser process. 
 
-    The dataset is downloaded. 
-
-**Tip:** If you are using the SQL API, you can access downloads directly using your table URL by...
-
-There is a pro-tip for accessing downloads directly using your table URL. You can make use of the SQL API to run any query and ask for the results to be retrieved in different formats. For example:
+**Tip:** If you are using the SQL API, you can use your table URL to run a response query and export downloads in different formats. For example, the following sample code shows the *CSV* export format for an SQL API request.
 
 <div class="code-title notitle code-request"></div>
 {% highlight bash %}
 http://{USERNAME}.cartodb.com/api/v2/sql?format=csv&q=SELECT+*+FROM+tm_world_borders_sim
 {% endhighlight %}
 
-For more background on SQL, see the [Map Academy](http://academy.cartodb.com/courses/04-sql-postgis.html) course.
+For more information about using the SQL API, see the [MSQL and PostGIS in CartoDB
+Queries to visualizations](http://academy.cartodb.com/courses/04-sql-postgis.html) Map Academy course.
 
 ### Are there any licenses on the data I upload to CartoDB?
 
