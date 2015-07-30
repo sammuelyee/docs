@@ -10,59 +10,42 @@
  </div>
  -->
  
-Once you visualize and publish a map, you can get a link to share the map, embed it to a website or blog, or add your map to another application. The Publish button is available from the Data View or Map View of your dashboard when a map is selected, and displays the following opitons.
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/publishoptions.png' | prepend: site.baseurl }}" alt="Publish Options" /></p>
- <div style="font-size:12pt;color:red;">Reviewer Note: This image is confusing, it looks like something will happen if I click the "Publish your map" icon. I think the UI dialog can be improved to add further instructions.
- </div>
+OOnce you visualize and publish a map, you can get a link to share the map, embed it to a website or blog, or add your map to another application. The Publish button is available from the Data View or Map View of your dashboard when a map is selected, and displays the following options.
+
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/publishbutton.png' | prepend: site.baseurl }}" alt="Publish button" /></p>
+
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/publishoptions.png' | prepend: site.baseurl }}" alt="How do I embed a map in my site/blog" /></p>
+
+**Note:** You cannot publish a private map.  
+
+- **Get the link**  
+  Provides a URL to the map as it appears in your CartoDB public profile. 
+  1. Select the URL from the *Get the link* field
+  2. Copy and paste the link anywhere (email, social media, blog posts) to share the link
+  
+- **Embed it**  
+  Provides HTML code to embed the map. 
+  1. Select the embed code from the *Embed it* input field
+  2. Click *Go to your map* to view how the embeded map appears and customize any of your iframe parameters as needed
+  **Tip:** This is very useful for publishing interactive maps of your data on your website or blog. For example, you can insert CartoDB maps by including the iframe in the HTML code editor of WordPress, Joomla, and Drupal.
+  
+- **CartoDB.js**  
+  Provides a URL to your viz.json file, which is required if you are using the CartoDB JavaScript library [CartoDB.js](http://docs.cartodb.com/cartodb-platform/cartodb-js.html) to publish maps in an external application.
+  1. Select the URL from the "CartoDB.js" input field
+  2. Copy and paste the link to your external application
+  Optionally, click [Read More](http://docs.cartodb.com/cartodb-platform/cartodb-js.html) to view the CartoDB.js documentation.
+
  <div style="font-size:12pt;color:pink;">Writer Note_csobier: Add separate Visualize and Publish procedures- currently, these options are mentioned a few times throughout random places in the doc.
  </div>
  -->
-
-**Note:** You cannot share a private map. 
- <div style="font-size:12pt;color:red;">Reviewer Note: Is this correct? When I click Publish on a private map, the same options appear? How do the privacy labels (public, private, link relate to the PUblish options? They do not seem to be enforce any Publish behavior.)
- </div>
 
 
  </div>
  <div style="font-size:12pt;color:green;">ORIGINAL CONTENT- everything that follows is still a work in progress
  </div>
- 
-You share a CartoDB map by copying the HTML code and embedding it in a site or blog.  Optionally, you can also insert shared maps in WordPress, Joomla, Drupal, etc. by including the iframe in a HTML code editor.
 
 Once you have created a map, it's time to share it with the world! Take a look at our [written tutorial]({{ '/tutorials/sharing_maps.html' | prepend: site.baseurl }}) or [video tutorial](http://vimeo.com/80472123) for a guide to publishing and sharing your maps. Read on for a description of the CartoDB sharing interface!
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/sharevisualization.png' | prepend: site.baseurl }}" alt="Share your map" /></p>
-
-You have the following options to share your map:
-
-- **Get the Link**  
-You will find here the URL to share your map via Twitter, email, or anywhere else. When you share that link, viewers will only be able to explore it on the map, they will not be able to edit any of your data.
-
-- **Embed It**
-You will find here the embed code to get your map into your blog, website, or simple application.
-
-- **CartoDB.js**
-This URL will allow you to add your map to your applications. Read the [documentation here](http://docs.cartodb.com/cartodb-platform/cartodb-js.html), or learn about it in our [Map Academy](http://academy.cartodb.com/courses/03-cartodbjs-ground-up.html).
-
-FROM FAQs section:
-### How do I share a map?
-{% include sharingmaps.html %}
-
-
-Once you have created and customized your map, you should click on the "Share" option.
-
-There are different ways of sharing a map:
-
-- **Get the link**
-  Used in order to share your map directly as it appears in your CartoDB public profile.
-
-- **Embed it**
-  HTML code to embed the map in your site. This is very useful for putting interactive maps of your data on your website or blog.
-
-- **Get a simple URL**
-  Used in order to share the map itself.
-
-- **API**  
-  Gives you a link to your viz.json. You will need this URL if you are working on a more advanced way of using CartoDB.js.
 
 </article>

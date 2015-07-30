@@ -335,34 +335,32 @@ Here you can find an example:
 	This content is shared beween the cartodb-editor.md and the faqs.md. I have created a new html file in the CartoDB/docs/_includes folder "sharingmaps.html". It is a copy of the platform.html include file that I copied. I am still working on adding shared content.
 </div>
 -->
-### How do I share a map?
 
-Once you have created and customized your map, you should click on the "Share" option.
+### How do I publish a map?
+Once you visualize and publish a map, you can get a link to share the map, embed it to a website or blog, or add your map to another application. The Publish button is available from the Data View or Map View of your dashboard when a map is selected, and displays the following options.
 
-There are different ways of sharing a map:
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/publishbutton.png' | prepend: site.baseurl }}" alt="Publish button" /></p>
 
-- **Get the link**
-  Used in order to share your map directly as it appears in your CartoDB public profile.
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/publishoptions.png' | prepend: site.baseurl }}" alt="How do I embed a map in my site/blog" /></p>
 
-- **Embed it**
-  HTML code to embed the map in your site. This is very useful for putting interactive maps of your data on your website or blog.
+**Note:** You cannot publish a private map.  
 
-- **Get a simple URL**
-  Used in order to share the map itself.
-
-- **API**  
-  Gives you a link to your viz.json. You will need this URL if you are working on a more advanced way of using CartoDB.js.
-
-### How do I embed a map in my site or blog?
-
-<p class="wrap-border"><img src="{{ '/img/layout/faqs/share-site.png' | prepend: site.baseurl }}" alt="How do I embed a map in my site/blog" /></p>
-
-<div style="font-size:12pt;color:red;">Reviewer question: Shouldn't these options show my public profile name (which is different then my actual user name?)
-</div>
-
-The easiest way is embedding a map by means of copying the HTML code that is provided in the "Share" option. 
-
-You will be able to insert CartoDB maps in WordPress, Joomla, Drupal, etc. if you just include the iframe in a HTML code editor.
+- **Get the link**  
+  Provides a URL to the map as it appears in your CartoDB public profile. 
+  1. Select the URL from the *Get the link* field
+  2. Copy and paste the link anywhere (email, social media, blog posts) to share the link
+  
+- **Embed it**  
+  Provides HTML code to embed the map. 
+  1. Select the embed code from the *Embed it* input field
+  2. Click *Go to your map* to view how the embeded map appears and customize any of your iframe parameters as needed
+  **Tip:** This is very useful for publishing interactive maps of your data on your website or blog. For example, you can insert CartoDB maps by including the iframe in the HTML code editor of WordPress, Joomla, and Drupal.
+  
+- **CartoDB.js**  
+  Provides a URL to your viz.json file, which is required if you are using the CartoDB JavaScript library [CartoDB.js](http://docs.cartodb.com/cartodb-platform/cartodb-js.html) to publish maps in an external application.
+  1. Select the URL from the "CartoDB.js" input field
+  2. Copy and paste the link to your external application
+  Optionally, click [Read More](http://docs.cartodb.com/cartodb-platform/cartodb-js.html) to view the CartoDB.js documentation.
 
 ### How to print maps in CartoDB?
 
