@@ -329,11 +329,12 @@ Here you can find an example:
 
 - [Leaflet](http://leafletjs.com/reference.html#imageoverlay)
 
-## Sharing maps
+## Sharing Maps
+<!--
 <div style="font-size:12pt;color:pink;">Writer Note_csobier: Add Include file here? 
-	This content is shared beween the cartodb-editor.md and the faqs.md. I have created a new html file in the CartoDB/docs/_includes folder "sharingmaps.html". It is a copy of the platform.html include file that I copied.
+	This content is shared beween the cartodb-editor.md and the faqs.md. I have created a new html file in the CartoDB/docs/_includes folder "sharingmaps.html". It is a copy of the platform.html include file that I copied. I am still working on adding shared content.
 </div>
-
+-->
 ### How do I share a map?
 
 Once you have created and customized your map, you should click on the "Share" option.
