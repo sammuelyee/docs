@@ -1295,13 +1295,35 @@ In this section, you can customize how your Public Page will look by choosing yo
 
 On the "Your Plan" page, you can see information about your company, users, data storage, and resources. You can also contact us with questions or changes to your account.
 
-## **Official Twitter Datasource**
+## **Official Twitter Datasource** 
 
-#### About the Twitter Datasource
+#### About the Twitter Datasource 
+<div style="font-size:12pt;color:red;">Original Title
+</div>
 
-CartoDB has access to the complete Twitter firehose, providing it with official Twitter data. For our users, it is really easy to obtain Twitter data and map it. Once the user clicks on "Connect dataset" within the Datasets section of their dashboard, the menu that you see in this screenshot, will open.
+CartoDB has developer access to Twitter Firehose, which enables us to provide official Twitter data 
+to all of our users. The following steps describe how to connect Twitter data to a dataset so that you can obtain and map Twitter data for a map.
 
-<p class="wrap-border"><img src="/img/layout/cartodb-editor/twitter_0.png" alt="New import dialog" /></p>
+##### How to Connect Twitter Data to a Dataset 
+<div style="font-size:12pt;color:blue;">Revised Title
+</div>
+
+1. Click *Your Dataset* from the drop-down menu  
+
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/Select_Your_Dataset.png'}}" alt="Select Dataset" /></p>
+
+The page refreshes, displaying a list of your datasets.  
+
+2. Select a dataset so that is it highlighted.  
+
+  1. Create a new dataset from your dashboard  
+  2. Click New Dataset  
+  The connect dataset options appear.  
+  3. Slect Twitter as the dataset to connect to  
+  Tooltip appears (never appears again:-(  
+  4. Click Ask for Demo to email CartoDB and request a step-by-step demonstration of how to connect to Twitter data.
+
+<p class="wrap-border"><img src="/img/layout/cartodb-editor/twitter_connector.png" alt="Select Twitter to Connect a Dataset" /></p>
 
 After you click on the Twitter icon, you will be able to see the following window:
 
