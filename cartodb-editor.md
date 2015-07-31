@@ -126,7 +126,7 @@ _CartoDB prefers datasets that use comma separators. Also, we are only able to i
 
 *For Shapefiles, we require that the whole .ZIP file contains the .SHP, .DBF, .SHX and .PRJ files, all prefixed with same name. (For example a `ne_10m_populated_places.zip` file would contain `ne_10m_populated_places.shp`, `ne_10m_populated_places.dbf`, `ne_10m_populated_places.shx` and `ne_10m_populated_places.prj`).*
 
-_XLS and XSLX may take longer than .CSV files. We highly recommend that you export Excel files to .CSV before importing in CartoDB._
+_XLS and XSLX may take longer than CSV files. We highly recommend that you export Excel files to CSV before importing in CartoDB._
 
 ### Manage Your Datasets
 

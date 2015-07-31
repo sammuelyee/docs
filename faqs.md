@@ -49,8 +49,7 @@ You can export any of your datasets for use offline. The Export option is availa
 http://{USERNAME}.cartodb.com/api/v2/sql?format=csv&q=SELECT+*+FROM+tm_world_borders_sim
 {% endhighlight %}
 
-For more information about using the SQL API, see the [MSQL and PostGIS in CartoDB
-Queries to visualizations](http://academy.cartodb.com/courses/04-sql-postgis.html) Map Academy course.
+For more information about using the SQL API, see the [SQL and PostGIS in CartoDB](http://academy.cartodb.com/courses/04-sql-postgis.html) Map Academy course.
 
 ### Are there any licenses on the data I upload to CartoDB?
 
