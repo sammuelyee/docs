@@ -150,7 +150,7 @@ Keep in mind that different privacy options will appear depending on your accoun
 
 #### Delete Dataset
 
-There are multiple ways to delete a dataset with the CartoDB Editor. You can delete a dataset from your [dashboard](http://localhost:9000/cartodb-editor.html#to-delete-a-dataset-from-your-dashboard) or directly from your [Data View](http://localhost:9000/cartodb-editor.html#to-delete-a-dataset-from-your-data-view).
+There are multiple ways to delete a dataset with the CartoDB Editor. You can delete a dataset from your [dashboard](#To-Delete-a-Dataset-from-your-Dashboard) or directly from your [Data View](#To-Delete-a-Dataset-from-your-Data-View).
 
 #####To Delete a Dataset from your Dashboard
 
@@ -177,7 +177,7 @@ There are multiple ways to delete a dataset with the CartoDB Editor. You can del
 
     The dataset(s) is deleted and removed from your dashboard.
 
-    **Note:** Deleted datasets cannot be recovered and are permanently removed.  It is recommended to [export](http://localhost:9000/faqs.html#how-to-export-datasets-from-cartodb) your dataset before deleting it if is important to you.
+    **Note:** Deleted datasets cannot be recovered and are permanently removed.  It is recommended to [export](/faqs.html#how-to-export-datasets-from-cartodb) your dataset before deleting it if is important to you.
 
 #####To Delete a Dataset from your Data View
 
