@@ -1307,47 +1307,58 @@ to all of our users. The following steps describe how to connect Twitter data to
 ##### How to Connect Twitter Data to a Dataset
 <div style="font-size:12pt;color:blue;">Revised Title
 </div>  
-  
-1.  Click *Your Dataset* from the drop-down menu  
-  
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/Select_Your_Dataset.png'}}" alt="Select Dataset" /></p>  
-  
-The page refreshes, displaying a list of your datasets.  
-  
+
+1. Click *Your Dataset* from the drop-down menu  
+
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/Select_Your_Dataset.png'}}" alt="Select Dataset" /></p>
+
+	The page refreshes, displaying a list of your datasets.
+
 2. Click NEW DATASET  
   
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/new_dataset_button.png'}}" alt="NEW DATASET Button Dataset" /></p>  
-  
-The Connect dataset options appear.  
-  
-3. Click *Twitter* as the external service. 
-  
-  **Note:** The first time you click on an option from this screen, a tip appears. Click *Got It* to close this tip.      
-  <div style="font-size:12pt;color:magenta;">Writer Note: These tips need to be rewritten in the UI
-</div>  
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/new_dataset_button.png'}}" alt="NEW DATASET Button Dataset" /></p>
 
-	Selecting Twitter as your external service indicates that you must enable the Twitter Connector before connecting your dataset. This requires that you contact CartoDB for assistance.
+	The Connect dataset options appear.
 
+3. Click *Twitter* as the external service  
 
-4. Click *Ask for Demo* to request the Twitter Connector for your account. 
+ 	 **Note:** The first time you click on an option from this screen, a tip appears. Click *Got It* to close this tip.
 
-  <div style="font-size:12pt;color:blue;">Reviewer Note: This button should be rewritten:  Replace *Ask for Demo* with *Request Twitter Connector* seems like the obvious option to me.
-</div>  
-
-  <p class="wrap-border"><img src="/img/layout/cartodb-editor/twitter_connector.png" alt="Select Twitter to Connect a Dataset" /></p>  
-  
-  Once the Twitter Connector is enabled for your account, a CartoDB sales representive sends you a confirmation email. This indicates that tweets are enabled for your account and you can continue the process of connecting a dataset to Twitter. 
-  
-  4. Click Ask for Demo to email CartoDB and request a step-by-step demonstration of how to connect to Twitter data.
+<div style="font-size:12pt;color:magenta;">Writer Note: These tips need to be rewritten in the UI
+</div>
+		 
+Selecting Twitter as your external service indicates that you must enable the Twitter Connector before connecting your dataset. This requires that you contact CartoDB for assistance.
 
 <p class="wrap-border"><img src="/img/layout/cartodb-editor/twitter_connector.png" alt="Select Twitter to Connect a Dataset" /></p>
 
-<div style="font-size:12pt;color:blue;">Reviewer Note:** Should a Twitter dataset always enforce public or link privacy settings
+4. Click *ASK FOR A DEMO* to request the Twitter Connector for your account  
+
+<div style="font-size:12pt;color:blue;">Reviewer Note: This button should be rewritten. Replace *ASK FOR ADEMO* with *ENABLE TWITTER CONNECTOR* seems like the obvious choice to me.
 </div>
 
-After you click on the Twitter icon, you will be able to see the following window:
+Once the Twitter Connector is enabled for your account, a CartoDB sales representive sends you a confirmation email. This indicates that tweets are enabled for your account and you can continue the process of connecting a dataset to Twitter.
+	
+<div style="font-size:12pt;color:blue;">Reviewer Note: Should a Twitter dataset always enforce public or link privacy settings.  **Also, is the Twitter external service free??**
+</div>
+
+5. After the Twitter Connector is enabled, clicking *Twitter* as the external service displays the Twitter Trends options  
+<p class="wrap-border"><img src="/img/layout/cartodb-editor/twitter.png" alt="New import dialog" /></p>
+
+6.  Click CONNECT DATASET  
+
+**Note:** You must enter at least one category for your Twitter search term in order to activate the CONNECT DATASET button.
+
+<div style="font-size:12pt;color:magenta;">Writer Note: add reference table of terms: Category 1-4, From/to, Use
+</div>
+
+The page refreshes and displays the connected Twitter dataset. You can edit any of the dataset options as usual.
+
+INSERT IMAGE- CONFIRM privacy setting first.
+
 
 <p class="wrap-border"><img src="/img/layout/cartodb-editor/twitter.png" alt="New import dialog" /></p>
+
+ORIGINAL CONTENT- TO BE EDITED
 
 You can begin your search by jotting down different hashtags or keywords separated by a comma under each category (they will work as an OR, e.g. "santa,xmas" would work like "santa OR xmas"). You can use the valid character # should you choose to for hashtags. Spaces before and after commas are removed, but if you put a multi-sentence word it will perform a search (e.g. "cars, bikes motorbikes, planes" is a 3 term search, do not mistake with "cars, bikes, motorbikes, planes"). You will be able to see how many Twitter credits you have remaining.
 
