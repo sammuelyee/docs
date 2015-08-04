@@ -126,7 +126,7 @@ _CartoDB prefers datasets that use comma separators. Also, we are only able to i
 
 *For Shapefiles, we require that the whole .ZIP file contains the .SHP, .DBF, .SHX and .PRJ files, all prefixed with same name. (For example a `ne_10m_populated_places.zip` file would contain `ne_10m_populated_places.shp`, `ne_10m_populated_places.dbf`, `ne_10m_populated_places.shx` and `ne_10m_populated_places.prj`).*
 
-_XLS and XSLX may take longer than .CSV files. We highly recommend that you export Excel files to .CSV before importing in CartoDB._
+_XLS and XSLX may take longer than CSV files. We highly recommend that you export Excel files to CSV before importing in CartoDB._
 
 ### Manage Your Datasets
 
@@ -149,11 +149,61 @@ You can also change the privacy settings of a dataset at any time within the dat
 Keep in mind that different privacy options will appear depending on your account plan.
 
 #### Delete Dataset
-To delete a dataset from the Dashboard, navigate to the Dataset page. Select the dataset you wish to delete, which will reveal a second menu with the option to "Delete dataset." You can also delete a dataset from the Data view page, within the Options menu located in the top-right menu.
 
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/deletetable.png' | prepend: site.baseurl }}" alt="Dataset privacy" /></p>
+There are multiple ways to delete a dataset with the CartoDB Editor. You can delete a dataset from your [dashboard](#To-Delete-a-Dataset-from-your-Dashboard) or directly from your [Data View](#To-Delete-a-Dataset-from-your-Data-View).
 
-Keep in mind that deleted datasets cannot be recovered and are permanently removed.
+#####To Delete a Dataset from your Dashboard
+
+1. Click *Your datasets* from the dashboard drop-down menu  
+
+    <p class="wrap-border"><img src="{{ '/img/layout/common/Select_Your_Dataset.png' | prepend: site.baseurl }}" alt="Select Dataset" /></p>
+
+    The page refreshes, displaying a list of your datasets.
+
+2. Select a dataset so that is it highlighted.  
+    **Tip:** You can select multiple datasets to be deleted.
+
+    The dataset options appear at the top of the list.
+
+3. Click *Delete dataset* from the datasets options  
+ 
+    <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/dashboard_delete_dataset.png' | prepend: site.baseurl }}" alt="Delete Dataset" /></p>
+
+    A confirmation dialog appears, indicating the number and/or name of the dataset(s) that you are deleting.
+
+    <p class="wrap-border"><img src="{{ '/img/layout/common/delete_dataset_confirmation.png' | prepend: site.baseurl }}" alt="Delete Dataset Confirmation" /></p>
+
+4. Click *OK,DELETE*  
+
+    The dataset(s) is deleted and removed from your dashboard.
+
+    **Note:** Deleted datasets cannot be recovered and are permanently removed.  It is recommended to [export](/faqs.html#how-to-export-datasets-from-cartodb) your dataset before deleting it if is important to you.
+
+#####To Delete a Dataset from your Data View
+
+1. Click *Your datasets* from the dashboard drop-down menu  
+
+    <p class="wrap-border"><img src="{{ '/img/layout/common/Select_Your_Dataset.png' | prepend: site.baseurl }}" alt="Select Dataset" /></p>
+
+    The page refreshes displaying a list of your datasets. 
+
+2. Select the name of the dataset to view  
+
+    <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/selected_dataset_name.png' | prepend: site.baseurl }}" alt="Select Name of Dataset" /></p>
+
+    The page refreshes displaying the Data View for the selected dataset. 
+
+3. Select *Delete this dataset* from the Edit drop-down menu  
+
+    <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/edit_delete_this_dataset.png' | prepend: site.baseurl }}" alt="Delete this Dataset" /></p>
+
+    A confirmation dialog appears, indicating the name of the selected dataset that you are deleting.
+
+    <p class="wrap-border"><img src="{{ '/img/layout/common/delete_dataset_confirmation.png' | prepend: site.baseurl }}" alt="Delete Dataset Confirmation" /></p>
+
+4. Click *OK,DELETE*  
+
+    The dataset is deleted and the page refreshes, displaying your datasets dashboard.
 
 ### Viewing Datasets
 
@@ -221,7 +271,7 @@ We've decoupled dataset privacy from map privacy to give you ultimate control ov
 
 ### Map Privacy Options
 
-When you are creating your CartoDB visualization you may also edit who has access to it. In order to edit these settings, click on the padlock from the map created on the "Visualizations" section of your CartoDB Dashboard. Here you will also be able to delete your visualization or lock it to prevent any accidental changes in the future.
+When you are creating your CartoDB visualization you may also edit who has access to it. In order to edit these settings, click on the padlock from the map created on the "Visualizations" section of your CartoDB dashboard. Here you will also be able to delete your visualization or lock it to prevent any accidental changes in the future.
 
 When you create a map with CartoDB, you can customize who can access it. You can edit the privacy settings for your map from a few places. In the "Maps" section of the dashboard, edit the privacy settings of individual maps by selecting the privacy link in the lower left-hand corner of each listed map.
 
@@ -784,22 +834,9 @@ Besides the Basemap selector, you have an Options selector which will give you a
 * **Fullscreen:** enable or disable the ability of viewers to enter fullscreen mode.
 * **CartoDB Logo:** include or exclude the CartoDB logo on your map.
 
-### Share Your Map
+### Publish and Share Your Map
 
-Once you have created a map, it's time to share it with the world! Take a look at our [written tutorial]({{ '/tutorials/sharing_maps.html' | prepend: site.baseurl }}) or [video tutorial](http://vimeo.com/80472123) for a guide to publishing and sharing your maps. Read on for a description of the CartoDB sharing interface!
-
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/sharevisualization.png' | prepend: site.baseurl }}" alt="Share your map" /></p>
-
-You have the following options to share your map:
-
-- **Get the Link**  
-You will find here the URL to share your map via Twitter, email, or anywhere else. When you share that link, viewers will only be able to explore it on the map, they will not be able to edit any of your data.
-
-- **Embed It**
-You will find here the embed code to get your map into your blog, website, or simple application.
-
-- **CartoDB.js**
-This URL will allow you to add your map to your applications. Read the [documentation here](http://docs.cartodb.com/cartodb-platform/cartodb-js.html), or learn about it in our [Map Academy](http://academy.cartodb.com/courses/03-cartodbjs-ground-up.html).
+{% include sharingmaps.html %}
 
 ### Supported Fonts
 
@@ -1205,7 +1242,7 @@ On the left side of your browser you can search for maps by tag or name, view ma
 <p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_00.png" alt="dash" /></p>
 
 ####Your Datasets
-Similar to your Maps Dashboard, your Datasets Dashboard allows you to easily search for datasets by name or tag, view your own and shared datasets, see datasets you have liked, and access our ever growing and free to use **Data Library**. You can also order your datasets by size, or add new datasets from your computer, the web, or from scratch.
+Similar to your Maps dashboard, your Datasets dashboard allows you to easily search for datasets by name or tag, view your own and shared datasets, see datasets you have liked, and access our ever growing and free to use **Data Library**. You can also order your datasets by size, or add new datasets from your computer, the web, or from scratch.
 
 <p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_01.png" alt="data dash" /></p>
 
