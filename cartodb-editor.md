@@ -835,11 +835,9 @@ Besides the Basemap selector, you have an Options selector which will give you a
 * **CartoDB Logo:** include or exclude the CartoDB logo on your map.
 
 ### Publish and Share Your Map
-<!--
-<div style="font-size:12pt;color:pink;">Writer Note_csobier: Add Include file here? 
-	This content is shared beween the cartodb-editor.md and the faqs.md. I have created a new html file in the CartoDB/docs/_includes folder "sharingmaps.html". It is a copy of the platform.html include file that I copied. I am still working on adding shared content.
-</div>
--->
+
+{% include csoiber.html %}
+
 Once you visualize and publish a map, you can get a link to share the map, embed it to a website or blog, or add your map to another application. The Publish button is available from the Data View or Map View of your dashboard when a map is selected, and displays the following options.
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/publishbutton.png' | prepend: site.baseurl }}" alt="Publish button" /></p>

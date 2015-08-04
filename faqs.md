@@ -329,11 +329,8 @@ Here you can find an example:
 - [Leaflet](http://leafletjs.com/reference.html#imageoverlay)
 
 ## Sharing Maps
-<!--
-<div style="font-size:12pt;color:pink;">Writer Note_csobier: Add Include file here? 
-	This content is shared beween the cartodb-editor.md and the faqs.md. I have created a new html file in the CartoDB/docs/_includes folder "sharingmaps.html". It is a copy of the platform.html include file that I copied. I am still working on adding shared content.
-</div>
--->
+
+{% include csoiber.html %}
 
 ### How do I publish a map?
 Once you visualize and publish a map, you can get a link to share the map, embed it to a website or blog, or add your map to another application. The Publish button is available from the Data View or Map View of your dashboard when a map is selected, and displays the following options.
