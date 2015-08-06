@@ -130,23 +130,90 @@ _XLS and XSLX may take longer than .CSV files. We highly recommend that you expo
 
 ### Manage Your Datasets
 
-You may view all of your uploaded datasets on your dashboard's landing page. Feel free to order them by the date modified or created, size, most visited, or most liked.
+You can manage all of your datasets from your Datasets dashboard and change how the datasets are ordered, edit the privacy settings for your datasets, or delete a dataset.
+
+##### How to Change the Sort Order of your Datasets
+1. Click *Your datasets* from your dashboard  
+
+	The datasets view appears, displaying all your datasets ordered by date.
+	
+2. Use the datasets toolbar to change how your datasets appear
+
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/dataset_dashboard_orderby.png' | prepend: site.baseurl }}" alt="Dataset Toolbar" /></p>
+
+The following sort options are available from the datasets toolbar.
+
+Sort Options | Description
+------------ | -------------
+<img src="{{ '/img/layout/cartodb-editor/orderbydate.png' | prepend: site.baseurl }}" alt="Order by date" />| Order by date. This is the default setting and indicates the date that the dataset was created or imported
+<img src="{{ '/img/layout/cartodb-editor/orderbyvisits.png' | prepend: site.baseurl }}" alt="Order by visits" /> | Order by visits. This is only applicable for your public shared maps
+<img src="{{ '/img/layout/cartodb-editor/orderbylikes.png' | prepend: site.baseurl }}" alt="Order by likes" /> | Order by likes
+<img src="{{ '/img/layout/cartodb-editor/orderbysize.png' | prepend: site.baseurl }}" alt="Order by sizez" /> | Order by size. This is the size of your dataset
+	
+Your dashboard refreshes, changing the sort order of your datasets appear.
 
 #### Dataset Privacy Settings
 
-To change the privacy settings of a dataset, click the colored label option on the left hand side of options. Or, select the dataset to reveal a second menu bar and choose the "Change privacy" menu option.
+You can protect your dataset and identify the privacy setting as *Public*, *With link* or *Private*. The dataset privacy settings are managed through the dataset metadata.
 
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/deletedataset.png' | prepend: site.baseurl }}" alt="Dataset privacy" /></p>
+**Note:** The dataset metadata is stored separately from your [map metadata](#map-metadata). 
 
-You may choose "Public," "With Link," or "Private". If a dataset is set to public, anyone may find it on your Public Page or roaming the internet. If it requires a link, only those who have the link will be able to find it. If it's private, no one but you will be able to see the dataset.
+The following image displays the available privacy options.
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/privacy_options.png' | prepend: site.baseurl }}" alt="Privacy options" /></p>
 
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/datasetprivacy.png' | prepend: site.baseurl }}" alt="Dataset privacy" /></p>
+The following pricavy settings are available:
 
-You can also change the privacy settings of a dataset at any time within the data view. From the 'Options' menu, select "Change privacy" or click the colored lock button that appears on the top-left section of the page.
+Privacy Option | Description
+------------ | -------------
+Public | If a dataset is set to public, anyone may find it on your Public Page or roaming the internet. 
+With link | If it requires a link, only those who have the link will be able to find it. If it's private, no one but you will be able to see the dataset.
+Private | Content from cell 2
 
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/privacy-dialog.png' | prepend: site.baseurl }}" alt="Dataset privacy" /></p>
+There are multiple ways to access these privacy options.
 
-Keep in mind that different privacy options will appear depending on your account plan.
+**Note:** Different privacy options may appear, depending on your account settings.
+
+#####How to Edit the Privacy Setting from your Dashboard
+1. Click *Your datasets* from your dashboard  
+
+	The datasets view appears, displaying all your datasets.
+	
+2. Select the privacy setting for a dataset
+
+	By default, new datasets are created as *Private*.
+
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/privacy_fromdatasetdashboard.png' | prepend: site.baseurl }}" alt="Dataset Privacy from Dashboard" /></p>
+
+The privacy options appear, from which you can change and save the privacy setting.
+
+#####How to Edit the Privacy Setting From the Data View
+There are several ways to edit the privacy setting within the Data View.
+
+1. Click *Your datasets* from your dashboard 
+
+	The datasets view appears, displaying all your datasets.
+	
+2. Click the name of a dataset
+
+	The selected dataset opens in the Data View. You can open the privacy options from the Edit menu and from the lock icon. Additionally, you can access the privacy options from within the Edit metadata options.
+	
+	*2a. Click *Change privacy* from the Edit menu.
+
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/changeprivacy_editmenu.png' | prepend: site.baseurl }}" alt="Change Privacy Option" /></p>
+
+	The privacy options appear, from which you can change and save the privacy setting.
+
+	*2b. Click the lock icon, next to the name of the dataset.
+	
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/lockicon_dataview.png' | prepend: site.baseurl }}" alt="Lock icon" /></p>
+	
+	The privacy options appear, from which you can change and save the privacy setting.
+	
+	*2c. Click *Edit metadata*
+
+	The Dataset metadata options appear, from which you can click the privacy setting to open the privacy options to change and save your settings.
+
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/privacy_fromeditmetadata.png' | prepend: site.baseurl }}" alt="Privacy from Edit Metadata" /></p>
 
 #### Delete Dataset
 To delete a dataset from the Dashboard, navigate to the Dataset page. Select the dataset you wish to delete, which will reveal a second menu with the option to "Delete dataset." You can also delete a dataset from the Data view page, within the Options menu located in the top-right menu.
