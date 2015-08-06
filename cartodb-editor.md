@@ -297,7 +297,7 @@ There are four options for map privacy settings.
 
 ### Map Metadata
 
-You can edit the attributes for each map to add metadata for your map. This is useful for keeping your maps organized and discoverable in a search, as your repository of maps increases.  You can edit map metadata from the Map View for a selected map, or directly from your maps dashboard.
+You can edit the attributes for each map to add metadata for your map. This is useful for keeping your maps organized and discoverable in a search, as your repository of maps increases.  You can edit map metadata from the Map View for a selected map.
 
 ####How to Edit Metadata for a Map
 
@@ -316,11 +316,11 @@ You can edit the attributes for each map to add metadata for your map. This is u
 	Map Attribute | Description
 	------------ | -------------
 	Map name | The name of the map. Note to be as specific as possible if this is a public map
-	Description | Describe the content and purpose of your map
-	Tags | Tags enable you to group projects of themes for your maps. You can also add license information as needed
-	Privacy | Maps can be Private, Public or Links. Click the current status to change the privacy settings for the selected mapP
+	Description | Describe the content and purpose of your map. You can also add license information in this field if you are sharing your map
+	Tags | Tags enable you to group your maps by project or theme. 
+	Privacy | Maps can be Private, Public or Links. Click the current status to change the privacy settings for the selected map
 	
-3. Click Save to close and save the map metadata attributes  
+3. Click *SAVE* to close and save the map metadata attributes  
 
 **Tip:** You can add a description, add tags, or edit the map privacy setting directly from the Maps View of your dashboard. Once an initial map description and map tag is entered through this shortcut, you must click *Edit metadata* from the selected map if you need to update these attributes again.
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/editmapmetadata_dashboard.png' | prepend: site.baseurl }}" alt="Edit Map Metadata from Dashboard" /></p>
