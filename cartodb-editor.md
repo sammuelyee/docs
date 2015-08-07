@@ -132,8 +132,10 @@ _XLS and XSLX may take longer than .CSV files. We highly recommend that you expo
 
 You can manage all of your datasets from your Datasets dashboard and change how the datasets are ordered, edit the privacy settings for your datasets, or delete a dataset.
 
-##### How to Change the Sort Order of your Datasets
-1. Click *Your datasets* from your dashboard  
+####Changing the Sort Order of your Datasets
+The following procedure describes how to change the sort order of your datasets from your datasets dashboard.
+
+1. Click *Your datasets* from your dashboard drop-down menu
 
 	The datasets view appears, displaying all your datasets ordered by date.
 	
@@ -150,7 +152,7 @@ Sort Options | Description
 <img src="{{ '/img/layout/cartodb-editor/orderbylikes.png' | prepend: site.baseurl }}" alt="Order by likes" /> | Order by likes
 <img src="{{ '/img/layout/cartodb-editor/orderbysize.png' | prepend: site.baseurl }}" alt="Order by sizez" /> | Order by size. This is the size of your dataset
 	
-Your dashboard refreshes, changing the sort order of your datasets appear.
+Your dashboard refreshes, changing the sort order of how your datasets appear.
 
 #### Dataset Privacy Settings
 
@@ -158,23 +160,23 @@ You can protect your dataset and identify the privacy setting as *Public*, *With
 
 **Note:** The dataset metadata is stored separately from your [map metadata](#map-metadata). 
 
-The following image displays the available privacy options.
+The following image, and table, display the available dataset privacy options.
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/privacy_datasetprivacyoptions.png' | prepend: site.baseurl }}" alt="Dataset Privacy Options" /></p>
 
-The following pricavy settings are available:
-
-Privacy Option | Description
+Dataset Privacy Option | Description
 ------------ | -------------
-Public | A public map is available to anyone on the internet and viewable from your public profile page on CartoDB
-With link | Provides a link to share the map. Only those people who have the link are able to find your dataset
-Private | A private dataset that only you can see
+Public | Available to anyone on the internet and viewable from your public profile page on CartoDB
+With link | Indicates that only people who have a link to the dataset are able to access it
+Private | A private dataset that is only visible to you
 
-There are multiple ways to access these privacy options.
+There are multiple ways to access these dataset privacy options.
 
 **Note:** Different privacy options may appear, depending on your account settings.
 
-#####How to Edit the Privacy Setting from your Dashboard
-1. Click *Your datasets* from your dashboard  
+#####Edit the Dataset Privacy Settings from your Dashboard
+The following procedure describes how to edit the dataset privacy settings from your datasets dashboard.
+
+1. Click *Your datasets* from your dashboard drop-down menu
 
 	The datasets view appears, displaying all your datasets.
 	
@@ -184,12 +186,12 @@ There are multiple ways to access these privacy options.
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/privacy_fromdatasetdashboard.png' | prepend: site.baseurl }}" alt="Dataset Privacy from Dashboard" /></p>
 
-The privacy options appear, from which you can change and save the privacy setting.
+The privacy options appear, from which you can change and save your settings.
 
-#####How to Edit the Privacy Setting From the Data View
-There are several ways to edit the privacy setting within the Data View.
+#####Edit the Dataset Privacy Settings from a Selected Dataset
+There are several ways to edit the privacy settings within the Data View or Map view for a selected dataset.
 
-1. Click *Your datasets* from your dashboard 
+1. Click *Your datasets* from your dashboard drop-down menu
 
 	The datasets view appears, displaying all your datasets.
 	
@@ -197,19 +199,19 @@ There are several ways to edit the privacy setting within the Data View.
 
 	The selected dataset opens in the Data View. You can open the privacy options from the Edit menu and from the lock icon. Additionally, you can access the privacy options from within the Edit metadata options.
 	
-	*2a. Click *Change privacy* from the Edit menu.
+	2a. Click *Change privacy* from the Edit menu.
 
 	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/changeprivacy_editmenu.png' | prepend: site.baseurl }}" alt="Change Privacy Option" /></p>
 
 	The privacy options appear, from which you can change and save the privacy setting.
 
-	*2b. Click the lock icon, next to the name of the dataset.
+	2b. Click the lock icon, next to the name of the dataset.
 	
 	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/lockicon_dataview.png' | prepend: site.baseurl }}" alt="Lock icon" /></p>
 	
 	The privacy options appear, from which you can change and save the privacy setting.
 	
-	*2c. Click *Edit metadata*
+	2c. Click *Edit metadata*
 
 	The Dataset metadata options appear, from which you can click the privacy setting to open the privacy options to change and save your settings.
 
