@@ -154,20 +154,20 @@ Your dashboard refreshes, changing the sort order of your datasets appear.
 
 #### Dataset Privacy Settings
 
-You can protect your dataset and identify the privacy setting as *Public*, *With link* or *Private*. The dataset privacy settings are managed through the dataset metadata.
+You can protect your dataset and identify the privacy setting as *Public*, *With link*, or *Private*. The dataset privacy settings are managed through the dataset metadata.
 
 **Note:** The dataset metadata is stored separately from your [map metadata](#map-metadata). 
 
 The following image displays the available privacy options.
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/privacy_options.png' | prepend: site.baseurl }}" alt="Privacy options" /></p>
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/privacy_datasetprivacyoptions.png' | prepend: site.baseurl }}" alt="Dataset Privacy Options" /></p>
 
 The following pricavy settings are available:
 
 Privacy Option | Description
 ------------ | -------------
-Public | If a dataset is set to public, anyone may find it on your Public Page or roaming the internet. 
-With link | If it requires a link, only those who have the link will be able to find it. If it's private, no one but you will be able to see the dataset.
-Private | Content from cell 2
+Public | A public map is available to anyone on the internet and viewable from your public profile page on CartoDB
+With link | Provides a link to share the map. Only those people who have the link are able to find your dataset
+Private | A private dataset that only you can see
 
 There are multiple ways to access these privacy options.
 
