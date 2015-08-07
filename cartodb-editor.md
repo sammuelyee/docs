@@ -247,17 +247,30 @@ There are four options for map privacy settings.
 
 ### Map Metadata
 
-You can edit the attributes for each map to add metadata for your map. This is useful for keeping your maps organized and discoverable in a search, as your repository of maps increases.  You can edit map metadata from the Map View for a selected map.
+You can edit the attributes for each map to add metadata for your map. This is useful for keeping your maps organized and discoverable in a search, as your repository of maps increases.  You can edit map metadata from the Map View of a selected map (or from a Data View of a selected map to edit the dataset layer in a map).
 
-####How to Edit Metadata for a Map
+**Note:** Map metadata is stored separately from Dataset metadata. Each dataset contains its own metadata, however, once you connect a dataset to a map, you can edit the dataset metadata as a layer within the map.
 
-1. Click *Edit metadata* from the Map View of a selected map  
+####Edit Metadata for a Map
+The following procedure describes how to edit metadata for a map.
+
+1. Click *Your maps* from your dashboard  
+
+	A list of your maps appears, ordered by date.
+
+2. Click on a map name to view it
+
+	The selected map opens in the Map View.
+
+3. Click *Edit metadata* from the selected map  
+
+	**Note:** You can edit metadata from the *Data View* or *Map View* of a selected map.  The Data View contains the connected dataset as a layer within the map.
 
     <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/editmetadata_link.png' | prepend: site.baseurl }}" alt="Edit Metadata" /></p>
+		
+	The Map metadata options appear.
 
-    The Map metadata options appear.
-
-2. Edit the map name, description, and tags for the selected map. You can also change your map privacy settings  
+4. Edit the map name, description, and tags for the selected map. You can also change your map privacy settings  
 
 	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/mapmetadata_options.png' | prepend: site.baseurl }}" alt="Map Metadata" /></p>
 	
@@ -267,10 +280,16 @@ You can edit the attributes for each map to add metadata for your map. This is u
 	------------ | -------------
 	Map name | The name of the map. Note to be as specific as possible if this is a public map
 	Description | Describe the content and purpose of your map. You can also add license information in this field if you are sharing your map
-	Tags | Tags enable you to group your maps by project or theme. 
-	Privacy | Maps can be Private, Public or Links. Click the current status to change the privacy settings for the selected map
+	Tags | Tags enable you to group your maps by project or theme
+	Privacy | Maps can be Public, With link, Password protection, or Private. Options may vary depending on your account settings. Click the current status to change the privacy settings for the selected map
 	
-3. Click *SAVE* to close and save the map metadata attributes  
+5. Click *SAVE* to close and save the map metadata attributes  
+
+6. Click *Search* to search your repository of maps by name or tag
+
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/search_metadata.png' | prepend: site.baseurl }}" alt="Search by metadata" /></p>
+
+	Note how applying metadata enables you to identify and search for map attributes.
 
 **Tip:** You can add a description, add tags, or edit the map privacy setting directly from the Maps View of your dashboard. Once an initial map description and map tag is entered through this shortcut, you must click *Edit metadata* from the selected map if you need to update these attributes again.
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/editmapmetadata_dashboard.png' | prepend: site.baseurl }}" alt="Edit Map Metadata from Dashboard" /></p>
