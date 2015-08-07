@@ -254,13 +254,17 @@ You can edit the attributes for each map to add metadata for your map. This is u
 ####Edit Metadata for a Map
 The following procedure describes how to edit metadata for a map.
 
-1. Click *Your maps* from your dashboard  
+1. Click *Your maps* from your dashboard drop-down menu  
 
-	A list of your maps appears, ordered by date.
+    <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/dashboard_yourmaps.png' | prepend: site.baseurl }}" alt="Select Your Maps from Dashboard" /></p>
 
-2. Click on a map name to view it
+	The page refreshes, displaying a list of your maps.
 
-	The selected map opens in the Map View.
+2. Select the name of the map to view, or click the Edit icon on a map
+
+    <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/selectmap.png' | prepend: site.baseurl }}" alt="Select Map" /></p>
+
+	The page refreshes, displaying the Map View for the selected map.
 
 3. Click *Edit metadata* from the selected map  
 
@@ -281,7 +285,7 @@ The following procedure describes how to edit metadata for a map.
 	Map name | The name of the map. Note to be as specific as possible if this is a public map
 	Description | Describe the content and purpose of your map. You can also add license information in this field if you are sharing your map
 	Tags | Tags enable you to group your maps by project or theme
-	Privacy | Maps can be Public, With link, Password protection, or Private. Options may vary depending on your account settings. Click the current status to change the privacy settings for the selected map
+	Privacy | Options may vary depending on your account settings. Click the current status to change the [(privacy settings](#map-privacy-options)) for the selected map
 	
 5. Click *SAVE* to close and save the map metadata attributes  
 
