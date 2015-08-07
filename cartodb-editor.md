@@ -1334,10 +1334,10 @@ On the "Your Plan" page, you can see information about your company, users, data
 
 ##Connecting to External Twitter Data
 
-CartoDB has developer access to [Twitter Firehose](https://dev.twitter.com/streaming/reference/get/statuses/firehose), which enables us to provide official Twitter data 
-to our users. The following procedures describe how to enable the Twitter Connector for your account so that you can connect external Twitter data to a dataset and create a map.
+CartoDB has broker access to [Twitter Firehose](https://dev.twitter.com/streaming/reference/get/statuses/firehose), which enables us to provide official Twitter data through CartoDB. The following procedures describe how to enable the Twitter Connector for your account so that you can connect external Twitter data to a dataset and create a map.
 
-###How to Enable the Twitter Connector
+###Enabling the Twitter Connector
+The following procedure describes how to enable the Twitter Connector.
 
 1. Click *Your datasets* from the dashboard drop-down menu  
 
@@ -1363,7 +1363,8 @@ to our users. The following procedures describe how to enable the Twitter Connec
 
 	Once the Twitter Connector is enabled for your account, a CartoDB sales representative sends you a confirmation email. This indicates that tweets are enabled for your account and you can continue the process of [(connecting](#how-to-connect-twitter-data-to-a-dataset)) a dataset to Twitter.
 
-###How to Connect Twitter Data to a Dataset
+###Connecting Twitter Data to a Dataset
+The following procedure describes how to connect  twitter data to a dataset after the Twitter Connector has been enabled by your account representative.
 
 1. After the Twitter Connector is [(enabled](#how-to-enable-the-twitter-connector)), select *Twitter* as the external service  
   
@@ -1395,8 +1396,8 @@ to our users. The following procedures describe how to enable the Twitter Connec
 **Note:** While CartoDB can retrieve geotagged tweets, we cannot retrieve data when the Twitter post has not specified a location element. For example, the Twitter user must explicitly turn on their location, or indicate their location in their profile location field.
 *Approximately 5% of tweets typically contain geolocation elements. However, CartoDB has applied geo-enrichment enhancements to our code, increasing the Twitter search results up to 15% to 20%.*
 
-###Connecting to Twitter Data with an API
-You can connect to a Twitter dataset using any of the following API's.
+###Twitter API Data Options
+There are several TWitter API's that CartoDB can provide broker access to.  Your account representative can help you select the appropriate type of data plan when you are [(enabling the Twitter Connector](#enabling-the-twitter-connector)).
 
 * **Search API**: The Search API is implemented by default when enabling the Twitter Connector. It allows you to pull geolocated Twitter data from the past 30 days. Once a search is executed, the tweets are imported directly to your CartoDB account so that you can customize your map directly from the Map View of your dashboard.
 
