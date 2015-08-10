@@ -838,43 +838,46 @@ For a quick video primer, take a look at our [filter tutorial]({{ '/tutorials/fi
 
 ### Basemaps
 
-#### What is a basemap?
-
 A basemap is a graphical representation of the world showing natural and cultural features such as water bodies, topography, park areas, points of interest, geopolitical borders, roads, streets, and sometimes buildings. CartoDB provides you with a selection of basemap options and providers (such as Stamen or Here). You may import your own custom basemap (from Mapbox, an XYZ tileset (e.g. Stamen maps), or WMS.) or use a solid background color, repeating image, or pattern. With the easy-to-use basemap selector, you can focus on an aesthetically pleasing way of visualizing your data.
 
-#### Selecting your basemap
+#### Changing your basemap
 
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/basemapselect.png' | prepend: site.baseurl }}" alt="Select a basemap" /></p>
+The default basemap for the *Here* layer of a map is *Nokia Day*. The *Change basemap* options enable you to change your basemap and style. You can link to an external URL basemap with the *Yours* option. Additionally, you can add a custom solid color, or a repeating image pattern, instead of a basemap with the *Change basemap* options.
 
-When you first create a map, it will be given a default "Nokia Day" basemap. To change your basemap simply click on "Nokia Day" below left of the Map View and select an available style. You may add your own custom basemap in the "yours" option and then by linking to the URL for that basemap from Mapbox, XYZ, or WMS. Finally, there are options for adding a solid color or a repeating image pattern instead of a basemap. All of these features give you a high level of customization when creating a map visualization.
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/change_basemap_options.png' | prepend: site.baseurl }}" alt="Change Basemap" /></p>
 
-CartoDB offers you a variety of basemaps you may use in your maps. You may select any one of them and the change will be applied immediately. You may change your basemap anytime and the rest of your layers will remain unchanged. Take some time to explore our different available basemaps. You'll be able to see that some of them have more detail (such as depicting borders, roads, and mountains) while others are more minimalistic. Thus you may choose one that's best suited for the purpose of your map.
+**Note:** *Change basemap* options are applied immediately and do not alter any other layers in your map.
 
 #### Including an external basemap
 
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/addbasemap.png' | prepend: site.baseurl }}" alt="Add your own NASA basemap" /></p>
+Apart from the default basemaps offered in CartoDB, you may integrate third-party basemaps to customize your maps even further. The following procedure describes how to add a custom basemap from an external resource.  
 
-Apart from the default basemaps offered in CartoDB, you may integrate third-party basemaps to customize your maps even further. You have four options (we're always striving to add more):
+  1. Click *Change basemap*, located on the bottom left of a selected map  
 
-1. **Mapbox**  
-  Mapbox is a service which lets you customize the design of a basemap with colors and elements you choose, and integrate easily to CartoDB. Just select the URL from your Mapbox map and paste it in the configuration window.
+  2. Expand *Yours* to add an external resource  
+  
+  <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/change_basemap_yours.png' | prepend: site.baseurl }}" alt="Add your own NASA basemap" /></p>  
 
-2. **XYZ Template**  
-  XYZ Templates allow you to access many other basemaps, including those from OpenStreetMap and Stamen. In order to use these basemaps, you need their tile URLs. Give it a try with these:
-  - **Stamen Toner:** `http://{s}.stamen.com/toner/{z}/{x}/{y}.jpg`
-  - **Stamen Terrain:** `http://{s}.stamen.com/terrain/{z}/{x}/{y}.jpg`
-  - **Stamen Watercolor:** `http://tile.stamen.com/watercolor/{z}/{x}/{y}.jpg`
-  - **OSM:** `http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png`
+  The following image, and table, display the available external resources to choose from.  
 
-3. **WMS Base URL**  
-  A WMS, or Web Map Service, allows you to connect to map images generated online by a map server using data from a GIS database. You may use these as basemaps, and they can often contain very interesting information that could be harder to find with other basemaps. You can find URLs for different WMS online, but you often have to look closely to make sure you're getting what you want. Take a look at these WMS URLs, if you want to see what kinds of things you can do with a [WMS baselayer](http://nationalatlas.gov/infodocs/wms_intro.html).
+  <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/add_custom_basemap.png' | prepend: site.baseurl }}" alt="Add custom basemap option" /></p>  
 
-  Currently, we're only supporting WMS files that contain data that uses [EPSG:900913 (Web Mercator)](https://en.wikipedia.org/wiki/Web_Mercator) or [EPSG:3857](http://en.wikipedia.org/wiki/Web_Mercator#EPSG:3857) coordinates.
-
-4. **NASA**  
-  With this option, you can easily use NASA Global Imagery Browse Services satellite imagery as a basemap. Just select the date you're interested in, and whether you'd like a day map (which changes based on the day selected) or a night map, and add it to your map.
-
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/nasabase.png' | prepend: site.baseurl }}" alt="Add your own NASA basemap" /></p>
+  External Basemap Resource | Description  
+  ------------ | -------------
+  XYZ | XYZ Templates enable you to access many other basemaps, including those from OpenStreetMap and Stamen. Insert the basemap URLs. For example:
+  | **Stamen Toner:** `http://{s}.stamen.com/toner/{z}/{x}/{y}.jpg`
+  | **Stamen Terrain:** `http://{s}.stamen.com/terrain/{z}/{x}/{y}.jpg`
+  | **Stamen Watercolor:** `http://tile.stamen.com/watercolor/{z}/{x}/{y}.jpg`
+  | **OSM:** `http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png`
+  WMS/WMTS | A WMS, or Web Map Service, enables you to connect to online generated map images by a map server using data from a GIS database. Insert your WMS/WMTS URL and click *GET LAYERS*. For example, [WMS baselayer](http://nationalatlas.gov/infodocs/wms_intro.html).
+  | **Note:** Currently, CartoDB only supports WMS files containing data that uses [EPSG:900913 (Web Mercator)](https://en.wikipedia.org/wiki/Web_Mercator) or [EPSG:3857](http://en.wikipedia.org/wiki/Web_Mercator#EPSG:3857) coordinates.
+  NASA | Enables you to select a basemap provided by NASA Worldview. Select a date from which you want a global basemap and indicate Day (a day map changes based on the day selected) or Night.
+  Mapbox | Mapbox is a service which lets you customize the design of a basemap with custom colors and elements. Insert your Mapbox URL and access token
+  TileJSON | Enables you to insert an open platform, web map by inserting the TileJSON URL. A TileJSON map contains tiles, minzoom and maxzoom as mandatory fields  
+  
+  3. Click *ADD BASEMAP*  
+  
+  The map refreshes, displaying the external resource as a basemap layer.  
 
 #### About Map Projections
 
