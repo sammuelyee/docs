@@ -396,9 +396,29 @@ By default you are in Desktop view. If you switch to the Mobile view, you'll see
 
 ####Export Image
 
-The Export Image option allows for users to export a static image of a map in .PNG format. From the 'Configure Export Options' screen you can select the width and height in pixels for your export. make sure your pop-up blocker is disabled!
+The Export Image option enables you to export a static image of a map in .PNG format. You can adjust the zoom level and the size of the map before exporting it as an image.
 
-<p class="wrap-border"><img src="/img/layout/cartodb-editor/export-image.png" alt="The toolbar" /></p>
+1. From the Maps View of a selected map. click *Export Image*
+
+	Your map is selected and the export image options appear.
+	
+	<p class="wrap-border"><img src="/img/layout/cartodb-editor/export_image_updated.png" alt="Export Image" /></p>
+	
+2. Adjust the zoom level by using the + or - buttons
+
+3. Adjust the size of the image by clicking and dragging the edges of the selection. 
+
+	The width and height changes in displays in pixels
+
+3. Click *Export*, located underneath the selected image
+
+	<p class="wrap-border"><img src="/img/layout/cartodb-editor/export_image_button.png" alt="Export Image button" /></p>
+
+	A confirmation dialog appears, indicating that your image has been generated correctly. 
+
+4. Click the URL to view your exported .PNG image
+
+**Tip:** Ensure that your browser pop-up blocker is disabled.
 
 ### CartoDB Sidebar
 
