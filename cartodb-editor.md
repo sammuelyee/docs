@@ -276,43 +276,49 @@ You can perform the following administrative actions in the Options menu:
 
 ### What is a Map Visualization?
 
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/mapdash.png' | prepend: site.baseurl }}" alt="Visualizations" /></p>
+Map visualizations are a combination of one or more datasets that function as layers within a map, and can be created after you have imported at least one dataset to your account. The following high-level overview describes the workflow for creating a new map.
 
-Map visualizations are a combination of one or more datasets that function as layers within a map. Map visualizations can be created after you have imported at least one dataset to your account. Make a new map by navigating to the "Maps" section of your CartoDB dashboard, and select "New Map." Step one of creating a new map is selecting a template for your map. In step two, you select the datasets associated with your map or create an empty dataset for your data. You can also create a new map by selecting a dataset from the "Datasets" section of your dashboard.
+1. Click *Your maps* from your dashboard drop-down menu 
 
-After selecting what data you want to visualize, you're ready to start styling it. Change your basemap style and zoom level, layer colors, add custom infowindows, or animate your data over a timeline with our Torque maps. All of your changes are automatically saved (behold, the beauty of the cloud!), so you don't have to worry about losing your work. 
+	The maps view appears, displaying a list of your maps.
+	
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/mapdash.png' | prepend: site.baseurl }}" alt="Visualizations" /></p>
 
-Sidenote: If you need to save a prior draft while working on a newer version, simply duplicate your map, but remember that stylistic changes made in one will not be reflected in the other.
+2. Click *NEW MAP*
 
-### What are Private Maps?
+	The create map options appear.
 
-We've decoupled dataset privacy from map privacy to give you ultimate control over what aspects of your projects are shareable. This way your map (and any information selected on its infowindows) can be viewable while your data remains protected.
+3. Select the datasets associated with your map or create an empty dataset for your data
+
+	**Tip:** You can also create a new map by directly from the your datasets view.
+
+4. Click *CREATE MAP* or *Create empty map* 
+
+	The map is created opens in Map View. You can style your map or edit your dataset layers for the map. For example, change your basemap style and zoom level, layer colors, add custom infowindows, or animate your data over a timeline with Torque maps. 
+
+5. Your changes are automatically saved 
+
+**Tip:** If you need to save a prior draft of your map while applying changes to a newer version, it is suggested to duplicate your map so that you have a backup copy of it. The *Duplicate map* option is available from the Edit drop-down menu of the Data View or Map View of a selected map. Note that stye changes applied to a duplicate map is not applied to the original.
 
 ### Map Privacy Options
 
-When you are creating your CartoDB visualization you may also edit who has access to it. In order to edit these settings, click on the padlock from the map created on the "Visualizations" section of your CartoDB Dashboard. Here you will also be able to delete your visualization or lock it to prevent any accidental changes in the future.
+When you create a map with CartoDB, you can protect your map and identify the privacy setting as *Public*, *With link*, *Password protected*, or *Private*. These map privacy settings are managed through the map metadata and enable you to determine how your maps are accesssed.
 
-When you create a map with CartoDB, you can customize who can access it. You can edit the privacy settings for your map from a few places. In the "Maps" section of the dashboard, edit the privacy settings of individual maps by selecting the privacy link in the lower left-hand corner of each listed map.
+**Note:** The map metadata is stored separately from your [dataset metadata](#dataset-privacy-settings). This enables you to share maps while protecting your data. 
 
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/mapdash.png' | prepend: site.baseurl }}" alt="Privacy settings in your map" /></p>
+The following image, and table, display the available map privacy options.
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/privacy_mapprivacyoptions.png' | prepend: site.baseurl }}" alt="Map privacy options" /></p>
 
-You can also edit the privacy settings from the Map View dashboard of each map by selecting the padlock in the top-left corner. Every map is editable. You can change titles, update descriptions to clarify the content and purpose of your maps, or add tags to keep your projects organized and discoverable.
+Map Privacy Option | Description
+------------ | -------------
+Public | Available to anyone on the internet and viewable from your public profile page on CartoDB
+With link | Indicates that only people who have a URL to the map are able to access it. This type of map is not viewable from your public profile
+Password protected |  Indicates that map is password protected. When selecting this option, type a password and click *SAVE SETTINGS*. This type of map is not viewable without the password and does not appear from your public profile
+Private | A private map that is only visible to you
 
-There are four options for map privacy settings.
+You can access the map privacy options through your maps dashboard or through the Data View and Map View for a selected map.
 
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/privacyoptions.png' | prepend: site.baseurl }}" alt="Privacy settings in your map" /></p>
-
-- **Public**  
-  When selected, this setting means that your map will be publicly available and will be displayed in your [CartoDB Public Profile](http://blog.cartodb.com/post/82193209466/interesting-cartodb-profiles).
-
-- **Only People with the Link**  
-  With this setting, only users who have the map URL will be able to find your map. These maps will not appear in your CartoDB Public Profile.
-
-- **Password Protected**  
-  These maps require a password entry from anyone visiting the map URL before they are able to view the map. These maps will not appear in your CartoDB Public Profile.
-
-- **Private**  
-  You alone are able to view your map and it will not appear on your CartoDB Public Profile.
+**Note:** Different privacy options may appear, depending on your account settings.
 
 ### Map Metadata
 
