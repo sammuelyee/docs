@@ -156,7 +156,7 @@ There are multiple ways to delete a dataset with the CartoDB Editor. You can del
 
 1. Click *Your datasets* from the dashboard drop-down menu  
 
-    <p class="wrap-border"><img src="{{ '/img/layout/common/Select_Your_Dataset.png' | prepend: site.baseurl }}" alt="Select Dataset" /></p>
+    <p class="wrap-border"><img src="{{ '/img/layout/common/select_your_dataset.png' | prepend: site.baseurl }}" alt="Select Dataset" /></p>
 
     The page refreshes, displaying a list of your datasets.
 
@@ -183,7 +183,7 @@ There are multiple ways to delete a dataset with the CartoDB Editor. You can del
 
 1. Click *Your datasets* from the dashboard drop-down menu  
 
-    <p class="wrap-border"><img src="{{ '/img/layout/common/Select_Your_Dataset.png' | prepend: site.baseurl }}" alt="Select Dataset" /></p>
+    <p class="wrap-border"><img src="{{ '/img/layout/common/select_your_dataset.png' | prepend: site.baseurl }}" alt="Select Dataset" /></p>
 
     The page refreshes displaying a list of your datasets. 
 
@@ -1341,7 +1341,7 @@ The following procedure describes how to enable the Twitter Connector.
 
 1. Click *Your datasets* from the dashboard drop-down menu  
 
-    <p class="wrap-border"><img src="{{ '/img/layout/common/Select_Your_Dataset.png' | prepend: site.baseurl }}" alt="Select Dataset" /></p>
+    <p class="wrap-border"><img src="{{ '/img/layout/common/select_your_dataset.png' | prepend: site.baseurl }}" alt="Select Dataset" /></p>
 
     The page refreshes displaying a list of your datasets. 
 
