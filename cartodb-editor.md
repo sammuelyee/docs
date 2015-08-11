@@ -864,19 +864,17 @@ Apart from the default basemaps offered in CartoDB, you may integrate third-part
 
   External Basemap Resource | Description  
   ------------ | -------------
-  XYZ | XYZ Templates enable you to access many other basemaps, including those from OpenStreetMap and Stamen. Insert the basemap URLs. For example:
+  XYZ | XYZ Templates enable you to access many other basemaps, including those from OpenStreetMap and Stamen. Insert the basemap URLs and click *ADD BASEMAP*. For example:
   | **Stamen Toner:** `http://{s}.stamen.com/toner/{z}/{x}/{y}.jpg`
   | **Stamen Terrain:** `http://{s}.stamen.com/terrain/{z}/{x}/{y}.jpg`
   | **Stamen Watercolor:** `http://tile.stamen.com/watercolor/{z}/{x}/{y}.jpg`
   | **OSM:** `http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png`
   WMS/WMTS | A WMS, or Web Map Service, enables you to connect to online generated map images by a map server using data from a GIS database. Insert your WMS/WMTS URL and click *GET LAYERS*. For example, [WMS baselayer](http://nationalatlas.gov/infodocs/wms_intro.html).
   | **Note:** Currently, CartoDB only supports WMS files containing data that uses [EPSG:900913 (Web Mercator)](https://en.wikipedia.org/wiki/Web_Mercator) or [EPSG:3857](http://en.wikipedia.org/wiki/Web_Mercator#EPSG:3857) coordinates.
-  NASA | Enables you to select a basemap provided by NASA Worldview. Select a date from which you want a global basemap and indicate Day (a day map changes based on the day selected) or Night.
-  Mapbox | Mapbox is a service which lets you customize the design of a basemap with custom colors and elements. Insert your Mapbox URL and access token
+  NASA | Enables you to select a basemap provided by NASA Worldview. Select a date from which you want a global basemap and indicate Day (a day map changes based on the day selected) or Night
+  Mapbox | Mapbox is a service which lets you customize the design of a basemap with custom colors and elements. Insert your Mapbox URL and access token to add the basemap
   TileJSON | Enables you to insert an open platform, web map by inserting the TileJSON URL. A TileJSON map contains tiles, minzoom and maxzoom as mandatory fields  
-  
-  3. Click *ADD BASEMAP*  
-  
+    
   The map refreshes, displaying the external resource as a basemap layer.  
 
 #### About Map Projections
