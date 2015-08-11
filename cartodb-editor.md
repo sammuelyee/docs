@@ -306,13 +306,13 @@ The following procedure describes how to edit metadata for a map.
 
 1. Click *Your maps* from your dashboard drop-down menu  
 
-    <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/dashboard_yourmaps.png' | prepend: site.baseurl }}" alt="Select Your Maps from Dashboard" /></p>
+    <p class="wrap-border"><img src="{{ '/img/layout/common/dashboard_yourmaps.png' | prepend: site.baseurl }}" alt="Select Your Maps from Dashboard" /></p>
 
 	The page refreshes, displaying a list of your maps.
 
 2. Select the name of the map to view, or click the Edit icon on a map
 
-    <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/selectmap.png' | prepend: site.baseurl }}" alt="Select Map" /></p>
+    <p class="wreap-border"><img src="{{ '/img/layout/cartodb-editor/selectmap.png' | prepend: site.baseurl }}" alt="Select Map" /></p>
 
 	The page refreshes, displaying the Map View for the selected map.
 
@@ -375,7 +375,7 @@ In Add Element, it is easy to add overlays on top of your map that help to bette
  - **Add Annotation Item**
  Annotations are text overlays linked to a coordinate and a zoom range. They allow users to explain and point to specific map elements. These overlays will remain fixed on a position on the map, and are excellent for annotating information, telling stories, or highlighting interesting information.
 
- Similar to the title and text overlays, clicking an annotation element brings up the customization toolbar. You will notcie that a **Zoom (min-max)** option has been added. This allows for dynamic annotations and zoom-dependent labeling of map items.
+ Similar to the title and text overlays, clicking an annotation element brings up the customization toolbar. You will notice that a **Zoom (min-max)** option has been added. This allows for dynamic annotations and zoom-dependent labeling of map items.
 
  <p class="wrap-border"><img src="/img/layout/cartodb-editor/annotation.png" alt="The toolbar" /></p><br>
 
