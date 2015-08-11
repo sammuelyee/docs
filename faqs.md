@@ -18,7 +18,7 @@ You can export any of your datasets for use offline. The Export option is availa
   
 1. Click *Your datasets* from the dashboard drop-down menu  
 
-    <p class="wrap-border"><img src="{{ '/img/layout/common/Select_Your_Dataset.png' | prepend: site.baseurl }}" alt="Select Dataset" /></p>
+    <p class="wrap-border"><img src="{{ '/img/layout/common/select_your_dataset.png' | prepend: site.baseurl }}" alt="Select Dataset" /></p>
 
     The page refreshes displaying a list of your datasets. 
 
