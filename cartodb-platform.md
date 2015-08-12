@@ -8,9 +8,7 @@ redirect_from:
 ---
 ## CartoDB Platform
 
-CartoDB is heavily API driven. Most users will design their maps from within the online CartoDB Editor, and then embed those maps using our API into their own websites or applications.
-
-Additionally, we provide a SQL API to interact with your data, so that you can query your datasets, insert, update or delete records, and CartoDB.js, a JavaScript library that helps you to develop your spatial applications.
+The CartoDB Platform is an open source tool to that enables you to build advanced, dynamic geospatial datasets and scalable maps. You can design maps with the CartoDB Editor and use the CartoDB APIs to embed these maps into your own website. The CartoDB SQL API interacts with your data so that you can query your datasets and insert, update, or delete records. Additionally, the CartoDB.JS (a JavaScript library) is available to help you develop and enhance your spatial applications.
 
 <ul class="platform-list">
   {% for platform_item in site.cartodb-platform %}
@@ -27,6 +25,6 @@ Additionally, we provide a SQL API to interact with your data, so that you can q
   {% endfor %}
 </ul>
 
-The combination of these APIs gives you a powerful geospatial engine for your applications. Discover methods and functions of these APIs in the following sections or head to the [Advanced analysis]({{ '/tips-and-tricks.html#advanced-analysis' | prepend: site.baseurl }}) section, which talks about sophisticated queries for analysis on data management.
+The CartoDB Platform APIs, in collaboration with the CartoDB Editor, allows you to build a powerful geospatial engine for your map visualization. View the [Advanced analysis]({{ '/tips-and-tricks.html#advanced-analysis' | prepend: site.baseurl }}) Tips & Tricks, which contain some sophisticated examples of data management queries.
 
-If you have any questions using these APIs or using CartoDB in general, you can always send a message to our [support service]({{ '/docs#support' | prepend: site.cartodb-baseurl }}).
+Contact [Sales](mailto:sales@cartodb.com) if you would like more information about using these APIs.
