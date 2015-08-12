@@ -14,6 +14,7 @@ CartoDB is a cloud storage, geospatial database, that enables you to create map-
 
 <!-- TODO: link to 'Use cases' and 'Industries' -->
 <!-- Writer Note_csobier: I am not sure who wrote the comment above?' -->
+<!-- Writer Note_andrewxhill: i do not remember' -->
 
 ### CartoDB Editor
 
