@@ -1,9 +1,9 @@
 ---
 title: Import API
-description: The CartoDB Importer API allows you to upload files to your CartoDB account and manipulate them by using a set of HTTP commands from a terminal window.
+description: The CartoDB Import API allows you to upload files to your CartoDB account and manipulate them by using a set of HTTP commands from a terminal window.
 ---
 
-A standard import will store the data you upload from files with the valid formats as specified.
+A standard import stores the data, uploaded from files with the valid formats, as specified.
 
 ## Import API
 

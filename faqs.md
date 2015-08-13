@@ -4,34 +4,52 @@ title: FAQs
 slug: faqs
 js_asset: "editor"
 ---
-## Tables and data
+## Tables and Data
 
-### Which databases are supported by CartoDB?
+### What databases are supported by CartoDB?
 
-One of the main components of CartoDB is its geospatial database built on PostgreSQL and PostGIS. This means that by default the CartoDB platform works over PostgreSQL due to making heavy use of PostGIS advanced capabilities. This way, if the CartoDB built-in features are not enough to perform your analysis, you can take advantage of the full power of PostGIS.
+The CartoDB geospatial database is built on the [PostgreSQL](http://www.postgresql.org/docs/9.1/static/) platform and supports advanced  [PostGIS](http://postgis.net/docs/manual-2.0/) capabilities. All of our tables include `the_geom` column, which is a geometry field that indexes geometries in the EPSG:4326 (WGS 1984) coordinate system. All tables also automatically generate and update `the_geom_webmercator` column, which references the column internally to quickly create tiles for maps.  The CartoDB Platform connects your database with the Map API and the SQL APIs so that you can interact with data remotely and access the most recent data libraries.
 
-We offer the option of connecting your own database to CartoDB as part of our Enterprise features in order to adapt the platform to your specific needs. If you are interested, let us know at sales@cartodb.com.
+Optionally, CartoDB offers an Enterprise solution enabling you to connect your own database to our platform. Contact [Sales](mailto:sales@cartodb.com) for more information.
 
-### How can I export my data from CartoDB?
+### How to export datasets from CartoDB?
 
-After you have created, updated, or deleted data from your CartoDB tables, you may want to export them for sharing or use offline. We make that easy for you by providing one-click data export.
+You can export any of your datasets for use offline. The Export option is available from the Edit menu of your Data View.
+  
+1. Click *Your datasets* from the dashboard drop-down menu  
 
-<p class="wrap-border"><img src="{{ '/img/layout/faqs/export-data.png' | prepend: site.baseurl }}" alt="How can I export my data from CartoDB" /></p>
+    <p class="wrap-border"><img src="{{ '/img/layout/common/select_your_dataset.png' | prepend: site.baseurl }}" alt="Select Dataset" /></p>
 
-1. From any table you have created, click **Options** in the upper right corner.
-2. Select **Export**  
-  From there, you should see a menu of export formats that CartoDB supports, including Comma separated (CSV), KML, ESRI Shape Files (SHP), and SQL.
+    The page refreshes displaying a list of your datasets. 
 
-3. Click the format you would like to download.
+2. Select the name of the dataset to view  
 
-There is a pro-tip for accessing downloads directly using your table URL. You can make use of the SQL API to run any query and ask for the results to be retrieved in different formats. For example:
+    <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/export_selectdatasetname.png' | prepend: site.baseurl }}" alt="Select Name of Dataset" /></p>
+
+    The page refreshes displaying the Data View for the selected dataset. 
+
+3. Select *Export* from the Edit drop-down menu  
+
+    <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/export_dataset_menu_option.png' | prepend: site.baseurl }}" alt="Export Option from Edit Menu" /></p>
+
+    The export dataset options appear. 
+
+3. Select the preferred file format  
+
+    <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/export_dataset.png' | prepend: site.baseurl }}" alt="Export Dataset File Type" /></p>
+
+    **Note:** CartoDB supports the following file formats for exporting geospatial data: *CSV, Shapefile, KML, GeoJSON*, and *SVG* formats.
+	
+	The dataset is downloaded based on your web browser process. 
+
+**Tip:** If you are using the SQL API, you can use your table URL to run a response query and export downloads in different formats. For example, the following sample code shows the *CSV* export format for an SQL API request.
 
 <div class="code-title notitle code-request"></div>
 {% highlight bash %}
 http://{USERNAME}.cartodb.com/api/v2/sql?format=csv&q=SELECT+*+FROM+tm_world_borders_sim
 {% endhighlight %}
 
-For more background on SQL, check out our [Map Academy](http://academy.cartodb.com/courses/04-sql-postgis.html) course.
+For more information about using the SQL API, see the [SQL and PostGIS in CartoDB](http://academy.cartodb.com/courses/04-sql-postgis.html) Map Academy course.
 
 ### Are there any licenses on the data I upload to CartoDB?
 
@@ -65,7 +83,7 @@ CartoDB understands and utilizes the geographic coordinates written as [decimal 
 
 This happens for several reasons. First and foremost, a database table has a lot more storage considerations than a CSV. For example, indexes. It is also important to consider that the actual way that data is stored on disks is optimized for lookup and retrieval speed over storage space. A CSV is made so you can optimally store data - you open it, load it all into a program for a limited amout of time while you edit it, then save it, and be done. The database has things like data types, etc. 
 
-### Can I synchronize my tables in real-time?
+### Can I synchronize my tables in real time?
 
 <p class="wrap-border"><img src="{{ '/img/layout/faqs/force-sync.png' | prepend: site.baseurl }}" alt="Can I synchronize my tables in real time" /></p>
 
@@ -105,7 +123,7 @@ While still in table view, you will then click on Edit and then choose Georefere
 
 To prevent your data from undesired changes you can lock your datasets and maps. To lock a them, just go to your dashboard, select the element and click on the "Lock map" or "Lock dataset" options that will appear in the top menu. Once a map or dataset is locked, you will find it in the sections "Your locked maps" or "Your locked datasets", respectively.
 
-### Why isn’t my shapefile importing?
+### Why isn’t my Shapefile importing?
 
 CartoDB creates tables from shapefiles by importing a single zipped file. If your shapefile is not importing, make sure that:
 
@@ -310,33 +328,9 @@ Here you can find an example:
 
 - [Leaflet](http://leafletjs.com/reference.html#imageoverlay)
 
-## Sharing maps
+## Sharing Maps
 
-### How do I share a map?
-
-Once you have created and customized your map, you should click on the "Share" option.
-
-There are different ways of sharing a map:
-
-- **Get the link**
-  Used in order to share your map directly as it appears in your CartoDB public profile.
-
-- **Embed it**
-  HTML code to embed the map in your site. This is very useful for putting interactive maps of your data on your website or blog.
-
-- **Get a simple URL**
-  Used in order to share the map itself.
-
-- **API**  
-  Gives you a link to your viz.json. You will need this URL if you are working on a more advanced way of using CartoDB.js.
-
-### How do I embed a map in my site/blog?
-
-<p class="wrap-border"><img src="{{ '/img/layout/faqs/share-site.png' | prepend: site.baseurl }}" alt="How do I embed a map in my site/blog" /></p>
-
-The easiest way is embedding a map by means of copying the HTML code that is provided in the "Share" option. 
-
-You will be able to insert CartoDB maps in WordPress, Joomla, Drupal, etc. if you just include the iframe in a HTML code editor.
+{% include sharingmaps.html %}
 
 ### How to print maps in CartoDB?
 
