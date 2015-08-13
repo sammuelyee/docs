@@ -6,7 +6,7 @@ js_asset: "index"
 
 ## What is CartoDB?
 
-CartoDB is a cloud storage, geospatial database, that enables you to create map-based visualizations. This documenation describes how to use *CartoDB Editor* for end-users, or the *CartoDB Platform* for developers.  
+CartoDB is a cloud storage, geospatial database, that enables you to create map-based visualizations. This documentation describes how to use *CartoDB Editor* for end-users, or the *CartoDB Platform* for developers.  
 
 - [CartoDB Editor](/cartodb-editor.html), typically used by end-users, is a graphical user interface that guides you through the process of connecting a dataset and creating a map.  A user-friendly dashboard enables you to manage your datasets and apply advanced styling features to your map visualizations 
 
