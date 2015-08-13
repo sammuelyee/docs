@@ -130,23 +130,92 @@ _XLS and XSLX may take longer than CSV files. We highly recommend that you expor
 
 ### Manage Your Datasets
 
-You may view all of your uploaded datasets on your dashboard's landing page. Feel free to order them by the date modified or created, size, most visited, or most liked.
+You can manage all of your datasets from your Datasets dashboard and change how the datasets are ordered, edit the privacy settings for your datasets, or delete a dataset.
+
+####Changing the Sort Order of your Datasets
+The following procedure describes how to change the sort order of your datasets from your datasets dashboard.
+
+1. Click *Your datasets* from your dashboard drop-down menu
+
+	The datasets view appears, displaying all your datasets ordered by date.
+	
+2. Use the datasets toolbar to change how your datasets appear
+
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/dataset_dashboard_orderby.png' | prepend: site.baseurl }}" alt="Dataset Toolbar" /></p>
+
+The following sort options are available from the datasets toolbar.
+
+Sort Options | Description
+------------ | -------------
+<img src="{{ '/img/layout/cartodb-editor/orderbydate.png' | prepend: site.baseurl }}" alt="Order by date" />| Order by date. This is the default setting and indicates the date that the dataset was created or imported
+<img src="{{ '/img/layout/cartodb-editor/orderbyvisits.png' | prepend: site.baseurl }}" alt="Order by visits" /> | Order by visits. This is only applicable for your public shared maps
+<img src="{{ '/img/layout/cartodb-editor/orderbylikes.png' | prepend: site.baseurl }}" alt="Order by likes" /> | Order by likes
+<img src="{{ '/img/layout/cartodb-editor/orderbysize.png' | prepend: site.baseurl }}" alt="Order by sizez" /> | Order by size. This is the size of your dataset
+	
+Your dashboard refreshes, changing the sort order of how your datasets appear.
 
 #### Dataset Privacy Settings
 
-To change the privacy settings of a dataset, click the colored label option on the left hand side of options. Or, select the dataset to reveal a second menu bar and choose the "Change privacy" menu option.
+You can protect your dataset and identify the privacy setting as *Public*, *With link*, or *Private*. The dataset privacy settings are managed through the dataset metadata.
 
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/deletedataset.png' | prepend: site.baseurl }}" alt="Dataset privacy" /></p>
+**Note:** The dataset metadata is stored separately from your [map metadata](#map-metadata). 
 
-You may choose "Public," "With Link," or "Private". If a dataset is set to public, anyone may find it on your Public Page or roaming the internet. If it requires a link, only those who have the link will be able to find it. If it's private, no one but you will be able to see the dataset.
+The following image, and table, display the available dataset privacy options.
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/privacy_datasetprivacyoptions.png' | prepend: site.baseurl }}" alt="Dataset Privacy Options" /></p>
 
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/datasetprivacy.png' | prepend: site.baseurl }}" alt="Dataset privacy" /></p>
+Dataset Privacy Option | Description
+------------ | -------------
+Public | Available to anyone on the internet and viewable from your public profile page on CartoDB
+With link | Indicates that only people who have a link to the dataset are able to access it
+Private | A private dataset that is only visible to you
 
-You can also change the privacy settings of a dataset at any time within the data view. From the 'Options' menu, select "Change privacy" or click the colored lock button that appears on the top-left section of the page.
+There are multiple ways to access these dataset privacy options.
 
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/privacy-dialog.png' | prepend: site.baseurl }}" alt="Dataset privacy" /></p>
+**Note:** Different privacy options may appear, depending on your account settings.
 
-Keep in mind that different privacy options will appear depending on your account plan.
+#####Edit the Dataset Privacy Settings from your Dashboard
+The following procedure describes how to edit the dataset privacy settings from your datasets dashboard.
+
+1. Click *Your datasets* from your dashboard drop-down menu
+
+	The datasets view appears, displaying all your datasets.
+	
+2. Select the privacy setting for a dataset
+
+	By default, new datasets are created as *Private*.
+
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/privacy_fromdatasetdashboard.png' | prepend: site.baseurl }}" alt="Dataset Privacy from Dashboard" /></p>
+
+The privacy options appear, from which you can change and save your settings.
+
+#####Edit the Dataset Privacy Settings from a Selected Dataset
+There are several ways to edit the privacy settings within the Data View or Map view for a selected dataset.
+
+1. Click *Your datasets* from your dashboard drop-down menu
+
+	The datasets view appears, displaying all your datasets.
+	
+2. Click the name of a dataset
+
+	The selected dataset opens in the Data View. You can open the privacy options from the Edit menu and from the lock icon. Additionally, you can access the privacy options from within the Edit metadata options.
+	
+	2a. Click *Change privacy* from the Edit menu.
+
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/changeprivacy_editmenu.png' | prepend: site.baseurl }}" alt="Change Privacy Option" /></p>
+
+	The privacy options appear, from which you can change and save the privacy setting.
+
+	2b. Click the lock icon, next to the name of the dataset.
+	
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/lockicon_dataview.png' | prepend: site.baseurl }}" alt="Lock icon" /></p>
+	
+	The privacy options appear, from which you can change and save the privacy setting.
+	
+	2c. Click *Edit metadata*
+
+	The Dataset metadata options appear, from which you can click the privacy setting to open the privacy options to change and save your settings.
+
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/privacy_fromeditmetadata.png' | prepend: site.baseurl }}" alt="Privacy from Edit Metadata" /></p>
 
 #### Delete Dataset
 
@@ -257,51 +326,79 @@ You can perform the following administrative actions in the Options menu:
 
 ### What is a Map Visualization?
 
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/mapdash.png' | prepend: site.baseurl }}" alt="Visualizations" /></p>
+Map visualizations are a combination of one or more datasets that function as layers within a map, and can be created after you have imported at least one dataset to your account. The following high-level overview describes the workflow for creating a new map.
 
-Map visualizations are a combination of one or more datasets that function as layers within a map. Map visualizations can be created after you have imported at least one dataset to your account. Make a new map by navigating to the "Maps" section of your CartoDB dashboard, and select "New Map." Step one of creating a new map is selecting a template for your map. In step two, you select the datasets associated with your map or create an empty dataset for your data. You can also create a new map by selecting a dataset from the "Datasets" section of your dashboard.
+1. Click *Your maps* from your dashboard drop-down menu 
 
-After selecting what data you want to visualize, you're ready to start styling it. Change your basemap style and zoom level, layer colors, add custom infowindows, or animate your data over a timeline with our Torque maps. All of your changes are automatically saved (behold, the beauty of the cloud!), so you don't have to worry about losing your work. 
+	The maps view appears, displaying a list of your maps.
+	
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/mapdash.png' | prepend: site.baseurl }}" alt="Visualizations" /></p>
 
-Sidenote: If you need to save a prior draft while working on a newer version, simply duplicate your map, but remember that stylistic changes made in one will not be reflected in the other.
+2. Click *NEW MAP*
 
-### What are Private Maps?
+	The create map options appear.
 
-We've decoupled dataset privacy from map privacy to give you ultimate control over what aspects of your projects are shareable. This way your map (and any information selected on its infowindows) can be viewable while your data remains protected.
+3. Select the datasets associated with your map or create an empty dataset for your data
 
-### Map Privacy Options
+	**Tip:** You can also create a new map by directly from the your datasets view.
+
+4. Click *CREATE MAP* or *Create empty map* 
 
 When you are creating your CartoDB visualization you may also edit who has access to it. In order to edit these settings, click on the padlock from the map created on the "Visualizations" section of your CartoDB dashboard. Here you will also be able to delete your visualization or lock it to prevent any accidental changes in the future.
 
-When you create a map with CartoDB, you can customize who can access it. You can edit the privacy settings for your map from a few places. In the "Maps" section of the dashboard, edit the privacy settings of individual maps by selecting the privacy link in the lower left-hand corner of each listed map.
+5. Your changes are automatically saved 
 
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/mapdash.png' | prepend: site.baseurl }}" alt="Privacy settings in your map" /></p>
+**Tip:** If you need to save a prior draft of your map while applying changes to a newer version, it is suggested to duplicate your map so that you have a backup copy of it. The *Duplicate map* option is available from the Edit drop-down menu of the Data View or Map View of a selected map. Note that stye changes applied to a duplicate map is not applied to the original.
 
-You can also edit the privacy settings from the Map View dashboard of each map by selecting the padlock in the top-left corner. Every map is editable. You can change titles, update descriptions to clarify the content and purpose of your maps, or add tags to keep your projects organized and discoverable.
+### Map Privacy Options
 
-There are four options for map privacy settings.
+When you create a map with CartoDB, you can protect your map and identify the privacy setting as *Public*, *With link*, *Password protected*, or *Private*. These map privacy settings are managed through the map metadata and enable you to determine how your maps are accesssed.
 
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/privacyoptions.png' | prepend: site.baseurl }}" alt="Privacy settings in your map" /></p>
+**Note:** The map metadata is stored separately from your [dataset metadata](#dataset-privacy-settings). This enables you to share maps while protecting your data. 
 
-- **Public**  
-  When selected, this setting means that your map will be publicly available and will be displayed in your [CartoDB Public Profile](http://blog.cartodb.com/post/82193209466/interesting-cartodb-profiles).
+The following image, and table, display the available map privacy options.
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/privacy_mapprivacyoptions.png' | prepend: site.baseurl }}" alt="Map privacy options" /></p>
 
-- **Only People with the Link**  
-  With this setting, only users who have the map URL will be able to find your map. These maps will not appear in your CartoDB Public Profile.
+Map Privacy Option | Description
+------------ | -------------
+Public | Available to anyone on the internet and viewable from your public profile page on CartoDB
+With link | Indicates that only people who have a URL to the map are able to access it. This type of map is not viewable from your public profile
+Password protected |  Indicates that map is password protected. When selecting this option, type a password and click *SAVE SETTINGS*. This type of map is not viewable without the password and does not appear from your public profile
+Private | A private map that is only visible to you
 
-- **Password Protected**  
-  These maps require a password entry from anyone visiting the map URL before they are able to view the map. These maps will not appear in your CartoDB Public Profile.
+You can access the map privacy options through your maps dashboard or through the Data View and Map View for a selected map.
 
-- **Private**  
-  You alone are able to view your map and it will not appear on your CartoDB Public Profile.
+**Note:** Different privacy options may appear, depending on your account settings.
 
 ### Map Metadata
 
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/vizheader.png' | prepend: site.baseurl }}" alt="Map Metadata" /></p>
+You can edit the attributes for each map to add metadata for your map. This is useful for keeping your maps organized and discoverable in a search, as your repository of maps increases.  You can edit map metadata from the Map View for a selected map.
 
-For each map you may edit the name, add a description, data sources, license, and tags to keep them organized and discoverable. You will find the "Edit Metadata" option under the map title.
+####How to Edit Metadata for a Map
 
-You can use the description section to clarify the content and purpose of your map. Use tags to unite projects or themes. You can also add license information as needed.
+1. Click *Edit metadata* from the Map View of a selected map  
+
+    <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/editmetadata_link.png' | prepend: site.baseurl }}" alt="Edit Metadata" /></p>
+
+    The Map metadata options appear.
+
+2. Edit the map name, description, and tags for the selected map. You can also change your map privacy settings  
+
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/mapmetadata_options.png' | prepend: site.baseurl }}" alt="Map Metadata" /></p>
+	
+	The following map metadata options are available.
+	
+	Map Attribute | Description
+	------------ | -------------
+	Map name | The name of the map. Note to be as specific as possible if this is a public map
+	Description | Describe the content and purpose of your map. You can also add license information in this field if you are sharing your map
+	Tags | Tags enable you to group your maps by project or theme. 
+	Privacy | Maps can be Private, Public or Links. Click the current status to change the privacy settings for the selected map
+	
+3. Click *SAVE* to close and save the map metadata attributes  
+
+**Tip:** You can add a description, add tags, or edit the map privacy setting directly from the Maps View of your dashboard. Once an initial map description and map tag is entered through this shortcut, you must click *Edit metadata* from the selected map if you need to update these attributes again.
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/editmapmetadata_dashboard.png' | prepend: site.baseurl }}" alt="Edit Map Metadata from Dashboard" /></p>
 
 ###Toolbars
 
@@ -349,9 +446,29 @@ By default you are in Desktop view. If you switch to the Mobile view, you'll see
 
 ####Export Image
 
-The Export Image option allows for users to export a static image of a map in .PNG format. From the 'Configure Export Options' screen you can select the width and height in pixels for your export. make sure your pop-up blocker is disabled!
+The Export Image option enables you to export a static image of a map in .PNG format. You can adjust the zoom level and the size of the map before exporting it as an image.
 
-<p class="wrap-border"><img src="/img/layout/cartodb-editor/export-image.png" alt="The toolbar" /></p>
+1. From the Maps View of a selected map. click *Export Image*
+
+	Your map is selected and the export image options appear.
+	
+	<p class="wrap-border"><img src="/img/layout/cartodb-editor/export_image_updated.png" alt="Export Image" /></p>
+	
+2. Adjust the zoom level by using the + or - buttons
+
+3. Adjust the size of the image by clicking and dragging the edges of the selection. 
+
+	The width and height changes in displays in pixels
+
+3. Click *Export*, located underneath the selected image
+
+	<p class="wrap-border"><img src="/img/layout/cartodb-editor/export_image_button.png" alt="Export Image button" /></p>
+
+	A confirmation dialog appears, indicating that your image has been generated correctly. 
+
+4. Click the URL to view your exported .PNG image
+
+**Tip:** Ensure that your browser pop-up blocker is disabled.
 
 ### CartoDB Sidebar
 
@@ -771,43 +888,44 @@ For a quick video primer, take a look at our [filter tutorial]({{ '/tutorials/fi
 
 ### Basemaps
 
-#### What is a basemap?
-
 A basemap is a graphical representation of the world showing natural and cultural features such as water bodies, topography, park areas, points of interest, geopolitical borders, roads, streets, and sometimes buildings. CartoDB provides you with a selection of basemap options and providers (such as Stamen or Here). You may import your own custom basemap (from Mapbox, an XYZ tileset (e.g. Stamen maps), or WMS.) or use a solid background color, repeating image, or pattern. With the easy-to-use basemap selector, you can focus on an aesthetically pleasing way of visualizing your data.
 
-#### Selecting your basemap
+#### Changing your basemap
 
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/basemapselect.png' | prepend: site.baseurl }}" alt="Select a basemap" /></p>
+The default basemap for the *Here* layer of a map is *Nokia Day*. The *Change basemap* options enable you to change your basemap and style. You can link to an external URL basemap with the *Yours* option. Additionally, you can add a custom solid color, or a repeating image pattern, instead of a basemap with the *Change basemap* options.
 
-When you first create a map, it will be given a default "Nokia Day" basemap. To change your basemap simply click on "Nokia Day" below left of the Map View and select an available style. You may add your own custom basemap in the "yours" option and then by linking to the URL for that basemap from Mapbox, XYZ, or WMS. Finally, there are options for adding a solid color or a repeating image pattern instead of a basemap. All of these features give you a high level of customization when creating a map visualization.
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/change_basemap_options.png' | prepend: site.baseurl }}" alt="Change Basemap" /></p>
 
-CartoDB offers you a variety of basemaps you may use in your maps. You may select any one of them and the change will be applied immediately. You may change your basemap anytime and the rest of your layers will remain unchanged. Take some time to explore our different available basemaps. You'll be able to see that some of them have more detail (such as depicting borders, roads, and mountains) while others are more minimalistic. Thus you may choose one that's best suited for the purpose of your map.
+**Note:** *Change basemap* options are applied immediately and do not alter any other layers in your map.
 
 #### Including an external basemap
 
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/addbasemap.png' | prepend: site.baseurl }}" alt="Add your own NASA basemap" /></p>
+Apart from the default basemaps offered in CartoDB, you may integrate third-party basemaps to customize your maps even further. The following procedure describes how to add a custom basemap from an external resource.  
 
-Apart from the default basemaps offered in CartoDB, you may integrate third-party basemaps to customize your maps even further. You have four options (we're always striving to add more):
+  1. Click *Change basemap*, located on the bottom left of a selected map  
 
-1. **Mapbox**  
-  Mapbox is a service which lets you customize the design of a basemap with colors and elements you choose, and integrate easily to CartoDB. Just select the URL from your Mapbox map and paste it in the configuration window.
+  2. Expand *Yours* to add an external resource  
+  
+  <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/change_basemap_yours.png' | prepend: site.baseurl }}" alt="Add your own NASA basemap" /></p>  
 
-2. **XYZ Template**  
-  XYZ Templates allow you to access many other basemaps, including those from OpenStreetMap and Stamen. In order to use these basemaps, you need their tile URLs. Give it a try with these:
-  - **Stamen Toner:** `http://{s}.stamen.com/toner/{z}/{x}/{y}.jpg`
-  - **Stamen Terrain:** `http://{s}.stamen.com/terrain/{z}/{x}/{y}.jpg`
-  - **Stamen Watercolor:** `http://tile.stamen.com/watercolor/{z}/{x}/{y}.jpg`
-  - **OSM:** `http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png`
+  The following image, and table, display the available external resources to choose from.  
 
-3. **WMS Base URL**  
-  A WMS, or Web Map Service, allows you to connect to map images generated online by a map server using data from a GIS database. You may use these as basemaps, and they can often contain very interesting information that could be harder to find with other basemaps. You can find URLs for different WMS online, but you often have to look closely to make sure you're getting what you want. Take a look at these WMS URLs, if you want to see what kinds of things you can do with a [WMS baselayer](http://nationalatlas.gov/infodocs/wms_intro.html).
+  <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/add_custom_basemap.png' | prepend: site.baseurl }}" alt="Add custom basemap option" /></p>  
 
-  Currently, we're only supporting WMS files that contain data that uses [EPSG:900913 (Web Mercator)](https://en.wikipedia.org/wiki/Web_Mercator) or [EPSG:3857](http://en.wikipedia.org/wiki/Web_Mercator#EPSG:3857) coordinates.
-
-4. **NASA**  
-  With this option, you can easily use NASA Global Imagery Browse Services satellite imagery as a basemap. Just select the date you're interested in, and whether you'd like a day map (which changes based on the day selected) or a night map, and add it to your map.
-
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/nasabase.png' | prepend: site.baseurl }}" alt="Add your own NASA basemap" /></p>
+  External Basemap Resource | Description  
+  ------------ | -------------
+  XYZ | XYZ Templates enable you to access many other basemaps, including those from OpenStreetMap and Stamen. Insert the basemap URLs and click *ADD BASEMAP*. For example:
+  | **Stamen Toner:** `http://{s}.stamen.com/toner/{z}/{x}/{y}.jpg`
+  | **Stamen Terrain:** `http://{s}.stamen.com/terrain/{z}/{x}/{y}.jpg`
+  | **Stamen Watercolor:** `http://tile.stamen.com/watercolor/{z}/{x}/{y}.jpg`
+  | **OSM:** `http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png`
+  WMS/WMTS | A WMS, or Web Map Service, enables you to connect to online generated map images by a map server using data from a GIS database. Insert your WMS/WMTS URL and click *GET LAYERS*. For example, [WMS baselayer](http://nationalatlas.gov/infodocs/wms_intro.html).
+  | **Note:** Currently, CartoDB only supports WMS files containing data that uses [EPSG:900913 (Web Mercator)](https://en.wikipedia.org/wiki/Web_Mercator) or [EPSG:3857](http://en.wikipedia.org/wiki/Web_Mercator#EPSG:3857) coordinates.
+  NASA | Enables you to select a basemap provided by NASA Worldview. Select a date from which you want a global basemap and indicate Day (a day map changes based on the day selected) or Night
+  Mapbox | Mapbox is a service which lets you customize the design of a basemap with custom colors and elements. Insert your Mapbox URL and access token to add the basemap
+  TileJSON | Enables you to insert an open platform, web map by inserting the TileJSON URL. A TileJSON map contains tiles, minzoom and maxzoom as mandatory fields  
+    
+  The map refreshes, displaying the external resource as a basemap layer.  
 
 #### About Map Projections
 
