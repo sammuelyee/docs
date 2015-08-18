@@ -365,29 +365,24 @@ When you upload your data to CartoDB, it will automatically assign a data type t
 
 The date type is located under the column name. It can be changed by clicking on the date type name under the column name to open a secondary navigation window from which you can select the correct data type.
 
-### Options
+### Editing your Dataset
 
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/options.png' | prepend: site.baseurl }}" alt="Options" /></p>
+The following options are available from the *Edit* menu of the Data View or Map View of a selected dataset.
 
-You can perform the following administrative actions in the Options menu:
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/dataset_edit_menu.png' | prepend: site.baseurl }}" alt="Dataset Edit Options" /></p>
 
-- **Export**  
-  Allows you to export your data as a .CSV, .SHP, .KML, .SVG and .GEOJSON
+Dataset Edit Menu Option | Description
+------------ | -------------
+Export | Export your dataset for use offline. For details, see [How to export datasets from CartoDB?](http://docs.cartodb.com/faqs.html#how-to-export-datasets-from-cartodb)
+Georeference |  Select this to begin georeferencing your data. You may also get an idea of how many of georeferencing credits you have used. Remember, you can always upgrade for more!n
+Duplicate dataset |  Create a new dataset with identical information to your current dataset
+Merge with dataset |  Merge your current dataset with another existing dataset using either a "column join" (joins two datasets based off of a shared column) or a "spatial join" (joins two datasets based off of their spatial overlaps). For more on how to perform this function, take a look [here]({{ '/tutorials/merging_data.html' | prepend: site.baseurl }}).
+Change privacy | Allows you to edit who is able to access the dataset.
+Lock dataset | Content from cell 2
+Delete this dataset | Entirely delete your dataset. But note that this will also delete any maps that rely on the dataset
 
-- **Georeference**  
-  Select this to begin georeferencing your data. You may also get an idea of how many of georeferencing credits you have used. Remember, you can always upgrade for more!
-
-- **Duplicate Dataset**  
-  Create a new dataset with identical information to your current dataset.
-
-- **Merge Dataset**  
+- **Merge with dataset**  
   Merge your current dataset with another existing dataset using either a "column join" (joins two datasets based off of a shared column) or a "spatial join" (joins two datasets based off of their spatial overlaps). For more on how to perform this function, take a look [here]({{ '/tutorials/merging_data.html' | prepend: site.baseurl }}).
-
-- **Change Privacy**  
-  Allows you to edit who is able to access the dataset.
-
-- **Delete this Dataset**  
-  Entirely delete your dataset. But note that this will also delete any maps that rely on the dataset!
 
 ## Maps
 
