@@ -154,7 +154,7 @@ You can visualize your data once one or more datasets are added to your dashboar
 
 	The map is connected to the dataset and you can edit any of the map or data details. You can also [(publish](#publish-and-share-your-map)) your map. 
 
-**Note:** If you need to save a draft of your map while applying changes to a newer version, it is suggested to duplicate your map so that you have a backup copy of it. The *Duplicate map* option is available from the Edit drop-down menu of the Data View or Map View of a selected map. Note that stye changes applied to a duplicate map are not applied to the original.
+**Note:** If you need to save a draft of your map while applying changes to a newer version, it is suggested to duplicate your map so that you have a backup copy of it. The *Duplicate map* option is available from the [(Edit](#edit-dataset-options)) drop-down menu of the Data View or Map View of a selected map. Note that style changes applied to a duplicate map are not applied to the original.
 
 ### Manage Your Datasets
 
@@ -365,7 +365,7 @@ When you upload your data to CartoDB, it will automatically assign a data type t
 
 The date type is located under the column name. It can be changed by clicking on the date type name under the column name to open a secondary navigation window from which you can select the correct data type.
 
-### Editing your Dataset
+### Edit Dataset Options
 
 The following options are available from the *Edit* menu of the Data View or Map View of a selected dataset.
 
@@ -374,15 +374,15 @@ The following options are available from the *Edit* menu of the Data View or Map
 Dataset Edit Menu Option | Description
 ------------ | -------------
 Export | Export your dataset for use offline. For details, see [How to export datasets from CartoDB?](http://docs.cartodb.com/faqs.html#how-to-export-datasets-from-cartodb)
-Georeference |  Select this to begin georeferencing your data. You may also get an idea of how many of georeferencing credits you have used. Remember, you can always upgrade for more!n
-Duplicate dataset |  Create a new dataset with identical information to your current dataset
-Merge with dataset |  Merge your current dataset with another existing dataset using either a "column join" (joins two datasets based off of a shared column) or a "spatial join" (joins two datasets based off of their spatial overlaps). For more on how to perform this function, take a look [here]({{ '/tutorials/merging_data.html' | prepend: site.baseurl }}).
-Change privacy | Allows you to edit who is able to access the dataset.
-Lock dataset | Content from cell 2
-Delete this dataset | Entirely delete your dataset. But note that this will also delete any maps that rely on the dataset
-
-- **Merge with dataset**  
-  Merge your current dataset with another existing dataset using either a "column join" (joins two datasets based off of a shared column) or a "spatial join" (joins two datasets based off of their spatial overlaps). For more on how to perform this function, take a look [here]({{ '/tutorials/merging_data.html' | prepend: site.baseurl }}).
+Georeference |  
+Duplicate dataset |  Creates a duplicate of your dataset so that you have a backup copy of it. Note that changes applied to a duplicate dataset are not applied to the original
+Merge with dataset |  Merge your current dataset with another existing dataset by performing a *column join* (merges two datasets based on a shared value) or a *spatial join* (merges two datasets based on a number of intersecting records). For details, see the tutorial about [Merging data from two tables]({{ '/tutorials/merging_data.html' | prepend: site.baseurl }})
+Change privacy | You can protect your dataset and identify the privacy setting. For details, see [(Dataset Privacy Settings](#dataset-privacy-settings))
+Lock dataset | Enables you to lock your dataset and hide it from the dashboard.
+| **Tip:** Once your dataset is locked, you can access it from the Datsets menu options, or from the link showing your locked datasets on the bottom of your datasets list
+| Update FAQs.md- How can I lock a dataset/map?
+Delete this dataset | Delete the selected dataset. For details, see [(Delete Dataset](#delete-dataset))
+| **Note:** Deleting a dataset also deletes any connected maps to the dataset
 
 ## Maps
 
