@@ -128,6 +128,34 @@ _CartoDB prefers datasets that use comma separators. Also, we are only able to i
 
 _XLS and XSLX may take longer than CSV files. We highly recommend that you export Excel files to CSV before importing in CartoDB._
 
+###Data Visualization
+
+You can visualize your data once one or more datasets are added to your dashboard. In order to visualize a dataset, you must create a map from your dataset. This procedure describes how to visualize your data and create a map.
+
+1. Click *Your datasets* from your dashboard drop-down menu 
+
+	The datasets view appears, displaying all of your datasets.
+	
+2. Click the name of a dataset
+
+	The selected dataset opens in the Data View.
+	
+	**Tip:** You can edit the [(privacy settings](#dataset-privacy-settings)) for your dataset.
+
+3. Click *VISUALIZE* to view the connected dataset
+
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/visualize.png' | prepend: site.baseurl }}" alt="Visualize a Dataset" /></p>
+
+	A confirmation dialog appears, indicating that you must publish a map in order to visualize your data.
+	
+4. Click *OK,CREATE MAP* to visualize your dataset in a map 
+
+5. A map is automatically generated based on the name of your dataset
+
+	The map is connected to the dataset and you can edit any of the map or data details. You can also [(publish](#publish-and-share-your-map)) your map. 
+
+**Note:** If you need to save a draft of your map while applying changes to a newer version, it is suggested to duplicate your map so that you have a backup copy of it. The *Duplicate map* option is available from the Edit drop-down menu of the Data View or Map View of a selected map. Note that stye changes applied to a duplicate map are not applied to the original.
+
 ### Manage Your Datasets
 
 You can manage all of your datasets from your Datasets dashboard and change how the datasets are ordered, edit the privacy settings for your datasets, or delete a dataset.
@@ -157,8 +185,6 @@ Your dashboard refreshes, changing the sort order of how your datasets appear.
 #### Dataset Privacy Settings
 
 You can protect your dataset and identify the privacy setting as *Public*, *With link*, or *Private*. The dataset privacy settings are managed through the dataset metadata.
-
-**Note:** The dataset metadata is stored separately from your [map metadata](#map-metadata). 
 
 The following image, and table, display the available dataset privacy options.
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/privacy_datasetprivacyoptions.png' | prepend: site.baseurl }}" alt="Dataset Privacy Options" /></p>
@@ -213,9 +239,50 @@ There are several ways to edit the privacy settings within the Data View or Map 
 	
 	2c. Click *Edit metadata*
 
-	The Dataset metadata options appear, from which you can click the privacy setting to open the privacy options to change and save your settings.
+	The [(Dataset metadata](#dataset-metadata)) options appear, from which you can click the privacy setting to open the privacy options to change and save your settings.
 
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/privacy_fromeditmetadata.png' | prepend: site.baseurl }}" alt="Privacy from Edit Metadata" /></p>
+#### Dataset Metadata
+
+You can edit the attributes for each dataset and add metadata for your data. This is useful for keeping your datasets organized and discoverable in a search, as your repository of datasets increases.  You can edit dataset metadata from the your datasets dashboard.
+
+**Note:** The dataset metadata is stored separately from your [map metadata](#map-metadata). 
+
+#####Editing Metadata for a Dataset
+
+1. Click *Your datasets* from your dashboard drop-down menu
+
+	The datasets view appears, displaying a list of your datasets.
+
+2. Click the name of a dataset
+
+	The selected dataset opens in the Data View.
+
+3.  Click *Edit metadata*  
+
+    <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/dataset_edit_metadata.png' | prepend: site.baseurl }}" alt="Edit Dataset Metadata" /></p>
+
+    The Dataset metadata options appear.
+
+4. Edit the dataset name, description, source, attributions. license, and tags for the selected map. You can also change your dataset privacy settings  
+
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/dataset_metadata.png' | prepend: site.baseurl }}" alt="Privacy option from Edit Dataset Metadata" /></p>
+	
+	The following dataset metadata options are available.
+	
+	Map Attribute | Description
+	------------ | -------------
+	Dataset name | The name of the dataset. Note to be as specific as possible if your dataset is public
+	Description | Describe the content and purpose of your dataset
+	Source | Enter any details about the original source of the data
+	Attributions | Enter any [attribution](https://cartodb.com/attributions) information about the data layer
+	License | Add license information about sharing or using this dataset
+	Tags | Tags enable you to group your datasets by project or theme
+	Privacy | Datasets can be Private, Public or Links. Click the current status to change the privacy settings for the selected map
+	
+5. Click *SAVE* to close and save the dataset metadata attributes  
+
+**Tip:** You can add a description, add tags, or edit the dataset privacy setting directly from the your Datasets dashboard. Once an initial dataset description and tag is entered using this shortcut, you must click *Edit metadata* from the selected dataset if you need to update these attributes again.
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/edit_dataset_from_dashboard.png' | prepend: site.baseurl }}" alt="Edit Dataset Metadata from Dashboard" /></p>
 
 #### Delete Dataset
 
@@ -324,35 +391,9 @@ You can perform the following administrative actions in the Options menu:
 
 ## Maps
 
-### What is a Map Visualization?
-
-Map visualizations are a combination of one or more datasets that function as layers within a map, and can be created after you have imported at least one dataset to your account. The following high-level overview describes the workflow for creating a new map.
-
-1. Click *Your maps* from your dashboard drop-down menu 
-
-	The maps view appears, displaying a list of your maps.
-	
-	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/mapdash.png' | prepend: site.baseurl }}" alt="Visualizations" /></p>
-
-2. Click *NEW MAP*
-
-	The create map options appear.
-
-3. Select the datasets associated with your map or create an empty dataset for your data
-
-	**Tip:** You can also create a new map by directly from the your datasets view.
-
-4. Click *CREATE MAP* or *Create empty map* 
-
-When you are creating your CartoDB visualization you may also edit who has access to it. In order to edit these settings, click on the padlock from the map created on the "Visualizations" section of your CartoDB dashboard. Here you will also be able to delete your visualization or lock it to prevent any accidental changes in the future.
-
-5. Your changes are automatically saved 
-
-**Tip:** If you need to save a prior draft of your map while applying changes to a newer version, it is suggested to duplicate your map so that you have a backup copy of it. The *Duplicate map* option is available from the Edit drop-down menu of the Data View or Map View of a selected map. Note that stye changes applied to a duplicate map is not applied to the original.
-
 ### Map Privacy Options
 
-When you create a map with CartoDB, you can protect your map and identify the privacy setting as *Public*, *With link*, *Password protected*, or *Private*. These map privacy settings are managed through the map metadata and enable you to determine how your maps are accesssed.
+When you create a map with CartoDB, you can protect your map and identify the privacy setting as *Public*, *With link*, *Password protected*, or *Private*. These map privacy settings are managed through the map metadata and enable you to determine how your maps are accessed.
 
 **Note:** The map metadata is stored separately from your [dataset metadata](#dataset-privacy-settings). This enables you to share maps while protecting your data. 
 
@@ -372,17 +413,25 @@ You can access the map privacy options through your maps dashboard or through th
 
 ### Map Metadata
 
-You can edit the attributes for each map to add metadata for your map. This is useful for keeping your maps organized and discoverable in a search, as your repository of maps increases.  You can edit map metadata from the Map View for a selected map.
+You can edit the attributes for each map to add metadata for your map. This is useful for keeping your maps organized and discoverable in a search, as your repository of maps increases.  You can edit map metadata from your maps dashboard.
 
-####How to Edit Metadata for a Map
+####Editing Metadata for a Map
 
-1. Click *Edit metadata* from the Map View of a selected map  
+1. Click *Your maps* from your dashboard drop-down menu
+
+	The list of your maps appears.
+
+2. Click on a map name
+
+	The map opens in the Map View.
+
+3. Click *Edit metadata* 
 
     <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/editmetadata_link.png' | prepend: site.baseurl }}" alt="Edit Metadata" /></p>
 
     The Map metadata options appear.
 
-2. Edit the map name, description, and tags for the selected map. You can also change your map privacy settings  
+4. Edit the map name, description, and tags for the selected map. You can also change your map privacy settings  
 
 	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/mapmetadata_options.png' | prepend: site.baseurl }}" alt="Map Metadata" /></p>
 	
@@ -392,12 +441,12 @@ You can edit the attributes for each map to add metadata for your map. This is u
 	------------ | -------------
 	Map name | The name of the map. Note to be as specific as possible if this is a public map
 	Description | Describe the content and purpose of your map. You can also add license information in this field if you are sharing your map
-	Tags | Tags enable you to group your maps by project or theme. 
+	Tags | Tags enable you to group your maps by project or theme 
 	Privacy | Maps can be Private, Public or Links. Click the current status to change the privacy settings for the selected map
 	
-3. Click *SAVE* to close and save the map metadata attributes  
+5. Click *SAVE* to close and save the map metadata attributes  
 
-**Tip:** You can add a description, add tags, or edit the map privacy setting directly from the Maps View of your dashboard. Once an initial map description and map tag is entered through this shortcut, you must click *Edit metadata* from the selected map if you need to update these attributes again.
+**Tip:** You can add a description, add tags, or edit the map privacy setting directly from your maps dashboard. Once an initial map description and map tag is entered using this shortcut, you must click *Edit metadata* from the selected map if you need to update these attributes again.
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/editmapmetadata_dashboard.png' | prepend: site.baseurl }}" alt="Edit Map Metadata from Dashboard" /></p>
 
 ###Toolbars
@@ -875,16 +924,6 @@ Use the Filters section of the editor to select certain ranges of data to displa
 CartoDB uses SQL to pull different data from your datasets. Click on the SQL section of the Editor (near the top of the pull-out tray) to see what SQL queries were applied. You can also edit and create your own.
 
 For a quick video primer, take a look at our [filter tutorial]({{ '/tutorials/filters.html' | prepend: site.baseurl }}).
-
-### Options
-
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/optionvisualization.png' | prepend: site.baseurl }}" alt="Options" /></p>
-
-- **Duplicate Map**  
-  Create a new map with identical information to your current map.
-
-- **Delete Map**  
-  Entirely delete your map. This will not remove any dataset linked to this map.
 
 ### Basemaps
 
