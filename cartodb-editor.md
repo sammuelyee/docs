@@ -925,16 +925,6 @@ CartoDB uses SQL to pull different data from your datasets. Click on the SQL sec
 
 For a quick video primer, take a look at our [filter tutorial]({{ '/tutorials/filters.html' | prepend: site.baseurl }}).
 
-### Options
-
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/optionvisualization.png' | prepend: site.baseurl }}" alt="Options" /></p>
-
-- **Duplicate Map**  
-  Create a new map with identical information to your current map.
-
-- **Delete Map**  
-  Entirely delete your map. This will not remove any dataset linked to this map.
-
 ### Basemaps
 
 A basemap is a graphical representation of the world showing natural and cultural features such as water bodies, topography, park areas, points of interest, geopolitical borders, roads, streets, and sometimes buildings. CartoDB provides you with a selection of basemap options and providers (such as Stamen or Here). You may import your own custom basemap (from Mapbox, an XYZ tileset (e.g. Stamen maps), or WMS.) or use a solid background color, repeating image, or pattern. With the easy-to-use basemap selector, you can focus on an aesthetically pleasing way of visualizing your data.
