@@ -421,16 +421,44 @@ You can edit the attributes for each map to add metadata for your map. This is u
 
 	The list of your maps appears.
 
+<<<<<<< HEAD
+You can edit the attributes for each map to add metadata for your map. This is useful for keeping your maps organized and discoverable in a search, as your repository of maps increases.  You can edit map metadata from the Map View of a selected map (or from a Data View of a selected map to edit the dataset layer in a map).
+
+**Note:** Map metadata is stored separately from [(Dataset metadata](#dataset-metadata)). Each dataset contains its own metadata, however, once you connect a dataset to a map, you can edit the dataset metadata as a layer within the map.
+
+####Edit Metadata for a Map
+The following procedure describes how to edit metadata for a map.
+=======
 2. Click on a map name
 
 	The map opens in the Map View.
 
 3. Click *Edit metadata* 
+>>>>>>> master
+
+1. Click *Your maps* from your dashboard drop-down menu  
+
+    <p class="wrap-border"><img src="{{ '/img/layout/common/dashboard_yourmaps.png' | prepend: site.baseurl }}" alt="Select Your Maps from Dashboard" /></p>
+
+	The page refreshes, displaying a list of your maps.
+
+2. Select the name of the map to view, or click the Edit icon on a map
+
+    <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/selectmap.png' | prepend: site.baseurl }}" alt="Select Map" /></p>
+
+	The page refreshes, displaying the Map View for the selected map.
+
+3. Click *Edit metadata* from the selected map  
+
+<<<<<<< HEAD
+	**Note:** You can edit metadata from the *Data View* or *Map View* of a selected map.  The Data View contains the connected dataset as a layer within the map.
 
     <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/editmetadata_link.png' | prepend: site.baseurl }}" alt="Edit Metadata" /></p>
+		
+	The Map metadata options appear.
 
-    The Map metadata options appear.
-
+=======
+>>>>>>> master
 4. Edit the map name, description, and tags for the selected map. You can also change your map privacy settings  
 
 	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/mapmetadata_options.png' | prepend: site.baseurl }}" alt="Map Metadata" /></p>
@@ -441,10 +469,23 @@ You can edit the attributes for each map to add metadata for your map. This is u
 	------------ | -------------
 	Map name | The name of the map. Note to be as specific as possible if this is a public map
 	Description | Describe the content and purpose of your map. You can also add license information in this field if you are sharing your map
+<<<<<<< HEAD
+	Tags | Tags enable you to group your maps by project or theme
+	Privacy | Options may vary depending on your account settings. Click the current status to change the [(privacy settings](#map-privacy-options)) for the selected map
+	
+5. Click *SAVE* to close and save the map metadata attributes  
+
+6. Click *Search* to search your repository of maps by name or tag
+
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/search_metadata.png' | prepend: site.baseurl }}" alt="Search by metadata" /></p>
+
+	Note how applying metadata enables you to identify and search for map attributes.
+=======
 	Tags | Tags enable you to group your maps by project or theme 
 	Privacy | Maps can be Private, Public or Links. Click the current status to change the privacy settings for the selected map
 	
 5. Click *SAVE* to close and save the map metadata attributes  
+>>>>>>> master
 
 **Tip:** You can add a description, add tags, or edit the map privacy setting directly from your maps dashboard. Once an initial map description and map tag is entered using this shortcut, you must click *Edit metadata* from the selected map if you need to update these attributes again.
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/editmapmetadata_dashboard.png' | prepend: site.baseurl }}" alt="Edit Map Metadata from Dashboard" /></p>
@@ -476,7 +517,7 @@ In Add Element, it is easy to add overlays on top of your map that help to bette
  - **Add Annotation Item**
  Annotations are text overlays linked to a coordinate and a zoom range. They allow users to explain and point to specific map elements. These overlays will remain fixed on a position on the map, and are excellent for annotating information, telling stories, or highlighting interesting information.
 
- Similar to the title and text overlays, clicking an annotation element brings up the customization toolbar. You will notcie that a **Zoom (min-max)** option has been added. This allows for dynamic annotations and zoom-dependent labeling of map items.
+ Similar to the title and text overlays, clicking an annotation element brings up the customization toolbar. You will notice that a **Zoom (min-max)** option has been added. This allows for dynamic annotations and zoom-dependent labeling of map items.
 
  <p class="wrap-border"><img src="/img/layout/cartodb-editor/annotation.png" alt="The toolbar" /></p><br>
 

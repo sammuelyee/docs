@@ -439,6 +439,8 @@
 
   ul,
   ol {
+    margin-left: 30px;
+
     ul,
     ol {
       margin-top: 12px;
@@ -779,9 +781,10 @@
 /* =Platform
 ----------------------------------------------- */
 
-.platform-list {
+ul.platform-list {
   @extend %clearfix;
   margin-bottom: 24px;
+  margin-left: 0px;
 
   li {
     margin: 0;
@@ -821,7 +824,9 @@
 /* =Tutorials
 ----------------------------------------------- */
 
-.tutorials-list {
+ul.tutorials-list {
+  margin-left: 0px;
+
   li {
     margin: 0;
     padding: 0;
