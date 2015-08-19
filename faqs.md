@@ -121,7 +121,50 @@ While still in table view, you will then click on Edit and then choose Georefere
 
 ### How can I lock a dataset/map?
 
-To prevent your data from undesired changes you can lock your datasets and maps. To lock a them, just go to your dashboard, select the element and click on the "Lock map" or "Lock dataset" options that will appear in the top menu. Once a map or dataset is locked, you will find it in the sections "Your locked maps" or "Your locked datasets", respectively.
+To prevent your data from undesired changes, you can lock your datasets and maps. Locking a dataset or map hides it from your dashboard.
+
+**Locking a Dataset/Map**
+
+There are several methods to lock a dataset or map. 
+
+***Note:** The following example describes how to lock a dataset, but the same procedure applies to maps. Options are applicable based on the selected dashboard.*
+
+1. Click *Your datasets* from your dashboard drop-down menu
+	
+	The datasets view appears, displaying all of your datasets. 
+	
+	You can access the lock options directly from the dashboard, or from a selected view.  
+	
+2. From the dashboard:
+	 - Select a dataset so that it is highlighted. A toolbar shortcut to the dataset options appears. This enables you to select dataset options without viewing it
+	 
+	 - Click *Lock dataset...* from the toolbar shortcuts
+	 
+	 <p class="wrap-border"><img src="{{ '/img/layout/faqs/lock_dataset_toolbar.png' | prepend: site.baseurl }}" alt="Dataset Edit Options" /></p>
+	 
+	 A confirmation dialog box appears.
+	 
+	 - Click *OK,LOCK*
+	 
+	 The dashboard refreshes, hiding the locked dataset from the view.
+	 
+3. From a selected view:
+
+	- Click the name of a dataset
+	
+	The selected dataset opens in the Data View.
+	
+	- Select *Lock dataset* from the Edit menu
+	
+	<p class="wrap-border"><img src="{{ '/img/layout/faqs/lock_dataset_edit_menu.png' | prepend: site.baseurl }}" alt="Lock dataset edit menu" /></p>
+
+**Viewing Locked Datasets/Maps:**
+
+Once your dataset is locked, you can access it from the Datasets menu options, or from the link showing your locked datasets on the bottom of your dashboard. If you attempt to view a locked dataset, a confirmation dialog appears. You are prompted to unlock your dataset before viewing it.
+
+The following image displays the *Your locked datasets* option, and the *Show your # locked dataset* option from the Datasets dashboard.
+
+<p class="wrap-border"><img src="{{ '/img/layout/faqs/show_locked_datasets.png' | prepend: site.baseurl }}" alt="Show locked datasets" /></p>
 
 ### Why isn’t my Shapefile importing?
 
