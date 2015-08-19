@@ -325,7 +325,7 @@ There are multiple ways to delete a dataset with the CartoDB Editor. You can del
 
 2. Select the name of the dataset to view  
 
-    <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/selected_dataset_name.png' | prepend: site.baseurl }}" alt="Select Name of Dataset" /></p>
+    <p class="wrap-border"><img src="{{ '/img/layout/common/selected_dataset_name.png' | prepend: site.baseurl }}" alt="Select Name of Dataset" /></p>
 
     The page refreshes displaying the Data View for the selected dataset. 
 
@@ -1052,59 +1052,55 @@ Regular, Bold, Semibold, Light, Italic, Bold Italic, Semibold Italic, Light Ital
 
 ## Managing Your Data
 
-Whew, you're almost a CartoDB expert! As you know by now, there are a variety of methods for managing and visualizing your data with our Editor, Wizards, and SQL tools -- to name a few. In earlier sections, we discussed using filters on your data and merging datasets. Below is a quick introduction to a few more techniques that we host for your creative convenience.
+While you can apply many styling options with the CartoDB Editor, you can also apply georeference data and run several types of queries to manage and visualize your data.
 
-### Geocoding Data
+### Georeference Data
 
-CartoDB is more than a styler - we're also a behind-the-scenes geocoder. We understand that geocoding is essential to data management and facilitate six methods for this process. To begin, click "Options" and "Georeference" and then select one of the alternatives that allow you to georeference your data in the best possible way.
+CartoDB understands that geocoding is essential to data management. You can edit your dataset (or map) and apply georeferencing coordinates to transform your data. This section describes the available georeference options.
 
+#### Editing Georeference Data
 
-**By Lon/Lat Columns**
+1. Click *Your datasets* from the dashboard drop-down menu  
 
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/geo1.png' | prepend: site.baseurl }}" alt="Geocoding data" /></p>
+    <p class="wrap-border"><img src="{{ '/img/layout/common/select_your_dataset.png' | prepend: site.baseurl }}" alt="Select Dataset" /></p>
 
-Importing your data with latitude and longitude coordinates already included renders a map that automatically displays your markers and polygons from the coordinates uploaded to your dataset. To georeference, just select the longitude and latitude columns in your dataset and click continue.
+    The page refreshes, displaying a list of your datasets.
 
-**By City Names**
+2. Select the name of the dataset to view  
 
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/geo2.png' | prepend: site.baseurl }}" alt="Geocoding data" /></p>
+    <p class="wrap-border"><img src="{{ '/img/layout/common/selected_dataset_name.png' | prepend: site.baseurl }}" alt="Select Name of Dataset" /></p>
 
-Alternatively, you may georeference by City Names. Select the column that contains the city names and also select the country to which the cities belong to if you want to be more accurate.
+    The page refreshes displaying the Data View for the selected dataset. 
 
+3. Select *Georeference* from the Edit drop-down menu  
 
-**By Admin. Regions**
+    <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/dataset_edit_georeference.png' | prepend: site.baseurl }}" alt="Edit Georeference Data" /></p>
+	
+	The georeference options appear. 
+	
+	**Tip:** You can also access these georeference options from the Map View of a selected dataset, or from your Maps dashboard. If editing georeference data from a map, the georeference coordinates appear as a layer within a map.
+   
+4. Select the georeference data category
+	
+	The following table describes the available georeference data categories.
+	
+	Georeference Category | Description
+	------------ | -------------
+	Long/Lat Columns | When uploading a dataset, the map automatically renders the marker and polygon values as the latitude and longitude coordinates. To identify a georeference data point, select the specific longitude and latitude column from the drop-down menu
+	| The following image displays the default georeference data options, with *Lon/Lat Columns* selected. 
+	| <img src="{{ '/img/layout/cartodb-editor/georeference_lon_lat.png' | prepend: site.baseurl }}" alt="Georeference Longitude and Latitude Coordinates" />
+	| **Tip:** Click the georeference category name to refresh the view and display the related options.
+	City Name | Click *City Names* to view the georeference city name options, and select the column where your city names are stored in your dataset. To improve the accuracy of the georeference data, you can also indicate the administrative region and country (if known)
+	Admin. Regions | Click *Admin. Regions* to view the georeference administrative region options, and select the column where your region names are stored in your dataset. If the selected region column is not country data, you can also indicate the column where this type of data is stored
+	|  **Note:**  The CartoDB database automatically loads polygon region data for states and municipalities.
+	Postal Codes |  Click *Postal Codes* to view the georeference postal code options, and select the column where your postal codes are stored in your dataset. To improve the accuracy of the georeference data, you can also indicate the country where the postal codes are located (if known)
+	IP Addresses |  Click *IP Addresses* to view the georeference IP Address name options, and select the column where your IP Addresses are stored in your dataset. This enables you to convert IP Addresses into geographical locations on your map
+	Street Addresses |  Click *Street Addresses* to view the georeference street address options, and select the column where your street addresses are stored in your dataset. To improve the accuracy of the georeference data, you can also indicate the state/province and country (if known)
+	| **Note:** Street address data is allocated to your account and based on a permitted amount of credits per month. Any geocode matches to the indicated street address consumes credits from your account.
+	
+5. Click *CONTINUE* to save and apply the georeference data coordinates  
 
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/geo3.png' | prepend: site.baseurl }}" alt="Geocoding data" /></p>
-
-
-You may also georeference by Administrative Regions. Select to georeference by Admin. Regions, and line up the data in your dataset to the type and location of whatever administrative region you like. CartoDB will access our comprehensive cloud databases to automatically load polygons for regions like states and municipalities.
-
-**By Postal Codes**
-
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/geo4.png' | prepend: site.baseurl }}" alt="Geocoding data" /></p>
-
-Postal code systems have been set up in many countries and these often provide a high level of spatial precision. On CartoDB you have the option to georeference your data by postal codes. Just select the column where your information is stored and the country where the zip codes are from and immediately press continue.
-
-**By IP Addresses**
-
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/geo5.png' | prepend: site.baseurl }}" alt="Geocoding data" /></p>
-
-IP Georeferencing is an important toolbox item in today's web environment. If you select this option, CartoDB will take your IP address column and convert it into location points on your map.
-
-
-**By Street Addresses**
-
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/geo6.png' | prepend: site.baseurl }}" alt="Geocoding data" /></p>
-
-
-Finally, you may georeference by address. To do this, your columns will need to be organized into categories such as "address" (which would contain the building number and street name), "state" and "country," if its known.
-
-Matching addresses with geographic coordinates consumes geocoding credits. Every time geocoding is done in string format, geocoding credit is used (for example, if you geocode a dataset with 20 records, 20 geocoding credits are used). All CartoDB plans include a number of geocoding credits that can be used every month. After exceeding the geocoding limits, a fixed fee is charged per 1000 credits.
-
-On the upper-left side of the window, you will see the operation cost and you must accept the price to be able to continue.
-
-CartoDB may use a third party to provide geocoding and reverse geocoding services. Geocoding services are subject to the third parties [terms and conditions](http://developer.here.com/terms-conditions).
-
+**Note:** CartoDB may use a third party to provide geocoding and reverse geocoding services. Geocoding services are subject to the third parties [terms and conditions](http://developer.here.com/terms-conditions).
 
 ### Running SQL Queries
 
