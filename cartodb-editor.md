@@ -462,9 +462,6 @@ The following procedure describes how to edit metadata for a map.
 
 	Note how applying metadata enables you to identify and search for map attributes.
 
-	Tags | Tags enable you to group your maps by project or theme 
-	Privacy | Maps can be Private, Public or Links. Click the current status to change the privacy settings for the selected map
-
 **Tip:** You can add a description, add tags, or edit the map privacy setting directly from your maps dashboard. Once an initial map description and map tag is entered using this shortcut, you must click *Edit metadata* from the selected map if you need to update these attributes again.
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/editmapmetadata_dashboard.png' | prepend: site.baseurl }}" alt="Edit Map Metadata from Dashboard" /></p>
 
