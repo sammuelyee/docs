@@ -34,9 +34,9 @@ You can export any of your datasets for use offline. The Export option is availa
 
     The export dataset options appear. 
 
-3. Select the preferred file format  
+4. Select the preferred file format  
 
-    <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/export_dataset.png' | prepend: site.baseurl }}" alt="Export Dataset File Type" /></p>
+    <p class="wrap-border"><img src="{{ '/img/layout/faqs/export_dataset.png' | prepend: site.baseurl }}" alt="Export Dataset File Type" /></p>
 
     **Note:** CartoDB supports the following file formats for exporting geospatial data: *CSV, Shapefile, KML, GeoJSON*, and *SVG* formats.
 	
