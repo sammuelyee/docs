@@ -140,7 +140,7 @@ You can visualize your data once one or more datasets are added to your dashboar
 
 	The selected dataset opens in the Data View.
 	
-	**Tip:** You can edit the [(privacy settings](#dataset-privacy-settings)) for your dataset.
+	**Tip:** You can edit the [(privacy settings](#dataset-privacy)) for your dataset.
 
 3. Click *VISUALIZE* to view the connected dataset
 
@@ -182,9 +182,11 @@ Sort Options | Description
 	
 Your dashboard refreshes, changing the sort order of how your datasets appear.
 
-#### Dataset Privacy Settings
+#### Dataset Privacy
 
-You can protect your dataset and identify the privacy setting as *Public*, *With link*, or *Private*. The dataset privacy settings are managed through the dataset metadata.
+You can protect your dataset and identify the privacy option as *Public*, *With link*, or *Private*. The dataset privacy options are managed through the dataset metadata.
+
+**Note:** Dataset privacy is stored separately from [(Map privacy](#map-privacy)). This enables you to protect each layer of data within a map.
 
 The following image, and table, display the available dataset privacy options.
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/privacy_datasetprivacyoptions.png' | prepend: site.baseurl }}" alt="Dataset Privacy Options" /></p>
@@ -325,7 +327,7 @@ There are multiple ways to delete a dataset with the CartoDB Editor. You can del
 
 2. Select the name of the dataset to view  
 
-    <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/selected_dataset_name.png' | prepend: site.baseurl }}" alt="Select Name of Dataset" /></p>
+    <p class="wrap-border"><img src="{{ '/img/layout/common/selected_dataset_name.png' | prepend: site.baseurl }}" alt="Select Name of Dataset" /></p>
 
     The page refreshes displaying the Data View for the selected dataset. 
 
@@ -386,11 +388,11 @@ Delete this dataset | Delete the selected dataset. For details, see [(Delete Dat
 
 ## Maps
 
-### Map Privacy Options
+### Map Privacy
 
-When you create a map with CartoDB, you can protect your map and identify the privacy setting as *Public*, *With link*, *Password protected*, or *Private*. These map privacy settings are managed through the map metadata and enable you to determine how your maps are accessed.
+When you create a map with CartoDB, you can protect your map and identify the privacy options as *Public*, *With link*, *Password protected*, or *Private*. These map privacy settings are managed through the map metadata and enable you to determine how your maps are accessed.
 
-**Note:** The map metadata is stored separately from your [dataset metadata](#dataset-privacy-settings). This enables you to share maps while protecting your data. 
+**Note:** Map metadata is stored separately from your [dataset metadata](#dataset-privacy). This enables you to share maps while protecting each layer of data. 
 
 The following image, and table, display the available map privacy options.
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/privacy_mapprivacyoptions.png' | prepend: site.baseurl }}" alt="Map privacy options" /></p>
@@ -408,23 +410,33 @@ You can access the map privacy options through your maps dashboard or through th
 
 ### Map Metadata
 
-You can edit the attributes for each map to add metadata for your map. This is useful for keeping your maps organized and discoverable in a search, as your repository of maps increases.  You can edit map metadata from your maps dashboard.
+You can edit the attributes for each map to add metadata for your map. This is useful for keeping your maps organized and discoverable in a search, as your repository of maps increases.  You can edit map metadata from the Map View of a selected map (or from a Data View of a selected map to edit the dataset layer in a map).
+
+**Note:** Map metadata is stored separately from [(Dataset metadata](#dataset-metadata)). Each dataset contains its own metadata, however, once you connect a dataset to a map, you can edit the dataset metadata as a layer within the map.
 
 ####Editing Metadata for a Map
 
-1. Click *Your maps* from your dashboard drop-down menu
+The following procedure describes how to edit metadata for a map.
 
-	The list of your maps appears.
+1. Click *Your maps* from your dashboard drop-down menu  
 
-2. Click on a map name
+    <p class="wrap-border"><img src="{{ '/img/layout/common/dashboard_yourmaps.png' | prepend: site.baseurl }}" alt="Select Your Maps from Dashboard" /></p>
 
-	The map opens in the Map View.
+	The page refreshes, displaying a list of your maps.
 
-3. Click *Edit metadata* 
+2. Select the name of the map to view, or click the Edit icon on a map
+
+    <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/selectmap.png' | prepend: site.baseurl }}" alt="Select Map" /></p>
+
+	The page refreshes, displaying the Map View for the selected map.
+
+3. Click *Edit metadata* from the selected map  
+
+	**Note:** You can edit metadata from the *Data View* or *Map View* of a selected map.  The Data View contains the connected dataset as a layer within the map.
 
     <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/editmetadata_link.png' | prepend: site.baseurl }}" alt="Edit Metadata" /></p>
-
-    The Map metadata options appear.
+		
+	The Map metadata options appear.
 
 4. Edit the map name, description, and tags for the selected map. You can also change your map privacy settings  
 
@@ -436,10 +448,16 @@ You can edit the attributes for each map to add metadata for your map. This is u
 	------------ | -------------
 	Map name | The name of the map. Note to be as specific as possible if this is a public map
 	Description | Describe the content and purpose of your map. You can also add license information in this field if you are sharing your map
-	Tags | Tags enable you to group your maps by project or theme 
-	Privacy | Maps can be Private, Public or Links. Click the current status to change the privacy settings for the selected map
+	Tags | Tags enable you to group your maps by project or theme
+	Privacy | Options may vary depending on your account settings. Click the current status to change the [(privacy settings](#map-privacy)) for the selected map
 	
 5. Click *SAVE* to close and save the map metadata attributes  
+
+6. Click *Search* to search your repository of maps by name or tag
+
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/search_metadata.png' | prepend: site.baseurl }}" alt="Search by metadata" /></p>
+
+	Note how applying metadata enables you to identify and search for map attributes.
 
 **Tip:** You can add a description, add tags, or edit the map privacy setting directly from your maps dashboard. Once an initial map description and map tag is entered using this shortcut, you must click *Edit metadata* from the selected map if you need to update these attributes again.
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/editmapmetadata_dashboard.png' | prepend: site.baseurl }}" alt="Edit Map Metadata from Dashboard" /></p>
@@ -471,7 +489,7 @@ In Add Element, it is easy to add overlays on top of your map that help to bette
  - **Add Annotation Item**
  Annotations are text overlays linked to a coordinate and a zoom range. They allow users to explain and point to specific map elements. These overlays will remain fixed on a position on the map, and are excellent for annotating information, telling stories, or highlighting interesting information.
 
- Similar to the title and text overlays, clicking an annotation element brings up the customization toolbar. You will notcie that a **Zoom (min-max)** option has been added. This allows for dynamic annotations and zoom-dependent labeling of map items.
+ Similar to the title and text overlays, clicking an annotation element brings up the customization toolbar. You will notice that a **Zoom (min-max)** option has been added. This allows for dynamic annotations and zoom-dependent labeling of map items.
 
  <p class="wrap-border"><img src="/img/layout/cartodb-editor/annotation.png" alt="The toolbar" /></p><br>
 
@@ -1006,59 +1024,55 @@ Regular, Bold, Semibold, Light, Italic, Bold Italic, Semibold Italic, Light Ital
 
 ## Managing Your Data
 
-Whew, you're almost a CartoDB expert! As you know by now, there are a variety of methods for managing and visualizing your data with our Editor, Wizards, and SQL tools -- to name a few. In earlier sections, we discussed using filters on your data and merging datasets. Below is a quick introduction to a few more techniques that we host for your creative convenience.
+While you can apply many styling options with the CartoDB Editor, you can also apply georeference data and run several types of queries to manage and visualize your data.
 
-### Geocoding Data
+### Georeference Data
 
-CartoDB is more than a styler - we're also a behind-the-scenes geocoder. We understand that geocoding is essential to data management and facilitate six methods for this process. To begin, click "Options" and "Georeference" and then select one of the alternatives that allow you to georeference your data in the best possible way.
+CartoDB understands that geocoding is essential to data management. You can edit your dataset (or map) and apply georeferencing coordinates to transform your data. This section describes the available georeference options.
 
+#### Editing Georeference Data
 
-**By Lon/Lat Columns**
+1. Click *Your datasets* from the dashboard drop-down menu  
 
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/geo1.png' | prepend: site.baseurl }}" alt="Geocoding data" /></p>
+    <p class="wrap-border"><img src="{{ '/img/layout/common/select_your_dataset.png' | prepend: site.baseurl }}" alt="Select Dataset" /></p>
 
-Importing your data with latitude and longitude coordinates already included renders a map that automatically displays your markers and polygons from the coordinates uploaded to your dataset. To georeference, just select the longitude and latitude columns in your dataset and click continue.
+    The page refreshes, displaying a list of your datasets.
 
-**By City Names**
+2. Select the name of the dataset to view  
 
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/geo2.png' | prepend: site.baseurl }}" alt="Geocoding data" /></p>
+    <p class="wrap-border"><img src="{{ '/img/layout/common/selected_dataset_name.png' | prepend: site.baseurl }}" alt="Select Name of Dataset" /></p>
 
-Alternatively, you may georeference by City Names. Select the column that contains the city names and also select the country to which the cities belong to if you want to be more accurate.
+    The page refreshes displaying the Data View for the selected dataset. 
 
+3. Select *Georeference* from the Edit drop-down menu  
 
-**By Admin. Regions**
+    <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/dataset_edit_georeference.png' | prepend: site.baseurl }}" alt="Edit Georeference Data" /></p>
+	
+	The georeference options appear. 
+	
+	**Tip:** You can also access these georeference options from the Map View of a selected dataset, or from your Maps dashboard. If editing georeference data from a map, the georeference coordinates appear as a layer within a map.
+   
+4. Select the georeference data category
+	
+	The following table describes the available georeference data categories.
+	
+	Georeference Category | Description
+	------------ | -------------
+	Long/Lat Columns | When uploading a dataset, the map automatically renders the marker and polygon values as the latitude and longitude coordinates. To identify a georeference data point, select the specific longitude and latitude column from the drop-down menu
+	| The following image displays the default georeference data options, with *Lon/Lat Columns* selected. 
+	| <img src="{{ '/img/layout/cartodb-editor/georeference_lon_lat.png' | prepend: site.baseurl }}" alt="Georeference Longitude and Latitude Coordinates" />
+	| **Tip:** Click the georeference category name to refresh the view and display the related options.
+	City Name | Click *City Names* to view the georeference city name options, and select the column where your city names are stored in your dataset. To improve the accuracy of the georeference data, you can also indicate the administrative region and country (if known)
+	Admin. Regions | Click *Admin. Regions* to view the georeference administrative region options, and select the column where your region names are stored in your dataset. If the selected region column is not country data, you can also indicate the column where this type of data is stored
+	|  **Note:**  The CartoDB database automatically loads polygon region data for states and municipalities.
+	Postal Codes |  Click *Postal Codes* to view the georeference postal code options, and select the column where your postal codes are stored in your dataset. To improve the accuracy of the georeference data, you can also indicate the country where the postal codes are located (if known)
+	IP Addresses |  Click *IP Addresses* to view the georeference IP Address name options, and select the column where your IP Addresses are stored in your dataset. This enables you to convert IP Addresses into geographical locations on your map
+	Street Addresses |  Click *Street Addresses* to view the georeference street address options, and select the column where your street addresses are stored in your dataset. To improve the accuracy of the georeference data, you can also indicate the state/province and country (if known)
+	| **Note:** Street address data is allocated to your account and based on a permitted amount of credits per month. Any geocode matches to the indicated street address consumes credits from your account.
+	
+5. Click *CONTINUE* to save and apply the georeference data coordinates  
 
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/geo3.png' | prepend: site.baseurl }}" alt="Geocoding data" /></p>
-
-
-You may also georeference by Administrative Regions. Select to georeference by Admin. Regions, and line up the data in your dataset to the type and location of whatever administrative region you like. CartoDB will access our comprehensive cloud databases to automatically load polygons for regions like states and municipalities.
-
-**By Postal Codes**
-
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/geo4.png' | prepend: site.baseurl }}" alt="Geocoding data" /></p>
-
-Postal code systems have been set up in many countries and these often provide a high level of spatial precision. On CartoDB you have the option to georeference your data by postal codes. Just select the column where your information is stored and the country where the zip codes are from and immediately press continue.
-
-**By IP Addresses**
-
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/geo5.png' | prepend: site.baseurl }}" alt="Geocoding data" /></p>
-
-IP Georeferencing is an important toolbox item in today's web environment. If you select this option, CartoDB will take your IP address column and convert it into location points on your map.
-
-
-**By Street Addresses**
-
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/geo6.png' | prepend: site.baseurl }}" alt="Geocoding data" /></p>
-
-
-Finally, you may georeference by address. To do this, your columns will need to be organized into categories such as "address" (which would contain the building number and street name), "state" and "country," if its known.
-
-Matching addresses with geographic coordinates consumes geocoding credits. Every time geocoding is done in string format, geocoding credit is used (for example, if you geocode a dataset with 20 records, 20 geocoding credits are used). All CartoDB plans include a number of geocoding credits that can be used every month. After exceeding the geocoding limits, a fixed fee is charged per 1000 credits.
-
-On the upper-left side of the window, you will see the operation cost and you must accept the price to be able to continue.
-
-CartoDB may use a third party to provide geocoding and reverse geocoding services. Geocoding services are subject to the third parties [terms and conditions](http://developer.here.com/terms-conditions).
-
+**Note:** CartoDB may use a third party to provide geocoding and reverse geocoding services. Geocoding services are subject to the third parties [terms and conditions](http://developer.here.com/terms-conditions).
 
 ### Running SQL Queries
 
@@ -1402,53 +1416,14 @@ Similar to your Maps dashboard, your Datasets dashboard allows you to easily sea
 
 The workflow to create datasets and maps is the same as in the normal edition of the CartoDB Editor.
 
-#### Datasets: General and Team Privacy Settings
+#### Enterprise Privacy Settings for Datasets and Maps
 
-With your Enterprise account, once you have created a new dataset, you have new privacy options compared to the stand alone version of the CartoDB Editor.
+All privacy options are available for enterprise account users by default. This enables you to select how you would like to protect each dataset and map created by your organization.  Your organization administrator controls the privacy options that are enabled.
 
-There are many ways of managing your privacy settings. From your maps or datasets dashboard, you can quickly change privacy by clicking the privacy icon on a map or dataset, or by selecting a map or dataset and chosing "Change Privacy" in the upper right hand corner. From here you can also lock or delete a selected entry.
+- For details about how to select privacy options for your dataset, see [(Dataset Privacy](#dataset-privacy))
+- For details about how to select privacy options for your map, see [(Map Privacy](#map-privacy))
 
-<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_privacy_1.png" alt="map privacy" /></p>
-
-The privacy pop-up window then allows you to share and collaborate with people in the organization by selecting the "Share it with your colleagues" button at the bottom.
-
-<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_privacy_2.png" alt="map privacy" /></p>
-
-You can also manage privacy directly from a data view, map view, or visualization by using the lock in the upper left corner of any map or data view.
-
-<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_02.png" alt="lock" /></p>
-
-By choosing any of these options, a modal window will appear:
-
-<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_03.png" alt="modal window" /></p>
-
-You have two sections in this window:
-
-1. **General privacy**: Similiar to the standalone CartoDB Editor, by default a dataset will only be available to you when you import it. You can choose to make it **only visible to people with the link**, or **public** (it will be available to anyone on your Public Page).
-
-<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_04.png" alt="privacy modal" /></p>
-
-2. **Team Privacy**: In the lower part of this modal window you will see a list of your Organization's teammates. With the control in the right you can give read access to this dataset (the dataset will appear in those person's dashboards and they will be able to open it and create visualizations with it, but only in read mode; that is, they won't be able to modify the content of this dataset). If you also want to give write access, you can select the corresponding checkbox. Grant write and/or read access to all members of your Organization with the top controls.
-
-<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_05.png" alt="users" /></p>
-
-#### Maps: General and Team Privacy Settings
-
-As well as with tables, the interface for creating visualizations is the same as in the stand-alone CartoDB Editor, with some extra options to manage how you collaborate with your teammates.
-
-Once you are editing a visualization, you can also use the lock in the upper-left corner to view the privacy settings.
-
-<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_06.png" alt="Using sync tables" /></p>
-
-You have two sections in this window:
-
-1. **General Privacy**: As well as in the stand-alone CartoDB Editor, by default, a visualization will be accessible to **people with the link**. You can select it to be **Private** (only accessible to you), **Password Protected** (you'll be able to set a password), or **Public** (it will be listed on your Public Page)**.**
-
-<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_07.png" alt="map privacy" /></p>
-
-2. **Team Privacy**: In the lower part of this modal window, you will see a list of your organization's teammates. You can give read access to this visualization so it appears in their dashboard. If the general privacy of the visualization is set to Public, then they will be able to access it from the Public Page (the same as any other user).
-
-<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_08.png" alt="map privacy" /></p>
+**Note:** Dataset privacy is stored separately from Map privacy. This enables you to protect each layer of data within a map, and also determine how you want to share the map.
 
 ### **Owners**
 
