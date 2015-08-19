@@ -140,7 +140,7 @@ You can visualize your data once one or more datasets are added to your dashboar
 
 	The selected dataset opens in the Data View.
 	
-	**Tip:** You can edit the [(privacy settings](#dataset-privacy-settings)) for your dataset.
+	**Tip:** You can edit the [(privacy settings](#dataset-privacy)) for your dataset.
 
 3. Click *VISUALIZE* to view the connected dataset
 
@@ -182,9 +182,11 @@ Sort Options | Description
 	
 Your dashboard refreshes, changing the sort order of how your datasets appear.
 
-#### Dataset Privacy Settings
+#### Dataset Privacy
 
-You can protect your dataset and identify the privacy setting as *Public*, *With link*, or *Private*. The dataset privacy settings are managed through the dataset metadata.
+You can protect your dataset and identify the privacy option as *Public*, *With link*, or *Private*. The dataset privacy options are managed through the dataset metadata.
+
+**Note:** Dataset privacy is stored separately from [(Map privacy](#map-privacy)). This enables you to protect each layer of data within a map.
 
 The following image, and table, display the available dataset privacy options.
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/privacy_datasetprivacyoptions.png' | prepend: site.baseurl }}" alt="Dataset Privacy Options" /></p>
@@ -391,11 +393,11 @@ You can perform the following administrative actions in the Options menu:
 
 ## Maps
 
-### Map Privacy Options
+### Map Privacy
 
-When you create a map with CartoDB, you can protect your map and identify the privacy setting as *Public*, *With link*, *Password protected*, or *Private*. These map privacy settings are managed through the map metadata and enable you to determine how your maps are accessed.
+When you create a map with CartoDB, you can protect your map and identify the privacy options as *Public*, *With link*, *Password protected*, or *Private*. These map privacy settings are managed through the map metadata and enable you to determine how your maps are accessed.
 
-**Note:** The map metadata is stored separately from your [dataset metadata](#dataset-privacy-settings). This enables you to share maps while protecting your data. 
+**Note:** Map metadata is stored separately from your [dataset metadata](#dataset-privacy). This enables you to share maps while protecting each layer of data. 
 
 The following image, and table, display the available map privacy options.
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/privacy_mapprivacyoptions.png' | prepend: site.baseurl }}" alt="Map privacy options" /></p>
@@ -452,7 +454,7 @@ The following procedure describes how to edit metadata for a map.
 	Map name | The name of the map. Note to be as specific as possible if this is a public map
 	Description | Describe the content and purpose of your map. You can also add license information in this field if you are sharing your map
 	Tags | Tags enable you to group your maps by project or theme
-	Privacy | Options may vary depending on your account settings. Click the current status to change the [(privacy settings](#map-privacy-options)) for the selected map
+	Privacy | Options may vary depending on your account settings. Click the current status to change the [(privacy settings](#map-privacy)) for the selected map
 	
 5. Click *SAVE* to close and save the map metadata attributes  
 
@@ -1419,53 +1421,14 @@ Similar to your Maps dashboard, your Datasets dashboard allows you to easily sea
 
 The workflow to create datasets and maps is the same as in the normal edition of the CartoDB Editor.
 
-#### Datasets: General and Team Privacy Settings
+#### Enterprise Privacy Settings for Datasets and Maps
 
-With your Enterprise account, once you have created a new dataset, you have new privacy options compared to the stand alone version of the CartoDB Editor.
+All privacy options are available for enterprise account users by default. This enables you to select how you would like to protect each dataset and map created by your organization.  Your organization administrator controls the privacy options that are enabled.
 
-There are many ways of managing your privacy settings. From your maps or datasets dashboard, you can quickly change privacy by clicking the privacy icon on a map or dataset, or by selecting a map or dataset and chosing "Change Privacy" in the upper right hand corner. From here you can also lock or delete a selected entry.
+- For details about how to select privacy options for your dataset, see [(Dataset Privacy](#dataset-privacy))
+- For details about how to select privacy options for your map, see [(Map Privacy](#map-privacy))
 
-<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_privacy_1.png" alt="map privacy" /></p>
-
-The privacy pop-up window then allows you to share and collaborate with people in the organization by selecting the "Share it with your colleagues" button at the bottom.
-
-<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_privacy_2.png" alt="map privacy" /></p>
-
-You can also manage privacy directly from a data view, map view, or visualization by using the lock in the upper left corner of any map or data view.
-
-<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_02.png" alt="lock" /></p>
-
-By choosing any of these options, a modal window will appear:
-
-<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_03.png" alt="modal window" /></p>
-
-You have two sections in this window:
-
-1. **General privacy**: Similiar to the standalone CartoDB Editor, by default a dataset will only be available to you when you import it. You can choose to make it **only visible to people with the link**, or **public** (it will be available to anyone on your Public Page).
-
-<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_04.png" alt="privacy modal" /></p>
-
-2. **Team Privacy**: In the lower part of this modal window you will see a list of your Organization's teammates. With the control in the right you can give read access to this dataset (the dataset will appear in those person's dashboards and they will be able to open it and create visualizations with it, but only in read mode; that is, they won't be able to modify the content of this dataset). If you also want to give write access, you can select the corresponding checkbox. Grant write and/or read access to all members of your Organization with the top controls.
-
-<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_05.png" alt="users" /></p>
-
-#### Maps: General and Team Privacy Settings
-
-As well as with tables, the interface for creating visualizations is the same as in the stand-alone CartoDB Editor, with some extra options to manage how you collaborate with your teammates.
-
-Once you are editing a visualization, you can also use the lock in the upper-left corner to view the privacy settings.
-
-<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_06.png" alt="Using sync tables" /></p>
-
-You have two sections in this window:
-
-1. **General Privacy**: As well as in the stand-alone CartoDB Editor, by default, a visualization will be accessible to **people with the link**. You can select it to be **Private** (only accessible to you), **Password Protected** (you'll be able to set a password), or **Public** (it will be listed on your Public Page)**.**
-
-<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_07.png" alt="map privacy" /></p>
-
-2. **Team Privacy**: In the lower part of this modal window, you will see a list of your organization's teammates. You can give read access to this visualization so it appears in their dashboard. If the general privacy of the visualization is set to Public, then they will be able to access it from the Public Page (the same as any other user).
-
-<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_08.png" alt="map privacy" /></p>
+**Note:** Dataset privacy is stored separately from Map privacy. This enables you to protect each layer of data within a map, and also determine how you want to share the map.
 
 ### **Owners**
 
