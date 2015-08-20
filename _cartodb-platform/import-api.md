@@ -135,8 +135,14 @@ POST api/v1/imports
 - **content_guessing**  
   Set it to *true* to enable content guessing and automatic geocoding based on results. Currently it only implements geocoding of countries. Optional. Default is *false*.
 
-- **create_vis**
-  Set it to *true* to flag the import so that when it finishes it creates a Map automatically after importing the Dataset. Optional. Default is *false* for API calls or old dashboard imports. If importing from the new dashboard it will automatically set this parameter to *true*.
+- **create_vis**  
+  Set it to *true* to flag the import so that when it finishes, it creates a Map automatically after importing the Dataset. Optional. Default is *false* for API calls or old dashboard imports. If importing from the new dashboard it will automatically set this parameter to *true*.
+  
+- **privacy**  
+  Used to set the privacy settings of the table or tables resulting from the import. If **create_vis** is set to true, the resulting visualization privacy settings will also be determined by this parameter. **privacy** can be set to:
+  * **public** The resulting table or visualization can be viewed by anyone
+  * **private** The resulting table or visualization can only be viewed by the uploader
+  * **link** The resulting table or visualization can only be viewed through a private link shared by the uploader
 
 - **table_name**  
   Used to duplicate one of your existing tables. **Do not mix with File/URL imports**.
