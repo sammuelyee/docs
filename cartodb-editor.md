@@ -530,6 +530,22 @@ The Export Image option enables you to export a static image of a map in .PNG fo
 
 **Tip:** Ensure that your browser pop-up blocker is disabled.
 
+### Edit Map Options
+
+The following options are available from the *Edit* menu of the Data View or Map View of a selected map. 
+
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/maps_edit_menu.png' | prepend: site.baseurl }}" alt="Map Edit Options" /></p>
+
+**Tip:** These edit options are separate from the [(map display options](#displaying-map-options)), accessible from the bottom of a selected map. 
+
+Map Edit Menu Options | Description
+------------ | -------------
+Export layer | A dataset appears as a layer on your map. You can export the dataset layer for use offline. This process is identical to exporting a dataset once you select *Export layer* from the Edit menu. For details, see [How to export datasets from CartoDB?](http://docs.cartodb.com/faqs.html#how-to-export-datasets-from-cartodb)
+Georeference layer |  Edit your map and apply georeferencing coordinates to transform your data. This process is identical to the georeferencing dataset options once you select *Georeference layer* from the Edit menu. For details, see [(Georeference Data](#georeference-data))
+Duplicate map |  Creates a duplicate of your map so that you have a backup copy of it. Note that changes applied to a duplicate map are not applied to the original
+Lock map | To prevent your map from undesired changes, you can lock a map and hide it from your dashboard. For details, see the Frequently Asked Questions about [how to lock a dataset or map](http://docs.cartodb.com/faqs.html#how-can-i-lock-a-datasetmap)
+Delete map | Deletes the selected map
+
 ### CartoDB Sidebar
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/sidebar.png' | prepend: site.baseurl }}" alt="CartoDB Sidebar" /></p>
@@ -985,22 +1001,27 @@ The majority of online maps are a variant of the [Mercator Projection](https://e
 
 You can learn more about [map projections on Wikipedia](http://en.wikipedia.org/wiki/Map_projection), and read up on all the details about how CartoDB handles [projections internally]({{ '/tutorials/projections.html' | prepend: site.baseurl }}).
 
-### Options
+### Displaying Map Options
 
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/vizz_options.png' | prepend: site.baseurl }}" alt="Options for your maps" /></p>
+In addition to changing your basemap, you can also control which options are visible on your map by using the *Options* selector. Click the slider button to display the selected option as visible or hidden on the map. 
 
-Besides the Basemap selector, you have an Options selector which will give you access to control what elements are shown on your map:
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/map_display_options.png' | prepend: site.baseurl }}" alt="Map display options" /></p>
 
-* **Fixed Title:** whether or not the title appears.
-* **Fixed Description:** whether or not the description appears.
-* **Search Box:** turn the appearance of a search box on/off.
-* **Share Options:** whether quick links for sharing appear.
-* **Zoom Controls**
-* **Scroll Wheel Zoom:** enable or disable zoom using a mouse scroll wheel.
-* **Layer Selector:** allow viewers to toggle different layers on/off.
-* **Legends:** turn the appearance of legends on/off.
-* **Fullscreen:** enable or disable the ability of viewers to enter fullscreen mode.
-* **CartoDB Logo:** include or exclude the CartoDB logo on your map.
+**Tip:** Some options are only active when viewing your map from your public profile page, not from the previewed map of your dashboard.
+
+Map Option | Description
+------------ | -------------
+Fixed tile | Displays your map title on the map
+Fixed description | Displays your map description on the map
+Search box | Displays a search box on the map, enabling you to search for data points
+Share options | Displays an icon for sharing your map. You can share your maps on social media, get a link to the map, or embed it using HTML code. For details, see [(Sharing Maps](#how-do-i-share-a-map))
+Scroll wheel zoom | Displays the ability to zoom with the scroll wheel of your mouse
+Layer selector | Enables you to display the visible layers on the map
+Legends | Displays the map legends
+Fullscreen | Enables you to view the map in fullscreen mode
+CartoDB Logo | Enables you to include or hide the CartoDB logo on your map
+| **Note:** This option may not be enabled based on your account settings.
+
 
 ### Publish and Share Your Map
 
@@ -1045,10 +1066,10 @@ CartoDB understands that geocoding is essential to data management. You can edit
 3. Select *Georeference* from the Edit drop-down menu  
 
     <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/dataset_edit_georeference.png' | prepend: site.baseurl }}" alt="Edit Georeference Data" /></p>
+		
+	**Tip:** If editing georeference data from a map, the georeference coordinates appear as a layer within a map. Select *Georeference layer* from the [(Edit map options](#edit-map-options)) of a selected map.
 	
 	The georeference options appear. 
-	
-	**Tip:** You can also access these georeference options from the Map View of a selected dataset, or from your Maps dashboard. If editing georeference data from a map, the georeference coordinates appear as a layer within a map.
    
 4. Select the georeference data category
 	

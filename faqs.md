@@ -14,7 +14,7 @@ Optionally, CartoDB offers an Enterprise solution enabling you to connect your o
 
 ### How to export datasets from CartoDB?
 
-You can export any of your datasets for use offline. The Export option is available from the Edit menu of your Data View.
+You can export any of your datasets for use offline. The *Export* option is available from the Edit menu when a dataset is selected.  Additionally, you can also export a dataset layer directly from a selected map with the *Export layer* menu option. 
   
 1. Click *Your datasets* from the dashboard drop-down menu  
 
@@ -31,8 +31,10 @@ You can export any of your datasets for use offline. The Export option is availa
 3. Select *Export* from the Edit drop-down menu  
 
     <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/export_dataset_menu_option.png' | prepend: site.baseurl }}" alt="Export Option from Edit Menu" /></p>
+	
+	**Tip:** You can also export a dataset layer directly from a selected map. From your maps dashboard, select *Edit layer* from the [(Edit map options](cartodb-editor.html#edit-map-options)) of a selected map.
 
-    The export dataset options appear. 
+    The export dataset options appear. Options may vary, depending on your data.
 
 4. Select the preferred file format  
 
