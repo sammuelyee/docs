@@ -379,7 +379,7 @@ Export | Export your dataset for use offline. For details, see [How to export da
 Georeference |  Edit your dataset and apply georeferencing coordinates to transform your data. For details, see [(Georeference Data](#georeference-data))
 Duplicate dataset |  Creates a duplicate of your dataset so that you have a backup copy of it. Note that changes applied to a duplicate dataset are not applied to the original
 Merge with dataset |  Merge your current dataset with another existing dataset by performing a *column join* (merges two datasets based on a shared value) or a *spatial join* (merges two datasets based on a number of intersecting records). For details, see the tutorial about [Merging data from two tables]({{ '/tutorials/merging_data.html' | prepend: site.baseurl }})
-Change privacy | You can protect your dataset and identify the privacy setting. For details, see [(Dataset Privacy Settings](#dataset-privacy-settings))
+Change privacy | You can protect your dataset and identify the privacy setting. For details, see [(Dataset Privacy Settings](#dataset-privacy))
 Lock dataset | To prevent your data from undesired changes, you can lock a dataset and hide it from your dashboard. For details, see the Frequently Asked Questions about [how to lock a dataset or map](http://docs.cartodb.com/faqs.html#how-can-i-lock-a-datasetmap)
 Delete this dataset | Delete the selected dataset. For details, see [(Delete Dataset](#delete-dataset))
 | **Note:** Deleting a dataset also deletes any connected maps to the dataset
