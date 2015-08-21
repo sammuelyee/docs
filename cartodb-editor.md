@@ -375,7 +375,7 @@ The following options are available from the *Edit* menu of the Data View or Map
 
 Dataset Edit Menu Option | Description
 ------------ | -------------
-Export | Export your dataset for use offline. For details, see [(Exporting Data](#export-data))
+Export | Export your dataset for use offline. For details, see how to [(Export Data](#export-data))
 Georeference |  Edit your dataset and apply georeferencing coordinates to transform your data. For details, see [(Georeference Data](#georeference-data))
 Duplicate dataset |  Creates a duplicate of your dataset so that you have a backup copy of it. Note that changes applied to a duplicate dataset are not applied to the original
 Merge with dataset |  Merge your current dataset with another existing dataset by performing a *column join* (merges two datasets based on a shared value) or a *spatial join* (merges two datasets based on a number of intersecting records). For details, see [(Merging Data](#merging-data))
@@ -540,7 +540,7 @@ The following options are available from the *Edit* menu of the Data View or Map
 
 Map Edit Menu Options | Description
 ------------ | -------------
-Export layer | A dataset appears as a layer on your map. You can export the dataset layer for use offline. This process is identical to exporting a dataset once you select *Export layer* from the Edit menu. For details, see [(Export Data](#export-data))
+Export layer | A dataset appears as a layer on your map. You can export the dataset layer for use offline. This process is identical to exporting a dataset once you select *Export layer* from the Edit menu. For details, see how to [(Export Data](#export-data))
 Georeference layer |  Edit your map and apply georeferencing coordinates to transform your data. This process is identical to the georeferencing dataset options once you select *Georeference layer* from the Edit menu. For details, see [(Georeference Data](#georeference-data))
 Duplicate map |  Creates a duplicate of your map so that you have a backup copy of it. Note that changes applied to a duplicate map are not applied to the original
 Lock map | To prevent your map from undesired changes, you can lock a map and hide it from your dashboard. For details, see the Frequently Asked Questions about [how to lock a dataset or map](http://docs.cartodb.com/faqs.html#how-can-i-lock-a-datasetmap)
@@ -1145,12 +1145,7 @@ Similar to Excel, **COUNT** calculates the number of intersecting records, **SUM
 
 ### Export data
 
-After you have created, updated, or deleted data from your CartoDB datasets, you may want to export them for sharing or offline use. Our one-click data export makes that decision easy.
-
-1. From your data view, click "options" in the upper right corner.
-2. Select "Export."
-3. A menu of export formats that CartoDB supports, including comma-separated (CSV), KML, ESRI Shape Files (SHP), and SQL will appear.
-4. Click the format you would like to download.
+{% include export_dataset.html %}
 
 #### Download by URL
 
