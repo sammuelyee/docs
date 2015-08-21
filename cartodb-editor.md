@@ -375,10 +375,10 @@ The following options are available from the *Edit* menu of the Data View or Map
 
 Dataset Edit Menu Option | Description
 ------------ | -------------
-Export | Export your dataset for use offline. For details, see [How to export datasets from CartoDB?](http://docs.cartodb.com/faqs.html#how-to-export-datasets-from-cartodb)
+Export | Export your dataset for use offline. For details, see [(Exporting Data](#export-data))
 Georeference |  Edit your dataset and apply georeferencing coordinates to transform your data. For details, see [(Georeference Data](#georeference-data))
 Duplicate dataset |  Creates a duplicate of your dataset so that you have a backup copy of it. Note that changes applied to a duplicate dataset are not applied to the original
-Merge with dataset |  Merge your current dataset with another existing dataset by performing a *column join* (merges two datasets based on a shared value) or a *spatial join* (merges two datasets based on a number of intersecting records). For details, see the tutorial about [Merging data from two tables]({{ '/tutorials/merging_data.html' | prepend: site.baseurl }})
+Merge with dataset |  Merge your current dataset with another existing dataset by performing a *column join* (merges two datasets based on a shared value) or a *spatial join* (merges two datasets based on a number of intersecting records). For details, see [(Merging Data](#merging-data))
 Change privacy | You can protect your dataset and identify the privacy setting. For details, see [(Dataset Privacy Settings](#dataset-privacy))
 Lock dataset | To prevent your data from undesired changes, you can lock a dataset and hide it from your dashboard. For details, see the Frequently Asked Questions about [how to lock a dataset or map](http://docs.cartodb.com/faqs.html#how-can-i-lock-a-datasetmap)
 Delete this dataset | Delete the selected dataset. For details, see [(Delete Dataset](#delete-dataset))
@@ -540,7 +540,7 @@ The following options are available from the *Edit* menu of the Data View or Map
 
 Map Edit Menu Options | Description
 ------------ | -------------
-Export layer | A dataset appears as a layer on your map. You can export the dataset layer for use offline. This process is identical to exporting a dataset once you select *Export layer* from the Edit menu. For details, see [How to export datasets from CartoDB?](http://docs.cartodb.com/faqs.html#how-to-export-datasets-from-cartodb)
+Export layer | A dataset appears as a layer on your map. You can export the dataset layer for use offline. This process is identical to exporting a dataset once you select *Export layer* from the Edit menu. For details, see [(Export Data](#export-data))
 Georeference layer |  Edit your map and apply georeferencing coordinates to transform your data. This process is identical to the georeferencing dataset options once you select *Georeference layer* from the Edit menu. For details, see [(Georeference Data](#georeference-data))
 Duplicate map |  Creates a duplicate of your map so that you have a backup copy of it. Note that changes applied to a duplicate map are not applied to the original
 Lock map | To prevent your map from undesired changes, you can lock a map and hide it from your dashboard. For details, see the Frequently Asked Questions about [how to lock a dataset or map](http://docs.cartodb.com/faqs.html#how-can-i-lock-a-datasetmap)
@@ -1007,7 +1007,7 @@ In addition to changing your basemap, you can also control which options are vis
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/map_display_options.png' | prepend: site.baseurl }}" alt="Map display options" /></p>
 
-**Tip:** Some options are only active when viewing your map from your public profile page, not from the previewed map of your dashboard.
+**Tip:** Some options are only active when viewing your map from your public profile page, not from the preview map of your dashboard.
 
 Map Option | Description
 ------------ | -------------
@@ -1017,11 +1017,10 @@ Search box | Displays a search box on the map, enabling you to search for data p
 Share options | Displays an icon for sharing your map. You can share your maps on social media, get a link to the map, or embed it using HTML code. For details, see [(Sharing Maps](#how-do-i-share-a-map))
 Scroll wheel zoom | Displays the ability to zoom with the scroll wheel of your mouse
 Layer selector | Enables you to display the visible layers on the map
-Legends | Displays the map legends
+Legends | Displays any map legends. For details about how to create legends, see [(Legends](#legends))
 Fullscreen | Enables you to view the map in fullscreen mode
 CartoDB Logo | Enables you to include or hide the CartoDB logo on your map
-| **Note:** This option may not be enabled based on your account settings.
-
+| **Note:** Based on your [(account settings](faqs.html#how-do-i-remove-the-cartodb-logo-from-my-map)), this option may not be enabled.
 
 ### Publish and Share Your Map
 
