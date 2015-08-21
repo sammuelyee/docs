@@ -1515,7 +1515,7 @@ The following procedure describes how to connect  twitter data to a dataset afte
 	
 	Twitter Trend Options | Description
 	------------ | -------------
-	Category 1-4 | Represents search requests for different hashtags or keywords separated by commas. You can enter up to four search requests using the Category fields
+	Category 1-4 | Represents search terms for different hashtags or keywords separated by commas. You can enter up to four search terms using the Category fields
 	From / to | Displays the from and to time range for your requested data. By default, it is set to search for the last 30 days
 	| Depending on your account settings, you can click the calendar icon to open the calendar and select a different date range. Additionally, you can indicate the hour and minute for the selected date range
 	| <img src="/img/layout/cartodb-editor/twitter_calendarpopup.png" alt="Twitter Date Range" />
@@ -1527,7 +1527,7 @@ The following procedure describes how to connect  twitter data to a dataset afte
  	
 2. Click CONNECT DATASET  
 
-	You must enter at least one category search request in order to activate the CONNECT DATASET button.
+	You must enter at least one category search term in order to activate the CONNECT DATASET button.
 
 	The page refreshes and displays the connected Twitter dataset. You can edit any of the dataset options as usual and create a map.  
 
