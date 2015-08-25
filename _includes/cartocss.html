@@ -22,21 +22,6 @@ http://ebrelsford.github.io/talks/2014/Methods3/week7/materials/cartocss-referen
 </div>-->
 CartoCSS is the syntax language that enables you to customize the style of your map data. Similar to working with a Cascading Style Sheet for styling webpages, CartoCSS is specific to the design of map symbolizer properties (such as marker size, marker color, line stroke, text display, and so on). You can apply CartoCSS styles directly from the the Map View of the CartoDB Editor. Optionally, you can apply CartoCSS with [CartoDB.JS](http://docs.cartodb.com/cartodb-platform/cartodb-js.html) and the [Maps API](http://docs.cartodb.com/cartodb-platform/maps-api.html).
 
-CartoCSS, originally developed by [Mapbox](https://www.mapbox.com/), includes the following map symbolizer categories:
-
-- Line (for lines and polygons)
-- Polygon (for polygons)
-- Point (for points)
-- Text (for points, lines, and polygons)
-- Shield (for points and lines)
-- Line Pattern (for lines and polygons)
-- Polygon Pattern (for polygons)
-- Raster (for grid data layers)
-- Markers (for points, lines, and polygons)
-- Buildings
-
-Each CartoCSS category has its own configurable [properties](#cartocss-properties.html). You can apply multiple symbolizers and properties to the same map layer.
-
 #####Apply Map Styles with the CartoCSS Editor
 The CartoCSS option is available from the CartoDB sidebar, and opens the CartoCSS Editor. The CartoCSS Editor enables you to apply CartoCSS styling directly from the selected map view.
 
@@ -58,13 +43,17 @@ The CartoCSS option is available from the CartoDB sidebar, and opens the CartoCS
 	
 4. Enter CartoCSS properties for styling your map  
 		
-	**Tip:** See [CartoCSS Properties](#cartocss-properties) for a description of the available CartoCSS properties and values.
-
+	**Note:** See [CartoCSS Properties](#cartocss-properties) for a description of the available CartoCSS properties and values.
+	
  5. Click *Apply style*
 	
 	<p class="wrap-border"><img src="{{ '/img/layout/common/cartocss_editor.png' | prepend: site.baseurl }}" alt="CartoCSS Editor" /></p>
 	
-	**Note:** You are notified if there are any [errors](http://docs.cartodb.com/cartodb-editor.html#cartocss-errors) in the CartoCSS code.
+	**Note:** You are notified if there are any [errors](http://docs.cartodb.com/cartodb-editor.html#cartocss-errors) in the CartoCSS code. You can also click the *undo* and *redo* arrow buttons after entering code changes in the CartoCSS Editor.
 	
 The map refreshes, displaying the CartoCSS styling changes that you applied.
+
+{% include cartocss_properties.html %}
+{% include cartocss_torque.html %}
+
  

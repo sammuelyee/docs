@@ -838,8 +838,7 @@ On-hover infowindows display when your cursor is "hovering" above an infowindow.
 
 {% include cartocss.html %}
 
-#### Composite Operations
-
+##### Composite Operations
 Composite operations style the way colors of overlapping markers interact with each other. You can think of them as blend modes or filters, similar to blend operations in Photoshop. Composite operations are available in the Simple, Choropleth, Bubble, Density, and Torque maps.
 
 The available options within the wizards interface include multiply, screen, overlay, darken, lighten, color-dodge, and color-burn. In addition, blend modes specific to Torque include lighter, multiply, source-over, and xor. For more information on the different options available, refer to the documentation on [Mapbox](https://www.mapbox.com/tilemill/docs/guides/comp-op/).

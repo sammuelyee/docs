@@ -2,164 +2,182 @@
 </div>-->
 ##CartoCSS Properties
 
-The following CartoCSS properties, originally developed by [Mapbox](https://www.mapbox.com/), includes the following elements. 
+Each CartoCSS map category has its own configurable properties. You can apply multiple symbolizers and properties to the same map layer. Navigate to a selected category to view the available properties.
 
-CartoCSS Property Category | Values
+<<ADD LINK TO COMPOSITE OPERATIONS SECTION?>
+
+***Note:** CartoDB is currently maintaining this library of common properties since [Mapbox](https://github.com/mapbox/carto/blob/master/docs/latest.md) is no longer doing active development for CartoCSS.*
+
+| **CartoCSS Category:** |
+------------ | ------------- |
+| | [Polygon](#polygon) (polygon) | [Line](#line) (lines and polygons)| [Markers](#markers) (points, lines, and polygons)
+| | [Shield](#shield) (points and lines) | [Line Pattern](#line-pattern) (lines and polygons) | [Polygon Pattern](#polygon-pattern) (polygons) 
+| | [Raster](#raster) (grid data layers) | [Point](#points) (points) | [Text](#text) (points, lines, and polygons)
+| | [Building](#building) |
+
+| **CartoCSS Values:** |
 ------------ | -------------
-Content from cell 1 | Content from cell 2
-Content in the first column | Content in the second column
+| | [Color](#color) | [Float](#float) | [URI](#uri) |
+| | [String](#string) | [Boolean](#boolean) | [Expressions](#expressions) |
+| | [Numbers](#numbers) | [Percentages](#percentages) | [Functions](#functions)
 
-Navigate to a selected category to view the applicable parameters.
+| **Other CartoCSS Parameters:** | 
+------------ | -------------
+| | [Common Elements](#common-elements) | [Map Background and String Elements](#map-background-and-string-elements) | [Debug mode](#debug)
+| | Composite Operations
 
-Common Elements:
-- polygon
-- line
-- markers
-- shield
-- line-pattern
-- polygon-pattern
-- raster
-- point
-- text
-- building
+In addition to customizing the look of your maps using CartoCSS, Torque maps have specific advanced options that you can edit. For details, see [Torque CSS](#cartocss_torque.html).
 
-Other CartoCSS Parameters:
-- debug mode
-
-CartoCSS Values:
-- Color
-- Float
-- URI
-- String
-- Boolean
-- Expressions
-- Numbers
-- Percentages
-- Functions
-
-
-**Note:** CartoDB is currently maintaining a library of these common properties since Mapbox is no longer doing active development for CartoCSS. In addition to customizing the look of your maps using CartoCSS, Torque maps have specific advanced options that you can edit. For details, see [Torque CSS](#cartocss_torque.html).
-
-https://github.com/mapbox/carto/blob/master/docs/latest.md
-
-Add this to the CartoDB JS documentation....The main CartoCSS parser is implemented in Javascript for nodejs.
+| **Torque CartoCSS Properties:** | 
+------------ | -------------
+| | [Common Elements] | [Background and String Elements] | [Debug mode]
 
 
 ### Common Elements
 
-#### image-filters `functions`
-
-
-Default Value: none
-_(no filters)_
-
-A list of image filters that will be applied to the active rendering canvas for a given style. The presence of one more more `image-filters` will trigger a new canvas to be created before starting to render a style and then this canvas will be composited back into the main canvas after rendering all features and after all `image-filters` have been applied. See `direct-image-filters` if you want to apply a filter directly to the main canvas.
-* * *
-
-#### direct-image-filters `functions`
-
-
-Default Value: none
-_(no filters)_
-
-A list of image filters to apply to the main canvas (see the `image-filters` doc for how they work on a separate canvas)
-* * *
+| | [comp-op](#comp-op-keyword) | [direct-image-filters](#direct-image-filters-functions) | [image-filters](#image-filters-functions)
+| | [opacity float](#opacity-float) | 
 
 #### comp-op `keyword`
+Composition operations define how a layer behaves, relative to layers atop and below it. For example, you can style the way colors of overlapping markers interact.
+
+	comp-op: src-over;
+	
+**Default Value**: `src-over` adds the current layer on top of other layers.
+
+**Available Values**:
 `clear``src``dst``src-over``dst-over``src-in``dst-in``src-out``dst-out``src-atop``dst-atop``xor``plus``minus``multiply``screen``overlay``darken``lighten``color-dodge``color-burn``hard-light``soft-light``difference``exclusion``contrast``invert``invert-rgb``grain-merge``grain-extract``hue``saturation``color``value`
 
-Default Value: src-over
-_(add the current layer on top of other layers)_
 
-Composite operation. This defines how this layer should behave relative to layers atop or below it.
-* * *
+#### direct-image-filters `functions`
+Applies an image filter directly to the main canvas. This can also be applied to a separate canvas by using the [image-filters function](#image-filters-function).
+
+	direct-image-filter: function (none);
+
+DOESNT WORK WITH NONE. AM I MISSING ADDITIONAL FUNCTIONS?  Does none just mean that this feature is not applied by default (none is not a valid value)?
+
+**Default Value:** `none` applies no filters
+
+
+#### image-filters `functions`
+A list of image filters that applies a defined style to the active rendering canvas. 
+
+	image-filters: functions(value, value, value);
+
+**Default Value**: `none`, no filters applied
+
+**Note:** You can add multiple `image-filters` to a layer, which creates a new active canvas and renders all of the defined styles, before compositing everything back into the main canvas. For example:
+
+	image-filters:colorize-alpha(blue, cyan, green, yellow , orange, red);
+	
+THIS EXAMPLE WORKS, but using 'none' and 'null' generates an error. Does none just mean that this feature is not applied by default (none is not a valid value)?
+
+For creating an image-filter for the main canvas, see [direct-image-filters](#direct-image-filters-functions)
 
 #### opacity `float`
+An alpha value for the style. This indicates that the alpha value is applied to all features in a separate buffer, then composited back to main buffer.
+
+	opacity: 1;
+	
+**Default Value**: `1`, no separate buffer is used and no alpha is applied to the style after rendering.
 
 
-Default Value: 1
-_(no separate buffer will be used and no alpha will be applied to the style after rendering)_
+### Map Background and String Elements
 
-An alpha value for the style (which means an alpha applied to all features in separate buffer and then composited back to main buffer)
-* * *
+| | [background-color](#background-color-color) | [background-image](#background-image-uri) | [background-image-comp-op](#background-image-comp-op-keyword)
+| | [background-image-opacity](#background-image-opacity-float) | [base](#base-string) | [buffer-size](#buffer-size-float)
+| | [font-directory](#font-directory-uri) | [srs](#srs-string) |
 
-
-### Common Background and String Elements
 
 #### background-color `color`
+The map background color.
 
+	background-color: white;
+	
+I got an error that "map properties are not permitted in other rules", I'm assuming this is based on my data? I need to confirm an example of the background-color cartocss property.
 
-Default Value: none
-_(transparent)_
+**Default Value**: This parameter is not applied by default. The default map is transparent.
 
-Map Background color
-* * *
 
 ##### background-image `uri`
+An image that appears as the map background. This image appears underneath any other applied styles on the map.
 
+	background-image: uri;
+	
+**Default Value**: This parameter is not applied by default. The default background image is transparent.
 
-Default Value: 
-_(transparent)_
-
-An image that is repeated below all features on a map as a background.
-* * *
 
 ##### background-image-comp-op `keyword`
-`clear``src``dst``src-over``dst-over``src-in``dst-in``src-out``dst-out``src-atop``dst-atop``xor``plus``minus``multiply``screen``overlay``darken``lighten``color-dodge``color-burn``hard-light``soft-light``difference``exclusion``contrast``invert``invert-rgb``grain-merge``grain-extract``hue``saturation``color``value`
+Sets the compositing operation used to blend the image into the background.
 
-Default Value: src-over
-_(The background-image will be blended with the background normally (placed on top of any existing background-color))_
+	background-image-comp-op `keyword`
+	
+**Default Value**: `src-over`, the background image is placed on top of any existing `background-image`.
 
-Set the compositing operation used to blend the image into the background
-* * *
+**Available Values**: `clear``src``dst``src-over``dst-over``src-in``dst-in``src-out``dst-out``src-atop``dst-atop``xor``plus``minus``multiply``screen``overlay``darken``lighten``color-dodge``color-burn``hard-light``soft-light``difference``exclusion``contrast``invert``invert-rgb``grain-merge``grain-extract``hue``saturation``color``value`
+
 
 ##### background-image-opacity `float`
+Sets the opacity of the image.
 
+	background-image-opacity: 1;
+	
+**Default Value**: `1`, indicates that the image opacity will not be changed when applied to the map background)
 
-Default Value: 1
-_(The image opacity will not be changed when applied to the map background)_
+WHAT IS THE RANGE OF OPTIONS? SHOULDN'T WE NOTE/REFERENCE ALL THE AVAILABLE OPTIONS in all of these properties?
 
-Set the opacity of the image
-* * *
-
-##### srs `string`
-
-
-Default Value: +proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs
-_(The proj4 literal of EPSG:4326 is assumed to be the Map&#x27;s spatial reference and all data from layers within this map will be plotted using this coordinate system. If any layers do not declare an srs value then they will be assumed to be in the same srs as the Map and not transformations will be needed to plot them in the Map&#x27;s coordinate space)_
-
-Map spatial reference (proj4 string)
-* * *
-
-##### buffer-size `float`
-
-
-Default Value: 0
-_(No buffer will be used)_
-
-Extra tolerance around the map (in pixels) used to ensure labels crossing tile boundaries are equally rendered in each tile (e.g. cut in each tile). Not intended to be used in combination with &quot;avoid-edges&quot;.
-* * *
 
 ##### base `string`
+Indicates how a directory path is rendered, based on if you are using a defined in memory object, or a filesystem object.
+
+	base: string;
+
+**Default Value**: This parameter string is empty by default, indicating that any relative paths to files referenced in styles, or layers, are interpreted relative to the application process.
+
+ - If a map loads from an in memory object, any relative paths used to reference files are understood as the intended directly path. 
+ 
+ - If the map loads from a filesytem object, and the in memory object is *not* defined, the directory path is rendered based on the stylesheet directory.
+
+WHAT IS IN MEMORY OBJECT AND FILESYSTEM OBJECT? And what stylesheet are they referencing? The cartocss I assume. These definitions are confusing, I need more information and sample code.
 
 
-Default Value: 
-_(This base path defaults to an empty string meaning that any relative paths to files referenced in styles or layers will be interpreted relative to the application process.)_
+##### buffer-size `float`
+Ensures that labels crossing tile boundaries are equally rendered in each tile. 
 
-Any relative paths used to reference files will be understood as relative to this directory path if the map is loaded from an in memory object rather than from the filesystem. If the map is loaded from the filesystem and this option is not provided it will be set to the directory of the stylesheet.
-* * *
+	buffer-size: float;
+
+**Default Value**: `0`, no buffer is applied by default. 
+
+**Note:** Enter any values in pixels and do not apply this property in combination with &quot;avoid-edges&quot;.
+
+WHY? What will happen?  Why are we suggesting this best practice?
+
 
 ##### font-directory `uri`
+Indicates the directory path where the registered fonts for your map are automatically stored, or where they should be stored when the map loads.
 
+	font-directory: uri;
 
-Default Value: none
-_(No map-specific fonts will be registered)_
+**Default Value**:  This parameter is not applied by default, no registered fonts are stored for your map.
 
-Path to a directory which holds fonts which should be registered when the Map is loaded (in addition to any fonts that may be automatically registered).
-* * *
+##### srs `string`
+The map spatial reference (proj4 string). The proj4 literal of EPSG:4326 is assumed to be the Map&#x27;s spatial reference.  All data from layers within this map are plotted using this coordinate system. 
+
+WHAT DOES THAT MEAN?
+
+	srs: string;
+
+**Default Value**: `+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs`
+
+**Note:** If the `srs` value is not declared for a layer, this value is assumed to be the same `srs` as the map. Thus, no transformations are plotted in the Map&#x27;s coordinate space).
 
 
 ## polygon
+
+| | [polygon-fill](#polygon-fill-color) | [polygon-opacity](#polygon-opacity-float) | [polygon-gamma](#polygon-gamma-float)
+| | [polygon-gamma-method](#polygon-gamma-method-float) | [polygon-clip](#polygon-clip-boolean)| [polygon-simplify](#polygon-simplify-float)
+| | [polygon-simplify-algorithm](#polygon-simplify-algorithm-keyword) | [polygon-smooth](#polygon-smooth-float) | [polygon-geometry-transform](#polygon-geometry-transform-functions)
+| | [polygon-comp-op](#polygon-comp-op-keyword) 
 
 ##### polygon-fill `color`
 
@@ -253,6 +271,13 @@ Composite operation. This defines how this symbolizer should behave relative to 
 
 
 #### line
+
+| | [line-color](#line-color-color) | [line-width](#line-width-float) | [line-opacity](#line-opacity-float)
+| | [line-join](#line-join) | [line-cap](#line-cap-keyword) | [line-gamma](#line-gamma-float)
+| | [line-gamma-method](#line-gamma-method-keyword) | [line-dasharray](#line-dasharray-numbers) | [line-dash-offset](#line-dash-offset-numbers)
+| | [line-miterlimit](#line-miterlimit-float) | [line-clip](#line-clip-boolean) | [line-simplify](#line-simplify-float)
+| | [line-simplify-algorithm](#line-simplify-algorithm-keyword) | [lime-smooth](#line-smooth-float) | [line-offset](#line-offset-float)
+| | [line-rasterizer](#line-rasterizer-keyword) | [line-geometry-transform](#line-geometry-transform-functions) | [line-comp-op](#line-comp-op-keyword)
 
 ##### line-color `color`
 
@@ -418,6 +443,9 @@ Composite operation. This defines how this symbolizer should behave relative to 
 
 
 ## markers
+
+| | [polygon-fill](#polygon-fill-color) | [polygon-opacity](#polygon-opacity-float) | [polygon-gamma](#polygon-gamma-float)
+
 
 ##### marker-file `uri`
 
@@ -1589,9 +1617,9 @@ The mode for debug rendering
 
 
 
-### Values
+### CartoCSS Values
 
-Below is a list of values and an explanation of any expression that can be applied to properties in CartCSS.
+The following values can be applied to properties in CartCSS.
 
 ### Color
 
