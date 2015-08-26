@@ -4,7 +4,7 @@
 
 Each CartoCSS map category has its own configurable properties. You can apply multiple symbolizers and properties to the same map layer. Navigate to a selected category to view the available properties.
 
-<<ADD LINK TO COMPOSITE OPERATIONS SECTION?>
+<<ADD LINK TO COMPOSITE OPERATIONS SECTION? change existing section in cartodb editor section. comp-ops are described here in particular properties>
 
 ***Note:** CartoDB is currently maintaining this library of common properties since [Mapbox](https://github.com/mapbox/carto/blob/master/docs/latest.md) is no longer doing active development for CartoCSS.*
 
@@ -39,11 +39,11 @@ In addition to customizing the look of your maps using CartoCSS, Torque maps hav
 | | [opacity float](#opacity-float) | 
 
 #### comp-op `keyword`
-Composition operations define how a layer behaves, relative to layers atop and below it. For example, you can style the way colors of overlapping markers interact.
+The composite operation define how a layer behaves, relative to layers atop and below it. For example, you can style the way colors of overlapping markers interact.
 
 	comp-op: src-over;
 	
-**Default Value**: `src-over` adds the current layer on top of other layers.
+**Default Value**: `src-over`, adds the current layer on top of other layers.
 
 **Available Values**:
 `clear``src``dst``src-over``dst-over``src-in``dst-in``src-out``dst-out``src-atop``dst-atop``xor``plus``minus``multiply``screen``overlay``darken``lighten``color-dodge``color-burn``hard-light``soft-light``difference``exclusion``contrast``invert``invert-rgb``grain-merge``grain-extract``hue``saturation``color``value`
@@ -56,8 +56,9 @@ Applies an image filter directly to the main canvas. This can also be applied to
 
 DOESNT WORK WITH NONE. AM I MISSING ADDITIONAL FUNCTIONS?  Does none just mean that this feature is not applied by default (none is not a valid value)?
 
-**Default Value:** `none` applies no filters
+**Default Value**: `none` applies no filters
 
+**Available Values**: See [functions](#functions).
 
 #### image-filters `functions`
 A list of image filters that applies a defined style to the active rendering canvas. 
@@ -66,13 +67,15 @@ A list of image filters that applies a defined style to the active rendering can
 
 **Default Value**: `none`, no filters applied
 
+**Available Values**: See [functions](#functions).
+
 **Note:** You can add multiple `image-filters` to a layer, which creates a new active canvas and renders all of the defined styles, before compositing everything back into the main canvas. For example:
 
 	image-filters:colorize-alpha(blue, cyan, green, yellow , orange, red);
 	
 THIS EXAMPLE WORKS, but using 'none' and 'null' generates an error. Does none just mean that this feature is not applied by default (none is not a valid value)?
 
-For creating an image-filter for the main canvas, see [direct-image-filters](#direct-image-filters-functions)
+**Tip:** For creating an image-filter for the main canvas, see [direct-image-filters](#direct-image-filters-functions)
 
 #### opacity `float`
 An alpha value for the style. This indicates that the alpha value is applied to all features in a separate buffer, then composited back to main buffer.
@@ -81,6 +84,7 @@ An alpha value for the style. This indicates that the alpha value is applied to 
 	
 **Default Value**: `1`, no separate buffer is used and no alpha is applied to the style after rendering.
 
+**Available Values**: See [float](#float).
 
 ### Map Background and String Elements
 
@@ -98,6 +102,8 @@ I got an error that "map properties are not permitted in other rules", I'm assum
 
 **Default Value**: This parameter is not applied by default. The default map is transparent.
 
+**Available Values**: See [color](#color).
+
 
 ##### background-image `uri`
 An image that appears as the map background. This image appears underneath any other applied styles on the map.
@@ -105,6 +111,8 @@ An image that appears as the map background. This image appears underneath any o
 	background-image: uri;
 	
 **Default Value**: This parameter is not applied by default. The default background image is transparent.
+
+**Available Values**: See [uri](#uri).
 
 
 ##### background-image-comp-op `keyword`
@@ -124,7 +132,7 @@ Sets the opacity of the image.
 	
 **Default Value**: `1`, indicates that the image opacity will not be changed when applied to the map background)
 
-WHAT IS THE RANGE OF OPTIONS? SHOULDN'T WE NOTE/REFERENCE ALL THE AVAILABLE OPTIONS in all of these properties?
+**Available Values**: See [float](#float).
 
 
 ##### base `string`
@@ -134,9 +142,11 @@ Indicates how a directory path is rendered, based on if you are using a defined 
 
 **Default Value**: This parameter string is empty by default, indicating that any relative paths to files referenced in styles, or layers, are interpreted relative to the application process.
 
+**Available Values**: See [string](#string).
+
  - If a map loads from an in memory object, any relative paths used to reference files are understood as the intended directly path. 
  
- - If the map loads from a filesytem object, and the in memory object is *not* defined, the directory path is rendered based on the stylesheet directory.
+ - If the map loads from a filesystem object, and the in memory object is *not* defined, the directory path is rendered based on the stylesheet directory.
 
 WHAT IS IN MEMORY OBJECT AND FILESYSTEM OBJECT? And what stylesheet are they referencing? The cartocss I assume. These definitions are confusing, I need more information and sample code.
 
@@ -147,6 +157,8 @@ Ensures that labels crossing tile boundaries are equally rendered in each tile.
 	buffer-size: float;
 
 **Default Value**: `0`, no buffer is applied by default. 
+
+**Available Values**: See [float](#float).
 
 **Note:** Enter any values in pixels and do not apply this property in combination with &quot;avoid-edges&quot;.
 
@@ -160,6 +172,9 @@ Indicates the directory path where the registered fonts for your map are automat
 
 **Default Value**:  This parameter is not applied by default, no registered fonts are stored for your map.
 
+**Available Values**: See [uri](#uri).
+
+
 ##### srs `string`
 The map spatial reference (proj4 string). The proj4 literal of EPSG:4326 is assumed to be the Map&#x27;s spatial reference.  All data from layers within this map are plotted using this coordinate system. 
 
@@ -169,277 +184,320 @@ WHAT DOES THAT MEAN?
 
 **Default Value**: `+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs`
 
+**Available Values**: See [string](#string).
+
 **Note:** If the `srs` value is not declared for a layer, this value is assumed to be the same `srs` as the map. Thus, no transformations are plotted in the Map&#x27;s coordinate space).
 
 
 ## polygon
 
 | | [polygon-fill](#polygon-fill-color) | [polygon-opacity](#polygon-opacity-float) | [polygon-gamma](#polygon-gamma-float)
-| | [polygon-gamma-method](#polygon-gamma-method-float) | [polygon-clip](#polygon-clip-boolean)| [polygon-simplify](#polygon-simplify-float)
+| | [polygon-gamma-method](#polygon-gamma-method-keyword) | [polygon-clip](#polygon-clip-boolean)| [polygon-simplify](#polygon-simplify-float)
 | | [polygon-simplify-algorithm](#polygon-simplify-algorithm-keyword) | [polygon-smooth](#polygon-smooth-float) | [polygon-geometry-transform](#polygon-geometry-transform-functions)
 | | [polygon-comp-op](#polygon-comp-op-keyword) 
 
 ##### polygon-fill `color`
+The fill color to assign to a polygon.
 
+	polygon-fill: rgba(128, 128, 128, 1);
+	
+**Default Value**: Gray (as indicated with the rgb color=128, 128, 128) and fully opaque (as indicated with alpha=1).
 
-Default Value: rgba(128,128,128,1)
-_(gray and fully opaque (alpha = 1), same as rgb(128,128,128))_
+**Available Values**: See [color](#color).
 
-Fill color to assign to a polygon
-* * *
 
 ##### polygon-opacity `float`
+The opacity of the polygon.
 
+	polygon-opacity: 1;
 
-Default Value: 1
-_(opaque)_
+**Default Value**: `1`, indicates that the default opacity as opaque.
 
-The opacity of the polygon
-* * *
+**Available Values**: See [float](#float).
+
 
 ##### polygon-gamma `float`
+The level of antialiasing (smoothness of oversampling) of polygon edges. A range of 0-5 represents the most antialiased to the least antialiased.
 
+	polygon-gamma: 1; 
+	
+**Default Value**: `1`, is fully antialiased.
 
-Default Value: 1
-_(fully antialiased)_
-Range: 0-1
-Level of antialiasing of polygon edges
-* * *
+**Available Values**: `0`, `1`, `2`, `3`, `4`, `5`
+
+WHY WOULDN'T ZERO REPRESENT FULLY ANTIALIASED THEN?
+
 
 ##### polygon-gamma-method `keyword`
-`power``linear``none``threshold``multiply`
+An anti-grain geometry method that represents a 2D rendering library, specific to controlling the quality of antialiasing and used to calculate pixel gamma (pow(x,gamma), which produces slightly smoother line and polygon antialiasing than the &#x27;linear&#x27; method.
 
-Default Value: power
-_(pow(x,gamma) is used to calculate pixel gamma, which produces slightly smoother line and polygon antialiasing than the &#x27;linear&#x27; method, while other methods are usually only used to disable AA)_
+	polygon-gamma-method: power;
+	
+**Default Value**: `power`
 
-An Antigrain Geometry specific rendering hint to control the quality of antialiasing. Under the hood in Mapnik this method is used in combination with the &#x27;gamma&#x27; value (which defaults to 1). The methods are in the AGG source at https:&#x2F;&#x2F;github.com&#x2F;mapnik&#x2F;mapnik&#x2F;blob&#x2F;master&#x2F;deps&#x2F;agg&#x2F;include&#x2F;agg_gamma_functions.h
-* * *
+**Available Values**: `power``linear``none``threshold``multiply`
+
+**Tip:** Mapnik uses this method in combination with the &#x27;gamma&#x27; value (which defaults to 1). The methods are documented in the the [AGG GitHub source](https://github.com/mapnik/mapnik/blob/master/deps/agg/include/agg_gamma_functions.h).
+
 
 ##### polygon-clip `boolean`
+By default, geometries are clipped to map bounds. You can disable polygon clips to avoid rendering artifacts on a map if are having performance issues.
+	
+	polygon-clip: true;
 
+**Default Value**: `true`, geometry is clipped to map bounds before rendering. 
 
-Default Value: true
-_(geometry will be clipped to map bounds before rendering)_
+**Available Values**: See [boolean](#boolean).
 
-geometries are clipped to map bounds by default for best rendering performance. In some cases users may wish to disable this to avoid rendering artifacts.
-* * *
 
 ##### polygon-simplify `float`
+Simplifies geometries by a given tolerance value.
 
+	polygon-simplify: 0;
 
-Default Value: 0
-_(geometry will not be simplified)_
+**Default Value**: `0`, geometry is  not simplified.
 
-geometries are simplified by the given tolerance
-* * *
+**Available Values**: See [float](#float).
+
 
 ##### polygon-simplify-algorithm `keyword`
-`radial-distance``zhao-saalfeld``visvalingam-whyatt`
+Simplifies geometries by a given algorithm value.
 
-Default Value: radial-distance
-_(geometry will not be simplified using the radial distance algorithm)_
+	polygon-simplify-algorithm: radial-distance;
 
-geometries are simplified by the given algorithm
-* * *
+**Default Value**: `radial-distance`, geometry is simplified using the radial distance algorithm.
+
+PLEASE CONFIRM, THE ORIGINAL MAPBOX DESCRIPTION SAYS "geometry will not be simplified using the radial distance algorithm". That seems incorrect to me based on this description.
+
+**Available Values**: `radial-distance``zhao-saalfeld``visvalingam-whyatt`
+
 
 ##### polygon-smooth `float`
+Smooths out geometry angles.
 
+	polygon-smooth: 0;
 
-Default Value: 0
-_(no smoothing)_
-Range: 0-1
-Smooths out geometry angles. 0 is no smoothing, 1 is fully smoothed. Values greater than 1 will produce wild, looping geometries.
-* * *
+**Default Value**: `0`, no smoothing is applied.
+
+**Available Values**: `0`, `1`
+
+**Note:** `0` indicates no smoothing is applied. `1` indicates that it is fully smoothed. Values greater than `1` produce wild, looping geometries. It is suggested to use a range between 0-1 for this value.
+
 
 ##### polygon-geometry-transform `functions`
+Applies transformation functions to the geometry.
 
+	polygon-geometry-transform: none
 
-Default Value: none
-_(geometry will not be transformed)_
+**Default Value**: `none`, geometry is not transformed.
 
-Allows transformation functions to be applied to the geometry.
-* * *
+**Available Values**: See [functions](#functions).
+
 
 ##### polygon-comp-op `keyword`
-`clear``src``dst``src-over``dst-over``src-in``dst-in``src-out``dst-out``src-atop``dst-atop``xor``plus``minus``multiply``screen``overlay``darken``lighten``color-dodge``color-burn``hard-light``soft-light``difference``exclusion``contrast``invert``invert-rgb``grain-merge``grain-extract``hue``saturation``color``value`
+The composite operation that defines how the symbolizer behaves relative to layers atop or below it.
 
-Default Value: src-over
-_(add the current symbolizer on top of other symbolizer)_
+	polygon-comp-op: src-over
 
-Composite operation. This defines how this symbolizer should behave relative to symbolizers atop or below it.
-* * *
+**Default Value**: `src-over`, adds the current symbolizer on top of other symbolizers.
+
+**Available Values**:`clear``src``dst``src-over``dst-over``src-in``dst-in``src-out``dst-out``src-atop``dst-atop``xor``plus``minus``multiply``screen``overlay``darken``lighten``color-dodge``color-burn``hard-light``soft-light``difference``exclusion``contrast``invert``invert-rgb``grain-merge``grain-extract``hue``saturation``color``value`
 
 
-#### line
+## line
 
 | | [line-color](#line-color-color) | [line-width](#line-width-float) | [line-opacity](#line-opacity-float)
-| | [line-join](#line-join) | [line-cap](#line-cap-keyword) | [line-gamma](#line-gamma-float)
+| | [line-join](#line-join-keyword) | [line-cap](#line-cap-keyword) | [line-gamma](#line-gamma-float)
 | | [line-gamma-method](#line-gamma-method-keyword) | [line-dasharray](#line-dasharray-numbers) | [line-dash-offset](#line-dash-offset-numbers)
 | | [line-miterlimit](#line-miterlimit-float) | [line-clip](#line-clip-boolean) | [line-simplify](#line-simplify-float)
 | | [line-simplify-algorithm](#line-simplify-algorithm-keyword) | [lime-smooth](#line-smooth-float) | [line-offset](#line-offset-float)
 | | [line-rasterizer](#line-rasterizer-keyword) | [line-geometry-transform](#line-geometry-transform-functions) | [line-comp-op](#line-comp-op-keyword)
 
 ##### line-color `color`
+The color of the drawn line.
 
+	line-color: rgba(0,0,0,1);
+	
+**Default Value**: Black (as indicated with the rgb color=0, 0, 0) and fully opaque (as indicated with alpha=1).
 
-Default Value: rgba(0,0,0,1)
-_(black and fully opaque (alpha = 1), same as rgb(0,0,0))_
-
-The color of a drawn line
-* * *
+**Available Values**: See [color](#color).
 
 ##### line-width `float`
+The width of a line, in pixels.
 
+	line-width: 1;
 
-Default Value: 1
+**Default Value**: `1` pixel.
 
+**Available Values**: See [float](#float).
 
-The width of a line in pixels
-* * *
 
 ##### line-opacity `float`
+The opacity of a line.
+	
+	line-opacity: 1;
+	
+**Default Value**: `1`, the line is opaque.
 
+**Available Values**: See [float](#float).
 
-Default Value: 1
-_(opaque)_
-
-The opacity of a line
-* * *
 
 ##### line-join `keyword`
-`miter``round``bevel`
+The behavior of lines when joined on a map.
 
-Default Value: miter
+	line-join: miter;
+	
+**Default Value**: `miter`, joins the edges at the corners.
 
+**Available Values**: `miter``round``bevel`
 
-The behavior of lines when joining
-* * *
 
 ##### line-cap `keyword`
-`butt``round``square`
+The display of line endings.
 
-Default Value: butt
+	line-cap: butt;
 
+**Default Value**: `butt`, the ends of lines are squared off at the endpoints.
 
-The display of line endings
-* * *
+**Available Values**: `butt``round``square`
+
 
 ##### line-gamma `float`
+The level of antialiasing (smoothness of oversampling) of a stroke line.
 
+	line-gamma: 1;
 
-Default Value: 1
-_(fully antialiased)_
-Range: 0-1
-Level of antialiasing of stroke line
-* * *
+**Default Value**: `1`, is fully antialiased.
+
+**Available Values**: Range `0-1`. See [float](#float).
+
 
 ##### line-gamma-method `keyword`
-`power``linear``none``threshold``multiply`
+An anti-grain geometry method that represents a 2D rendering library, specific to controlling the quality of antialiasing and used to calculate pixel gamma (pow(x,gamma), which produces slightly smoother line and polygon antialiasing than the &#x27;linear&#x27; method.
 
-Default Value: power
-_(pow(x,gamma) is used to calculate pixel gamma, which produces slightly smoother line and polygon antialiasing than the &#x27;linear&#x27; method, while other methods are usually only used to disable AA)_
+	line-gamma-method: power;
+	
+**Default Value**: `power`
 
-An Antigrain Geometry specific rendering hint to control the quality of antialiasing. Under the hood in Mapnik this method is used in combination with the &#x27;gamma&#x27; value (which defaults to 1). The methods are in the AGG source at https:&#x2F;&#x2F;github.com&#x2F;mapnik&#x2F;mapnik&#x2F;blob&#x2F;master&#x2F;deps&#x2F;agg&#x2F;include&#x2F;agg_gamma_functions.h
-* * *
+**Available Values**: `power``linear``none``threshold``multiply`
+
+**Tip:** Mapnik uses this method in combination with the &#x27;gamma&#x27; value (which defaults to 1). The methods are documented in the the [AGG GitHub source](https://github.com/mapnik/mapnik/blob/master/deps/agg/include/agg_gamma_functions.h).
+
 
 ##### line-dasharray `numbers`
+A pair of length values [a,b], where (a) is the dash length and (b) is the gap length. You can enter more than two values for more complex patterns.
 
+	line-dasharray: none
 
-Default Value: none
-_(solid line)_
+**Default Value**: `none`, a solid line appears.
 
-A pair of length values [a,b], where (a) is the dash length and (b) is the gap length respectively. More than two values are supported for more complex patterns.
-* * *
+**Available Values**: See [numbers](#numbers).
+
 
 ##### line-dash-offset `numbers`
+Sets the line dash pattern offset, to create an animation display for the line.
 
+	line-dash-offset: none;
 
-Default Value: none
-_(solid line)_
+**Default Value**: `none`, a solid line appears.
 
-valid parameter but not currently used in renderers (only exists for experimental svg support in Mapnik which is not yet enabled)
-* * *
+**Available Values**: See [numbers](#numbers).
+
+**Note:** This is a valid parameter for Scalable Vector Graphics but is currently not supported for rendering.
+
+WHAT DOES THIS MEAN? I NEED MORE INFO SO THAT I CAN WORDSMITH.
+
 
 ##### line-miterlimit `float`
+The limit on the ratio of the miter length to the stroke-width. This is used to automatically convert miter joins to bevel joins for sharp angles, to avoid the miter extending beyond the thickness of the stroking path. Typically, this property does not need to be set. However, if you have jaggy artifacts during rendering, defining a larger value for this property helps.
 
+	line-miterlimit: 4;
 
-Default Value: 4
-_(Will auto-convert miters to bevel line joins when theta is less than 29 degrees as per the SVG spec: &#x27;miterLength &#x2F; stroke-width = 1 &#x2F; sin ( theta &#x2F; 2 )&#x27;)_
+**Default Value**: `4`, auto-convert miters to bevel line joins when theta is less than 29 degrees as per the SVG spec: &#x27;miterLength &#x2F; stroke-width = 1 &#x2F; sin ( theta &#x2F; 2 )&#x27;)
 
-The limit on the ratio of the miter length to the stroke-width. Used to automatically convert miter joins to bevel joins for sharp angles to avoid the miter extending beyond the thickness of the stroking path. Normally will not need to be set, but a larger value can sometimes help avoid jaggy artifacts.
-* * *
+**Available Values**: See [float](#float).
+
 
 ##### line-clip `boolean`
+By default, geometries are clipped to map bounds. You can disable line clips to avoid rendering artifacts on a map if are having performance issues.
 
+	line-clip: true;
+	
+**Default Value**: `true`, geometry is clipped to map bounds before rendering.
 
-Default Value: true
-_(geometry will be clipped to map bounds before rendering)_
+**Available Values**: See [boolean](#boolean).
 
-geometries are clipped to map bounds by default for best rendering performance. In some cases users may wish to disable this to avoid rendering artifacts.
-* * *
 
 ##### line-simplify `float`
+Simplifies geometries by a given tolerance value.
 
+	line-simplify: 0;
 
-Default Value: 0
-_(geometry will not be simplified)_
+**Default Value**: `0`, geometry is not simplified.
 
-geometries are simplified by the given tolerance
-* * *
+**Available Values**: See [float](#float).
+
 
 ##### line-simplify-algorithm `keyword`
-`radial-distance``zhao-saalfeld``visvalingam-whyatt`
+Simplifies geometries by a given algorithm value.
 
-Default Value: radial-distance
-_(geometry will not be simplified using the radial distance algorithm)_
+	line-simplify-algorithm: radial-distance;
 
-geometries are simplified by the given algorithm
-* * *
+**Default Value**: `radial-distance`, geometry is simplified using the radial distance algorithm
+
+PLEASE CONFIRM, THE ORIGINAL MAPBOX DESCRIPTION SAYS “geometry will not be simplified using the radial distance algorithm”. That seems incorrect to me based on this description.
+
 
 ##### line-smooth `float`
+Smooths out geometry angles.
 
+	line-smooth: 0;
+	
+**Default Value**: 0, no smoothing is applied.
 
-Default Value: 0
-_(no smoothing)_
-Range: 0-1
-Smooths out geometry angles. 0 is no smoothing, 1 is fully smoothed. Values greater than 1 will produce wild, looping geometries.
-* * *
+**Available Values**: 0, 1
+
+**Note:** 0 indicates no smoothing is applied. 1 indicates that it is fully smoothed. Values greater than 1 produce wild, looping geometries. It is suggested to use a range between 0-1 for this value.
+
 
 ##### line-offset `float`
-
-
-Default Value: 0
-_(no offset)_
-
 Offsets a line a number of pixels parallel to its actual path. Positive values move the line left, negative values move it right (relative to the directionality of the line).
-* * *
+
+	line-offset: 0:
+	
+**Default Value**: `0`, no offset applied.
+
+**Available Values**: See [float](#float).
+
 
 ##### line-rasterizer `keyword`
-`full``fast`
-
-Default Value: full
-
-
 Exposes an alternate AGG rendering method that sacrifices some accuracy for speed.
-* * *
+
+	line-rasterizer: full;
+
+**Default Value**: `full`
+
+**Available Values**: `full``fast`
+
 
 ##### line-geometry-transform `functions`
+Applies transformation functions to the geometry.
 
+	line-geometry-transform: none;
+	
+**Default Value**: `none`, geometry is not be transformed.
 
-Default Value: none
-_(geometry will not be transformed)_
+**Available Values**: See [functions](#functions).
 
-Allows transformation functions to be applied to the geometry.
-* * *
 
 ##### line-comp-op `keyword`
-`clear``src``dst``src-over``dst-over``src-in``dst-in``src-out``dst-out``src-atop``dst-atop``xor``plus``minus``multiply``screen``overlay``darken``lighten``color-dodge``color-burn``hard-light``soft-light``difference``exclusion``contrast``invert``invert-rgb``grain-merge``grain-extract``hue``saturation``color``value`
+The composite operation that defines how the symbolizer behaves relative to layers atop or below it.
 
-Default Value: src-over
-_(add the current symbolizer on top of other symbolizer)_
+	line-comp-op: src-over;
 
-Composite operation. This defines how this symbolizer should behave relative to symbolizers atop or below it.
-* * *
+**Default Value**: `src-over`, adds the current symbolizer on top of other symbolizers.
+
+**Available Values**: `clear``src``dst``src-over``dst-over``src-in``dst-in``src-out``dst-out``src-atop``dst-atop``xor``plus``minus``multiply``screen``overlay``darken``lighten``color-dodge``color-burn``hard-light``soft-light``difference``exclusion``contrast``invert``invert-rgb``grain-merge``grain-extract``hue``saturation``color``value`
 
 
 ## markers
@@ -1733,27 +1791,28 @@ line-dasharray: 1, 4, 2;
 ```
 
 ### Percentages
-In Carto, the percentage symbol, `%` universally means `value/100`. It's meant to be used with ratio-related properties, like opacity rules.
+The percentage symbol, `%` universally indicates `value/100`. Use percentages with ratio-related properties, such as the opacity of a shape or color, as shown in the following example.
 
-_You should not use percentages as widths, heights, or other properties - unlike CSS, percentages are not relative to cascaded classes or page size, they're, as stated, simply the value divided by one hundred._
-
-```css
+	css
 #world {
 // this syntax
 polygon-opacity: 50%;
 
-// is equivalent to
-polygon-opacity: 0.5;
+where `//` is equivalent to:
+
+	polygon-opacity: 0.5;
 }
-```
+
+**Note:**  Do not use percentages as widths, heights, or other properties. Unlike CSS, percentages are not relative to cascaded classes or page size. They are simply the value divided by one hundred.
 
 ### Functions
 
-Functions are comma-separated lists of one or more functions. For instance, transforms use the `functions` type to allow for transforms within Carto, which are optionally chainable.
+Functions are comma-separated lists of one or more functions. 
 
-```css
+For example, [point-transform](#point-transform-functions), defines function values to enable SVG transformation definitions for chained point transformations.
+
+	css
 #point {
 point-transform: scale(2, 2);
 }
-```
   
