@@ -7,23 +7,20 @@ redirect_from:
 - "/documentation/using-cartodb.html"
 ---
 
-## One Minute Introduction
+## CartoDB Editor Overview
 
-<p class="wrap-border"><img src="/img/layout/cartodb-editor/editor.png" alt="Using sync data" /></p>
+The CartoDB Editor is a dashboard that contains *your datasets* and *your maps*. The following workflow highlights how you can create a map from your dashboard in 30 seconds.
 
-Your dashboard is your baseline. It has two main sections: **datasets** and **maps**. To get started, you can create a map from your dataset by following these simple steps:
+Workflow | Details
+------------ | -------------
+Create a new dataset | You can connect a dataset using any of the [(supported file formats](#supported-file-formats)), or create an empty dataset. 
+| For details, see [Connect Dataset](#connect-dataset).
+Visualize your data and create a map | The CartoDB Editor contains many features that guide you through the process of creating a map and selecting how your data appears. You can also customize the style of your map.
+| For details about some of the CartoDB Editor features, see [Data Visualization](#data-visualization) [Edit Maps](#edit-map-options), [Map Wizards](#map-wizards), and [Managing Your Data](#managing-your-data).
+Publish and share your map | Once you visualize and publish a map, you can get a link to share the map, embed it to a website or blog, or add your map to another application.
+| For details, see [Publish and Share Your Map](#publish-and-share-your-map)
 
-1. Connect **dataset**. You can import a dataset or "start from scratch" by selecting "Empty dataset."
-2. Create a new **map** from your dataset.
-3. Share it (publicly or privately).
-
-CartoDB accepts data in different formats (Excel, CSV, XML, SHP, GeoJSON, [see all](#supported-file-formats)) and from different sources (see all possibilities for [importing data](#importing-data)). Our interactive wizards make it easy and fun to map your data. Choose a basemap, define legends and infowindows ([what is an infowindow?](#infowindows)), and select how to show your data with custom display options.
-
-_XML files are not directly supported, we support KML and GPX files instead._
-
-When your map is complete, you may keep it private, share it with your colleagues, or publish it to the web by circulating its custom URL or embedding it in your blog.
-
-In this guide, we'll walk through many features of the CartoDB web interface. Our [Map Academy](http://academy.cartodb.com/) lessons will get you started with the basics of map creation. If you are ready to experiment with our powerful APIs, then go to [CartoDB.js]({{ '/cartodb-platform/cartodb-js.html' | prepend: site.baseurl }}) and [SQL API]({{ '/cartodb-platform/sql-api.html' | prepend: site.baseurl }}).
+**Tip:** You can also view guided lessons of the map workflow from the [Map Academy](http://academy.cartodb.com/), or begin using our [open source APIs](http://docs.cartodb.com/cartodb-platform.html).
 
 ## Datasets
 
