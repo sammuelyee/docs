@@ -1,29 +1,29 @@
 ---
 title: Import API
-description: The CartoDB Importer API allows you to upload files to your CartoDB account and manipulate them by using a set of HTTP commands from a terminal window.
+description: The CartoDB Import API allows you to upload files to your CartoDB account and manipulate them by using a set of HTTP commands from a terminal window.
 ---
 
-A standard import will store the data you upload from files with the valid formats as specified
+A standard import stores the data, uploaded from files with the valid formats, as specified.
 
 ## Import API
 
-The CartoDB Import API allows you to upload files to a CartoDB account, check on their current status as well as deleting and listing importing processes on the given account. This API consists of several HTTP requests targeted at a set of CartoDB endpoints which deal with the conversion and import of the sent files. CartoDB tables can be classified into two categories:
+The CartoDB Import API allows you to upload files to a CartoDB account, check on their current upload status, as well as deleting and listing importing processes on the given account. This API consists of several HTTP requests targeted at a set of CartoDB endpoints that deal with the conversion and import of the sent files. CartoDB tables can be classified into two categories:
 
-- **Standard tables**  
-  The default tables used to store the data of the uploaded files that will be used to create maps and visualisations. Any CartoDB user may create, manipulate and delete such tables.
+- **standard tables**  
+  The default tables used to store the data of the uploaded files that will be used to create datasets and maps. Any CartoDB user may create, manipulate, and delete such datasets.
 
-- **Sync tables**  
-  Available to certain CartoDB plans, these tables store data from a remote file and refresh their contents during periodic intervals specified by the user. The base files from which the sync tables retrieve their contents may come from Google Drive, Dropbox or a public URL. In this document we will deal with the simplest case: public URL.
+- **Sync Tables**  
+  Available to certain CartoDB plans, these tables store data from a remote file and refresh their contents during periodic intervals specified by the user. The base files from which the sync tables retrieve their contents may come from Google Drive, Dropbox, or a public URL. In this document we will deal with the simplest case: public URLs.
 
 Additionally, CartoDB offers a set of connectors to import specific types of datasets:
 
-- **ArcGIS**  
-  Allows to import ArcGIS layers into a CartoDB account as tables from an ArcGIS server (version 10.1 or higher is required). Note that **this connector is disabled by default** in the CartoDB importer options. If you are interested in enabling it, please contact [support@cartodb.com](mailto:support@cartodb.com) to gain further details.
+- **ArcGIS Server&trade;**  
+  Allows to import ArcGIS&trade; layers into a CartoDB account as tables from ArcGIS Server&trade; (version 10.1 or higher is required). Note that **this connector is disabled by default** in the CartoDB importer options. If you are interested in enabling it, please contact [support@cartodb.com](mailto:support@cartodb.com) to gain further details.
 
 
 ## Quickstart
 
-For this example (and the rest ones illustrated in this document) we will be using a command-line tool known as `cURL`. For more info about this tool see [this blog post](http://quickleft.com/blog/command-line-tutorials-curl) or type `man curl` in bash.
+For this example (and the rest of the ones illustrated in this document) we will be using a command-line tool known as `cURL`. For more info about this tool see [this blog post](http://quickleft.com/blog/command-line-tutorials-curl) or type `man curl` in bash.
 
 ### Uploading a local file
 
@@ -31,7 +31,7 @@ Suppose we have a CartoDB account whose username is *documentation* and we want 
 
 <div class="code-title code-request">REQUEST</div>
 {% highlight bash %}
-curl -v -d -F file=@/home/documentation/Documents/prism_tour.csv 
+curl -v -F file=@/home/documentation/Documents/prism_tour.csv
 "https://documentation.cartodb.com/api/v1/imports/?api_key=3102343c42da0f1ffe6014594acea8b1c4e7fd64"
 {% endhighlight %}
 
@@ -47,11 +47,11 @@ The response to this request would have the following format, yielding a success
 }
 {% endhighlight %}
 
-The `item_queue_id` value is a unique identifier that references the imported table in the targeted CartoDB account and allows to manipulate this new table in future requests.
+The `item_queue_id` value is a unique identifier that references the import process. Once this process has started, its information can be obtained doing a request to the imports endpoint as explained in the ["Check the status of an import process](http://docs.cartodb.com/cartodb-platform/import-api.html#check-the-status-of-an-import-process) section.
 
 ### Uploading from a remote URL
 
-Suppose we have a server at the hostname *examplehost.com* with a csv named *sample.csv* already uploaded. To create a table from it requires executing the following command on a Terminal window:
+Suppose we have a server at the hostname *examplehost.com* with a csv named *sample.csv* already uploaded. Creating a table from it requires executing the following command on a Terminal window:
 
 <div class="code-title code-request">REQUEST</div>
 {% highlight bash %}
@@ -76,7 +76,7 @@ The following concepts are the same for every endpoint in the API except when it
 
 ### Auth
 
-Manipulating data on a CartoDB account requires prior authentication using a unique identifier as a password. For the import API, a special identifier known as the API Key is used as a proof of authentication for each user account to authorise access to its data.  
+Manipulating data on a CartoDB account requires prior authentication using a unique identifier as a password. For the import API, a special identifier known as the API Key is used as a proof of authentication for each user account to authorize access to its data.  
 
 To execute an authorized request, api_key=YOURAPIKEY should be added to the request URL. The param can be also passed as POST param. We **strongly advise** using HTTPS when you are performing requests that include your `api_key`.
 
@@ -124,19 +124,25 @@ POST api/v1/imports
   When importing local files, you need to perform a POST with a file (see below an example call with CURL).
 
 - **url**  
-  When importing remote files, the full url to the publicly accessible file.
+  When importing remote files, the full URL to the publicly accessible file.
 
 - **type_guessing**  
   If set to *false* disables field type guessing (for Excel and CSVs). Optional. Default is *true*.
 
 - **quoted_fields_guessing**  
-  If set to *false* disables type guessing of CSV fields double quoted and of Excel files. Optional. Default is *true*.
+  If set to *false* disables type guessing of CSV fields that come inside double quotes. Optional. Default is *true*.
 
 - **content_guessing**  
-  Set it to *true* to enable content guessing and automatic geocoding based on results. Currently it only implemenents geocoding of countries. Optional. Default is *false*.
+  Set it to *true* to enable content guessing and automatic geocoding based on results. Currently it only implements geocoding of countries. Optional. Default is *false*.
 
-- **create_vis**
-  Set it to *true* to flag the import so when it finishes, it creates automatically Map after importing the Dataset. Optional. Default is *false* for API calls or old dashboard imports . If importing from the new dashboard it will automatically set this parameter to *true*.
+- **create_vis**  
+  Set it to *true* to flag the import so that when it finishes, it creates a Map automatically after importing the Dataset. Optional. Default is *false* for API calls or old dashboard imports. If importing from the new dashboard it will automatically set this parameter to *true*.
+  
+- **privacy**  
+  Used to set the privacy settings of the table or tables resulting from the import. If **create_vis** is set to true, the resulting visualization privacy settings will also be determined by this parameter. **privacy** can be set to:
+  * **public** The resulting table or visualization can be viewed by anyone
+  * **private** The resulting table or visualization can only be viewed by the uploader
+  * **link** The resulting table or visualization can only be viewed through a private link shared by the uploader
 
 - **table_name**  
   Used to duplicate one of your existing tables. **Do not mix with File/URL imports**.
@@ -157,7 +163,7 @@ POST api/v1/imports
   Used to upload from datasources, indicates which datasource to use. Check [here](https://github.com/CartoDB/cartodb/tree/master/services/datasources/lib/datasources) for an updated list of available datasources to use. **Initially intended for CartoDB Web Editor usage**.
 
 - **service_item_id**  
-  Used to upload from datasources, indicates data of the datasource. Check [here](https://github.com/CartoDB/cartodb/tree/master/services/datasources/lib/datasources) for an updated list of available datasources to use. **Initially intended for CartoDB Web Editor usage**.
+  Used to upload from datasources and indicates data of the datasource. Check [here](https://github.com/CartoDB/cartodb/tree/master/services/datasources/lib/datasources) for an updated list of available datasources to use. **Initially intended for CartoDB Web Editor usage**.
 
 
 #### Response
@@ -236,10 +242,10 @@ The response includes the following items:
   This element is currently deprecated.
   
 - **table_name**  
-  The final name of the created table in the targeted CartoDB account. It usually has the same name as the uploaded file unless there already exists a table with the same name (in this case, an integer number is appended to the table name).
+  The final name of the created table in the targeted CartoDB account. It usually has the same name as the uploaded file, unless there already exists a table with the same name (in this case, an integer number is appended to the table name).
   
 - **state**  
-  A string value indicating the current state of the importing process. It can have any of the following values: *uploading*, *importing*, *complete* or *failure*.
+  A string value indicating the current state of the importing process. It can have any of the following values: *uploading*, *importing*, *complete*, or *failure*.
   
 - **error_code**  
   A string containing an error message to be outputted in case of a failure during the import process, that is, when the *success* item has a *false* value (see below).
@@ -251,7 +257,7 @@ The response includes the following items:
   This element has a *null* value in this case.
   
 - **service_name**  
-  This element identifies the service type used to import the file. It can have any of these three values: *gdrive* for Google Drive imports, *dropbox* for Dropbox imports and *public_url* for url or local file imports.
+  This element identifies the service type used to import the file. It can have any of these three values: *gdrive* for Google Drive imports, *dropbox* for Dropbox imports and *public_url* for URL or local file imports.
   
 - **service_item_id**  
   A unique identifier that references the service item of the targeted import.
@@ -328,9 +334,9 @@ curl -v "https://{account}.cartodb.com/api/v1/imports/?api_key={account API Key}
 {% endhighlight %}
 
 
-## Sync tables
+## Sync Tables
 
-### List all the synchronised tables in a given account
+### List all the synchronized tables in a given account
 
 #### Definition
 
@@ -355,7 +361,7 @@ The response includes an **array** of items, each one containing the following e
   The actual name of the created sync table.
   
 - **interval**  
-  An integer value representing the number of seconds between synchronisations of the table contents.
+  An integer value representing the number of seconds between synchronizations of the table contents.
   
 - **url**  
   This element is currently deprecated.
@@ -438,7 +444,7 @@ curl -v "https://{account}.cartodb.com/api/v1/synchronizations/?api_key={account
 }
 {% endhighlight %}
 
-### Syncing a file from an URL
+### Syncing a file from a URL
 
 #### Definition
 
@@ -456,16 +462,16 @@ POST /api/v1/synchronizations
   The **public** URL address where the file to be imported is located.
   
 - **interval**  
-  The number of seconds for the synchronisation period. CartoDB supports the following values: *3600* (sync each hour), *86400* (sync each day), *604800* (sync each week) or *2592000* (sync each month). *Note*: Sync interval must be at least 900 (15 minutes).
+  The number of seconds for the synchronization period. CartoDB supports the following values: *3600* (sync each hour), *86400* (sync each day), *604800* (sync each week) or *2592000* (sync each month). *Note*: Sync interval must be at least 900 (15 minutes).
 
 - **type_guessing**  
   If set to *false* disables field type guessing (for Excel and CSVs). Optional. Default is *true*.
 
 - **quoted_fields_guessing**  
-  If set to *false* disables type guessing of CSV fields double quoted and of Excel files. Optional. Default is *true*.
+  If set to *false* disables type guessing of CSV fields that come inside double quotes. Optional. Default is *true*.
 
 - **content_guessing**  
-  Set it to *true* to enable content guessing and automatic geocoding based on results. Currently it only implemenents geocoding of countries. Optional. Default is *false*.
+  Set it to *true* to enable content guessing and automatic geocoding based on results. Currently it only implements geocoding of countries. Optional. Default is *false*.
 
 #### Response
 
@@ -475,7 +481,7 @@ The response includes the following items:
   This item refers to the internal CartoDB controller code responsible for performing the import.
   
 - **item_queue_id**  
-  A unique alphanumeric identifier that refers to the import process. It can be used to retrieve data related to the the created table.
+  A unique alphanumeric identifier that refers to the import process. It can be used to retrieve data related to the created table.
   
 - **id**  
   An alphanumeric identifier used internally by CartoDB as a reference to the import process.
@@ -484,7 +490,7 @@ The response includes the following items:
   This item is currently deprecated.
   
 - **interval**  
-  An integer value that stores the number of seconds between synchronisations.
+  An integer value that stores the number of seconds between synchronizations.
   
 - **state**  
   A string value indicating the current condition of the importing process.
@@ -566,9 +572,9 @@ curl -v -H "Content-Type: application/json" -d '{"url":"https://public.url.to.fi
 }
 {% endhighlight %}
 
-### Removing the synchronisation feature from a given table
+### Removing the synchronization feature from a given table
 
-A sync table can be converted to a standard table (that is, a table that does get never synced).
+A sync table can be converted to a standard table (a table that never gets synced).
 
 #### Definition
 
@@ -596,12 +602,12 @@ curl -v -X "DELETE" https://{account}.cartodb.com/api/v1/synchronizations/<impor
 
 #### Response
 
-A HTTP 204 response should result as a confirmation for the removal of the synchronisation feature for the target table.
+An HTTP 204 response should result as a confirmation for the removal of the synchronization feature for the target table.
 
 
 ### Check whether a sync table is syncing or not
 
-A large synced table may take up some time to get fully synced so it could be useful to check whether it finished refreshing its contents.
+A large synced table may take some time to get fully synced. IN the meantime, it could be useful to check whether it finished refreshing its contents.
 
 #### Definition
 
@@ -623,7 +629,7 @@ GET /api/v1/synchronizations/<import_id>/sync_now
 The response includes the following items:
 
 - **state**  
-  A string value indicating the whether the request succeeded or not.
+  A string value indicating whether the request succeeded or not.
 
 #### Example
 
@@ -638,9 +644,9 @@ curl -v -X "GET" "https://{account}.cartodb.com/api/v1/synchronizations/1234abcd
 }
 {% endhighlight %}
 
-### Force a synchronisation action on a sync table
+### Force a synchronization action on a sync table
 
-Sync tables have their contents synchronised with the source file in periodic time intervals as specified by the user during the creation process. However, one could desire having a table synchronised at an arbitrary moment of time.
+Sync tables have their contents synchronized with the source file in periodic time intervals as specified by the user during the creation process. However, a table can be synchronized at an arbitrary moment in time if desired.
 
 #### Definition
 
@@ -682,11 +688,12 @@ curl -v --request "PUT" "https://{account}.cartodb.com/api/v1/synchronizations/<
 {% endhighlight %}
 
 
-## The ArcGIS connector
+## The ArcGIS&trade; Connector
 
-### Import an ArcGIS layer
+### Import an ArcGIS&trade; layer
 
-ArcGIS layers stored in an ArcGIS server can get imported as CartoDB tables. Such layers must be accessible via an **ArcGIS API REST URL** whose structure is as follows:
+ArcGIS&trade; layers stored in ArcGIS Server&trade; can get imported as CartoDB tables. Such layers must be accessible via an **ArcGIS&trade; API REST URL** whose structure is as follows:
+
 {% highlight html %}
 http://<host>/<site>/rest/services/<folder>/<serviceName>/<serviceType>/<layer_ID>
 {% endhighlight %}
@@ -704,7 +711,7 @@ POST   api/v1/imports
   This value **MUST** be set to *0*. **Different values do not guarantee correct imports**.
 
 - **service_item_id**  
-  The ArcGIS API REST URL where the ArcGIS layer is located.
+  The ArcGIS&trade; API REST URL where the ArcGIS&trade; layer is located.
 
 - **service_name**  
   This value **MUST** be set to *arcgis* to make use of this connector.
@@ -737,9 +744,9 @@ curl -v -H "Content-Type: application/json" -d '{"interval":"0","service_item_id
 {% endhighlight %}
 
 
-### Syncing an ArcGIS layer
+### Syncing an ArcGIS&trade; layer
 
-An ArcGIS layer can get imported to a CartoDB account as a synchronised table. The target ArcGIS layer must be accessible via an ArcGIS API REST URL having the following structure:
+An ArcGIS&trade; layer can get imported to a CartoDB account as a synchronized table. The target ArcGIS&trade; layer must be accessible via an ArcGIS&trade; API REST URL with the following structure:
 {% highlight html %}
 http://<host>/<site>/rest/services/<folder>/<serviceName>/<serviceType>/<layer_ID>
 {% endhighlight %}
@@ -754,10 +761,10 @@ POST /api/v1/synchronizations
 #### Params
 
 - **interval**  
-  The number of seconds for the synchronisation period. CartoDB supports the following values: *3600* (sync each hour), *86400* (sync each day), *604800* (sync each week) or *2592000* (sync each month). *Note*: Sync interval must be at least 900 (15 minutes).
+  The number of seconds for the synchronization period. CartoDB supports the following values: *3600* (sync each hour), *86400* (sync each day), *604800* (sync each week) or *2592000* (sync each month). *Note*: Sync interval must be at least 900 (15 minutes).
 
 - **service_item_id**  
-  The ArcGIS API REST URL where the ArcGIS dataset is located.
+  The ArcGIS&trade; API REST URL where the ArcGIS&trade; dataset is located.
 
 - **service_name**  
   This value **MUST** be set to *arcgis* to make use of this connector.
@@ -773,7 +780,7 @@ The response includes the following items:
   This item refers to the internal CartoDB controller code responsible for performing the import.
   
 - **item_queue_id**  
-  A unique alphanumeric identifier that refers to the import process. It can be used to retrieve data related to the the created table.
+  A unique alphanumeric identifier that refers to the import process. It can be used to retrieve data related to the created table.
   
 - **id**  
   An alphanumeric identifier used internally by CartoDB as a reference to the import process.
@@ -782,7 +789,7 @@ The response includes the following items:
   This item is currently deprecated.
   
 - **interval**  
-  An integer value that stores the number of seconds between synchronisations.
+  An integer value that stores the number of seconds between synchronizations.
 
 - **url**  
   This value is empty in this case.
@@ -830,7 +837,7 @@ The response includes the following items:
   This value is set to *arcgis*.
 
 - **service_item_id**  
-  This item contains the ArcGIS API REST URL targeting the imported ArcGIS layer.
+  This item contains the ArcGIS&trade; API REST URL targeting the imported ArcGIS&trade; layer.
 
 #### Example
 
@@ -868,9 +875,9 @@ curl -v -H "Content-Type: application/json" -d '{"interval":"604800","service_it
 {% endhighlight %}
 
 
-### Import an ArcGIS dataset
+### Import an ArcGIS&trade; dataset
 
-This option allows to import **at once** a complete set of layers belonging to an ArcGIS dataset. Such a dataset must be accessible via an ArcGIS API REST URL with the following structure:
+This option allows you to import **at once** a complete set of layers belonging to an ArcGIS&trade; dataset. Such a dataset must be accessible via an ArcGIS&trade; API REST URL with the following structure:
 {% highlight html %}
 http://<host>/<site>/rest/services/<folder>/<serviceName>/<serviceType>/
 {% endhighlight %}
@@ -888,7 +895,7 @@ POST   api/v1/imports
   This value **MUST** be set to *0*. **Different values do not guarantee correct imports**.
 
 - **service_item_id**  
-  The ArcGIS API REST URL where the ArcGIS dataset is located.
+  The ArcGIS&trade; API REST URL where the ArcGIS&trade; dataset is located.
 
 - **service_name**  
   This value **MUST** be set to *arcgis* to make use of this connector.

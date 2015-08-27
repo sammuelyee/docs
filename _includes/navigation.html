@@ -1,7 +1,7 @@
 <header class="navbar">
   <div class="nav-header">
     <p class="nav-brand">
-      <a href="{{ '/' | prepend: site.baseurl }}" class="brand"><span>CartoDB</span></a>
+      <a href="{{ site.cartodb-baseurl }}" class="brand"><span>CartoDB</span></a>
     </p>
 
     <a href="#" class="nav-button"></a>
@@ -45,7 +45,6 @@
       <li class="{% if tutorials or page.slug == 'tutorials' %}selected{% endif %}"><a href="{{ '/tutorials.html' | prepend: site.baseurl }}">TUTORIALS</a></li>
       <li class="{% if page.slug == 'tips-and-tricks' %}selected{% endif %}"><a href="{{ '/tips-and-tricks.html' | prepend: site.baseurl }}">TIPS & TRICKS</a></li>
       <li class="{% if page.slug == 'faqs' %}selected{% endif %}"><a href="{{ '/faqs.html' | prepend: site.baseurl }}">FAQs</a></li>
-      <li class="cartodb-link">go to <a href="{{ site.cartodb-baseurl }}">CartoDB</a></li>
     </ul>
   </nav>
 </header>
