@@ -121,15 +121,23 @@ When you create a table in the CartoDB Editor by importing data from a public UR
 
 Download the URL file and check that it contains information. If the URL provides you with a .zip containing more than one file, CartoDB will only upload one of them. To create your table properly you can import only the data file you need via CartoDB’s Import window (keep in mind that if you’re working with a shapefile it’s components must be uploaded in one [zip](http://docs.cartodb.com/tutorials/import_shapefile_in_cartodb.html). A list of data file formats that CartoDB accepts for upload is [here](http://docs.cartodb.com/cartodb-editor.html#supported-file-formats). We also recommend checking our [Common Data](http://docs.cartodb.com/cartodb-editor.html#common-data) section to see if your public URL’s data is already easily available through our site.
 
-### How can I export my table without it’s georeferenced data?
+### How can I export my dataset without its georeferenced data?
 
-In some cases you might want to export your data out of CartoDB without including it’s location information. You’re not able to manually delete the_geom column from your table, but you can use SQL to create a new table with only the data you need exported. In the Editor’s Custom SQL query panel, write
+In some cases, you might want to export your dataset without the location information (georeferenced data). While you are not able to manually delete `the_geom` column from your dataset, you can apply an SQL query to create a new dataset and specify which data to include in your export. From the CartoDB Editor, click *SQL* from the CartoDB sidebar to open the Custom SQL query. Enter the following request:
 
-{% highlight sql %}
+	{% highlight sql %}
 SELECT {column name}, {another column name} FROM {tablename}
 {% endhighlight %}
 
-Replace {column name} and {another column name} with names of columns you want to include in your export. You can add more columns to your result by comma adding more comma-separated column names. Replace {tablename} with the name of your current table. Hit Apply query, then you will be able to click “Edit” and export a CSV of the current result.
+- Replace `column name` and `another column name` with the names of columns to include in your export
+	
+	**Tip:** You can add more columns to your result by adding more comma-separated column names. 
+- Replace `tablename` with the name of your current dataset
+- Click *Apply query*
+
+	The data view refreshes, excluding your georeferenced data.
+	
+- Click *Export* from the Edit menu to export your dataset
 
 ### How can I export my dataset without it’s georeference data?
 
