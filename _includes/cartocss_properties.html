@@ -2,13 +2,13 @@
 </div>-->
 ##CartoCSS Properties
 
-Each CartoCSS map category has its own configurable properties. You can apply multiple symbolizers and properties to the same map layer. Navigate to a selected category to view the available properties.
+Each CartoCSS map category has its own configurable properties. You can apply multiple symbolizers and properties to the same map layer. Navigate to a selected symbolizer to view a description of the CartoCSS property, an example of the code, the default value, and the available values. <ADD LINK TO USE CASES FILE?>
 
 <<ADD LINK TO COMPOSITE OPERATIONS SECTION? change existing section in cartodb editor section. comp-ops are described here in particular properties>
 
 ***Note:** CartoDB is currently maintaining this library of common properties since [Mapbox](https://github.com/mapbox/carto/blob/master/docs/latest.md) is no longer doing active development for CartoCSS.*
 
-| **CartoCSS Category:** |
+| **CartoCSS Symbolizer:** |
 ------------ | ------------- |
 | | [Polygon](#polygon) (polygon) | [Line](#line) (lines and polygons)| [Markers](#markers) (points, lines, and polygons)
 | | [Shield](#shield) (points and lines) | [Line Pattern](#line-pattern) (lines and polygons) | [Polygon Pattern](#polygon-pattern) (polygons) 
@@ -24,7 +24,6 @@ Each CartoCSS map category has its own configurable properties. You can apply mu
 | **Other CartoCSS Parameters:** | 
 ------------ | -------------
 | | [Common Elements](#common-elements) | [Map Background and String Elements](#map-background-and-string-elements) | [Debug mode](#debug)
-| | Composite Operations
 
 In addition to customizing the look of your maps using CartoCSS, Torque maps have specific advanced options that you can edit. For details, see [Torque CSS](#cartocss_torque.html).
 
@@ -39,7 +38,7 @@ In addition to customizing the look of your maps using CartoCSS, Torque maps hav
 | | [opacity float](#opacity-float) | 
 
 #### comp-op `keyword`
-The composite operation define how a layer behaves, relative to layers atop and below it. For example, you can style the way colors of overlapping markers interact.
+The composite operation define how a layer behaves, relative to layers atop and below it. For example, you can style the way colors of overlapping markers interact. 
 
 	comp-op: src-over;
 	
@@ -47,6 +46,8 @@ The composite operation define how a layer behaves, relative to layers atop and 
 
 **Available Values**:
 `clear``src``dst``src-over``dst-over``src-in``dst-in``src-out``dst-out``src-atop``dst-atop``xor``plus``minus``multiply``screen``overlay``darken``lighten``color-dodge``color-burn``hard-light``soft-light``difference``exclusion``contrast``invert``invert-rgb``grain-merge``grain-extract``hue``saturation``color``value`
+
+**Tip:** See [CartoCSS Composite Operations](#cartocss_comp_op.html) for a description of composite operation effects.
 
 
 #### direct-image-filters `functions`
@@ -190,6 +191,8 @@ WHAT DOES THAT MEAN?
 
 
 ## polygon
+
+<Add overview about polygons and stying with cartocss? Add link to polygon cartocss examples?>
 
 | | [polygon-fill](#polygon-fill-color) | [polygon-opacity](#polygon-opacity-float) | [polygon-gamma](#polygon-gamma-float)
 | | [polygon-gamma-method](#polygon-gamma-method-keyword) | [polygon-clip](#polygon-clip-boolean)| [polygon-simplify](#polygon-simplify-float)
@@ -485,7 +488,7 @@ Applies transformation functions to the geometry.
 
 	line-geometry-transform: none;
 	
-**Default Value**: `none`, geometry is not be transformed.
+**Default Value**: `none`, geometry is not transformed.
 
 **Available Values**: See [functions](#functions).
 
@@ -502,200 +505,264 @@ The composite operation that defines how the symbolizer behaves relative to laye
 
 ## markers
 
-| | [polygon-fill](#polygon-fill-color) | [polygon-opacity](#polygon-opacity-float) | [polygon-gamma](#polygon-gamma-float)
-
+| | [marker-file](#marker-file-uri) | [marker-opacity](#marker-opacity-float) | [marker-fill-opacity](#marker-fill-opacity-float)
+| | [marker-line-color](#marker-line-color-color) | [marker-line-width](#marker-line-width-float) | [marker-line-opacity](#marker-line-opacity-float)
+| | [marker-placement](#marker-placement-keyword) | [marker-multi-policy](#marker-multi-policy-keyword) | [marker-type](#marker-type-keyword)
+| | [marker-width](#marker-width-expression) | [marker-height](#marker-height-expression) | [marker-fill](#marker-fill-color)
+| | [marker-allow-overlap](#marker-allow-overlap-boolean) | [marker-ignore-placement](#marker-ignore-placement-boolean) | [marker-spacing](#marker-spacing-float)
+| | [marker-max-error](#marker-max-error-float) | [marker-transform](#marker-transform-functions) | [marker-clip](#marker-clip-boolean)
+| | [marker-smooth](#marker-smooth-float) | [marker-geometry-transform](#marker-geometry-transform-functions) | [marker-comp-op](#marker-comp-op-keyword)
 
 ##### marker-file `uri`
+Displays an SVG file at each marker placement. If no file is specified, an ellipse is shown for the marker.
 
+	marker-file: url(http://www.clipartbest.com/cliparts/nTX/AGX/nTXAGXyTB.svg);
+	
+**Default Value**: `none`, an ellipse or circle (if the height is equal to the width) appears.
 
-Default Value: 
-_(An ellipse or circle, if width equals height)_
+WHAT HAPPENS IF THE WIDTH DOES NOT EQUAL THE HEIGHT, and no SVG file is specified?
 
-An SVG file that this marker shows at each placement. If no file is given, the marker will show an ellipse.
-* * *
+**Available Values**: See [uri](#uri).
+
 
 ##### marker-opacity `float`
+Sets the overall opacity of the marker, overriding any stroke-opacity and fill-opacity settings.
 
+WHAT IS THE stroke-opacity property? That does not seem to be defined on its own?
 
-Default Value: 1
-_(The stroke-opacity and fill-opacity will be used)_
+	marker-opacity: 1;
+	
+**Default Value**: `1`, the stroke-opacity and fill-opacity are used???
 
-The overall opacity of the marker, if set, overrides both the opacity of both the fill and stroke
-* * *
+**Available Values**: See [float](#float).
+
 
 ##### marker-fill-opacity `float`
+The fill opacity of the marker.
 
+	marker-fill-opacity: 1;
+	
+**Default Value**: `1`, the fill-opacity is opaque.
 
-Default Value: 1
-_(opaque)_
+**Available Values**: See [float](#float).
 
-The fill opacity of the marker
-* * *
 
 ##### marker-line-color `color`
-
-
-Default Value: black
-
-
 The color of the stroke around a marker shape.
-* * *
+
+IS STROKE commonly known or should we define it?
+
+    marker-line-color: black;
+
+**Default Value**: `black`
+
+**Available Values**: See [color](#color).
+
 
 ##### marker-line-width `float`
+The width of the stroke around a marker shape, in pixels. 
+(This is positioned on the boundary, so high values can cover the area itself.)???
 
+    marker-line-width: undefined;
+	
+**Default Value**: undefined pixels???
 
-Default Value: undefined
+**Available Values**: See [float](#float).
 
-
-The width of the stroke around a marker shape, in pixels. This is positioned on the boundary, so high values can cover the area itself.
-* * *
 
 ##### marker-line-opacity `float`
+The opacity of the marker line.
 
+  marker-line-opacity: 1;
 
-Default Value: 1
-_(opaque)_
+**Default Value**: `1`, the line is opaque.
 
-The opacity of a line
-* * *
+**Available Values**: See [float](#float).
+
 
 ##### marker-placement `keyword`
-`point``line``interior`
+Places markers on a point, in the center of a polygon, or on a line.
 
-Default Value: point
-_(Place markers at the center point (centroid) of the geometry)_
+    marker-placement: point;
 
-Attempt to place markers on a point, in the center of a polygon, or if markers-placement:line, then multiple times along a line. &#x27;interior&#x27; placement can be used to ensure that points placed on polygons are forced to be inside the polygon interior
-* * *
+**Default Value**: `point`, places markers at the center point (centroid) of the geometry.
+
+**Available Values**: `point``line``interior`
+
+**Note:** If placing markers on a line, markers appear multiple times along a line. You can apply &#x27;interior&#x27; to ensure correct placement on a line. Points placed on polygons are forced to be inside the polygon interior.
+
+**Tip**: See the note for how this property interacts with the [Marker-Multi-Policy](#marker-multi-policy-keyword).
+
 
 ##### marker-multi-policy `keyword`
-`each``whole``largest`
+Enables you to control the rendering behavior for multi-geometries.
 
-Default Value: each
-_(If a feature contains multiple geometries and the placement type is either point or interior then a marker will be rendered for each)_
+  marker-multi-policy: each;
 
-A special setting to allow the user to control rendering behavior for &#x27;multi-geometries&#x27; (when a feature contains multiple geometries). This setting does not apply to markers placed along lines. The &#x27;each&#x27; policy is default and means all geometries will get a marker. The &#x27;whole&#x27; policy means that the aggregate centroid between all geometries will be used. The &#x27;largest&#x27; policy means that only the largest (by bounding box areas) feature will get a rendered marker (this is how text labeling behaves by default).
-* * *
+**Default Value**: `each`, all geometries display a marker.
+
+**Available Values**: `each``whole``largest`
+
+- The &#x27;whole&#x27; policy value indicates that the aggregate centroid between all geometries is applied
+
+- The &#x27;largest&#x27; policy value indicates that only the largest (by bounding box areas) renders a marker (similar to default text labeling behavior)
+
+**Note:** If the [marker-placement](#marker-placement-keyword) property is also applied and the value is either `point` or `interior`, a marker is rendered for each placement.  If you specified `line` as the marker-placement value, this *marker-multi-policy* property is not applied and all geometries display a marker. 
+
 
 ##### marker-type `keyword`
-`arrow``ellipse`
+Sets the default marker-type. If a SVG file is not defined with the [marker-file](#marker-file-uri) property, an arrow, ellipse, or circle (if height is equal to width) is rendered. 
 
-Default Value: ellipse
+  marker-type: ellipse;
 
+**Default Value**: `ellipse`
 
-The default marker-type. If a SVG file is not given as the marker-file parameter, the renderer provides either an arrow or an ellipse (a circle if height is equal to width)
-* * *
+**Available Values**: `arrow``ellipse`
+
+**Note:** A circle may be automatically rendered if the marker height is equal to the marker width  IS THIS CORRECT???
+
 
 ##### marker-width `expression`
+If a default [marker-type](#marker-type-keyword) property is defined, this property indicates the width of the marker-type.
 
+   marker-width: 10.0;
 
-Default Value: 10
+**Default Value**: `10`???
 
+WHAT IS THE SUGGESTED RANGE?
 
-The width of the marker, if using one of the default types.
-* * *
+**Available Values**: See [expression](#expression).
+
 
 ##### marker-height `expression`
+If a default [marker-type](#marker-type-keyword) property is defined, this property indicates the height of the marker-type.
 
+   marker-height: 10.0;
 
-Default Value: 10
+**Default Value**: `10`, ???
 
+WHAT IS THE SUGGESTED RANGE?
 
-The height of the marker, if using one of the default types.
-* * *
+**Available Values**: See [expression](#expression).
+
 
 ##### marker-fill `color`
+The fill color of the marker.
 
+   marker-fill: blue;
+	
+**Default Value**: `blue`
 
-Default Value: blue
+**Available Values**: See [color](#color).
 
-
-The color of the area of the marker.
-* * *
 
 ##### marker-allow-overlap `boolean`
+Shows or hides overlapping markers on a map.
 
+    marker-allow-overlap: false;
+	
+**Default Value**: `false`, does not allow markers to overlap. Overlapping markers are hidden.
 
-Default Value: false
-_(Do not allow makers to overlap with each other - overlapping markers will not be shown.)_
+**Available Values**: See [boolean](#boolean).
 
-Control whether overlapping markers are shown or hidden.
-* * *
 
 ##### marker-ignore-placement `boolean`
+Prevents other placement properties from being rendered.
 
+    marker-ignore-placement: false;
 
-Default Value: false
-_(do not store the bbox of this geometry in the collision detector cache)_
+**Default Value**: `false`, does not store
+placement geometries in the collision detector cache of the bbox (bounding box)
 
-value to control whether the placement of the feature will prevent the placement of other features
-* * *
+**Available Values**: See [boolean](#boolean).
+
 
 ##### marker-spacing `float`
+The space between repeated markers, in pixels. If spacing is less than the marker size, or larger than the line segment length, no markers are displayed.
 
+  marker-line-spacing: spacing;
 
-Default Value: 100
+**Default Value**: `100`??? RANGE????
 
+**Available Values**: See [float](#float).
 
-Space between repeated markers in pixels. If the spacing is less than the marker size or larger than the line segment length then no marker will be placed
-* * *
 
 ##### marker-max-error `float`
+The maximum difference between the actual marker placement and the marker-spacing parameter.
 
+	marker-max-error: 0.2;
 
-Default Value: 0.2
+**Default Value**: `0.2`
 
+**Available Values**: See [float](#float).
 
-The maximum difference between actual marker placement and the marker-spacing parameter. Setting a high value can allow the renderer to try to resolve placement conflicts with other symbolizers.
-* * *
+**Note:**  Setting a high value can resolve placement conflicts with other symbolizers and improve rendering performance.
+
 
 ##### marker-transform `functions`
+SVG transformation definition????
 
+	marker-transform: functions;
+	
+**Default Value**: no transformation applied by default.
 
-Default Value: 
-_(No transformation)_
+**Available Values**: See [functions](#functions).
 
-SVG transformation definition
-* * *
 
 ##### marker-clip `boolean`
+By default, geometries are clipped to map bounds. You can disable line clips to avoid rendering artifacts on a map if are having performance issues.
 
+    marker-clip: true; 
 
-Default Value: true
-_(geometry will be clipped to map bounds before rendering)_
+**Default Value**: `true`, geometry is clipped to map bounds before rendering.
 
-geometries are clipped to map bounds by default for best rendering performance. In some cases users may wish to disable this to avoid rendering artifacts.
-* * *
+**Available Values**: See [boolean](#boolean).
+
 
 ##### marker-smooth `float`
+Smooths out geometry angles.
 
+	marker-smooth: float;
 
-Default Value: 0
-_(no smoothing)_
-Range: 0-1
-Smooths out geometry angles. 0 is no smoothing, 1 is fully smoothed. Values greater than 1 will produce wild, looping geometries.
-* * *
+**Default Value**: `0`, no smoothing is applied.
+
+**Available Values**: See [float](#float).
+
+**Note:** 0 indicates no smoothing is applied. 1 indicates that it is fully smoothed. Values greater than 1 produce wild, looping geometries. It is suggested to use a range between 0-1 for this value.
+
 
 ##### marker-geometry-transform `functions`
+Applies transformation functions to the geometry.
 
+	marker-geometry-transform: none;
+	
+**Default Value**: `none`, geometry is not transformed.
 
-Default Value: none
-_(geometry will not be transformed)_
+**Available Values**: See [functions](#functions).
 
-Allows transformation functions to be applied to the geometry.
-* * *
 
 ##### marker-comp-op `keyword`
-`clear``src``dst``src-over``dst-over``src-in``dst-in``src-out``dst-out``src-atop``dst-atop``xor``plus``minus``multiply``screen``overlay``darken``lighten``color-dodge``color-burn``hard-light``soft-light``difference``exclusion``contrast``invert``invert-rgb``grain-merge``grain-extract``hue``saturation``color``value`
+The composite operation that defines how the symbolizer behaves relative to layers atop or below it.
 
-Default Value: src-over
-_(add the current symbolizer on top of other symbolizer)_
+	marker-comp-op: src-over;
 
-Composite operation. This defines how this symbolizer should behave relative to symbolizers atop or below it.
-* * *
+**Default Value**: `src-over`, adds the current symbolizer on top of other symbolizers.
+
+**Available Values**: `clear``src``dst``src-over``dst-over``src-in``dst-in``src-out``dst-out``src-atop``dst-atop``xor``plus``minus``multiply``screen``overlay``darken``lighten``color-dodge``color-burn``hard-light``soft-light``difference``exclusion``contrast``invert``invert-rgb``grain-merge``grain-extract``hue``saturation``color``value`
 
 
 ## shield
+| | [sheild-name](#shield-name-expression) | [sheild-file](#shield-file-uri) | [sheild-face-name](#shield-face-name-string)
+| | [shield-unlock-image](#shield-unlock-image-boolean) | [shield-size](#shield-size-float) | [sheild-fill](#3shiled-fill-color)
+| | [sheild-placement](#sheild-placement-keyword) | [shield-avoid-edges](#shield-avoid-edges-boolean) | [sheild-allow-overlap](#sheild-allowo-overlap-boolean)
+| | [sheild-min-distance](#sheild-min-distance-float) | [sheild-spacing](#sheild-spacing-float) | [shield-min-padding](#sheild-min-padding-float)
+| | [1](#1) | [2](#2) | [3](#3)
+| | [1](#1) | [2](#2) | [3](#3)
+| | [1](#1) | [2](#2) | [3](#3)
+| | [1](#1) | [2](#2) | [3](#3)
+| | [1](#1) | [2](#2) | [3](#3)
+
+
 
 ##### shield-name `expression`
 

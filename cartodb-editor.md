@@ -7,23 +7,20 @@ redirect_from:
 - "/documentation/using-cartodb.html"
 ---
 
-## One Minute Introduction
+## CartoDB Editor Overview
 
-<p class="wrap-border"><img src="/img/layout/cartodb-editor/editor.png" alt="Using sync data" /></p>
+The CartoDB Editor is a dashboard that contains *your datasets* and *your maps*. The following workflow highlights how you can create a map from your dashboard in 30 seconds.
 
-Your dashboard is your baseline. It has two main sections: **datasets** and **maps**. To get started, you can create a map from your dataset by following these simple steps:
+Workflow | Details
+------------ | -------------
+Create a new dataset | You can connect a dataset using any of the [(supported file formats](#supported-file-formats)), or create an empty dataset. 
+| For details, see [Connect Dataset](#connect-dataset).
+Visualize your data and create a map | The CartoDB Editor contains many features that guide you through the process of creating a map and selecting how your data appears. You can also customize the style of your map.
+| For details about some of the CartoDB Editor features, see [Data Visualization](#data-visualization) [Edit Maps](#edit-map-options), [Map Wizards](#map-wizards), and [Managing Your Data](#managing-your-data).
+Publish and share your map | Once you visualize and publish a map, you can get a link to share the map, embed it to a website or blog, or add your map to another application.
+| For details, see [Publish and Share Your Map](#publish-and-share-your-map)
 
-1. Connect **dataset**. You can import a dataset or "start from scratch" by selecting "Empty dataset."
-2. Create a new **map** from your dataset.
-3. Share it (publicly or privately).
-
-CartoDB accepts data in different formats (Excel, CSV, XML, SHP, GeoJSON, [see all](#supported-file-formats)) and from different sources (see all possibilities for [importing data](#importing-data)). Our interactive wizards make it easy and fun to map your data. Choose a basemap, define legends and infowindows ([what is an infowindow?](#infowindows)), and select how to show your data with custom display options.
-
-_XML files are not directly supported, we support KML and GPX files instead._
-
-When your map is complete, you may keep it private, share it with your colleagues, or publish it to the web by circulating its custom URL or embedding it in your blog.
-
-In this guide, we'll walk through many features of the CartoDB web interface. Our [Map Academy](http://academy.cartodb.com/) lessons will get you started with the basics of map creation. If you are ready to experiment with our powerful APIs, then go to [CartoDB.js]({{ '/cartodb-platform/cartodb-js.html' | prepend: site.baseurl }}) and [SQL API]({{ '/cartodb-platform/sql-api.html' | prepend: site.baseurl }}).
+**Tip:** You can also view guided lessons of the map workflow from the [Map Academy](http://academy.cartodb.com/), or begin using our [open source APIs](http://docs.cartodb.com/cartodb-platform.html).
 
 ## Datasets
 
@@ -616,9 +613,9 @@ This tool adjusts three point properties: the size of the marker (a numeric valu
 The Marker Stroke allows you to edit the width of your points' border or outline (a value between 0-40), their color (using Hex codes or by selecting from the color palettex), and their opacity (a value between 0-1).
 
 - **Composite Operation**  
-Change how the colors of overlapping geometries will interact with one another. You can select from: multiply, screen, overlay, darken, lighten, color-dodge and color-burn. Each of these operations has a different effect on how the overlapping sections of markers are displayed. Refer to [Composite Operations](http://docs.cartodb.com/cartodb-editor.html#composite-operations) for a deeper overview on how blend modes work. You can explore the options available [here](https://www.mapbox.com/tilemill/docs/guides/comp-op/).
+Change how the colors of overlapping geometries interact with one another. You can select from  *multiply, screen, overlay, darken, lighten, color-dodge* and *color-burn*. See [CartoCSS Composite Operations](##CartoCSS Composite Operations) for a description of composite operation effects. 
 
-- **Label Text**  
+- **Label Text**   
 Select the field that you would like to act as a label (if any).
 
 - **Label Font**  
@@ -677,11 +674,18 @@ Choose the way that data is divided into buckets. You can select from: Jenks, Eq
 - **Color Ramp**  
 Select the colors of your dataset. You can customize these using CartoCSS, which we will cover more in-depth, but take a quick look [here](https://www.mapbox.com/tilemill/docs/manual/carto/) in the meantime.
 
-- **Described under [Simple](http://docs.cartodb.com/cartodb-editor.html#simple)**  
-  - Composite Operation
-  - Label Text
+- **Marker Width**  
+See to [CartoCSS](http://docs.cartodb.com/cartodb-editor.html#cartocss) for an explanation of marker width.
 
-Refer to [CartoCSS documentation](http://docs.cartodb.com/cartodb-editor.html#cartocss) for an explanation of marker width, and marker stroke.
+- **Marker Stroke**  
+See to [CartoCSS](http://docs.cartodb.com/cartodb-editor.html#cartocss) for an explanation of marker width.
+
+- **Composite Operation**  
+Change how the colors of overlapping geometries interact with one another. You can select from  *multiply, screen, overlay, darken, lighten, color-dodge* and *color-burn*. See [CartoCSS Composite Operations](##CartoCSS Composite Operations) for a description of composite operation effects. 
+
+- **Label Text**    
+Select the field that you would like to act as a label (if any).
+
 
 #### Category
 Display data in different colors based on categories.
@@ -711,7 +715,7 @@ Set the color and opacity of bubble markers.
 Edits multiple values: the width of your bubble stroke, a.k.a. its border or outline (a value between 0-40); the color (using Hex codes or by selecting from the color palette), and the opacity (a value between 0-1).
 
 - **Composite Operation**  
-Change how the colors of overlapping geometries will interact with one another. You can select from: multiply, screen, overlay, darken, lighten, color-dodge and color-burn. Each of these operations has a different effect on how the overlapping sections of markers are displayed. Refer to [Composite Operations](http://docs.cartodb.com/cartodb-editor.html#composite-operations) for a deeper overview on how blend modes work. You can explore the options available [here](https://www.mapbox.com/tilemill/docs/guides/comp-op/).
+Change how the colors of overlapping geometries interact with one another. You can select from  *multiply, screen, overlay, darken, lighten, color-dodge* and *color-burn*. See [CartoCSS Composite Operations](##CartoCSS Composite Operations) for a description of composite operation effects. 
 
 - **Described under [Choropleth](http://docs.cartodb.com/cartodb-editor.html#choropleth)**
   - Column
@@ -739,7 +743,8 @@ Edit multiple values: the width of your polygon stroke, a.k.a. its border or out
   Adjust the size of the polygons on your map.
 
 - **Composite Operation**  
-Change how the colors of overlapping geometries will interact with one another. You can select from: multiply, screen, overlay, darken, lighten, color-dodge and color-burn. Each of these operations has a different effect on how the overlapping sections of markers are displayed. Refer to [Composite Operations](http://docs.cartodb.com/cartodb-editor.html#composite-operations) for a deeper overview on how blend modes work. You can explore the options available [here](https://www.mapbox.com/tilemill/docs/guides/comp-op/).
+Change how the colors of overlapping geometries interact with one another. You can select from  *multiply, screen, overlay, darken, lighten, color-dodge* and *color-burn*. See [CartoCSS Composite Operations](##CartoCSS Composite Operations) for a description of composite operation effects. 
+
 
 - **Described under [Choropleth](http://docs.cartodb.com/cartodb-editor.html#choropleth)**
   - Buckets
@@ -772,7 +777,7 @@ Set the total length of your map visualization.
 Edit the number of animation groupings. Fewer steps will create a more step-by-step or choppy data animation with more data in each "step." A greater number of steps will look smoother. This correlates to whether your data is being displayed by day, week, month, etc.
 
 - **Blend Mode**  
-Style effects for how layered data is blended during the animation. Blend modes use color composite operations. Available modes include lighter, multiply, source-over, and xor. Refer to [Composite Operations](http://docs.cartodb.com/cartodb-editor.html#composite-operations) for a deeper overview on how blend modes work. You can explore the options available [here](https://www.mapbox.com/tilemill/docs/guides/comp-op/).
+Style effects for how layered data is blended during the animation. Blend modes use color composite operations. Available modes include lighter, multiply, source-over, and xor. See [CartoCSS Composite Operations](##CartoCSS Composite Operations) for a description of composite operation effects. 
 
 - **Trails**  
 Select whether data points display a "trail," or faded image after they disappear from your map. Choose a value between 0 and 5: 5 will display a longer, more-lasting trail and 0 will not show a trail.
@@ -837,15 +842,6 @@ On-hover infowindows display when your cursor is "hovering" above an infowindow.
 #### CartoCSS
 
 {% include cartocss.html %}
-
-##### Composite Operations
-Composite operations style the way colors of overlapping markers interact with each other. You can think of them as blend modes or filters, similar to blend operations in Photoshop. Composite operations are available in the Simple, Choropleth, Bubble, Density, and Torque maps.
-
-The available options within the wizards interface include multiply, screen, overlay, darken, lighten, color-dodge, and color-burn. In addition, blend modes specific to Torque include lighter, multiply, source-over, and xor. For more information on the different options available, refer to the documentation on [Mapbox](https://www.mapbox.com/tilemill/docs/guides/comp-op/).
-
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/markercompop.png' | prepend: site.baseurl }}" alt="Marker CartoCSS Composite Operations" /></p>
-
-Customize the marker composite operations within the CartoCSS by editing the marker-comp-op option.
 
 #### Legends
 
