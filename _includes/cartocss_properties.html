@@ -752,202 +752,240 @@ The composite operation that defines how the symbolizer behaves relative to laye
 
 
 ## shield
-| | [sheild-name](#shield-name-expression) | [sheild-file](#shield-file-uri) | [sheild-face-name](#shield-face-name-string)
-| | [shield-unlock-image](#shield-unlock-image-boolean) | [shield-size](#shield-size-float) | [sheild-fill](#3shiled-fill-color)
-| | [sheild-placement](#sheild-placement-keyword) | [shield-avoid-edges](#shield-avoid-edges-boolean) | [sheild-allow-overlap](#sheild-allowo-overlap-boolean)
-| | [sheild-min-distance](#sheild-min-distance-float) | [sheild-spacing](#sheild-spacing-float) | [shield-min-padding](#sheild-min-padding-float)
-| | [1](#1) | [2](#2) | [3](#3)
-| | [1](#1) | [2](#2) | [3](#3)
-| | [1](#1) | [2](#2) | [3](#3)
-| | [1](#1) | [2](#2) | [3](#3)
-| | [1](#1) | [2](#2) | [3](#3)
+If you are displaying road shields on a map (for example, highway markers), define a shield file and apply shield styles.
 
+| | [shield-file](#shield-file-uri) | [shield-name](#shield-name-expression) | [shield-face-name](#shield-face-name-string)
+| | [shield-unlock-image](#shield-unlock-image-boolean) | [shield-size](#shield-size-float) | [shield-fill](#shield-fill-color)
+| | [shield-placement](#shield-placement-keyword) | [shield-avoid-edges](#shield-avoid-edges-boolean) | [shield-allow-overlap](#shield-allow-overlap-boolean)
+| | [shield-min-distance](#shield-min-distance-float) | [shield-spacing](#shield-spacing-float) | [shield-min-padding](#shield-min-padding-float)
+| | [shield-wrap-width](#shield-wrap-width-unsigned) | [shield-wrap-before](#shield-wrap-before-boolean) | [shield-wrap-character](#shield-wrap-character-string)
+| | [shield-halo-fill](#shield-halo-fill-color) | [shield-halo-radius](#shield-halo-radius-float) | [shield-character-spacing](#shield-character-spacing-unsigned)
+| | [shield-line-spacing](#shield-line-spacing-unsigned) | [shield-text-dx](#shield-text-dx-float) | [shield-text-dy](#shield-text-dy-float)
+| | [shield-dx](#shield-dx-float) | [shield-dy](#shield-dy-float) | [shield-opacity](#shield-opacity-float)
+| | [shield-text-opacity](#shield-text-opacity-float) | [shield-horizontal-alignment](#shield-horizontal-alignment-keyword) | [shield-vertical-alignment](#shield-vertical-alignment-keyword)
+| | [shield-placement-type](#shield-placement-type-keyword) | [shield-placements](shield-placements-string) | [shield-text-transform](#shield-text-transform-keyword)
+| | [shield-justify-alignment](#shield-justify-alignment-keyword) | [shield-transform](#shield-transform-functions) | [shield-clip](#shield-clip-boolean)
+| | [shield-comp-op](#shield-comp-op-keyword) 
+
+##### shield-file `uri`
+The shield-file property is required before defining any shield styles. Define an image file to render the shield image.
+
+    shield-file: url('marker.svg');
+	
+**Default Value**: none
+
+**Available Values**: See [uri](#uri). 
 
 
 ##### shield-name `expression`
+The text name of a shield symbol on a map. Appears on top of the [shield-file](#shield-file-uri) image by default.
 
+    shield-name: '[name_example]';
 
-Default Value: undefined
+**Default Value**: undefined, the expression value is a data column specified by using brackets, as shown in the sample code above.
 
+**Available Values**: See [expression](#expression).
 
-Value to use for a shield&quot;s text label. Data columns are specified using brackets like [column_name]
-* * *
+**Note:** See [shield-unlock-image](#shield-unlock-image-boolean) to change how the shield-text appears relative to this shield-file image.
 
-##### shield-file `uri`
-
-
-Default Value: none
-
-
-Image file to render behind the shield text
-* * *
 
 ##### shield-face-name `string`
+The font name and style for the shield-name property.
 
+    shield-face-name: ‘Open Sans Bold’;
+	
+**Default Value**: undefined
 
-Default Value: 
+**Available Values**: See [string](#string).
 
-
-Font name and style to use for the shield text
-* * *
 
 ##### shield-unlock-image `boolean`
+Sets the text alignment of the [shield-name](#shield-name-expression) relative to the [shield-file](#sheild-file-uri). 
 
+	shield-unlock-image: false;
 
-Default Value: false
-_(text alignment relative to the shield image uses the center of the image as the anchor for text positioning.)_
+**Default Value**: `false`, the center of the shield-file image is the anchor for text positioning
 
-This parameter should be set to true if you are trying to position text beside rather than on top of the shield image
-* * *
+**Available Values**: See [boolean](#boolean).
+
+**Note:** If you are positioning text next to (as opposed to on top of a shield-file image), set the value to `true`.
+
 
 ##### shield-size `float`
+The size of the text for the shield-name property, in pixels.
 
+  shield-size: 12;
 
-Default Value: undefined
+**Default Value**: undefined
 
+**Available Values**: See [float](#float).
 
-The size of the shield text in pixels
-* * *
 
 ##### shield-fill `color`
+The fill color of the shield text.
 
+    shield-fill: #e16363;
+	
+**Default Value**: undefined
 
-Default Value: undefined
+**Available Values**: See [color](#color).
 
-
-The color of the shield text
-* * *
 
 ##### shield-placement `keyword`
-`point``line``vertex``interior`
+Places shields on top of points, along multiple line places, on the vertexes of polygons, or in the interior inside a polygon.
 
-Default Value: point
+	shield-placement: point;
 
+**Default Value**: `point`, the shield appears on the top of map points.
 
-How this shield should be placed. Point placement attempts to place it on top of points, line places along lines multiple times per feature, vertex places on the vertexes of polygons, and interior attempts to place inside of polygons.
-* * *
+**Available Values**: `point``line``vertex``interior`
+
 
 ##### shield-avoid-edges `boolean`
+Prevents shields from intersecting with tile boundaries. 
 
+	shield-avoid-edges: false;
+	
+**Default Value**: `false`, shields do not intersect.
 
-Default Value: false
+**Available Values**: See [boolean](#boolean).
 
-
-Avoid placing shields that intersect with tile boundaries.
-* * *
 
 ##### shield-allow-overlap `boolean`
+Controls how shields appear when overlapping with other elements on the map.
 
+	shield-allow-overlap: false;
+	
+**Default Value**: `false`, shields do not overlap with other map elements. Overlapping shields are hidden.
 
-Default Value: false
-_(Do not allow shields to overlap with other map elements already placed.)_
+**Available Values**: See [boolean](#boolean).
 
-Control whether overlapping shields are shown or hidden.
-* * *
 
 ##### shield-min-distance `float`
+The minimum distance between the next shield symbol. (This does not apply to multiple shields at one point).
 
+	shield-min-distance: 0;
 
-Default Value: 0
+**Default Value**: `0`, 
 
+**Available Values**: See [float](#float).
 
-Minimum distance to the next shield symbol, not necessarily the same shield.
-* * *
 
 ##### shield-spacing `float`
+The space between repeated shields, in pixels, on a line. 
 
+	shield-spacing: 0;
 
-Default Value: 0
+**Default Value**: `0`
 
+**Available Values**: See [float](#float).
 
-The spacing between repeated occurrences of the same shield on a line
-* * *
 
 ##### shield-min-padding `float`
+The minimum distance, in pixels, that a shield is placed from the edge of a metatile (the tile/buffer space relationship).
 
+	shield-min-padding: 0;
 
-Default Value: 0
+**Default Value**: `0`
 
+**Available Values**: See [float](#float).
 
-Minimum distance a shield will be placed from the edge of a metatile.
-* * *
 
 ##### shield-wrap-width `unsigned`
+The length of characters that appears before the [shield-name](#shield-name-expression) text wraps.
 
+	shield-wrap-width: 0;
+	
+**Default Value**: `0`
 
-Default Value: 0
+**Available Values**: Unsigned integer
 
-
-Length of a chunk of text in characters before wrapping text
-* * *
 
 ##### shield-wrap-before `boolean`
+Determines how the wrap-text behaves relative to the wrap-width.
 
+	shield-wrap-before: false;
+	
+**Default Value**: `false`, wrapped text appears longer than the wrap-width.
 
-Default Value: false
+**Available Values**: See [boolean](#boolean).
 
+**Note:** If value is `true`, the text wraps before wrap-width is reached.
 
-Wrap text before wrap-width is reached. If false, wrapped lines will be a bit longer than wrap-width.
-* * *
 
 ##### shield-wrap-character `string`
+Enables you to wrap text with a character, rather than with a space. This is especially useful for long text names.
 
+    shield-wrap-character: '_';
+	
+**Default Value**:  ??, nothing listed from Mapbox resource library, but character in sample code above found on one of their blogs.
+https://github.com/mapbox/carto/blob/master/docs/latest.md#shield-wrap-character-string
 
-Default Value:  
+**Available Values**: See [string](#string)
 
+Example: New Bedford Massachusetts
+ https://www.mapbox.com/tilemill/docs/guides/styling-labels/
+ For example we could alter our compound label example to separate the two fields only with an underscore. Setting the wrap character to _ (and also setting a very low wrap width to force wrapping) ensures that the two fields will always be written on their own lines.
 
-Use this character instead of a space to wrap long names.
-* * *
 
 ##### shield-halo-fill `color`
 
+------------ | -------------
+Description | Specifies the color of the halo around the text.
+Sample CartoCSS Code | `shield-halo-fill: #FFFFFF;`
+Default Value | `#FFFFFF`, the halo color is white by default
+Available Values | See [color](#color).
+Related Use Cases | <list of links to public maps, tutorials, faqs, etc.> 
+	| https://www.mapbox.com/blog/design-control-with-regular-expressions-in-mapbox-studio/ 	
 
-Default Value: #FFFFFF
-_(white)_
-
-Specifies the color of the halo around the text.
-* * *
 
 ##### shield-halo-radius `float`
+The radius of the halo, in pixels.
 
+	shield-halo-radius: 0;
+	
+**Default Value**: `0`, no halo is applied.
 
-Default Value: 0
-_(no halo)_
+**Available Values**:  See [float](#float). 	
 
-Specify the radius of the halo in pixels
-* * *
 
 ##### shield-character-spacing `unsigned`
+The horizontal space, in pixels, between point characters.
 
+	shield-character-spacing: unsigned;
 
-Default Value: 0
+**Default Value**: `0`
 
+**Available Values**: Unsigned integer.
 
-Horizontal spacing between characters (in pixels). Currently works for point placement only, not line placement.
-* * *
+**Note:** This not supported for line placement.
+
 
 ##### shield-line-spacing `unsigned`
+The vertical spacing, in pixels, between two lines of multiline labels.
 
+	shield-line-spacing: ??;
 
-Default Value: undefined
+**Default Value**: undefined
 
+**Available Values**: Unsigned integer
 
-Vertical spacing between lines of multiline labels (in pixels)
-* * *
 
 ##### shield-text-dx `float`
+Places the shield text within a fixed range of pixels, +&#x2F;- along the X axis. A positive value shifts the text to the right.
 
+  shield-text-dx: 0;
 
-Default Value: 0
+**Default Value**: `0`, ???
 
+**Available Values**: See [float](#float).
 
-Displace text within shield by fixed amount, in pixels, +&#x2F;- along the X axis.  A positive value will shift the text right
-* * *
 
 ##### shield-text-dy `float`
 
 
 Default Value: 0
+**Available Values**: See [string](#string).
 
 
 Displace text within shield by fixed amount, in pixels, +&#x2F;- along the Y axis.  A positive value will shift the text down
@@ -957,6 +995,7 @@ Displace text within shield by fixed amount, in pixels, +&#x2F;- along the Y axi
 
 
 Default Value: 0
+**Available Values**: See [string](#string).
 
 
 Displace shield by fixed amount, in pixels, +&#x2F;- along the X axis.  A positive value will shift the text right
@@ -966,6 +1005,7 @@ Displace shield by fixed amount, in pixels, +&#x2F;- along the X axis.  A positi
 
 
 Default Value: 0
+**Available Values**: See [string](#string).
 
 
 Displace shield by fixed amount, in pixels, +&#x2F;- along the Y axis.  A positive value will shift the text down
@@ -975,6 +1015,7 @@ Displace shield by fixed amount, in pixels, +&#x2F;- along the Y axis.  A positi
 
 
 Default Value: 1
+**Available Values**: See [string](#string).
 
 
 The opacity of the image used for the shield
@@ -984,6 +1025,7 @@ The opacity of the image used for the shield
 
 
 Default Value: 1
+**Available Values**: See [string](#string).
 
 
 The opacity of the text placed on top of the shield
@@ -993,6 +1035,7 @@ The opacity of the text placed on top of the shield
 `left``middle``right``auto`
 
 Default Value: auto
+**Available Values**: See [string](#string).
 
 
 The shield&#x27;s horizontal alignment from its centerpoint
@@ -1002,6 +1045,7 @@ The shield&#x27;s horizontal alignment from its centerpoint
 `top``middle``bottom``auto`
 
 Default Value: middle
+**Available Values**: See [string](#string).
 
 
 The shield&#x27;s vertical alignment from its centerpoint
@@ -1011,6 +1055,7 @@ The shield&#x27;s vertical alignment from its centerpoint
 `dummy``simple`
 
 Default Value: dummy
+**Available Values**: See [string](#string).
 
 
 Re-position and&#x2F;or re-size shield to avoid overlaps. &quot;simple&quot; for basic algorithm (using shield-placements string,) &quot;dummy&quot; to turn this feature off.
@@ -1020,6 +1065,7 @@ Re-position and&#x2F;or re-size shield to avoid overlaps. &quot;simple&quot; for
 
 
 Default Value: 
+**Available Values**: See [string](#string).
 
 
 If &quot;placement-type&quot; is set to &quot;simple&quot;, use this &quot;POSITIONS,[SIZES]&quot; string. An example is `shield-placements: &quot;E,NE,SE,W,NW,SW&quot;;` 
@@ -1029,6 +1075,7 @@ If &quot;placement-type&quot; is set to &quot;simple&quot;, use this &quot;POSIT
 `none``uppercase``lowercase``capitalize`
 
 Default Value: none
+**Available Values**: See [string](#string).
 
 
 Transform the case of the characters
@@ -1038,6 +1085,7 @@ Transform the case of the characters
 `left``center``right``auto`
 
 Default Value: auto
+**Available Values**: See [string](#string).
 
 
 Define how text in a shield&#x27;s label is justified
@@ -1048,6 +1096,7 @@ Define how text in a shield&#x27;s label is justified
 
 Default Value: 
 _(No transformation)_
+**Available Values**: See [string](#string).
 
 SVG transformation definition
 * * *
@@ -1066,12 +1115,17 @@ geometries are clipped to map bounds by default for best rendering performance. 
 
 Default Value: src-over
 _(add the current symbolizer on top of other symbolizer)_
+**Available Values**: See [string](#string).
 
 Composite operation. This defines how this symbolizer should behave relative to symbolizers atop or below it.
 * * *
 
 
 ## line-pattern
+
+| | [1](#1) | [2](#2) | [3](#3)
+| | [1](#1) | [2](#2) | [3](#3)
+| | [1](#1) | [2](#2) | [3](#3)
 
 ##### line-pattern-file `uri`
 
