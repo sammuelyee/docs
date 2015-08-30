@@ -23,7 +23,7 @@ Each CartoCSS map category has its own configurable properties. You can apply mu
 
 | **Other CartoCSS Parameters:** | 
 ------------ | -------------
-| | [Common Elements](#common-elements) | [Map Background and String Elements](#map-background-and-string-elements) | [Debug mode](#debug)
+| | [Common Elements](#common-elements) | [Map Background and String Elements](#map-background-and-string-elements) | [Debug mode](#debug-mode-string)
 
 In addition to customizing the look of your maps using CartoCSS, Torque maps have specific advanced options that you can edit. For details, see [Torque CSS](#cartocss_torque.html).
 
@@ -782,9 +782,9 @@ The text name of a shield symbol on a map. Appears on top of the [shield-file](#
 
     shield-name: '[name_example]';
 
-**Default Value**: undefined, the expression value is a data column specified by using brackets, as shown in the sample code above.
+**Default Value**: undefined
 
-**Available Values**: See [expression](#expression).
+**Available Values**: See [expression](#expression). The expression value is a data column specified by using brackets, as shown in the sample code above.
 
 **Note:** See [shield-unlock-image](#shield-unlock-image-boolean) to change how the shield-text appears relative to this shield-file image.
 
@@ -814,7 +814,7 @@ Sets the text alignment of the [shield-name](#shield-name-expression) relative t
 ##### shield-size `float`
 The size of the text for the shield-name property, in pixels.
 
-  shield-size: 12;
+	shield-size: 12;
 
 **Default Value**: undefined
 
@@ -866,7 +866,7 @@ The minimum distance between the next shield symbol. (This does not apply to mul
 
 	shield-min-distance: 0;
 
-**Default Value**: `0`, 
+**Default Value**: `0`, ???
 
 **Available Values**: See [float](#float).
 
@@ -876,7 +876,7 @@ The space between repeated shields, in pixels, on a line.
 
 	shield-spacing: 0;
 
-**Default Value**: `0`
+**Default Value**: `0`???
 
 **Available Values**: See [float](#float).
 
@@ -886,7 +886,7 @@ The minimum distance, in pixels, that a shield is placed from the edge of a meta
 
 	shield-min-padding: 0;
 
-**Default Value**: `0`
+**Default Value**: `0`???
 
 **Available Values**: See [float](#float).
 
@@ -896,7 +896,7 @@ The length of characters that appears before the [shield-name](#shield-name-expr
 
 	shield-wrap-width: 0;
 	
-**Default Value**: `0`
+**Default Value**: `0`???
 
 **Available Values**: Unsigned integer
 
@@ -918,10 +918,9 @@ Enables you to wrap text with a character, rather than with a space. This is esp
 
     shield-wrap-character: '_';
 	
-**Default Value**:  ??, nothing listed from Mapbox resource library, but character in sample code above found on one of their blogs.
-https://github.com/mapbox/carto/blob/master/docs/latest.md#shield-wrap-character-string
+**Default Value**:  undefined
 
-**Available Values**: See [string](#string)
+**Available Values**: See [string](#string).
 
 Example: New Bedford Massachusetts
  https://www.mapbox.com/tilemill/docs/guides/styling-labels/
@@ -954,7 +953,7 @@ The horizontal space, in pixels, between point characters.
 
 	shield-character-spacing: unsigned;
 
-**Default Value**: `0`
+**Default Value**: `0`???
 
 **Available Values**: Unsigned integer.
 
@@ -964,7 +963,7 @@ The horizontal space, in pixels, between point characters.
 ##### shield-line-spacing `unsigned`
 The vertical spacing, in pixels, between two lines of multiline labels.
 
-	shield-line-spacing: ??;
+	shield-line-spacing: none
 
 **Default Value**: undefined
 
@@ -982,143 +981,143 @@ Places the shield text within a fixed range of pixels, +&#x2F;- along the X axis
 
 
 ##### shield-text-dy `float`
+Places the shield text within a fixed range of pixels, +&#x2F;- along the Y axis. A positive value shifts the text down.
 
+	shield-text-dy: 0;
+	
+**Default Value**: `0`, ???
 
-Default Value: 0
-**Available Values**: See [string](#string).
+**Available Values**: See [float](#float).
 
-
-Displace text within shield by fixed amount, in pixels, +&#x2F;- along the Y axis.  A positive value will shift the text down
-* * *
 
 ##### shield-dx `float`
+Places the shield within in a fixed range of pixels, +&#x2F;- along the X axis. A positive value shifts the shield to the right.
 
+**Default Value**: `0`
 
-Default Value: 0
-**Available Values**: See [string](#string).
+**Available Values**: See [float](#float).
 
-
-Displace shield by fixed amount, in pixels, +&#x2F;- along the X axis.  A positive value will shift the text right
-* * *
 
 ##### shield-dy `float`
+Places the shield within a fixed range of pixels, +&#x2F;- along the Y axis. A positive value shifts the shield down.
 
+	shield-dy: 0;
+	
+**Default Value**: `0`, ???
 
-Default Value: 0
-**Available Values**: See [string](#string).
+**Available Values**: See [float](#float).
 
-
-Displace shield by fixed amount, in pixels, +&#x2F;- along the Y axis.  A positive value will shift the text down
-* * *
 
 ##### shield-opacity `float`
+Sets the opacity of the [shield-file](#shield-file-uri) image.
 
+	shield-opacity: 1;
 
-Default Value: 1
-**Available Values**: See [string](#string).
+**Default Value**: `1`
 
+**Available Values**: See [float](#float).
 
-The opacity of the image used for the shield
-* * *
 
 ##### shield-text-opacity `float`
+The opacity of the text placed on top of the shield.
 
+	shield-text-opacity: 1;
 
-Default Value: 1
-**Available Values**: See [string](#string).
+**Default Value**: `1`
 
+**Available Values**: See [float](#float).
 
-The opacity of the text placed on top of the shield
-* * *
 
 ##### shield-horizontal-alignment `keyword`
-`left``middle``right``auto`
+The horizontal alignment of the shield from its center point.
 
-Default Value: auto
-**Available Values**: See [string](#string).
+	shield-horizontal-alignment auto;
 
+**Default Value**: `auto`
 
-The shield&#x27;s horizontal alignment from its centerpoint
-* * *
-
-##### shield-vertical-alignment `keyword`
-`top``middle``bottom``auto`
-
-Default Value: middle
-**Available Values**: See [string](#string).
+**Available Values**: `left``middle``right``auto`
 
 
-The shield&#x27;s vertical alignment from its centerpoint
-* * *
+##### shield-vertical-alignment `keyword
+The vertical alignment of the shield from its center point.
+
+	shield-vertical-alignment: middle'
+
+**Default Value**: `middle`
+
+**Available Values**: `top``middle``bottom``auto`
+
 
 ##### shield-placement-type `keyword`
-`dummy``simple`
+Enables you to reposition and resize the shield to avoid overlaps.
 
-Default Value: dummy
-**Available Values**: See [string](#string).
+	shield-placement-type: dummy;
 
+**Default Value**: `dummy`, turns off and disables this feature.
 
-Re-position and&#x2F;or re-size shield to avoid overlaps. &quot;simple&quot; for basic algorithm (using shield-placements string,) &quot;dummy&quot; to turn this feature off.
-* * *
+**Available Values**: `dummy``simple`
+
+**Note:** The `simple` value is the shield placement string used for basic algorithms.
+
 
 ##### shield-placements `string`
+If [shield-placement-type](#shield-placement-type-keyword) is set to `simple`, you can use this property to set the position of the shield placement.
 
+	shield-placements: E,NE,SE,W,NW,SW;
 
-Default Value: 
+**Default Value**: none
+
 **Available Values**: See [string](#string).
 
-
-If &quot;placement-type&quot; is set to &quot;simple&quot;, use this &quot;POSITIONS,[SIZES]&quot; string. An example is `shield-placements: &quot;E,NE,SE,W,NW,SW&quot;;` 
-* * *
 
 ##### shield-text-transform `keyword`
-`none``uppercase``lowercase``capitalize`
+Identifies the text case of the shield-name.
 
-Default Value: none
-**Available Values**: See [string](#string).
+	shield-text-transform: none;
 
+**Default Value**: `none`
 
-Transform the case of the characters
-* * *
+**Available Values**: `none``uppercase``lowercase``capitalize`
+
 
 ##### shield-justify-alignment `keyword`
-`left``center``right``auto`
+Defines how the shield-name text is aligned.
 
-Default Value: auto
-**Available Values**: See [string](#string).
+	shield-justify-alignment: auto;
 
+**Default Value**: `auto`
 
-Define how text in a shield&#x27;s label is justified
-* * *
+**Available Values**: `left``center``right``auto`
+
 
 ##### shield-transform `functions`
-
-
-Default Value: 
-_(No transformation)_
-**Available Values**: See [string](#string).
-
 SVG transformation definition
-* * *
+
+	shield-transform: none
+
+**Default Value** : none
+
+**Available Values**: See [functions](#functions).
+
 
 ##### shield-clip `boolean`
+By default, geometries are clipped to map bounds. You can disable clips to avoid rendering artifacts on a map if are having performance issues.
 
+	shield-clip: true;
 
-Default Value: true
-_(geometry will be clipped to map bounds before rendering)_
+**Default Value**: `true`, geometry is clipped to map bounds before rendering.
 
-geometries are clipped to map bounds by default for best rendering performance. In some cases users may wish to disable this to avoid rendering artifacts.
-* * *
+**Available Values**: See [boolean](#boolean).
+
 
 ##### shield-comp-op `keyword`
-`clear``src``dst``src-over``dst-over``src-in``dst-in``src-out``dst-out``src-atop``dst-atop``xor``plus``minus``multiply``screen``overlay``darken``lighten``color-dodge``color-burn``hard-light``soft-light``difference``exclusion``contrast``invert``invert-rgb``grain-merge``grain-extract``hue``saturation``color``value`
 
-Default Value: src-over
-_(add the current symbolizer on top of other symbolizer)_
-**Available Values**: See [string](#string).
 
-Composite operation. This defines how this symbolizer should behave relative to symbolizers atop or below it.
-* * *
+	shield-comp-op: src-over;
+
+**Default Value**: `src-over`, adds the current symbolizer on top of other symbolizers.
+
+**Available Values**: `clear``src``dst``src-over``dst-over``src-in``dst-in``src-out``dst-out``src-atop``dst-atop``xor``plus``minus``multiply``screen``overlay``darken``lighten``color-dodge``color-burn``hard-light``soft-light``difference``exclusion``contrast``invert``invert-rgb``grain-merge``grain-extract``hue``saturation``color``value`
 
 
 ## line-pattern
@@ -1201,6 +1200,10 @@ Composite operation. This defines how this symbolizer should behave relative to 
 
 
 ## polygon-pattern
+
+| | [1](#1) | [2](#2) | [3](#3)
+| | [1](#1) | [2](#2) | [3](#3)
+| | [1](#1) | [2](#2) | [3](#3)
 
 ##### polygon-pattern-file `uri`
 
@@ -1295,6 +1298,10 @@ Composite operation. This defines how this symbolizer should behave relative to 
 
 ## raster
 
+| | [1](#1) | [2](#2) | [3](#3)
+| | [1](#1) | [2](#2) | [3](#3)
+| | [1](#1) | [2](#2) | [3](#3)
+
 ##### raster-opacity `float`
 
 
@@ -1346,17 +1353,11 @@ Composite operation. This defines how this symbolizer should behave relative to 
 Default Value: undefined
 
 
-TODO
-* * *
-
 ##### raster-colorizer-default-color `color`
 
 
 Default Value: undefined
 
-
-TODO
-* * *
 
 ##### raster-colorizer-epsilon `float`
 
@@ -1364,20 +1365,18 @@ TODO
 Default Value: undefined
 
 
-TODO
-* * *
-
 ##### raster-colorizer-stops `tags`
 
 
 Default Value: undefined
 
 
-TODO
-* * *
-
 
 ## point
+
+| | [1](#1) | [2](#2) | [3](#3)
+| | [1](#1) | [2](#2) | [3](#3)
+| | [1](#1) | [2](#2) | [3](#3)
 
 ##### point-file `uri`
 
@@ -1444,6 +1443,10 @@ Composite operation. This defines how this symbolizer should behave relative to 
 
 
 ## text
+
+| | [1](#1) | [2](#2) | [3](#3)
+| | [1](#1) | [2](#2) | [3](#3)
+| | [1](#1) | [2](#2) | [3](#3)
 
 ##### text-name `expression`
 
@@ -1754,6 +1757,10 @@ Composite operation. This defines how this symbolizer should behave relative to 
 
 ## building
 
+| | [1](#1) | [2](#2) | [3](#3)
+| | [1](#1) | [2](#2) | [3](#3)
+| | [1](#1) | [2](#2) | [3](#3)
+
 ##### building-fill `color`
 
 
@@ -1782,27 +1789,23 @@ The height of the building in pixels.
 * * *
 
 
-## debug
+## debug-mode `string`
+The mode for debug rendering.
 
-##### debug-mode `string`
+	debug-mode: collision;
 
+**Default Value**: `collision`
 
-Default Value: collision
-
-
-The mode for debug rendering
-* * *
-
-
+**Available Values**:  See [string](#string).
 
 
 ### CartoCSS Values
 
-The following values can be applied to properties in CartCSS.
+The following values can be applied to properties in CartoCSS.
 
 ### Color
 
-CartoCSS accepts a variety of syntaxes for colors - HTML-style hex values, rgb, rgba, hsl, and hsla. It also supports the predefined HTML colors names, like `yellow` and `blue`.
+CartoCSS accepts a variety of syntaxes for colors - HTML-style hex values, rgb, rgba, hsl, and hsla. It also supports the predefined HTML colors names, such as `yellow` and `blue`.
 
 ``` css
 #line {
@@ -1816,33 +1819,33 @@ line-color: yellow;
 }
 ```
 
-Especially of note is the support for hsl, which can be [easier to reason about than rgb()](http://mothereffinghsl.com/). Carto also includes several color functions [borrowed from less](http://lesscss.org/#-color-functions):
+**Note:**  Using Hsl [(hue, saturation, lightness)](http://mothereffinghsl.com/) color values are often easier than rgb()values. Carto also includes several color functions [borrowed from Less, a CSS pre-processor](http://lesscss.org/#-color-functions):
 
-``` css
+	```
 // lighten and darken colors
 lighten(#ace, 10%);
 darken(#ace, 10%);
 
-// saturate and desaturate
+	// saturate and desaturate
 saturate(#550000, 10%);
 desaturate(#00ff00, 10%);
 
-// increase or decrease the opacity of a color
+	// increase or decrease the opacity of a color
 fadein(#fafafa, 10%);
 fadeout(#fefefe, 14%);
 
-// spin rotates a color around the color wheel by degrees
+	// spin rotates a color around the color wheel by degrees
 spin(#ff00ff, 10);
 
-// mix generates a color in between two other colors.
+	// mix generates a color in between two other colors.
 mix(#fff, #000, 50%);
 ```
 
-These functions all take arguments which can be color variables, literal colors, or the results of other functions operating on colors.
+Each of above examples uses color variables, literal colors, or is the result of other functions operating on colors.
 
 ### Float
 
-Float is a fancy way of saying 'number'. In CartoCSS, you specify _just a number_ - unlike CSS, there are no units, but everything is specified in pixels.
+In CartoCSS, float values are numbers specified in pixels. Unlike CSS, numbers are not units, but pixels.
 
 ``` css
 #line {
@@ -1850,7 +1853,7 @@ line-width: 2;
 }
 ```
 
-It's also possible to do simple math with number values:
+You can also apply simple math using float number values. For example:
 
 ``` css
 #line {
@@ -1864,7 +1867,7 @@ line-width: 4 % 2; // modulus
 
 ### URI
 
-URI is a fancy way of saying URL. When an argument is a URI, you use the same kind of `url('place.png')` notation that you would with HTML. Quotes around the URL aren't required, but are highly recommended. URIs can be paths to places on your computer, or on the internet.
+A uniform resource identifier (URI) is a string of characters used to identify the name of a resource, typically a path on your computer or an internet address. Similar to using an URL, you can use HTML. Quotes to define a URI (although not required, it is suggested).
 
 ```css
 #markers {
@@ -1874,7 +1877,13 @@ marker-file: url('marker.png');
 
 ### String
 
-A string is basically just text. In the case of CartoCSS, you're going to put it in quotes. Strings can be anything, though pay attention to the cases of `text-name` and `shield-name` - they actually will refer to features, which you refer to by putting them in brackets, as seen in the example below.
+In CartoCSS, string values are identified as the text within the quotations. In the following example, the name of the font is the string value.
+
+	shield-face-name: ‘Open Sans Bold’;
+
+**Note:** String values are different than [text-name](#text-name-expression) values (which are text values defined with brackets).
+
+THIS EXAMPLE NEEDS CLARIFICATION- NOT SHOWING STRING EXAMPLE, SHOWING TEXT-NAME?
 
 ```css
 #labels {
@@ -1882,9 +1891,10 @@ text-name: "[MY_FIELD]";
 }
 ```
 
+
 ### Boolean
 
-Boolean means yes or no, so it accepts the values `true` or `false`.
+Boolean values are either `true` (Yes, the property is enabled) or `false` (No, the property is turned off).
 
 ```css
 #markers {
@@ -1894,7 +1904,7 @@ marker-allow-overlap:true;
 
 ### Expressions
 
-Expressions are statements that can include fields, numbers, and other types in a really flexible way. You have run into expressions before, in the realm of 'fields', where you'd specify `"[FIELD]"`, but expressions allow you to drop the quotes and also do quick addition, division, multiplication, and concatenation from within Carto syntax.
+Expressions are flexible statements that can include fields, numbers, and other types of defined variables. For example, you can build an expression by entering a field name, a relation, set a predefined value, or enter a range of values.
 
 ```css
 #buildings {
@@ -1903,7 +1913,7 @@ building-height: [HEIGHT_FIELD] * 10;
 ```
 
 ### Numbers
-Numbers are comma-separated lists of one or more number in a specific order. They're used in line dash arrays, in which the numbers specify intervals of line, break, and line again.
+CartoCSS number values are comma-separated lists, identifying one or more numbers, in a specific order. For example, a number value is used is the [line-dasharray](#line-dasharray-numbers) property, which specifies a pair of numbers for the value.
 
 ```css
 #disputedboundary {
@@ -1912,7 +1922,7 @@ line-dasharray: 1, 4, 2;
 ```
 
 ### Percentages
-The percentage symbol, `%` universally indicates `value/100`. Use percentages with ratio-related properties, such as the opacity of a shape or color, as shown in the following example.
+The percentage symbol, `%` universally indicates `value/100`. Use percentage values with ratio-related properties, such as the opacity of a shape or color, as shown in the following example.
 
 	css
 #world {
