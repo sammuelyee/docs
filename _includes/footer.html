@@ -59,7 +59,7 @@
             <dd><a class="Footer-link" href="/tutorials.html">Tutorials</a></dd>
             <dd><a class="Footer-link" href="{{ site.academy-baseurl }}">The map academy</a></dd>
             <dd><a class="Footer-link" href="{{ site.github-baseurl }}">View source</a></dd>
-            <dd><a class="Footer-link" href="{{ site.github-baseurl }}">View source</a></dd>
+            <dd><a class="Footer-link" href="{{ site.cartodb-baseurl }}/contributing/">Contributions</a></dd>
           </dl>
         </li>
 
@@ -92,15 +92,34 @@
               <a href="{{ site.cartodb-baseurl }}"></a>
             </span>
             <p class="Footer-credits h-left">
-              <span>{{ site.time | date: "%Y" }} CartoDB</span><br>
-              <span>Maps your world's data</span>
+              <span>CartoDB&trade; {{ site.time | date: "%Y" }}</span><br>
+              <a href="{{ site.cartodb-baseurl }}/love/" class="Footer-link">Love</a> · <a href="{{ site.cartodb-baseurl }}/terms/" class="Footer-link">Terms of Service</a> · <a href="{{ site.cartodb-baseurl }}/privacy/" class="Footer-link">Privacy Policy</a>
             </p>
           </li>
           <li class="Footer-right">
-            <p>
-              <a class="Footer-link" href="{{ site.cartodb-baseurl }}/terms/">Terms of Service</a> · 
-              <a class="Footer-link" href="{{ site.cartodb-baseurl }}/privacy/">Privacy Policy</a>
-            </p>
+            <div class="Social-container">
+              <ul class="Social-links">
+                <li class="Social-item"><a class="Social-link Social-twitter" href="{{ site.twitter-baseurl }}"></a></li>
+                <li class="Social-item"><a class="Social-link Social-facebook" href="{{ site.facebook-baseurl }}"></a></li>
+                <li class="Social-item"><a class="Social-link Social-linkedin" href="{{ site.linkedin-baseurl }}"></a></li>
+              </ul>
+
+              {% capture hubspot_css %}{% include css/hubspot.css %}{% endcapture %}
+
+              <div class="Newsletter-container u-tspace-l">
+                <div class="Newsletter">
+                  <script charset="utf-8" src="//js.hsforms.net/forms/current.js"></script>
+                  <script>
+                    hbspt.forms.create({
+                      portalId: '{{ site.hubspot_id }}',
+                      formId: '2ed2a125-0e48-4d52-a03c-a1cb90f0433b',
+                      submitButtonClass: 'hs-newsletter',
+                      css: '{{ hubspot_css | split: " " | join: " " }}'
+                   });
+                  </script>
+                </div>
+              </div>
+            </div>
           </li>
         </ul>
       </div>

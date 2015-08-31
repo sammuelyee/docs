@@ -3,7 +3,7 @@
 
 .Footer {
   background: #2E3C43;
-  color: #636D72;
+  color: #979EA1;
   font: 14px "Proxima Nova Rg";
   position: relative;
 }
@@ -36,7 +36,7 @@
 }
 
 .Footer-link {
-  color: #636D72;
+  color: #979EA1;
   line-height: 28px;
   transition: color .15s ease;
 }
@@ -64,7 +64,8 @@
 }
 
 .Footer-columns,
-.Footer-colophon-container {
+.Footer-colophon-container,
+.Social-container {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -74,9 +75,16 @@
 .Footer-left,
 .Footer-right {
   padding-top: 40px;
+}
 
-  flex: 0 0 50%;
-  max-width: 50%;
+.Footer-left {
+  flex: 0 0 40%;
+  max-width: 40%;
+}
+
+.Footer-right {
+  flex: 0 0 60%;
+  max-width: 60%;
 }
 
 .Footer-credits span:first-child {
@@ -96,15 +104,110 @@
 }
 
 .Navbar-brand a {
-    display: block;
-    overflow: hidden;
-    width: 40px;
-    height: 40px;
-    background: url(../img/logo-footer.svg) center no-repeat;
+  display: block;
+  overflow: hidden;
+  width: 40px;
+  height: 40px;
+  background: url(../img/logo-footer.svg) center no-repeat;
 }
 
 .Footer-right p {
   text-align: right;
+}
+
+.Social-links {
+  margin-top: 10px;
+  padding: 0 20px;
+  text-align: right;
+}
+
+.Social-links,
+.Newsletter-container {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+.Social-item {
+  margin-left: 24px;
+  display: inline-block;
+}
+
+.Social-item:first-child {
+  margin-left: 0;
+}
+
+.Social-link {
+  display: block;
+  overflow: hidden;
+  width: 18px;
+  height: 18px;
+  transition: all .15s;
+}
+
+.Social-twitter {
+  background: url(../img/icons/twitter-off.svg) center no-repeat;
+  width: 22px;
+  height: 18px;
+}
+
+.Social-twitter:hover {
+  background: url(../img/icons/twitter-on.svg) center no-repeat;
+}
+
+.Social-facebook {
+  background: url(../img/icons/facebook-off.svg) center no-repeat;
+}
+
+.Social-facebook:hover {
+  background: url(../img/icons/facebook-on.svg) center no-repeat;
+}
+
+.Social-linkedin {
+  background: url(../img/icons/linkedin-off.svg) center no-repeat;
+}
+
+.Social-linkedin:hover {
+  background: url(../img/icons/linkedin-on.svg) center no-repeat;
+}
+
+.Newsletter {
+  position: relative;
+  width: 100%;
+
+  .hs-form {
+    margin-right:0;
+    padding-left: 0 !important;
+
+    .input {
+      margin-right: 0 !important;
+      margin-bottom: 0 !important;
+    }
+
+    .hs-input {
+      border-radius: 21px;
+      padding: 9px 34px 9px 14px !important;
+    }
+  }
+}
+
+.hs-newsletter {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  bottom: 3px;
+  width: 60px;
+  border: 0;
+  font: 500 12px "Proxima Nova Sb";
+  color: #fff;
+  background: #3aa9e3;
+  border-radius: 17px;
+  transition: all .15s;
+  cursor: pointer;
+  outline: none;
+
+  &:hover {
+    background: darken(#3aa9e3, 5%);
+  }
 }
 
 @media (max-width: $medium-width) {
@@ -115,12 +218,36 @@
   }
 
   .Footer-left,
-  .Footer-right {
+  .Footer-right,
+  .Social-links,
+  .Newsletter-container {
     flex: 0 0 100%;
     max-width: 100%;
   }
 
+  .Footer-left {
+    text-align: center
+  }
+
   .Footer-right p {
     text-align: left;
+  }
+
+  .Footer-brand,
+  .Footer-credits {
+    display: inline-block;
+    float: none;
+  }
+
+  .Footer-credits {
+    text-align: left;
+  }
+
+  .Social-links {
+    text-align: center;
+  }
+
+  .Newsletter {
+    margin-top: 40px;
   }
 }
