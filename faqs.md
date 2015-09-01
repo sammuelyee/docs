@@ -370,7 +370,9 @@ Here you can find an example:
 
 ### How to print maps in CartoDB?
 
-In the map view of your map, the option "Export image" will allow you to get a .png image from your map. Don't forget to add proper attributions if you publish your map as an image! You can find more information about our Static Maps in [this blogpost](http://blog.cartodb.com/static-maps/).
+From the Maps View of a selected map, you can [export the map image](cartodb-editor.html#export-image) and print it.  If you are publishing your map as an image, ensure to [edit the metadata](#map-metadata) to include attributes for your map.
+
+**Tip:**  For more information about working with static maps, see the [Introducing CartoDB static maps](http://blog.cartodb.com/static-maps/) blogpost.
 
 ### How can I set the position of an embedded map?
 
@@ -420,9 +422,14 @@ If you are a journalist and you have special needs for CartoDB, let us know at s
 
 ### What does the "Removable brand" feature mean?
 
-<p class="wrap-border"><img src="{{ '/img/layout/faqs/share-logo.png' | prepend: site.baseurl }}" alt="What does the Removable brand" /></p>
+The the *Removable brand* feature enables you to remove the "POWERED BY CARTODB" text from your maps. From a selected map.
 
-From the Coronelli plan you will be able to remove the CartoDB logo and the "Create your own custom maps with CartoDB" text will not appear below your embedded maps if you don't want it to. For removing the logo, just deselect the option "Logo" in the sharing wizard. Take into account that this option will only be available if your current plan includes the "Removable brand" feature.
+- Click the [Options](cartodb-editor.html#displaying-map-options) selector to view the Map Options
+- Click the *CartoDB Logo* slider button to display or remove the CartoDB brand on the map
+
+<p class="wrap-border"><img src="/img/layout/faqs/options_cartodb_logo.png" alt="Remove CartoDB Logo" /></p>
+
+**Note:** This feature is only available for certain account types. Contact [Sales](mailto:sales@cartodb.com) if you are interested in this feature.
 
 ### How to disconnect my Google account that I logged into CartoDB with?
 
