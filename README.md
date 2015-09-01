@@ -70,7 +70,7 @@ Documentation for the components of the CartoDB platform rely on their own proje
 
 [Import API](https://github.com/CartoDB/docs/blob/master/_cartodb-platform/import-api.md) documentation is the only that must be edited in this project.
 
-The following workflow describes how to send us your documentation contributions:
+The following workflow describes how to contribute to the Docs repo:
 
 - Fork it ( https://github.com/cartodb/docs/fork )
 - Create your feature branch (`git checkout -b my-new-feature`)
