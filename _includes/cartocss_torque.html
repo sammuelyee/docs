@@ -1,37 +1,95 @@
 
 
-Using CartoCSS for Torque Specific Methods
+#Using CartoCSS for Torque Specific Methods
 H2- Torque tilecube release, issue #4015
 
-torque does not support marker-file and marker-fill at the same time, in other words, you can not color a sprite using marker fill.
+torque does not support marker-file and marker-fill at the same time, in other words, you can not color a sprite using marker fill.  The workaround is to have an sprite per color.
+http://gis.stackexchange.com/questions/137384/marker-file-for-torque-cartodb
 
-The workaround is to have an sprite per color.
+**Note:** It is a known issue that certain marker properties are not supported when applied to Torque maps. Specifically, when the [marker-file](#marker-file-uri) and [marker-fill](#marker-fill-color) CartoCSS properties are applied, you cannot color a sprite using the marker-fill value. You must create a sprite per color when applying these properties to Torque map.
 
+WHAT DOES SPRITE MEAN AND WHAT IS AN EXAMPLE?  IS A COMP-OP PROPERTY APPLICABLE HERE?
 
-#### Torque CartoCSS
+# Torque CartoCSS
 <!--<div style="font-size:12pt;color:magenta;">Writer Note_csobier: Docs/issue#4012
 </div>-->
-In addition to being able to customize the look of your maps using CartoCSS, Torque maps have specific options you can change.
+While you can use CartoCSS to customize your maps, CartoDB provides additional CartoCSS properties that enable you to apply enhanced styling options specific for Torque maps. Torque maps are used to display temporal data. The available CartoCSS properties are applicable based on the type of Torque map you are using: *Torque*, *Torque Category*, *Torque Heat*.
 
-##### Torque
+###Torque
+
+The following CartoCSS properties can be applied to Torque maps.  Note that some values vary, depending on the type of Torque map you are using.
+
+| | [torque-frame-count](#torque-frame-count-numbers) | [torque-animation-duration](#torque-animation-duration-numbers) | [torque-time-attribute](#torque-time-attribute-string)
+| | [torque-aggregation-function](#torque-aggregation-function-keyword) | [torque-resolution](#torque-resolution-float) | [torque-data-aggregation](#torque-data-aggregation-?)
+
+
+##### torque-frame-count `numbers`
+
+------------ | -------------
+Description | Specifies the number of steps in your torque animation.
+Sample CartoCSS Code | `torque-frame-count: 512;`
+Default Value | undefined
+Available Values | See [numbers](#numbers).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
+	
+##### torque-animation-duration `numbers`
+
+------------ | -------------
+Description | Specifies the length of time for your animation, in seconds.
+Sample CartoCSS Code | `torque-animation-duration: 30;`
+Default Value | undefined
+Available Values | See [numbers](#numbers).
+| Is there a specified range?
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
+
+##### torque-time-attribute `string`
+
+------------ | -------------
+Description | Defines the name of the data column in your dataset.
+Sample CartoCSS Code | `torque-time-attribute: "cartodb_id";`
+Default Value | undefined
+Available Values | See [string](#string).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
+	
+##### torque-aggregation-function `keyword`
+
+------------ | -------------
+Description | Since Torque maps renders data in clusters, this property defines how values are displayed in each cluster of the map. For example, you can define: a maximum value, a count, or the total number of values in each cluster.
+Sample CartoCSS Code | `torque-aggregation-function: "count (cartodb_id)";`
+Default Value | undefined
+Available Values | `count(column_name), max(column_name), sum(column_name)`
+| SHOULD THIS AVAILABLE VALUES ACTUALLY BE EXPRESSIONS, AND NOT KEYWORDS?  **Note:** Column data must be numeric.
+Related Examples | - Wiki page about [how spatial aggregation works](https://github.com/CartoDB/torque/wiki/How-spatial-aggregation-works).
+
+
+##### torque-resolution `float`
+
+------------ | -------------
+Description | Since Torque maps create a grid from your data and aggregates data to each cell of that grid, this property defines the width and height of each cell, in pixels. 
+Sample CartoCSS Code | `torque-resolution: 2;`
+Default Value | undefined
+Available Values | See [float](#float).
+| **Note:** Defining a larger number value applies more grids to your data.
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
+
+
+##### torque-data-aggregration `keyword`
+
+------------ | -------------
+Description | two options, linear which does not leave a trace of past data, and cumulative which draws data markers cumulatively to show past data.
+Sample CartoCSS Code | `torque-data-aggregation: linear;`
+Default Value | `linear`
+Available Values | `linear``cumulative`
+| **Note:** Defining a larger number value applies more grids to your data.
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
+	
+The following example shows a complete snippet of torque visualization CartoCSS code.
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/torquecartoCSS.png' | prepend: site.baseurl }}" alt="Torque CartoCSS" /></p>
 
-- __Torque Frame Count:__ the number of steps in your torque animation.
+##Torque Category
 
-- __Torque Animation Duration:__ the length of your animation.
-
-- __Torque Time Attribute:__ the name of the date column in your dataset.
-
-- __Torque Aggregation Function:__ Torque renders your data in clusters, choose what value to show such as max values only, or count how many values are in each cluster.
-
-__Example functions:__ count(column_name), max(column_name), sum(column_name). Column data type must be numeric.
-
-Learn more about [how spatial aggregation works](https://github.com/CartoDB/torque/wiki/How-spatial-aggregation-works).
-
-- __Torque Resolution:__ Torque creates a grid from your data and aggregates data to each cell of that grid. Torque resolution determines width and height of each cell. Larger numbers will make your data more gridded.
-
-- __Torque Data Aggregation:__ two options, linear which does not leave a trace of past data, and cumulative which draws data markers cumulatively to show past data.
+The following CartoCSSS properties can be applied to Torque Category maps.
 
 ##### Torque Category
 
@@ -48,6 +106,11 @@ Learn more about [how spatial aggregation works](https://github.com/CartoDB/torq
 Once your data is aggregated, you can further customize your Torque animation options by changing the marker styles for each frame of your animation by customizing the options found under the frame-offsets and adding additional frame-offsets.
 
 You can also select each cluster value to change marker styles based on your data categories. For instance, if you want to style the maximum value in your dataset to have different marker styles, you would change the marker styles for the maximum value in your animation, which you will find by looking at the values in your CartoCSS.
+
+##Torque Heat
+
+The following CartoCSS properties can be applied to Torque Heat maps.
+
 
 ##### Torque Heat
 

@@ -920,21 +920,8 @@ Description | Enables you to wrap text with a character, rather than with a spac
 Sample CartoCSS Code | `shield-wrap-character: '_';`
 Default Value | `undefined
 Available Values | See [string](#string).
-Related Examples | Long city names always breaks on two line, for example:  https://www.mapbox.com/tilemill/docs/guides/styling-labels/
-| *Need to provide CartoDB examples (links to blocks, public maps, etc.?
-	
-Enables you to wrap text with a character, rather than with a space. This is especially useful for long text names.
-
-    shield-wrap-character: '_';
-	
-**Default Value**:  undefined
-
-**Available Values**: See [string](#string).
-
-Example: New Bedford Massachusetts
- https://www.mapbox.com/tilemill/docs/guides/styling-labels/
- For example we could alter our compound label example to separate the two fields only with an underscore. Setting the wrap character to _ (and also setting a very low wrap width to force wrapping) ensures that the two fields will always be written on their own lines.
-
+Related Examples | - [Always break long city names (New Bedford Massachusetts) on two lines](https://www.mapbox.com/tilemill/docs/guides/styling-labels/#multi-line-labels) 
+| - *Need to provide CartoDB examples (links to blocks, public maps, etc.)?
 
 ##### shield-halo-fill `color`
 
@@ -945,7 +932,7 @@ Default Value | `#FFFFFF`, the halo color is white by default
 Available Values | See [color](#color).
 Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 	| https://www.mapbox.com/blog/design-control-with-regular-expressions-in-mapbox-studio/ 	
-
+	|
 
 ##### shield-halo-radius `float`
 The radius of the halo, in pixels.
@@ -2078,6 +2065,8 @@ marker-file: url('marker.png');
 
 In CartoCSS, string values are identified as the text within the quotations. In the following example, the name of the font is the string value.
 
+ARE STRINGS ALWAYS SINGLE QUOTE? What's the difference, if any, between single-quotes and not quotes? Some string/text property examples do not show quotations at all?
+
 	shield-face-name: ‘Open Sans Bold’;
 
 **Note:** String values are different than [text-name](#text-name-expression) values (which are text label values defined with brackets).
@@ -2101,7 +2090,7 @@ marker-allow-overlap:true;
 }
 ```
 
-### Expressions
+### Expression
 
 Expressions are flexible statements that can include fields, numbers, and other types of defined variables. For example, you can build an expression by entering a field name, a relation, set a predefined value, or enter a range of values.
 
