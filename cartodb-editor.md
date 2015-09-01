@@ -503,13 +503,13 @@ By default you are in Desktop view. If you switch to the Mobile view, you'll see
 
 ####Export Image
 
-The Export Image option enables you to export a static image of a map in .PNG format. You can adjust the zoom level and the size of the map before exporting it as an image.
+The Export Image option enables you to export a static image of a map in .PNG format. You can adjust the zoom level and the size of the map before exporting it as an image. Once your map image is exported, you can print it and share it.
 
 1. From the Maps View of a selected map. click *Export Image*
 
 	Your map is selected and the export image options appear.
 	
-	<p class="wrap-border"><img src="/img/layout/cartodb-editor/export_image_updated.png" alt="Export Image" /></p>
+	<p class="wrap-border"><img src="/img/layout/cartodb-editor/export_image_button.png" alt="Export Image" /></p>
 	
 2. Adjust the zoom level by using the + or - buttons
 
@@ -519,13 +519,20 @@ The Export Image option enables you to export a static image of a map in .PNG fo
 
 3. Click *Export*, located underneath the selected image
 
-	<p class="wrap-border"><img src="/img/layout/cartodb-editor/export_image_button.png" alt="Export Image button" /></p>
+	<p class="wrap-border"><img src="/img/layout/cartodb-editor/export_image_updated.png" alt="Export the Image" /></p>
 
 	A confirmation dialog appears, indicating that your image has been generated correctly. 
+	
+	<p class="wrap-border"><img src="/img/layout/cartodb-editor/export_image_generated.png" alt="Export Image Confirmation" /></p>
 
-4. Click the URL to view your exported .PNG image
+4. Click *VIEW IMAGE* to view the exported .PNG image in a new tab
+	
+	**Tip:** Ensure that your browser pop-up blocker is disabled.
+	
+	You can also share this map image by sharing the URL to the exported image.
 
-**Tip:** Ensure that your browser pop-up blocker is disabled.
+**Note:** Once your map image is exported, you can [print it](faqs.html#how-to-print-maps-in-cartodb). If you are publishing your map as an image, ensure to [edit the metadata](#map-metadata) to include attributes for your map.
+	
 
 ### Edit Map Options
 
