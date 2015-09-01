@@ -8,7 +8,7 @@ docs.Views.Index = Backbone.View.extend({
   initialize: function() {
     this.$aside = this.$('.aside');
     this.navbarHeight = this.$('.navbar').outerHeight();
-    this.$footer = this.$('.footer');
+    this.$footer = this.$('.Footer');
     this.$content = this.$('.content');
     this.$up = this.$('.up');
 
