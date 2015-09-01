@@ -52,7 +52,7 @@
   width: 100%;
   min-width: $small-width;
   padding: 20px 0 20px 20px;
-  background: #397DBA;
+  background: #3AA9E3;
 }
 
 .nav-brand {
@@ -61,25 +61,28 @@
   font: 14px 'Proxima Nova Th';
   text-transform: uppercase;
   color: #fff;
-  margin-top: -4px;
 }
 
 .brand {
   display: inline-block;
   vertical-align: middle;
   zoom: 1;
-  width: 122px;
-  height: 43px;
+  width: 36px;
+  height: 36px;
   margin-right: 12px;
   line-height: 43px;
-  padding-left: 47px;
-  background: image-url('brand.png') no-repeat;
+  background: image-url('brand.svg') no-repeat;
   color: #fff;
   text-decoration: none;
+  margin-top: 2px;
 
   span {
     display: none;
   }
+}
+
+.no-svg .brand {
+  background: image-url('brand.png') no-repeat;
 }
 
 .nav-header,
@@ -132,7 +135,7 @@
     a {
       display: block;
       padding: 14px 24px;
-      color: #eee;
+      color: #fff;
       text-decoration: none;
       text-transform: uppercase;
       @include border-radius(22px);
@@ -436,6 +439,8 @@
 
   ul,
   ol {
+    margin-left: 30px;
+
     ul,
     ol {
       margin-top: 12px;
@@ -448,6 +453,9 @@
 
     p {
       margin-bottom: 0;
+    }
+    .wrap-border {
+      margin: 12px 0;
     }
   }
 
@@ -773,9 +781,10 @@
 /* =Platform
 ----------------------------------------------- */
 
-.platform-list {
+ul.platform-list {
   @extend %clearfix;
   margin-bottom: 24px;
+  margin-left: 0px;
 
   li {
     margin: 0;
@@ -815,7 +824,9 @@
 /* =Tutorials
 ----------------------------------------------- */
 
-.tutorials-list {
+ul.tutorials-list {
+  margin-left: 0px;
+
   li {
     margin: 0;
     padding: 0;
@@ -1202,4 +1213,5 @@
   .footer-inner {
     padding: 40px 20px 0;
   }
+
 }

@@ -73,7 +73,7 @@ Visualizations are similar to tables, you can quickly tell them apart by looking
 
 Now that you have a Visualization just the way you want it, let's share it with some friends. Click the green <span class="ui_element" data-element="publish">Publish</span> button in the top right of the page. From here you can customize how your published map is presented, including zoom and center, which interface elements to display, toggling layers, social media links, etc. At the bottom you will find a URL to share your Visualization via Twitter, email, or anywhere else. When you share that link, viewers will only be able to explore it on the map, they will not be able to edit any of your data. For more details, take a look at next tutorial.
 
-<p class="wrap-border"><img src="{{ '/img/layout/tutorials/sharing_maps/img6.png' | prepend: site.baseurl }}" alt="Shared map" /></p>
+<p class="wrap-border"><img src="{{ '/img/layout/tutorials/sharing_maps/img8.png' | prepend: site.baseurl }}" alt="Shared map" /></p>
 
 One thing you'll notice is that the name and description you entered earlier are now displayed above the map. This is great because it means the people you share the link with can read about the map they are viewing. If you want to change these options, you can toggle them on/off in the Embed dialog. Play with the different options to check the effect in your public map: show or hide elements, add search and sharing features, customize scrollwheel zooming, etc.
 
@@ -81,6 +81,6 @@ One thing you'll notice is that the name and description you entered earlier are
 
 If you want to embed the map in a blog post or web page, you can also use the embed option CartoDB provides. In the same Publish window, click <span class="ui_element" data-element="share_embed">Embed</span>.
 
-<p class="wrap-border"><img src="{{ '/img/layout/tutorials/sharing_maps/img7.png' | prepend: site.baseurl }}" alt="Embed map" /></p>
+<p class="wrap-border"><img src="{{ '/img/layout/tutorials/sharing_maps/img9.jpg' | prepend: site.baseurl }}" alt="Embed map" /></p>
 
 Now click the <span class="ui_element" data-element="copy_to_clipboard">clipboard icon</span> at the right. The string is now copied to your clipboard. You only have to paste it in your blog or website HTML code, inside the `BODY` tag. That's all!
