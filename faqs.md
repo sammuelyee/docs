@@ -427,7 +427,7 @@ If you are a journalist and you have special needs for CartoDB, let us know at s
 
 ### What does the "Removable brand" Account feature mean?
 
-The the Removable brand feature, included for certain [account types](https://cartodb.com/pricing/), enables you to remove the "POWERED BY CARTODB" text from your maps and removes the CartoDB brand from your maps. See the [How do I remove the CartoDB logo from my map?](#how-do-i-remove-the-cartodb-logo-from-my-map) procedure for details.
+The Removable brand feature, included for certain [account types](https://cartodb.com/pricing/), enables you to remove the "POWERED BY CARTODB" text from your maps and removes the CartoDB brand from your maps. See the [How do I remove the CartoDB logo from my map?](#how-do-i-remove-the-cartodb-logo-from-my-map) procedure for details.
 
 **Note:** This feature is only available for certain account types. Contact [Sales](mailto:sales@cartodb.com) if you are interested in this feature.
 

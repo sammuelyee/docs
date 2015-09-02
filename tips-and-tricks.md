@@ -41,10 +41,10 @@ Strings can be very useful for categorizing, grouping, or excluding data from yo
 If you are editing your datasets string column by deleting text from one of its fields, the field will stay blank instead of becoming “null”. To make it “null”, apply the following SQL query:
 
 {% highlight sql %}
-UPDATE + table_name SET column_name= null WHERE column_name `ilike'
+UPDATE table_name SET column_name = null WHERE column_name ilike 'indicate_null_field_name_here'
 {% endhighlight %}
 
-Replace the SQL request with your table name and your string column name.
+Replace the SQL request with your table name and your string field value.
 
 <div class="code-title">PARTIAL MATCH</div>
 {% highlight sql %}
