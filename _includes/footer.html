@@ -104,8 +104,6 @@
                 <li class="Social-item"><a class="Social-link Social-linkedin" href="{{ site.linkedin-baseurl }}"></a></li>
               </ul>
 
-              {% capture hubspot_css %}{% include css/hubspot.css %}{% endcapture %}
-
               <div class="Newsletter-container u-tspace-l">
                 <div class="Newsletter">
                   <script charset="utf-8" src="//js.hsforms.net/forms/current.js"></script>
@@ -114,7 +112,7 @@
                       portalId: '{{ site.hubspot_id }}',
                       formId: '2ed2a125-0e48-4d52-a03c-a1cb90f0433b',
                       submitButtonClass: 'hs-newsletter',
-                      css: '{{ hubspot_css | split: " " | join: " " }}'
+                      css: ''
                    });
                   </script>
                 </div>
