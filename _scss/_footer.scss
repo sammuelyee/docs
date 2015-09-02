@@ -51,7 +51,6 @@
   z-index: 1;
   width: 100%;
   max-width: 980px;
-  margin: 0 auto;
   padding: 0 20px;
 }
 
@@ -251,3 +250,5 @@
     margin-top: 40px;
   }
 }
+
+.hs-form{margin-right:-20px}.hs-form fieldset{display:block;width:100%;max-width:none !important}.hs-form label{display:none !important}.hs-form .input{margin-right:20px !important;margin-bottom:20px}.hs-form .hs-input{width:100% !important;outline:none}.hs-form select.hs-input{height:35px;border:1px solid #404B52;font-size:13px;color:#666}.hs-form input.hs-input,.hs-form textarea.hs-input{border:1px solid #404B52;padding:8px;border-radius:4px;transition:all 0.3s;font:200 14px/17px "Proxima Nova Sb","Helvetica Neue",Helvetica,Arial,sans-serif;color:#979EA1;background:rgba(255,255,255,.1)}.hs-form input.hs-input:focus,.hs-form textarea.hs-input:focus{border-color:#404B52}.hs-form textarea.hs-input{height:80px}
