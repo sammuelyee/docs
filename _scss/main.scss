@@ -777,7 +777,6 @@
   padding-top: 5px;
 }
 
-
 /* =Platform
 ----------------------------------------------- */
 
@@ -920,55 +919,6 @@ ul.tutorials-list {
     }
   }
 }
-
-
-/* =Footer
------------------------------------------------ */
-
-.footer-inner {
-  max-width: 1046px;
-  padding: 40px 50px 0;
-}
-
-
-/* =Newsletter
------------------------------------------------ */
-
-.Newsletter {
-  position: relative;
-  width: 100%;
-  margin-top: 7px;
-
-  .hs-form{
-    position: relative;
-
-    .hs-input {
-      padding: 12px 108px 12px 16px !important;
-    }
-  }
-}
-
-.hs-newsletter {
-  position: absolute;
-  top: 0;
-  right: 20px;
-  bottom: 0;
-  width: 100px;
-  border: 0;
-  font: 500 12px "Proxima Nova Sb";
-  color: #fff;
-  background: $secondary-color;
-  border-radius: 0 4px 4px 0;
-  text-transform: uppercase;
-  transition: all .15s;
-  cursor: pointer;
-  outline: none;
-
-  &:hover {
-    background: darken($secondary-color, 5%);
-  }
-}
-
 
 /* =Media queries
 ----------------------------------------------- */
@@ -1127,10 +1077,6 @@ ul.tutorials-list {
       color: rgba(#fff, .8);
     }
   }
-
-  .Newsletter {
-    margin-top: 0;
-  }
 }
 
 @media (max-width: $large-width) {
@@ -1209,9 +1155,4 @@ ul.tutorials-list {
   .embed-tutorial {
     margin: 0 -20px;
   }
-
-  .footer-inner {
-    padding: 40px 20px 0;
-  }
-
 }

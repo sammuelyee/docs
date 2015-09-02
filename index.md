@@ -7,7 +7,7 @@ js_asset: "index"
 ## CartoDB Documentation
 <!-- Writer Note_csobier: I removed any general introduction content and created a link to the CartoDB home page. Related to [corporate branding requirements requirements](https://docs.google.com/spreadsheets/d/1dJ8XMVFWUSGaWDnLwDjxovXMy2G0DPTiRqHAUBWWD8o/edit#gid=429960640).  This page is a brief overview of the documentation content for the Docs portal. There should be no buzz words or marketing content here. The structure of the Docs site is in redesign mode.-->
 
-This documentation describes how to use *CartoDB Editor* for end-users, or the *CartoDB Platform* for developers.  
+This documentation describes how to use the *CartoDB Editor* for end-users, or the *CartoDB Platform* for developers.  
 
 - [CartoDB Editor](/cartodb-editor.html) is a graphical user interface that guides you through the process of connecting a dataset and creating a map.  A user-friendly dashboard enables you to manage your datasets and apply advanced styling features to your map visualizations 
 

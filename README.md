@@ -5,16 +5,20 @@
 
 ## About
 
-All things docs about CartoDB. This repo contains all that will be found in [docs.cartodb.com](http://docs.cartodb.com/) - It's meant to be an open resource so that anyone can contribute information to our docs. It features a guide of the CartoDB Editor, Tutorials, Tips and Tricks, and CartoDB Platform. 
+This repository contains all of the technical documentation content for CartoDB. The CartoDB documentation landing page is found here [docs.cartodb.com](http://docs.cartodb.com/).  The current structure of the Documentation portal contains information about the CartoDB Editor, CartoDB Platform, Tutorials, Tips & Tricks, and FAQs. 
 
-If you spot a typo, want to add a FAQ, or contribute a tutorial, just send a Pull Request! Check our [CONTRIBUTING](CONTRIBUTING.md) page.
+**Note:** The structure of this documentation content is currently being enhanced to appear more like a content management system. 
+
+This Docs repo is an open resource so that anyone can contribute their documentation ideas about CartoDB features and functionality. (For general information about CartoDB, please see our website at [CartoDB](https://cartodb.com/)). 
+
+If you spot a spelling error, have a suggestion for a Frequently Asked Question, or would like to contribute to a tutorial, please review our [CONTRIBUTING](CONTRIBUTING.md) page and submit a Pull Request.  Otherwise, send an email to our [Technical Writer](mailto:csobier@cartodb.com), who will be happy to enhance the current documentation for you.
 
 
 ## Develop
 
 ### How to install
 
-CartoDB Docs uses a mix of [Jekyll](http://jekyllrb.com/) and [Grunt](http://gruntjs.com/) tasks for development. Thus you'll need Ruby and a Node.js version `>= 0.10.0` installed, as well as [Bundlr](http://bundler.io/).
+CartoDB Docs uses a mix of [Jekyll](http://jekyllrb.com/) and [Grunt](http://gruntjs.com/) tasks for development. Thus, you will need Ruby and a Node.js version `>= 0.10.0` installed, in addition to [Bundlr](http://bundler.io/).
 
 ```
 bundle install
@@ -32,17 +36,17 @@ A tab in your browser will open and direct you to http://0.0.0.0:9000
 
 Also, you can run the blog locally as if it was on production with `grunt serve:dist`
 
-In case you stuble upon the next error:
+In case you stumble upon this error:
 
 ```
 Error: Unable to read "grunt-aws.json" file (Error code: ENOENT).
 ```
 
-you'll need a `grunt-aws.json` credentials file, find more info in [deploy](#deploy) section.
+You will need a `grunt-aws.json` credentials file, find more information in the [deploy](#deploy) section.
 
-If you can't find the docs for CartoDB.js, the SQL API or Maps API it's possible you didn't run `docs_build.sh` yet. Check how to do this in the [How to contribute](#how-to-contribute) section.
+If you cannot find the docs for CartoDB.js, the SQL API or Maps API, ensure that you run `docs_build.sh` yet. For details, see [How to contribute](#how-to-contribute).
 
-You'll need `wget`and `sed` in order for the script work.
+You will also need `wget`and `sed` in order for the script work.
 
 
 ## Deploy
@@ -51,14 +55,14 @@ You'll need `wget`and `sed` in order for the script work.
 grunt deploy:staging|production
 ```
 
-You'll need a `grunt-aws.json` credentials file. You can copy the `grunt-aws.example.json` to `grunt-aws.json` to work locally.
+You will need a `grunt-aws.json` credentials file. You can copy the `grunt-aws.example.json` to `grunt-aws.json` to work locally.
 
 
 ## How to contribute 
 
-CartoDB Docs is in itself an open project, and we welcome contributions. If you spot a typo, want to expand some explanation, add some [trick](http://docs.cartodb.com/tips-and-tricks.html) or [FAQ](http://docs.cartodb.com/faqs.html) you see missing, or even create a [Tutorial](http://docs.cartodb.com/tutorials.html), we welcome you to do so. We would need that everything you contribute follow the style of what's already on place. If you want to contribute something and have doubts about how to so, you can contact [support@cartodb.com](mailto:support@cartodb.com)
+We welcome contribution ideas for technical documentation. If you want to suggest something and have questions, you can contact [support@cartodb.com](mailto:support@cartodb.com).
 
-Documentation for the components of the CartoDB platform rely on their own project, so make the edit in their corresponding documentation and then run `sh docs_build.sh` to pull them:
+Documentation for the components of the CartoDB platform rely on their own project. Edit the respective sections in the appropriate documentation area and run `sh docs_build.sh` to pull the content:
 
 - [Cartodb.js](https://github.com/CartoDB/cartodb.js/blob/develop/doc/API.md)
 - [SQL API](https://github.com/CartoDB/CartoDB-SQL-API/blob/master/doc/API.md)
@@ -66,7 +70,7 @@ Documentation for the components of the CartoDB platform rely on their own proje
 
 [Import API](https://github.com/CartoDB/docs/blob/master/_cartodb-platform/import-api.md) documentation is the only that must be edited in this project.
 
-To send your contributions you can follow the standard workflow:
+The following workflow describes how to contribute to the Docs repo:
 
 - Fork it ( https://github.com/cartodb/docs/fork )
 - Create your feature branch (`git checkout -b my-new-feature`)
@@ -74,4 +78,4 @@ To send your contributions you can follow the standard workflow:
 - Push to the branch (`git push origin my-new-feature`)
 - Create a new Pull Request
 
-We'll review the Pull Request and comment on it.
+Our Technical Writer will review your branch, edit the content according to our Style Guide and merge the Pull Request.
