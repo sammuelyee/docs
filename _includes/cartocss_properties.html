@@ -416,9 +416,11 @@ The limit on the ratio of the miter length to the stroke-width. This is used to 
 
 	line-miterlimit: 4;
 
-**Default Value**: `4`, auto-convert miters to bevel line joins when theta is less than 29 degrees as per the SVG spec: &#x27;miterLength &#x2F; stroke-width = 1 &#x2F; sin ( theta &#x2F; 2 )&#x27;)
+**Default Value**: `4`, auto-convert miters to bevel line joins when theta is less than 29 degrees as per the SVG definitions: &#x27;miterLength &#x2F; stroke-width = 1 &#x2F; sin ( theta &#x2F; 2 )&#x27;)
 
 **Available Values**: See [float](#float).
+
+**Note:** Define values as per [SVG transformation definitions](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform)- which are values separated by whitespace and/or commas, from right to left.
 
 
 ##### line-clip `boolean`
@@ -700,13 +702,16 @@ The maximum difference between the actual marker placement and the marker-spacin
 
 
 ##### marker-transform `functions`
-SVG transformation definition????
+Defines SVG transformation functions to scale how markers appear.
 
 	marker-transform: functions;
 	
 **Default Value**: no transformation applied by default.
 
 **Available Values**: See [functions](#functions).
+
+**Note:** Define values as per [SVG transformation definitions](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform)- which are values separated by whitespace and/or commas, from right to left.
+
 
 
 ##### marker-clip `boolean`
@@ -1087,7 +1092,7 @@ Defines how the shield-name text is aligned.
 
 
 ##### shield-transform `functions`
-SVG transformation definition
+Defines SVG transformation functions to scale how shields appear.
 
 	shield-transform: none
 
@@ -1095,6 +1100,7 @@ SVG transformation definition
 
 **Available Values**: See [functions](#functions).
 
+**Note:** Define values as per [SVG transformation definitions](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform)- which are values separated by whitespace and/or commas, from right to left.
 
 ##### shield-clip `boolean`
 By default, geometries are clipped to map bounds. You can disable clips to avoid rendering artifacts on a map if are having performance issues.
@@ -1513,15 +1519,15 @@ Determines how points are placed.
 
 
 ##### point-transform `functions`
-Applies transformation functions to the geometry.
-
-SVG transformation definition???
+Defines SVG transformation functions to scale how points appear.
 
 	point-transform: none;
 
 **Default Value**: `none`, geometry is not transformed.
 
 **Available Values**: See [functions](#functions).
+
+**Note:** Define values as per [SVG transformation definitions](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform)- which are values separated by whitespace and/or commas, from right to left.
 
 
 
@@ -2128,7 +2134,7 @@ where `//` is equivalent to:
 
 Functions are comma-separated lists of one or more functions. 
 
-For example, [point-transform](#point-transform-functions), defines function values to enable SVG transformation definitions for chained point transformations.
+For example, [point-transform](#point-transform-functions), defines function values according to  [SVG transformation definitions](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform)- which are values separated by whitespace and/or commas, from right to left.
 
 	css
 #point {

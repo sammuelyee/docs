@@ -826,6 +826,8 @@ Options that are unique to Torque Category:
 - **Category Column**  
 Choose data from your dataset you would like to appear as categories on your map and in your legend. You can edit their color or add an image marker underneath the Resolution menu option.
 
+	**Note**: If you select Torque Category as the map type, ensure your SQL query is not using `torque_category` as a column name to prevent unexpected behaviors.
+
 Torque maps also have [Torque CartoCSS](http://docs.cartodb.com/cartodb-editor.html#cartocss) options to further customize the look of your map.
 
 #### Infowindows
