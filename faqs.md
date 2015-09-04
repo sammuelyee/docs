@@ -375,7 +375,7 @@ Here you can find an example:
 
 ### How to print maps in CartoDB?
 
-From the Maps View of a selected map, you can [export the map image](cartodb-editor.html#export-image) and print it.  If you are publishing your map as an image, ensure to [edit the metadata](cartodb-editor.html#map-metadata) to include attributes for your map.
+From the Maps View of a selected map, you can [export the map image](cartodb-editor.html#export-image) and print it.  If you are publishing your map as a static image, ensure to add attributions for your map for your map.
 
 **Tip:**  For more information about working with static maps, see the [Introducing CartoDB static maps](http://blog.cartodb.com/static-maps/) blogpost.
 

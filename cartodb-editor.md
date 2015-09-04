@@ -20,7 +20,7 @@ Visualize your data and create a map | The CartoDB Editor contains many features
 Publish and share your map | Once you visualize and publish a map, you can get a link to share the map, embed it to a website or blog, or add your map to another application.
 | For details, see [Publish and Share Your Map](#publish-and-share-your-map)
 
-**Tip:** You can also view guided lessons of the map workflow from the [Map Academy](http://academy.cartodb.com/), or begin using our [open source APIs](http://docs.cartodb.com/cartodb-platform.html).
+**Tip:** You can also view guided lessons of the map workflow from [The Map Academy](http://academy.cartodb.com/), or begin using our [open source APIs](http://docs.cartodb.com/cartodb-platform.html).
 
 ## Datasets
 
@@ -531,7 +531,7 @@ The Export Image option enables you to export a static image of a map in .PNG fo
 	
 	You can also share this map image by sharing the URL to the exported image.
 
-**Note:** Once your map image is exported, you can [print it](faqs.html#how-to-print-maps-in-cartodb). If you are publishing your map as an image, ensure to [edit the metadata](#map-metadata) to include attributes for your map.
+**Note:** Once your map image is exported, you can [print it](faqs.html#how-to-print-maps-in-cartodb).
 	
 
 ### Edit Map Options
