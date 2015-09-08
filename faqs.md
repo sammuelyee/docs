@@ -391,7 +391,19 @@ You can use code to apply CartoDB.js, in combination with Leaflet, to create ove
 
 ### How to print maps in CartoDB?
 
-From the Maps View of a selected map, you can [export the map image](cartodb-editor.html#export-image) and print it.  If you are publishing your map as a static image, ensure to add attributions for your map.
+From the Maps View of a selected map, you can [export the map image](cartodb-editor.html#export-image) and print it. Note that when you export an image with the CartoDB Editor, map [attributions](https://cartodb.com/attributions/) are automatically included. 
+
+<p class="wrap-border"><img src="{{ '/img/layout/faqs/map_attributions.png' | prepend: site.baseurl }}" alt="Map attributions" /></p> 
+
+If you are publishing your map as a static image with an API, you must manually add attributions for your static map image. For example, add the following attribution code:
+
+	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>
+
+For a complete example, the following syntax defines the attributions of a basemap:
+
+	var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+  attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
+});
 
 **Tip:**  For more information about working with static maps, see the [Introducing CartoDB static maps](http://blog.cartodb.com/static-maps/) blogpost.
 
