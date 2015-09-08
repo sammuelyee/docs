@@ -451,7 +451,17 @@ If you are logged into CartoDB through your Google account and you want to unlin
 
 ### How can I unlink my GDrive account from CartoDB?
 
-In order to unlink your Google Drive account from the importing tool of CartoDB, you will have to deny the permissions in the account settings of your Google account.
+You can disconnect your Google Drive from your Account settings in CartoDB.  
+
+- From *Your account* in CartoDB, select *Disconnect* from the Google Drive Connect to external data sources option
+
+	<p class="wrap-border"><img src="{{ '/img/layout/faqs/disconnect_google_drive.png' | prepend: site.baseurl }}" alt="Account settings_ Disconnect Google Drive" /></p>
+
+	A confirmation dialog appears.  
+
+- Click *REVOKE ACCESS* to disconnect your Google Drive access from CartoDB
+
+- Click *SAVE CHANGES* from your account settings
 
 ### "There was an error trying to get your service token or you didn't finish the oAuth process. Try again please." error
 
@@ -469,10 +479,6 @@ This error occurs because Google gives one token per application. If you connect
 To connect Google Drive to a second CartoDB account, you can either revoke access to the first CartoDB account, or create another Google Drive account to add your dataset from.
 
 ## Other Technical Questions
-
-### Can CartoDB display real time data from a SQL database connection?
-
-Unfortunately, CartoDB does not allow reading data from a SQL connection in real time. Nevertheless, you can use the SQL API for writing data into CartoDB.
 
 ### How can I use CartoDB.js and Mapbox.js together?
 
@@ -515,6 +521,6 @@ No, Torque does not work with polygons. The Torque wizard is only available for 
 
 ### My heatmap does not work in IE9?
 
-In order for a heatmap to work, the browser it is being viewed from needs to support cross domain requests for images. Internet Explorer 9 supports cross domain requests for documents, but not images. However, cross domain requests for images are supported in IE10 and up.
+This is a known issue. In order for a heatmap to work, the browser it is being viewed from needs to support cross domain requests for images. Internet Explorer 9 supports cross domain requests for documents, but not for images. Ensure that you are using Internet Explorer version 10 or higher to view heatmaps.
 
 
