@@ -439,6 +439,8 @@
 
   ul,
   ol {
+    margin-left: 30px;
+
     ul,
     ol {
       margin-top: 12px;
@@ -451,6 +453,9 @@
 
     p {
       margin-bottom: 0;
+    }
+    .wrap-border {
+      margin: 12px 0;
     }
   }
 
@@ -772,13 +777,13 @@
   padding-top: 5px;
 }
 
-
 /* =Platform
 ----------------------------------------------- */
 
-.platform-list {
+ul.platform-list {
   @extend %clearfix;
   margin-bottom: 24px;
+  margin-left: 0px;
 
   li {
     margin: 0;
@@ -818,7 +823,9 @@
 /* =Tutorials
 ----------------------------------------------- */
 
-.tutorials-list {
+ul.tutorials-list {
+  margin-left: 0px;
+
   li {
     margin: 0;
     padding: 0;
@@ -912,55 +919,6 @@
     }
   }
 }
-
-
-/* =Footer
------------------------------------------------ */
-
-.footer-inner {
-  max-width: 1046px;
-  padding: 40px 50px 0;
-}
-
-
-/* =Newsletter
------------------------------------------------ */
-
-.Newsletter {
-  position: relative;
-  width: 100%;
-  margin-top: 7px;
-
-  .hs-form{
-    position: relative;
-
-    .hs-input {
-      padding: 12px 108px 12px 16px !important;
-    }
-  }
-}
-
-.hs-newsletter {
-  position: absolute;
-  top: 0;
-  right: 20px;
-  bottom: 0;
-  width: 100px;
-  border: 0;
-  font: 500 12px "Proxima Nova Sb";
-  color: #fff;
-  background: $secondary-color;
-  border-radius: 0 4px 4px 0;
-  text-transform: uppercase;
-  transition: all .15s;
-  cursor: pointer;
-  outline: none;
-
-  &:hover {
-    background: darken($secondary-color, 5%);
-  }
-}
-
 
 /* =Media queries
 ----------------------------------------------- */
@@ -1119,10 +1077,6 @@
       color: rgba(#fff, .8);
     }
   }
-
-  .Newsletter {
-    margin-top: 0;
-  }
 }
 
 @media (max-width: $large-width) {
@@ -1201,9 +1155,4 @@
   .embed-tutorial {
     margin: 0 -20px;
   }
-
-  .footer-inner {
-    padding: 40px 20px 0;
-  }
-
 }
