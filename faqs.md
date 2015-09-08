@@ -48,17 +48,7 @@ CartoDB utilizes geographic coordinates written as [decimal degrees](http://en.w
 
 ### Can I synchronize my datasets in real time?
 
-If you have applied sync settings for your dataset, the shortest automatic syncing interval is every one hour. Optionally, you can force a manual synchronization up to every 15 minutes.  The example image below shows the *Sync settings* option, located from the Edit menu of your datasets dashboard.  Once a dataset is synced, the sync status appears above your table in the Data View. 
-
-<p class="wrap-border"><img src="{{ '/img/layout/faqs/sync_settings.png' | prepend: site.baseurl }}" alt="Dataset Sync settings" /></p>
-
-- Click *Sync now* to sync your data in real time
-
-	<p class="wrap-border"><img src="{{ '/img/layout/faqs/sync_now.png' | prepend: site.baseurl }}" alt="Sync nows" /></p>
-	
-- Alternatively, click *view options* to open the Sync Table options and select the sync settings 
-
-	<p class="wrap-border"><img src="{{ '/img/layout/faqs/sync_table_options.png' | prepend: site.baseurl }}" alt="Sync table options" /></p>
+{% include sync_datasets.html %}
 
 ### I have a synced dataset, how can I modify the column types?
 

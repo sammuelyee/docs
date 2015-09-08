@@ -13,7 +13,7 @@ The CartoDB Editor is a dashboard that contains *your datasets* and *your maps*.
 
 Workflow | Details
 ------------ | -------------
-Create a new dataset | You can connect a dataset using any of the [(supported file formats](#supported-file-formats)), or create an empty dataset. 
+Create a new dataset | You can connect a dataset using any of the [(supported file formats](#supported-file-formats)), or create an [empty dataset](#create-an-empty-dataset). 
 | For details, see [Connect Dataset](#connect-dataset).
 Visualize your data and create a map | The CartoDB Editor contains many features that guide you through the process of creating a map and selecting how your data appears. You can also customize the style of your map.
 | For details about some of the CartoDB Editor features, see [Data Visualization](#data-visualization) [Edit Maps](#edit-map-options), [Map Wizards](#map-wizards), and [Managing Your Data](#managing-your-data).
@@ -24,51 +24,112 @@ Publish and share your map | Once you visualize and publish a map, you can get a
 
 ## Datasets
 
-CartoDB operates a database that is capable of storing geospatial information, or geometry. When you import data into CartoDB, you are sending it to a standard database. Under the hood, PostgreSQL is running with the PostGIS extension. Don't worry if you've never heard of these tools - CartoDB takes care of the technical details so that you can get busy making awesome maps.
+Behind the scenes, the CartoDB geospatial database is built on the [PostgreSQL](http://www.postgresql.org/docs/9.1/static/) platform and supports advanced  [PostGIS](http://postgis.net/docs/manual-2.0/) capabilities.  When you import data with the CartoDB Editor, you are connecting a dataset to a standard database.
 
 ### Connect Dataset
 
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/connectdataset.png' | prepend: site.baseurl }}" alt="Adding a new dataset" /></p>
+You can import data from a local file (or public URL), connect to an external dataset, or create an empty dataset.
 
-Importing your data to CartoDB is a seamless and flexible process. Pick your preferred method from the following options:
+1. Click *Your datasets* from the dashboard drop-down menu  
 
-1. **Upload a local file** or **import directly from a public URL**
-2. **Sync using Google Drive**
-3. **Sync using Dropbox**
-4. **Import directly from Twitter**
-5. **Create an empty dataset**
+    <p class="wrap-border"><img src="{{ '/img/layout/common/select_your_dataset.png' | prepend: site.baseurl }}" alt="Select Dataset" /></p>
 
-The most common import method is to upload a local file or pull data from a public URL. To upload a file, navigate to your dashboard and click **Connect Dataset**. In the automatic overlay window click **Select a File** and navigate to the data you want to upload. Alternatively, you may paste a URL in this field and CartoDB will upload that data. For larger, paid accounts our interface offers an option to sync your data here. You may also import directly from Dropbox or Google Drive.
+    The page refreshes displaying a list of your datasets. 
 
-If you plan to insert data by hand or programmatically, create a blank dataset with the default CartoDB columns and indexes already in place.
+2. Click NEW DATASET  
 
-CartoDB streamlines mapping tweets with direct access to Twitter API data. Highlights of this feature:
+	<p class="wrap-border"><img src="{{ '/img/layout/common/new_dataset_button.png'}}" alt="NEW DATASET Button Dataset" /></p>
+	
+	The Connect dataset options appear.
 
-* Go to the source for high-quality data, no third party solutions or scraping techniques necessary
-* Search by term or hashtag
-* Analyze tweets in a defined timeframe or real-time
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/connectdataset.png' | prepend: site.baseurl }}" alt="Connect a dataset" /></p>
 
-To use Twitter data in a map, select the Twitter icon in the upload window. Next, you will be prompted to search for data you want within a specific time period. Remember that your number of available Twitter credits will update automatically and you can always add more.
+3.  Click the type of dataset you want to connect to
 
-**You also have the option to import from:**
+	**Tip:** Use the arrow buttons to scroll for more options.
+	
+    <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/connectdataset2.png' | prepend: site.baseurl }}" alt="View more options on Connect Dataset dialog" /></p>
+	
+	The following connect dataset options are available.
 
-1. **ArcGIS Server&trade; (10.1 or higher)**
-2. **Salesforce**
-3. **MailChimp**
+	Connect Dataset | Description
+	------------ | -------------
+	Data file | Click *SELECT A FILE* to select a local file to upload. You can also enter and submit a public URL to upload data from.
+	| **Tip:** See a list of [Supported File Formats](#supported-file-formats).
+	Google Drive | Connect a dataset by syncing to an external Google Drive. For details, see [Syncing Datasets](#syncing-datasets).
+	Dropbox | Connect to a dataset by syncing to a external Dropbox. For details, see [Syncing Datasets](#syncing-datasets).
+		| **Note:** Some file formats are not supported with Dropbox. Select *Dropbox* to view which file formats are available (CSV, XLS).
+	Twitter | Connect to a Twitter datasource by enabling the Twitter Connector. For details, see [Connecting to External Twitter Data](#connecting-to-external-twitter-data).
+	MailChimp | Connect to external MailChimp campaigns with the MailChimp connector. You can access your MailChimp account and create maps and datasets based on the data stored from your mailing lists.
+	Instagram | Connect to your Instagram photos or videos with the Instagram connector. 
+	ArcGIS Server&trade; | Import your data from an ArcGIS Server&trade; instance by submitting your ArcGIS Server table URL.
+	|  **Note:** Ensure that you are using ArcGIS Server&trade; version 10.1 or higher.
+	Salesforce | Connect to you Salesforce data by enabling the Salesforce Connector and import your data from a Salesforce URL.
+	
+4.  For any external services, you must enable these connectors before you can connect to an external dataset. 
 
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/connectdataset2.png' | prepend: site.baseurl }}" alt="Adding datasets from other sources" /></p>
+	**Note:** This one-time step requires that you [contact CartoDB](mailto:sales@cartodb.com) for assistance. Once your external connectors have been enabled for your account, connect your external service and link it to your account. 
+	
+5. From your account settings in CartoDB, *Connect* the external data sources.
+	
+	**Tip:** Ensure that your browser pop-up blocker is disabled when connecting.
 
-Select the arrow icons to view these options.
+    <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/account_connect_services.png' | prepend: site.baseurl }}" alt="Select Dataset" /></p>
+
+	After your external connectors are enabled and connected, the connect dataset options allow you to import external data and activates the *CONNECT DATASET* button.
+
+6. Click *CONNECT DATASET*
+
+    <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/connect_dataset_button.png' | prepend: site.baseurl }}" alt="Connect Dataset button" /></p>
+
+	Your data (or external dataset) is imported and uploaded to your datasets dashboard.
+
+#### Create an Empty Dataset
+
+Optionally, you can add data manually or programmatically, with the Connect Dataset option.  
+
+1. Click *Your datasets* from the dashboard drop-down menu  
+
+    <p class="wrap-border"><img src="{{ '/img/layout/common/select_your_dataset.png' | prepend: site.baseurl }}" alt="Select Dataset" /></p>
+
+    The page refreshes displaying a list of your datasets. 
+
+2. Click NEW DATASET  
+
+	<p class="wrap-border"><img src="{{ '/img/layout/common/new_dataset_button.png'}}" alt="NEW DATASET Button Dataset" /></p>
+	
+	The Connect dataset options appear.
+
+3. Click *Create empty dataset*
+	
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/create_empty_dataset.png' | prepend: site.baseurl }}" alt="Connect Dataset_Create Empty Dataset option" /></p>
+	
+	A blank dataset containing the default CartoDB columns and indexes are created and formatted. 
+	
+4. Use the CartoDB sidebar to add rows and columns to your dataset
+
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/create_empty_dataset_addrows.png' | prepend: site.baseurl }}" alt="Add rows and columns to an empty dataset" /></p>
 
 ### Syncing Datasets
 
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/syncdataset.png' | prepend: site.baseurl }}" alt="Using sync datasets" /></p>
+Depending on your account type, you can sync datasets by connecting to an external Google Drive or Dropbox. This high-level overview describes the workflow for syncing datasets.
 
-Users subscribed to "John Snow" or larger paid plans can benefit from CartoDB's sync datasets feature. In order to sync your datasets via Google Drive or Dropbox, click "Connect Dataset" from your dashboard and select the tab for Google Drive or Dropbox, depending on which one you want to use.
+**Tip:** For details about these steps, see the [Connect Dataset](#connect-dataset) procedure.
 
-Once you select the file that you want to work with, you will need to allow CartoDB access. After, you may choose how often CartoDB should sync your data with your hosted dataset - from never to every hour, day, week, or month.
+- Create a new dataset and select *Google Drive* or *Dropbox* as the external service
+- After your external connectors are enabled and connected, the connect dataset options display a list of your Google Drive or Dropbox files	
+- Choose which external files you want to import and select the *Sync my data* options
+	
+    <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/sync_my_data.png' | prepend: site.baseurl }}" alt="Sync my data options when connecting a dataset" /></p>
+	
+- Click *CONNECT DATASET*
 
-Following import and sync selection, you will click "Create Dataset", and our importer will start building your database. We pride ourselves on speediness but bigger files sometimes require a little patience.
+- Optionally, you can change these [sync dataset options](#sync-dataset-options) at anytime
+
+**Note:** Contact [Sales](mailto:sales@cartodb.com) if you need help enabling this feature for your account.
+
+#### Sync Dataset Options
+{% include sync_datasets.html %}
 
 ### Data Library
 
@@ -1493,7 +1554,7 @@ The following procedure describes how to enable the Twitter Connector.
 
 2. Click NEW DATASET  
   
-	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/new_dataset_button.png'}}" alt="NEW DATASET Button Dataset" /></p>
+	<p class="wrap-border"><img src="{{ '/img/layout/common/new_dataset_button.png'}}" alt="NEW DATASET Button Dataset" /></p>
 
 	The Connect dataset options appear.
 
