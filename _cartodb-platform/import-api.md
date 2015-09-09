@@ -104,7 +104,7 @@ Depending on the specific case, additional information regarding the errors may 
 
 ## Standard Tables
 
-A standard import will store the data you upload from files with the valid formats as specified [here](http://docs.cartodb.com/cartodb-editor.html), creating tables at CartoDB.
+A standard import stores the data you upload from files with [valid formats](http://docs.cartodb.com/cartodb-editor.html#supported-file-formats), creating tables at CartoDB.
 
 ### Upload file
 

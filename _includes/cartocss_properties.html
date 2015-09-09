@@ -12,7 +12,7 @@ Each CartoCSS map category has its own configurable properties. You can apply mu
 ------------ | ------------- |
 | | [Polygon](#polygon) (polygon) | [Line](#line) (lines and polygons)| [Markers](#markers) (points, lines, and polygons)
 | | [Shield](#shield) (points and lines) | [Line Pattern](#line-pattern) (lines and polygons) | [Polygon Pattern](#polygon-pattern) (polygons) 
-| | [Raster](#raster) (grid data layers) | [Point](#points) (points) | [Text](#text) (points, lines, and polygons)
+| | [Raster](#raster) (grid data layers) | [Point](#point) (points) | [Text](#text) (points, lines, and polygons)
 | | [Building](#building) |
 
 | **CartoCSS Values:** |
@@ -27,67 +27,65 @@ Each CartoCSS map category has its own configurable properties. You can apply mu
 
 In addition to customizing the look of your maps using CartoCSS, Torque maps have specific advanced options that you can edit. For details, see [Torque CSS](#cartocss_torque.html).
 
-| **Torque CartoCSS Properties:** | 
+| **Torque CartoCSS Properties:** | ALL THESE LINKS POINT TO THE cartocss_toque.html file
 ------------ | -------------
-| | [Common Elements] | [Background and String Elements] | [Debug mode]
+| | [torque-frame-count](#torque-frame-count-numbers) | [torque-animation-duration](#torque-animation-duration-numbers) | [torque-time-attribute](#torque-time-attribute-string)
+| | [torque-aggregation-function](#torque-aggregation-function-keyword) | [torque-resolution](#torque-resolution-float) | [torque-data-aggregation](#torque-data-aggregation-?)
 
 
 ### Common Elements
+
+These common element CartoCSS properties can be applied to any layer in a map.
 
 | | [comp-op](#comp-op-keyword) | [direct-image-filters](#direct-image-filters-functions) | [image-filters](#image-filters-functions)
 | | [opacity float](#opacity-float) | 
 
 #### comp-op `keyword`
-The composite operation define how a layer behaves, relative to layers atop and below it. For example, you can style the way colors of overlapping markers interact. 
 
-	comp-op: src-over;
-	
-**Default Value**: `src-over`, adds the current layer on top of other layers.
-
-**Available Values**:
-`clear``src``dst``src-over``dst-over``src-in``dst-in``src-out``dst-out``src-atop``dst-atop``xor``plus``minus``multiply``screen``overlay``darken``lighten``color-dodge``color-burn``hard-light``soft-light``difference``exclusion``contrast``invert``invert-rgb``grain-merge``grain-extract``hue``saturation``color``value`
+------------ | -------------
+Description | The composite operation define how a layer behaves, relative to layers atop and below it. For example, you can style the way colors of overlapping markers interact. 
+Sample CartoCSS Code | `comp-op: src-over;`
+Default Value | `src-over`, adds the current layer on top of other layers.
+Available Values | `clear``src``dst``src-over``dst-over``src-in``dst-in``src-out``dst-out``src-atop``dst-atop``xor``plus``minus``multiply``screen``overlay``darken``lighten``color-dodge``color-burn``hard-light``soft-light``difference``exclusion``contrast``invert``invert-rgb``grain-merge``grain-extract``hue``saturation``color``value`
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 **Tip:** See [CartoCSS Composite Operations](#cartocss_comp_op.html) for a description of composite operation effects.
 
 
 #### direct-image-filters `functions`
-Applies an image filter directly to the main canvas. This can also be applied to a separate canvas by using the [image-filters function](#image-filters-function).
 
-	direct-image-filter: function (none);
-
-DOESNT WORK WITH NONE. AM I MISSING ADDITIONAL FUNCTIONS?  Does none just mean that this feature is not applied by default (none is not a valid value)?
-
-**Default Value**: `none` applies no filters
-
-**Available Values**: See [functions](#functions).
+------------ | -------------
+Description | Applies an image filter directly to the main canvas. This can also be applied to a separate canvas by using the [image-filters function](#image-filters-function).
+Sample CartoCSS Code | `direct-image-filter: function (none);`
+|DOESNT WORK WITH NONE. AM I MISSING ADDITIONAL FUNCTIONS?  Does none just mean that this feature is not applied by default (none is not a valid value)?
+Default Value |  `none` applies no filters.
+Available Values | See [functions](#functions).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 #### image-filters `functions`
-A list of image filters that applies a defined style to the active rendering canvas. 
 
-	image-filters: functions(value, value, value);
-
-**Default Value**: `none`, no filters applied
-
-**Available Values**: See [functions](#functions).
-
-**Note:** You can add multiple `image-filters` to a layer, which creates a new active canvas and renders all of the defined styles, before compositing everything back into the main canvas. For example:
-
-	image-filters:colorize-alpha(blue, cyan, green, yellow , orange, red);
+Description | A list of image filters that applies a defined style to the active rendering canvas.
+Sample CartoCSS Code | `image-filters: functions(value, value, value);`
+Default Value |  `none`, no filters applied.
+Available Values | See [functions](#functions).
+Related Examples | You can add multiple image-filters to a layer, which creates a new active canvas and renders all of the defined styles, before compositing everything back into the main canvas. For example:
+	| `image-filters:colorize-alpha(blue, cyan, green, yellow , orange, red);`
 	
 THIS EXAMPLE WORKS, but using 'none' and 'null' generates an error. Does none just mean that this feature is not applied by default (none is not a valid value)?
 
 **Tip:** For creating an image-filter for the main canvas, see [direct-image-filters](#direct-image-filters-functions)
 
 #### opacity `float`
-An alpha value for the style. This indicates that the alpha value is applied to all features in a separate buffer, then composited back to main buffer.
 
-	opacity: 1;
-	
-**Default Value**: `1`, no separate buffer is used and no alpha is applied to the style after rendering.
-
-**Available Values**: See [float](#float).
+Description | An alpha value for the style. This indicates that the alpha value is applied to all features in a separate buffer, then composited back to main buffer.
+Sample CartoCSS Code | `opacity: 1;`
+Default Value |  `1`, no separate buffer is used and no alpha is applied to the style after rendering.
+Available Values | See [float](#float).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 ### Map Background and String Elements
+
+These generic CartoCSS background and string element properties can be applied to any layer in a map.
 
 | | [background-color](#background-color-color) | [background-image](#background-image-uri) | [background-image-comp-op](#background-image-comp-op-keyword)
 | | [background-image-opacity](#background-image-opacity-float) | [base](#base-string) | [buffer-size](#buffer-size-float)
@@ -95,71 +93,61 @@ An alpha value for the style. This indicates that the alpha value is applied to 
 
 
 #### background-color `color`
-The map background color.
 
-	background-color: white;
-	
-I got an error that "map properties are not permitted in other rules", I'm assuming this is based on my data? I need to confirm an example of the background-color cartocss property.
-
-**Default Value**: This parameter is not applied by default. The default map is transparent.
-
-**Available Values**: See [color](#color).
+Description | The map background color.
+Sample CartoCSS Code | `background-color: white;`
+| I got an error that "map properties are not permitted in other rules", I'm assuming this is based on my data? I need to confirm an example of the background-color cartocss property.
+Default Value |  This parameter is not applied by default. The default map is transparent.
+Available Values |  See [color](#color).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### background-image `uri`
-An image that appears as the map background. This image appears underneath any other applied styles on the map.
 
-	background-image: uri;
-	
-**Default Value**: This parameter is not applied by default. The default background image is transparent.
-
-**Available Values**: See [uri](#uri).
+Description | An image that appears as the map background. This image appears underneath any other applied styles on the map.
+Sample CartoCSS Code | `background-image: uri;`
+Default Value |  This parameter is not applied by default. The default background image is transparent.
+Available Values | See [uri](#uri).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### background-image-comp-op `keyword`
-Sets the compositing operation used to blend the image into the background.
 
-	background-image-comp-op `keyword`
-	
-**Default Value**: `src-over`, the background image is placed on top of any existing `background-image`.
-
-**Available Values**: `clear``src``dst``src-over``dst-over``src-in``dst-in``src-out``dst-out``src-atop``dst-atop``xor``plus``minus``multiply``screen``overlay``darken``lighten``color-dodge``color-burn``hard-light``soft-light``difference``exclusion``contrast``invert``invert-rgb``grain-merge``grain-extract``hue``saturation``color``value`
+Description | Sets the compositing operation used to blend the image into the background.
+Sample CartoCSS Code | `background-image-comp-op `keyword``
+Default Value |  `src-over`, the background image is placed on top of any existing `background-image`.
+Available Values | `clear``src``dst``src-over``dst-over``src-in``dst-in``src-out``dst-out``src-atop``dst-atop``xor``plus``minus``multiply``screen``overlay``darken``lighten``color-dodge``color-burn``hard-light``soft-light``difference``exclusion``contrast``invert``invert-rgb``grain-merge``grain-extract``hue``saturation``color``value`
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### background-image-opacity `float`
-Sets the opacity of the image.
 
-	background-image-opacity: 1;
-	
-**Default Value**: `1`, indicates that the image opacity will not be changed when applied to the map background)
-
-**Available Values**: See [float](#float).
+Description | Sets the opacity of the image.
+Sample CartoCSS Code | `background-image-opacity: 1;`
+Default Value |  `1`, indicates that the image opacity will not be changed when applied to the map background).
+Available Values | See [float](#float).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### base `string`
-Indicates how a directory path is rendered, based on if you are using a defined in memory object, or a filesystem object.
 
-	base: string;
-
-**Default Value**: This parameter string is empty by default, indicating that any relative paths to files referenced in styles, or layers, are interpreted relative to the application process.
-
-**Available Values**: See [string](#string).
-
- - If a map loads from an in memory object, any relative paths used to reference files are understood as the intended directly path. 
- 
- - If the map loads from a filesystem object, and the in memory object is *not* defined, the directory path is rendered based on the stylesheet directory.
+Description | Indicates how a directory path is rendered, based on if you are using a defined in memory object, or a filesystem object. 
+Sample CartoCSS Code | `base: string;`
+Default Value |  This parameter string is empty by default, indicating that any relative paths to files referenced in styles, or layers, are interpreted relative to the application process.
+Available Values | See [string](#string).
+Related Examples |  - If a map loads from an in memory object, any relative paths used to reference files are understood as the intended directly path. 
+|  - If the map loads from a filesystem object, and the in memory object is *not* defined, the directory path is rendered based on the stylesheet directory.
 
 WHAT IS IN MEMORY OBJECT AND FILESYSTEM OBJECT? And what stylesheet are they referencing? The cartocss I assume. These definitions are confusing, I need more information and sample code.
 
 
 ##### buffer-size `float`
-Ensures that labels crossing tile boundaries are equally rendered in each tile. 
 
-	buffer-size: float;
-
-**Default Value**: `0`, no buffer is applied by default. 
-
-**Available Values**: See [float](#float).
+Description | Ensures that labels crossing tile boundaries are equally rendered in each tile. 
+Sample CartoCSS Code | `buffer-size: float;`
+Default Value |  `0`, no buffer is applied by default.
+Available Values | See [float](#float).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 **Note:** Enter any values in pixels and do not apply this property in combination with &quot;avoid-edges&quot;.
 
@@ -167,32 +155,29 @@ WHY? What will happen?  Why are we suggesting this best practice?
 
 
 ##### font-directory `uri`
-Indicates the directory path where the registered fonts for your map are automatically stored, or where they should be stored when the map loads.
 
-	font-directory: uri;
-
-**Default Value**:  This parameter is not applied by default, no registered fonts are stored for your map.
-
-**Available Values**: See [uri](#uri).
+Description | Indicates the directory path where the registered fonts for your map are automatically stored, or where they should be stored when the map loads.
+Sample CartoCSS Code | `font-directory: uri;`
+Default Value |  This parameter is not applied by default, no registered fonts are stored for your map.
+Available Values | See [uri](#uri).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### srs `string`
-The map spatial reference (proj4 string). The proj4 literal of EPSG:4326 is assumed to be the Map&#x27;s spatial reference.  All data from layers within this map are plotted using this coordinate system. 
 
-WHAT DOES THAT MEAN?
-
-	srs: string;
-
-**Default Value**: `+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs`
-
-**Available Values**: See [string](#string).
+Description | The map spatial reference (proj4 string). The proj4 literal of EPSG:4326 is assumed to be the Map&#x27;s spatial reference.  All data from layers within this map are plotted using this coordinate system. 
+| WHAT DOES THAT MEAN?
+Sample CartoCSS Code | `srs: string;`
+Default Value |  `+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs`.
+Available Values | See [string](#string).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 **Note:** If the `srs` value is not declared for a layer, this value is assumed to be the same `srs` as the map. Thus, no transformations are plotted in the Map&#x27;s coordinate space).
 
 
 ## polygon
 
-<Add overview about polygons and stying with cartocss? Add link to polygon cartocss examples?>
+These CartoCSS properties can be applied to areas and outlines of a polygon layer.
 
 | | [polygon-fill](#polygon-fill-color) | [polygon-opacity](#polygon-opacity-float) | [polygon-gamma](#polygon-gamma-float)
 | | [polygon-gamma-method](#polygon-gamma-method-keyword) | [polygon-clip](#polygon-clip-boolean)| [polygon-simplify](#polygon-simplify-float)
@@ -200,114 +185,103 @@ WHAT DOES THAT MEAN?
 | | [polygon-comp-op](#polygon-comp-op-keyword) 
 
 ##### polygon-fill `color`
-The fill color assigned to a polygon.
 
-	polygon-fill: rgba(128, 128, 128, 1);
-	
-**Default Value**: Gray (as indicated with the rgb color=128, 128, 128) and fully opaque (as indicated with alpha=1).
-
-**Available Values**: See [color](#color).
+Description | The fill color assigned to a polygon.
+Sample CartoCSS Code | `polygon-fill: rgba(128, 128, 128, 1);`
+Default Value |  Gray (as indicated with the rgb color=128, 128, 128) and fully opaque (as indicated with alpha=1).
+Available Values | See [color](#color).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### polygon-opacity `float`
-The opacity of the polygon.
 
-	polygon-opacity: 1;
-
-**Default Value**: `1`, indicates that the default opacity as opaque.
-
-**Available Values**: See [float](#float).
+Description | The opacity of the polygon.
+Sample CartoCSS Code | `polygon-opacity: 1;`
+Default Value |  `1`, indicates that the default opacity as opaque.
+Available Values | See [float](#float).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### polygon-gamma `float`
-The level of antialiasing (smoothness of oversampling) of polygon edges. A range of 0-5 represents the most antialiased to the least antialiased.
 
-	polygon-gamma: 1; 
-	
-**Default Value**: `1`, is fully antialiased.
-
-**Available Values**: `0`, `1`, `2`, `3`, `4`, `5`
-
-WHY WOULDN'T ZERO REPRESENT FULLY ANTIALIASED THEN?
+Description | The level of antialiasing (smoothness of oversampling) of polygon edges. A range of 0-5 represents the most antialiased to the least antialiased.
+Sample CartoCSS Code | `polygon-gamma: 1; `
+Default Value |  `1`, is fully antialiased.
+Available Values | `0`, `1`, `2`, `3`, `4`, `5`
+| WHY WOULDN'T ZERO REPRESENT FULLY ANTIALIASED THEN?
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### polygon-gamma-method `keyword`
-An anti-grain geometry method that represents a 2D rendering library, specific to controlling the quality of antialiasing and used to calculate pixel gamma (pow(x,gamma), which produces slightly smoother line and polygon antialiasing than the &#x27;linear&#x27; method.
 
-	polygon-gamma-method: power;
-	
-**Default Value**: `power`
+Description | An anti-grain geometry method that represents a 2D rendering library, specific to controlling the quality of antialiasing and used to calculate pixel gamma (pow(x,gamma), which produces slightly smoother line and polygon antialiasing than the &#x27;linear&#x27; method.
+Sample CartoCSS Code | `polygon-gamma-method: power;`
+Default Value |  `power`
+Available Values | `power``linear``none``threshold``multiply`
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
-**Available Values**: `power``linear``none``threshold``multiply`
-
-**Tip:** Mapnik uses this method in combination with the &#x27;gamma&#x27; value (which defaults to 1). The methods are documented in the the [AGG GitHub source](https://github.com/mapnik/mapnik/blob/master/deps/agg/include/agg_gamma_functions.h).
+**Tip:** Mapnik uses this method in combination with the &#x27;gamma&#x27; value (which defaults to 1). These methods are documented in the the [AGG GitHub source](https://github.com/mapnik/mapnik/blob/master/deps/agg/include/agg_gamma_functions.h).
 
 
 ##### polygon-clip `boolean`
-By default, geometries are clipped to map bounds. You can disable polygon clips to avoid rendering artifacts on a map if are having performance issues.
-	
-	polygon-clip: true;
 
-**Default Value**: `true`, geometry is clipped to map bounds before rendering. 
-
-**Available Values**: See [boolean](#boolean).
+Description | By default, geometries are clipped to map bounds. You can disable polygon clips to avoid rendering artifacts on a map if are having performance issues.
+Sample CartoCSS Code | `polygon-clip: true;`
+Default Value |  `true`, geometry is clipped to map bounds before rendering.
+Available Values | See [boolean](#boolean).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### polygon-simplify `float`
-Simplifies geometries by a given tolerance value.
 
-	polygon-simplify: 0;
-
-**Default Value**: `0`, geometry is  not simplified.
-
-**Available Values**: See [float](#float).
+Description | Simplifies geometries by a given tolerance value.
+Sample CartoCSS Code | `polygon-simplify: 0;`
+Default Value |  `0`, geometry is  not simplified.
+Available Values | See [float](#float).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### polygon-simplify-algorithm `keyword`
-Simplifies geometries by a given algorithm value.
 
-	polygon-simplify-algorithm: radial-distance;
-
-**Default Value**: `radial-distance`, geometry is simplified using the radial distance algorithm.
-
-PLEASE CONFIRM, THE ORIGINAL MAPBOX DESCRIPTION SAYS "geometry will not be simplified using the radial distance algorithm". That seems incorrect to me based on this description.
-
-**Available Values**: `radial-distance``zhao-saalfeld``visvalingam-whyatt`
+Description | Simplifies geometries by a given algorithm value.
+Sample CartoCSS Code | `polygon-simplify-algorithm: radial-distance;`
+Default Value |  `radial-distance`, geometry is simplified using the radial distance algorithm.
+| PLEASE CONFIRM, THE ORIGINAL MAPBOX DESCRIPTION SAYS "geometry will not be simplified using the radial distance algorithm". That seems incorrect to me based on this description.
+Available Values | `radial-distance``zhao-saalfeld``visvalingam-whyatt`
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### polygon-smooth `float`
-Smooths out geometry angles.
 
-	polygon-smooth: 0;
-
-**Default Value**: `0`, no smoothing is applied.
-
-**Available Values**: `0`, `1`
-
-**Note:** `0` indicates no smoothing is applied. `1` indicates that it is fully smoothed. Values greater than `1` produce wild, looping geometries. It is suggested to use a range between 0-1 for this value.
+Description | Smooths out geometry angles.
+Sample CartoCSS Code | `polygon-smooth: 0;`
+Default Value |  `0`, no smoothing is applied.
+Available Values | `0`, `1`
+| **Note:** `0` indicates no smoothing is applied. `1` indicates that it is fully smoothed. Values greater than `1` produce wild, looping geometries. It is suggested to use a range between 0-1 for this value.
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### polygon-geometry-transform `functions`
-Applies transformation functions to the geometry.
 
-	polygon-geometry-transform: none
-
-**Default Value**: `none`, geometry is not transformed.
-
-**Available Values**: See [functions](#functions).
+Description | Applies transformation functions to the geometry.
+Sample CartoCSS Code | `polygon-geometry-transform: none`
+Default Value |  `none`, geometry is not transformed.
+Available Values | See [functions](#functions).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### polygon-comp-op `keyword`
-The composite operation that defines how the symbolizer behaves relative to layers atop or below it.
 
-	polygon-comp-op: src-over
-
-**Default Value**: `src-over`, adds the current symbolizer on top of other symbolizers.
-
-**Available Values**:`clear``src``dst``src-over``dst-over``src-in``dst-in``src-out``dst-out``src-atop``dst-atop``xor``plus``minus``multiply``screen``overlay``darken``lighten``color-dodge``color-burn``hard-light``soft-light``difference``exclusion``contrast``invert``invert-rgb``grain-merge``grain-extract``hue``saturation``color``value`
+Description | The composite operation that defines how the symbolizer behaves relative to layers atop or below it.
+Sample CartoCSS Code | `polygon-comp-op: src-over`
+Default Value |  `src-over`, adds the current symbolizer on top of other symbolizers.
+Available Values | `clear``src``dst``src-over``dst-over``src-in``dst-in``src-out``dst-out``src-atop``dst-atop``xor``plus``minus``multiply``screen``overlay``darken``lighten``color-dodge``color-burn``hard-light``soft-light``difference``exclusion``contrast``invert``invert-rgb``grain-merge``grain-extract``hue``saturation``color``value`
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ## line
+
+These CartoCSS properties can be applied to both line and polygon layers.
 
 | | [line-color](#line-color-color) | [line-width](#line-width-float) | [line-opacity](#line-opacity-float)
 | | [line-join](#line-join-keyword) | [line-cap](#line-cap-keyword) | [line-gamma](#line-gamma-float)
@@ -317,195 +291,180 @@ The composite operation that defines how the symbolizer behaves relative to laye
 | | [line-rasterizer](#line-rasterizer-keyword) | [line-geometry-transform](#line-geometry-transform-functions) | [line-comp-op](#line-comp-op-keyword)
 
 ##### line-color `color`
-The color of the drawn line.
 
-	line-color: rgba(0,0,0,1);
-	
-**Default Value**: Black (as indicated with the rgb color=0, 0, 0) and fully opaque (as indicated with alpha=1).
+Description | The color of the drawn line.
+Sample CartoCSS Code | `line-color: rgba(0,0,0,1);`
+Default Value |  Black (as indicated with the rgb color=0, 0, 0) and fully opaque (as indicated with alpha=1).
+Available Values | See [color](#color).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
-**Available Values**: See [color](#color).
 
 ##### line-width `float`
-The width of a line, in pixels.
 
-	line-width: 1;
-
-**Default Value**: `1` pixel.
-
-**Available Values**: See [float](#float).
+Description | The width of a line, in pixels.
+Sample CartoCSS Code | `line-width: 1;`
+Default Value |  `1` pixel.
+Available Values | See [float](#float).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### line-opacity `float`
-The opacity of a line.
-	
-	line-opacity: 1;
-	
-**Default Value**: `1`, the line is opaque.
 
-**Available Values**: See [float](#float).
+Description | The opacity of a line.
+Sample CartoCSS Code | `line-opacity: 1;`
+Default Value |  `1`, the line is opaque.
+Available Values | See [float](#float).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### line-join `keyword`
-The behavior of lines when joined on a map.
 
-	line-join: miter;
-	
-**Default Value**: `miter`, joins the edges at the corners.
-
-**Available Values**: `miter``round``bevel`
+Description | The behavior of lines when joined on a map.
+Sample CartoCSS Code | `line-join: miter;`
+Default Value |  `miter`, joins the edges at the corners.
+Available Values | `miter``round``bevel`
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### line-cap `keyword`
-The display of line endings.
 
-	line-cap: butt;
-
-**Default Value**: `butt`, the ends of lines are squared off at the endpoints.
-
-**Available Values**: `butt``round``square`
+Description | The display of line endings.
+Sample CartoCSS Code | `line-cap: butt;`
+Default Value |  `butt`, the ends of lines are squared off at the endpoints.
+Available Values | `butt``round``square`
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### line-gamma `float`
-The level of antialiasing (smoothness of oversampling) of a stroke line.
 
-	line-gamma: 1;
-
-**Default Value**: `1`, is fully antialiased.
-
-**Available Values**: Range `0-1`. See [float](#float).
+Description | The level of antialiasing (smoothness of oversampling) of a stroke line.
+Sample CartoCSS Code | `line-gamma: 1;`
+Default Value |  `1`, is fully antialiased.
+Available Values | `0-1`. See [float](#float).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### line-gamma-method `keyword`
-An anti-grain geometry method that represents a 2D rendering library, specific to controlling the quality of antialiasing and used to calculate pixel gamma (pow(x,gamma), which produces slightly smoother line and polygon antialiasing than the &#x27;linear&#x27; method.
 
-	line-gamma-method: power;
-	
-**Default Value**: `power`
+Description | An anti-grain geometry method that represents a 2D rendering library, specific to controlling the quality of antialiasing and used to calculate pixel gamma (pow(x,gamma), which produces slightly smoother line and polygon antialiasing than the &#x27;linear&#x27; method.
+Sample CartoCSS Code | `line-gamma-method: power;`
+Default Value |  `power`
+Available Values | `power``linear``none``threshold``multiply`
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
-**Available Values**: `power``linear``none``threshold``multiply`
-
-**Tip:** Mapnik uses this method in combination with the &#x27;gamma&#x27; value (which defaults to 1). The methods are documented in the the [AGG GitHub source](https://github.com/mapnik/mapnik/blob/master/deps/agg/include/agg_gamma_functions.h).
+**Tip:** Mapnik uses this method in combination with the &#x27;gamma&#x27; value (which defaults to 1). These methods are documented in the the [AGG GitHub source](https://github.com/mapnik/mapnik/blob/master/deps/agg/include/agg_gamma_functions.h).
 
 
 ##### line-dasharray `numbers`
-A pair of length values [a,b], where (a) is the dash length and (b) is the gap length. You can enter more than two values for more complex patterns.
 
-	line-dasharray: none
-
-**Default Value**: `none`, a solid line appears.
-
-**Available Values**: See [numbers](#numbers).
+Description | A pair of length values [a,b], where (a) is the dash length and (b) is the gap length. You can enter more than two values for more complex patterns.
+Sample CartoCSS Code | `line-dasharray: none`
+Default Value |  `none`, a solid line appears.
+Available Values | See [numbers](#numbers).
+Related Examples | See [How to create dotted lines](faqs.html#how-to-create-dotted-lines-in-cartodb).
 
 
 ##### line-dash-offset `numbers`
-Sets the line dash pattern offset, to create an animation display for the line.
 
-	line-dash-offset: none;
+Description | Sets the line dash pattern offset, to create an animation display for the line.
+Sample CartoCSS Code | `line-dash-offset: none;`
+Default Value |  `none`, a solid line appears.
+Available Values | See [numbers](#numbers).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
-**Default Value**: `none`, a solid line appears.
-
-**Available Values**: See [numbers](#numbers).
-
-**Note:** This is a valid parameter for Scalable Vector Graphics but is currently not supported for rendering.
+**Note:** This is a valid parameter for SVG but is currently not supported for rendering.
 
 WHAT DOES THIS MEAN? I NEED MORE INFO SO THAT I CAN WORDSMITH.
 
 
 ##### line-miterlimit `float`
-The limit on the ratio of the miter length to the stroke-width. This is used to automatically convert miter joins to bevel joins for sharp angles, to avoid the miter extending beyond the thickness of the stroking path. Typically, this property does not need to be set. However, if you have jaggy artifacts during rendering, defining a larger value for this property helps.
 
-	line-miterlimit: 4;
-
-**Default Value**: `4`, auto-convert miters to bevel line joins when theta is less than 29 degrees as per the SVG definitions: &#x27;miterLength &#x2F; stroke-width = 1 &#x2F; sin ( theta &#x2F; 2 )&#x27;)
-
-**Available Values**: See [float](#float).
+Description | The limit on the ratio of the miter length to the stroke-width. This is used to automatically convert miter joins to bevel joins for sharp angles, to avoid the miter extending beyond the thickness of the stroking path. Typically, this property does not need to be set. However, if you have jaggy artifacts during rendering, defining a larger value for this property helps.
+Sample CartoCSS Code | `line-miterlimit: 4;`
+Default Value |  `4`, auto-convert miters to bevel line joins when theta is less than 29 degrees as per the SVG definitions: &#x27;miterLength &#x2F; stroke-width = 1 &#x2F; sin ( theta &#x2F; 2 )&#x27;)
+Available Values | See [float](#float).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 **Note:** Define values as per [SVG transformation definitions](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform)- which are values separated by whitespace and/or commas, from right to left.
 
 
 ##### line-clip `boolean`
-By default, geometries are clipped to map bounds. You can disable line clips to avoid rendering artifacts on a map if are having performance issues.
 
-	line-clip: true;
-	
-**Default Value**: `true`, geometry is clipped to map bounds before rendering.
-
-**Available Values**: See [boolean](#boolean).
+Description | By default, geometries are clipped to map bounds. You can disable line clips to avoid rendering artifacts on a map if are having performance issues.
+Sample CartoCSS Code | `line-clip: true;`
+Default Value |  `true`, geometry is clipped to map bounds before rendering.
+Available Values | See [boolean](#boolean).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### line-simplify `float`
-Simplifies geometries by a given tolerance value.
 
-	line-simplify: 0;
-
-**Default Value**: `0`, geometry is not simplified.
-
-**Available Values**: See [float](#float).
+Description | Simplifies geometries by a given tolerance value.
+Sample CartoCSS Code | `line-simplify: 0;`
+Default Value |  `0`, geometry is not simplified.
+Available Values | See [float](#float).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### line-simplify-algorithm `keyword`
-Simplifies geometries by a given algorithm value.
 
-	line-simplify-algorithm: radial-distance;
-
-**Default Value**: `radial-distance`, geometry is simplified using the radial distance algorithm.
-
-PLEASE CONFIRM, THE ORIGINAL MAPBOX DESCRIPTION SAYS “geometry will not be simplified using the radial distance algorithm”. That seems incorrect to me based on this description.
+Description | Simplifies geometries by a given algorithm value.
+Sample CartoCSS Code | `line-simplify-algorithm: radial-distance;`
+Default Value | `radial-distance`, geometry is simplified using the radial distance algorithm.
+| PLEASE CONFIRM, THE ORIGINAL MAPBOX DESCRIPTION SAYS “geometry will not be simplified using the radial distance algorithm”. That seems incorrect to me based on this description.
+Available Values | `radial-distance` `zhao-saalfeld` `visvalingam-whyatt`
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### line-smooth `float`
-Smooths out geometry angles.
 
-	line-smooth: 0;
-	
-**Default Value**: 0, no smoothing is applied.
-
-**Available Values**: `0``1`
-
-**Note:** 0 indicates no smoothing is applied. 1 indicates that it is fully smoothed. Values greater than 1 produce wild, looping geometries. It is suggested to use a range between 0-1 for this value.
+Description | Smooths out geometry angles.
+Sample CartoCSS Code | `line-smooth: 0;`
+Default Value |  `0`, no smoothing is applied.
+Available Values | `0` `1`
+| **Note:** 0 indicates no smoothing is applied. 1 indicates that it is fully smoothed. Values greater than 1 produce wild, looping geometries. It is suggested to use a range between 0-1 for this value.
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### line-offset `float`
-Offsets a line parallel to its actual path, defined by a number in pixels. Positive values move the line left, negative values move it right (relative to the directionality of the line).
 
-	line-offset: 0:
-	
-**Default Value**: `0`, no offset is applied.
-
-**Available Values**: See [float](#float).
+Description | Offsets a line parallel to its actual path, defined by a number in pixels. Positive values move the line left, negative values move it right (relative to the directionality of the line).
+Sample CartoCSS Code | `line-offset: 0:`
+Default Value |  `0`, no offset is applied.
+Available Values | See [float](#float).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### line-rasterizer `keyword`
-Exposes an alternate AGG (Anti-Grain Geometry) rendering method that sacrifices some accuracy for speed.
 
-	line-rasterizer: full;
-
-**Default Value**: `full`
-
-**Available Values**: `full``fast`
+Description | Exposes an alternate AGG (Anti-Grain Geometry) rendering method that sacrifices some accuracy for speed.
+Sample CartoCSS Code | `line-rasterizer: full;`
+Default Value |  `full`
+Available Values | `full``fast`
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### line-geometry-transform `functions`
-Applies transformation functions to the geometry.
 
-	line-geometry-transform: none;
-	
-**Default Value**: `none`, geometry is not transformed.
-
-**Available Values**: See [functions](#functions).
+Description | Applies transformation functions to the geometry.
+Sample CartoCSS Code | `line-geometry-transform: none;`
+Default Value |  `none`, geometry is not transformed.
+Available Values | See [functions](#functions).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### line-comp-op `keyword`
-The composite operation that defines how the symbolizer behaves relative to layers atop or below it.
 
-	line-comp-op: src-over;
-
-**Default Value**: `src-over`, adds the current symbolizer on top of other symbolizers.
-
-**Available Values**: `clear``src``dst``src-over``dst-over``src-in``dst-in``src-out``dst-out``src-atop``dst-atop``xor``plus``minus``multiply``screen``overlay``darken``lighten``color-dodge``color-burn``hard-light``soft-light``difference``exclusion``contrast``invert``invert-rgb``grain-merge``grain-extract``hue``saturation``color``value`
+Description | The composite operation that defines how the symbolizer behaves relative to layers atop or below it.
+Sample CartoCSS Code | `line-comp-op: src-over;`
+Default Value |  `src-over`, adds the current symbolizer on top of other symbolizers.
+Available Values | `clear``src``dst``src-over``dst-over``src-in``dst-in``src-out``dst-out``src-atop``dst-atop``xor``plus``minus``multiply``screen``overlay``darken``lighten``color-dodge``color-burn``hard-light``soft-light``difference``exclusion``contrast``invert``invert-rgb``grain-merge``grain-extract``hue``saturation``color``value`
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ## markers
+
+These CartoCSS properties can be applied to point, line and polygon layers.
 
 | | [marker-file](#marker-file-uri) | [marker-opacity](#marker-opacity-float) | [marker-fill-opacity](#marker-fill-opacity-float)
 | | [marker-line-color](#marker-line-color-color) | [marker-line-width](#marker-line-width-float) | [marker-line-opacity](#marker-line-opacity-float)
@@ -516,248 +475,213 @@ The composite operation that defines how the symbolizer behaves relative to laye
 | | [marker-smooth](#marker-smooth-float) | [marker-geometry-transform](#marker-geometry-transform-functions) | [marker-comp-op](#marker-comp-op-keyword)
 
 ##### marker-file `uri`
-Displays an SVG file at each marker placement. If no file is specified, an ellipse is shown for the marker.
 
-	marker-file: url(http://www.clipartbest.com/cliparts/nTX/AGX/nTXAGXyTB.svg);
-	
-**Default Value**: `none`, an ellipse or circle (if the height is equal to the width) appears.
-
-WHAT HAPPENS IF THE WIDTH DOES NOT EQUAL THE HEIGHT, and no SVG file is specified?
-
-**Available Values**: See [uri](#uri).
+Description | Displays an SVG file at each marker placement. If no file is specified, an ellipse is shown for the marker.
+Sample CartoCSS Code | `marker-file: url(http://www.clipartbest.com/cliparts/nTX/AGX/nTXAGXyTB.svg);`
+Default Value |  `none`, an ellipse or circle (if the height is equal to the width) appears.
+| WHAT HAPPENS IF THE WIDTH DOES NOT EQUAL THE HEIGHT, and no SVG file is specified?
+Available Values | See [uri](#uri).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### marker-opacity `float`
-Sets the overall opacity of the marker, overriding any stroke-opacity and fill-opacity settings.
 
-WHAT IS THE stroke-opacity property? That does not seem to be defined on its own?
-
-	marker-opacity: 1;
-	
-**Default Value**: `1`, the stroke-opacity and fill-opacity are used???
-
-**Available Values**: See [float](#float).
+Description | Sets the overall opacity of the marker, overriding any stroke-opacity and fill-opacity settings.
+| WHAT IS THE stroke-opacity property? That does not seem to be defined on its own?
+Sample CartoCSS Code | `marker-opacity: 1;`
+Default Value |  `1`, the stroke-opacity and fill-opacity are used???
+Available Values | See [float](#float).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### marker-fill-opacity `float`
-The fill opacity of the marker.
 
-	marker-fill-opacity: 1;
-	
-**Default Value**: `1`, the fill-opacity is opaque.
-
-**Available Values**: See [float](#float).
+Description | The fill opacity of the marker.
+Sample CartoCSS Code | `marker-fill-opacity: 1;`
+Default Value |  `1`, the fill-opacity is opaque.
+Available Values | See [float](#float).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### marker-line-color `color`
-The color of the stroke around a marker shape.
 
-IS STROKE commonly known or should we define it?
-
-    marker-line-color: black;
-
-**Default Value**: `black`
-
-**Available Values**: See [color](#color).
+Description | The color of the stroke around a marker shape.
+| IS STROKE commonly known or should we define it?
+Sample CartoCSS Code | `marker-line-color: black;`
+Default Value |  `black`
+Available Values | See [color](#color).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### marker-line-width `float`
-The width of the stroke around a marker shape, in pixels. 
+
+Description | The width of the stroke around a marker shape, in pixels. 
 (This is positioned on the boundary, so high values can cover the area itself.)???
-
-    marker-line-width: undefined;
-	
-**Default Value**: undefined pixels???
-
-**Available Values**: See [float](#float).
+Sample CartoCSS Code | `marker-line-width: undefined;`
+Default Value |  undefined pixels???
+Available Values | See [float](#float).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### marker-line-opacity `float`
-The opacity of the marker line.
 
-  marker-line-opacity: 1;
-
-**Default Value**: `1`, the line is opaque.
-
-**Available Values**: See [float](#float).
+Description | The opacity of the marker line.
+Sample CartoCSS Code | `marker-line-opacity: 1;`
+Default Value |  `1`, the line is opaque.
+Available Values | See [float](#float).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### marker-placement `keyword`
-Places markers on a point, in the center of a polygon, or on a line.
 
-    marker-placement: point;
-
-**Default Value**: `point`, places markers at the center point (centroid) of the geometry.
-
-**Available Values**: `point``line``interior`
-
-**Note:** If placing markers on a line, markers appear multiple times along a line. You can apply &#x27;interior&#x27; to ensure correct placement on a line. Points placed on polygons are forced to be inside the polygon interior.
+Description | Places markers on a point, in the center of a polygon, or on a line.
+Sample CartoCSS Code | `marker-placement: point;`
+Default Value | `point`, places markers at the center point (centroid) of the geometry.
+Available Values | `point``line``interior`
+| **Note:** If placing markers on a line, markers appear multiple times along a line. You can apply &#x27;interior&#x27; to ensure correct placement on a line. Points placed on polygons are forced to be inside the polygon interior.
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 **Tip**: See the note for how this property interacts with the [Marker-Multi-Policy](#marker-multi-policy-keyword).
 
 
 ##### marker-multi-policy `keyword`
-Enables you to control the rendering behavior for multi-geometries.
 
-  marker-multi-policy: each;
-
-**Default Value**: `each`, all geometries display a marker.
-
-**Available Values**: `each``whole``largest`
-
-- The &#x27;whole&#x27; policy value indicates that the aggregate centroid between all geometries is applied
-
-- The &#x27;largest&#x27; policy value indicates that only the largest (by bounding box areas) renders a marker (similar to default text labeling behavior)
+Description | Enables you to control the rendering behavior for multi-geometries.
+Sample CartoCSS Code | `marker-multi-policy: each;`
+Default Value |  `each`, all geometries display a marker.
+Available Values | `each``whole``largest`
+| - The &#x27;whole&#x27; policy value indicates that the aggregate centroid between all geometries is applied
+| - The &#x27;largest&#x27; policy value indicates that only the largest (by bounding box areas) renders a marker (similar to default text labeling behavior)
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 **Note:** If the [marker-placement](#marker-placement-keyword) property is also applied and the value is either `point` or `interior`, a marker is rendered for each placement.  If you specified `line` as the marker-placement value, this *marker-multi-policy* property is not applied and all geometries display a marker. 
 
 
 ##### marker-type `keyword`
-Sets the default marker-type. If a SVG file is not defined with the [marker-file](#marker-file-uri) property, an arrow, ellipse, or circle (if height is equal to width) is rendered. 
 
-  marker-type: ellipse;
-
-**Default Value**: `ellipse`
-
-**Available Values**: `arrow``ellipse`
-
-**Note:** A circle may be automatically rendered if the marker height is equal to the marker width  IS THIS CORRECT???
+Description | Sets the default marker-type. If a SVG file is not defined with the [marker-file](#marker-file-uri) property, an arrow, ellipse, or circle (if height is equal to width) is rendered. 
+Sample CartoCSS Code | `marker-type: ellipse;`
+Default Value |  `ellipse`
+Available Values | `arrow``ellipse`
+| **Note:** A circle may be automatically rendered if the marker height is equal to the marker width  IS THIS CORRECT???
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### marker-width `expression`
-If a default [marker-type](#marker-type-keyword) property is defined, this property indicates the width of the marker-type.
 
-   marker-width: 10.0;
-
-**Default Value**: `10`???
-
-WHAT IS THE SUGGESTED RANGE?
-
-**Available Values**: See [expression](#expression).
+Description | If a default [marker-type](#marker-type-keyword) property is defined, this property indicates the width of the marker-type.
+Sample CartoCSS Code | `marker-width: 10.0;`
+Default Value |  `10`???
+| WHAT IS THE SUGGESTED RANGE?
+Available Values | See [expression](#expression).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### marker-height `expression`
-If a default [marker-type](#marker-type-keyword) property is defined, this property indicates the height of the marker-type.
 
-   marker-height: 10.0;
-
-**Default Value**: `10`, ???
-
-WHAT IS THE SUGGESTED RANGE?
-
-**Available Values**: See [expression](#expression).
+Description | If a default [marker-type](#marker-type-keyword) property is defined, this property indicates the height of the marker-type.
+Sample CartoCSS Code | `marker-height: 10.0;`
+Default Value |  `10`, ???
+| WHAT IS THE SUGGESTED RANGE?
+Available Values | See [expression](#expression)
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### marker-fill `color`
-The fill color of the marker.
 
-   marker-fill: blue;
-	
-**Default Value**: `blue`
-
-**Available Values**: See [color](#color).
+Description | The fill color of the marker.
+Sample CartoCSS Code | `marker-fill: blue;`
+Default Value |  `blue`
+Available Values | See [color](#color).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### marker-allow-overlap `boolean`
-Shows or hides overlapping markers on a map.
 
-    marker-allow-overlap: false;
-	
-**Default Value**: `false`, does not allow markers to overlap. Overlapping markers are hidden.
-
-**Available Values**: See [boolean](#boolean).
+Description | Shows or hides overlapping markers on a map.
+Sample CartoCSS Code | `marker-allow-overlap: false;`
+Default Value |  `false`, does not allow markers to overlap. Overlapping markers are hidden.
+Available Values | See [boolean](#boolean).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### marker-ignore-placement `boolean`
-Prevents other placement properties from being rendered.
 
-    marker-ignore-placement: false;
-
-**Default Value**: `false`, does not store
-placement geometries in the collision detector cache of the bbox (bounding box)
-
-**Available Values**: See [boolean](#boolean).
+Description | Prevents other placement properties from being rendered.
+Sample CartoCSS Code | `marker-ignore-placement: false;`
+Default Value |  `false`, does not store placement geometries in the collision detector cache of the bbox (bounding box)
+Available Values | See [boolean](#boolean).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### marker-spacing `float`
-The space between repeated markers, in pixels. If spacing is less than the marker size, or larger than the line segment length, no markers are displayed.
 
-  marker-line-spacing: spacing;
-
-**Default Value**: `100`??? RANGE????
-
-**Available Values**: See [float](#float).
+Description | The space between repeated markers, in pixels. If spacing is less than the marker size, or larger than the line segment length, no markers are displayed.
+Sample CartoCSS Code | `marker-line-spacing: spacing;`
+Default Value |  `100`??? RANGE????
+Available Values | See [float](#float).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### marker-max-error `float`
-The maximum difference between the actual marker placement and the marker-spacing parameter.
 
-	marker-max-error: 0.2;
-
-**Default Value**: `0.2`
-
-**Available Values**: See [float](#float).
-
-**Note:**  Setting a high value can resolve placement conflicts with other symbolizers and improve rendering performance.
+Description | The maximum difference between the actual marker placement and the marker-spacing parameter.
+Sample CartoCSS Code | `marker-max-error: 0.2;`
+Default Value |  `0.2`
+Available Values | See [float](#float).
+| **Note:**  Setting a high value can resolve placement conflicts with other symbolizers and improve rendering performance.
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### marker-transform `functions`
-Defines SVG transformation functions to scale how markers appear.
 
-	marker-transform: functions;
-	
-**Default Value**: no transformation applied by default.
-
-**Available Values**: See [functions](#functions).
-
-**Note:** Define values as per [SVG transformation definitions](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform)- which are values separated by whitespace and/or commas, from right to left.
-
+Description | Defines SVG transformation functions to scale how markers appear.
+Sample CartoCSS Code | `marker-transform: functions;`
+Default Value |  no transformation applied by default.
+Available Values | See [functions](#functions).
+| **Note:** Define values as per [SVG transformation definitions](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform)- which are values separated by whitespace and/or commas, from right to left.
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### marker-clip `boolean`
-By default, geometries are clipped to map bounds. You can disable line clips to avoid rendering artifacts on a map if are having performance issues.
 
-    marker-clip: true; 
-
-**Default Value**: `true`, geometry is clipped to map bounds before rendering.
-
-**Available Values**: See [boolean](#boolean).
+Description | By default, geometries are clipped to map bounds. You can disable line clips to avoid rendering artifacts on a map if are having performance issues.
+Sample CartoCSS Code | `marker-clip: true;`
+Default Value |  `true`, geometry is clipped to map bounds before rendering.
+Available Values | See [boolean](#boolean).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### marker-smooth `float`
-Smooths out geometry angles.
 
-	marker-smooth: float;
-
-**Default Value**: `0`, no smoothing is applied.
-
-**Available Values**: See [float](#float).
-
-**Note:** 0 indicates no smoothing is applied. 1 indicates that it is fully smoothed. Values greater than 1 produce wild, looping geometries. It is suggested to use a range between 0-1 for this value.
+Description | Smooths out geometry angles.
+Sample CartoCSS Code | `marker-smooth: float;`
+Default Value | `0`, no smoothing is applied.
+Available Values | See [float](#float).
+| **Note:** 0 indicates no smoothing is applied. 1 indicates that it is fully smoothed. Values greater than 1 produce wild, looping geometries. It is suggested to use a range between 0-1 for this value.
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### marker-geometry-transform `functions`
-Applies transformation functions to the geometry.
 
-	marker-geometry-transform: none;
-	
-**Default Value**: `none`, geometry is not transformed.
-
-**Available Values**: See [functions](#functions).
+Description | Applies transformation functions to the geometry.
+Sample CartoCSS Code | `marker-geometry-transform: none;`
+Default Value | `none`, geometry is not transformed.
+Available Values | See [functions](#functions).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### marker-comp-op `keyword`
-The composite operation that defines how the symbolizer behaves relative to layers atop or below it.
 
-	marker-comp-op: src-over;
-
-**Default Value**: `src-over`, adds the current symbolizer on top of other symbolizers.
-
-**Available Values**: `clear``src``dst``src-over``dst-over``src-in``dst-in``src-out``dst-out``src-atop``dst-atop``xor``plus``minus``multiply``screen``overlay``darken``lighten``color-dodge``color-burn``hard-light``soft-light``difference``exclusion``contrast``invert``invert-rgb``grain-merge``grain-extract``hue``saturation``color``value`
+Description | The composite operation that defines how the symbolizer behaves relative to layers atop or below it.
+Sample CartoCSS Code | `marker-comp-op: src-over;`
+Default Value | `src-over`, adds the current symbolizer on top of other symbolizers.
+Available Values | `clear``src``dst``src-over``dst-over``src-in``dst-in``src-out``dst-out``src-atop``dst-atop``xor``plus``minus``multiply``screen``overlay``darken``lighten``color-dodge``color-burn``hard-light``soft-light``difference``exclusion``contrast``invert``invert-rgb``grain-merge``grain-extract``hue``saturation``color``value`
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ## shield
-If you are displaying road shields on a map (for example, highway markers), define a shield file and apply shield styles.
+If you are displaying road shields on a map (for example, highway markers), these CartoCSS properties define the shield styling.
 
 | | [shield-file](#shield-file-uri) | [shield-name](#shield-name-expression) | [shield-face-name](#shield-face-name-string)
 | | [shield-unlock-image](#shield-unlock-image-boolean) | [shield-size](#shield-size-float) | [shield-fill](#shield-fill-color)
@@ -773,149 +697,133 @@ If you are displaying road shields on a map (for example, highway markers), defi
 | | [shield-comp-op](#shield-comp-op-keyword) 
 
 ##### shield-file `uri`
-The shield-file property is required before defining any shield styles. Define an image file to render the shield image.
 
-    shield-file: url('marker.svg');
-	
-**Default Value**: none
-
-**Available Values**: See [uri](#uri). 
+Description | The shield-file property is required before defining any shield styles. Define an image file to render the shield image.
+Sample CartoCSS Code | `shield-file: url('marker.svg');`
+Default Value |  none
+Available Values | See [uri](#uri).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### shield-name `expression`
-The text name of a shield symbol on a map. Appears on top of the [shield-file](#shield-file-uri) image by default.
 
-    shield-name: '[name_example]';
-
-**Default Value**: undefined
-
-**Available Values**: See [expression](#expression). The expression value is a data column specified by using brackets, as shown in the sample code above.
+Description | The text name of a shield symbol on a map. Appears on top of the [shield-file](#shield-file-uri) image by default.
+Sample CartoCSS Code | `shield-name: '[name_example]';`
+Default Value | undefined
+Available Values | See [expression](#expression). The expression value is a data column specified by using brackets, as shown in the sample code above.
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 **Note:** See [shield-unlock-image](#shield-unlock-image-boolean) to change how the shield-text appears relative to this shield-file image.
 
 
 ##### shield-face-name `string`
-The font name and style for the shield-name property.
 
-    shield-face-name: ‘Open Sans Bold’;
-	
-**Default Value**: undefined
-
-**Available Values**: See [string](#string).
+Description | The font name and style for the shield-name property.
+Sample CartoCSS Code | `shield-face-name: ‘Open Sans Bold’;`
+Default Value |  undefined
+Available Values | See [string](#string).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### shield-unlock-image `boolean`
-Sets the text alignment of the [shield-name](#shield-name-expression) relative to the [shield-file](#sheild-file-uri). 
 
-	shield-unlock-image: false;
-
-**Default Value**: `false`, the center of the shield-file image is the anchor for text positioning
-
-**Available Values**: See [boolean](#boolean).
-
-**Note:** If you are positioning text next to (as opposed to on top of a shield-file image), set the value to `true`.
+Description | Sets the text alignment of the [shield-name](#shield-name-expression) relative to the [shield-file](#sheild-file-uri). 
+Sample CartoCSS Code | `shield-unlock-image: false;`
+Default Value |  `false`, the center of the shield-file image is the anchor for text positioning.
+Available Values | See [boolean](#boolean).
+| **Note:** If you are positioning text next to (as opposed to on top of a shield-file image), set the value to `true`.
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### shield-size `float`
-The size of the text for the shield-name property, in pixels.
 
-	shield-size: 12;
-
-**Default Value**: undefined
-
-**Available Values**: See [float](#float).
+Description | The size of the text for the shield-name property, in pixels.
+Sample CartoCSS Code | `shield-size: 12;`
+Default Value |  undefined
+Available Values | See [float](#float).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### shield-fill `color`
-The fill color of the shield text.
 
-    shield-fill: #e16363;
-	
-**Default Value**: undefined
-
-**Available Values**: See [color](#color).
+Description | The fill color of the shield text.
+Sample CartoCSS Code | `shield-fill: #e16363;`
+Default Value | undefined
+Available Values | See [color](#color).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### shield-placement `keyword`
-Places shields on top of points, along multiple line places, on the vertexes of polygons, or in the interior inside a polygon.
 
-	shield-placement: point;
-
-**Default Value**: `point`, the shield appears on the top of map points.
-
-**Available Values**: `point``line``vertex``interior`
+Description | Places shields on top of points, along multiple line places, on the vertexes of polygons, or in the interior inside a polygon.
+Sample CartoCSS Code | `shield-placement: point;`
+Default Value | `point`, the shield appears on the top of map points.
+Available Values | `point``line``vertex``interior`
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### shield-avoid-edges `boolean`
-Prevents shields from intersecting with tile boundaries. 
 
-	shield-avoid-edges: false;
-	
-**Default Value**: `false`, shields do not intersect.
-
-**Available Values**: See [boolean](#boolean).
+Description | Prevents shields from intersecting with tile boundaries. 
+Sample CartoCSS Code | `shield-avoid-edges: false;`
+Default Value | `false`, shields do not intersect.
+Available Values | See [boolean](#boolean).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### shield-allow-overlap `boolean`
-Controls how shields appear when overlapping with other elements on the map.
 
-	shield-allow-overlap: false;
-	
-**Default Value**: `false`, shields do not overlap with other map elements. Overlapping shields are hidden.
-
-**Available Values**: See [boolean](#boolean).
+Description | Controls how shields appear when overlapping with other elements on the map.
+Sample CartoCSS Code | `shield-allow-overlap: false;`
+Default Value | `false`, shields do not overlap with other map elements. Overlapping shields are hidden.
+Available Values | See [boolean](#boolean).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### shield-min-distance `float`
-The minimum distance between the next shield symbol. (This does not apply to multiple shields at one point).
 
-	shield-min-distance: 0;
-
-**Default Value**: `0`, ???
-
-**Available Values**: See [float](#float).
+Description | The minimum distance between the next shield symbol. (This does not apply to multiple shields at one point).
+Sample CartoCSS Code | `shield-min-distance: 0;`
+Default Value | `0`, ???
+Available Values | See [float](#float).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### shield-spacing `float`
-The space between repeated shields, in pixels, on a line. 
 
-	shield-spacing: 0;
-
-**Default Value**: `0`???
-
-**Available Values**: See [float](#float).
+Description | The space between repeated shields, in pixels, on a line. 
+Sample CartoCSS Code | `shield-spacing: 0;`
+Default Value | `0`???
+Available Values | See [float](#float).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### shield-min-padding `float`
-The minimum distance, in pixels, that a shield is placed from the edge of a metatile (the tile/buffer space relationship).
 
-	shield-min-padding: 0;
-
-**Default Value**: `0`???
-
-**Available Values**: See [float](#float).
+Description | The minimum distance, in pixels, that a shield is placed from the edge of a metatile (the tile/buffer space relationship).
+Sample CartoCSS Code | `shield-min-padding: 0;`
+Default Value | `0`???
+Available Values | See [float](#float).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### shield-wrap-width `unsigned`
-The length of characters that appears before the [shield-name](#shield-name-expression) text wraps.
 
-	shield-wrap-width: 0;
-	
-**Default Value**: `0`???
-
-**Available Values**: Unsigned integer
+Description | The length of characters that appears before the [shield-name](#shield-name-expression) text wraps.
+Sample CartoCSS Code | `shield-wrap-width: 0;`
+Default Value | `0`???
+Available Values | Unsigned integer
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### shield-wrap-before `boolean`
-Determines how the wrap-text behaves relative to the wrap-width.
 
-	shield-wrap-before: false;
-	
-**Default Value**: `false`, wrapped text appears longer than the wrap-width.
-
-**Available Values**: See [boolean](#boolean).
-
-**Note:** If value is `true`, the text wraps before wrap-width is reached.
+Description | Determines how the wrap-text behaves relative to the wrap-width.
+Sample CartoCSS Code | `shield-wrap-before: false;`
+Default Value | `false`, wrapped text appears longer than the wrap-width.
+Available Values | See [boolean](#boolean).
+| **Note:** If value is `true`, the text wraps before wrap-width is reached.
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### shield-wrap-character `string`
@@ -928,6 +836,7 @@ Available Values | See [string](#string).
 Related Examples | - [Always break long city names (New Bedford Massachusetts) on two lines](https://www.mapbox.com/tilemill/docs/guides/styling-labels/#multi-line-labels) 
 | - *Need to provide CartoDB examples (links to blocks, public maps, etc.)?
 
+
 ##### shield-halo-fill `color`
 
 ------------ | -------------
@@ -936,286 +845,261 @@ Sample CartoCSS Code | `shield-halo-fill: #FFFFFF;`
 Default Value | `#FFFFFF`, the halo color is white by default
 Available Values | See [color](#color).
 Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
-	| https://www.mapbox.com/blog/design-control-with-regular-expressions-in-mapbox-studio/ 	
-	|
+	| https://www.mapbox.com/blog/design-control-with-regular-expressions-in-mapbox-studio/
+|	NEED TO ADD OUR OWN SIMILAR EXAMPLE INSTEAD
+
 
 ##### shield-halo-radius `float`
-The radius of the halo, in pixels.
 
-	shield-halo-radius: 0;
-	
-**Default Value**: `0`, no halo is applied.
-
-**Available Values**:  See [float](#float). 	
+Description | The radius of the halo, in pixels.
+Sample CartoCSS Code | `shield-halo-radius: 0;`
+Default Value | `0`, no halo is applied.
+Available Values | See [float](#float).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### shield-character-spacing `unsigned`
-The horizontal space, in pixels, between point characters.
 
-	shield-character-spacing: unsigned;
+Description | The horizontal space, in pixels, between point characters.
+Sample CartoCSS Code | `shield-character-spacing: unsigned;`
+Default Value | `0`???
+Available Values | Unsigned integer.
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
-**Default Value**: `0`???
-
-**Available Values**: Unsigned integer.
-
-**Note:** This not supported for line placement.
+**Note:** This property is not supported for line placement.
 
 
 ##### shield-line-spacing `unsigned`
-The vertical spacing, in pixels, between two lines of multiline labels.
 
-	shield-line-spacing: none
-
-**Default Value**: undefined
-
-**Available Values**: Unsigned integer
+Description | The vertical spacing, in pixels, between two lines of multiline labels.
+Sample CartoCSS Code | `shield-line-spacing: none`
+Default Value | undefined
+Available Values | Unsigned integer
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### shield-text-dx `float`
-Places the shield text within a fixed range of pixels, +&#x2F;- along the X axis. A positive value shifts the text to the right.
 
-  shield-text-dx: 0;
-
-**Default Value**: `0`, ???
-
-**Available Values**: See [float](#float).
+Description | Places the shield text within a fixed range of pixels, +&#x2F;- along the X axis. A positive value shifts the text to the right.
+Sample CartoCSS Code | `shield-text-dx: 0;`
+Default Value | `0`, ???
+Available Values | See [float](#float).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### shield-text-dy `float`
-Places the shield text within a fixed range of pixels, +&#x2F;- along the Y axis. A positive value shifts the text down.
 
-	shield-text-dy: 0;
-	
-**Default Value**: `0`, ???
-
-**Available Values**: See [float](#float).
+Description | Places the shield text within a fixed range of pixels, +&#x2F;- along the Y axis. A positive value shifts the text down.
+Sample CartoCSS Code | `shield-text-dy: 0;`
+Default Value | `0`, ???
+Available Values | See [float](#float).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### shield-dx `float`
-Places the shield within in a fixed range of pixels, +&#x2F;- along the X axis. A positive value shifts the shield to the right.
 
-**Default Value**: `0`
-
-**Available Values**: See [float](#float).
+Description | Places the shield within in a fixed range of pixels, +&#x2F;- along the X axis. A positive value shifts the shield to the right.
+Sample CartoCSS Code | `shield-dx: 150;`
+Default Value |  `0`
+Available Values | See [float](#float).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### shield-dy `float`
-Places the shield within a fixed range of pixels, +&#x2F;- along the Y axis. A positive value shifts the shield down.
 
-	shield-dy: 0;
-	
-**Default Value**: `0`, ???
-
-**Available Values**: See [float](#float).
+Description | Places the shield within a fixed range of pixels, +&#x2F;- along the Y axis. A positive value shifts the shield down.
+Sample CartoCSS Code | `shield-dy: 0;`
+Default Value | `0`, ???
+Available Values | See [float](#float).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### shield-opacity `float`
-Sets the opacity of the [shield-file](#shield-file-uri) image.
 
-	shield-opacity: 1;
-
-**Default Value**: `1`
-
-**Available Values**: See [float](#float).
+Description | Sets the opacity of the [shield-file](#shield-file-uri) image.
+Sample CartoCSS Code | `shield-opacity: 1;`
+Default Value | `1`
+Available Values | See [float](#float).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### shield-text-opacity `float`
-The opacity of the text placed on top of the shield.
 
-	shield-text-opacity: 1;
-
-**Default Value**: `1`
-
-**Available Values**: See [float](#float).
+Description | The opacity of the text placed on top of the shield.
+Sample CartoCSS Code | `shield-text-opacity: 1;`
+Default Value | `1`
+Available Values | See [float](#float).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### shield-horizontal-alignment `keyword`
-The horizontal alignment of the shield from its center point.
 
-	shield-horizontal-alignment auto;
-
-**Default Value**: `auto`
-
-**Available Values**: `left``middle``right``auto`
+Description | The horizontal alignment of the shield from its center point.
+Sample CartoCSS Code | `shield-horizontal-alignment auto;`
+Default Value | `auto`
+Available Values | `left``middle``right``auto`
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### shield-vertical-alignment `keyword
-The vertical alignment of the shield from its center point.
 
-	shield-vertical-alignment: middle'
-
-**Default Value**: `middle`
-
-**Available Values**: `top``middle``bottom``auto`
+Description | The vertical alignment of the shield from its center point.
+Sample CartoCSS Code | `shield-vertical-alignment: middle'`
+Default Value | `middle`
+Available Values | `top``middle``bottom``auto`
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### shield-placement-type `keyword`
-Enables you to reposition and resize the shield to avoid overlaps.
 
-	shield-placement-type: dummy;
-
-**Default Value**: `dummy`, turns off and disables this feature.
-
-**Available Values**: `dummy``simple`
-
-**Note:** The `simple` value is the shield placement string used for basic algorithms.
+Description | Enables you to reposition and resize the shield to avoid overlaps.
+Sample CartoCSS Code | `shield-placement-type: dummy;`
+Default Value | `dummy`, turns off and disables this feature.
+Available Values | `dummy``simple`
+| **Note:** The `simple` value is the shield placement string used for basic algorithms.
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### shield-placements `string`
-If [shield-placement-type](#shield-placement-type-keyword) is set to `simple`, you can use this property to set the position of the shield placement.
 
-	shield-placements: E,NE,SE,W,NW,SW;
-
-**Default Value**: none
-
-**Available Values**: See [string](#string).
+Description | If [shield-placement-type](#shield-placement-type-keyword) is set to `simple`, you can use this property to set the position of the shield placement.
+Sample CartoCSS Code | `shield-placements: E,NE,SE,W,NW,SW;`
+Default Value | none
+Available Values | See [string](#string).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### shield-text-transform `keyword`
-Identifies the text case of the shield-name.
 
-	shield-text-transform: none;
-
-**Default Value**: `none`
-
-**Available Values**: `none``uppercase``lowercase``capitalize`
+Description | Identifies the text case of the shield-name.
+Sample CartoCSS Code | `shield-text-transform: none;`
+Default Value | `none`
+Available Values | `none``uppercase``lowercase``capitalize`
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### shield-justify-alignment `keyword`
-Defines how the shield-name text is aligned.
 
-	shield-justify-alignment: auto;
-
-**Default Value**: `auto`
-
-**Available Values**: `left``center``right``auto`
+Description | Defines how the shield-name text is aligned.
+Sample CartoCSS Code | `shield-justify-alignment: auto;`
+Default Value | `auto`
+Available Values | `left``center``right``auto`
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### shield-transform `functions`
-Defines SVG transformation functions to scale how shields appear.
 
-	shield-transform: none
+Description | Defines SVG transformation functions to scale how shields appear.
+Sample CartoCSS Code | `shield-transform: none`
+Default Value | none
+Available Values | See [functions](#functions).
+| **Note:** Define values as per [SVG transformation definitions](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform)- which are values separated by whitespace and/or commas, from right to left.
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
-**Default Value** : none
-
-**Available Values**: See [functions](#functions).
-
-**Note:** Define values as per [SVG transformation definitions](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform)- which are values separated by whitespace and/or commas, from right to left.
 
 ##### shield-clip `boolean`
-By default, geometries are clipped to map bounds. You can disable clips to avoid rendering artifacts on a map if are having performance issues.
 
-	shield-clip: true;
-
-**Default Value**: `true`, geometry is clipped to map bounds before rendering.
-
-**Available Values**: See [boolean](#boolean).
+Description | By default, geometries are clipped to map bounds. You can disable clips to avoid rendering artifacts on a map if are having performance issues.
+Sample CartoCSS Code | `shield-clip: true;`
+Default Value | `true`, geometry is clipped to map bounds before rendering.
+Available Values | See [boolean](#boolean).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### shield-comp-op `keyword`
-The composite operation that defines how the symbolizer behaves relative to layers atop or below it.
 
-	shield-comp-op: src-over;
-
-**Default Value**: `src-over`, adds the current symbolizer on top of other symbolizers.
-
-**Available Values**: `clear``src``dst``src-over``dst-over``src-in``dst-in``src-out``dst-out``src-atop``dst-atop``xor``plus``minus``multiply``screen``overlay``darken``lighten``color-dodge``color-burn``hard-light``soft-light``difference``exclusion``contrast``invert``invert-rgb``grain-merge``grain-extract``hue``saturation``color``value`
+Description | The composite operation that defines how the symbolizer behaves relative to layers atop or below it.
+Sample CartoCSS Code | `shield-comp-op: src-over;`
+Default Value | `src-over`, adds the current symbolizer on top of other symbolizers.
+Available Values | `clear``src``dst``src-over``dst-over``src-in``dst-in``src-out``dst-out``src-atop``dst-atop``xor``plus``minus``multiply``screen``overlay``darken``lighten``color-dodge``color-burn``hard-light``soft-light``difference``exclusion``contrast``invert``invert-rgb``grain-merge``grain-extract``hue``saturation``color``value`
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ## line-pattern
+
+These CartoCSS pattern properties can be applied to both line and polygon elements on a map.
 
 | | [line-pattern-file](#line-pattern-file-uri) | [line-pattern-clip](#line-pattern-clip-boolean) | [line-pattern-simplify](#line-pattern-simplify-float)
 | | [line-pattern-simplify-algorithm](#line-pattern-simplify-algorithm-keyword) | [line-pattern-smooth](#line-pattern-smooth-float) | [line-pattern-offset](#line-pattern-offset-float)
 | | [line-pattern-geometry-transform](#line-pattern-geometry-transform-functions) | [line-pattern-comp-op](#line-pattern-comp-op-keyword) |
 
 ##### line-pattern-file `uri`
-A defined image file that renders the pattern of a line. The image repeats along the line.
 
-	line-pattern-file: ur(cliff.png);
- 
-**Default Value**: none
-
-**Available Values**: See [uri](#uri).
-
-Example: Cliff lines
-https://www.mapbox.com/tilemill/docs/guides/styling-lines/
+Description | A defined image file that renders the pattern of a line. The image repeats along the line.
+Sample CartoCSS Code | `line-pattern-file: ur(cliff.png);`
+Default Value | none
+Available Values | See [uri](#uri).
+Related Examples | [Cliff lines](https://www.mapbox.com/tilemill/docs/guides/styling-lines/)
+| WE NEED OUR OWN EXAMPLE HERE
 
 
 ##### line-pattern-clip `boolean`
-By default, geometries are clipped to map bounds. You can disable line pattern clips to avoid rendering artifacts on a map if are having performance issues.
 
-	line-pattern-clip: true;
- 
-**Default Value**: `true`, geometry is clipped to map bounds before rendering.
-
-**Available Values**: See [boolean](#boolean).
+Description | By default, geometries are clipped to map bounds. You can disable line pattern clips to avoid rendering artifacts on a map if are having performance issues.
+Sample CartoCSS Code | `line-pattern-clip: true;`
+Default Value | `true`, geometry is clipped to map bounds before rendering.
+Available Values | See [boolean](#boolean).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### line-pattern-simplify `float`
-Simplifies geometries by a given tolerance value.
 
-	line-pattern-simplify: 0;
-
-**Default Value**: `0`, geometry is not simplified.
-
-**Available Values**: See [float](#float).
+Description | Simplifies geometries by a given tolerance value.
+Sample CartoCSS Code | `line-pattern-simplify: 0;`
+Default Value | `0`, geometry is not simplified.
+Available Values | See [float](#float).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### line-pattern-simplify-algorithm `keyword`
-Simplifies geometries by a given algorithm value.
 
-	line-pattern-simplify-algorithm: radial-distance;
-	
-**Default Value**: `radial-distance`, geometry is simplified using the radial distance algorithm.
-
-**Available Values**: `radial-distance``zhao-saalfeld``visvalingam-whyatt`
+Description | Simplifies geometries by a given algorithm value.
+Sample CartoCSS Code | `line-pattern-simplify-algorithm: radial-distance;`
+Default Value | `radial-distance`, geometry is simplified using the radial distance algorithm.
+Available Values | `radial-distance``zhao-saalfeld``visvalingam-whyatt`
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### line-pattern-smooth `float`
-Smooths out geometry angles for line patterns.
 
-	line-pattern-smooth: 0;
-	
-**Default Value**: `0`,  no smoothing is applied.
-
-**Available Values**: `0``1`
-
-**Note**: 0 indicates no smoothing is applied. 1 indicates that it is fully smoothed. Values greater than 1 produce wild, looping geometries. It is suggested to use a range between 0-1 for this value.
-
+Description | Smooths out geometry angles for line patterns.
+Sample CartoCSS Code | `line-pattern-smooth: 0;`
+Default Value | `0`,  no smoothing is applied.
+Available Values | `0``1`
+| **Note**: 0 indicates no smoothing is applied. 1 indicates that it is fully smoothed. Values greater than 1 produce wild, looping geometries. It is suggested to use a range between 0-1 for this value.
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### line-pattern-offset `float`
-Offsets a line pattern parallel to its actual path, defined by a number in pixels. Positive values move the line pattern left, negative values move it right (relative to the directionality of the line pattern).
 
-	line-pattern-offset: 0;
-
-**Default Value**: `0`,  no offset is applied.
-
-**Available Values**: See [float](#float).
+Description | Offsets a line pattern parallel to its actual path, defined by a number in pixels. Positive values move the line pattern left, negative values move it right (relative to the directionality of the line pattern).
+Sample CartoCSS Code | `line-pattern-offset: 0;`
+Default Value | `0`,  no offset is applied.
+Available Values | See [float](#float).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### line-pattern-geometry-transform `functions`
-Applies transformation functions to the geometry.
 
-	line-pattern-geometry-transform: none;
-
-**Default Value**: none, geometry is not transformed.
-
-**Available Values**: See [functions](#functions).
+Description | Applies transformation functions to the geometry.
+Sample CartoCSS Code | `line-pattern-geometry-transform: none;`
+Default Value | none, geometry is not transformed.
+Available Values | See [functions](#functions).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### line-pattern-comp-op `keyword`
-The composite operation that defines how the symbolizer behaves relative to layers atop or below it.
 
-	line-pattern-comp-op: src-over;
-
-**Default Value**: `src-over`, adds the current symbolizer on top of other symbolizers.
-
-**Available Values**: `clear``src``dst``src-over``dst-over``src-in``dst-in``src-out``dst-out``src-atop``dst-atop``xor``plus``minus``multiply``screen``overlay``darken``lighten``color-dodge``color-burn``hard-light``soft-light``difference``exclusion``contrast``invert``invert-rgb``grain-merge``grain-extract``hue``saturation``color``value`
-
+Description | The composite operation that defines how the symbolizer behaves relative to layers atop or below it.
+Sample CartoCSS Code | `line-pattern-comp-op: src-over;`
+Default Value | `src-over`, adds the current symbolizer on top of other symbolizers.
+Available Values | `clear``src``dst``src-over``dst-over``src-in``dst-in``src-out``dst-out``src-atop``dst-atop``xor``plus``minus``multiply``screen``overlay``darken``lighten``color-dodge``color-burn``hard-light``soft-light``difference``exclusion``contrast``invert``invert-rgb``grain-merge``grain-extract``hue``saturation``color``value`
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ## polygon-pattern
+
+These CartoCSS pattern properties can be applied to both line and polygon elements on a map.
 
 | | [polygon-pattern-file](#polygon-pattern-file-uri) | [polygon-pattern-alignment](#polygon-pattern-alignment-keyword) | [polygon-pattern-gamma](#polygon-pattern-gamma-float)
 | | [polygon-pattern-opacity](#polygon-pattern-opacity-float) | [polygon-pattern-clip](#polygon-pattern-clip-boolean) | [polygon-pattern-simplify](#polygon-pattern-simplify-float)
@@ -1224,116 +1108,99 @@ The composite operation that defines how the symbolizer behaves relative to laye
 
 
 ##### polygon-pattern-file `uri`
-A defined image file that renders the pattern fill within a polygon.
 
-	polygon-pattern-file: none;
-
-**Default Value**: none
-
-**Available Values**: See [uri](#uri).
+Description | A defined image file that renders the pattern fill within a polygon.
+Sample CartoCSS Code | `polygon-pattern-file: none;`
+Default Value | none
+Available Values | See [uri](#uri).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### polygon-pattern-alignment `keyword`
-Specifies if the polygon-pattern-fill aligns with the map layer.
 
-	polygon-pattern-alignment: local;
-
-**Default Value**: `local`
-
-**Available Values**: `local``global`
+Description | Specifies if the polygon-pattern-fill aligns with the map layer.
+Sample CartoCSS Code | `polygon-pattern-alignment: local;`
+Default Value | `local`
+Available Values | `local``global`
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### polygon-pattern-gamma `float`
-The level of antialiasing (smoothness of oversampling) of polygon pattern edges. A range of 0-5 represents the most antialiased to the least antialiased.
 
-	polygon-pattern-gamma: 1;
-
-**Default Value**: `1`, is fully antialiased.
-
-**Available Values**: `0``1``2``3``4``5`
-
+Description | The level of antialiasing (smoothness of oversampling) of polygon pattern edges. A range of 0-5 represents the most antialiased to the least antialiased.
+Sample CartoCSS Code | `polygon-pattern-gamma: 1;`
+Default Value | `1`, is fully antialiased.
+Available Values | `0``1``2``3``4``5`
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### polygon-pattern-opacity `float`
-The opacity level of the polygon-pattern image.
 
-	polygon-pattern-opacity: 1;
-
-**Default Value**: `1, , indicates that the default opacity as opaque.
-
-**Available Values**: See [float](#float).
-
+Description | The opacity level of the polygon-pattern image.
+Sample CartoCSS Code | `polygon-pattern-opacity: 1;`
+Default Value | `1`, indicates that the default opacity as opaque.
+Available Values | See [float](#float).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### polygon-pattern-clip `boolean`
-By default, geometries are clipped to map bounds. You can disable polygon-pattern-clips to avoid rendering artifacts on a map if are having performance issues.
 
-	polygon-pattern-clip: true;
-
-**Default Value**: `true`, geometry is clipped to map bounds before rendering.
-
-**Available Values**: See [boolean](#boolean).
-
+Description | By default, geometries are clipped to map bounds. You can disable polygon-pattern-clips to avoid rendering artifacts on a map if are having performance issues.
+Sample CartoCSS Code | `polygon-pattern-clip: true;`
+Default Value | `true`, geometry is clipped to map bounds before rendering.
+Available Values | See [boolean](#boolean).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### polygon-pattern-simplify `float`
-Simplifies geometries by a given tolerance value.
 
-	polygon-pattern-simplify: 0; 
-
-**Default Value**: `0`, geometry is not simplified.
-
-**Available Values**: See [float](#float).
-
+Description | Simplifies geometries by a given tolerance value.
+Sample CartoCSS Code | `polygon-pattern-simplify: 0;`
+Default Value | `0`, geometry is not simplified.
+Available Values | See [float](#float).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### polygon-pattern-simplify-algorithm `keyword`
-Simplifies geometries by a given algorithm value.
 
-	polygon-pattern-simplify-algorithm: radial-distance;
-	
-**Default Value**: `radial-distance`, geometry is simplified using the radial distance algorithm.
-
-**Available Values**: `radial-distance``zhao-saalfeld``visvalingam-whyatt`
-
+Description | Simplifies geometries by a given algorithm value.
+Sample CartoCSS Code | `polygon-pattern-simplify-algorithm: radial-distance;`
+Default Value | `radial-distance`, geometry is simplified using the radial distance algorithm.
+Available Values | `radial-distance``zhao-saalfeld``visvalingam-whyatt`
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### polygon-pattern-smooth `float`
-Smooths out geometry angles.
 
-	polygon-pattern-smooth: 0;
-
-**Default Value**: `0`, no smoothing is applied.
-
-**Available Values**: `0``1`
-
-**Note**: 0 indicates no smoothing is applied. 1 indicates that it is fully smoothed. Values greater than 1 produce wild, looping geometries. It is suggested to use a range between 0-1 for this value.
-
+Description | Smooths out geometry angles.
+Sample CartoCSS Code | `polygon-pattern-smooth: 0;`
+Default Value | `0`, no smoothing is applied.
+Available Values | `0``1`
+| **Note**: 0 indicates no smoothing is applied. 1 indicates that it is fully smoothed. Values greater than 1 produce wild, looping geometries. It is suggested to use a range between 0-1 for this value.
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### polygon-pattern-geometry-transform `functions`
-Applies transformation functions to the geometry.
 
-	 polygon-pattern-geometry-transform: none;
-
-**Default Value**: `none`, geometry is not transformed.
-
-**Available Values**: See [functions](#functions).
-
+Description | Applies transformation functions to the geometry.
+Sample CartoCSS Code | `polygon-pattern-geometry-transform: none;`
+Default Value | `none`, geometry is not transformed.
+Available Values | See [functions](#functions).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### polygon-pattern-comp-op `keyword`
-The composite operation that defines how the symbolizer behaves relative to layers atop or below it.
 
-	polygon-pattern-comp-op: src-over;
-
-**Default Value**: `src-over`, adds the current symbolizer on top of other symbolizers.
-
-**Available Values**: `clear``src``dst``src-over``dst-over``src-in``dst-in``src-out``dst-out``src-atop``dst-atop``xor``plus``minus``multiply``screen``overlay``darken``lighten``color-dodge``color-burn``hard-light``soft-light``difference``exclusion``contrast``invert``invert-rgb``grain-merge``grain-extract``hue``saturation``color``value`
-
+Description | The composite operation that defines how the symbolizer behaves relative to layers atop or below it.
+Sample CartoCSS Code | `polygon-pattern-comp-op: src-over;`
+Default Value | `src-over`, adds the current symbolizer on top of other symbolizers.
+Available Values | `clear``src``dst``src-over``dst-over``src-in``dst-in``src-out``dst-out``src-atop``dst-atop``xor``plus``minus``multiply``screen``overlay``darken``lighten``color-dodge``color-burn``hard-light``soft-light``difference``exclusion``contrast``invert``invert-rgb``grain-merge``grain-extract``hue``saturation``color``value`
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ## raster
+
+These CartoCSS properties can be applied to raster (grid) data layers on a map.
 
 | | [raster-opacity](#raster-opacity-float) | [raster-filter-factor](#raster-filter-factor-float) | [raster-scaling](#raster-scaling-keyword)
 | | [raster-mesh-size](#raster-mesh-size-unsigned) | [raster-comp-op](#raster-comp-op-keyword) | [raster-colorizer-default-mode](#raster-colorizer-default-mode-keyword)
@@ -1341,119 +1208,103 @@ The composite operation that defines how the symbolizer behaves relative to laye
 
 
 ##### raster-opacity `float`
-The opacity of the raster symbolizer on top of other symbolizers.
 
-	raster-opacity: 1;
-
-**Default Value**: `1`, the raster is opaque.
-
-**Available Values**: See [float](#float).
-
+Description | The opacity of the raster symbolizer on top of other symbolizers.
+Sample CartoCSS Code | `raster-opacity: 1;`
+Default Value | `1`, the raster is opaque.
+Available Values | See [float](#float).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### raster-filter-factor `float`
-Sets the filter factor used for rendering the datasource of the raster. Used by the Raster or Gdal datasources to pre-downscale images using overviews. 
 
-	raster-filter-factor: -1;
-	
-**Default Value**: `-1`, allows the datasource to determine the appropriate downscaling option.
-
-**Available Values**: See [float](#float).
-
-**Note:  Higher numbers can improve the output of the scaled image, but may reduce the speed of downscaling.  
-
+Description | Sets the filter factor used for rendering the datasource of the raster. Used by the Raster or Gdal datasources to pre-downscale images using overviews. 
+Sample CartoCSS Code | `raster-filter-factor: -1;`
+Default Value | `-1`, allows the datasource to determine the appropriate downscaling option.
+Available Values | See [float](#float).
+| **Note:  Higher numbers can improve the output of the scaled image, but may reduce the speed of downscaling.  
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### raster-scaling `keyword`
-The algorithm applied to scale the resolution of the raster layer.
 
-	raster-scaling: near;
-
-**Default Value**: `near`
-
-**Available Values**: `near``fast``bilinear``bilinear8``bicubic``spline16``spline36``hanning``hamming``hermite``kaiser``quadric``catrom``gaussian``bessel``mitchell``sinc``lanczos``blackman`
-
-**Note:** While the 'lanczos' value may render the best quality, the `bilinear` value actually produces the best compromise between speed and accuracy.
-
+Description | The algorithm applied to scale the resolution of the raster layer.
+Sample CartoCSS Code | `raster-scaling: near;`
+Default Value | `near`
+Available Values | `near``fast``bilinear``bilinear8``bicubic``spline16``spline36``hanning``hamming``hermite``kaiser``quadric``catrom``gaussian``bessel``mitchell``sinc``lanczos``blackman`
+| **Note:** While the 'lanczos' value may render the best quality, the `bilinear` value actually produces the best compromise between speed and accuracy.
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### raster-mesh-size `unsigned`
-Specifies a reduced resolution mesh for raster reprojection. The total image size is divided by the mesh-size to determine the quality of the mesh. 
 
-	raster-mesh-size: 16;
-	
-**Default Value**: `16`, the reprojected mesh is 1&#x2F;16 of the resolution of the source image.
-
-**Available Values**: Unsigned integer
-
-**Note:**  While values defined greater than the default (`16`) may produce faster reprojection, the image may be distorted.
-
+Description | Specifies a reduced resolution mesh for raster reprojection. The total image size is divided by the mesh-size to determine the quality of the mesh. 
+Sample CartoCSS Code | `raster-mesh-size: 16;`
+Default Value | `16`, the reprojected mesh is 1&#x2F;16 of the resolution of the source image.
+Available Values | Unsigned integer
+| **Note:**  While values defined greater than the default (`16`) may produce faster reprojection, the image may be distorted.
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### raster-comp-op `keyword`
-The composite operation that defines how the symbolizer behaves relative to layers atop or below it.
 
-	raster-comp-op: src-over;
-
-**Default Value**: `src-over, adds the current symbolizer on top of other symbolizers.
-
-**Available Values**: `clear``src``dst``src-over``dst-over``src-in``dst-in``src-out``dst-out``src-atop``dst-atop``xor``plus``minus``multiply``screen``overlay``darken``lighten``color-dodge``color-burn``hard-light``soft-light``difference``exclusion``contrast``invert``invert-rgb``grain-merge``grain-extract``hue``saturation``color``value`
-
+Description | The composite operation that defines how the symbolizer behaves relative to layers atop or below it. 
+Sample CartoCSS Code | `raster-comp-op: src-over;` 
+Default Value | `src-over`, adds the current symbolizer on top of other symbolizers.
+Available Values | `clear``src``dst``src-over``dst-over``src-in``dst-in``src-out``dst-out``src-atop``dst-atop``xor``plus``minus``multiply``screen``overlay``darken``lighten``color-dodge``color-burn``hard-light``soft-light``difference``exclusion``contrast``invert``invert-rgb``grain-merge``grain-extract``hue``saturation``color``value`
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### raster-colorizer-default-mode `keyword`
-Sets the default coloring mode of the raster. 
 
-	 raster-colorizer-default-mode:linear;
-
-**Default Value**: undefined
-
-**Available Values**: `discrete``linear``exact`
-
+Description | Sets the default coloring mode of the raster. 
+Sample CartoCSS Code | `raster-colorizer-default-mode:linear;`
+Default Value | undefined
+Available Values | `discrete``linear``exact`
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### raster-colorizer-default-color `color`
-Sets the color that is applied to all values outside of the range of the [raster-colorizer-stop values](#raster-colorizer-stop-tags).
 
-    raster-colorizer-default-color: transparent;
-
-**Default Value**: undefined
-
-**Available Values**: See [color](#color).
+Description | Sets the color that is applied to all values outside of the range of the [raster-colorizer-stop values](#raster-colorizer-stop-tags).
+Sample CartoCSS Code | `raster-colorizer-default-color: transparent;`
+Default Value | undefined
+Available Values | See [color](#color).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### raster-colorizer-epsilon `float`
-Assigns an epsilon value to the raster colorizer. An epsilon value is when the exact input value matches the stop value to generate the translated color.
 
-    raster-colorizer-epsilon:0.41;
-
-**Default Value**: undefined
-
-**Available Values**: See [float](#float).
-
-**Note:** Epsilon values must be listed in ascending order and contain a minimum value and associated color.  Additionally, you can also include the color-mode as a third argument. For example:
-
-	stop(100,#fff, exact)
-
+Description | Assigns an epsilon value to the raster colorizer. An epsilon value is when the exact input value matches the stop value to generate the translated color.
+Sample CartoCSS Code | `raster-colorizer-epsilon:0.41;`
+Default Value | undefined
+Available Values | See [float](#float).
+| **Note:** Epsilon values must be listed in ascending order and contain a minimum value and associated color. 
+| Additionally, you can also include the color-mode as a third argument. For example:
+| `stop(100,#fff, exact)`
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### raster-colorizer-stops `tags`
-A stop tag assigns raster data with colors and values.  
 
- raster-colorizer-stops:
+Description | A stop tag assigns raster data with colors and values. 
+Sample CartoCSS Code | 
+Default Value | undefined
+Available Values | See [float](#float).
+| **Note:** Stop values must be listed in ascending order and contain a minimum value and associated color.
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
+
+Sample CartoCSS Code (NEED TO GET THIS ON ONE LINE IN A TABLE, argh! I've tried using command+Enter, it does not work! ?!?!)
+
+`raster-colorizer-stops:
     stop(0,transparent,linear)
     stop(80,#fff)
-    stop(100,#000)
+    stop(100,#000)`
 	
-**Default Value**: undefined
-
-**Available Values**: See [float](#float).
-
-**Note:** Stop values must be listed in ascending order and contain a minimum value and associated color. 
-
-
 
 ## point
+
+These CartoCSS properties can be applied to style points on a map.
 
 | | [point-file](#point-file-uri) | [point-allow-overlap](#point-allow-overlap-boolean) | [point-ignore-placement](#point-ignore-placement-boolean)
 | | [point-opacity](#point-opacity-float) | [point-placement](#point-placement-keyword) | [point-transform](#point-transform-functions)
@@ -1461,85 +1312,68 @@ A stop tag assigns raster data with colors and values.
 
 
 ##### point-file `uri`
-A defined image file that renders how a point appears.
 
-	point-file: url (icons/example.png);
-	
-**Default Value**: none
-
-**Available Values**: See [uri](#uri).
-
+Description | A defined image file that renders how a point appears.
+Sample CartoCSS Code | `point-file: url (icons/example.png);`
+Default Value | none
+Available Values | See [uri](#uri).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### point-allow-overlap `boolean`
-Shows or hides overlapping points on a map.
 
-	point-allow-overlap: false;
-	
-**Default Value**: `false`, does not allow points to overlap. Overlapping points are hidden.
-
-**Available Values**: See [boolean](#boolean).
-
+Description | Shows or hides overlapping points on a map.
+Sample CartoCSS Code | `point-allow-overlap: false;`
+Default Value | `false`, does not allow points to overlap. Overlapping points are hidden
+Available Values | See [boolean](#boolean).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### point-ignore-placement `boolean`
-Prevents other placement properties from being rendered.
 
-	point-ignore-placement: 'false`
-
-**Default Value**: `false`, does not store placement geometries in the collision detector cache of the bbox (bounding box).
-
-**Available Values**: See [boolean](#boolean).
-
+Description | Prevents other placement properties from being rendered.
+Sample CartoCSS Code | `point-ignore-placement: 'false`
+Default Value | `false`, does not store placement geometries in the collision detector cache of the bbox (bounding box).
+Available Values | See [boolean](#boolean).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### point-opacity `float`
-Sets the overall opacity of the point.
 
-	point-opacity: 1;
-
-**Default Value**: `1`, the point is fully opaque.
-
-**Available Values**: `0``1`
-
+Description | Sets the overall opacity of the point.
+Sample CartoCSS Code | `point-opacity: 1;`
+Default Value | `1`, the point is fully opaque.
+Available Values | `0``1`
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### point-placement `keyword`
-Determines how points are placed.
 
-	point-placement: centroid;
-
-
-**Default Value**: `centroid`
-
-**Available Values**: `centroid``interior`
-
-**Note:** Centroid calculates the geometric center of a polygon (which can outside of the polygon). Interior is always placed inside of a polygon.
-
+Description | Determines how points are placed.
+Sample CartoCSS Code | `point-placement: centroid;`
+Default Value | `centroid`
+Available Values | `centroid``interior`
+| **Note:** Centroid calculates the geometric center of a polygon (which can outside of the polygon). Interior is always placed inside of a polygon.
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### point-transform `functions`
-Defines SVG transformation functions to scale how points appear.
 
-	point-transform: none;
-
-**Default Value**: `none`, geometry is not transformed.
-
-**Available Values**: See [functions](#functions).
-
-**Note:** Define values as per [SVG transformation definitions](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform)- which are values separated by whitespace and/or commas, from right to left.
-
+Description | Defines SVG transformation functions to scale how points appear.
+Sample CartoCSS Code | `point-transform: none;`
+Default Value | `none`, geometry is not transformed.
+Available Values | See [functions](#functions).
+| **Note:** Define values as per [SVG transformation definitions](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform)- which are values separated by whitespace and/or commas, from right to left.
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### point-comp-op `keyword
-The composite operation that defines how the symbolizer behaves relative to layers atop or below it.
 
-	point-comp-op: src-over;
-
-**Default Value**: `src-over`, adds the current symbolizer on top of other symbolizers.
-
-**Available Values**: `clear``src``dst``src-over``dst-over``src-in``dst-in``src-out``dst-out``src-atop``dst-atop``xor``plus``minus``multiply``screen``overlay``darken``lighten``color-dodge``color-burn``hard-light``soft-light``difference``exclusion``contrast``invert``invert-rgb``grain-merge``grain-extract``hue``saturation``color``value`
-
+Description | The composite operation that defines how the symbolizer behaves relative to layers atop or below it.
+Sample CartoCSS Code | `point-comp-op: src-over;`
+Default Value | `src-over`, adds the current symbolizer on top of other symbolizers.
+Available Values | `clear``src``dst``src-over``dst-over``src-in``dst-in``src-out``dst-out``src-atop``dst-atop``xor``plus``minus``multiply``screen``overlay``darken``lighten``color-dodge``color-burn``hard-light``soft-light``difference``exclusion``contrast``invert``invert-rgb``grain-merge``grain-extract``hue``saturation``color``value`
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ## text
@@ -1561,386 +1395,315 @@ Defines the text label properties on the map.
 
 
 ##### text-name `expression`
-The name of the text label.
 
-	text-name: '[label_name_example]';
-
-**Default Value**: undefined
-
-**Available Values**: See [expression](#expression). The expression value is a data column specified by using brackets, as shown in the sample code above.
-
+Description | The name of the text label.
+Sample CartoCSS Code | `text-name: '[label_name_example]';`
+Default Value | undefined
+Available Values | See [expression](#expression).
+| The expression value is a data column specified by using brackets, as shown in the sample code above.
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### text-face-name `string`
-The font name and style for the text-name label.
 
-	text-face-name: ‘Open Sans Bold’;
-
-**Default Value**: undefined
-
-**Available Values**: See [string](#string).
-
+Description | The font name and style for the text-name label.
+Sample CartoCSS Code | `text-face-name: ‘Open Sans Bold’;`
+Default Value | undefined
+Available Values | See [string](#string).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### text-size `float`
-The text size of the text label, in pixels.
 
-	text-size: 10;
-
-**Default Value**: 10
-
-**Available Values**: See [float](#float).
-
+Description | The text size of the text label, in pixels.
+Sample CartoCSS Code | `text-size: 10;`
+Default Value | `10`
+Available Values | See [float](#float).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### text-ratio `unsigned`
-Defines the amount of text that appears on successive lines after text wrapping.
 
-	 text-ratio: 0;
-
-**Default Value**: `0`
-
-**Available Values**: Unsigned integer
+Description | Defines the amount of text that appears on successive lines after text wrapping.
+Sample CartoCSS Code | `text-ratio: 0;`
+Default Value | `0`
+Available Values | Unsigned integer
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### text-wrap-width `unsigned`
-The length of characters that appears before the text-name label wraps.
 
-	text-wrap-width: 0;
-	
-**Default Value**: `0`
-
-**Available Values**: Unsigned integer
-
+Description | The length of characters that appears before the text-name label wraps.
+Sample CartoCSS Code | `text-wrap-width: 0;`
+Default Value | `0`
+Available Values | Unsigned integer
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### text-wrap-before `boolean`
-Determines how the wrap-text behaves relative to the wrap-width.
 
-	text-wrap-before: false;
-	
-Default Value: `false`,  wrapped text appears longer than the wrap-width.
-
-**Available Values**: See [boolean](#boolean).
-
+Description | Determines how the wrap-text behaves relative to the wrap-width.
+Sample CartoCSS Code | `text-wrap-before: false;`
+Default Value | `false`,  wrapped text appears longer than the wrap-width.
+Available Values | See [boolean](#boolean).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### text-wrap-character `string`
-Enables you to wrap text with a character, rather than with a space. This is especially useful for long label names.
 
-	text-wrap-character:  '_';
-
-**Default Value**:  none
-
-**Available Values**: See [string](#string).
-
+Description | Enables you to wrap text with a character, rather than with a space. This is especially useful for long label names.
+Sample CartoCSS Code | `text-wrap-character:  '_';`
+Default Value | none
+Available Values | See [string](#string).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### text-spacing `unsigned`
-The space between repeated text lables, in pixels, on a line.
 
-	text-spacing: 0;
-
-**Default Value**: undefined
-
-**Available Values**: Unsigned integer
-
+Description | The space between repeated text lables, in pixels, on a line.
+Sample CartoCSS Code | `text-spacing: 0;`
+Default Value | undefined
+Available Values | Unsigned integer
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### text-character-spacing `float`
-The horizontal space, in pixels, between characters.
 
-	text-character-spacing: 0;
-
-**Default Value**: `0`
-
-**Available Values**: See [float](#float).
-
+Description | The horizontal space, in pixels, between characters.
+Sample CartoCSS Code | `text-character-spacing: 0;`
+Default Value | `0`
+Available Values | See [float](#float).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### text-line-spacing `unsigned`
-The vertical spacing, in pixels, between two lines of multiline text labels.
-	
-	text-line-spacing: 0;
 
-**Default Value**: `0`
-
-**Available Values**: Unsigned integer
-
+Description | The vertical spacing, in pixels, between two lines of multiline text labels.
+Sample CartoCSS Code | `text-line-spacing: 0;`
+Default Value | `0`
+Available Values | Unsigned integer
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### text-label-position-tolerance `unsigned`
-Allows you to adjust the default placement of a text label on a line, in pixels. 
 
-	text-label-position-tolerance: 0;
-
-**Default Value**: `0`
-
-**Available Values**: Unsigned integer
-
+Description | Allows you to adjust the default placement of a text label on a line, in pixels.
+Sample CartoCSS Code | `text-label-position-tolerance: 0;`
+Default Value | `0`
+Available Values | Unsigned integer
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### text-max-char-angle-delta `float`
-The maximum angle change allowed between adjacent characters in a label (as measured in degrees). 
 
-	text-max-char-angle-delta: 22.5;
-
-**Default Value**: `22.5`
-
-**Available Values**: See [float](#float).
-
-**Note:** Internally, the value is converted to the default value (`22.5`), by applying the following radian algorithm:
-
-22.5*math.pi&#x2F;180.0
-
-The higher the value, the fewer labels are placed around sharp corners.
-
+Description | The maximum angle change allowed between adjacent characters in a label (as measured in degrees).
+Sample CartoCSS Code | `text-max-char-angle-delta: 22.5;`
+Default Value | `22.5`
+Available Values | See [float](#float).
+| **Note:** Internally, the value is converted to the default value (`22.5`), by applying the following radian algorithm:
+| `22.5*math.pi&#x2F;180.0`
+| The higher the value, the fewer labels are placed around sharp corners.
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### text-fill `color`
-The color of the label text.
 
-	 text-fill: #000000;
-
-**Default Value**: `#000000`, black
-
-**Available Values**: See [color](#color).
-
+Description | The color of the label text.
+Sample CartoCSS Code | `text-fill: #000000;`
+Default Value | `#000000`, black
+Available Values | See [color](#color).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### text-opacity `float`
-The opacity of the text label.
 
-	text-opacity: 1;
-
-**Default Value**: `1`, fully opague
-
-**Available Values**: `0``1`
-
+Description | The opacity of the text label.
+Sample CartoCSS Code | `text-opacity: 1;`
+Default Value | `1`, fully opaque
+Available Values | `0``1`
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### text-halo-fill `color`
-Specifies the color of the halo around the text label.
 
-	text-halo-fill: #FFFFFF;
-	
-**Default Value**: `#FFFFFF`, the halo color is white by default.
-
-**Available Values**: See [color](#color).
-
+Description | Specifies the color of the halo around the text label.
+Sample CartoCSS Code | `text-halo-fill: #FFFFFF;`
+Default Value | `#FFFFFF`, the halo color is white by default.
+Available Values | See [color](#color).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### text-halo-radius `float`
-The radius of the halo, in pixels.
 
-	text-halo-radius: 0;
-
-**Default Value**: `0`, no halo is applied.
-
-**Available Values**: See [float](#float).
-
+Description | The radius of the halo, in pixels.
+Sample CartoCSS Code | `text-halo-radius: 0;`
+Default Value | `0`, no halo is applied.
+Available Values | See [float](#float).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### text-halo-rasterizer `keyword`
-Exposes an alternate AGG (Anti-Grain Geometry) rendering method that sacrifices some accuracy for speed.
 
-	text-halo-rasterizer: full;
-
-**Default Value**: `full`
-
-**Available Values**: `full``fast`
-
+Description | Exposes an alternate AGG (Anti-Grain Geometry) rendering method that sacrifices some accuracy for speed.
+Sample CartoCSS Code | `text-halo-rasterizer: full;`
+Default Value | `full`
+Available Values | `full``fast`
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### text-dx `float`
-Places the text label within a fixed range of pixels, +/- along the X axis. A positive value shifts the text to the right.
 
-	text-dx: 0;
-
-**Default Value**: `0`
-
-**Available Values**: See [float](#float).
-
+Description | Places the text label within a fixed range of pixels, +/- along the X axis. A positive value shifts the text to the right.
+Sample CartoCSS Code | `text-dx: 0;`
+Default Value | `0`
+Available Values | See [float](#float).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### text-dy `float`
-Places the text label within a fixed range of pixels, +/- along the Y axis. A positive value shifts the text down.
 
-	text-dy: 0;
-
-**Default Value**:` 0`
-
-**Available Values**: See [float](#flat).
-
+Description | Places the text label within a fixed range of pixels, +/- along the Y axis. A positive value shifts the text down.
+Sample CartoCSS Code | `text-dy: 0;`
+Default Value | `0`
+Available Values | See [float](#flat).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### text-vertical-alignment `keyword`
-The vertical alignment of the text label from its center point.
 
-	text-vertical-alignment: auto;
-
-**Default Value**: `auto`
-
-**Available Values**: `top``middle``bottom``auto`
-
-**Note:** The default value is affected by the dy (text down) value. If the dy value&gt;0, the vertical alignment value is `bottom`. If the dy value&lt;0, the vertical alignment is `top`.
-
+Description | The vertical alignment of the text label from its center point.
+Sample CartoCSS Code | `text-vertical-alignment: auto;`
+Default Value | `auto`
+Available Values | `top``middle``bottom``auto`
+| **Note:** The default value is affected by the dy (text down) value. If the dy value&gt;0, the vertical alignment value is `bottom`. If the dy value&lt;0, the vertical alignment is `top`.
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### text-avoid-edges `boolean`
-Prevents text labels from intersecting with tile boundaries.
 
-	text-avoid-edges: false;
-	
-**Default Value**: `false`, labels do not intersect.
-
-**Available Values**: See [boolean](#boolean).
-
+Description | Prevents text labels from intersecting with tile boundaries.
+Sample CartoCSS Code | `text-avoid-edges: false;`
+Default Value | `false`, labels do not intersect.
+Available Values | See [boolean](#boolean).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### text-min-distance `float`
-The minimum distance between the next text label.
 
-	text-min-distance: undefined;
-
-**Default Value**: undefined
-
-**Available Values**: See [float](#float).
-
+Description | The minimum distance between the next text label.
+Sample CartoCSS Code | `text-min-distance: undefined;`
+Default Value | undefined
+Available Values | See [float](#float).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### text-min-padding `float`
-The minimum distance, in pixels, that a text label is placed from the edge of a metatile (the tile/buffer space relationship).
 
-	 text-min-padding: undefined;
-
-**Default Value**: undefined
-
-**Available Values**: See [float](#float).
-
+Description | The minimum distance, in pixels, that a text label is placed from the edge of a metatile (the tile/buffer space relationship).
+Sample CartoCSS Code | `text-min-padding: undefined;`
+Default Value | undefined
+Available Values | See [float](#float).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### text-min-path-length `float`
-Enables you to place text labels on paths longer than the minimum length.
 
-	text-min-path-length: 0;
-	
-**Default Value**: `0`, places text label on all paths.
-
-**Available Values**: See [float](#float).
-
+Description | Enables you to place text labels on paths longer than the minimum length.
+Sample CartoCSS Code | `text-min-path-length: 0;`
+Default Value | `0`, places text label on all paths.
+Available Values | See [float](#float).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### text-allow-overlap `boolean`
-Shows or hides overlapping text labels on a map.
 
-	text-allow-overlap: false;
-
-**Default Value**: `false`, does not allow text labels to overlap. Overlapping text labels are hidden.
-
-**Available Values**: See [boolean](#boolean).
-
+Description | Shows or hides overlapping text labels on a map.
+Sample CartoCSS Code | `text-allow-overlap: false;`
+Default Value | `false`, does not allow text labels to overlap. Overlapping text labels are hidden.
+Available Values | See [boolean](#boolean).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### text-orientation `expression`
-Enables you to change the orientation of the text label.
 
-	text-orientation: undefined;
-
-**Default Value**: undefined
-
-**Available Values**: See [expression](#expression).
-
+Description | Enables you to change the orientation of the text label.
+Sample CartoCSS Code | `text-orientation: undefined;`
+Default Value | undefined
+Available Values | See [expression](#expression).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### text-placement `keyword`
-Places text labels on top of points, along multiple line places, on the vertexes of polygons, or in the interior inside a polygon.
 
-	text-placement: point;
-
-**Default Value**: `point`, the text label appears on the top of map points.
-
-**Available Values**: `point``line``vertex``interior`
-
+Description | Places text labels on top of points, along multiple line places, on the vertexes of polygons, or in the interior inside a polygon.
+Sample CartoCSS Code | `text-placement: point;`
+Default Value | `point`, the text label appears on the top of map points.
+Available Values | `point``line``vertex``interior`
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### text-placement-type `keyword`
-Enables you to reposition and resize the text label to avoid overlaps.
 
-	text-placement-type: dummy;
-
-**Default Value**: `dummy`, turns off and disables this feature.
-
-**Available Values**: See `dummy``simple`
-
-**Note**: The simple value is the text label placement string used for basic algorithms.
-
+Description | Enables you to reposition and resize the text label to avoid overlaps.
+Sample CartoCSS Code | `text-placement-type: dummy;`
+Default Value | `dummy`, turns off and disables this feature.
+Available Values | `dummy``simple`
+| **Note**: The simple value is the text label placement string used for basic algorithms.
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### text-placements `string`
-If [text-placement-type](#text-placement-type-keyword) is set to `simple`, you can use this property to adjust the placement of the text label.
 
-	text-placements: E,NE,SE,W,NW,SW;
-
-**Default Value**: none
-
-**Available Values**: See [string](#string).
-
+Description | If [text-placement-type](#text-placement-type-keyword) is set to `simple`, you can use this property to adjust the placement of the text label.
+Sample CartoCSS Code | `text-placements: E,NE,SE,W,NW,SW;`
+Default Value | none
+Available Values | See [string](#string).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### text-transform `keyword
-Identifies the text case of the text label.
 
-	text-transform: none;
-
-**Default Value**: `none`
-
-**Available Values**: `none``uppercase``lowercase``capitalize`
-
+Description | Identifies the text case of the text label.
+Sample CartoCSS Code | `text-transform: none;`
+Default Value | `none`
+Available Values | `none``uppercase``lowercase``capitalize`
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### text-horizontal-alignment `keyword`
-The horizontal alignment of the text label from its center point.
 
-	 text-horizontal-alignment: auto;
-	 
-**Default Value**: `auto`
-
-**Available Values**: `left``middle``right``auto`
-
+Description | The horizontal alignment of the text label from its center point.
+Sample CartoCSS Code | `text-horizontal-alignment: auto;`
+Default Value | `auto`
+Available Values | `left``middle``right``auto`
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### text-align `keyword`
-Defines how text labels are justified, relative to the [text-placement-type](#text-placement-type-keyword) property.
 
-	text-align: auto;
-
-**Default Value**: `auto`, text is centered by default except when [text-placement-type](#text-placement-type-keyword) value is `simple`, then the text is justified automatically depending on where the text can fit [text-placements](#text-placements-string).
-
-**Available Values**: `left``right``center``auto`
-
+Description | Defines how text labels are justified, relative to the [text-placement-type](#text-placement-type-keyword) property.
+Sample CartoCSS Code | `text-align: auto;`
+Default Value | `auto`, text is centered by default except when [text-placement-type](#text-placement-type-keyword) value is `simple`, then the text is justified automatically depending on where the text can fit [text-placements](#text-placements-string).
+Available Values | `left``right``center``auto`
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### text-clip `boolean`
-By default, geometries are clipped to map bounds. You can disable clips to avoid rendering artifacts on a map if are having performance issues.
 
-	text-clip:  `true`
-
-**Default Value**: `true`, geometry is clipped to map bounds before rendering.
-
-**Available Values**: See [boolean](#boolean).
-
+Description | .By default, geometries are clipped to map bounds. You can disable clips to avoid rendering artifacts on a map if are having performance issues.
+Sample CartoCSS Code | `text-clip: true`
+Default Value | `true`, geometry is clipped to map bounds before rendering.
+Available Values | See [boolean](#boolean).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### text-comp-op `keyword`
-The composite operation that defines how the symbolizer behaves relative to layers atop or below it.
 
-	text-comp-op: src-over;
-	
-**Default Value**: `src-over`, adds the current symbolizer on top of other symbolizers.
-
-**Available Values**: `clear``src``dst``src-over``dst-over``src-in``dst-in``src-out``dst-out``src-atop``dst-atop``xor``plus``minus``multiply``screen``overlay``darken``lighten``color-dodge``color-burn``hard-light``soft-light``difference``exclusion``contrast``invert``invert-rgb``grain-merge``grain-extract``hue``saturation``color``value`
-
+Description | The composite operation that defines how the symbolizer behaves relative to layers atop or below it.
+Sample CartoCSS Code | `text-comp-op: src-over;`
+Default Value | `src-over`, adds the current symbolizer on top of other symbolizers.
+Available Values | `clear``src``dst``src-over``dst-over``src-in``dst-in``src-out``dst-out``src-atop``dst-atop``xor``plus``minus``multiply``screen``overlay``darken``lighten``color-dodge``color-burn``hard-light``soft-light``difference``exclusion``contrast``invert``invert-rgb``grain-merge``grain-extract``hue``saturation``color``value`
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ## building
@@ -1950,45 +1713,39 @@ Defines how building structures are rendered on a map.
 
 
 ##### building-fill `color`
-The fill color of building walls.
 
-	building-fill: #FFFFFF;
-	
-**Default Value**: white (as indicated with the color #FFFFFF.
-
-**Available Values**: See [color](#color).
+Description | The fill color of building walls.
+Sample CartoCSS Code | `building-fill: #FFFFFF;`
+Default Value | white, as indicated with the color `#FFFFFF`.
+Available Values | See [color](#color).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### building-fill-opacity `float`
-Sets the opacity of the building, including the opacity of the building walls.
-	
-	building-fill-opacity; 1;
-	
-**Default Value**: `1`
 
-**Available Values**: See [float](#float).
-
+Description | Sets the opacity of the building, including the opacity of the building walls.
+Sample CartoCSS Code | `building-fill-opacity; 1;`
+Default Value | `1`
+Available Values | See [float](#float).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### building-height `expression`
-The height of the building, in pixels.
 
-	building-height: 0;
-
-**Default Value**: `0`
-
-**Available Values**: See [expression](#expression).
-
+Description | The height of the building, in pixels.
+Sample CartoCSS Code | `building-height: 0;`
+Default Value | `0`
+Available Values | See [expression](#expression).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ## debug-mode `string`
-The mode for debug rendering.
 
-	debug-mode: collision;
-
-**Default Value**: `collision`
-
-**Available Values**:  See [string](#string).
+Description | The mode for debug rendering.
+Sample CartoCSS Code | `debug-mode: collision;`
+Default Value | `collision`
+Available Values | See [string](#string).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ### CartoCSS Values

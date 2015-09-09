@@ -44,7 +44,7 @@ Error: Unable to read "grunt-aws.json" file (Error code: ENOENT).
 
 You will need a `grunt-aws.json` credentials file, find more information in the [deploy](#deploy) section.
 
-If you cannot find the docs for CartoDB.js, the SQL API or Maps API, ensure that you run `docs_build.sh` yet. For details, see [How to contribute](#how-to-contribute).
+If you cannot find the docs for CartoDB.js, the SQL API or Maps API, ensure that you run `sh docs_build.sh`. For details, see [How to contribute](#how-to-contribute).
 
 You will also need `wget`and `sed` in order for the script work.
 
