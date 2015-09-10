@@ -1416,13 +1416,15 @@ CartoCSS styling is generally simple, making typos or forgetting quotations are 
 
 ## Your Account
 
-### API Key
+Your CartoDB account options contain all of the information necessary for managing your account. You can view and edit your profile information, view the details of your account plan and connect to external data sources, request API keys to access your private data, generate tokens for consumer authentication of your map resources, and view the details of your billing invoices and data usage.
 
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/apikey.png' | prepend: site.baseurl }}" alt="API" /></p>
+### API Key
 
 The API key offers the simplest way to access private data or perform writes and updates to your public data. Remember that your API key protects access to your data, so keep it confidential and only share it if you want others to have this access. If necessary, you can reset your API key in your admin dashboard.
 
-#### Find your API key
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/apikey.png' | prepend: site.baseurl }}" alt="API" /></p>
+
+#### API keys
 
 1. Go to your dashboard.
 2. Click on your avatar in the top right corner, and select "Your API keys."
@@ -1432,15 +1434,24 @@ The API key offers the simplest way to access private data or perform writes and
 
 Edit your public profile settings incuding your name, website, description, avatar, and Twitter handle. To navigate to this window in your dashboard, click on your avatar in the top right corner, select "Account settings" from the menu options and within the second sub-menu on the left, select "Profile."
 
-### Account Settings
+To access your account settings, select *Your account* from your avatar drop-down menu.
+<Image>
+
+First Header | Second Header
+------------ | -------------
+Content from cell 1 | Content from cell 2
+Content in the first column | Content in the second column
+
+
+### Account
 
 Change your account preferences including username, email, and password. To navigate to this window in your dashboard, click on your avatar in the top right corner and select "Account settings."
 
-### OAuth Credentials
+### OAuth credentials
 
 OAuth is an authentication protocol that allows users to approve an application to act on their behalf without sharing their password. To navigate to this section in your dashboard, click on your avatar in the top right corner, select "Account Settings" and within the second sub-menu on the left, select "Your OAuth credentials."
 
-### Quotas and Billing
+### Billing
 
 We offer a wide range of plans to fit every user's needs. Each plan comes with different features and storage quotas. Take a look at our [pricing plans]({{ '/pricing' | prepend: site.cartodb-baseurl }}) to pick the best plan for you.
 
@@ -1450,7 +1461,7 @@ If you upgrade from one paid plan to another, your new billing period will start
 
 You may experience extra charges besides the monthly cost of your plan if you exceed the free quota for geocodings or mapviews, as defined in our Terms of Service.
 
-### Free Trial and Upgrading
+#### Free Trial and Upgrading
 
 All of our plans have a fourteen-day free trial, during which you may experiment with one of our plans to see if it's a good fit. Once you create an account, you may choose to change your plan from "Account Settings," accessed from your dashboard.
 
