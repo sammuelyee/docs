@@ -399,12 +399,6 @@ If you are publishing your map as a static image with an API, you must manually 
 
 	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>
 
-For a complete example, the following syntax defines the attributions of a basemap:
-
-	var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
-  attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
-});
-
 **Tip:**  For more information about working with static maps, see the [Introducing CartoDB static maps](http://blog.cartodb.com/static-maps/) blogpost.
 
 ### How can I set the position of an embedded map?
@@ -455,9 +449,18 @@ The Removable brand feature, included for certain [account types](https://cartod
 
 **Note:** This feature is only available for certain account types. Contact [Sales](mailto:sales@cartodb.com) if you are interested in this feature.
 
-### I used my Google account to log into CartoDB, how can I change my login account email and disconnect my Google account?
+### I used my Google account to log into CartoDB, how can I remove my Gmail account from my CartoDB login?
 
-If you are logged into CartoDB through your Google account and you want to unlink your account, edit your *Account settings* and "Disconnect your Google+ account." You are automatically prompted to set a new password, as you will need it to access your CartoDB account once you disconnect it from your Google session.
+If you are logged into CartoDB through your Google account and you want to unlink your account, you must edit your connected apps & sites through your Google sign-in and security settings.  
+
+- Ensure that your CartoDB session is closed
+- From your Google Account settings, click *REMOVE* CartoDB through the managed apps section.
+
+	<p class="wrap-border"><img src="{{ '/img/layout/faqs/remove_google_access.png' | prepend: site.baseurl }}" alt="Remove Google access" /></p>
+
+	**Note:** Removing your access to CartoDB also removes all of your maps and datasets when logging in with a new account.  If you grant access to Google again, your maps/datasets will be gone.
+
+- The next time you login to CartoDB, you must create a new account.
 
 ## GDrive
 
