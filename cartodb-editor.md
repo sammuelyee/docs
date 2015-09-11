@@ -1416,60 +1416,132 @@ CartoCSS styling is generally simple, making typos or forgetting quotations are 
 
 ## Your Account
 
-Your CartoDB account options contain all of the information necessary for managing your account. You can view and edit your profile information, view the details of your account plan and connect to external data sources, request API keys to access your private data, generate tokens for consumer authentication of your map resources, and view the details of your billing invoices and data usage.
+Your CartoDB account options contain all of the information necessary for managing your account. You can view and edit your profile information, view the details of your account plan and connect to external data sources, request an API key to protect your data, generate tokens for consumer authentication of your map resources, and view the details of your billing invoices and data usage.
 
-### API Key
+### How to Access your Account Options
+You can access your account options from your dashboard, or from your public profile page, in CartoDB.
 
-The API key offers the simplest way to access private data or perform writes and updates to your public data. Remember that your API key protects access to your data, so keep it confidential and only share it if you want others to have this access. If necessary, you can reset your API key in your admin dashboard.
+- From your dashboard, select *Your account* (or *Your API keys*) from your avatar drop-down menu
 
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/apikey.png' | prepend: site.baseurl }}" alt="API" /></p>
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/access_account_options.png' | prepend: 	site.baseurl }}" alt="Access account options from dashboard" /></p>
 
-#### API keys
+- Optionally, if you are on your public profile page, select *Account settings* (or *Your API keys*) from your avatar drop-down menu
 
-1. Go to your dashboard.
-2. Click on your avatar in the top right corner, and select "Your API keys."
-3. Here, you can copy your API key, see use examples, and reset your API key.
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/account_access_from_public_profile.png' | prepend: 	site.baseurl }}" alt="Access account options from public profile" /></p>
+	
+	The page refreshes, displaying the account options to the left and your data usage on top.  
+
+- Click the different options to refresh the view and display the related account settings 
+
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/account_options.png' | prepend: 	site.baseurl }}" alt="Acount options" /></p>
+
+Each of the available account options are described below.
 
 ### Profile
 
-Edit your public profile settings incuding your name, website, description, avatar, and Twitter handle. To navigate to this window in your dashboard, click on your avatar in the top right corner, select "Account settings" from the menu options and within the second sub-menu on the left, select "Profile."
+[Access](#how-to-access-your-account-options) your profile information to edit your public profile settings. 
 
-To access your account settings, select *Your account* from your avatar drop-down menu.
-<Image>
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/account_profile.png' | prepend: 	site.baseurl }}" alt="Acount profile options" /></p>
 
-First Header | Second Header
------------- | -------------
-Content from cell 1 | Content from cell 2
-Content in the first column | Content in the second column
+Profile options include the ability to:
 
+- Change your avatar image
+- Edit your public profile name
+- Share any personal websites, your Twitter Username, or your Disque Shortname
+- Indicate that you are available for hire, which automatically includes a link to your email on your public profile page
+
+Click *SAVE CHANGES* after editing any of your profile settings.
 
 ### Account
 
-Change your account preferences including username, email, and password. To navigate to this window in your dashboard, click on your avatar in the top right corner and select "Account settings."
+[Access](#how-to-access-your-account-options) your account settings to edit your account plan details. 
+
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/account_settings.png' | prepend: 	site.baseurl }}" alt="Acount settings" /></p>
+
+Account options include the ability to:
+
+- Edit your account username, associated email address, change your password
+- View and edit your account type and billing plan
+	
+	**Note:** If you change your account plan, charges will be pro-rated.
+	
+	**Tip:** If you are using a free-trial, you can change or upgrade your account by viewing the details of your account (this redirects you to the [billing](#billing) options of your account). Once you create an account for evaluating a free-trial of CartoDB, you have fourteen days to experiment with different account types.
+- Connect (or disconnect) to external data sources
+
+	**Note:** The available connections that appear depend on which options have been enabled for your account. Connect an external service to link it to your account. For complete details about how to connect to external data sources, see the [Connect Dataset](http://docs.cartodb.com/cartodb-editor.html#connect-dataset) procedure.
+
+Click SAVE CHANGES after editing any of your account settings.
+
+#### Delete your account
+
+You can delete your account through the [account](#account) options page. [Contact us](mailto:sales@cartodb.com) if you have any questions before deleting your account.
+
+***Note:** Deleting your account permanently deletes all of your maps and datasets.* 
+
+### API Key
+
+[Access](#how-to-access-your-account-options) your API key, which is uniquely generated for your account. When you use the [CartoDB Platform](cartodb-platform.html) to call your data, you can manage how your data is updated (write access), or protected, (read-only access).
+
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/apikey.png' | prepend: site.baseurl }}" alt="API" /></p>
+
+Your API key includes the ability to:
+
+- View, and copy, your API key
+
+	**Tip:**  Click the link icon, located inside the *Your API Key* field, to copy the API key to the clipboard. This is helpful if you need to paste your API key into a line of code of an API command.
+- Request a new API key
+
+	**Note:** When you click *Request a new API key*, a confirmation dialog appears. Click *REGENERATE API KEY* to continue. Note that you will have to update any of your deployed applications that call your API, to include the new API key.
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/regenerate_api.png' | prepend: site.baseurl }}" alt="Regenerate api" /></p>
+
+- View example syntax of how your API key can be formatted to include write access to portions of your data 
+- View example syntax of how your API key can be formatted to keep portions of your data read-only and private
+
+**Note:** Your API key is confidential and should not be shared. Anyone who has access to your API key can apply changes to how your data is accessed.
 
 ### OAuth credentials
 
-OAuth is an authentication protocol that allows users to approve an application to act on their behalf without sharing their password. To navigate to this section in your dashboard, click on your avatar in the top right corner, select "Account Settings" and within the second sub-menu on the left, select "Your OAuth credentials."
+[Access](#how-to-access-your-account-options) the QAuth credentials to generate [SQL API](cartodb-platform/sql-api.html) tokens for consumer authentication of your map resources. These keys allow users to access private tables, write to public tables, and edit  data through an API without sharing passwords.  They keys are unique to the consumer.
+
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/oauth_credentials.png' | prepend: site.baseurl }}" alt="OAuth credentials" /></p>
+
+Your OAuth credentials include the ability to:
+
+- View, and copy, a consumer key tthat authenticates them to access your API
+
+	**Tip:**  Click the link icon, located inside the *Consumer Key* field, to copy the key to the clipboard. This is helpful if you need to paste a Consumer key into a line of code of an SQL API command.
+- View, and copy, a consumer secret question to ensure authentication when they are calling your API
+- Request Token  URL, to authenticate a request to a URL
+- Access Token URL, to authenticate access to a URL
+- Generate new keys and tokens
+
+	**Note:** When you click *GENERATE NEW KEYS*, a confirmation dialog appears. Click *REGENERATE OAUTH CREDENTIALS* to continue. Note that you will have to update any of your deployed applications that call your API, to include the new OAuth credentials.
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/regenerate_oauth.png' | prepend: site.baseurl }}" alt="Regenerate OAuth" /></p>
+	
+**Tip:** Click the link icon, located inside any of the fields on this page, to copy the key/tokens to the clipboard. This is helpful if you need to paste these into a line of code of an SQL API command.
+
+For more details about this feature, see [OAuth](cartodb-platform/sql-api.html#oauth), located in the SQL API documentation.
 
 ### Billing
 
-We offer a wide range of plans to fit every user's needs. Each plan comes with different features and storage quotas. Take a look at our [pricing plans]({{ '/pricing' | prepend: site.cartodb-baseurl }}) to pick the best plan for you.
+[Access](#how-to-access-your-account-options) the billing information for your account.  (There is also a shortcut to these billing options directly from the [Account](#account) settings).
 
-Once you upgrade from a free plan to a paid plan, a monthly billing period will be set for your account. Each month, you will receive the corresponding invoice via email with the description of services that will be charged for that billing period.
+<image>
 
-If you upgrade from one paid plan to another, your new billing period will start the same day of the month that your old plan started. This means that your first invoice will be pro-rated, and you will only be charged for the days remaining in your billing period.
+For all pricing information, see our [Pricing Plans]({{ '/pricing' | prepend: site.cartodb-baseurl }}). Each plan includes different features and storage quotas.
 
-You may experience extra charges besides the monthly cost of your plan if you exceed the free quota for geocodings or mapviews, as defined in our Terms of Service.
+- If you change your account plan, charges will be pro-rated.
 
-#### Free Trial and Upgrading
 
-All of our plans have a fourteen-day free trial, during which you may experiment with one of our plans to see if it's a good fit. Once you create an account, you may choose to change your plan from "Account Settings," accessed from your dashboard.
+- If you upgrade from one paid plan to another, your new billing period will start the same day of the month that your old plan started. This means that your first invoice will be pro-rated, and you will only be charged for the days remaining in your billing period.
 
-In the Account Settings window, you may view your current plan and click "Change your current plan" to choose a new one. Note that the charges will be pro-rated, so you may change your account type whenever you like.
+- You may experience extra charges besides the monthly cost of your plan if you exceed the free quota for geocodings or mapviews, as defined in our Terms of Service.
 
-### Deleting Your Account
+- If you change your account plan, charges will be pro-rated.
 
-Navigate to Account Settings, and scroll to the bottom of the page where you will see a link to "Delete my account." If you have any questions or concerns (we enjoy compliments, too!), please reach out to our support team at <support@cartodb.com> before deleting your account.
+- Once you upgrade from a free plan to a paid plan, a monthly billing period will be set for your account. Each month, you will receive the corresponding invoice via email with the description of services that will be charged for that billing period.
+	
+**Tip:** If you are using a free-trial, you can change or upgrade your account by viewing the details of your account (this redirects you to the [billing](#billing) options of your account). Once you create an account for evaluating a free-trial of CartoDB, you have fourteen days to experiment with different account types.
 
 ## **CartoDB Enterprise**
 
