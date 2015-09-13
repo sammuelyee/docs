@@ -1501,13 +1501,13 @@ Your API key includes the ability to:
 
 ### OAuth credentials
 
-[Access](#how-to-access-your-account-options) the QAuth credentials to generate [SQL API](cartodb-platform/sql-api.html) tokens for consumer authentication of your map resources. These keys allow users to access private tables, write to public tables, and edit  data through an API without sharing passwords.  They keys are unique to the consumer.
+[Access](#how-to-access-your-account-options) the QAuth credentials to generate [SQL API](cartodb-platform/sql-api.html) tokens for consumer authentication of your map resources. These keys allow users to access private datasets, write to public datasets, and edit data (through an API) without sharing passwords.
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/oauth_credentials.png' | prepend: site.baseurl }}" alt="OAuth credentials" /></p>
 
 Your OAuth credentials include the ability to:
 
-- View, and copy, a consumer key tthat authenticates them to access your API
+- View, and copy, a consumer key that authenticates them to access your API
 
 	**Tip:**  Click the link icon, located inside the *Consumer Key* field, to copy the key to the clipboard. This is helpful if you need to paste a Consumer key into a line of code of an SQL API command.
 - View, and copy, a consumer secret question to ensure authentication when they are calling your API
@@ -1524,24 +1524,25 @@ For more details about this feature, see [OAuth](cartodb-platform/sql-api.html#o
 
 ### Billing
 
-[Access](#how-to-access-your-account-options) the billing information for your account.  (There is also a shortcut to these billing options directly from the [Account](#account) settings).
+[Access](#how-to-access-your-account-options) the billing information for your account.  (There is also a shortcut to your billing plan directly from the [Account](#account) settings). You can change or upgrade your plan. and edit any payment information.
 
-<image>
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/account_billing.png' | prepend: site.baseurl }}" alt="Billing Plan" /></p>
 
 For all pricing information, see our [Pricing Plans]({{ '/pricing' | prepend: site.cartodb-baseurl }}). Each plan includes different features and storage quotas.
 
-- If you change your account plan, charges will be pro-rated.
+- Click *CHANGE YOUR PLAN* to view and change the account type for your plan
 
+- View any invoices related to your account 
 
-- If you upgrade from one paid plan to another, your new billing period will start the same day of the month that your old plan started. This means that your first invoice will be pro-rated, and you will only be charged for the days remaining in your billing period.
+- Click *Edit payment data* to edit payment or billing details for your account
 
-- You may experience extra charges besides the monthly cost of your plan if you exceed the free quota for geocodings or mapviews, as defined in our Terms of Service.
+**Tip:** See the following general rules about changing or upgrading your account. For complete details, see our [Terms of Service](https://cartodb.com/terms#limits) or contact [Sales](mailto:sales@cartodb.com).
 
-- If you change your account plan, charges will be pro-rated.
+- If you change or upgrade your account, charges are pro-rated. Your first invoice only displays charges for the days remaining in the billing period.
 
-- Once you upgrade from a free plan to a paid plan, a monthly billing period will be set for your account. Each month, you will receive the corresponding invoice via email with the description of services that will be charged for that billing period.
-	
-**Tip:** If you are using a free-trial, you can change or upgrade your account by viewing the details of your account (this redirects you to the [billing](#billing) options of your account). Once you create an account for evaluating a free-trial of CartoDB, you have fourteen days to experiment with different account types.
+- You may experience extra charges, besides the monthly cost of your plan, if you exceed the geocoding quota or map views allocated for your account type, as defined in our [Terms of Service](https://cartodb.com/terms#limits). Your data usage is displayed in every section of the account options.
+
+- A free trial enables you to evaluate CartoDB for 14 days. Once you upgrade from a free plan to a paid plan, a monthly billing period is set for your account. Each month, you will receive an email invoice with a description of services, and the charges for that billing period.
 
 ## **CartoDB Enterprise**
 
