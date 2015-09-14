@@ -453,13 +453,18 @@ The Removable brand feature, included for certain [account types](https://cartod
 
 If you are logged into CartoDB through your Google account and you want to unlink your account, you must edit your connected apps & sites through your Google account settings.  
 
-- Ensure that your CartoDB session is closed
-- From your Google Account settings, navigate to the sign-in and security settings to manage your connected apps & sites
-- Click *REMOVE* CartoDB through the managed apps section
+1. Before unlinking your Google account, change your associated [email address](cartodb-editor.html#account-settings) with your account.
+	
+	**Tip:** This step is highly recommended, all of your maps and datasets are associated with your registered email address.
+2. Close your CartoDB session to logout
+3. From your Google Account settings, navigate to the sign-in and security settings to manage your connected apps & sites
+4. Click *REMOVE* CartoDB through the managed apps section
 
 	<p class="wrap-border"><img src="{{ '/img/layout/faqs/remove_google_access.png' | prepend: site.baseurl }}" alt="Remove Google access" /></p>
 
-- The next time you login to CartoDB, you must create a new account. If you choose *LOGIN WITH GOOGLE*, you will have to grant access to Google again. 
+5. The next time you login to CartoDB, if you choose *LOGIN WITH GOOGLE*, you will have to grant access to Google again. Otherwise, you will have to login with a new email address.
+
+**Note:** All of your maps and datasets are associated with your registered email address. If you login with a new email, you will lose access to all of your maps and datasets - unless you previously changed your associated email address with your CartoDB account settings (as described in step 1 of this procedure).
 
 ## GDrive
 
