@@ -391,7 +391,13 @@ You can use code to apply CartoDB.js, in combination with Leaflet, to create ove
 
 ### How to print maps in CartoDB?
 
-From the Maps View of a selected map, you can [export the map image](cartodb-editor.html#export-image) and print it.  If you are publishing your map as a static image, ensure to add attributions for your map.
+From the Maps View of a selected map, you can [export the map image](cartodb-editor.html#export-image) and print it. Note that when you export an image with the CartoDB Editor, map [attributions](https://cartodb.com/attributions/) are automatically included. 
+
+<p class="wrap-border"><img src="{{ '/img/layout/faqs/map_attributions.png' | prepend: site.baseurl }}" alt="Map attributions" /></p> 
+
+If you are publishing your map as a static image with an API, you must manually add attributions for your static map image. For example, add the following attribution code:
+
+	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>
 
 **Tip:**  For more information about working with static maps, see the [Introducing CartoDB static maps](http://blog.cartodb.com/static-maps/) blogpost.
 
@@ -443,9 +449,30 @@ The Removable brand feature, included for certain [account types](https://cartod
 
 **Note:** This feature is only available for certain account types. Contact [Sales](mailto:sales@cartodb.com) if you are interested in this feature.
 
-### I used my Google account to log into CartoDB, how can I change my login account email and disconnect my Google account?
+### I logged in with Google access, how can I remove my Google account from my CartoDB login?
 
-If you are logged into CartoDB through your Google account and you want to unlink your account, edit your *Account settings* and "Disconnect your Google+ account." You are automatically prompted to set a new password, as you will need it to access your CartoDB account once you disconnect it from your Google session.
+If you login to CartoDB by clicking *LOGIN WITH GOOGLE*, and you want to unlink your Google account, you must edit your password (and associated email address) in CartoDB first. Once the password and email address is set for your account, you can remove access to your Google account by editing your connected apps & sites through your Google account settings.  
+
+1. Before unlinking your Google account, you must define a password and change the email associated with your CartoDB account. *This sets the password and email that you will enter to login to CartoDB after removing Google Access.*
+
+	- Change the [password](cartodb-editor.html#account-settings) associated with your account.
+	
+	- From the same page of the account options, change the associated email address with your CartoDB account
+	
+	**Tip:** This step is highly recommended, all of your maps and datasets are associated with your registered email address.
+	
+2. From your dashboard options, click *Close session* from your avatar drop-down menu to logout of CartoDB
+	
+3. From your Google Account settings, navigate to the sign-in and security settings to manage your connected apps & sites
+4. Click *REMOVE* CartoDB through the managed apps section
+
+	<p class="wrap-border"><img src="{{ '/img/layout/faqs/remove_google_access.png' | prepend: site.baseurl }}" alt="Remove Google access" /></p>
+
+5. The next time you login to CartoDB, if you choose *LOGIN WITH GOOGLE*, you will have to grant access to Google again. Otherwise, you can login with the associated email address and password for your account.
+
+	<p class="wrap-border"><img src="{{ '/img/layout/faqs/login_with_google.png' | prepend: site.baseurl }}" alt="Login with Google" /></p>
+
+**Note:** All of your maps and datasets are associated with your registered email address. If you login with a new email, you will lose access to all of your maps and datasets - unless you previously changed your associated email address with your CartoDB account settings (as described in step 1 of this procedure).
 
 ## GDrive
 

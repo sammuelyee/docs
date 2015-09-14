@@ -139,52 +139,25 @@ From your dashboard, you may also access our Data Library, which gives you acces
 
 ### Supported File Formats
 
-CartoDB supports an ever-growing number of data types and file formats.
+CartoDB supports a large number of data types and file formats. The following table lists the supported data file formats. 
 
-We encourage you to compress your files before importing them. Currently, supported compression and archiving formats include .ZIP and .GZ (also .TAR.GZ and .TGZ). Below are the data file types that CartoDB supports. If the file you are importing does not match one of these types, then the import will fail.
+**Tip:** It is high recommended that you compress your files before importing them. CartoDB supports .ZIP and .GZ (which includes .TAR.GZ and .TGZ) for compressing and archiving files.
 
-<table>
-  <tbody>
-    <tr>
-      <td>.CSV .TAB *</td>
-      <td>Comma-separated values and Tab delimited file</td>
-    </tr>
-    <tr>
-      <td>.SHP **</td>
-      <td>ESRI shapefiles</td>
-    </tr>
-    <tr>
-      <td>.KML, .KMZ</td>
-      <td>Google Earth Format</td>
-    </tr>
-    <tr>
-      <td>.XLS, .XLSX ***</td>
-      <td>Excel Spreadsheet</td>
-    </tr>
-    <tr>
-      <td>.GEOJSON</td>
-      <td>GeoJSON</td>
-    </tr>
-    <tr>
-      <td>.GPX</td>
-      <td>GPS Exchange Format</td>
-    </tr>
-    <tr>
-      <td>.OSM, .BZ2</td>
-      <td>Open Street Map dump</td>
-    </tr>
-    <tr>
-      <td>.ODS</td>
-      <td>OpenDocument Spreadsheet</td>
-    </tr>
-  </tbody>
-</table>
+Supported File Format | Description
+------------ | -------------
+.CSV, .TSV | Comma-separated values and tab-separated values.  This is the preferred file format when importing datasets to CartoDB
+| **Note:** When importing sheets with tabular formats, the first row must contain your column headers.
+.SHP | ESRI shapefiles
+| **Note:** For shapefiles, the .ZIP file must contain the .SHP, .DBF, .SHX and .PRJ files, all prefixed with same name. For example: a `ne_10m_populated_places.zip` file would contain `ne_10m_populated_places.shp`, `ne_10m_populated_places.dbf`, `ne_10m_populated_places.shx` and `ne_10m_populated_places.prj`).*
+.KML, .KMZ | Google Earth Format
+.XLS, .XLSX | Excel Spreadsheet
+|**Note:** It is a known issue that uploading Excel files takes significantly longer to import to CartoDB. It is recommended to save your .XLS or .XLSX files as .CSV files, for the best performance.
+.GEOJSON | GeoJSON
+.GPX | GPS Exchange Format
+.OSM, .BZ2 | Open Street Map dump
+.ODB | OpenDocument Spreadsheet
 
-_CartoDB prefers datasets that use comma separators. Also, we are only able to import first sheets with tabular formats, and the first row must contain your column headers._
-
-*For Shapefiles, we require that the whole .ZIP file contains the .SHP, .DBF, .SHX and .PRJ files, all prefixed with same name. (For example a `ne_10m_populated_places.zip` file would contain `ne_10m_populated_places.shp`, `ne_10m_populated_places.dbf`, `ne_10m_populated_places.shx` and `ne_10m_populated_places.prj`).*
-
-_XLS and XSLX may take longer than CSV files. We highly recommend that you export Excel files to CSV before importing in CartoDB._
+**Note:**  If you are importing a non-supported file type, the import will fail.
 
 ###Data Visualization
 
@@ -911,6 +884,8 @@ On-hover infowindows display when your cursor is "hovering" above an infowindow.
 
 #### CartoCSS
 
+CartoCSS is the syntax language that enables you to customize the style of your map data. You can apply CartoCSS styles directly from the the Map View of the CartoDB Editor. For more details about CartoCSS, see [Customizing Maps with CartoCSS](#customizing-maps-with-cartocss).
+
 {% include cartocss.html %}
 
 #### Legends
@@ -1389,7 +1364,7 @@ In the Account Settings window, you may view your current plan and click "Change
 
 Navigate to Account Settings, and scroll to the bottom of the page where you will see a link to "Delete my account." If you have any questions or concerns (we enjoy compliments, too!), please reach out to our support team at <support@cartodb.com> before deleting your account.
 
-## **CartoDB Enterprise**
+## CartoDB Enterprise
 
 #### About Multiuser Enterprise
 
@@ -1405,18 +1380,18 @@ If you have been using a normal CartoDB account and are starting to use CartoDB 
 
 An "Owner" of an organization has privileges to perform admin-related tasks of the organization (i.e. create users, assign quotas, etc.).
 
-### **Users**
+### Users
 
 #### Dashboard
 
 After login, the Enterprise mainpage allows you to quickly and easily navigate team activity. The dashboard is your homebase, a.k.a. the page where you are able to view and monitor your own activity maps and data, as well as access datasets and visualizations published or shared with you by team members.
 
-####Your Maps
+#### Your Maps
 On the left side of your browser you can search for maps by tag or name, view maps you have created, view maps that have been made public to the organization or shared with you for collaboration, or see maps you have liked from the community. The icons on the left allow you to order personal or shared maps by date, number of visits, number of likes, or create a new map from scratch. You can also access your own or shared datasets by selecting the drop down menu in the upper left.
 
 <p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_00.png" alt="dash" /></p>
 
-####Your Datasets
+#### Your Datasets
 Similar to your Maps dashboard, your Datasets dashboard allows you to easily search for datasets by name or tag, view your own and shared datasets, see datasets you have liked, and access our ever growing and free to use **Data Library**. You can also order your datasets by size, or add new datasets from your computer, the web, or from scratch.
 
 <p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_01.png" alt="data dash" /></p>
@@ -1434,7 +1409,7 @@ All privacy options are available for enterprise account users by default. This 
 
 **Note:** Dataset privacy is stored separately from Map privacy. This enables you to protect each layer of data within a map, and also determine how you want to share the map.
 
-### **Owners**
+### Owners
 
 As the owner of an organization, you will be able to perform all admin-related tasks of a team account: manage users, assign quotas, customize the organization's Public Page, update account details, etc. When you login, you will see a normal CartoDB dashboard with a list of tables. You can access the admin area by clicking on the drop-down menu located in the upper-right corner and selecting "Your Organization".
 
@@ -1468,11 +1443,11 @@ In this section, you can customize how your Public Page will look by choosing yo
 
 On the "Your Plan" page, you can see information about your company, users, data storage, and resources. You can also contact us with questions or changes to your account.
 
-##Connecting to External Twitter Data
+## Connecting to External Twitter Data
 
 CartoDB has broker access to [Twitter Firehose](https://dev.twitter.com/streaming/reference/get/statuses/firehose), which enables us to provide official Twitter data through CartoDB. The following procedures describe how to enable the Twitter Connector for your account so that you can connect external Twitter data to a dataset and create a map.
 
-###Enabling the Twitter Connector
+### Enabling the Twitter Connector
 The following procedure describes how to enable the Twitter Connector.
 
 1. Click *Your datasets* from the dashboard drop-down menu  
@@ -1499,7 +1474,7 @@ The following procedure describes how to enable the Twitter Connector.
 
 	Once the Twitter Connector is enabled for your account, a CartoDB sales representative sends you a confirmation email. This indicates that tweets are enabled for your account and you can continue the process of [(connecting](#how-to-connect-twitter-data-to-a-dataset)) a dataset to Twitter.
 
-###Connecting Twitter Data to a Dataset
+### Connecting Twitter Data to a Dataset
 The following procedure describes how to connect  twitter data to a dataset after the Twitter Connector has been enabled by your account representative.
 
 1. After the Twitter Connector is [(enabled](#how-to-enable-the-twitter-connector)), select *Twitter* as the external service  
@@ -1532,7 +1507,7 @@ The following procedure describes how to connect  twitter data to a dataset afte
 **Note:** While CartoDB can retrieve geotagged tweets, we cannot retrieve data when the Twitter post has not specified a location element. For example, the Twitter user must explicitly turn on their location, or indicate their location in their profile location field.
 *Approximately 5% of tweets typically contain geolocation elements. However, CartoDB has applied geo-enrichment enhancements to our code, increasing the Twitter search results up to 15% to 20%.*
 
-###Twitter API Data Options
+### Twitter API Data Options
 There are several TWitter API's that CartoDB can provide broker access to.  Your account representative can help you select the appropriate type of data plan when you are [(enabling the Twitter Connector](#enabling-the-twitter-connector)).
 
 * **Search API**: The Search API is implemented by default when enabling the Twitter Connector. It allows you to pull geolocated Twitter data from the past 30 days. Once a search is executed, the tweets are imported directly to your CartoDB account so that you can customize your map directly from the Map View of your dashboard.
@@ -1543,7 +1518,7 @@ There are several TWitter API's that CartoDB can provide broker access to.  Your
 
 **Note:** CartoDB is developing a feature to support real time tweets, which automatically updates your map when live tweets are posted. This feature is a work in progress.
 
-###Understanding Twitter Data
+### Understanding Twitter Data
 
 After connecting to a Twitter dataset, unique columns are available from your dataset view. The following list displays the most important Twitter information. You may need this information in order to filter or plot Twitter data points.
 
@@ -1634,7 +1609,7 @@ Following this approach with the "Raster" option, running a query creates severa
 ### Tips and Tricks for Using Twitter Data
 Note the following tips an tricks when using twitter data for your maps.
 
-####Twitter Categories and Search Terms
+#### Twitter Categories and Search Terms
 * You can enter OR as an alternative to using the comma. For example, "santa, xmas" is the same as "santa OR xmas"
 * Spaces before and after commas are removed
 * Enter commas between multi-sentence words as a best practice. For example, if you enter a multi-word search term, such as "cars, bikes motorbikes, planes", the category is parsed as three search terms.  Not "cars, bikes, motorbikes, planes"
@@ -1643,10 +1618,46 @@ Note the following tips an tricks when using twitter data for your maps.
 * The maximum number of search terms per category is 29
 * You can search by hashtags or account names. For example, "gis, @cartodb, #mapping"
 
-####Twitter Credits
+#### Twitter Credits
 * Ensure that you select the right time frame that suits your needs. You can save on Twitter credits by not importing extra data
 * Enterprise multi-accounts share the same organization-wide pool of Twitter credits
 * If you run out of credits, the the search stops and returns all the tweets that the system was able to retrieve up until the credits were used
 
-####Retrieving Twitter Data
+#### Retrieving Twitter Data
 * Once the search starts you cannot stop the import. Be mindful to avoid broad search terms. For example, "love" may retrieve hundreds of thousands, or even millions, of geolocalized tweets
+
+
+## Customizing Maps with CartoCSS
+
+{% include cartocss_description.html %}
+
+### Apply CartoCSS with the CartoCSS Editor
+
+{% include cartocss.html %}
+
+###  CartoCSS Best Practices
+
+Add Mamata's worflow here!
+
+###  CartoCSS Properties
+
+{% include cartocss_properties.html %}
+
+###  CartoCSS Properties for Torque Style Maps
+
+{% include cartocss_torque.html %}
+
+###  CartoCSS Errors
+
+{% include cartocss_errors.html %}
+
+### CartoCSS Comp Op
+
+{% include cartocss_comp_op.html %}
+
+
+
+
+
+
+

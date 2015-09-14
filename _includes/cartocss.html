@@ -1,4 +1,4 @@
-<!--<div style="font-size:12pt;color:magenta;">Writer Note_csobier: There are several include files for the CartoCSS topic:
+<!--<div style="font-size:12pt;color:magenta;">Writer Note_csobier: There are several include files for the CartoCSS topic: I am leaving as a comment so that I can apply to new file structure, when the Docs repo is updated. For now, everything is dumped as an include file in the bottom on the cartodb-editor.md file.
 *cartocss.html - This include file contains an overview of CartoCSS and how to access the CartoCSS Editor.
 
 * cartocss_properties.html - This include file contains all the mapbox parameters for cartocss. This will be the living document for CartoCSS parameters. I also notified product to update the link in the UI (issue#1234). The UI now points to this include file as a reference for CartoCSS.
@@ -22,9 +22,8 @@ https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Basic_Transformations
 
 <!--<div style="font-size:12pt;color:magenta;">Writer Note_csobier: Docs/issue#3959, ##### Styling Maps with CartoCSS
 </div>-->
-CartoCSS is the syntax language that enables you to customize the style of your map data. Similar to working with a Cascading Style Sheet for styling webpages, CartoCSS is specific to the design of map symbolizer properties (such as marker size, marker color, line stroke, text display, and so on). You can apply CartoCSS styles directly from the the Map View of the CartoDB Editor. Optionally, you can apply CartoCSS with [CartoDB.JS](http://docs.cartodb.com/cartodb-platform/cartodb-js.html) and the [Maps API](http://docs.cartodb.com/cartodb-platform/maps-api.html).
 
-#####Apply Map Styles with the CartoCSS Editor
+#####Apply CartoCSS with the CartoCSS Editor
 The CartoCSS option is available from the CartoDB sidebar, and opens the CartoCSS Editor. The CartoCSS Editor enables you to apply CartoCSS styling directly from the selected map view.
 
 1. Click *Your maps* from your dashboard drop-down menu
@@ -43,7 +42,7 @@ The CartoCSS option is available from the CartoDB sidebar, and opens the CartoCS
 	
 	The sidebar expands, displaying the CartoCSS Editor.
 	
-4. Enter CartoCSS properties for styling your map  
+4. Enter CartoCSS properties for styling your map
 		
 	**Note:** See [CartoCSS Properties](#cartocss-properties) for a description of the available CartoCSS properties and values.
 	
@@ -56,7 +55,5 @@ The CartoCSS option is available from the CartoDB sidebar, and opens the CartoCS
 	
 The map refreshes, displaying the CartoCSS styling changes that you applied.
 
-{% include cartocss_properties.html %}
-{% include cartocss_torque.html %}
-
+*While you can apply CartoCSS styles to different layers on a map, it is highly recommended that you view the suggested [best practices](#cartocss-best-practices) for how to use and apply CartoCSS styles more intuitively.*
  
