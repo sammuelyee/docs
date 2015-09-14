@@ -150,11 +150,11 @@ Supported File Format | Description
 .SHP | ESRI shapefiles
 | **Note:** For shapefiles, the .ZIP file must contain the .SHP, .DBF, .SHX and .PRJ files, all prefixed with same name. For example: a `ne_10m_populated_places.zip` file would contain `ne_10m_populated_places.shp`, `ne_10m_populated_places.dbf`, `ne_10m_populated_places.shx` and `ne_10m_populated_places.prj`).*
 .KML, .KMZ | Google Earth Format
-.XLS, XLSX | Excel Spreadsheet
+.XLS, .XLSX | Excel Spreadsheet
 |**Note:** It is a known issue that uploading Excel files takes significantly longer to import to CartoDB. It is recommended to save your .XLS or .XLSX files as .CSV files, for the best performance.
 .GEOJSON | GeoJSON
 .GPX | GPS Exchange Format
-.OSM, BZ2 | Open Street Map dump
+.OSM, .BZ2 | Open Street Map dump
 .ODB | OpenDocument Spreadsheet
 
 **Note:**  If you are importing a non-supported file type, the import will fail.
