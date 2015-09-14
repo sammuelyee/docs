@@ -139,52 +139,25 @@ From your dashboard, you may also access our Data Library, which gives you acces
 
 ### Supported File Formats
 
-CartoDB supports an ever-growing number of data types and file formats.
+CartoDB supports a large number of data types and file formats. The following table lists the supported data file formats. 
 
-We encourage you to compress your files before importing them. Currently, supported compression and archiving formats include .ZIP and .GZ (also .TAR.GZ and .TGZ). Below are the data file types that CartoDB supports. If the file you are importing does not match one of these types, then the import will fail.
+**Tip:** It is high recommended that you compress your files before importing them. CartoDB supports .ZIP and .GZ (which includes .TAR.GZ and .TGZ) for compressing and archiving files.
 
-<table>
-  <tbody>
-    <tr>
-      <td>.CSV .TAB *</td>
-      <td>Comma-separated values and Tab delimited file</td>
-    </tr>
-    <tr>
-      <td>.SHP **</td>
-      <td>ESRI shapefiles</td>
-    </tr>
-    <tr>
-      <td>.KML, .KMZ</td>
-      <td>Google Earth Format</td>
-    </tr>
-    <tr>
-      <td>.XLS, .XLSX ***</td>
-      <td>Excel Spreadsheet</td>
-    </tr>
-    <tr>
-      <td>.GEOJSON</td>
-      <td>GeoJSON</td>
-    </tr>
-    <tr>
-      <td>.GPX</td>
-      <td>GPS Exchange Format</td>
-    </tr>
-    <tr>
-      <td>.OSM, .BZ2</td>
-      <td>Open Street Map dump</td>
-    </tr>
-    <tr>
-      <td>.ODS</td>
-      <td>OpenDocument Spreadsheet</td>
-    </tr>
-  </tbody>
-</table>
+Supported File Format | Description
+------------ | -------------
+.CSV, .TSV | Comma-separated values and tab-separated values.  This is the preferred file format when importing datasets to CartoDB
+| **Note:** When importing sheets with tabular formats, the first row must contain your column headers.
+.SHP | ESRI shapefiles
+| **Note:** For shapefiles, the .ZIP file must contain the .SHP, .DBF, .SHX and .PRJ files, all prefixed with same name. For example: a `ne_10m_populated_places.zip` file would contain `ne_10m_populated_places.shp`, `ne_10m_populated_places.dbf`, `ne_10m_populated_places.shx` and `ne_10m_populated_places.prj`).*
+.KML, .KMZ | Google Earth Format
+.XLS, XLSX | Excel Spreadsheet
+|**Note:** It is a known issue that uploading Excel files takes significantly longer to import to CartoDB. It is recommended to save your .XLS or .XLSX files as .CSV files, for the best performance.
+.GEOJSON | GeoJSON
+.GPX | GPS Exchange Format
+.OSM, BZ2 | Open Street Map dump
+.ODB | OpenDocument Spreadsheet
 
-_CartoDB prefers datasets that use comma separators. Also, we are only able to import first sheets with tabular formats, and the first row must contain your column headers._
-
-*For Shapefiles, we require that the whole .ZIP file contains the .SHP, .DBF, .SHX and .PRJ files, all prefixed with same name. (For example a `ne_10m_populated_places.zip` file would contain `ne_10m_populated_places.shp`, `ne_10m_populated_places.dbf`, `ne_10m_populated_places.shx` and `ne_10m_populated_places.prj`).*
-
-_XLS and XSLX may take longer than CSV files. We highly recommend that you export Excel files to CSV before importing in CartoDB._
+**Note:**  If you are importing a non-supported file type, the import will fail.
 
 ###Data Visualization
 
