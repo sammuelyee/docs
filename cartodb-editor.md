@@ -651,10 +651,10 @@ Display data as simple marker points.
 This tool adjusts three point properties: the size of the marker (a numeric value between 0-40), the color of the marker (using Hex codes or by selecting from the color palette), and the opacity of your point (a value between 0-1).
 
 - **Marker Stroke**  
-The Marker Stroke allows you to edit the width of your points' border or outline (a value between 0-40), their color (using Hex codes or by selecting from the color palettex), and their opacity (a value between 0-1).
+The Marker Stroke allows you to edit the width of your points' border or outline (a value between 0-40), their color (using Hex codes or by selecting from the color palette), and their opacity (a value between 0-1).
 
 - **Composite Operation**  
-Change how the colors of overlapping geometries interact with one another. You can select from  *multiply, screen, overlay, darken, lighten, color-dodge* and *color-burn*. See [CartoCSS Composite Operations](##CartoCSS Composite Operations) for a description of composite operation effects. 
+Change how the colors of overlapping geometries interact with one another. You can select from  *multiply, screen, overlay, darken, lighten, color-dodge* and *color-burn*. See [CartoCSS Composite Operations](#cartocss-composite-operations) for a description of composite operation effects. 
 
 - **Label Text**   
 Select the field that you would like to act as a label (if any).
@@ -691,7 +691,7 @@ Change your label's font.
 - **Label Halo**  
 Change the color and width of the outline around your text. This can be helpful for increasing readability.
 
-Refer to [CartoCSS documentation](http://docs.cartodb.com/cartodb-editor.html#cartocss) for an explanation of marker fill, marker size, and marker stroke.
+See [CartoCSS Marker Properties](#markers) for a description of marker fill, marker size, and marker stroke.
 
 #### Choropleth
 Thematic map with regions in different colors in proportion to the data.
@@ -713,16 +713,16 @@ Choose the way that data is divided into buckets. You can select from: Jenks, Eq
   - **Heads/Tails** breaks can be powerful for data with a long-tail distribution. The Heads/Tails method will create a break-point at the mean of your data, remove all data below the break-point, and create the next break-point from the data above the first break-point. It will repeat the process until either a single value is left above the break-point or if it reaches the desired number of breaks.
 
 - **Color Ramp**  
-Select the colors of your dataset. You can customize these using CartoCSS, which we will cover more in-depth, but take a quick look [here](https://www.mapbox.com/tilemill/docs/manual/carto/) in the meantime.
+Select the colors of your dataset. You can customize these using [CartoCSS](#cartocss).
 
 - **Marker Width**  
-See to [CartoCSS](http://docs.cartodb.com/cartodb-editor.html#cartocss) for an explanation of marker width.
+See the CartoCSS Marker Properties for a description of [marker-width](#marker-width-expression).
 
 - **Marker Stroke**  
-See to [CartoCSS](http://docs.cartodb.com/cartodb-editor.html#cartocss) for an explanation of marker width.
+The marker stroke allows you to edit the width of your point, a.k.a. its border or outline (a value between 0-40), the color (using Hex codes or by selecting from the color palette), and the opacity (a value between 0-1).
 
 - **Composite Operation**  
-Change how the colors of overlapping geometries interact with one another. You can select from  *multiply, screen, overlay, darken, lighten, color-dodge* and *color-burn*. See [CartoCSS Composite Operations](##CartoCSS Composite Operations) for a description of composite operation effects. 
+Change how the colors of overlapping geometries interact with one another. You can select from  *multiply, screen, overlay, darken, lighten, color-dodge* and *color-burn*. See [CartoCSS Composite Operations](#cartocss-composite-operations) for a description of composite operation effects. 
 
 - **Label Text**    
 Select the field that you would like to act as a label (if any).
@@ -739,7 +739,7 @@ A list of the different categories that will appear on your map and in your lege
 - **Column**  
 Select the numeric value column(s) that you want to display.
 
-Refer to [CartoCSS documentation](http://docs.cartodb.com/cartodb-editor.html#cartocss) for an explanation of marker fill, and marker stroke.
+See [CartoCSS Marker Properties](#markers) for a description of marker fill and marker stroke.
 
 #### Bubble
 Scale radius of markers based on numeric data in your dataset.
@@ -756,7 +756,7 @@ Set the color and opacity of bubble markers.
 Edits multiple values: the width of your bubble stroke, a.k.a. its border or outline (a value between 0-40); the color (using Hex codes or by selecting from the color palette), and the opacity (a value between 0-1).
 
 - **Composite Operation**  
-Change how the colors of overlapping geometries interact with one another. You can select from  *multiply, screen, overlay, darken, lighten, color-dodge* and *color-burn*. See [CartoCSS Composite Operations](##CartoCSS Composite Operations) for a description of composite operation effects. 
+Change how the colors of overlapping geometries interact with one another. You can select from  *multiply, screen, overlay, darken, lighten, color-dodge* and *color-burn*. See [CartoCSS Composite Operations](#cartocss-composite-operations) for a description of composite operation effects. 
 
 - **Described under [Choropleth](http://docs.cartodb.com/cartodb-editor.html#choropleth)**
   - Column
@@ -767,7 +767,7 @@ Show density of points much like a heatmap.
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/intensity.png' | prepend: site.baseurl }}" alt="Intensity Wizard" /></p>
 
-Refer to [CartoCSS documentation](http://docs.cartodb.com/cartodb-editor.html#cartocss) for an explanation of marker fill and marker stroke.
+See [CartoCSS Marker Properties](#markers) for a description of marker fill and marker stroke.
 
 #### Density
 Data is aggregated into hexagons colored based on intensity of data in each cell. Infowindows will be disabled.
@@ -784,8 +784,7 @@ Edit multiple values: the width of your polygon stroke, a.k.a. its border or out
   Adjust the size of the polygons on your map.
 
 - **Composite Operation**  
-Change how the colors of overlapping geometries interact with one another. You can select from  *multiply, screen, overlay, darken, lighten, color-dodge* and *color-burn*. See [CartoCSS Composite Operations](##CartoCSS Composite Operations) for a description of composite operation effects. 
-
+Change how the colors of overlapping geometries interact with one another. You can select from  *multiply, screen, overlay, darken, lighten, color-dodge* and *color-burn*. See [CartoCSS Composite Operations](#cartocss-composite-operations) for a description of composite operation effects. 
 
 - **Described under [Choropleth](http://docs.cartodb.com/cartodb-editor.html#choropleth)**
   - Buckets
@@ -818,7 +817,7 @@ Set the total length of your map visualization.
 Edit the number of animation groupings. Fewer steps will create a more step-by-step or choppy data animation with more data in each "step." A greater number of steps will look smoother. This correlates to whether your data is being displayed by day, week, month, etc.
 
 - **Blend Mode**  
-Style effects for how layered data is blended during the animation. Blend modes use color composite operations. Available modes include lighter, multiply, source-over, and xor. See [CartoCSS Composite Operations](##CartoCSS Composite Operations) for a description of composite operation effects. 
+Style effects for how layered data is blended during the animation. Blend modes use color composite operations. Available modes include lighter, multiply, source-over, and xor. See [CartoCSS Composite Operations](#cartocss-composite-operations) for a description of composite operation effects. 
 
 - **Trails**  
 Select whether data points display a "trail," or faded image after they disappear from your map. Choose a value between 0 and 5: 5 will display a longer, more-lasting trail and 0 will not show a trail.
@@ -826,7 +825,7 @@ Select whether data points display a "trail," or faded image after they disappea
 - **Resolution**  
 Torque creates a grid of your data and aggregates data to each cell of that grid. The resolution parameter determines the width and height of each cell. Larger numbers will make your data more gridded.
 
-Torque maps also have [Torque CartoCSS](http://docs.cartodb.com/cartodb-editor.html#cartocss) options to further customize the look of your map.
+**Note:** You can further enhance the styling of your map with CartoCSS properties specific for Torque maps. For details, see [CartoCSS Properties - Torque Maps](#cartocss---torque-maps).
 
 #### Torque Heat
 A variation of Torque allowing for an animated heatmap of temporal data where areas of greater color intensity indicate greater density of data.
@@ -846,7 +845,7 @@ Set the transparency of the heatmap markers.
 - **Animated**  
 Activate this slider to turn your temporal data into a linear Torque animation.
 
-Torque maps also have [Torque CartoCSS](http://docs.cartodb.com/cartodb-editor.html#cartocss) options to further customize the look of your map.
+**Note:** You can further enhance the styling of your map with CartoCSS properties specific for Torque Heat maps. For details, see [CartoCSS Properties - Torque Heat Maps](#cartocss---torque-heat-maps).
 
 #### Torque Category
 A variation of Torque, which allows for an animation of points whose color relates to categories in your dataset
@@ -862,7 +861,7 @@ Choose data from your dataset you would like to appear as categories on your map
 
 	**Note**: If you select Torque Category as the map type, ensure your SQL query is not using `torque_category` as a column name to prevent unexpected behaviors.
 
-Torque maps also have [Torque CartoCSS](http://docs.cartodb.com/cartodb-editor.html#cartocss) options to further customize the look of your map.
+**Note:** You can further enhance the styling of your map with CartoCSS properties specific for Torque Category maps. For details, see [CartoCSS Properties - Torque Category Maps](#cartocss---torque-category-maps).
 
 #### Infowindows
 
@@ -1626,18 +1625,22 @@ Note the following tips an tricks when using twitter data for your maps.
 #### Retrieving Twitter Data
 * Once the search starts you cannot stop the import. Be mindful to avoid broad search terms. For example, "love" may retrieve hundreds of thousands, or even millions, of geolocalized tweets
 
-
 ## Customizing Maps with CartoCSS
 
 {% include cartocss_description.html %}
 
-### Apply CartoCSS with the CartoCSS Editor
-
-{% include cartocss.html %}
+### [Apply CartoCSS with the CartoCSS Editor](#cartocss)
 
 ###  CartoCSS Best Practices
 
-Add Mamata's worflow here!
+While there are many ways to apply the same visual result with CartoCSS properties, the following suggested workflow describes how to apply CartoCSS properties in the most efficient and intuitive method. Some properties are specific for styling data whereas other properties are better suited specifically for styling map labels and points.
+
+While you can apply CartoCSS styles to different layers on a map, there is a suggested workflow for applying CartoCSS properties to avoid adding any redundant parameters and values.
+
+ help you write CartoCSS code more efficiently and intuitively.
+
+
+
 
 ###  CartoCSS Properties
 
@@ -1651,7 +1654,7 @@ Add Mamata's worflow here!
 
 {% include cartocss_errors.html %}
 
-### CartoCSS Comp Op
+### CartoCSS Composite Operations
 
 {% include cartocss_comp_op.html %}
 

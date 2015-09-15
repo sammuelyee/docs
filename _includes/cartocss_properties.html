@@ -1,6 +1,5 @@
 <!--<div style="font-size:12pt;color:magenta;">Writer Note_csobier: Docs/issue#3950
 </div>-->
-##CartoCSS Properties
 
 Each CartoCSS map category has its own configurable properties. You can apply multiple symbolizers and properties to the same map layer. Navigate to a selected symbolizer to view a description of the CartoCSS property, an example of the code, the default value, and the available values. <ADD LINK TO USE CASES FILE?>
 
@@ -33,14 +32,14 @@ In addition to customizing the look of your maps using CartoCSS, Torque maps hav
 | | [torque-aggregation-function](#torque-aggregation-function-keyword) | [torque-resolution](#torque-resolution-float) | [torque-data-aggregation](#torque-data-aggregation-?)
 
 
-### Common Elements
+#### Common Elements
 
 These common element CartoCSS properties can be applied to any layer in a map.
 
 | | [comp-op](#comp-op-keyword) | [direct-image-filters](#direct-image-filters-functions) | [image-filters](#image-filters-functions)
 | | [opacity float](#opacity-float) | 
 
-#### comp-op `keyword`
+##### comp-op `keyword`
 
 ------------ | -------------
 Description | The composite operation define how a layer behaves, relative to layers atop and below it. For example, you can style the way colors of overlapping markers interact. 
@@ -52,7 +51,7 @@ Related Examples | <list of links to public maps, tutorials, faqs, etc.>
 **Tip:** See [CartoCSS Composite Operations](#cartocss_comp_op.html) for a description of composite operation effects.
 
 
-#### direct-image-filters `functions`
+##### direct-image-filters `functions`
 
 ------------ | -------------
 Description | Applies an image filter directly to the main canvas. This can also be applied to a separate canvas by using the [image-filters function](#image-filters-function).
@@ -62,7 +61,7 @@ Default Value |  `none` applies no filters.
 Available Values | See [functions](#functions).
 Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
-#### image-filters `functions`
+##### image-filters `functions`
 
 Description | A list of image filters that applies a defined style to the active rendering canvas.
 Sample CartoCSS Code | `image-filters: functions(value, value, value);`
@@ -75,7 +74,7 @@ THIS EXAMPLE WORKS, but using 'none' and 'null' generates an error. Does none ju
 
 **Tip:** For creating an image-filter for the main canvas, see [direct-image-filters](#direct-image-filters-functions)
 
-#### opacity `float`
+##### opacity `float`
 
 Description | An alpha value for the style. This indicates that the alpha value is applied to all features in a separate buffer, then composited back to main buffer.
 Sample CartoCSS Code | `opacity: 1;`
@@ -83,7 +82,7 @@ Default Value |  `1`, no separate buffer is used and no alpha is applied to the 
 Available Values | See [float](#float).
 Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
-### Map Background and String Elements
+#### Map Background and String Elements
 
 These generic CartoCSS background and string element properties can be applied to any layer in a map.
 
@@ -92,7 +91,7 @@ These generic CartoCSS background and string element properties can be applied t
 | | [font-directory](#font-directory-uri) | [srs](#srs-string) |
 
 
-#### background-color `color`
+##### background-color `color`
 
 Description | The map background color.
 Sample CartoCSS Code | `background-color: white;`
@@ -153,6 +152,8 @@ Related Examples | <list of links to public maps, tutorials, faqs, etc.>
 
 WHY? What will happen?  Why are we suggesting this best practice?
 
+ALSO, THERE IS AN [FAQ QUESTION](faqs.html#why-are-my-map-labels-cut-off) THAT STATES THE FOLLOWING: IS THIS TRUE?
+"**Note:** The buffer-size value needs to be a power of two in order to be valid."
 
 ##### font-directory `uri`
 
@@ -175,7 +176,7 @@ Related Examples | <list of links to public maps, tutorials, faqs, etc.>
 **Note:** If the `srs` value is not declared for a layer, this value is assumed to be the same `srs` as the map. Thus, no transformations are plotted in the Map&#x27;s coordinate space).
 
 
-## polygon
+#### Polygon
 
 These CartoCSS properties can be applied to areas and outlines of a polygon layer.
 
@@ -279,7 +280,7 @@ Available Values | `clear``src``dst``src-over``dst-over``src-in``dst-in``src-out
 Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
-## line
+#### Line
 
 These CartoCSS properties can be applied to both line and polygon layers.
 
@@ -462,7 +463,7 @@ Available Values | `clear``src``dst``src-over``dst-over``src-in``dst-in``src-out
 Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
-## markers
+#### Markers
 
 These CartoCSS properties can be applied to point, line and polygon layers.
 
@@ -473,6 +474,8 @@ These CartoCSS properties can be applied to point, line and polygon layers.
 | | [marker-allow-overlap](#marker-allow-overlap-boolean) | [marker-ignore-placement](#marker-ignore-placement-boolean) | [marker-spacing](#marker-spacing-float)
 | | [marker-max-error](#marker-max-error-float) | [marker-transform](#marker-transform-functions) | [marker-clip](#marker-clip-boolean)
 | | [marker-smooth](#marker-smooth-float) | [marker-geometry-transform](#marker-geometry-transform-functions) | [marker-comp-op](#marker-comp-op-keyword)
+
+WHAT ABOUT MARKER STROKE?  THIS PROPERTY APPEARS AS A FIELD IN THE CARTODB WIZARD OPTIONS? 
 
 ##### marker-file `uri`
 
@@ -680,7 +683,7 @@ Available Values | `clear``src``dst``src-over``dst-over``src-in``dst-in``src-out
 Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
-## shield
+#### Shield
 If you are displaying road shields on a map (for example, highway markers), these CartoCSS properties define the shield styling.
 
 | | [shield-file](#shield-file-uri) | [shield-name](#shield-name-expression) | [shield-face-name](#shield-face-name-string)
@@ -1015,7 +1018,7 @@ Available Values | `clear``src``dst``src-over``dst-over``src-in``dst-in``src-out
 Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
-## line-pattern
+#### Line-Pattern
 
 These CartoCSS pattern properties can be applied to both line and polygon elements on a map.
 
@@ -1097,7 +1100,7 @@ Available Values | `clear``src``dst``src-over``dst-over``src-in``dst-in``src-out
 Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
-## polygon-pattern
+#### Polygon-Pattern
 
 These CartoCSS pattern properties can be applied to both line and polygon elements on a map.
 
@@ -1198,7 +1201,7 @@ Available Values | `clear``src``dst``src-over``dst-over``src-in``dst-in``src-out
 Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
-## raster
+#### Raster
 
 These CartoCSS properties can be applied to raster (grid) data layers on a map.
 
@@ -1302,7 +1305,7 @@ Sample CartoCSS Code (NEED TO GET THIS ON ONE LINE IN A TABLE, argh! I've tried 
     stop(100,#000)`
 	
 
-## point
+#### Point
 
 These CartoCSS properties can be applied to style points on a map.
 
@@ -1376,7 +1379,7 @@ Available Values | `clear``src``dst``src-over``dst-over``src-in``dst-in``src-out
 Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
-## text
+#### Text
 Defines the text label properties on the map.
 
 | | [text-name](#text-name-expression) | [text-face-name](#text-face-name-string) | [text-size](#text-size-float)
@@ -1706,7 +1709,7 @@ Available Values | `clear``src``dst``src-over``dst-over``src-in``dst-in``src-out
 Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
-## building
+#### Building
 Defines how building structures are rendered on a map.
 
 | | [building-fill](#building-fill-color) | [building-fill-opacity](#building-fill-opacity-float) | [building-height](#building-height-expression)
@@ -1739,7 +1742,7 @@ Available Values | See [expression](#expression).
 Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
-## debug-mode `string`
+#### Debug-mode `string`
 
 Description | The mode for debug rendering.
 Sample CartoCSS Code | `debug-mode: collision;`
@@ -1752,7 +1755,7 @@ Related Examples | <list of links to public maps, tutorials, faqs, etc.>
 
 The following values can be applied to properties in CartoCSS.
 
-### Color
+#### Color
 
 CartoCSS accepts a variety of syntaxes for colors - HTML-style hex values, rgb, rgba, hsl, and hsla. It also supports the predefined HTML colors names, such as `yellow` and `blue`.
 
@@ -1792,7 +1795,7 @@ mix(#fff, #000, 50%);
 
 Each of above examples uses color variables, literal colors, or is the result of other functions operating on colors.
 
-### Float
+#### Float
 
 In CartoCSS, float values are numbers specified in pixels. Unlike CSS, numbers are not units, but pixels.
 
@@ -1814,7 +1817,7 @@ line-width: 4 % 2; // modulus
 }
 ```
 
-### URI
+#### URI
 
 A uniform resource identifier (URI) is a string of characters used to identify the name of a resource, typically a path on your computer or an internet address. Similar to using an URL, you can use HTML. Quotes to define a URI (although not required, it is suggested).
 
@@ -1824,7 +1827,7 @@ marker-file: url('marker.png');
 }
 ```
 
-### String
+#### String
 
 In CartoCSS, string values are identified as the text within the quotations. In the following example, the name of the font is the string value.
 
@@ -1843,7 +1846,7 @@ text-name: "[MY_FIELD]";
 ```
 
 
-### Boolean
+#### Boolean
 
 Boolean values are either `true` (Yes, the property is enabled) or `false` (No, the property is turned off).
 
@@ -1853,7 +1856,7 @@ marker-allow-overlap:true;
 }
 ```
 
-### Expression
+#### Expression
 
 Expressions are flexible statements that can include fields, numbers, and other types of defined variables. For example, you can build an expression by entering a field name, a relation, set a predefined value, or enter a range of values.
 
@@ -1863,7 +1866,7 @@ building-height: [HEIGHT_FIELD] * 10;
 }
 ```
 
-### Numbers
+#### Numbers
 CartoCSS number values are comma-separated lists, identifying one or more numbers, in a specific order. For example, a number value is used is the [line-dasharray](#line-dasharray-numbers) property, which specifies a pair of numbers for the value.
 
 ```css
@@ -1872,7 +1875,7 @@ line-dasharray: 1, 4, 2;
 }
 ```
 
-### Percentages
+#### Percentages
 The percentage symbol, `%` universally indicates `value/100`. Use percentage values with ratio-related properties, such as the opacity of a shape or color, as shown in the following example.
 
 	css
@@ -1887,7 +1890,7 @@ where `//` is equivalent to:
 
 **Note:**  Do not use percentages as widths, heights, or other properties. Unlike CSS, percentages are not relative to cascaded classes or page size. They are simply the value divided by one hundred.
 
-### Functions
+#### Functions
 
 Functions are comma-separated lists of one or more functions. 
 
@@ -1897,12 +1900,3 @@ For example, [point-transform](#point-transform-functions), defines function val
 #point {
 point-transform: scale(2, 2);
 }
-  
-{% include cartocss_comp_op.html %}
-
-{% include cartocss_errors.html %}
-
-{% include cartocss_examples.html %}
-
-
-  
