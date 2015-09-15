@@ -1632,16 +1632,7 @@ On the "Your Plan" page, you can see information about your company, users, data
 
 ### [Apply CartoCSS with the CartoCSS Editor](#cartocss)
 
-###  CartoCSS Best Practices
-
-While there are many ways to apply the same visual result with CartoCSS properties, the following suggested workflow describes how to apply CartoCSS properties in the most efficient and intuitive method. Some properties are specific for styling data whereas other properties are better suited specifically for styling map labels and points.
-
-While you can apply CartoCSS styles to different layers on a map, there is a suggested workflow for applying CartoCSS properties to avoid adding any redundant parameters and values.
-
- help you write CartoCSS code more efficiently and intuitively.
-
-
-
+*Click the title heading of this section to view the CartoDB Editor procedure.*
 
 ###  CartoCSS Properties
 
@@ -1650,6 +1641,10 @@ While you can apply CartoCSS styles to different layers on a map, there is a sug
 ###  CartoCSS Properties for Torque Style Maps
 
 {% include cartocss_torque.html %}
+
+###  CartoCSS Best Practices
+
+{% include cartocss_best_practices.html %}
 
 ###  CartoCSS Errors
 

@@ -1,9 +1,7 @@
 <!--<div style="font-size:12pt;color:magenta;">Writer Note_csobier: Docs/issue#3950
 </div>-->
 
-Each CartoCSS map category has its own configurable properties. You can apply multiple symbolizers and properties to the same map layer. Navigate to a selected symbolizer to view a description of the CartoCSS property, an example of the code, the default value, and the available values. <ADD LINK TO USE CASES FILE?>
-
-<<ADD LINK TO COMPOSITE OPERATIONS SECTION? change existing section in cartodb editor section. comp-ops are described here in particular properties>
+Each CartoCSS map category has its own configurable properties. You can apply multiple symbolizers and properties to the same map layer. Navigate to a selected symbolizer to view a description of the CartoCSS property, sample CartoCSS code, the default value, and the available values. 
 
 ***Note:** CartoDB is currently maintaining this library of common properties since [Mapbox](https://github.com/mapbox/carto/blob/master/docs/latest.md) is no longer doing active development for CartoCSS.*
 
@@ -24,9 +22,9 @@ Each CartoCSS map category has its own configurable properties. You can apply mu
 ------------ | -------------
 | | [Common Elements](#common-elements) | [Map Background and String Elements](#map-background-and-string-elements) | [Debug mode](#debug-mode-string)
 
-In addition to customizing the look of your maps using CartoCSS, Torque maps have specific advanced options that you can edit. For details, see [Torque CSS](#cartocss_torque.html).
+In addition to customizing the look of your maps using CartoCSS, Torque maps have specific properties that you can apply. For details, see [CartoCSS Properties for Torque Style Maps](cartodb-editor.html#cartocss-properties-for-torque-style-maps).
 
-| **Torque CartoCSS Properties:** | ALL THESE LINKS POINT TO THE cartocss_toque.html file
+| **Torque CartoCSS Properties:** | 
 ------------ | -------------
 | | [torque-frame-count](#torque-frame-count-numbers) | [torque-animation-duration](#torque-animation-duration-numbers) | [torque-time-attribute](#torque-time-attribute-string)
 | | [torque-aggregation-function](#torque-aggregation-function-keyword) | [torque-resolution](#torque-resolution-float) | [torque-data-aggregation](#torque-data-aggregation-?)
@@ -48,16 +46,16 @@ Default Value | `src-over`, adds the current layer on top of other layers.
 Available Values | `clear``src``dst``src-over``dst-over``src-in``dst-in``src-out``dst-out``src-atop``dst-atop``xor``plus``minus``multiply``screen``overlay``darken``lighten``color-dodge``color-burn``hard-light``soft-light``difference``exclusion``contrast``invert``invert-rgb``grain-merge``grain-extract``hue``saturation``color``value`
 Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
-**Tip:** See [CartoCSS Composite Operations](#cartocss_comp_op.html) for a description of composite operation effects.
+**Tip:** See [CartoCSS Composite Operations](cartodb-editor.html#cartocss-composite-operations) for a description of composite operation effects.
 
 
 ##### direct-image-filters `functions`
 
 ------------ | -------------
-Description | Applies an image filter directly to the main canvas. This can also be applied to a separate canvas by using the [image-filters function](#image-filters-function).
+Description | Applies an image filter directly to the main canvas. This can also be applied to a separate canvas by using the [image-filters function](cartodb-editor.html#image-filters-functions).
 Sample CartoCSS Code | `direct-image-filter: function (none);`
-|DOESNT WORK WITH NONE. AM I MISSING ADDITIONAL FUNCTIONS?  Does none just mean that this feature is not applied by default (none is not a valid value)?
 Default Value |  `none` applies no filters.
+| IT DOESN'T ACTUALLY WORK IF I APPLY NONE IN THE CARTOCSS EDITOR, DOES IT JUST MEAN THAT THE VALUE ISN'T DEFINED? THERE ARE SEVERL MAPBOX DESCRIPTIONS THAT MENTION THIS.
 Available Values | See [functions](#functions).
 Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
@@ -475,7 +473,7 @@ These CartoCSS properties can be applied to point, line and polygon layers.
 | | [marker-max-error](#marker-max-error-float) | [marker-transform](#marker-transform-functions) | [marker-clip](#marker-clip-boolean)
 | | [marker-smooth](#marker-smooth-float) | [marker-geometry-transform](#marker-geometry-transform-functions) | [marker-comp-op](#marker-comp-op-keyword)
 
-WHAT ABOUT MARKER STROKE?  THIS PROPERTY APPEARS AS A FIELD IN THE CARTODB WIZARD OPTIONS? 
+WHAT ABOUT MARKER STROKE?  THIS PROPERTY APPEARS AS A FIELD IN THE CARTODB WIZARD OPTIONS? Is Marker Stroke an applicable CartoCSS property?  It is not listed on the Mapbox reference page.
 
 ##### marker-file `uri`
 
@@ -519,9 +517,10 @@ Related Examples | <list of links to public maps, tutorials, faqs, etc.>
 ##### marker-line-width `float`
 
 Description | The width of the stroke around a marker shape, in pixels. 
-(This is positioned on the boundary, so high values can cover the area itself.)???
+| (This is positioned on the boundary, so high values can cover the area itself.)
+| WHAT DOES THIS MAPBOX DESCRIPTION MEAN?
 Sample CartoCSS Code | `marker-line-width: undefined;`
-Default Value |  undefined pixels???
+Default Value |  undefined pixels
 Available Values | See [float](#float).
 Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
@@ -574,7 +573,7 @@ Related Examples | <list of links to public maps, tutorials, faqs, etc.>
 
 Description | If a default [marker-type](#marker-type-keyword) property is defined, this property indicates the width of the marker-type.
 Sample CartoCSS Code | `marker-width: 10.0;`
-Default Value |  `10`???
+Default Value |  `10`
 | WHAT IS THE SUGGESTED RANGE?
 Available Values | See [expression](#expression).
 Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
@@ -584,7 +583,7 @@ Related Examples | <list of links to public maps, tutorials, faqs, etc.>
 
 Description | If a default [marker-type](#marker-type-keyword) property is defined, this property indicates the height of the marker-type.
 Sample CartoCSS Code | `marker-height: 10.0;`
-Default Value |  `10`, ???
+Default Value |  `10`
 | WHAT IS THE SUGGESTED RANGE?
 Available Values | See [expression](#expression)
 Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
@@ -621,7 +620,8 @@ Related Examples | <list of links to public maps, tutorials, faqs, etc.>
 
 Description | The space between repeated markers, in pixels. If spacing is less than the marker size, or larger than the line segment length, no markers are displayed.
 Sample CartoCSS Code | `marker-line-spacing: spacing;`
-Default Value |  `100`??? RANGE????
+Default Value |  `100`
+| WHAT IS THE SUGGESTED RANGE?
 Available Values | See [float](#float).
 Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
@@ -787,7 +787,7 @@ Related Examples | <list of links to public maps, tutorials, faqs, etc.>
 
 Description | The minimum distance between the next shield symbol. (This does not apply to multiple shields at one point).
 Sample CartoCSS Code | `shield-min-distance: 0;`
-Default Value | `0`, ???
+Default Value | `0`
 Available Values | See [float](#float).
 Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
@@ -796,7 +796,7 @@ Related Examples | <list of links to public maps, tutorials, faqs, etc.>
 
 Description | The space between repeated shields, in pixels, on a line. 
 Sample CartoCSS Code | `shield-spacing: 0;`
-Default Value | `0`???
+Default Value | `0`
 Available Values | See [float](#float).
 Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
@@ -805,7 +805,7 @@ Related Examples | <list of links to public maps, tutorials, faqs, etc.>
 
 Description | The minimum distance, in pixels, that a shield is placed from the edge of a metatile (the tile/buffer space relationship).
 Sample CartoCSS Code | `shield-min-padding: 0;`
-Default Value | `0`???
+Default Value | `0`
 Available Values | See [float](#float).
 Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
@@ -814,7 +814,7 @@ Related Examples | <list of links to public maps, tutorials, faqs, etc.>
 
 Description | The length of characters that appears before the [shield-name](#shield-name-expression) text wraps.
 Sample CartoCSS Code | `shield-wrap-width: 0;`
-Default Value | `0`???
+Default Value | `0`
 Available Values | Unsigned integer
 Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
@@ -837,7 +837,7 @@ Sample CartoCSS Code | `shield-wrap-character: '_';`
 Default Value | `undefined
 Available Values | See [string](#string).
 Related Examples | - [Always break long city names (New Bedford Massachusetts) on two lines](https://www.mapbox.com/tilemill/docs/guides/styling-labels/#multi-line-labels) 
-| - *Need to provide CartoDB examples (links to blocks, public maps, etc.)?
+| - *NEED TO PROVIDE CARTODB EXAMPLES (links to blocks, public maps, etc.)?
 
 
 ##### shield-halo-fill `color`
@@ -865,7 +865,7 @@ Related Examples | <list of links to public maps, tutorials, faqs, etc.>
 
 Description | The horizontal space, in pixels, between point characters.
 Sample CartoCSS Code | `shield-character-spacing: unsigned;`
-Default Value | `0`???
+Default Value | `0`
 Available Values | Unsigned integer.
 Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
@@ -885,7 +885,7 @@ Related Examples | <list of links to public maps, tutorials, faqs, etc.>
 
 Description | Places the shield text within a fixed range of pixels, +&#x2F;- along the X axis. A positive value shifts the text to the right.
 Sample CartoCSS Code | `shield-text-dx: 0;`
-Default Value | `0`, ???
+Default Value | `0`
 Available Values | See [float](#float).
 Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
@@ -894,7 +894,7 @@ Related Examples | <list of links to public maps, tutorials, faqs, etc.>
 
 Description | Places the shield text within a fixed range of pixels, +&#x2F;- along the Y axis. A positive value shifts the text down.
 Sample CartoCSS Code | `shield-text-dy: 0;`
-Default Value | `0`, ???
+Default Value | `0`
 Available Values | See [float](#float).
 Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
@@ -912,7 +912,7 @@ Related Examples | <list of links to public maps, tutorials, faqs, etc.>
 
 Description | Places the shield within a fixed range of pixels, +&#x2F;- along the Y axis. A positive value shifts the shield down.
 Sample CartoCSS Code | `shield-dy: 0;`
-Default Value | `0`, ???
+Default Value | `0`
 Available Values | See [float](#float).
 Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
@@ -1283,28 +1283,29 @@ Sample CartoCSS Code | `raster-colorizer-epsilon:0.41;`
 Default Value | undefined
 Available Values | See [float](#float).
 | **Note:** Epsilon values must be listed in ascending order and contain a minimum value and associated color. 
-| Additionally, you can also include the color-mode as a third argument. For example:
-| `stop(100,#fff, exact)`
+| Additionally, you can also include the color-mode as a third argument. For example: `stop(100,#fff, exact)`
 Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 
 ##### raster-colorizer-stops `tags`
 
 Description | A stop tag assigns raster data with colors and values. 
-Sample CartoCSS Code | 
+Sample CartoCSS Code | `raster-colorizer-stops: ',`
 Default Value | undefined
 Available Values | See [float](#float).
-| **Note:** Stop values must be listed in ascending order and contain a minimum value and associated color.
-Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
+Related Examples | [CartoDB raster demos](http://bl.ocks.org/rochoa/d3cf809120bda97d0826)
 
-Sample CartoCSS Code (NEED TO GET THIS ON ONE LINE IN A TABLE, argh! I've tried using command+Enter, it does not work! ?!?!)
-
-`raster-colorizer-stops:
-    stop(0,transparent,linear)
-    stop(80,#fff)
-    stop(100,#000)`
+**Note:** Stop values must be listed in ascending order and contain a minimum value and associated color.
+		{% highlight bash %}
+	'raster-colorizer-stops:',
+	              '\tstop(42,#47443e)',
+	              '\tstop(70, #77654a)',
+	              '\tstop(100, rgb(85,107,50))',
+	              '\tstop(200, #47443e)',
+	              '\tstop(255, #47443e);'
+	{% endhighlight %}
 	
-
+	
 #### Point
 
 These CartoCSS properties can be applied to style points on a map.
@@ -1759,39 +1760,40 @@ The following values can be applied to properties in CartoCSS.
 
 CartoCSS accepts a variety of syntaxes for colors - HTML-style hex values, rgb, rgba, hsl, and hsla. It also supports the predefined HTML colors names, such as `yellow` and `blue`.
 
-``` css
-#line {
-line-color: #ff0;
-line-color: #ffff00;
-line-color: rgb(255, 255, 0);
-line-color: rgba(255, 255, 0, 1);
-line-color: hsl(100, 50%, 50%);
-line-color: hsla(100, 50%, 50%, 1);
-line-color: yellow;
-}
-```
+		{% highlight bash %}
+		#line {
+		line-color: #ff0;
+		line-color: #ffff00;
+		line-color: rgb(255, 255, 0);
+		line-color: rgba(255, 255, 0, 1);
+		line-color: hsl(100, 50%, 50%);
+		line-color: hsla(100, 50%, 50%, 1);
+		line-color: yellow;
+	}
+	{% endhighlight %}
 
 **Note:**  Using Hsl [(hue, saturation, lightness)](http://mothereffinghsl.com/) color values are often easier than rgb()values. Carto also includes several color functions [borrowed from Less, a CSS pre-processor](http://lesscss.org/#-color-functions):
 
-	```
-// lighten and darken colors
-lighten(#ace, 10%);
-darken(#ace, 10%);
+		{% highlight bash %}
+		// lighten and darken colors
+		lighten(#ace, 10%);
+		darken(#ace, 10%);
 
-	// saturate and desaturate
-saturate(#550000, 10%);
-desaturate(#00ff00, 10%);
+			// saturate and desaturate
+		saturate(#550000, 10%);
+		desaturate(#00ff00, 10%);
 
-	// increase or decrease the opacity of a color
-fadein(#fafafa, 10%);
-fadeout(#fefefe, 14%);
+			// increase or decrease the opacity of a color
+		fadein(#fafafa, 10%);
+		fadeout(#fefefe, 14%);
 
-	// spin rotates a color around the color wheel by degrees
-spin(#ff00ff, 10);
+			// spin rotates a color around the color wheel by degrees
+		spin(#ff00ff, 10);
 
-	// mix generates a color in between two other colors.
-mix(#fff, #000, 50%);
-```
+			// mix generates a color in between two other colors.
+		mix(#fff, #000, 50%);
+	}
+	{% endhighlight %}
 
 Each of above examples uses color variables, literal colors, or is the result of other functions operating on colors.
 
@@ -1799,94 +1801,92 @@ Each of above examples uses color variables, literal colors, or is the result of
 
 In CartoCSS, float values are numbers specified in pixels. Unlike CSS, numbers are not units, but pixels.
 
-``` css
-#line {
-line-width: 2;
-}
-```
+		{% highlight bash %}
+		#line {
+		line-width: 2;
+		}
+	{% endhighlight %}
 
 You can also apply simple math using float number values. For example:
 
-``` css
-#line {
-line-width: 4 / 2; // division
-line-width: 4 + 2; // addition
-line-width: 4 - 2; // subtraction
-line-width: 4 * 2; // multiplication
-line-width: 4 % 2; // modulus
-}
-```
+		{% highlight bash %}
+		#line {
+		line-width: 4 / 2; // division
+		line-width: 4 + 2; // addition
+		line-width: 4 - 2; // subtraction
+		line-width: 4 * 2; // multiplication
+		line-width: 4 % 2; // modulus
+		}
+	{% endhighlight %}
 
 #### URI
 
 A uniform resource identifier (URI) is a string of characters used to identify the name of a resource, typically a path on your computer or an internet address. Similar to using an URL, you can use HTML. Quotes to define a URI (although not required, it is suggested).
 
-```css
-#markers {
-marker-file: url('marker.png');
-}
-```
+		{% highlight bash %}
+		#markers {
+		marker-file: url('marker.png');
+		}
+	{% endhighlight %}
 
 #### String
 
 In CartoCSS, string values are identified as the text within the quotations. In the following example, the name of the font is the string value.
 
-ARE STRINGS ALWAYS SINGLE QUOTE? What's the difference, if any, between single-quotes and not quotes? Some string/text property examples do not show quotations at all?
-
 	shield-face-name: ‘Open Sans Bold’;
 
-**Note:** String values are different than [text-name](#text-name-expression) values (which are text label values defined with brackets).
+**Note:** String values are different than [text-name](#text-name-expression) values, which are text label values defined with brackets, as shown in the following example.
 
-THIS EXAMPLE NEEDS CLARIFICATION- NOT SHOWING STRING EXAMPLE, SHOWING TEXT-NAME?
-
-```css
-#labels {
-text-name: "[MY_FIELD]";
-}
-```
-
+		{% highlight bash %}
+		#labels {
+		text-name: "[MY_FIELD]";
+		}
+	{% endhighlight %}
 
 #### Boolean
 
 Boolean values are either `true` (Yes, the property is enabled) or `false` (No, the property is turned off).
 
-```css
-#markers {
-marker-allow-overlap:true;
-}
-```
+		{% highlight bash %}
+	#markers {
+	marker-allow-overlap:true;
+		}
+	{% endhighlight %}
 
 #### Expression
 
 Expressions are flexible statements that can include fields, numbers, and other types of defined variables. For example, you can build an expression by entering a field name, a relation, set a predefined value, or enter a range of values.
 
-```css
-#buildings {
-building-height: [HEIGHT_FIELD] * 10;
-}
-```
+		{% highlight bash %}
+		#buildings {
+		building-height: [HEIGHT_FIELD] * 10;
+	}
+	{% endhighlight %}
+
 
 #### Numbers
 CartoCSS number values are comma-separated lists, identifying one or more numbers, in a specific order. For example, a number value is used is the [line-dasharray](#line-dasharray-numbers) property, which specifies a pair of numbers for the value.
 
-```css
-#disputedboundary {
-line-dasharray: 1, 4, 2;
-}
-```
+
+		{% highlight bash %}
+	#disputedboundary {
+	line-dasharray: 1, 4, 2;
+		}
+	{% endhighlight %}
+
 
 #### Percentages
 The percentage symbol, `%` universally indicates `value/100`. Use percentage values with ratio-related properties, such as the opacity of a shape or color, as shown in the following example.
 
-	css
-#world {
-// this syntax
-polygon-opacity: 50%;
-
-where `//` is equivalent to:
-
-	polygon-opacity: 0.5;
-}
+			{% highlight bash %}
+		#world {
+		// this syntax
+		polygon-opacity: 50%;
+		
+		// is equivalent to:
+			polygon-opacity: 0.5;
+			}
+		{% endhighlight %}
 
 **Note:**  Do not use percentages as widths, heights, or other properties. Unlike CSS, percentages are not relative to cascaded classes or page size. They are simply the value divided by one hundred.
 
@@ -1896,7 +1896,10 @@ Functions are comma-separated lists of one or more functions.
 
 For example, [point-transform](#point-transform-functions), defines function values according to  [SVG transformation definitions](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform)- which are values separated by whitespace and/or commas, from right to left.
 
-	css
-#point {
-point-transform: scale(2, 2);
-}
+
+		{% highlight bash %}
+	#point {
+	point-transform: scale(2, 2);
+		}
+	{% endhighlight %}
+

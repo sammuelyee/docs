@@ -4,7 +4,7 @@
 </div>-->
 <!--<div style="font-size:12pt;color:magenta;">Writer Note_csobier: Docs/issue#4012
 </div>-->
-While you can use CartoCSS to customize your maps, CartoDB provides additional CartoCSS properties that you can apply to Torque style maps. Torque maps are typically used to display temporal data. You can add CartoCSS properties to [Torque](#cartocss-torque-maps), [Torque Category](#cartocss-torque-category-maps), and [Torque Heat](#cartocss-torque-heat-maps) maps.
+While you can use CartoCSS to customize your maps, CartoDB provides additional CartoCSS properties that you can apply to Torque style maps. Torque maps are typically used to display temporal data. You can add CartoCSS properties to [Torque](#cartocss---torque-maps), [Torque Category](#cartocss---torque-category-maps), and [Torque Heat](#cartocss---torque-heat-maps) maps.
 
 ####CartoCSS - Torque Maps
 
@@ -13,7 +13,7 @@ The following CartoCSS properties can be applied to any Torque style maps.  Note
 IS THIS CORRECT, OR DO THESE PROPERTIES ONLY APPLY TO TORQUE MAPS???
 
 | | [torque-frame-count](#torque-frame-count-numbers) | [torque-animation-duration](#torque-animation-duration-numbers) | [torque-time-attribute](#torque-time-attribute-string)
-| | [torque-aggregation-function](#torque-aggregation-function-keyword) | [torque-resolution](#torque-resolution-float) | [torque-data-aggregation](#torque-data-aggregation-?)
+| | [torque-aggregation-function](#torque-aggregation-function-keyword) | [torque-resolution](#torque-resolution-float) | [torque-data-aggregation](#torque-data-aggregation-keyword)
 
 
 ##### torque-frame-count `numbers`
@@ -84,13 +84,15 @@ Once your data is aggregated, you can further customize your Torque animation op
 
 **Tip:** You can also select each cluster value and apply custom marker styles, based on the data category. For example, suppose you want to apply a unique style only to the maximum value in your dataset, change the marker style for the maximum value in your animation. These values are located in your CartoCSS properties.
 
+I THINK THIS IS RELATED TO MAMATA'S SUGGESTED BEST PRACTICES AND ISSUE [#5493](https://github.com/CartoDB/cartodb/issues/5493)???
+
 The following example displays CartoCSS properties with a Torque map.
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/torquecartoCSS.png' | prepend: site.baseurl }}" alt="Torque CartoCSS" /></p>
 
 ####CartoCSS - Torque Category Maps
 
-While any of the [Torque CartoCSS properties](#cartocss-torque-maps) can be applied to a Torque Category map, the *torque-aggregration-function* contains different available values that are specific for Torque Category maps.
+While any of the [Torque CartoCSS properties](#cartocss---torque-maps) can be applied to a Torque Category map, the *torque-aggregration-function* contains different available values that are specific for Torque Category maps.
 
 ##### torque-aggregation-function `keyword` (Torque Category only)
 
@@ -106,17 +108,17 @@ The following example displays CartoCSS properties with a Torque Category map.
 
 ####CartoCSS - Torque Heat Maps
 
-While any of the [Torque CartoCSS properties](#cartocss-torque-maps) can be applied to a Torque Heat map, the following CartoCSS properties can also be applied to Torque Heat maps.
+While any of the [Torque CartoCSS properties](#cartocss---torque-maps) can be applied to a Torque Heat map, the following CartoCSS properties can also be applied to Torque Heat maps.
 
-- [image-filters `functions`](cartocss_properties.html#image-filters-functions), enables you to define the color stop for your heatmap.
+- [image-filters `functions`](cartodb-editor.html#image-filters-functions), enables you to define the color stop for your heatmap.
 
-- [marker-file `uri`](cartocss_properties.html#marker-file-uri), when creating a Torque Heat map with CartoDB, marker files are automatically provided. You cannot change these options.
+- [marker-file `uri`](cartodb-editor.html#marker-file-uri), when creating a Torque Heat map with CartoDB, marker files are automatically provided. You cannot change these options.
 
-- [marker-fill-opacity `float`](#cartocss_properties.html#marker-fill-opacity-float)
+- [marker-fill-opacity `float`](cartodb-editor.html#marker-fill-opacity-float)
 
-- [marker-width `expression`](#cartocss_properties.html#marker-width-expression)
+- [marker-width `expression`](cartodb-editor.html#marker-width-expression)
 
-**Note:** It is a known issue that certain marker properties are not supported when applied to Torque maps. Specifically, when the [marker-file](#marker-file-uri) and [marker-fill](#marker-fill-color) CartoCSS properties are applied, you cannot color a sprit) using the marker-fill value. You must create a sprite per color when applying these properties to Torque map.
+**Note:** It is a known issue that certain marker properties are not supported when applied to Torque maps. Specifically, when the [marker-file](cartodb-editor.html#marker-file-uri) and [marker-fill](cartodb-editor.html#marker-fill-color) CartoCSS properties are applied, you cannot color a sprit) using the marker-fill value. You must create a sprite per color when applying these properties to Torque map.
 [http://gis.stackexchange.com/questions/137384/marker-file-for-torque-cartodb](http://gis.stackexchange.com/questions/137384/marker-file-for-torque-cartodb)
 
 DOES THE NOTE ONLY APPLY TO TORQUE AND TORQUE CATEGORY? THIS CONTRADICTS THIS TORQUE HEAT SECTION. ADDITIONALLY, WHAT DOES SPRITE MEAN AND WHAT IS AN EXAMPLE SYNTAX? I thought a sprite was one large, combined image as opposed to individual images. But maybe there is a sprite property I do not know about?
