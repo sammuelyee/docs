@@ -37,7 +37,7 @@ curl -v -F file=@/home/documentation/Documents/prism_tour.csv
 
 Note that the *api_key* element has an alphanumeric value that is exclusive to the *documentation* CartoDB account.
 
-The response to this request would have the following format, yielding a success import:
+The response to this request appears in the following format, where a successful value indicates that the import process is enqueued:
 
 <div class="code-title">RESPONSE</div>
 {% highlight javascript %}
