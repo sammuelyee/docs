@@ -1,0 +1,58 @@
+CartoCSS contains configurable values for the composite operation property, and appears as `comp-op` in the syntax. This section describes the available composite operation values and color blending effects.
+
+***Note:** CartoDB is currently maintaining this library of `comp-op` values since [Mapbox](https://www.mapbox.com/tilemill/docs/guides/comp-op/) is no longer doing active development for CartoCSS.*
+
+THE EXAMPLES FROM MAPBOX ARE NOT AVAILABLE ON THEIR OPEN SOURCE PAGE- SO I IMAGINE WE NEED TO RECREEATE OUR OWN IMAGES TO AVOID ANY COPYRIGHT INFRINGMENTS?  OPTIONALLY, WE CAN REDIRECT OUR USERS TO THEIR EXAMPLES, BUT I WOULD THINK THAT YOU AVOID ANY COMPETITIOR SITES.
+
+The following CartoCSS properties can be used as a blending effect on a map layer. Alternatively, these properties can be applied to invoke a composite operation effect on a particular symbolizer.
+
+| **CartoCSS Symbolizer Property:**| 
+------------ | -------------
+| | [line-comp-op](#numbers) | [line-pattern-comp-op](#percentages) | [marker-comp-op](#functions)
+| | [point-comp-op](#color) | [polygon-comp-op](#float) | [polygon-pattern-comp-op](#float) |
+| | [raster-comp-op](#numbers) | [shield-comp-op](#percentages) | [text-comp-op](#functions)
+
+| **CartoCSS Composite Operation Values:** | 
+------------ | -------------
+| | [plus](#color) | [minus](#float) | [multiply](#uri) |
+| | [screen](#string) | [overlay](#boolean) | [darken](#expressions) |
+| | [lighten](#numbers) | [color-dodge](#percentages) | [color-burn](#functions)
+| | [hard-light](#color) | [soft-light](#float) | [difference](#uri) |
+| | [exclusion](#color) | [contrast](#float) | [invert](#uri) |
+| | [invert-rgb](#color) | [grain-merge](#float) | [grain-extract](#uri) |
+| | [hue](#color) | [saturation](#float) | [color](#uri) |
+| | [value](#color) |  | |
+
+
+| **[Duff-Porter Alpha Composition Methods](http://www.imagemagick.org/Usage/compose/#duff-porter):**| 
+------------ | -------------
+| | [src](#numbers) | [dst](#percentages) | [src-over](#functions)
+| | [dst-over](#color) | [src-in](#float) | [dst-in](#float) |
+| | [src-out](#numbers) | [dst-out](#percentages) | [src-atop](#functions)
+| | [dst-atop](#numbers) | [xor-out](#percentages) | 
+
+
+DO WE NEED TO DOCUMENT THESE OR SHOULD WE JUST LINK TO THIS AN A REFERENCE?
+
+
+##### direct-image-filters `functions`
+
+------------ | -------------
+Description | Applies an image filter directly to the main canvas. This can also be applied to a separate canvas by using the [image-filters function](cartodb-editor.html#image-filters-functions).
+Sample CartoCSS Code | `direct-image-filter: function (none);`
+Default Value |  `none` applies no filters.
+| IT DOESN'T ACTUALLY WORK IF I APPLY NONE IN THE CARTOCSS EDITOR, DOES IT JUST MEAN THAT THE VALUE ISN'T DEFINED? THERE ARE SEVERL MAPBOX DESCRIPTIONS THAT MENTION THIS.
+Available Values | See [functions](#functions).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
+	
+	
+##### direct-image-filters `functions`
+
+------------ | -------------
+Description | Applies an image filter directly to the main canvas. This can also be applied to a separate canvas by using the [image-filters function](cartodb-editor.html#image-filters-functions).
+Sample CartoCSS Code | `direct-image-filter: function (none);`
+Default Value |  `none` applies no filters.
+	| IT DOESN'T ACTUALLY WORK IF I APPLY NONE IN THE CARTOCSS EDITOR, DOES IT JUST MEAN THAT THE VALUE ISN'T DEFINED? THERE ARE SEVERL MAPBOX DESCRIPTIONS THAT MENTION THIS.
+Available Values | See [functions](#functions).
+Related Examples | <list of links to public maps, tutorials, faqs, etc.>
+	
