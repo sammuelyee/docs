@@ -23,4 +23,7 @@
     <link rel="stylesheet" href="{{ '/css/main.css' | prepend: site.baseurl }}">
   {% endif %}
   <script src="{{ '/js/vendor/modernizr.js' | prepend: site.baseurl }}"></script>
+  {% if page.layout == 'print' %}
+  <meta name="robots" content="noindex, nofollow">
+  {% endif %}
 </head>
