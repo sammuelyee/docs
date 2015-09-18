@@ -765,6 +765,7 @@ Map Edit Menu Options | Description
 Export layer | A dataset appears as a layer on your map. You can export the dataset layer for use offline. This process is identical to exporting a dataset once you select *Export layer* from the Edit menu. For details, see how to [(Export Data](#export-data))
 Georeference layer |  Edit your map and apply georeferencing coordinates to transform your data. This process is identical to the georeferencing dataset options once you select *Georeference layer* from the Edit menu. For details, see [(Georeference Data](#georeference-data))
 Duplicate map |  Creates a duplicate of your map so that you have a backup copy of it. Note that changes applied to a duplicate map are not applied to the original
+Change privacy | You can protect your map and identify the privacy setting. For details, see [Map Privacy Settings](cartodb-editor.html#map-privacy).
 Lock map | To prevent your map from undesired changes, you can lock a map and hide it from your dashboard. For details, see the Frequently Asked Questions about [how to lock a dataset or map](http://docs.cartodb.com/faqs.html#how-can-i-lock-a-datasetmap)
 Delete map | Deletes the selected map
 
