@@ -66,7 +66,7 @@ You can import data from a local file (or public URL), connect to an external da
 	|  **Note:** Ensure that you are using ArcGIS Server&trade; version 10.1 or higher.
 	Salesforce | Connect to you Salesforce data by enabling the Salesforce Connector and import your data from a Salesforce URL.
 	
-4.  For any external services, you must enable these connectors before you can connect to an external dataset. 
+4. For any external services, you must enable these connectors before you can connect to an external dataset. 
 
 	**Note:** This one-time step requires that you [contact CartoDB](mailto:sales@cartodb.com) for assistance. Once your external connectors have been enabled for your account, connect your external service and link it to your account. 
 	
@@ -74,14 +74,16 @@ You can import data from a local file (or public URL), connect to an external da
 	
 	**Tip:** Ensure that your browser pop-up blocker is disabled when connecting.
 
-    <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/account_connect_services.png' | prepend: site.baseurl }}" alt="Select Dataset" /></p>
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/account_connect_services.png' | prepend: site.baseurl }}" alt="Select Dataset" /></p>
 
 	After your external connectors are enabled and connected, the connect dataset options allow you to import external data and activates the *CONNECT DATASET* button.
 
 6. Click *CONNECT DATASET*
 
-    <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/connect_dataset_button.png' | prepend: site.baseurl }}" alt="Connect Dataset button" /></p>
+	**Tip:** There is a shortcut to set the dataset privacy option. By default, your dataset is private. Click the icon to [toggle](#edit-the-dataset-privacy-settings-when-connecting-a-dataset) between public and private, before connecting your dataset.
 
+    <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/connect_dataset_button.png' | prepend: site.baseurl }}" alt="Connect Dataset button" /></p>
+		
 	Your data (or external dataset) is imported and uploaded to your datasets dashboard.
 
 #### Create an Empty Dataset
@@ -165,7 +167,7 @@ The following procedure describes how to connect  twitter data to a dataset afte
 	**Tip:** Note the following [(tips and tricks](#tips-and-tricks-for-using-twitter-data)) when entering category search terms and selecting Twitter trends.
 		 
 2. Click CONNECT DATASET  
-
+	
 	You must enter at least one category search term in order to activate the CONNECT DATASET button.
 
 	The page refreshes and displays the connected Twitter dataset. You can edit any of the dataset options as usual and create a map.  
@@ -308,6 +310,8 @@ Depending on your account type, you can sync datasets by connecting to an extern
 	
 - Click *CONNECT DATASET*
 
+	**Tip:** There is a shortcut to set the dataset privacy option. By default, your dataset is private. Click the icon to [toggle](#edit-the-dataset-privacy-settings-when-connecting-a-dataset) between public and private before, connecting your dataset.
+
 - Optionally, you can change these [sync dataset options](#sync-dataset-options) at anytime
 
 **Note:** Contact [Sales](mailto:sales@cartodb.com) if you need help enabling this feature for your account.
@@ -317,9 +321,15 @@ Depending on your account type, you can sync datasets by connecting to an extern
 
 ### Data Library
 
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/datalibrary.png' | prepend: site.baseurl }}" alt="Common data" /></p>
+The CartoDB Data Library, available from your datasets dashboard, provides a list of public data libraries. You can connect to these public datasets and create a map. Examples of data in the Data Library include World Borders, European Countries, Urban Areas, and Populated Places. 
 
-From your dashboard, you may also access our Data Library, which gives you access to public datasets. Examples of data in the Data Library include World Borders, European Countries, Urban Areas, and Populated Places. Add a dataset from the list to your dashboard and start mapping it.
+- From your datasets dashboard, click *Data library* to view a list of all the data libraries. Private data libraries appear in red. Scroll to the bottom of the data library to navigate to other pages
+
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/datalibrary.png' | prepend: site.baseurl }}" alt="Data Library data" /></p>
+
+- From a selected public dataset, click *Connect dataset* or *create map* to add it to your dashboard
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/datalibrary_connect.png' | prepend: site.baseurl }}" alt="Connect dataset from Data Library" /></p>
+
 
 ### Supported File Formats
 
@@ -416,6 +426,21 @@ There are multiple ways to access these dataset privacy options.
 
 **Note:** Different privacy options may appear, depending on your account settings.
 
+#####Edit the Dataset Privacy Settings when Connecting a Dataset
+There is a shortcut to set the dataset privacy while connecting a new dataset.  See the [Connect Dataset](#connect-dataset) procedure for complete details about how to connect a dataset.
+
+- From the connect dataset options, click the privacy icon to toggle between the public and private option
+
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/connectdataset_toggleprivate.png' | prepend: site.baseurl }}" alt="Toggle privacy icon" /></p>
+
+	**Note** Datasets are private by default. 
+	
+- Click the privacy icon to change the dataset to public
+
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/connectdataset_togglepublic.png' | prepend: site.baseurl }}" alt="Toggle privacy icon" /></p>
+
+Once you connect a dataset, you can change the privacy at any time by using the dashboard or dataset options, as described in the this section.	
+
 #####Edit the Dataset Privacy Settings from your Dashboard
 The following procedure describes how to edit the dataset privacy settings from your datasets dashboard.
 
@@ -425,7 +450,7 @@ The following procedure describes how to edit the dataset privacy settings from 
 	
 2. Select the privacy setting for a dataset
 
-	By default, new datasets are created as *Private*.
+	You can click *Change privacy* from the shortcut options that appear when a dataset is selected, or click the privacy setting directly from a named dataset.
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/privacy_fromdatasetdashboard.png' | prepend: site.baseurl }}" alt="Dataset Privacy from Dashboard" /></p>
 
