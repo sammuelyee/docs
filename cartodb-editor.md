@@ -54,7 +54,7 @@ You can import data from a local file (or public URL), connect to an external da
 
 	Connect Dataset | Description
 	------------ | -------------
-	Data file | Click *SELECT A FILE* to select a local file to upload. You can also enter and submit a public URL to upload data from.
+	Data file | Drag and drop a file directly onto the Connect dataset dialog to add it, or click *BROWSE* to select a local file to upload. You can also enter and submit a public URL to upload data from.
 	| **Tip:** See a list of [Supported File Formats](#supported-file-formats).
 	Google Drive | Connect a dataset by syncing to an external Google Drive. For details, see [Syncing Datasets](#syncing-datasets).
 	Dropbox | Connect to a dataset by syncing to a external Dropbox. For details, see [Syncing Datasets](#syncing-datasets).
