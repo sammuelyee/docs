@@ -116,24 +116,6 @@ ALSO, THERE IS AN [FAQ QUESTION](faqs.html#why-are-my-map-labels-cut-off) THAT S
 I don't actually know the reason why, perhaps ask mamata on slack if she knows.
 </span>
 
-##### font-directory `uri`
-
-Description | Indicates the directory path where the registered fonts for your map are automatically stored, or where they should be stored when the map loads.
-Sample CartoCSS Code | `font-directory: uri;`
-Default Value |  This parameter is not applied by default, no registered fonts are stored for your map.
-Available Values | See [uri](#uri).
-
-
-##### srs `string`
-
-Description | The map spatial reference (proj4 string). The proj4 literal of EPSG:4326 is assumed to be the Map&#x27;s spatial reference.  All data from layers within this map are plotted using this coordinate system. 
-| WHAT DOES THAT MEAN?
-Sample CartoCSS Code | `srs: string;`
-Default Value |  `+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs`.
-Available Values | See [string](#string).
-
-**Note:** If the `srs` value is not declared for a layer, this value is assumed to be the same `srs` as the map. Thus, no transformations are plotted in the Map&#x27;s coordinate space).
-
 
 #### Polygon
 
