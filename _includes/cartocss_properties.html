@@ -99,18 +99,6 @@ Default Value |  `1`, indicates that the image opacity will not be changed when 
 Available Values | See [float](#float).
 
 
-##### base `string`
-
-Description | Indicates how a directory path is rendered, based on if you are using a defined in memory object, or a filesystem object. 
-Sample CartoCSS Code | `base: string;`
-Default Value |  This parameter string is empty by default, indicating that any relative paths to files referenced in styles, or layers, are interpreted relative to the application process.
-Available Values | See [string](#string).
-Related Examples |  - If a map loads from an in memory object, any relative paths used to reference files are understood as the intended directly path. 
-|  - If the map loads from a filesystem object, and the in memory object is *not* defined, the directory path is rendered based on the stylesheet directory.
-
-WHAT IS IN MEMORY OBJECT AND FILESYSTEM OBJECT? And what stylesheet are they referencing? The cartocss I assume. These definitions are confusing, I need more information and sample code.
-
-
 ##### buffer-size `float`
 
 Description | Ensures that labels crossing tile boundaries are equally rendered in each tile. 
