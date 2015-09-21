@@ -34,7 +34,7 @@ In addition to customizing the look of your maps using CartoCSS, Torque maps hav
 
 These common element CartoCSS properties can be applied to any layer in a map.
 
-| | [comp-op](#comp-op-keyword) | [direct-image-filters](#direct-image-filters-functions) | [image-filters](#image-filters-functions)
+| | [comp-op](#comp-op-keyword) | [image-filters](#image-filters-functions)
 | | [opacity float](#opacity-float) | 
 
 ##### comp-op `keyword`
@@ -58,8 +58,6 @@ Related Examples | You can add multiple image-filters to a layer, which creates 
 	| `image-filters:colorize-alpha(blue, cyan, green, yellow , orange, red);`
 	
 THIS EXAMPLE WORKS, but using 'none' and 'null' generates an error. Does none just mean that this feature is not applied by default (none is not a valid value)?
-
-**Tip:** For creating an image-filter for the main canvas, see [direct-image-filters](#direct-image-filters-functions)
 
 ##### opacity `float`
 
