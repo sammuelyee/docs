@@ -844,10 +844,9 @@ The CartoDB map wizard is an interface that enables you to quickly style your da
 
 	Map Type | Wizard Options
 	------------ | -------------
-	Simple | {% include descrip_simple_.html %}. For details about all Simple styling options available from the wizard, see [Simple](#simple).
-	Cluster | Displays point files in a group of numbered circles, rendering a cluster of points in close proximity of a given area. For details about all Cluster styling options available from the wizard, see [Cluster](#cluster).
-	Choropleth | A thematic map, with regions of different colors, applied in proportion to the data. This is based on a secondary numeric value from a column in your dataset. For details about all Choropleth styling options available from the wizard, see [Choropleth](#choropleth).
-	|  **Tip:** Choropleth is often used with polygon data to compare characteristics of regions and areas, such as income levels by neighborhood.
+	Simple | {% include descrip_simple.html %} For details about all Simple styling options available from the wizard, see [Simple](#simple).|
+	Cluster | {% include descrip_cluster.html %} For details about all Cluster styling options available from the wizard, see [Cluster](#cluster).
+	Choropleth | {% include descrip_choropleth.html %} For details about all Choropleth styling options available from the wizard, see [Choropleth](#choropleth).
 	Category | Displays points and polygons, in different colors, based on a qualitative characteristic in your dataset. For details about all Category styling options available from the wizard, see [Category](#category).
 	| **Tip:** If your data contains multiple characteristics (*i.e.* land-use zones), you can use the Category wizard options to change the color of each characteristic (*i.e.* blue for residential, red for commercial, and purple for mixed-use districts).
 	Bubble | Scales the radius of points, based on a numeric value from a column in your dataset. For details about all Bubble styling options available from the wizard, see [Bubble](#bubble).
@@ -865,7 +864,7 @@ The CartoDB map wizard is an interface that enables you to quickly style your da
 When you select options from the wizard, the selected styling is automatically applied to your map. 
 
 ##### Simple
- {% include descrip_simple_.html %}. The following style options are available for Simple maps.
+ {% include descrip_simple.html %}. The following style options are available for Simple maps.
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/simple.png' | prepend: site.baseurl }}" alt="Simple Wizard" /></p>
 
@@ -874,7 +873,7 @@ When you select options from the wizard, the selected styling is automatically a
 Simple Wizard Options | Description
 ------------ | -------------
 Marker Fill | Contains all fill options for the point (point size, point opacity, point image/pattern, and point color). 
-| size - The size of the marker in a numeric value between 0-40. **Note:** This option is not applicable for polygons.
+| size - The size of the marker in a numeric value between 0-40. (**Note:** The size option is not applicable for polygons).
 | opacity - A value between 0-1.
 | image / pattern - Select *IMG* to select a marker image or polygon pattern. You can also upload your own icons and patterns from these image options.
 | <img src="{{ '/img/layout/cartodb-editor/wizard_select_img.png' | prepend: site.baseurl }}" alt="Select img" />
@@ -883,13 +882,14 @@ Marker Fill | Contains all fill options for the point (point size, point opacity
 | <img src="{{ '/img/layout/cartodb-editor/wizard_selectcolor.png' | prepend: site.baseurl }}" alt="Select point color from wizard" />
 Marker Stroke |  Edit the width of your points' border or outline (a value between 0-40), the color (using Hex codes or by selecting a color from the color palette), and the opacity (a value between 0-1).
 | <img src="{{ '/img/layout/cartodb-editor/wizard_strokecolor.png' | prepend: site.baseurl }}" alt="Select stroke color from wizard" />
-| **Note:** This option appears as *Polygon Stroke* when polygon data is detected with the map wizard.
+| **Note:** This option appears as *Polygon Stroke* when polygon data is detected by the map wizard.
 Composite operation | Change how the colors of overlapping geometries interact with one another. You can select from multiply, screen, overlay, darken, lighten, color-dodge and color-burn. See CartoCSS Composite Operations for a description of composite operation effects.
-| ADD LINK WHEN BRANCH IS MERGED
 Label text | Select the field that you would like to act as a label (if any).
 
-#### Cluster
-Displays point files in a group of numbered circles, rendering a cluster of points in close proximity of a given area.
+**Note:** Conditional formatting is not supported for Simple maps.
+
+##### Cluster
+{% include descrip_cluster.html %} 
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/cluster.png' | prepend: site.baseurl }}" alt="Cluster Wizard" /></p>
 
@@ -900,11 +900,11 @@ Marker Fill |
 Marker Stroke | 
 Marker size |
 Label Font | Change your label's font.
-Label Halo | Change the color and width of the outline around your text. This can be helpful for increasing readability.
+Label Halo | Change the color and width of the outline around your text. This is helpful for increasing readability.
 
 #### Choropleth
-Thematic map with regions in different colors in proportion to the data.
-
+ {% include descrip_choropleth.html %}
+ 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/choro.png' | prepend: site.baseurl }}" alt="Choropleth Wizard" /></p>
 
 - **Column**  
