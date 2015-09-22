@@ -1741,7 +1741,7 @@ CartoDB Enterprise works as a hub for many users or teams working together. An "
 
 If you have been using a standard CartoDB account and changed your plan to CartoDB Multiuser Enterprise, you will notice that the CartoDB Editor has some additional options. These options are specific to Enterprise plan users. For general documentation about the CartoDB Editor, please see the [CartoDB Editor documentation](http://docs.cartodb.com/cartodb-editor.html).
 
-**Note:** An Enterprise user with "owner" privileges has administrative access to manage the organization account. For example, they can create users and assign quotas for their organization.  See [Owners](#owners) for more details about how to manage the organization settings.
+**Note:** An Enterprise user with "owner" privileges has administrative access to manage the organization account. For example, they can create users and assign quotas for their organization.  See [Owners](#owners) for more details about how to manage the organization settings.  Organization users have standard [Account](#your-account) options.
 
 ### Users
 
@@ -1755,7 +1755,7 @@ The maps dashboard enables you to search for maps by tag or name, view maps you 
 <p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_00.png" alt="dash" /></p>
 
 ####Your Datasets
-Similar to your maps dashboard, your datasets dashboard enables you to search for datasets by name or tag, view your own (and shared datasets), view datasets that you have liked from the community, and access public datasets from the [Data Library](#data-library). You can also [change the sort order of your datasets](http://localhost:9000/cartodb-editor.html#changing-the-sort-order-of-your-datasets).
+Similar to your maps dashboard, your datasets dashboard enables you to search for datasets by name or tag, view your own (and shared datasets), view datasets that you have liked from the community, and access public datasets from the [Data Library](#data-library). You can also [change the sort order of your datasets](#changing-the-sort-order-of-your-datasets).
 
 <p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_01.png" alt="data dash" /></p>
 
@@ -1787,10 +1787,12 @@ Organization settings contain your organization profile information, the authent
 - Click *Organization profile* to manage everything related to your organization's public profile. For example, you can add and organization logo, set the organization website, provide the internal support email address for your users, and set the default user quota
 
 - Click *Auth settings* to set authentication settings for your organization's email domain and manage how users login to the Enterprise account
+	<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_auth.png" alt="Auth settings" /></p>
 
 - Click *#/# users* to view and manage the users in your organization. You can create new users and add them to your organization
+	<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_users.png" alt="Organizaton users" /></p>
 
-	**Note:** The number of seats available is the allowed number of users for your organization. This number is based on your Enterprise account details. 
+	**Note:** The number of seats available is the allowed number of users for your organization. This number is based on your Enterprise account details. 	
 	
 - Click *Billing* to view your organization's payment or billing details for your Enterprise account
 
