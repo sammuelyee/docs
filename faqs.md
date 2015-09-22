@@ -449,17 +449,30 @@ The Removable brand feature, included for certain [account types](https://cartod
 
 **Note:** This feature is only available for certain account types. Contact [Sales](mailto:sales@cartodb.com) if you are interested in this feature.
 
-### How can I remove my Google account from my CartoDB login?
+### I logged in with Google access, how can I remove my Google account from my CartoDB login?
 
-If you are logged into CartoDB through your Google account and you want to unlink your account, you must edit your connected apps & sites through your Google account settings.  
+If you login to CartoDB by clicking *LOGIN WITH GOOGLE*, and you want to unlink your Google account, you must edit your password (and associated email address) in CartoDB first. Once the password and email address is set for your account, you can remove access to your Google account by editing your connected apps & sites through your Google account settings.  
 
-- Ensure that your CartoDB session is closed
-- From your Google Account settings, navigate to the sign-in and security settings to manage your connected apps & sites
-- Click *REMOVE* CartoDB through the managed apps section
+1. Before unlinking your Google account, you must define a password and change the email associated with your CartoDB account. *This sets the password and email that you will enter to login to CartoDB after removing Google Access.*
+
+	- Change the [password](cartodb-editor.html#account-settings) associated with your account.
+	
+	- From the same page of the account options, change the associated email address with your CartoDB account
+	
+	**Tip:** This step is highly recommended, all of your maps and datasets are associated with your registered email address.
+	
+2. From your dashboard options, click *Close session* from your avatar drop-down menu to logout of CartoDB
+	
+3. From your Google Account settings, navigate to the sign-in and security settings to manage your connected apps & sites
+4. Click *REMOVE* CartoDB through the managed apps section
 
 	<p class="wrap-border"><img src="{{ '/img/layout/faqs/remove_google_access.png' | prepend: site.baseurl }}" alt="Remove Google access" /></p>
 
-- The next time you login to CartoDB, you must create a new account. If you choose *LOGIN WITH GOOGLE*, you will have to grant access to Google again. 
+5. The next time you login to CartoDB, if you choose *LOGIN WITH GOOGLE*, you will have to grant access to Google again. Otherwise, you can login with the associated email address and password for your account.
+
+	<p class="wrap-border"><img src="{{ '/img/layout/faqs/login_with_google.png' | prepend: site.baseurl }}" alt="Login with Google" /></p>
+
+**Note:** All of your maps and datasets are associated with your registered email address. If you login with a new email, you will lose access to all of your maps and datasets - unless you previously changed your associated email address with your CartoDB account settings (as described in step 1 of this procedure).
 
 ## GDrive
 

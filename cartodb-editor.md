@@ -54,19 +54,19 @@ You can import data from a local file (or public URL), connect to an external da
 
 	Connect Dataset | Description
 	------------ | -------------
-	Data file | Click *SELECT A FILE* to select a local file to upload. You can also enter and submit a public URL to upload data from.
+	Data file | Drag and drop a file directly onto the Connect dataset dialog to add it, or click *BROWSE* to select a local file to upload. You can also enter and submit a public URL to upload data from.
 	| **Tip:** See a list of [Supported File Formats](#supported-file-formats).
 	Google Drive | Connect a dataset by syncing to an external Google Drive. For details, see [Syncing Datasets](#syncing-datasets).
 	Dropbox | Connect to a dataset by syncing to a external Dropbox. For details, see [Syncing Datasets](#syncing-datasets).
 		| **Note:** Some file formats are not supported with Dropbox. Select *Dropbox* to view which file formats are available (CSV, XLS).
-	Twitter | Connect to a Twitter datasource by enabling the Twitter Connector. For details, see [Connecting to External Twitter Data](#connecting-to-external-twitter-data).
+	Twitter | Connect to a Twitter datasource by enabling the Twitter Connector. For details, see [Use Case: Connecting to an External Data Source (Twitter)](#use-case--connecting-to-an-external-data-source-twitter).
 	MailChimp | Connect to external MailChimp campaigns with the MailChimp connector. You can access your MailChimp account and create maps and datasets based on the data stored from your mailing lists.
 	Instagram | Connect to your Instagram photos or videos with the Instagram connector. 
 	ArcGIS Server&trade; | Import your data from an ArcGIS Server&trade; instance by submitting your ArcGIS Server table URL.
 	|  **Note:** Ensure that you are using ArcGIS Server&trade; version 10.1 or higher.
 	Salesforce | Connect to you Salesforce data by enabling the Salesforce Connector and import your data from a Salesforce URL.
 	
-4.  For any external services, you must enable these connectors before you can connect to an external dataset. 
+4. For any external services, you must enable these connectors before you can connect to an external dataset. 
 
 	**Note:** This one-time step requires that you [contact CartoDB](mailto:sales@cartodb.com) for assistance. Once your external connectors have been enabled for your account, connect your external service and link it to your account. 
 	
@@ -74,14 +74,16 @@ You can import data from a local file (or public URL), connect to an external da
 	
 	**Tip:** Ensure that your browser pop-up blocker is disabled when connecting.
 
-    <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/account_connect_services.png' | prepend: site.baseurl }}" alt="Select Dataset" /></p>
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/account_connect_services.png' | prepend: site.baseurl }}" alt="Select Dataset" /></p>
 
 	After your external connectors are enabled and connected, the connect dataset options allow you to import external data and activates the *CONNECT DATASET* button.
 
 6. Click *CONNECT DATASET*
 
-    <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/connect_dataset_button.png' | prepend: site.baseurl }}" alt="Connect Dataset button" /></p>
+	**Tip:** There is a shortcut to set the dataset privacy option. By default, your dataset is private. Click the icon to [toggle](#edit-the-dataset-privacy-settings-when-connecting-a-dataset) between public and private, before connecting your dataset.
 
+    <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/connect_dataset_button.png' | prepend: site.baseurl }}" alt="Connect Dataset button" /></p>
+		
 	Your data (or external dataset) is imported and uploaded to your datasets dashboard.
 
 #### Create an Empty Dataset
@@ -110,6 +112,190 @@ Optionally, you can add data manually or programmatically, with the Connect Data
 
 	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/create_empty_dataset_addrows.png' | prepend: site.baseurl }}" alt="Add rows and columns to an empty dataset" /></p>
 
+#### Use Case:  Connecting to an External Data Source (Twitter)
+
+CartoDB has broker access to [Twitter Firehose](https://dev.twitter.com/streaming/reference/get/statuses/firehose), which enables us to provide official Twitter data through CartoDB. The following procedures describe how to enable the Twitter Connector for your account so that you can connect external Twitter data to a dataset and create a map.
+
+#####Enabling the Twitter Connector
+
+The following procedure describes how to enable the Twitter Connector.
+
+1. Click *Your datasets* from the dashboard drop-down menu  
+
+    <p class="wrap-border"><img src="{{ '/img/layout/common/select_your_dataset.png' | prepend: site.baseurl }}" alt="Select Dataset" /></p>
+
+    The page refreshes displaying a list of your datasets. 
+
+2. Click NEW DATASET  
+
+	<p class="wrap-border"><img src="{{ '/img/layout/common/new_dataset_button.png'}}" alt="NEW DATASET Button Dataset" /></p>
+	
+	The Connect dataset options appear.
+
+3. Click *Twitter* as the external service   	 
+
+	**Note:** The first time you click on an option from this screen, a tip appears. Click *Got It* to close this tip.
+		 
+	Selecting Twitter as your external service indicates that you must enable the Twitter Connector before connecting your dataset. This one-time step requires that you contact CartoDB for assistance.
+
+	<p class="wrap-border"><img src="/img/layout/cartodb-editor/twitter_connector.png" alt="Select Twitter to Connect a Dataset" /></p>
+
+4. Click *ASK FOR A DEMO* to request the Twitter Connector for your account  
+
+	Once the Twitter Connector is enabled for your account, a CartoDB sales representative sends you a confirmation email. This indicates that tweets are enabled for your account and you can continue the process of [(connecting](#how-to-connect-twitter-data-to-a-dataset)) a dataset to Twitter.
+
+#####Connecting Twitter Data to a Dataset
+
+The following procedure describes how to connect  twitter data to a dataset after the Twitter Connector has been enabled by your account representative.
+
+1. After the Twitter Connector is [(enabled](#how-to-enable-the-twitter-connector)), select *Twitter* as the external service  
+
+	The following Twitter Trend options appear.  
+	<p class="wrap-border"><img src="/img/layout/cartodb-editor/twitter.png" alt="New import dialog" /></p>
+	
+	These options enable you to enter different trend options for your Twitter data.   
+	
+	Twitter Trend Options | Description
+	------------ | -------------
+	Category 1-4 | Represents search terms for different hashtags or keywords separated by commas. You can enter up to four search terms using the Category fields
+	From / to | Displays the from and to time range for your requested data. By default, it is set to search for the last 30 days
+	| Depending on your account settings, you can click the calendar icon to open the calendar and select a different date range. Additionally, you can indicate the hour and minute for the selected date range
+	| <img src="/img/layout/cartodb-editor/twitter_calendarpopup.png" alt="Twitter Date Range" />
+	Use | Displays the amount of Twitter credits allocated to your account. You can use the slider to increase or decrease the percentage of credits to use
+			     | 	**Note:** You can [contact CartoDB](mailto:sales@cartodbcom) to update your Twitter credits at any time  
+	
+	**Tip:** Note the following [(tips and tricks](#tips-and-tricks-for-using-twitter-data)) when entering category search terms and selecting Twitter trends.
+		 
+2. Click CONNECT DATASET  
+	
+	You must enter at least one category search term in order to activate the CONNECT DATASET button.
+
+	The page refreshes and displays the connected Twitter dataset. You can edit any of the dataset options as usual and create a map.  
+
+	<p class="wrap-border"><img src="/img/layout/cartodb-editor/twitter_dataset_created.png" alt="New import dialog" /></p>
+
+**Note:** While CartoDB can retrieve geotagged tweets, we cannot retrieve data when the Twitter post has not specified a location element. For example, the Twitter user must explicitly turn on their location, or indicate their location in their profile location field.
+*Approximately 5% of tweets typically contain geolocation elements. However, CartoDB has applied geo-enrichment enhancements to our code, increasing the Twitter search results up to 15% to 20%.*
+
+#####Twitter API Data Options
+There are several TWitter API's that CartoDB can provide broker access to.  Your account representative can help you select the appropriate type of data plan when you are [(enabling the Twitter Connector](#enabling-the-twitter-connector)).
+
+* **Search API**: The Search API is implemented by default when enabling the Twitter Connector. It allows you to pull geolocated Twitter data from the past 30 days. Once a search is executed, the tweets are imported directly to your CartoDB account so that you can customize your map directly from the Map View of your dashboard.
+
+* **Streaming**: CartoDB has access to Twitter's streaming API, enabling you to retrieve up-to-the-minute search results. This feature is *by request* only. Contact [Sales](mailto:sales@cartodb.com) for details about using streaming Twitter data.
+
+* **Historical API**: The Historical API returns older search results of tweets, beyond 30 days. It can retrieve data as far back as 2006. Contact [Sales](mailto:sales@cartodb.com) for details about using Historical Twitter data.
+
+**Note:** CartoDB is developing a feature to support real time tweets, which automatically updates your map when live tweets are posted. This feature is a work in progress.
+
+#####Understanding Twitter Data
+
+After connecting to a Twitter dataset, unique columns are available from your dataset view. The following list displays the most important Twitter information. You may need this information in order to filter or plot Twitter data points.
+
+* `id`: Tweet id
+* `verb`: Lets you know if a tweet has been directly posted or if it's a retweet
+* `link`: Direct link to the tweet
+* `body`: Content of the tweet
+* `postedtime`: Time at which the tweet was posted. (UTC)
+* `favoritescount`: Number of times the tweet has been favorited
+* `twitter_lang`: Language of the tweet
+* `retweetcount`: Number of times the tweet has been retweeted
+* `actor_link`: Direct URL to user profile
+* `actor_displayname`: Name of the user
+* `actor_image`: Direct URL to a minimized version of the avatar
+* `actor_summary`: Description of the Twitter user
+* `actor_languages`: Language configured by the Twitter user
+* `actor_verified`: Flag for verified users
+* `generator_displayname`: Client from which the tweet was sent
+* `geo`: Information of the geolocated tweet
+* `category_name`: Number of the category described in the search
+* `category_terms`: Terms which have been searched inside the corresponding category
+
+In addition to the more important parameters listed above, you can also obtain the following Twitter data for your maps by searching for these columns in your connected Twitter dataset: `objecttype`, `twitter_filter_level`, `actor_objecttype`, `actor_id`, `actor_postedtime`, `actor_links`, `actor_location`, `actor_utcoffset`, `actor_preferredusername`, `actor_twittertimezone`, `actor_friendscount`, `actor_followerscount`, `actor_listedcount`, `actor_statusescount`, `generator_link`, `provider_objecttype`, `provider_displayname`, `provider_link`, `inreplyto_link`, `twitter_entities`, `object_objecttype`, `object_id`, `object_summary`, `object_postedtime`, `object_link`, `location_objecttype`, `location_displayname`, `location_link`, `location_geo`, `location_streetaddress` and `location_name`.
+
+##### Analyzing and Querying Twitter Data
+
+Once your tweets dataset is connected, the following insights may help you analyze your Twitter data. The CartodDB Editor *SQL* query panel enables you to search for queries on a dataset. The SQL query panel is available from the sidebar of the Data View when a dataset is selected, as is associated with the [SQL API](http://docs.cartodb.com/cartodb-platform/sql-api.html) CartoDB platform.  
+
+The following image is an example of the SQL query panel from a Twitter dataset.
+<p class="wrap-border"><img src="/img/layout/cartodb-editor/twitter_sqlquerypanel.png" alt="Query Twitter Data" /></p>
+
+Simple Query Examples:
+
+"Which tweets have been written by a famous (verified) person?". Apply an SQL query to the `actor_verified` column. This process is similar to generating the following query:
+
+{% highlight sql %}
+SELECT * FROM dataset_twitter WHERE actor_verified is true
+{% endhighlight %}
+
+"Which tweets have generated the largest number of retweets?"
+
+{% highlight sql %}
+SELECT * FROM dataset_twitter ORDER BY retweetcount DESC
+{% endhighlight %}
+
+Creating a simple category map gives you a better analysis about your Twitter data. You can use the column `twitter_lang` to compare tweet languages with their locations, or you can use the `postedtime` column to perform a dynamic Torque map.
+
+<p class="wrap-border"><img src="/img/layout/cartodb-editor/twitter_2.png" alt="Retweets map" /></p>
+
+More Advanced Query Examples:
+
+Imagine you have two categories, one is "Vector", the second is "Raster". What if you want to know which tweets are saying "Vector yes", or "Vector no"? Apply the following SQL query:
+
+{% highlight sql %}
+SELECT * FROM dataset_twitter WHERE body ilike ‘%yes%’ AND category_name = 1
+{% endhighlight %}
+
+Or, correspondingly, for “Vector no”:
+
+{% highlight sql %}
+SELECT * FROM dataset_twitter WHERE body ilike ‘%no%’ AND category_name = 1
+{% endhighlight %}
+
+Suppose you want to create two new categories in your dataset based on the obtained results. One will be for those results that say "Vector yes", the other one will be for “Vector no”. Just apply the previous queries, but this time, include some some updates in the dataset.
+
+The following query searches all the tweets which include "Vector yes" and update the category to be '3'.
+
+{% highlight sql %}
+UPDATE dataset_twitter SET category_name = 3 where body ilike ‘%yes%’ AND category_name = 1
+{% endhighlight %}
+
+In the same way, build category number 4 to “Vector no”:
+
+{% highlight sql %}
+UPDATE dataset_twitter SET category_name = 4 where body ilike ‘%no%’ AND category_name = 1
+{% endhighlight %}
+
+If the results are not so obvious, you can add a new constraint and create a new category which searches "yes" and "no" in the same tweet, as shown with the query below:
+
+{% highlight sql %}
+UPDATE dataset_twitter SET category_name = 5 where body ilike ‘%no%’ AND body ilike ‘%yes%’ AND category_name = 1
+{% endhighlight %}
+
+Following this approach with the "Raster" option, running a query creates several categories that enables you to analyze if a tweet is supporting a specific topic or search term. If you need more advanced queries beyond these examples, CartoDB supports advanced PostgreSQL capabilities so that you can insert more advanced queries on the text of tweets.
+
+***Tip:** It is suggested to create a duplicate copy of your dataset prior to modifying it with UPDATE, INSERT or DELETE SQL query statements, in order to avoid overwriting your original data.*
+
+##### Tips and Tricks for Using Twitter Data
+Note the following tips an tricks when using twitter data for your maps.
+
+######Twitter Categories and Search Terms
+* You can enter OR as an alternative to using the comma. For example, "santa, xmas" is the same as "santa OR xmas"
+* Spaces before and after commas are removed
+* Enter commas between multi-sentence words as a best practice. For example, if you enter a multi-word search term, such as "cars, bikes motorbikes, planes", the category is parsed as three search terms.  Not "cars, bikes, motorbikes, planes"
+* Use Singular and plural search terms. For example, "car" does not match tweets with the plural of "cars". Add both the singular and plural forms of the word to match both search results
+* Search terms are not case-sensitive. For example, "Cars" is the same as "cars" and "CARS"
+* The maximum number of search terms per category is 29
+* You can search by hashtags or account names. For example, "gis, @cartodb, #mapping"
+
+######Twitter Credits
+* Ensure that you select the right time frame that suits your needs. You can save on Twitter credits by not importing extra data
+* Enterprise multi-accounts share the same organization-wide pool of Twitter credits
+* If you run out of credits, the the search stops and returns all the tweets that the system was able to retrieve up until the credits were used
+
+######Retrieving Twitter Data
+* Once the search starts you cannot stop the import. Be mindful to avoid broad search terms. For example, "love" may retrieve hundreds of thousands, or even millions, of geolocalized tweets
+
 ### Syncing Datasets
 
 Depending on your account type, you can sync datasets by connecting to an external Google Drive or Dropbox. This high-level overview describes the workflow for syncing datasets.
@@ -124,6 +310,8 @@ Depending on your account type, you can sync datasets by connecting to an extern
 	
 - Click *CONNECT DATASET*
 
+	**Tip:** There is a shortcut to set the dataset privacy option. By default, your dataset is private. Click the icon to [toggle](#edit-the-dataset-privacy-settings-when-connecting-a-dataset) between public and private before, connecting your dataset.
+
 - Optionally, you can change these [sync dataset options](#sync-dataset-options) at anytime
 
 **Note:** Contact [Sales](mailto:sales@cartodb.com) if you need help enabling this feature for your account.
@@ -133,58 +321,37 @@ Depending on your account type, you can sync datasets by connecting to an extern
 
 ### Data Library
 
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/datalibrary.png' | prepend: site.baseurl }}" alt="Common data" /></p>
+The CartoDB Data Library, available from your datasets dashboard, provides a list of public data libraries. You can connect to these public datasets and create a map. Examples of data in the Data Library include World Borders, European Countries, Urban Areas, and Populated Places. 
 
-From your dashboard, you may also access our Data Library, which gives you access to public datasets. Examples of data in the Data Library include World Borders, European Countries, Urban Areas, and Populated Places. Add a dataset from the list to your dashboard and start mapping it.
+- From your datasets dashboard, click *Data library* to view a list of all the data libraries. Private data libraries appear in red. Scroll to the bottom of the data library to navigate to other pages
+
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/datalibrary.png' | prepend: site.baseurl }}" alt="Data Library data" /></p>
+
+- From a selected public dataset, click *Connect dataset* or *create map* to add it to your dashboard
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/datalibrary_connect.png' | prepend: site.baseurl }}" alt="Connect dataset from Data Library" /></p>
+
 
 ### Supported File Formats
 
-CartoDB supports an ever-growing number of data types and file formats.
+CartoDB supports a large number of data types and file formats. The following table lists the supported data file formats. 
 
-We encourage you to compress your files before importing them. Currently, supported compression and archiving formats include .ZIP and .GZ (also .TAR.GZ and .TGZ). Below are the data file types that CartoDB supports. If the file you are importing does not match one of these types, then the import will fail.
+**Tip:** It is high recommended that you compress your files before importing them. CartoDB supports .ZIP and .GZ (which includes .TAR.GZ and .TGZ) for compressing and archiving files.
 
-<table>
-  <tbody>
-    <tr>
-      <td>.CSV .TAB *</td>
-      <td>Comma-separated values and Tab delimited file</td>
-    </tr>
-    <tr>
-      <td>.SHP **</td>
-      <td>ESRI shapefiles</td>
-    </tr>
-    <tr>
-      <td>.KML, .KMZ</td>
-      <td>Google Earth Format</td>
-    </tr>
-    <tr>
-      <td>.XLS, .XLSX ***</td>
-      <td>Excel Spreadsheet</td>
-    </tr>
-    <tr>
-      <td>.GEOJSON</td>
-      <td>GeoJSON</td>
-    </tr>
-    <tr>
-      <td>.GPX</td>
-      <td>GPS Exchange Format</td>
-    </tr>
-    <tr>
-      <td>.OSM, .BZ2</td>
-      <td>Open Street Map dump</td>
-    </tr>
-    <tr>
-      <td>.ODS</td>
-      <td>OpenDocument Spreadsheet</td>
-    </tr>
-  </tbody>
-</table>
+Supported File Format | Description
+------------ | -------------
+.CSV, .TSV | Comma-separated values and tab-separated values.  This is the preferred file format when importing datasets to CartoDB
+| **Note:** When importing sheets with tabular formats, the first row must contain your column headers.
+.SHP | ESRI shapefiles
+| **Note:** For shapefiles, the .ZIP file must contain the .SHP, .DBF, .SHX and .PRJ files, all prefixed with same name. For example: a `ne_10m_populated_places.zip` file would contain `ne_10m_populated_places.shp`, `ne_10m_populated_places.dbf`, `ne_10m_populated_places.shx` and `ne_10m_populated_places.prj`).*
+.KML, .KMZ | Google Earth Format
+.XLS, .XLSX | Excel Spreadsheet
+|**Note:** It is a known issue that uploading Excel files takes significantly longer to import to CartoDB. It is recommended to save your .XLS or .XLSX files as .CSV files, for the best performance.
+.GEOJSON | GeoJSON
+.GPX | GPS Exchange Format
+.OSM, .BZ2 | Open Street Map dump
+.ODB | OpenDocument Spreadsheet
 
-_CartoDB prefers datasets that use comma separators. Also, we are only able to import first sheets with tabular formats, and the first row must contain your column headers._
-
-*For Shapefiles, we require that the whole .ZIP file contains the .SHP, .DBF, .SHX and .PRJ files, all prefixed with same name. (For example a `ne_10m_populated_places.zip` file would contain `ne_10m_populated_places.shp`, `ne_10m_populated_places.dbf`, `ne_10m_populated_places.shx` and `ne_10m_populated_places.prj`).*
-
-_XLS and XSLX may take longer than CSV files. We highly recommend that you export Excel files to CSV before importing in CartoDB._
+**Note:**  If you are importing a non-supported file type, the import will fail.
 
 ###Data Visualization
 
@@ -259,6 +426,21 @@ There are multiple ways to access these dataset privacy options.
 
 **Note:** Different privacy options may appear, depending on your account settings.
 
+#####Edit the Dataset Privacy Settings when Connecting a Dataset
+There is a shortcut to set the dataset privacy while connecting a new dataset.  See the [Connect Dataset](#connect-dataset) procedure for complete details about how to connect a dataset.
+
+- From the connect dataset options, click the privacy icon to toggle between the public and private option
+
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/connectdataset_toggleprivate.png' | prepend: site.baseurl }}" alt="Toggle privacy icon" /></p>
+
+	**Note** Datasets are private by default. 
+	
+- Click the privacy icon to change the dataset to public
+
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/connectdataset_togglepublic.png' | prepend: site.baseurl }}" alt="Toggle privacy icon" /></p>
+
+Once you connect a dataset, you can change the privacy at any time by using the dashboard or dataset options, as described in the this section.	
+
 #####Edit the Dataset Privacy Settings from your Dashboard
 The following procedure describes how to edit the dataset privacy settings from your datasets dashboard.
 
@@ -268,7 +450,7 @@ The following procedure describes how to edit the dataset privacy settings from 
 	
 2. Select the privacy setting for a dataset
 
-	By default, new datasets are created as *Private*.
+	You can click *Change privacy* from the shortcut options that appear when a dataset is selected, or click the privacy setting directly from a named dataset.
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/privacy_fromdatasetdashboard.png' | prepend: site.baseurl }}" alt="Dataset Privacy from Dashboard" /></p>
 
@@ -608,6 +790,7 @@ Map Edit Menu Options | Description
 Export layer | A dataset appears as a layer on your map. You can export the dataset layer for use offline. This process is identical to exporting a dataset once you select *Export layer* from the Edit menu. For details, see how to [(Export Data](#export-data))
 Georeference layer |  Edit your map and apply georeferencing coordinates to transform your data. This process is identical to the georeferencing dataset options once you select *Georeference layer* from the Edit menu. For details, see [(Georeference Data](#georeference-data))
 Duplicate map |  Creates a duplicate of your map so that you have a backup copy of it. Note that changes applied to a duplicate map are not applied to the original
+Change privacy | You can protect your map and identify the privacy setting. For details, see [Map Privacy Settings](cartodb-editor.html#map-privacy).
 Lock map | To prevent your map from undesired changes, you can lock a map and hide it from your dashboard. For details, see the Frequently Asked Questions about [how to lock a dataset or map](http://docs.cartodb.com/faqs.html#how-can-i-lock-a-datasetmap)
 Delete map | Deletes the selected map
 
@@ -1447,7 +1630,7 @@ Profile options include the ability to:
 
 - Change your avatar image
 - Edit your public profile name
-- Share any personal websites, your Twitter Username, or your Disque Shortname
+- Share any personal websites, your location, your Twitter Username, or your Disque Shortname
 - Indicate that you are available for hire, which automatically includes a link to your email on your public profile page
 
 Click *SAVE CHANGES* after editing any of your profile settings.
@@ -1468,7 +1651,7 @@ Account options include the ability to:
 	**Tip:** If you are using a free-trial, you can change or upgrade your account by viewing the details of your account (this redirects you to the [billing](#billing) options of your account). Once you create an account for evaluating a free-trial of CartoDB, you have fourteen days to experiment with different account types.
 - Connect (or disconnect) to external data sources
 
-	**Note:** The available connections that appear depend on which options have been enabled for your account. Connect an external service to link it to your account. For complete details about how to connect to external data sources, see the [Connect Dataset](http://docs.cartodb.com/cartodb-editor.html#connect-dataset) procedure.
+	**Note:** The external data sources that appear are managed by CartoDB. Connect an external service to link it to your account. For details about how to connect to external data sources, see the [Connect Dataset](http://docs.cartodb.com/cartodb-editor.html#connect-dataset) procedure.
 
 Click SAVE CHANGES after editing any of your account settings.
 
@@ -1476,7 +1659,7 @@ Click SAVE CHANGES after editing any of your account settings.
 
 You can delete your account through the [account](#account) options page. [Contact us](mailto:sales@cartodb.com) if you have any questions before deleting your account.
 
-***Note:** Deleting your account permanently deletes all of your maps and datasets.* 
+***Note:** Deleting your account permanently removes all of your maps and datasets, they cannot be recovered.* 
 
 ### API Key
 
@@ -1524,13 +1707,13 @@ For more details about this feature, see [OAuth](cartodb-platform/sql-api.html#o
 
 ### Billing
 
-[Access](#how-to-access-your-account-options) the billing information for your account.  (There is also a shortcut to your billing plan directly from the [Account](#account) settings). You can change or upgrade your plan. and edit any payment information.
+[Access](#how-to-access-your-account-options) the billing information for your account.  (There is also a shortcut to your billing plan directly from the [Account](#account) settings). You can change or upgrade your plan, view past invoices, and edit payment information.
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/account_billing.png' | prepend: site.baseurl }}" alt="Billing Plan" /></p>
 
-For all pricing information, see our [Pricing Plans]({{ '/pricing' | prepend: site.cartodb-baseurl }}). Each plan includes different features and storage quotas.
+See our [Pricing Plans]({{ '/pricing' | prepend: site.cartodb-baseurl }}) for details about all of our plans. Each plan includes different features and storage quotas.
 
-- Click *CHANGE YOUR PLAN* to view and change the account type for your plan
+- Click *CHANGE PLAN* to view and change the account type for your plan
 
 - View any invoices related to your account 
 
@@ -1548,41 +1731,41 @@ For all pricing information, see our [Pricing Plans]({{ '/pricing' | prepend: si
 
 #### About Multiuser Enterprise
 
-CartoDB designed the Multiuser (MU) Enterprise to enhance the scale and scope of collaboration on our platform. The service provides multiuser environments that allow users to upload and manipulate datasets securely, and share them with specific team members or publish them directly on the web.
+CartoDB designed the Multiuser (MU) Enterprise to enhance the scale and scope of collaboration on our platform. This service provides multiuser environments, where users can upload and manipulate datasets securely, share them with specific team members, or publish them directly on the web.
 
-With CartoDB MU, no custom software installation is necessary to access high-performance GIS capabilities. Take advantage of this web-based feature to work alongside colleagues on projects in real-time from a central, 24/7 accessible database - the cloud! Here is an overview of the Multiuser features.
+With Enterprise accounts, no custom software installation is required. Your group can continue to access the web-based CartoDB Editor and work alongside colleagues. Since our database is managed on the cloud, you can access your projects from any location, in real time. The following multiuser (MU) features are available.
 
 #### Users, Owners, and Organizations
 
 CartoDB Enterprise works as a hub for many users or teams working together. An "organization" refers to the name of the group of collaborators that will be interacting on Enterprise. For instance, the name of your business or project team. A user is the individual that is part of a given organization.
 
-If you have been using a normal CartoDB account and are starting to use CartoDB Enterprise with Multiuser, you will notice that you are using the same CartoDB Editor with some new options. These new options are what we'll cover in the following sections. For general documentation about the CartoDB Editor please refer to the [corresponding sections in docs.cartodb.com](http://docs.cartodb.com/cartodb-editor.html)
+If you have been using a standard CartoDB account and changed your plan to CartoDB Multiuser Enterprise, you will notice that the CartoDB Editor has some additional options. These options are specific to Enterprise plan users. For general documentation about the CartoDB Editor, please see the [CartoDB Editor documentation](http://docs.cartodb.com/cartodb-editor.html).
 
-An "Owner" of an organization has privileges to perform admin-related tasks of the organization (i.e. create users, assign quotas, etc.).
+**Note:** An "Owner" of an organization has administrative privileges to manage the organization, such as create users, assign quotas, and so on.
 
 ### **Users**
 
 #### Dashboard
 
-After login, the Enterprise mainpage allows you to quickly and easily navigate team activity. The dashboard is your homebase, a.k.a. the page where you are able to view and monitor your own activity maps and data, as well as access datasets and visualizations published or shared with you by team members.
+The organization dashboard enables you to navigate team activity. You can view and monitor your own maps and data, and access datasets and visualizations published or shared by you, or your team members.
 
 ####Your Maps
-On the left side of your browser you can search for maps by tag or name, view maps you have created, view maps that have been made public to the organization or shared with you for collaboration, or see maps you have liked from the community. The icons on the left allow you to order personal or shared maps by date, number of visits, number of likes, or create a new map from scratch. You can also access your own or shared datasets by selecting the drop down menu in the upper left.
+The maps dashboard enables you to search for maps by tag or name, view maps you have created, view maps that have been shared with you for collaboration, and view maps that you have liked from the community. You can change the sort order of your maps on your dashboard.
 
 <p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_00.png" alt="dash" /></p>
 
 ####Your Datasets
-Similar to your Maps dashboard, your Datasets dashboard allows you to easily search for datasets by name or tag, view your own and shared datasets, see datasets you have liked, and access our ever growing and free to use **Data Library**. You can also order your datasets by size, or add new datasets from your computer, the web, or from scratch.
+Similar to your maps dashboard, your datasets dashboard enables you to search for datasets by name or tag, view your own (and shared datasets), view datasets that you have liked from the community, and access public datasets from the [Data Library](#data-library). You can also [change the sort order of your datasets](http://localhost:9000/cartodb-editor.html#changing-the-sort-order-of-your-datasets).
 
 <p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_01.png" alt="data dash" /></p>
 
 #### Creating Datasets and Maps
 
-The workflow to create datasets and maps is the same as in the normal edition of the CartoDB Editor.
+For Enterprise account users, the workflow to create datasets and maps is identical to the standard [CartoDB Editor workflow](#cartodb-editor-overview).
 
 #### Enterprise Privacy Settings for Datasets and Maps
 
-All privacy options are available for enterprise account users by default. This enables you to select how you would like to protect each dataset and map created by your organization.  Your organization administrator controls the privacy options that are enabled.
+All privacy options are available for Enterprise account users by default. This enables you to select how you would like to protect each dataset and map created by your organization.  Your organization administrator controls the privacy options that are enabled.
 
 - For details about how to select privacy options for your dataset, see [(Dataset Privacy](#dataset-privacy))
 - For details about how to select privacy options for your map, see [(Map Privacy](#map-privacy))
@@ -1591,15 +1774,20 @@ All privacy options are available for enterprise account users by default. This 
 
 ### **Owners**
 
-As the owner of an organization, you will be able to perform all admin-related tasks of a team account: manage users, assign quotas, customize the organization's Public Page, update account details, etc. When you login, you will see a normal CartoDB dashboard with a list of tables. You can access the admin area by clicking on the drop-down menu located in the upper-right corner and selecting "Your Organization".
+As the owner of an organization, you can perform all administrative tasks for your team account. For example, you can manage users, assign quotas, customize the organization's public profile page, update account details, and so on.  These organization settings are accessible from your avatar drop-down menu.
 
 <p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_09.png" alt="Using sync tables" /></p>
 
-#### Organization Administrator Area
+#### Organization Settings
 
 Once in the organization admin area you'll be able to change your **Organization Settings**, **Manage your seats**, and review or update **Your Plan**.
 
 <p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_010.png" alt="admin" /></p>
+
+##### Organization profile
+##### Auth settings
+#### 1/5 users
+##### Billing
 
 #### Manage Your Seats
 
@@ -1622,186 +1810,3 @@ In this section, you can customize how your Public Page will look by choosing yo
 #### Your Plan
 
 On the "Your Plan" page, you can see information about your company, users, data storage, and resources. You can also contact us with questions or changes to your account.
-
-##Connecting to External Twitter Data
-
-CartoDB has broker access to [Twitter Firehose](https://dev.twitter.com/streaming/reference/get/statuses/firehose), which enables us to provide official Twitter data through CartoDB. The following procedures describe how to enable the Twitter Connector for your account so that you can connect external Twitter data to a dataset and create a map.
-
-###Enabling the Twitter Connector
-The following procedure describes how to enable the Twitter Connector.
-
-1. Click *Your datasets* from the dashboard drop-down menu  
-
-    <p class="wrap-border"><img src="{{ '/img/layout/common/select_your_dataset.png' | prepend: site.baseurl }}" alt="Select Dataset" /></p>
-
-    The page refreshes displaying a list of your datasets. 
-
-2. Click NEW DATASET  
-  
-	<p class="wrap-border"><img src="{{ '/img/layout/common/new_dataset_button.png'}}" alt="NEW DATASET Button Dataset" /></p>
-
-	The Connect dataset options appear.
-
-3. Click *Twitter* as the external service   	 
-
-	**Note:** The first time you click on an option from this screen, a tip appears. Click *Got It* to close this tip.
-		 
-	Selecting Twitter as your external service indicates that you must enable the Twitter Connector before connecting your dataset. This one-time step requires that you contact CartoDB for assistance.
-
-	<p class="wrap-border"><img src="/img/layout/cartodb-editor/twitter_connector.png" alt="Select Twitter to Connect a Dataset" /></p>
-
-4. Click *ASK FOR A DEMO* to request the Twitter Connector for your account  
-
-	Once the Twitter Connector is enabled for your account, a CartoDB sales representative sends you a confirmation email. This indicates that tweets are enabled for your account and you can continue the process of [(connecting](#how-to-connect-twitter-data-to-a-dataset)) a dataset to Twitter.
-
-###Connecting Twitter Data to a Dataset
-The following procedure describes how to connect  twitter data to a dataset after the Twitter Connector has been enabled by your account representative.
-
-1. After the Twitter Connector is [(enabled](#how-to-enable-the-twitter-connector)), select *Twitter* as the external service  
-  
-	The following Twitter Trend options appear.  
-	<p class="wrap-border"><img src="/img/layout/cartodb-editor/twitter.png" alt="New import dialog" /></p>
-	
-	These options enable you to enter different trend options for your Twitter data.   
-	
-	Twitter Trend Options | Description
-	------------ | -------------
-	Category 1-4 | Represents search terms for different hashtags or keywords separated by commas. You can enter up to four search terms using the Category fields
-	From / to | Displays the from and to time range for your requested data. By default, it is set to search for the last 30 days
-	| Depending on your account settings, you can click the calendar icon to open the calendar and select a different date range. Additionally, you can indicate the hour and minute for the selected date range
-	| <img src="/img/layout/cartodb-editor/twitter_calendarpopup.png" alt="Twitter Date Range" />
-	Use | Displays the amount of Twitter credits allocated to your account. You can use the slider to increase or decrease the percentage of credits to use
-			     | 	**Note:** You can [contact CartoDB](mailto:sales@cartodbcom) to update your Twitter credits at any time  
-	
-	 **Tip:** Note the following [(tips and tricks](#tips-and-tricks-for-using-twitter-data)) when entering category search terms and selecting Twitter trends.
-				 
- 	
-2. Click CONNECT DATASET  
-
-	You must enter at least one category search term in order to activate the CONNECT DATASET button.
-
-	The page refreshes and displays the connected Twitter dataset. You can edit any of the dataset options as usual and create a map.  
-
-<p class="wrap-border"><img src="/img/layout/cartodb-editor/twitter_dataset_created.png" alt="New import dialog" /></p>
-
-**Note:** While CartoDB can retrieve geotagged tweets, we cannot retrieve data when the Twitter post has not specified a location element. For example, the Twitter user must explicitly turn on their location, or indicate their location in their profile location field.
-*Approximately 5% of tweets typically contain geolocation elements. However, CartoDB has applied geo-enrichment enhancements to our code, increasing the Twitter search results up to 15% to 20%.*
-
-###Twitter API Data Options
-There are several TWitter API's that CartoDB can provide broker access to.  Your account representative can help you select the appropriate type of data plan when you are [(enabling the Twitter Connector](#enabling-the-twitter-connector)).
-
-* **Search API**: The Search API is implemented by default when enabling the Twitter Connector. It allows you to pull geolocated Twitter data from the past 30 days. Once a search is executed, the tweets are imported directly to your CartoDB account so that you can customize your map directly from the Map View of your dashboard.
-
-* **Streaming**: CartoDB has access to Twitter's streaming API, enabling you to retrieve up-to-the-minute search results. This feature is *by request* only. Contact [Sales](mailto:sales@cartodb.com) for details about using streaming Twitter data.
-
-* **Historical API**: The Historical API returns older search results of tweets, beyond 30 days. It can retrieve data as far back as 2006. Contact [Sales](mailto:sales@cartodb.com) for details about using Historical Twitter data.
-
-**Note:** CartoDB is developing a feature to support real time tweets, which automatically updates your map when live tweets are posted. This feature is a work in progress.
-
-###Understanding Twitter Data
-
-After connecting to a Twitter dataset, unique columns are available from your dataset view. The following list displays the most important Twitter information. You may need this information in order to filter or plot Twitter data points.
-
-* `id`: Tweet id
-* `verb`: Lets you know if a tweet has been directly posted or if it's a retweet
-* `link`: Direct link to the tweet
-* `body`: Content of the tweet
-* `postedtime`: Time at which the tweet was posted. (UTC)
-* `favoritescount`: Number of times the tweet has been favorited
-* `twitter_lang`: Language of the tweet
-* `retweetcount`: Number of times the tweet has been retweeted
-* `actor_link`: Direct URL to user profile
-* `actor_displayname`: Name of the user
-* `actor_image`: Direct URL to a minimized version of the avatar
-* `actor_summary`: Description of the Twitter user
-* `actor_languages`: Language configured by the Twitter user
-* `actor_verified`: Flag for verified users
-* `generator_displayname`: Client from which the tweet was sent
-* `geo`: Information of the geolocated tweet
-* `category_name`: Number of the category described in the search
-* `category_terms`: Terms which have been searched inside the corresponding category
-
-In addition to the more important parameters listed above, you can also obtain the following Twitter data for your maps by searching for these columns in your connected Twitter dataset: `objecttype`, `twitter_filter_level`, `actor_objecttype`, `actor_id`, `actor_postedtime`, `actor_links`, `actor_location`, `actor_utcoffset`, `actor_preferredusername`, `actor_twittertimezone`, `actor_friendscount`, `actor_followerscount`, `actor_listedcount`, `actor_statusescount`, `generator_link`, `provider_objecttype`, `provider_displayname`, `provider_link`, `inreplyto_link`, `twitter_entities`, `object_objecttype`, `object_id`, `object_summary`, `object_postedtime`, `object_link`, `location_objecttype`, `location_displayname`, `location_link`, `location_geo`, `location_streetaddress` and `location_name`.
-
-### Analyzing and Querying Twitter Data
-
-Once your tweets dataset is connected, the following insights may help you analyze your Twitter data. The CartodDB Editor *SQL* query panel enables you to search for queries on a dataset. The SQL query panel is available from the sidebar of the Data View when a dataset is selected, as is associated with the [SQL API](http://docs.cartodb.com/cartodb-platform/sql-api.html) CartoDB platform.  
-
-The following image is an example of the SQL query panel from a Twitter dataset.
-<p class="wrap-border"><img src="/img/layout/cartodb-editor/twitter_sqlquerypanel.png" alt="Query Twitter Data" /></p>
-
-Simple Query Examples:
-
-"Which tweets have been written by a famous (verified) person?". Apply an SQL query to the `actor_verified` column. This process is similar to generating the following query:
-
-{% highlight sql %}
-SELECT * FROM dataset_twitter WHERE actor_verified is true
-{% endhighlight %}
-
-"Which tweets have generated the largest number of retweets?"
-
-{% highlight sql %}
-SELECT * FROM dataset_twitter ORDER BY retweetcount DESC
-{% endhighlight %}
-
-Creating a simple category map gives you a better analysis about your Twitter data. You can use the column `twitter_lang` to compare tweet languages with their locations, or you can use the `postedtime` column to perform a dynamic Torque map.
-
-<p class="wrap-border"><img src="/img/layout/cartodb-editor/twitter_2.png" alt="Retweets map" /></p>
-
-More Advanced Query Examples:
-
-Imagine you have two categories, one is "Vector", the second is "Raster". What if you want to know which tweets are saying "Vector yes", or "Vector no"? Apply the following SQL query:
-
-{% highlight sql %}
-SELECT * FROM dataset_twitter WHERE body ilike ‘%yes%’ AND category_name = 1
-{% endhighlight %}
-
-Or, correspondingly, for “Vector no”:
-
-{% highlight sql %}
-SELECT * FROM dataset_twitter WHERE body ilike ‘%no%’ AND category_name = 1
-{% endhighlight %}
-
-Suppose you want to create two new categories in your dataset based on the obtained results. One will be for those results that say "Vector yes", the other one will be for “Vector no”. Just apply the previous queries, but this time, include some some updates in the dataset.
-
-The following query searches all the tweets which include "Vector yes" and update the category to be '3'.
-
-{% highlight sql %}
-UPDATE dataset_twitter SET category_name = 3 where body ilike ‘%yes%’ AND category_name = 1
-{% endhighlight %}
-
-In the same way, build category number 4 to “Vector no”:
-
-{% highlight sql %}
-UPDATE dataset_twitter SET category_name = 4 where body ilike ‘%no%’ AND category_name = 1
-{% endhighlight %}
-
-If the results are not so obvious, you can add a new constraint and create a new category which searches "yes" and "no" in the same tweet, as shown with the query below:
-
-{% highlight sql %}
-UPDATE dataset_twitter SET category_name = 5 where body ilike ‘%no%’ AND body ilike ‘%yes%’ AND category_name = 1
-{% endhighlight %}
-
-Following this approach with the "Raster" option, running a query creates several categories that enables you to analyze if a tweet is supporting a specific topic or search term. If you need more advanced queries beyond these examples, CartoDB supports advanced PostgreSQL capabilities so that you can insert more advanced queries on the text of tweets.
-
-***Tip:** It is suggested to create a duplicate copy of your dataset prior to modifying it with UPDATE, INSERT or DELETE SQL query statements, in order to avoid overwriting your original data.*
-
-### Tips and Tricks for Using Twitter Data
-Note the following tips an tricks when using twitter data for your maps.
-
-####Twitter Categories and Search Terms
-* You can enter OR as an alternative to using the comma. For example, "santa, xmas" is the same as "santa OR xmas"
-* Spaces before and after commas are removed
-* Enter commas between multi-sentence words as a best practice. For example, if you enter a multi-word search term, such as "cars, bikes motorbikes, planes", the category is parsed as three search terms.  Not "cars, bikes, motorbikes, planes"
-* Use Singular and plural search terms. For example, "car" does not match tweets with the plural of "cars". Add both the singular and plural forms of the word to match both search results
-* Search terms are not case-sensitive. For example, "Cars" is the same as "cars" and "CARS"
-* The maximum number of search terms per category is 29
-* You can search by hashtags or account names. For example, "gis, @cartodb, #mapping"
-
-####Twitter Credits
-* Ensure that you select the right time frame that suits your needs. You can save on Twitter credits by not importing extra data
-* Enterprise multi-accounts share the same organization-wide pool of Twitter credits
-* If you run out of credits, the the search stops and returns all the tweets that the system was able to retrieve up until the credits were used
-
-####Retrieving Twitter Data
-* Once the search starts you cannot stop the import. Be mindful to avoid broad search terms. For example, "love" may retrieve hundreds of thousands, or even millions, of geolocalized tweets
