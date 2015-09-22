@@ -888,8 +888,6 @@ Composite operation | Change how the colors of overlapping geometries interact w
 | ADD LINK WHEN BRANCH IS MERGED
 Label text | Select the field that you would like to act as a label (if any).
 
-**Note**: Conditional formatting is not supported for Simple maps.
-
 #### Cluster
 Displays point files in a group of numbered circles, rendering a cluster of points in close proximity of a given area.
 
