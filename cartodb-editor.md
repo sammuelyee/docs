@@ -844,8 +844,7 @@ The CartoDB map wizard is an interface that enables you to quickly style your da
 
 	Map Type | Wizard Options
 	------------ | -------------
-	Simple | Displays data as simple marker or polygon points. You can set the point size, point opacity, select a marker image or polygon pattern, select the marker/polygon color, add label text, and select the composite operation effect. This map type is recommended for beginners. For details about all Simple styling options available from the wizard, see [Simple](#simple).
-	| **Note:** Conditional formatting is not supported for Simple maps. 
+	Simple | {% include descrip_simple_.html %}. For details about all Simple styling options available from the wizard, see [Simple](#simple).
 	Cluster | Displays point files in a group of numbered circles, rendering a cluster of points in close proximity of a given area. For details about all Cluster styling options available from the wizard, see [Cluster](#cluster).
 	Choropleth | A thematic map, with regions of different colors, applied in proportion to the data. This is based on a secondary numeric value from a column in your dataset. For details about all Choropleth styling options available from the wizard, see [Choropleth](#choropleth).
 	|  **Tip:** Choropleth is often used with polygon data to compare characteristics of regions and areas, such as income levels by neighborhood.
@@ -866,7 +865,7 @@ The CartoDB map wizard is an interface that enables you to quickly style your da
 When you select options from the wizard, the selected styling is automatically applied to your map. 
 
 ##### Simple
-Displays data as simple marker or polygon points. You can set the point size, point opacity, select a marker image or polygon pattern, select the marker/polygon color, add label text, and select the composite operation effect. This map type is recommended for beginners. The following style options are available for Simple maps.
+ {% include descrip_simple_.html %}. The following style options are available for Simple maps.
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/simple.png' | prepend: site.baseurl }}" alt="Simple Wizard" /></p>
 
