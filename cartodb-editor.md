@@ -1599,125 +1599,199 @@ CartoCSS styling is generally simple, making typos or forgetting quotations are 
 
 ## Your Account
 
-### API Key
+Your CartoDB account options contain all of the information necessary for managing your account. You can view and edit your profile information, view the details of your account plan and connect to external data sources, request an API key to protect your data, generate tokens for consumer authentication of your map resources, and view the details of your billing invoices and data usage.
 
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/apikey.png' | prepend: site.baseurl }}" alt="API" /></p>
+### How to Access your Account Options
+You can access your account options from your dashboard, or from your public profile page, in CartoDB.
 
-The API key offers the simplest way to access private data or perform writes and updates to your public data. Remember that your API key protects access to your data, so keep it confidential and only share it if you want others to have this access. If necessary, you can reset your API key in your admin dashboard.
+- From your dashboard, select *Your account* (or *Your API keys*) from your avatar drop-down menu
 
-#### Find your API key
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/access_account_options.png' | prepend: 	site.baseurl }}" alt="Access account options from dashboard" /></p>
 
-1. Go to your dashboard.
-2. Click on your avatar in the top right corner, and select "Your API keys."
-3. Here, you can copy your API key, see use examples, and reset your API key.
+- Optionally, if you are on your public profile page, select *Account settings* (or *Your API keys*) from your avatar drop-down menu
+
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/account_access_from_public_profile.png' | prepend: 	site.baseurl }}" alt="Access account options from public profile" /></p>
+	
+	The page refreshes, displaying the account options to the left and your data usage on top.  
+
+- Click the different options to refresh the view and display the related account settings 
+
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/account_options.png' | prepend: 	site.baseurl }}" alt="Acount options" /></p>
+
+Each of the available account options are described below.
 
 ### Profile
 
-Edit your public profile settings incuding your name, website, description, avatar, and Twitter handle. To navigate to this window in your dashboard, click on your avatar in the top right corner, select "Account settings" from the menu options and within the second sub-menu on the left, select "Profile."
+[Access](#how-to-access-your-account-options) your profile information to edit your public profile settings. 
 
-### Account Settings
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/account_profile.png' | prepend: 	site.baseurl }}" alt="Acount profile options" /></p>
 
-Change your account preferences including username, email, and password. To navigate to this window in your dashboard, click on your avatar in the top right corner and select "Account settings."
+Profile options include the ability to:
 
-### OAuth Credentials
+- Change your avatar image
+- Edit your public profile name
+- Share any personal websites, your location, your Twitter Username, or your Disque Shortname
+- Indicate that you are available for hire, which automatically includes a link to your email on your public profile page
 
-OAuth is an authentication protocol that allows users to approve an application to act on their behalf without sharing their password. To navigate to this section in your dashboard, click on your avatar in the top right corner, select "Account Settings" and within the second sub-menu on the left, select "Your OAuth credentials."
+Click *SAVE CHANGES* after editing any of your profile settings.
 
-### Quotas and Billing
+### Account
 
-We offer a wide range of plans to fit every user's needs. Each plan comes with different features and storage quotas. Take a look at our [pricing plans]({{ '/pricing' | prepend: site.cartodb-baseurl }}) to pick the best plan for you.
+[Access](#how-to-access-your-account-options) your account settings to edit your account plan details. 
 
-Once you upgrade from a free plan to a paid plan, a monthly billing period will be set for your account. Each month, you will receive the corresponding invoice via email with the description of services that will be charged for that billing period.
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/account_settings.png' | prepend: 	site.baseurl }}" alt="Acount settings" /></p>
 
-If you upgrade from one paid plan to another, your new billing period will start the same day of the month that your old plan started. This means that your first invoice will be pro-rated, and you will only be charged for the days remaining in your billing period.
+Account options include the ability to:
 
-You may experience extra charges besides the monthly cost of your plan if you exceed the free quota for geocodings or mapviews, as defined in our Terms of Service.
+- Edit your account username, associated email address, change your password
+- View and edit your account type and billing plan
+	
+	**Note:** If you change your account plan, charges will be pro-rated.
+	
+	**Tip:** If you are using a free-trial, you can change or upgrade your account by viewing the details of your account (this redirects you to the [billing](#billing) options of your account). Once you create an account for evaluating a free-trial of CartoDB, you have fourteen days to experiment with different account types.
+- Connect (or disconnect) to external data sources
 
-### Free Trial and Upgrading
+	**Note:** The external data sources that appear are managed by CartoDB. Connect an external service to link it to your account. For details about how to connect to external data sources, see the [Connect Dataset](http://docs.cartodb.com/cartodb-editor.html#connect-dataset) procedure.
 
-All of our plans have a fourteen-day free trial, during which you may experiment with one of our plans to see if it's a good fit. Once you create an account, you may choose to change your plan from "Account Settings," accessed from your dashboard.
+Click SAVE CHANGES after editing any of your account settings.
 
-In the Account Settings window, you may view your current plan and click "Change your current plan" to choose a new one. Note that the charges will be pro-rated, so you may change your account type whenever you like.
+#### Delete your account
 
-### Deleting Your Account
+You can delete your account through the [account](#account) options page. [Contact us](mailto:sales@cartodb.com) if you have any questions before deleting your account.
 
-Navigate to Account Settings, and scroll to the bottom of the page where you will see a link to "Delete my account." If you have any questions or concerns (we enjoy compliments, too!), please reach out to our support team at <support@cartodb.com> before deleting your account.
+***Note:** Deleting your account permanently removes all of your maps and datasets, they cannot be recovered.* 
 
-## **CartoDB Enterprise**
+### API Key
+
+[Access](#how-to-access-your-account-options) your API key, which is uniquely generated for your account. When you use the [CartoDB Platform](cartodb-platform.html) to call your data, you can manage how your data is updated (write access), or protected, (read-only access).
+
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/apikey.png' | prepend: site.baseurl }}" alt="API" /></p>
+
+Your API key includes the ability to:
+
+- View, and copy, your API key
+
+	**Tip:**  Click the link icon, located inside the *Your API Key* field, to copy the API key to the clipboard. This is helpful if you need to paste your API key into a line of code of an API command.
+- Request a new API key
+
+	**Note:** When you click *Request a new API key*, a confirmation dialog appears. Click *REGENERATE API KEY* to continue. Note that you will have to update any of your deployed applications that call your API, to include the new API key.
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/regenerate_api.png' | prepend: site.baseurl }}" alt="Regenerate api" /></p>
+
+- View example syntax of how your API key can be formatted to include write access to portions of your data 
+- View example syntax of how your API key can be formatted to keep portions of your data read-only and private
+
+**Note:** Your API key is confidential and should not be shared. Anyone who has access to your API key can apply changes to how your data is accessed.
+
+### OAuth credentials
+
+[Access](#how-to-access-your-account-options) the QAuth credentials to generate [SQL API](cartodb-platform/sql-api.html) tokens for consumer authentication of your map resources. These keys allow users to access private datasets, write to public datasets, and edit data (through an API) without sharing passwords.
+
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/oauth_credentials.png' | prepend: site.baseurl }}" alt="OAuth credentials" /></p>
+
+Your OAuth credentials include the ability to:
+
+- View, and copy, a consumer key that authenticates them to access your API
+
+	**Tip:**  Click the link icon, located inside the *Consumer Key* field, to copy the key to the clipboard. This is helpful if you need to paste a Consumer key into a line of code of an SQL API command.
+- View, and copy, a consumer secret question to ensure authentication when they are calling your API
+- Request Token  URL, to authenticate a request to a URL
+- Access Token URL, to authenticate access to a URL
+- Generate new keys and tokens
+
+	**Note:** When you click *GENERATE NEW KEYS*, a confirmation dialog appears. Click *REGENERATE OAUTH CREDENTIALS* to continue. Note that you will have to update any of your deployed applications that call your API, to include the new OAuth credentials.
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/regenerate_oauth.png' | prepend: site.baseurl }}" alt="Regenerate OAuth" /></p>
+	
+**Tip:** Click the link icon, located inside any of the fields on this page, to copy the key/tokens to the clipboard. This is helpful if you need to paste these into a line of code of an SQL API command.
+
+For more details about this feature, see [OAuth](cartodb-platform/sql-api.html#oauth), located in the SQL API documentation.
+
+### Billing
+
+[Access](#how-to-access-your-account-options) the billing information for your account.  (There is also a shortcut to your billing plan directly from the [Account](#account) settings). You can change or upgrade your plan, view past invoices, and edit payment information.
+
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/account_billing.png' | prepend: site.baseurl }}" alt="Billing Plan" /></p>
+
+See our [Pricing Plans]({{ '/pricing' | prepend: site.cartodb-baseurl }}) for details about all of our plans. Each plan includes different features and storage quotas.
+
+- Click *CHANGE PLAN* to view and change the account type for your plan
+
+- View any invoices related to your account 
+
+- Click *Edit payment data* to edit payment or billing details for your account
+
+**Tip:** See the following general rules about changing or upgrading your account. For complete details, see our [Terms of Service](https://cartodb.com/terms#limits) or contact [Sales](mailto:sales@cartodb.com).
+
+- If you change or upgrade your account, charges are pro-rated. Your first invoice only displays charges for the days remaining in the billing period.
+
+- You may experience extra charges, besides the monthly cost of your plan, if you exceed the geocoding quota or map views allocated for your account type, as defined in our [Terms of Service](https://cartodb.com/terms#limits). Your data usage is displayed in every section of the account options.
+
+- A free trial enables you to evaluate CartoDB for 14 days. Once you upgrade from a free plan to a paid plan, a monthly billing period is set for your account. Each month, you will receive an email invoice with a description of services, and the charges for that billing period.
+
+## CartoDB Enterprise
 
 #### About Multiuser Enterprise
 
-CartoDB designed the Multiuser (MU) Enterprise to enhance the scale and scope of collaboration on our platform. The service provides multiuser environments that allow users to upload and manipulate datasets securely, and share them with specific team members or publish them directly on the web.
+CartoDB designed the Multiuser (MU) Enterprise to enhance the scale and scope of collaboration on our platform. This service provides multiuser environments, where users can upload and manipulate datasets securely, share them with specific team members, or publish them directly on the web.
 
-With CartoDB MU, no custom software installation is necessary to access high-performance GIS capabilities. Take advantage of this web-based feature to work alongside colleagues on projects in real-time from a central, 24/7 accessible database - the cloud! Here is an overview of the Multiuser features.
+With Enterprise accounts, no custom software installation is required. Your group can continue to access the web-based CartoDB Editor and work alongside colleagues. Since our database is managed on the cloud, you can access your projects from any location, in real time. The following multiuser (MU) features are available.
 
 #### Users, Owners, and Organizations
 
-CartoDB Enterprise works as a hub for many users or teams working together. An "organization" refers to the name of the group of collaborators that will be interacting on Enterprise. For instance, the name of your business or project team. A user is the individual that is part of a given organization.
+CartoDB Enterprise works as a hub for many users or teams working together. An "organization" refers to the name of the group of collaborators that are interacting, such as the business or project team. A user is the individual that is part of a given organization.
 
-If you have been using a normal CartoDB account and are starting to use CartoDB Enterprise with Multiuser, you will notice that you are using the same CartoDB Editor with some new options. These new options are what we'll cover in the following sections. For general documentation about the CartoDB Editor please refer to the [corresponding sections in docs.cartodb.com](http://docs.cartodb.com/cartodb-editor.html)
+If you have been using a standard CartoDB account and changed your plan to CartoDB Multiuser Enterprise, you will notice that the CartoDB Editor has some additional options. These options are specific to Enterprise plan users. For general documentation about the CartoDB Editor, please see the [CartoDB Editor documentation](http://docs.cartodb.com/cartodb-editor.html).
 
-An "Owner" of an organization has privileges to perform admin-related tasks of the organization (i.e. create users, assign quotas, etc.).
+**Note:** An Enterprise user with "owner" privileges has administrative access to manage the organization account. For example, they can create users and assign quotas for their organization.  See [Owners](#owners) for more details about how to manage the organization settings.
 
-### **Users**
+### Users
 
 #### Dashboard
 
-After login, the Enterprise mainpage allows you to quickly and easily navigate team activity. The dashboard is your homebase, a.k.a. the page where you are able to view and monitor your own activity maps and data, as well as access datasets and visualizations published or shared with you by team members.
+The organization dashboard enables you to navigate team activity. You can view and monitor your own maps and data, and access datasets and visualizations published or shared by you, or your team members.
 
 ####Your Maps
-On the left side of your browser you can search for maps by tag or name, view maps you have created, view maps that have been made public to the organization or shared with you for collaboration, or see maps you have liked from the community. The icons on the left allow you to order personal or shared maps by date, number of visits, number of likes, or create a new map from scratch. You can also access your own or shared datasets by selecting the drop down menu in the upper left.
+The maps dashboard enables you to search for maps by tag or name, view maps you have created, view maps that have been shared with you for collaboration, and view maps that you have liked from the community. You can change the sort order of your maps on your dashboard.
 
 <p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_00.png" alt="dash" /></p>
 
 ####Your Datasets
-Similar to your Maps dashboard, your Datasets dashboard allows you to easily search for datasets by name or tag, view your own and shared datasets, see datasets you have liked, and access our ever growing and free to use **Data Library**. You can also order your datasets by size, or add new datasets from your computer, the web, or from scratch.
+Similar to your maps dashboard, your datasets dashboard enables you to search for datasets by name or tag, view your own (and shared datasets), view datasets that you have liked from the community, and access public datasets from the [Data Library](#data-library). You can also [change the sort order of your datasets](http://localhost:9000/cartodb-editor.html#changing-the-sort-order-of-your-datasets).
 
 <p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_01.png" alt="data dash" /></p>
 
 #### Creating Datasets and Maps
 
-The workflow to create datasets and maps is the same as in the normal edition of the CartoDB Editor.
+For Enterprise account users, the workflow to create datasets and maps is identical to the standard [CartoDB Editor workflow](#cartodb-editor-overview).
 
 #### Enterprise Privacy Settings for Datasets and Maps
 
-All privacy options are available for enterprise account users by default. This enables you to select how you would like to protect each dataset and map created by your organization.  Your organization administrator controls the privacy options that are enabled.
+All privacy options are available for Enterprise account users by default. This enables you to select how you would like to protect each dataset and map created by your organization.  Your organization administrator controls the privacy options that are enabled.
 
 - For details about how to select privacy options for your dataset, see [(Dataset Privacy](#dataset-privacy))
 - For details about how to select privacy options for your map, see [(Map Privacy](#map-privacy))
 
 **Note:** Dataset privacy is stored separately from Map privacy. This enables you to protect each layer of data within a map, and also determine how you want to share the map.
 
-### **Owners**
+### Owners
 
-As the owner of an organization, you will be able to perform all admin-related tasks of a team account: manage users, assign quotas, customize the organization's Public Page, update account details, etc. When you login, you will see a normal CartoDB dashboard with a list of tables. You can access the admin area by clicking on the drop-down menu located in the upper-right corner and selecting "Your Organization".
+As the owner of an organization, you can perform all administrative tasks for your team account. You can manage users, assign quotas, customize the organization's public profile page, update account details, and so on.  These organization options are accessible from your avatar drop-down menu.
 
 <p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_09.png" alt="Using sync tables" /></p>
 
-#### Organization Administrator Area
+#### Organization Settings
 
-Once in the organization admin area you'll be able to change your **Organization Settings**, **Manage your seats**, and review or update **Your Plan**.
+Organization settings contain your organization profile information, the authentication settings for managing how users login to your Enterprise account, the list of users in your account, and the billing details for your organization.  *These options are only available to the Enterprise owner*.
 
 <p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_010.png" alt="admin" /></p>
 
-#### Manage Your Seats
+- Click *Organization profile* to manage everything related to your organization's public profile. For example, you can add and organization logo, set the organization website, provide the internal support email address for your users, and set the default user quota
 
-A seat is an available slot for a user. You'll be able to give access to as many users and seats that you have in your contract. You may expand the number of seats at any time by contacting our Customer Support.
+- Click *Auth settings* to set authentication settings for your organization's email domain and manage how users login to the Enterprise account
 
-#### Adding a User
+- Click *#/# users* to view and manage the users in your organization. You can create new users and add them to your organization
 
-Once your organization's multiple user account has been created, you have the option to add new team members. From your organization dashboard, you can click in the **Create new user** button at the bottom right of the **Manage Your Seats** page. From here, fill in the user's information, which includes a name for log-in, an email address to associate with the account, and a password. You can also assign and update a user's data quota here and select whether to allow geo-referencing capability.
+	**Note:** The number of seats available is the allowed number of users for your organization. This number is based on your Enterprise account details. 
+	
+- Click *Billing* to view your organization's payment or billing details for your Enterprise account
 
-At any time, you may change the storage availability for your team members by upgrading your plan. The activity of your team members is accessible via clicking on their respective profile pages.
-
-<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_011.png" alt="adding user" /></p>
-
-#### Organization Settings
-
-In this section, you can customize how your Public Page will look by choosing your website URL, a company logo, a description, and your Twitter username.
-
-<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_012.png" alt="Org settings" /></p>
-
-#### Your Plan
-
-On the "Your Plan" page, you can see information about your company, users, data storage, and resources. You can also contact us with questions or changes to your account.
+This concludes the Enterprise account options.
