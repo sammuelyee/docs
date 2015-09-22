@@ -1727,7 +1727,7 @@ See our [Pricing Plans]({{ '/pricing' | prepend: site.cartodb-baseurl }}) for de
 
 - A free trial enables you to evaluate CartoDB for 14 days. Once you upgrade from a free plan to a paid plan, a monthly billing period is set for your account. Each month, you will receive an email invoice with a description of services, and the charges for that billing period.
 
-## **CartoDB Enterprise**
+## CartoDB Enterprise
 
 #### About Multiuser Enterprise
 
@@ -1737,13 +1737,13 @@ With Enterprise accounts, no custom software installation is required. Your grou
 
 #### Users, Owners, and Organizations
 
-CartoDB Enterprise works as a hub for many users or teams working together. An "organization" refers to the name of the group of collaborators that will be interacting on Enterprise. For instance, the name of your business or project team. A user is the individual that is part of a given organization.
+CartoDB Enterprise works as a hub for many users or teams working together. An "organization" refers to the name of the group of collaborators that are interacting, such as the business or project team. A user is the individual that is part of a given organization.
 
 If you have been using a standard CartoDB account and changed your plan to CartoDB Multiuser Enterprise, you will notice that the CartoDB Editor has some additional options. These options are specific to Enterprise plan users. For general documentation about the CartoDB Editor, please see the [CartoDB Editor documentation](http://docs.cartodb.com/cartodb-editor.html).
 
-**Note:** An "Owner" of an organization has administrative privileges to manage the organization, such as create users, assign quotas, and so on.
+**Note:** An Enterprise user with "owner" privileges has administrative access to manage the organization account. For example, they can create users and assign quotas for their organization.  See [Owners](#owners) for more details about how to manage the organization settings.
 
-### **Users**
+### Users
 
 #### Dashboard
 
@@ -1772,41 +1772,26 @@ All privacy options are available for Enterprise account users by default. This 
 
 **Note:** Dataset privacy is stored separately from Map privacy. This enables you to protect each layer of data within a map, and also determine how you want to share the map.
 
-### **Owners**
+### Owners
 
-As the owner of an organization, you can perform all administrative tasks for your team account. For example, you can manage users, assign quotas, customize the organization's public profile page, update account details, and so on.  These organization settings are accessible from your avatar drop-down menu.
+As the owner of an organization, you can perform all administrative tasks for your team account. You can manage users, assign quotas, customize the organization's public profile page, update account details, and so on.  These organization options are accessible from your avatar drop-down menu.
 
 <p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_09.png" alt="Using sync tables" /></p>
 
 #### Organization Settings
 
-Once in the organization admin area you'll be able to change your **Organization Settings**, **Manage your seats**, and review or update **Your Plan**.
+Organization settings contain your organization profile information, the authentication settings for managing how users login to your Enterprise account, the list of users in your account, and the billing details for your organization.  *These options are only available to the Enterprise owner*.
 
 <p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_010.png" alt="admin" /></p>
 
-##### Organization profile
-##### Auth settings
-#### 1/5 users
-##### Billing
+- Click *Organization profile* to manage everything related to your organization's public profile. For example, you can add and organization logo, set the organization website, provide the internal support email address for your users, and set the default user quota
 
-#### Manage Your Seats
+- Click *Auth settings* to set authentication settings for your organization's email domain and manage how users login to the Enterprise account
 
-A seat is an available slot for a user. You'll be able to give access to as many users and seats that you have in your contract. You may expand the number of seats at any time by contacting our Customer Support.
+- Click *#/# users* to view and manage the users in your organization. You can create new users and add them to your organization
 
-#### Adding a User
+	**Note:** The number of seats available is the allowed number of users for your organization. This number is based on your Enterprise account details. 
+	
+- Click *Billing* to view your organization's payment or billing details for your Enterprise account
 
-Once your organization's multiple user account has been created, you have the option to add new team members. From your organization dashboard, you can click in the **Create new user** button at the bottom right of the **Manage Your Seats** page. From here, fill in the user's information, which includes a name for log-in, an email address to associate with the account, and a password. You can also assign and update a user's data quota here and select whether to allow geo-referencing capability.
-
-At any time, you may change the storage availability for your team members by upgrading your plan. The activity of your team members is accessible via clicking on their respective profile pages.
-
-<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_011.png" alt="adding user" /></p>
-
-#### Organization Settings
-
-In this section, you can customize how your Public Page will look by choosing your website URL, a company logo, a description, and your Twitter username.
-
-<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_012.png" alt="Org settings" /></p>
-
-#### Your Plan
-
-On the "Your Plan" page, you can see information about your company, users, data storage, and resources. You can also contact us with questions or changes to your account.
+This concludes the Enterprise account options.
