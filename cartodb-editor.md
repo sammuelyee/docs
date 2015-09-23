@@ -9,14 +9,14 @@ redirect_from:
 
 ## CartoDB Editor Overview
 
-The CartoDB Editor is a dashboard that contains *your datasets* and *your maps*. The following workflow highlights how you can create a map from your dashboard in 30 seconds.
+The CartoDB Editor is a dashboard that contains your datasets and your maps. The following workflow highlights how you can create a map from your dashboard in 30 seconds.
 
 Workflow | Details
 ------------ | -------------
-Create a new dataset | You can connect a dataset using any of the [(supported file formats](#supported-file-formats)), or create an [empty dataset](#create-an-empty-dataset). 
+Create a new dataset | You can upload your dataset using any of the [supported file formats](#supported-file-formats), connect to a public dataset from the [Data Library](#data-library), or create an [empty dataset](#create-an-empty-dataset). 
 | For details, see [Connect Dataset](#connect-dataset).
 Visualize your data and create a map | The CartoDB Editor contains many features that guide you through the process of creating a map and selecting how your data appears. You can also customize the style of your map.
-| For details about some of the CartoDB Editor features, see [Data Visualization](#data-visualization) [Edit Maps](#edit-map-options), [Map Wizards](#map-wizards), and [Managing Your Data](#managing-your-data).
+| For details about some of the CartoDB Editor features, see [Data Visualization](#data-visualization), [Edit Maps](#edit-map-options), [Wizards](#wizards), and [Managing Your Data](#managing-your-data).
 Publish and share your map | Once you visualize and publish a map, you can get a link to share the map, embed it to a website or blog, or add your map to another application.
 | For details, see [Publish and Share Your Map](#publish-and-share-your-map)
 
@@ -700,13 +700,11 @@ The following procedure describes how to edit metadata for a map.
 **Tip:** You can add a description, add tags, or edit the map privacy setting directly from your maps dashboard. Once an initial map description and map tag is entered using this shortcut, you must click *Edit metadata* from the selected map if you need to update these attributes again.
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/editmapmetadata_dashboard.png' | prepend: site.baseurl }}" alt="Edit Map Metadata from Dashboard" /></p>
 
-###Toolbars
+###Map Toolbar
 
-The toolbar is located at the top of the map editor, directly beneath your visualization name and metadata visualization option.
+The map toolbar includes options to add map elements (such as title, text, annotation, and image items), preview the map to configure it for desktop or mobile applications, and export a static image of your map. This toolbar appears above your map, from the Map View of a selected map.
 
 <p class="wrap-border"><img src="/img/layout/cartodb-editor/toolbar.png" alt="The toolbar" /></p>
-
-From this toolbar, you can accomplish a variety of visualization tasks such as add title, text, image overlays, configure your default views in the browser and for portable devices, and export static images of your map.
 
 #### Add Element
 
@@ -814,258 +812,220 @@ When you create a map and link a dataset to it, all of the data in that dataset 
 
 In the SQL window, you are shown which query is being applied to your data and given the ability to modify it. Automatically, you will see the query that has been produced from the applied filter (Sidenote: this is also a fun way to learn SQL! We also have an SQL course in our [Map Academy](http://academy.cartodb.com/courses/04-sql-postgis.html)).
 
-#### Map Wizards
+#### Wizards
 
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/wizards.png' | prepend: site.baseurl }}" alt="Wizards" /></p>
+The CartoDB map wizard is an interface that enables you to quickly style your data layers. The *wizards* option is accessible from the CartoDB sidebar of the Map View. This section describes how to access the map wizard and includes details of the available styling options, based on your data. 
 
-CartoDB's Wizards give you magic powers to style your data layers. Various map styles provide different ways of presenting your data:
+**Note:** The wizards options vary, depending on the type of dataset that is connected to your map. 
 
-- **Simple**  
-The Simple map is exactly what it sounds like. You may add labels, adjust the size and color of your points, and change the appearance of your polygons, but there's no conditional formatting. We recommend this level for those beginning to explore their data.
+1. Click *Your maps* from your dashboard drop-down menu  
 
-- **Cluster**  
-The Cluster map works with point files to display "clusters" of points that are close in proximity. It works by rendering a numbered circle that represents how many points are in a given area.
+    <p class="wrap-border"><img src="{{ '/img/layout/common/dashboard_yourmaps.png' | prepend: site.baseurl }}" alt="Select Your Maps from Dashboard" /></p>
 
-- **Choropleth**  
-This map changes the color of each feature based on a secondary numeric value from a column in your dataset. It is often used with polygon data to compare characteristics of regions and areas, such as income levels by neighborhood.
+	The page refreshes, displaying a list of your maps.
 
-- **Category**  
-Category maps display your points and polygons in different colors based on a qualitative characteristic in your dataset. For example, if your data shows multiple kinds of a certain characteristic (*i.e.* land-use zones), you would use the Category wizard to change the color of each characteristic (*i.e.* blue for residential, red for commercial, and purple for mixed-use districts).
+2. Select the name of the map to view, or click the Edit icon on a map
 
-- **Bubble**  
-The Bubble map scales the radius of points in your data based on a numeric value from a column in your dataset. This is useful for comparing numeric values associated with a certain point, like population sizes of cities. Remember that this tool is not designed to work with polygons.
+    <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/selectmap.png' | prepend: site.baseurl }}" alt="Select Map" /></p>
 
-- **Intensity**  
-The Intensity map measures the density of your points by darkening areas with many points in contrast to those with fewer points. This is useful when you have a dataset with a large number of points and want to stratify their occurrence. With the addition of the infowindow function, this tool can be understood as a more dynamic heatmap.
+	The page refreshes, displaying the Map View for the selected map.
 
-- **Density**  
-The Density map aggregates your data in hexagons and colors them based on the amount of data contained within each unit. Areas with more data points will be darker than those with fewer points. However, use of a Density map disables infowindows. If those are important to you, then opt for the Intensity map.
+3. Click *wizards* from the CartoDB sidebar  
 
-- **Torque**  
-Torque is ideal for the display of temporal data. This tool animates a progression of points based on a data column containing the time stamp. The standard format of the date column is `YYYY-DD-MMThh:mm:ss`, but Torque also visualizes data that contains a year, year/month, or year/month/day characteristics.
+	The sidebar expands, displaying a list of style options based on your data.
+	
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/wizards.png' | prepend: site.baseurl }}" alt="Wizards" /></p>	
+	
+4. Click a map type from the ribbon options to view the applicable styling options
+		
+	**Note:**  The wizards options vary, depending on the type of dataset that is connected to your map. Selecting a map type displays the applicable styling options in the wizard. 
+	
+	The following map types are available, depending on your data.
 
-- **Torque Heat**  
-Torque Heat is a variation of Torque to create interactive heatmaps or animated heatmaps when you have temporal data. Areas of greater color intensity indicate greater density of data.
+	Map Type | Wizard Options
+	------------ | -------------
+	Simple | {% include descrip_simple.html %} For details about all Simple styling options available from the wizard, see [Simple](#simple).|
+	Cluster | {% include descrip_cluster.html %} For details about all Cluster styling options available from the wizard, see [Cluster](#cluster).
+	Choropleth | {% include descrip_choropleth.html %} For details about all Choropleth styling options available from the wizard, see [Choropleth](#choropleth).
+	Category | {% include descrip_category.html %}  For details about all Category styling options available from the wizard, see [Category](#category).
+	Bubble | {% include descrip_bubble.html %} For details about all Bubble styling options available from the wizard, see [Bubble](#bubble).
+	Torque | {% include descrip_torque.html %} For details about all Torque styling options available from the wizard, see [Torque](#torque).
+	Heatmap | {% include descrip_heatmap.html %} For details about all Heatmap styling options available from the wizard, see [Heatmap](#heatmap).
+	Torque Cat | {% include descrip_torque_category.html %} For details about all Torque Category styling options available from the wizard, see [Torque Category](#torque-category).	
+	Intensity | {% include descrip_intensity.html %} For details about all Intensity styling options available from the wizard, see [Intensity](#intensity).
+	Density | {% include descrip_density.html %}  For details about all Density styling options available from the wizard, see [Density](#density).
 
-- **Torque Category**  
-In addition to Torque and Torque Heat, Torque Category displays data points in different colors based on qualitative characteristics in your dataset. If your data shows different characteristics (such as land-use zones), use this wizard to customize the color of each characteristic.
+5. When you choose options from the wizard, the selected styling is automatically applied to your map
 
-Beware that different types of data enable and disable certain wizards. Experiment with your data to discover the optimal tools for your map.
-
-#### Simple
-Display data as simple marker points.
+##### Simple
+ {% include descrip_simple.html %} The following style options are available for Simple maps.
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/simple.png' | prepend: site.baseurl }}" alt="Simple Wizard" /></p>
 
-- **Marker Fill**  
-This tool adjusts three point properties: the size of the marker (a numeric value between 0-40), the color of the marker (using Hex codes or by selecting from the color palette), and the opacity of your point (a value between 0-1).
+**Note:** Depending on your data, options appear as marker or polygon.
 
-- **Marker Stroke**  
-The Marker Stroke allows you to edit the width of your points' border or outline (a value between 0-40), their color (using Hex codes or by selecting from the color palettex), and their opacity (a value between 0-1).
+Simple Wizard Options | Description
+------------ | -------------
+Marker Fill | Contains all fill options for the point (point size, point image/pattern, point color, and point opacity). 
+| {% include descrip_marker_size.html %}
+| {% include descrip_select_img.html %} 
+| {% include descrip_select_color.html %} 
+| {% include descrip_opacity.html %} 
+Marker Stroke |  {% include descrip_marker_stroke.html %} 
+| **Note:** This option appears as *Polygon Stroke* when polygon data is detected by the map wizard.
+Composite operation | {% include descrip_comp_op.html %}
+Label Text | {% include descrip_label_text.html %} 
+| Label Offset - Change how far the label text sits from the marker. Positive values display the label below the marker, negative values display the label above the marker. If set to `0`, the marker appears directly under the corresponding label.
+| Label Overlap - Shows or hides overlapping labels. `false`, does not allow labels to overlap. Overlapping labels are hidden.
+| Label Placement - Places labels on top of points, along multiple line places, on the vertexes of points, or in the interior inside a point.
 
-- **Composite Operation**  
-Change how the colors of overlapping geometries will interact with one another. You can select from: multiply, screen, overlay, darken, lighten, color-dodge and color-burn. Each of these operations has a different effect on how the overlapping sections of markers are displayed. Refer to [Composite Operations](http://docs.cartodb.com/cartodb-editor.html#composite-operations) for a deeper overview on how blend modes work. You can explore the options available [here](https://www.mapbox.com/tilemill/docs/guides/comp-op/).
+**Note:** Conditional formatting is not supported for Simple maps.
 
-- **Label Text**  
-Select the field that you would like to act as a label (if any).
-
-- **Label Font**  
-Change your label's font.
-
-- **Label Halo**  
-Change the color and width of the outline around your text. This can be helpful for increasing readability.
-
-- **Label Offset**  
-Change how far the label sits from its marker. If set to "0," markers will appear directly under their corresponding label. A negative value will bring the label above the marker, and a positive value will bring it below.
-
-- **Label Overlap**  
-When set to "true", labels may overlap one another. When set to "false", not all labels will show to prevent overlap.
-
-- **Label Placement**  
-  - _Point_ The label aligns to the center of the feature.
-  - _Interior_ Like Point aligns to the center of the feature and ensures that the label remains in place even if the center of the feature is outside of the geometry.
-  - _Vertex_ will label the vertex along a line or polygon; this will repeat the label.
-  - _Line_ will align the label to a line or to the border of a polygon; this will repeat the label.
-
-#### Cluster
-Group data into clusters.
+##### Cluster
+{% include descrip_cluster.html %} 
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/cluster.png' | prepend: site.baseurl }}" alt="Cluster Wizard" /></p>
 
-- **Buckets**  
-Define how many groupings your data will have. Fewer buckets means that data shows at less granular levels.
+Cluster Wizard Options | Description
+------------ | -------------
+Buckets | {% include descrip_buckets.html %} 
+Marker Fill | Contains the fill options for the point (point color and point opacity). 
+| {% include descrip_marker_fill_color.html %} 
+| {% include descrip_opacity.html %} 
+Marker Stroke | {% include descrip_marker_stroke.html %} 
+Marker size | The size of your markers, in pixels.
+Label Font | Select the label font and color. 
+Label Halo | {% include descrip_label_halo.html %} 
 
-- **Label Font**  
-Change your label's font.
-
-- **Label Halo**  
-Change the color and width of the outline around your text. This can be helpful for increasing readability.
-
-Refer to [CartoCSS documentation](http://docs.cartodb.com/cartodb-editor.html#cartocss) for an explanation of marker fill, marker size, and marker stroke.
-
-#### Choropleth
-Thematic map with regions in different colors in proportion to the data.
-
+##### Choropleth
+{% include descrip_choropleth.html %}
+ 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/choro.png' | prepend: site.baseurl }}" alt="Choropleth Wizard" /></p>
 
-- **Column**  
-Select the numeric value column(s) that you want to display.
+**Note:** Depending on your data, options appear as marker or polygon.
 
-- **Buckets**  
-Define how many groupings your data will have. Fewer buckets means that data shows at less granular levels.
+Choropleth Wizard Options | Description
+------------ | -------------
+Column | {% include descrip_column.html %} 
+Buckets | {% include descrip_buckets.html %}
+Quantification | {% include descrip_quantification.html %}
+Color Ramp | {% include descrip_color_ramp.html %}
+Marker Width | The width of the marker.
+Marker Stroke | {% include descrip_marker_stroke.html %} 
+| **Note:** This option appears as *Polygon Stroke* when polygon data is detected by the map wizard.
+Composite operation | {% include descrip_comp_op.html %}
+Label Text | {% include descrip_label_text.html %} 
+| Label Offset - Change how far the label text sits from the marker. Positive values display the label below the marker, negative values display the label above the marker. If set to `0`, the marker appears directly under the corresponding label.
+| Label Overlap - Shows or hides overlapping labels. `false`, does not allow labels to overlap. Overlapping labels are hidden.
+| Label Placement - Places labels on top of points, along multiple line places, on the vertexes of points, or in the interior inside a point.
 
-- **Quantification**  
-Choose the way that data is divided into buckets. You can select from: Jenks, Equal Interval, Heads/Tails, and Quantile. Read more [here](http://blog.cartographica.com/blog/2010/8/16/gis-data-classifications-in-cartographica.html), or take a look at the descriptions below.
-
-  - **Jenks** method aims to increase the standard deviation between each group of data while decreasing the standard deviation within each group. In other words, it increases the similarity within a given group in conjunction with the differences from each of the other groups. The Jenks method does this by shuffling data across each group until it detects an optimization.
-  - **Equal interval** calculates the range of your data and divides the total into equally-sized subranges for your desired number of groups.
-  - **Quantile** creates each group with an equal number of discrete units. The discrete units are gathered from the distinct possible values of your data.
-  - **Heads/Tails** breaks can be powerful for data with a long-tail distribution. The Heads/Tails method will create a break-point at the mean of your data, remove all data below the break-point, and create the next break-point from the data above the first break-point. It will repeat the process until either a single value is left above the break-point or if it reaches the desired number of breaks.
-
-- **Color Ramp**  
-Select the colors of your dataset. You can customize these using CartoCSS, which we will cover more in-depth, but take a quick look [here](https://www.mapbox.com/tilemill/docs/manual/carto/) in the meantime.
-
-- **Described under [Simple](http://docs.cartodb.com/cartodb-editor.html#simple)**  
-  - Composite Operation
-  - Label Text
-
-Refer to [CartoCSS documentation](http://docs.cartodb.com/cartodb-editor.html#cartocss) for an explanation of marker width, and marker stroke.
-
-#### Category
-Display data in different colors based on categories.
-
+##### Category
+ {% include descrip_category.html %}
+ 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/category.png' | prepend: site.baseurl }}" alt="Category Wizard" /></p>
 
-- **Map/Legend Items**  
-A list of the different categories that will appear on your map and in your legend can be found under Marker Stroke. Here, you can edit their color or add an image marker.
+**Note:** Depending on your data, options appear as marker or polygon.
 
-- **Column**  
-Select the numeric value column(s) that you want to display.
+Category Wizard Options | Description
+------------ | -------------
+Column | {% include descrip_column.html %}
+Marker Fill | Contains the fill options for the point size (a value between 0-40) and the point opacity (a value between 0-1).
+| **Note:** This option appears as *Polygon Fill* when polygon data is detected by the map wizard.
+Marker Stroke |  {% include descrip_marker_stroke.html %} 
+| **Note:** This option appears as *Polygon Stroke* when polygon data is detected by the map wizard.
+List of detected map/legend items |  {% include descrip_item_img_color.html %}
 
-Refer to [CartoCSS documentation](http://docs.cartodb.com/cartodb-editor.html#cartocss) for an explanation of marker fill, and marker stroke.
-
-#### Bubble
-Scale radius of markers based on numeric data in your dataset.
+##### Bubble
+{% include descrip_bubble.html %} 
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/bubble.png' | prepend: site.baseurl }}" alt="Bubble Wizard" /></p>
 
-- **Radius (min-max)**  
-Set the sizes of the smallest and largest markers, or bubbles, on your map.
+Bubble Wizard Options | Description
+------------ | -------------
+Column | {% include descrip_column.html %} 
+Quantification | {% include descrip_quantification.html %}
+Radius (min-max) | Set the sizes of the smallest and largest markers, or bubbles, on your map.
+Bubble fill | Set the color and opacity of bubble markers.
+Bubble stroke | Edit the width of your points’ border or outline (a value between 0-40), the color (using Hex codes or by selecting a color from the color palette), and the opacity (a value between 0-1).
+Composite operation | {% include descrip_comp_op.html %}
 
-- **Bubble Fill**  
-Set the color and opacity of bubble markers.
-
-- **Bubble Stroke**  
-Edits multiple values: the width of your bubble stroke, a.k.a. its border or outline (a value between 0-40); the color (using Hex codes or by selecting from the color palette), and the opacity (a value between 0-1).
-
-- **Composite Operation**  
-Change how the colors of overlapping geometries will interact with one another. You can select from: multiply, screen, overlay, darken, lighten, color-dodge and color-burn. Each of these operations has a different effect on how the overlapping sections of markers are displayed. Refer to [Composite Operations](http://docs.cartodb.com/cartodb-editor.html#composite-operations) for a deeper overview on how blend modes work. You can explore the options available [here](https://www.mapbox.com/tilemill/docs/guides/comp-op/).
-
-- **Described under [Choropleth](http://docs.cartodb.com/cartodb-editor.html#choropleth)**
-  - Column
-  - Quantification
-
-#### Intensity
-Show density of points much like a heatmap.
-
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/intensity.png' | prepend: site.baseurl }}" alt="Intensity Wizard" /></p>
-
-Refer to [CartoCSS documentation](http://docs.cartodb.com/cartodb-editor.html#cartocss) for an explanation of marker fill and marker stroke.
-
-#### Density
-Data is aggregated into hexagons colored based on intensity of data in each cell. Infowindows will be disabled.
-
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/density.png' | prepend: site.baseurl }}" alt="Density Wizard" /></p>
-
-- **Method**  
-Choose whether density is displayed using hexagonal or rectangular shapes.
-
-- **Polygon Stroke**  
-Edit multiple values: the width of your polygon stroke, a.k.a. its border or outline (a value between 0-40); the color (using Hex codes or by selecting from the color palette), and the opacity (a value between 0-1).
-
-- **Polygon Size**  
-  Adjust the size of the polygons on your map.
-
-- **Composite Operation**  
-Change how the colors of overlapping geometries will interact with one another. You can select from: multiply, screen, overlay, darken, lighten, color-dodge and color-burn. Each of these operations has a different effect on how the overlapping sections of markers are displayed. Refer to [Composite Operations](http://docs.cartodb.com/cartodb-editor.html#composite-operations) for a deeper overview on how blend modes work. You can explore the options available [here](https://www.mapbox.com/tilemill/docs/guides/comp-op/).
-
-- **Described under [Choropleth](http://docs.cartodb.com/cartodb-editor.html#choropleth)**
-  - Buckets
-  - Color Ramp
-
-#### Torque
-Data animation of a progression of points, requires time-series data.
+##### Torque
+{% include descrip_torque.html %}
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/torque1.png' | prepend: site.baseurl }}" alt="Torque Wizard" /></p>
 
-- **Cumulative**  
-Determines whether points stay on your map throughout the animation or fade away.
+Torque Wizard Options | Description
+------------ | -------------
+Cumulative | Determines whether points remain on your map throughout the animation, or fade away.
+Time Column | {% include descrip_time_column.html %}
+Marker type | {% include descrip_marker_type.html %}
+Marker Fill | Contains the fill options for the point size (a numeric value between 0-40), point color, and point opacity (a value between 0-1). 
+Marker Stroke | {% include descrip_marker_stroke.html %} 
+Duration (sec) | {% include descrip_duration.html %}
+Steps | {% include descrip_steps.html %}
+Blend Mode | {% include descrip_blend_mode.html %}
+Trails | {% include descrip_trails.html %}
+Resolution | {% include descrip_resolution.html %}
 
-- **Time Column**  
-Select the date column that you would like to display. The column must contain either date-type or numerical data (so long as it reflects the passage of time) to be used in the Torque map. Refer to the [Supported Data Types](http://docs.cartodb.com/cartodb-editor.html#supported-data-types) documentation on how to change the data type for columns. Refer to the [PostgreSQL documentation](http://www.postgresql.org/docs/9.2/static/datatype-datetime.html) for more information on the date and time data types supported by CartoDB.
-
-- **Marker Type**  
-Select whether you'd like to display points as rectangles or ellipses.
-
-- **Marker Fill**  
-Adjust three properties: the size of the marker (a numerical value between 0-40), the color (using Hex codes or by selecting from the color palette), and the opacity (a value between 0-1).
-
-- **Marker Stroke**  
-The marker stroke allows you to edit the width of your point, a.k.a. its border or outline (a value between 0-40), the color (using Hex codes or by selecting from the color palette), and the opacity (a value between 0-1).
-
-- **Duration (secs)**  
-Set the total length of your map visualization.
-
-- **Steps**  
-Edit the number of animation groupings. Fewer steps will create a more step-by-step or choppy data animation with more data in each "step." A greater number of steps will look smoother. This correlates to whether your data is being displayed by day, week, month, etc.
-
-- **Blend Mode**  
-Style effects for how layered data is blended during the animation. Blend modes use color composite operations. Available modes include lighter, multiply, source-over, and xor. Refer to [Composite Operations](http://docs.cartodb.com/cartodb-editor.html#composite-operations) for a deeper overview on how blend modes work. You can explore the options available [here](https://www.mapbox.com/tilemill/docs/guides/comp-op/).
-
-- **Trails**  
-Select whether data points display a "trail," or faded image after they disappear from your map. Choose a value between 0 and 5: 5 will display a longer, more-lasting trail and 0 will not show a trail.
-
-- **Resolution**  
-Torque creates a grid of your data and aggregates data to each cell of that grid. The resolution parameter determines the width and height of each cell. Larger numbers will make your data more gridded.
-
-Torque maps also have [Torque CartoCSS](http://docs.cartodb.com/cartodb-editor.html#cartocss) options to further customize the look of your map.
-
-#### Torque Heat
-A variation of Torque allowing for an animated heatmap of temporal data where areas of greater color intensity indicate greater density of data.
+##### Heatmap
+{% include descrip_heatmap.html %}
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/torqueheat.png' | prepend: site.baseurl }}" alt="Torque Heat Wizard" /></p>
 
-Much of the interface options for Torque Heat are the same for Torque and are explained in the [Torque documentation](http://docs.cartodb.com/cartodb-editor.html#torque).
+Heatmap Wizard Options | Description
+------------ | -------------
+Marker size | Choose the size of your markers.
+Opacity | Sets the opacity for the heatmap, a value between 0-1.
+Animated | Displays temporal data into a linear Torque animation.
+Resolution | {% include descrip_resolution.html %}
 
-Options that are unique to Torque Heat:
-
-- **Marker Size**  
-Choose the size of your markers.
-
-- **Threshold**  
-Set the transparency of the heatmap markers.
-
-- **Animated**  
-Activate this slider to turn your temporal data into a linear Torque animation.
-
-Torque maps also have [Torque CartoCSS](http://docs.cartodb.com/cartodb-editor.html#cartocss) options to further customize the look of your map.
-
-#### Torque Category
-A variation of Torque, which allows for an animation of points whose color relates to categories in your dataset
+##### Torque Category
+{% include descrip_torque_category.html %}
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/torquecategory.png' | prepend: site.baseurl }}" alt="Torque Category Wizard" /></p>
 
-Much of the interface options for Torque Category are the same for Torque and are explained in the Torque documentation.
+Torque Cat Wizard Options | Description
+------------ | -------------
+Time Column | {% include descrip_time_column.html %}
+| **Note**: If you select Torque Category as the map type, ensure your SQL query is not using `torque_category` as a column name, to prevent unexpected behaviors.
+Marker type | {% include descrip_marker_type.html %}
+Category Column | {% include descrip_column.html %}
+Marker Fill |  Contains the fill options for the point size (a numeric value between 0-40), point color, and point opacity (a value between 0-1). 
+Marker Stroke | {% include descrip_marker_stroke.html %} 
+Duration (sec)|  {% include descrip_duration.html %}
+Steps | {% include descrip_steps.html %}
+Blend Mode | {% include descrip_blend_mode.html %}
+Trails | {% include descrip_trails.html %}
+Resolution | {% include descrip_resolution.html %}
+List of detected map/legend items | {% include descrip_item_img_color.html %}
 
-Options that are unique to Torque Category:
+##### Intensity
+{% include descrip_intensity.html %}
 
-- **Category Column**  
-Choose data from your dataset you would like to appear as categories on your map and in your legend. You can edit their color or add an image marker underneath the Resolution menu option.
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/intensity.png' | prepend: site.baseurl }}" alt="Intensity Wizard" /></p>
 
-	**Note**: If you select Torque Category as the map type, ensure your SQL query is not using `torque_category` as a column name to prevent unexpected behaviors.
+Intensity Wizard Options | Description
+------------ | -------------
+Marker Fill | Contains the fill options for the point size (a numeric value between 0-40), point color, and point opacity (a value between 0-1). 
+Marker Stroke |  {% include descrip_marker_stroke.html %} 
 
-Torque maps also have [Torque CartoCSS](http://docs.cartodb.com/cartodb-editor.html#cartocss) options to further customize the look of your map.
+##### Density
+{% include descrip_density.html %}
 
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/density.png' | prepend: site.baseurl }}" alt="Density Wizard" /></p>
+
+**Tip:** When Density is selected as the map type, infowindow options are disabled. If you need to apply [infowindows](#infowindows) functionality, select *Intensity* as the map type instead.
+
+Density Wizard Options | Description
+------------ | -------------
+Method | Displays density with either the hexagon or rectangle shape.
+Buckets | {% include descrip_buckets.html %}
+Color ramp | {% include descrip_color_ramp.html %}
+Polygon Stroke | Edit the width of your points’ border or outline (a value between 0-40), the color (using Hex codes or by selecting a color from the color palette), and the opacity (a value between 0-1).
+| <img src="{{ '/img/layout/cartodb-editor/polygon_stroke_color.png' | prepend: site.baseurl }}" alt="Select polygon stroke color" />
+Polygon size |  Adjust the size of the polygons on your map.
+Composite operation | {% include descrip_comp_op.html %}
+  
 #### Infowindows
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/infowindows.png' | prepend: site.baseurl }}" alt="Infowindows" /></p>
@@ -1663,7 +1623,7 @@ You can delete your account through the [account](#account) options page. [Conta
 
 ### API Key
 
-[Access](#how-to-access-your-account-options) your API key, which is uniquely generated for your account. When you use the [CartoDB Platform](cartodb-platform.html) to call your data, you can manage how your data is updated (write access), or protected, (read-only access).
+[Access](#how-to-access-your-account-options) your API key, which is uniquely generated for your account. When you use the [CartoDB Platform](cartodb-platform.html) to request data, you can manage how your data is updated (write access), or protected, (read-only access).
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/apikey.png' | prepend: site.baseurl }}" alt="API" /></p>
 
