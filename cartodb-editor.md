@@ -16,7 +16,7 @@ Workflow | Details
 Create a new dataset | You can upload your dataset using any of the [supported file formats](#supported-file-formats), connect to a public dataset from the [Data Library](#data-library), or create an [empty dataset](#create-an-empty-dataset). 
 | For details, see [Connect Dataset](#connect-dataset).
 Visualize your data and create a map | The CartoDB Editor contains many features that guide you through the process of creating a map and selecting how your data appears. You can also customize the style of your map.
-| For details about some of the CartoDB Editor features, see [Data Visualization](#data-visualization), [Edit Maps](#edit-map-options), [Map Wizards](#wizards), and [Managing Your Data](#managing-your-data).
+| For details about some of the CartoDB Editor features, see [Data Visualization](#data-visualization), [Edit Maps](#edit-map-options), [Wizards](#wizards), and [Managing Your Data](#managing-your-data).
 Publish and share your map | Once you visualize and publish a map, you can get a link to share the map, embed it to a website or blog, or add your map to another application.
 | For details, see [Publish and Share Your Map](#publish-and-share-your-map)
 
@@ -832,13 +832,13 @@ The CartoDB map wizard is an interface that enables you to quickly style your da
 
 3. Click *wizards* from the CartoDB sidebar  
 
-	The panel expands, displaying a list of style options based on your data.
+	The sidebar expands, displaying a list of style options based on your data.
 	
 	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/wizards.png' | prepend: site.baseurl }}" alt="Wizards" /></p>	
 	
 4. Click a map type from the ribbon options to view the applicable styling options
 		
-	**Note:**  The wizards options vary, depending on the type of dataset that is connected to your map. Selecting a map type refreshes the interface and displays the applicable styling options. 
+	**Note:**  The wizards options vary, depending on the type of dataset that is connected to your map. Selecting a map type displays the applicable styling options in the wizard. 
 	
 	The following map types are available, depending on your data.
 
@@ -847,24 +847,18 @@ The CartoDB map wizard is an interface that enables you to quickly style your da
 	Simple | {% include descrip_simple.html %} For details about all Simple styling options available from the wizard, see [Simple](#simple).|
 	Cluster | {% include descrip_cluster.html %} For details about all Cluster styling options available from the wizard, see [Cluster](#cluster).
 	Choropleth | {% include descrip_choropleth.html %} For details about all Choropleth styling options available from the wizard, see [Choropleth](#choropleth).
-	Category | Displays points and polygons, in different colors, based on a qualitative characteristic in your dataset. For details about all Category styling options available from the wizard, see [Category](#category).
-	| **Tip:** If your data contains multiple characteristics (*i.e.* land-use zones), you can use the Category wizard options to change the color of each characteristic (*i.e.* blue for residential, red for commercial, and purple for mixed-use districts).
-	Bubble | Scales the radius of points, based on a numeric value from a column in your dataset. For details about all Bubble styling options available from the wizard, see [Bubble](#bubble).
-	|**Tip:** Bubble maps are useful for comparing numeric values associated with a certain point, such as the population sizes of cities.
-	| **Note:** Bubble maps are not supported with polygons.
-	Torque | Torque is ideal for the display of temporal data and animates a progression of points, based on a data column containing the time stamp. For details about all Torque styling options available from the wizard, see [Torque](#torque).
-	| **Note:** The standard format of the time stamp date column is `YYYY-DD-MMThh:mm:ss`. However, Torque maps can also visualize data that contains the year, year/month, or year/month/day format.
-	Heatmap | A variation of a Torque map, that creates interactive heatmaps (or animated heatmaps) for temporal data. Areas of greater color intensity indicate a larger density of data. For details about all Heatmap styling options available from the wizard, see [Heatmap](#heatmap).
-	Torque Cat | A variation of a Torque map, that displays data points in different colors based on qualitative characteristics (categories) in your dataset. Similar to the Category map, you can style different characteristics for the Torque Category map. For details about all Torque Category styling options available from the wizard, see [Torque Category](#torque-category).	
-	Intensity | Displays the density of points (similar to a heatmap), by darkening areas (of many points) in contrast to those with fewer points. For details about all Intensity styling options available from the wizard, see [Intensity](#intensity).
-	|**Tip:** Intensity maps are useful when you have a dataset with a large number of points and want to stratify their occurrence. You can also apply [infowindows](#infowindows) functionality to create a more dynamic style heatmap.
-	Density | Aggregates your data in hexagons, and colors them based on the amount of data contained within each unit. Areas with more data points are darker than those with fewer points.  For details about all Density styling options available from the wizard, see [Density](#density).
-	| **Tip:** When Density is selected as the map type, infowindow options are disabled. If you need to apply [infowindows](#infowindows) functionality, select *Intensity* as the map type instead.
+	Category | {% include descrip_category.html %}  For details about all Category styling options available from the wizard, see [Category](#category).
+	Bubble | {% include descrip_bubble.html %} For details about all Bubble styling options available from the wizard, see [Bubble](#bubble).
+	Torque | {% include descrip_torque.html %} For details about all Torque styling options available from the wizard, see [Torque](#torque).
+	Heatmap | {% include descrip_heatmap.html %} For details about all Heatmap styling options available from the wizard, see [Heatmap](#heatmap).
+	Torque Cat | {% include descrip_torque_category.html %} For details about all Torque Category styling options available from the wizard, see [Torque Category](#torque-category).	
+	Intensity | {% include descrip_intensity.html %} For details about all Intensity styling options available from the wizard, see [Intensity](#intensity).
+	Density | {% include descrip_density.html %}  For details about all Density styling options available from the wizard, see [Density](#density).
 
-When you select options from the wizard, the selected styling is automatically applied to your map. 
+5. When you choose options from the wizard, the selected styling is automatically applied to your map
 
 ##### Simple
- {% include descrip_simple.html %}. The following style options are available for Simple maps.
+ {% include descrip_simple.html %} The following style options are available for Simple maps.
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/simple.png' | prepend: site.baseurl }}" alt="Simple Wizard" /></p>
 
@@ -872,19 +866,18 @@ When you select options from the wizard, the selected styling is automatically a
 
 Simple Wizard Options | Description
 ------------ | -------------
-Marker Fill | Contains all fill options for the point (point size, point opacity, point image/pattern, and point color). 
-| size - The size of the marker in a numeric value between 0-40. (**Note:** The size option is not applicable for polygons).
-| opacity - A value between 0-1.
-| image / pattern - Select *IMG* to select a marker image or polygon pattern. You can also upload your own icons and patterns from these image options.
-| <img src="{{ '/img/layout/cartodb-editor/wizard_select_img.png' | prepend: site.baseurl }}" alt="Select img" />
-| <img src="{{ '/img/layout/cartodb-editor/select_marker_image.png' | prepend: site.baseurl }}" alt="Select marker image" />
-| color - Select a color for the point. Click the default color to open the color palette. You can select a new color, or type a color in the hex code input field (*i.e.* #FF5C00).
-| <img src="{{ '/img/layout/cartodb-editor/wizard_selectcolor.png' | prepend: site.baseurl }}" alt="Select point color from wizard" />
-Marker Stroke |  Edit the width of your points' border or outline (a value between 0-40), the color (using Hex codes or by selecting a color from the color palette), and the opacity (a value between 0-1).
-| <img src="{{ '/img/layout/cartodb-editor/wizard_strokecolor.png' | prepend: site.baseurl }}" alt="Select stroke color from wizard" />
+Marker Fill | Contains all fill options for the point (point size, point image/pattern, point color, and point opacity). 
+| {% include descrip_marker_size.html %}
+| {% include descrip_select_img.html %} 
+| {% include descrip_select_color.html %} 
+| {% include descrip_opacity.html %} 
+Marker Stroke |  {% include descrip_marker_stroke.html %} 
 | **Note:** This option appears as *Polygon Stroke* when polygon data is detected by the map wizard.
-Composite operation | Change how the colors of overlapping geometries interact with one another. You can select from multiply, screen, overlay, darken, lighten, color-dodge and color-burn. See CartoCSS Composite Operations for a description of composite operation effects.
-Label text | Select the field that you would like to act as a label (if any).
+Composite operation | {% include descrip_comp_op.html %}
+Label Text | {% include descrip_label_text.html %} 
+| Label Offset - Change how far the label text sits from the marker. Positive values display the label below the marker, negative values display the label above the marker. If set to `0`, the marker appears directly under the corresponding label.
+| Label Overlap - Shows or hides overlapping labels. `false`, does not allow labels to overlap. Overlapping labels are hidden.
+| Label Placement - Places labels on top of points, along multiple line places, on the vertexes of points, or in the interior inside a point.
 
 **Note:** Conditional formatting is not supported for Simple maps.
 
@@ -895,176 +888,144 @@ Label text | Select the field that you would like to act as a label (if any).
 
 Cluster Wizard Options | Description
 ------------ | -------------
-Buckets | Define how many groupings your data displays. Fewer buckets indicates that data displays at a less granular level.
-Marker Fill | 
-Marker Stroke | 
-Marker size |
-Label Font | Change your label's font.
-Label Halo | Change the color and width of the outline around your text. This is helpful for increasing readability.
+Buckets | {% include descrip_buckets.html %} 
+Marker Fill | Contains the fill options for the point (point color and point opacity). 
+| {% include descrip_marker_fill_color.html %} 
+| {% include descrip_opacity.html %} 
+Marker Stroke | {% include descrip_marker_stroke.html %} 
+Marker size | The size of your markers, in pixels.
+Label Font | Select the label font and color. 
+Label Halo | {% include descrip_label_halo.html %} 
 
-#### Choropleth
- {% include descrip_choropleth.html %}
+##### Choropleth
+{% include descrip_choropleth.html %}
  
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/choro.png' | prepend: site.baseurl }}" alt="Choropleth Wizard" /></p>
 
-- **Column**  
-Select the numeric value column(s) that you want to display.
+**Note:** Depending on your data, options appear as marker or polygon.
 
-- **Buckets**  
-Define how many groupings your data will have. Fewer buckets means that data shows at less granular levels.
+Choropleth Wizard Options | Description
+------------ | -------------
+Column | {% include descrip_column.html %} 
+Buckets | {% include descrip_buckets.html %}
+Quantification | {% include descrip_quantification.html %}
+Color Ramp | {% include descrip_color_ramp.html %}
+Marker Width | The width of the marker.
+Marker Stroke | {% include descrip_marker_stroke.html %} 
+| **Note:** This option appears as *Polygon Stroke* when polygon data is detected by the map wizard.
+Composite operation | {% include descrip_comp_op.html %}
+Label Text | {% include descrip_label_text.html %} 
+| Label Offset - Change how far the label text sits from the marker. Positive values display the label below the marker, negative values display the label above the marker. If set to `0`, the marker appears directly under the corresponding label.
+| Label Overlap - Shows or hides overlapping labels. `false`, does not allow labels to overlap. Overlapping labels are hidden.
+| Label Placement - Places labels on top of points, along multiple line places, on the vertexes of points, or in the interior inside a point.
 
-- **Quantification**  
-Choose the way that data is divided into buckets. You can select from: Jenks, Equal Interval, Heads/Tails, and Quantile. Read more [here](http://blog.cartographica.com/blog/2010/8/16/gis-data-classifications-in-cartographica.html), or take a look at the descriptions below.
-
-  - **Jenks** method aims to increase the standard deviation between each group of data while decreasing the standard deviation within each group. In other words, it increases the similarity within a given group in conjunction with the differences from each of the other groups. The Jenks method does this by shuffling data across each group until it detects an optimization.
-  - **Equal interval** calculates the range of your data and divides the total into equally-sized subranges for your desired number of groups.
-  - **Quantile** creates each group with an equal number of discrete units. The discrete units are gathered from the distinct possible values of your data.
-  - **Heads/Tails** breaks can be powerful for data with a long-tail distribution. The Heads/Tails method will create a break-point at the mean of your data, remove all data below the break-point, and create the next break-point from the data above the first break-point. It will repeat the process until either a single value is left above the break-point or if it reaches the desired number of breaks.
-
-- **Color Ramp**  
-Select the colors of your dataset. You can customize these using CartoCSS, which we will cover more in-depth, but take a quick look [here](https://www.mapbox.com/tilemill/docs/manual/carto/) in the meantime.
-
-- **Described under [Simple](http://docs.cartodb.com/cartodb-editor.html#simple)**  
-  - Composite Operation
-  - Label Text
-
-Refer to [CartoCSS documentation](http://docs.cartodb.com/cartodb-editor.html#cartocss) for an explanation of marker width, and marker stroke.
-
-#### Category
-Display data in different colors based on categories.
-
+##### Category
+ {% include descrip_category.html %}
+ 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/category.png' | prepend: site.baseurl }}" alt="Category Wizard" /></p>
 
-- **Map/Legend Items**  
-A list of the different categories that will appear on your map and in your legend can be found under Marker Stroke. Here, you can edit their color or add an image marker.
+**Note:** Depending on your data, options appear as marker or polygon.
 
-- **Column**  
-Select the numeric value column(s) that you want to display.
+Category Wizard Options | Description
+------------ | -------------
+Column | {% include descrip_column.html %}
+Marker Fill | Contains the fill options for the point size (a value between 0-40) and the point opacity (a value between 0-1).
+| **Note:** This option appears as *Polygon Fill* when polygon data is detected by the map wizard.
+Marker Stroke |  {% include descrip_marker_stroke.html %} 
+| **Note:** This option appears as *Polygon Stroke* when polygon data is detected by the map wizard.
+List of detected map/legend items |  {% include descrip_item_img_color.html %}
 
-Refer to [CartoCSS documentation](http://docs.cartodb.com/cartodb-editor.html#cartocss) for an explanation of marker fill, and marker stroke.
-
-#### Bubble
-Scale radius of markers based on numeric data in your dataset.
+##### Bubble
+{% include descrip_bubble.html %} 
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/bubble.png' | prepend: site.baseurl }}" alt="Bubble Wizard" /></p>
 
-- **Radius (min-max)**  
-Set the sizes of the smallest and largest markers, or bubbles, on your map.
+Bubble Wizard Options | Description
+------------ | -------------
+Column | {% include descrip_column.html %} 
+Quantification | {% include descrip_quantification.html %}
+Radius (min-max) | Set the sizes of the smallest and largest markers, or bubbles, on your map.
+Bubble fill | Set the color and opacity of bubble markers.
+Bubble stroke | Edit the width of your points’ border or outline (a value between 0-40), the color (using Hex codes or by selecting a color from the color palette), and the opacity (a value between 0-1).
+Composite operation | {% include descrip_comp_op.html %}
 
-- **Bubble Fill**  
-Set the color and opacity of bubble markers.
-
-- **Bubble Stroke**  
-Edits multiple values: the width of your bubble stroke, a.k.a. its border or outline (a value between 0-40); the color (using Hex codes or by selecting from the color palette), and the opacity (a value between 0-1).
-
-- **Composite Operation**  
-Change how the colors of overlapping geometries will interact with one another. You can select from: multiply, screen, overlay, darken, lighten, color-dodge and color-burn. Each of these operations has a different effect on how the overlapping sections of markers are displayed. Refer to [Composite Operations](http://docs.cartodb.com/cartodb-editor.html#composite-operations) for a deeper overview on how blend modes work. You can explore the options available [here](https://www.mapbox.com/tilemill/docs/guides/comp-op/).
-
-- **Described under [Choropleth](http://docs.cartodb.com/cartodb-editor.html#choropleth)**
-  - Column
-  - Quantification
-
-#### Intensity
-Show density of points much like a heatmap.
-
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/intensity.png' | prepend: site.baseurl }}" alt="Intensity Wizard" /></p>
-
-Refer to [CartoCSS documentation](http://docs.cartodb.com/cartodb-editor.html#cartocss) for an explanation of marker fill and marker stroke.
-
-#### Density
-Data is aggregated into hexagons colored based on intensity of data in each cell. Infowindows will be disabled.
-
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/density.png' | prepend: site.baseurl }}" alt="Density Wizard" /></p>
-
-- **Method**  
-Choose whether density is displayed using hexagonal or rectangular shapes.
-
-- **Polygon Stroke**  
-Edit multiple values: the width of your polygon stroke, a.k.a. its border or outline (a value between 0-40); the color (using Hex codes or by selecting from the color palette), and the opacity (a value between 0-1).
-
-- **Polygon Size**  
-  Adjust the size of the polygons on your map.
-
-- **Composite Operation**  
-Change how the colors of overlapping geometries will interact with one another. You can select from: multiply, screen, overlay, darken, lighten, color-dodge and color-burn. Each of these operations has a different effect on how the overlapping sections of markers are displayed. Refer to [Composite Operations](http://docs.cartodb.com/cartodb-editor.html#composite-operations) for a deeper overview on how blend modes work. You can explore the options available [here](https://www.mapbox.com/tilemill/docs/guides/comp-op/).
-
-- **Described under [Choropleth](http://docs.cartodb.com/cartodb-editor.html#choropleth)**
-  - Buckets
-  - Color Ramp
-
-#### Torque
-Data animation of a progression of points, requires time-series data.
+##### Torque
+{% include descrip_torque.html %}
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/torque1.png' | prepend: site.baseurl }}" alt="Torque Wizard" /></p>
 
-- **Cumulative**  
-Determines whether points stay on your map throughout the animation or fade away.
+Torque Wizard Options | Description
+------------ | -------------
+Cumulative | Determines whether points remain on your map throughout the animation, or fade away.
+Time Column | {% include descrip_time_column.html %}
+Marker type | {% include descrip_marker_type.html %}
+Marker Fill | Contains the fill options for the point size (a numeric value between 0-40), point color, and point opacity (a value between 0-1). 
+Marker Stroke | {% include descrip_marker_stroke.html %} 
+Duration (sec) | {% include descrip_duration.html %}
+Steps | {% include descrip_steps.html %}
+Blend Mode | {% include descrip_blend_mode.html %}
+Trails | {% include descrip_trails.html %}
+Resolution | {% include descrip_resolution.html %}
 
-- **Time Column**  
-Select the date column that you would like to display. The column must contain either date-type or numerical data (so long as it reflects the passage of time) to be used in the Torque map. Refer to the [Supported Data Types](http://docs.cartodb.com/cartodb-editor.html#supported-data-types) documentation on how to change the data type for columns. Refer to the [PostgreSQL documentation](http://www.postgresql.org/docs/9.2/static/datatype-datetime.html) for more information on the date and time data types supported by CartoDB.
-
-- **Marker Type**  
-Select whether you'd like to display points as rectangles or ellipses.
-
-- **Marker Fill**  
-Adjust three properties: the size of the marker (a numerical value between 0-40), the color (using Hex codes or by selecting from the color palette), and the opacity (a value between 0-1).
-
-- **Marker Stroke**  
-The marker stroke allows you to edit the width of your point, a.k.a. its border or outline (a value between 0-40), the color (using Hex codes or by selecting from the color palette), and the opacity (a value between 0-1).
-
-- **Duration (secs)**  
-Set the total length of your map visualization.
-
-- **Steps**  
-Edit the number of animation groupings. Fewer steps will create a more step-by-step or choppy data animation with more data in each "step." A greater number of steps will look smoother. This correlates to whether your data is being displayed by day, week, month, etc.
-
-- **Blend Mode**  
-Style effects for how layered data is blended during the animation. Blend modes use color composite operations. Available modes include lighter, multiply, source-over, and xor. Refer to [Composite Operations](http://docs.cartodb.com/cartodb-editor.html#composite-operations) for a deeper overview on how blend modes work. You can explore the options available [here](https://www.mapbox.com/tilemill/docs/guides/comp-op/).
-
-- **Trails**  
-Select whether data points display a "trail," or faded image after they disappear from your map. Choose a value between 0 and 5: 5 will display a longer, more-lasting trail and 0 will not show a trail.
-
-- **Resolution**  
-Torque creates a grid of your data and aggregates data to each cell of that grid. The resolution parameter determines the width and height of each cell. Larger numbers will make your data more gridded.
-
-Torque maps also have [Torque CartoCSS](http://docs.cartodb.com/cartodb-editor.html#cartocss) options to further customize the look of your map.
-
-#### Torque Heat
-A variation of Torque allowing for an animated heatmap of temporal data where areas of greater color intensity indicate greater density of data.
+##### Heatmap
+{% include descrip_heatmap.html %}
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/torqueheat.png' | prepend: site.baseurl }}" alt="Torque Heat Wizard" /></p>
 
-Much of the interface options for Torque Heat are the same for Torque and are explained in the [Torque documentation](http://docs.cartodb.com/cartodb-editor.html#torque).
+Heatmap Wizard Options | Description
+------------ | -------------
+Marker size | Choose the size of your markers.
+Opacity | Sets the opacity for the heatmap, a value between 0-1.
+Animated | Displays temporal data into a linear Torque animation.
+Resolution | {% include descrip_resolution.html %}
 
-Options that are unique to Torque Heat:
-
-- **Marker Size**  
-Choose the size of your markers.
-
-- **Threshold**  
-Set the transparency of the heatmap markers.
-
-- **Animated**  
-Activate this slider to turn your temporal data into a linear Torque animation.
-
-Torque maps also have [Torque CartoCSS](http://docs.cartodb.com/cartodb-editor.html#cartocss) options to further customize the look of your map.
-
-#### Torque Category
-A variation of Torque, which allows for an animation of points whose color relates to categories in your dataset
+##### Torque Category
+{% include descrip_torque_category.html %}
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/torquecategory.png' | prepend: site.baseurl }}" alt="Torque Category Wizard" /></p>
 
-Much of the interface options for Torque Category are the same for Torque and are explained in the Torque documentation.
+Torque Cat Wizard Options | Description
+------------ | -------------
+Time Column | {% include descrip_time_column.html %}
+| **Note**: If you select Torque Category as the map type, ensure your SQL query is not using `torque_category` as a column name, to prevent unexpected behaviors.
+Marker type | {% include descrip_marker_type.html %}
+Category Column | {% include descrip_column.html %}
+Marker Fill |  Contains the fill options for the point size (a numeric value between 0-40), point color, and point opacity (a value between 0-1). 
+Marker Stroke | {% include descrip_marker_stroke.html %} 
+Duration (sec)|  {% include descrip_duration.html %}
+Steps | {% include descrip_steps.html %}
+Blend Mode | {% include descrip_blend_mode.html %}
+Trails | {% include descrip_trails.html %}
+Resolution | {% include descrip_resolution.html %}
+List of detected map/legend items | {% include descrip_item_img_color.html %}
 
-Options that are unique to Torque Category:
+##### Intensity
+{% include descrip_intensity.html %}
 
-- **Category Column**  
-Choose data from your dataset you would like to appear as categories on your map and in your legend. You can edit their color or add an image marker underneath the Resolution menu option.
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/intensity.png' | prepend: site.baseurl }}" alt="Intensity Wizard" /></p>
 
-	**Note**: If you select Torque Category as the map type, ensure your SQL query is not using `torque_category` as a column name to prevent unexpected behaviors.
+Intensity Wizard Options | Description
+------------ | -------------
+Marker Fill | Contains the fill options for the point size (a numeric value between 0-40), point color, and point opacity (a value between 0-1). 
+Marker Stroke |  {% include descrip_marker_stroke.html %} 
 
-Torque maps also have [Torque CartoCSS](http://docs.cartodb.com/cartodb-editor.html#cartocss) options to further customize the look of your map.
+##### Density
+{% include descrip_density.html %}
 
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/density.png' | prepend: site.baseurl }}" alt="Density Wizard" /></p>
+
+**Tip:** When Density is selected as the map type, infowindow options are disabled. If you need to apply [infowindows](#infowindows) functionality, select *Intensity* as the map type instead.
+
+Density Wizard Options | Description
+------------ | -------------
+Method | Displays density with either the hexagon or rectangle shape.
+Buckets | {% include descrip_buckets.html %}
+Color ramp | {% include descrip_color_ramp.html %}
+Polygon Stroke | Edit the width of your points’ border or outline (a value between 0-40), the color (using Hex codes or by selecting a color from the color palette), and the opacity (a value between 0-1).
+| <img src="{{ '/img/layout/cartodb-editor/polygon_stroke_color.png' | prepend: site.baseurl }}" alt="Select polygon stroke color" />
+Polygon size |  Adjust the size of the polygons on your map.
+Composite operation | {% include descrip_comp_op.html %}
+  
 #### Infowindows
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/infowindows.png' | prepend: site.baseurl }}" alt="Infowindows" /></p>
@@ -1598,125 +1559,201 @@ CartoCSS styling is generally simple, making typos or forgetting quotations are 
 
 ## Your Account
 
-### API Key
+Your CartoDB account options contain all of the information necessary for managing your account. You can view and edit your profile information, view the details of your account plan and connect to external data sources, request an API key to protect your data, generate tokens for consumer authentication of your map resources, and view the details of your billing invoices and data usage.
 
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/apikey.png' | prepend: site.baseurl }}" alt="API" /></p>
+### How to Access your Account Options
+You can access your account options from your dashboard, or from your public profile page, in CartoDB.
 
-The API key offers the simplest way to access private data or perform writes and updates to your public data. Remember that your API key protects access to your data, so keep it confidential and only share it if you want others to have this access. If necessary, you can reset your API key in your admin dashboard.
+- From your dashboard, select *Your account* (or *Your API keys*) from your avatar drop-down menu
 
-#### Find your API key
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/access_account_options.png' | prepend: 	site.baseurl }}" alt="Access account options from dashboard" /></p>
 
-1. Go to your dashboard.
-2. Click on your avatar in the top right corner, and select "Your API keys."
-3. Here, you can copy your API key, see use examples, and reset your API key.
+- Optionally, if you are on your public profile page, select *Account settings* (or *Your API keys*) from your avatar drop-down menu
+
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/account_access_from_public_profile.png' | prepend: 	site.baseurl }}" alt="Access account options from public profile" /></p>
+	
+	The page refreshes, displaying the account options to the left and your data usage on top.  
+
+- Click the different options to refresh the view and display the related account settings 
+
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/account_options.png' | prepend: 	site.baseurl }}" alt="Acount options" /></p>
+
+Each of the available account options are described below.
 
 ### Profile
 
-Edit your public profile settings incuding your name, website, description, avatar, and Twitter handle. To navigate to this window in your dashboard, click on your avatar in the top right corner, select "Account settings" from the menu options and within the second sub-menu on the left, select "Profile."
+[Access](#how-to-access-your-account-options) your profile information to edit your public profile settings. 
 
-### Account Settings
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/account_profile.png' | prepend: 	site.baseurl }}" alt="Acount profile options" /></p>
 
-Change your account preferences including username, email, and password. To navigate to this window in your dashboard, click on your avatar in the top right corner and select "Account settings."
+Profile options include the ability to:
 
-### OAuth Credentials
+- Change your avatar image
+- Edit your public profile name
+- Share any personal websites, your location, your Twitter Username, or your Disque Shortname
+- Indicate that you are available for hire, which automatically includes a link to your email on your public profile page
 
-OAuth is an authentication protocol that allows users to approve an application to act on their behalf without sharing their password. To navigate to this section in your dashboard, click on your avatar in the top right corner, select "Account Settings" and within the second sub-menu on the left, select "Your OAuth credentials."
+Click *SAVE CHANGES* after editing any of your profile settings.
 
-### Quotas and Billing
+### Account
 
-We offer a wide range of plans to fit every user's needs. Each plan comes with different features and storage quotas. Take a look at our [pricing plans]({{ '/pricing' | prepend: site.cartodb-baseurl }}) to pick the best plan for you.
+[Access](#how-to-access-your-account-options) your account settings to edit your account plan details. 
 
-Once you upgrade from a free plan to a paid plan, a monthly billing period will be set for your account. Each month, you will receive the corresponding invoice via email with the description of services that will be charged for that billing period.
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/account_settings.png' | prepend: 	site.baseurl }}" alt="Acount settings" /></p>
 
-If you upgrade from one paid plan to another, your new billing period will start the same day of the month that your old plan started. This means that your first invoice will be pro-rated, and you will only be charged for the days remaining in your billing period.
+Account options include the ability to:
 
-You may experience extra charges besides the monthly cost of your plan if you exceed the free quota for geocodings or mapviews, as defined in our Terms of Service.
+- Edit your account username, associated email address, change your password
+- View and edit your account type and billing plan
+	
+	**Note:** If you change your account plan, charges will be pro-rated.
+	
+	**Tip:** If you are using a free-trial, you can change or upgrade your account by viewing the details of your account (this redirects you to the [billing](#billing) options of your account). Once you create an account for evaluating a free-trial of CartoDB, you have fourteen days to experiment with different account types.
+- Connect (or disconnect) to external data sources
 
-### Free Trial and Upgrading
+	**Note:** The external data sources that appear are managed by CartoDB. Connect an external service to link it to your account. For details about how to connect to external data sources, see the [Connect Dataset](http://docs.cartodb.com/cartodb-editor.html#connect-dataset) procedure.
 
-All of our plans have a fourteen-day free trial, during which you may experiment with one of our plans to see if it's a good fit. Once you create an account, you may choose to change your plan from "Account Settings," accessed from your dashboard.
+Click SAVE CHANGES after editing any of your account settings.
 
-In the Account Settings window, you may view your current plan and click "Change your current plan" to choose a new one. Note that the charges will be pro-rated, so you may change your account type whenever you like.
+#### Delete your account
 
-### Deleting Your Account
+You can delete your account through the [account](#account) options page. [Contact us](mailto:sales@cartodb.com) if you have any questions before deleting your account.
 
-Navigate to Account Settings, and scroll to the bottom of the page where you will see a link to "Delete my account." If you have any questions or concerns (we enjoy compliments, too!), please reach out to our support team at <support@cartodb.com> before deleting your account.
+***Note:** Deleting your account permanently removes all of your maps and datasets, they cannot be recovered.* 
 
-## **CartoDB Enterprise**
+### API Key
+
+[Access](#how-to-access-your-account-options) your API key, which is uniquely generated for your account. When you use the [CartoDB Platform](cartodb-platform.html) to request data, you can manage how your data is updated (write access), or protected, (read-only access).
+
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/apikey.png' | prepend: site.baseurl }}" alt="API" /></p>
+
+Your API key includes the ability to:
+
+- View, and copy, your API key
+
+	**Tip:**  Click the link icon, located inside the *Your API Key* field, to copy the API key to the clipboard. This is helpful if you need to paste your API key into a line of code of an API command.
+- Request a new API key
+
+	**Note:** When you click *Request a new API key*, a confirmation dialog appears. Click *REGENERATE API KEY* to continue. Note that you will have to update any of your deployed applications that call your API, to include the new API key.
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/regenerate_api.png' | prepend: site.baseurl }}" alt="Regenerate api" /></p>
+
+- View example syntax of how your API key can be formatted to include write access to portions of your data 
+- View example syntax of how your API key can be formatted to keep portions of your data read-only and private
+
+**Note:** Your API key is confidential and should not be shared. Anyone who has access to your API key can apply changes to how your data is accessed.
+
+### OAuth credentials
+
+[Access](#how-to-access-your-account-options) the QAuth credentials to generate [SQL API](cartodb-platform/sql-api.html) tokens for consumer authentication of your map resources. These keys allow users to access private datasets, write to public datasets, and edit data (through an API) without sharing passwords.
+
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/oauth_credentials.png' | prepend: site.baseurl }}" alt="OAuth credentials" /></p>
+
+Your OAuth credentials include the ability to:
+
+- View, and copy, a consumer key that authenticates them to access your API
+
+	**Tip:**  Click the link icon, located inside the *Consumer Key* field, to copy the key to the clipboard. This is helpful if you need to paste a Consumer key into a line of code of an SQL API command.
+- View, and copy, a consumer secret question to ensure authentication when they are calling your API
+- Request Token  URL, to authenticate a request to a URL
+- Access Token URL, to authenticate access to a URL
+- Generate new keys and tokens
+
+	**Note:** When you click *GENERATE NEW KEYS*, a confirmation dialog appears. Click *REGENERATE OAUTH CREDENTIALS* to continue. Note that you will have to update any of your deployed applications that call your API, to include the new OAuth credentials.
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/regenerate_oauth.png' | prepend: site.baseurl }}" alt="Regenerate OAuth" /></p>
+	
+**Tip:** Click the link icon, located inside any of the fields on this page, to copy the key/tokens to the clipboard. This is helpful if you need to paste these into a line of code of an SQL API command.
+
+For more details about this feature, see [OAuth](cartodb-platform/sql-api.html#oauth), located in the SQL API documentation.
+
+### Billing
+
+[Access](#how-to-access-your-account-options) the billing information for your account.  (There is also a shortcut to your billing plan directly from the [Account](#account) settings). You can change or upgrade your plan, view past invoices, and edit payment information.
+
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/account_billing.png' | prepend: site.baseurl }}" alt="Billing Plan" /></p>
+
+See our [Pricing Plans]({{ '/pricing' | prepend: site.cartodb-baseurl }}) for details about all of our plans. Each plan includes different features and storage quotas.
+
+- Click *CHANGE PLAN* to view and change the account type for your plan
+
+- View any invoices related to your account 
+
+- Click *Edit payment data* to edit payment or billing details for your account
+
+**Tip:** See the following general rules about changing or upgrading your account. For complete details, see our [Terms of Service](https://cartodb.com/terms#limits) or contact [Sales](mailto:sales@cartodb.com).
+
+- If you change or upgrade your account, charges are pro-rated. Your first invoice only displays charges for the days remaining in the billing period.
+
+- You may experience extra charges, besides the monthly cost of your plan, if you exceed the geocoding quota or map views allocated for your account type, as defined in our [Terms of Service](https://cartodb.com/terms#limits). Your data usage is displayed in every section of the account options.
+
+- A free trial enables you to evaluate CartoDB for 14 days. Once you upgrade from a free plan to a paid plan, a monthly billing period is set for your account. Each month, you will receive an email invoice with a description of services, and the charges for that billing period.
+
+## CartoDB Enterprise
 
 #### About Multiuser Enterprise
 
-CartoDB designed the Multiuser (MU) Enterprise to enhance the scale and scope of collaboration on our platform. The service provides multiuser environments that allow users to upload and manipulate datasets securely, and share them with specific team members or publish them directly on the web.
+CartoDB designed the Multiuser (MU) Enterprise to enhance the scale and scope of collaboration on our platform. This service provides multiuser environments, where users can upload and manipulate datasets securely, share them with specific team members, or publish them directly on the web.
 
-With CartoDB MU, no custom software installation is necessary to access high-performance GIS capabilities. Take advantage of this web-based feature to work alongside colleagues on projects in real-time from a central, 24/7 accessible database - the cloud! Here is an overview of the Multiuser features.
+With Enterprise accounts, no custom software installation is required. Your group can continue to access the web-based CartoDB Editor and work alongside colleagues. Since our database is managed on the cloud, you can access your projects from any location, in real time. The following multiuser (MU) features are available.
 
 #### Users, Owners, and Organizations
 
-CartoDB Enterprise works as a hub for many users or teams working together. An "organization" refers to the name of the group of collaborators that will be interacting on Enterprise. For instance, the name of your business or project team. A user is the individual that is part of a given organization.
+CartoDB Enterprise works as a hub for many users or teams working together. An "organization" refers to the name of the group of collaborators that are interacting, such as the business or project team. A user is the individual that is part of a given organization.
 
-If you have been using a normal CartoDB account and are starting to use CartoDB Enterprise with Multiuser, you will notice that you are using the same CartoDB Editor with some new options. These new options are what we'll cover in the following sections. For general documentation about the CartoDB Editor please refer to the [corresponding sections in docs.cartodb.com](http://docs.cartodb.com/cartodb-editor.html)
+If you have been using a standard CartoDB account and changed your plan to CartoDB Multiuser Enterprise, you will notice that the CartoDB Editor has some additional options. These options are specific to Enterprise plan users. For general documentation about the CartoDB Editor, please see the [CartoDB Editor documentation](http://docs.cartodb.com/cartodb-editor.html).
 
-An "Owner" of an organization has privileges to perform admin-related tasks of the organization (i.e. create users, assign quotas, etc.).
+**Note:** An Enterprise user with "owner" privileges has administrative access to manage the organization account. For example, they can create users and assign quotas for their organization.  See [Owners](#owners) for more details about how to manage the organization settings.  Organization users have standard [Account](#your-account) options.
 
-### **Users**
+### Users
 
 #### Dashboard
 
-After login, the Enterprise mainpage allows you to quickly and easily navigate team activity. The dashboard is your homebase, a.k.a. the page where you are able to view and monitor your own activity maps and data, as well as access datasets and visualizations published or shared with you by team members.
+The organization dashboard enables you to navigate team activity. You can view and monitor your own maps and data, and access datasets and visualizations published or shared by you, or your team members.
 
 ####Your Maps
-On the left side of your browser you can search for maps by tag or name, view maps you have created, view maps that have been made public to the organization or shared with you for collaboration, or see maps you have liked from the community. The icons on the left allow you to order personal or shared maps by date, number of visits, number of likes, or create a new map from scratch. You can also access your own or shared datasets by selecting the drop down menu in the upper left.
+The maps dashboard enables you to search for maps by tag or name, view maps you have created, view maps that have been shared with you for collaboration, and view maps that you have liked from the community. You can change the sort order of your maps on your dashboard.
 
 <p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_00.png" alt="dash" /></p>
 
 ####Your Datasets
-Similar to your Maps dashboard, your Datasets dashboard allows you to easily search for datasets by name or tag, view your own and shared datasets, see datasets you have liked, and access our ever growing and free to use **Data Library**. You can also order your datasets by size, or add new datasets from your computer, the web, or from scratch.
+Similar to your maps dashboard, your datasets dashboard enables you to search for datasets by name or tag, view your own (and shared datasets), view datasets that you have liked from the community, and access public datasets from the [Data Library](#data-library). You can also [change the sort order of your datasets](#changing-the-sort-order-of-your-datasets).
 
 <p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_01.png" alt="data dash" /></p>
 
 #### Creating Datasets and Maps
 
-The workflow to create datasets and maps is the same as in the normal edition of the CartoDB Editor.
+For Enterprise account users, the workflow to create datasets and maps is identical to the standard [CartoDB Editor workflow](#cartodb-editor-overview).
 
 #### Enterprise Privacy Settings for Datasets and Maps
 
-All privacy options are available for enterprise account users by default. This enables you to select how you would like to protect each dataset and map created by your organization.  Your organization administrator controls the privacy options that are enabled.
+All privacy options are available for Enterprise account users by default. This enables you to select how you would like to protect each dataset and map created by your organization.  Your organization administrator controls the privacy options that are enabled.
 
 - For details about how to select privacy options for your dataset, see [(Dataset Privacy](#dataset-privacy))
 - For details about how to select privacy options for your map, see [(Map Privacy](#map-privacy))
 
 **Note:** Dataset privacy is stored separately from Map privacy. This enables you to protect each layer of data within a map, and also determine how you want to share the map.
 
-### **Owners**
+### Owners
 
-As the owner of an organization, you will be able to perform all admin-related tasks of a team account: manage users, assign quotas, customize the organization's Public Page, update account details, etc. When you login, you will see a normal CartoDB dashboard with a list of tables. You can access the admin area by clicking on the drop-down menu located in the upper-right corner and selecting "Your Organization".
+As the owner of an organization, you can perform all administrative tasks for your team account. You can manage users, assign quotas, customize the organization's public profile page, update account details, and so on.  These organization options are accessible from your avatar drop-down menu.
 
 <p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_09.png" alt="Using sync tables" /></p>
 
-#### Organization Administrator Area
+#### Organization Settings
 
-Once in the organization admin area you'll be able to change your **Organization Settings**, **Manage your seats**, and review or update **Your Plan**.
+Organization settings contain your organization profile information, the authentication settings for managing how users login to your Enterprise account, the list of users in your account, and the billing details for your organization.  *These options are only available to the Enterprise owner*.
 
 <p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_010.png" alt="admin" /></p>
 
-#### Manage Your Seats
+- Click *Organization profile* to manage everything related to your organization's public profile. For example, you can add and organization logo, set the organization website, provide the internal support email address for your users, and set the default user quota
 
-A seat is an available slot for a user. You'll be able to give access to as many users and seats that you have in your contract. You may expand the number of seats at any time by contacting our Customer Support.
+- Click *Auth settings* to set authentication settings for your organization's email domain and manage how users login to the Enterprise account
+	<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_auth.png" alt="Auth settings" /></p>
 
-#### Adding a User
+- Click *#/# users* to view and manage the users in your organization. You can create new users and add them to your organization
+	<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_users.png" alt="Organizaton users" /></p>
 
-Once your organization's multiple user account has been created, you have the option to add new team members. From your organization dashboard, you can click in the **Create new user** button at the bottom right of the **Manage Your Seats** page. From here, fill in the user's information, which includes a name for log-in, an email address to associate with the account, and a password. You can also assign and update a user's data quota here and select whether to allow geo-referencing capability.
+	**Note:** The number of seats available is the allowed number of users for your organization. This number is based on your Enterprise account details. 	
+	
+- Click *Billing* to view your organization's payment or billing details for your Enterprise account
 
-At any time, you may change the storage availability for your team members by upgrading your plan. The activity of your team members is accessible via clicking on their respective profile pages.
-
-<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_011.png" alt="adding user" /></p>
-
-#### Organization Settings
-
-In this section, you can customize how your Public Page will look by choosing your website URL, a company logo, a description, and your Twitter username.
-
-<p class="wrap-border"><img src="/img/layout/cartodb-editor/enterprise_012.png" alt="Org settings" /></p>
-
-#### Your Plan
-
-On the "Your Plan" page, you can see information about your company, users, data storage, and resources. You can also contact us with questions or changes to your account.
+This concludes the Enterprise account options.
