@@ -5,6 +5,9 @@ Each CartoCSS map category has its own configurable properties. You can apply mu
 
 ***Note:** CartoDB is currently maintaining this library of common properties since [Mapbox](https://github.com/mapbox/carto/blob/master/docs/latest.md) is no longer doing active development for CartoCSS.*
 
+<span class='reviewer'>reviewer: Do we want to reference the original source of these parameters? Turns out we do not support them all. Let me know if I should keep or remove this note.</span>
+
+
 | **CartoCSS Symbolizer:** |
 ------------ | ------------- |
 | | [Polygon](#polygon) (polygon) | [Line](#line) (lines and polygons)| [Markers](#markers) (points, lines, and polygons)
@@ -15,7 +18,7 @@ Each CartoCSS map category has its own configurable properties. You can apply mu
 | **CartoCSS Values:** |
 ------------ | -------------
 | | [Color](#color) | [Float](#float) | [URI](#uri) |
-| | [String](#string) | [Boolean](#boolean) | [Expressions](#expressions) |
+| | [String](#string) | [Boolean](#boolean) | [Expression](#expression) |
 | | [Numbers](#numbers) | [Percentages](#percentages) | [Functions](#functions)
 
 | **Other CartoCSS Parameters:** | 
@@ -27,7 +30,7 @@ In addition to customizing the look of your maps using CartoCSS, Torque maps hav
 | **Torque CartoCSS Properties:** | 
 ------------ | -------------
 | | [torque-frame-count](#torque-frame-count-numbers) | [torque-animation-duration](#torque-animation-duration-numbers) | [torque-time-attribute](#torque-time-attribute-string)
-| | [torque-aggregation-function](#torque-aggregation-function-keyword) | [torque-resolution](#torque-resolution-float) | [torque-data-aggregation](#torque-data-aggregation-?)
+| | [torque-aggregation-function](#torque-aggregation-function-keyword) | [torque-resolution](#torque-resolution-float) | [torque-data-aggregation](#torque-data-aggregation-keyword)
 
 
 #### Common Elements
@@ -55,12 +58,6 @@ Default Value |  `none`, no filters applied.
 Available Values | See [functions](#functions).
 Related Example | You can add multiple image-filters to a layer, which creates a new active canvas and renders all of the defined styles, before compositing everything back into the main canvas. For example:
 	| `image-filters:colorize-alpha(blue, cyan, green, yellow , orange, red);`
-	
-<<<<<<< HEAD
-THIS EXAMPLE WORKS, but using 'none' and 'null' generates an error. Does none just mean that this feature is not applied by default (none is not a valid value)?
-=======
-<span class='reviewer'>THIS EXAMPLE WORKS, but using 'none' and 'null' generates an error. Does none just mean that this feature is not applied by default (none is not a valid value)?</span>
->>>>>>> 2400b71e8176e95fdc6f48ba47fe3600de2ff824
 
 ##### opacity `float`
 
@@ -73,9 +70,8 @@ Available Values | See [float](#float).
 
 These generic CartoCSS background and string element properties can be applied to any layer in a map.
 
-| | [background-color](#background-color-color) | [background-image](#background-image-uri) | [background-image-comp-op](#background-image-comp-op-keyword)
-| | [background-image-opacity](#background-image-opacity-float) | [base](#base-string) | [buffer-size](#buffer-size-float)
-| | [font-directory](#font-directory-uri) | [srs](#srs-string) |
+| | [background-image](#background-image-uri) | [background-image-comp-op](#background-image-comp-op-keyword) | [background-image-opacity](#background-image-opacity-float)
+| | [buffer-size](#buffer-size-float) | 
 
 
 ##### background-image `uri`
@@ -102,21 +98,6 @@ Default Value |  `1`, indicates that the image opacity will not be changed when 
 Available Values | See [float](#float).
 
 
-<<<<<<< HEAD
-##### base `string`
-
-Description | Indicates how a directory path is rendered, based on if you are using a defined in memory object, or a filesystem object. 
-Sample CartoCSS Code | `base: string;`
-Default Value |  This parameter string is empty by default, indicating that any relative paths to files referenced in styles, or layers, are interpreted relative to the application process.
-Available Values | See [string](#string).
-Related Examples |  If a map loads from an in memory object, any relative paths used to reference files are understood as the intended directly path. 
-|  If the map loads from a filesystem object, and the in memory object is *not* defined, the directory path is rendered based on the stylesheet directory.
-
-WHAT IS IN MEMORY OBJECT AND FILESYSTEM OBJECT? And what stylesheet are they referencing? The cartocss I assume. These definitions are confusing, I need more information and sample code.
-
-
-=======
->>>>>>> 2400b71e8176e95fdc6f48ba47fe3600de2ff824
 ##### buffer-size `float`
 
 Description | Ensures that labels crossing tile boundaries are equally rendered in each tile. 
@@ -125,14 +106,6 @@ Default Value |  `0`, no buffer is applied by default.
 Available Values | See [float](#float).
 
 **Note:** Enter any values in pixels and do not apply this property in combination with &quot;avoid-edges&quot;.
-
-<span id='reviewer'>WHY? What will happen?  Why are we suggesting this best practice?
-
-ALSO, THERE IS AN [FAQ QUESTION](faqs.html#why-are-my-map-labels-cut-off) THAT STATES THE FOLLOWING: IS THIS TRUE?
-"**Note:** The buffer-size value needs to be a power of two in order to be valid."
-
-I don't actually know the reason why, perhaps ask mamata on slack if she knows.
-</span>
 
 
 #### Polygon
@@ -166,7 +139,7 @@ Description | The level of antialiasing (smoothness of oversampling) of polygon 
 Sample CartoCSS Code | `polygon-gamma: 1; `
 Default Value |  `1`, is fully antialiased.
 Available Values | `0`, `1`, `2`, `3`, `4`, `5`
-| WHY WOULDN'T ZERO REPRESENT FULLY ANTIALIASED THEN?
+| <span class='reviewer'>reviewer: WHY WOULDN'T ZERO REPRESENT FULLY ANTIALIASED THEN?</span>
 
 
 ##### polygon-gamma-method `keyword`
@@ -200,7 +173,6 @@ Available Values | See [float](#float).
 Description | Simplifies geometries by a given algorithm value.
 Sample CartoCSS Code | `polygon-simplify-algorithm: radial-distance;`
 Default Value |  `radial-distance`, geometry is simplified using the radial distance algorithm.
-| PLEASE CONFIRM, THE ORIGINAL MAPBOX DESCRIPTION SAYS "geometry will not be simplified using the radial distance algorithm". That seems incorrect to me based on this description.
 Available Values | `radial-distance``zhao-saalfeld``visvalingam-whyatt`
 
 
@@ -313,23 +285,7 @@ Sample CartoCSS Code | `line-dash-offset: none;`
 Default Value |  `none`, a solid line appears.
 Available Values | See [numbers](#numbers).
 
-<<<<<<< HEAD
 **Note:** This is a valid parameter for SVG but is currently not supported for rendering. For example, a value of `0` indicates that there is no line, a value of `1` displays a line. A line-dash-offset value of `0 1 0 1 0 1` displays the line offset pattern. You can change the value by one pixel `1 0 1 0 1 0` to change the offset of the line.
-=======
-**Note:** This is a valid parameter for SVG but is currently not supported for rendering.
-
-<span class='reviewer'>WHAT DOES THIS MEAN? I NEED MORE INFO SO THAT I CAN WORDSMITH.</span>
-
-<span class='reviewer'>AXH: This is a tough one to explain. But imagine you had a dasharray of pixel on, pixel off, pixel on etc. Let's symbolize it with 0 (for no line) and 1 for line. So the line looks like this,</span>
-
-<span class='reviewer'>0 1 0 1 0 1</span>
-
-<span class='reviewer'>Now, if you dash-offset it by one pixel, it would look like this,</span>
-
-<span class='reviewer'>1 0 1 0 1 0</span>
-
-<span class='reviewer'>That's how I understand it at least</span>
->>>>>>> 2400b71e8176e95fdc6f48ba47fe3600de2ff824
 
 
 ##### line-miterlimit `float`
@@ -363,10 +319,6 @@ Available Values | See [float](#float).
 Description | Simplifies geometries by a given algorithm value.
 Sample CartoCSS Code | `line-simplify-algorithm: radial-distance;`
 Default Value | `radial-distance`, geometry is simplified using the radial distance algorithm.
-<<<<<<< HEAD
-=======
-| <span class='reviewer'>PLEASE CONFIRM, THE ORIGINAL MAPBOX DESCRIPTION SAYS “geometry will not be simplified using the radial distance algorithm”. That seems incorrect to me based on this description. CONFIRMED - AXH</span>
->>>>>>> 2400b71e8176e95fdc6f48ba47fe3600de2ff824
 Available Values | `radial-distance` `zhao-saalfeld` `visvalingam-whyatt`
 
 
@@ -423,26 +375,20 @@ These CartoCSS properties can be applied to point, line and polygon layers.
 | | [marker-max-error](#marker-max-error-float) | [marker-transform](#marker-transform-functions) | [marker-clip](#marker-clip-boolean)
 | | [marker-smooth](#marker-smooth-float) | [marker-geometry-transform](#marker-geometry-transform-functions) | [marker-comp-op](#marker-comp-op-keyword)
 
-WHAT ABOUT MARKER STROKE?  THIS PROPERTY APPEARS AS A FIELD IN THE CARTODB WIZARD OPTIONS? Is Marker Stroke an applicable CartoCSS property?  It seems to be a combination of different CartoCSS properties. Ideally, each of the map wizard styling options to match up with a CartoCSS property.
 
 ##### marker-file `uri`
 
 Description | Displays an SVG file at each marker placement. If no file is specified, an ellipse is shown for the marker.
 Sample CartoCSS Code | `marker-file: url(http://www.clipartbest.com/cliparts/nTX/AGX/nTXAGXyTB.svg);`
-<<<<<<< HEAD
 Default Value |  `none`, an ellipse appears if the width does not equal the height.  
 | **Note:** If the height is equal to the width, a circle appears.
-=======
-Default Value |  `none`, an ellipse or circle (if the height is equal to the width) appears.
-| <span class='reviewer'>WHAT HAPPENS IF THE WIDTH DOES NOT EQUAL THE HEIGHT, and no SVG file is specified? AXH - if it is no SVG then marker is a dot, as it says. Width and height are totally up to the cartocss author </span>
->>>>>>> 2400b71e8176e95fdc6f48ba47fe3600de2ff824
 Available Values | See [uri](#uri).
 
 
 ##### marker-opacity `float`
 
 Description | Sets the overall opacity of the marker, overriding any stroke-opacity and fill-opacity settings.
-| WHAT IS THE stroke-opacity property? That does not seem to be defined on its own?
+| <span class='reviewer'>reviewer: WHAT IS THE stroke-opacity property? That does not seem to be defined on its own?</span>
 Sample CartoCSS Code | `marker-opacity: 1;`
 Default Value |  `1`, the stroke-opacity and fill-opacity are used???
 Available Values | See [float](#float).
@@ -459,7 +405,7 @@ Available Values | See [float](#float).
 ##### marker-line-color `color`
 
 Description | The color of the stroke around a marker shape.
-| IS STROKE commonly known or should we define it?
+| <span class='reviewer'>reviewer: IS STROKE commonly known or should we define it?</span>
 Sample CartoCSS Code | `marker-line-color: black;`
 Default Value |  `black`
 Available Values | See [color](#color).
@@ -467,13 +413,7 @@ Available Values | See [color](#color).
 
 ##### marker-line-width `float`
 
-<<<<<<< HEAD
 Description | The width of the line around the marker, in pixels, centered on the edge. 
-=======
-Description | The width of the stroke around a marker shape, in pixels. 
-| (This is positioned on the boundary, so high values can cover the area itself.)
-| <span class='reviewer'>WHAT DOES THIS MAPBOX DESCRIPTION MEAN? AXH - It means, it draws a line around the edge of the marker, centered on the edge. So imagine you have a marker with width (diameter) of 4. Then you add a line width of 3, since 1.5 px of the line width will be on the inside of the edge, it will cover up the whole marker</span>
->>>>>>> 2400b71e8176e95fdc6f48ba47fe3600de2ff824
 Sample CartoCSS Code | `marker-line-width: undefined;`
 Default Value |  undefined pixels
 Available Values | See [float](#float).
@@ -496,7 +436,7 @@ Default Value | `point`, places markers at the center point (centroid) of the ge
 Available Values | `point``line``interior`
 | **Note:** If placing markers on a line, markers appear multiple times along a line. You can apply &#x27;interior&#x27; to ensure correct placement on a line. Points placed on polygons are forced to be inside the polygon interior.
 
-**Tip**: See the note for how this property interacts with the [Marker-Multi-Policy](#marker-multi-policy-keyword).
+**Tip**: See the note for how this property interacts with the [Marker-multi-policy](#marker-multi-policy-keyword).
 
 
 ##### marker-multi-policy `keyword`
@@ -505,8 +445,8 @@ Description | Enables you to control the rendering behavior for multi-geometries
 Sample CartoCSS Code | `marker-multi-policy: each;`
 Default Value |  `each`, all geometries display a marker.
 Available Values | `each``whole``largest`
-| - The &#x27;whole&#x27; policy value indicates that the aggregate centroid between all geometries is applied
-| - The &#x27;largest&#x27; policy value indicates that only the largest (by bounding box areas) renders a marker (similar to default text labeling behavior)
+| whole - indicates that the aggregate centroid between all geometries is applied
+| largest - indicates that only the largest (by bounding box areas) renders a marker (similar to default text labeling behavior)
 
 **Note:** If the [marker-placement](#marker-placement-keyword) property is also applied and the value is either `point` or `interior`, a marker is rendered for each placement.  If you specified `line` as the marker-placement value, this *marker-multi-policy* property is not applied and all geometries display a marker. 
 
@@ -517,7 +457,7 @@ Description | Sets the default marker-type. If a SVG file is not defined with th
 Sample CartoCSS Code | `marker-type: ellipse;`
 Default Value |  `ellipse`
 Available Values | `arrow``ellipse`
-| **Note:** A circle may be automatically rendered if the marker height is equal to the marker width  IS THIS CORRECT???
+| **Note:** If the height is equal to the width, a circle appears.
 
 
 ##### marker-width `expression`
@@ -525,7 +465,7 @@ Available Values | `arrow``ellipse`
 Description | If a default [marker-type](#marker-type-keyword) property is defined, this property indicates the width of the marker-type.
 Sample CartoCSS Code | `marker-width: 10.0;`
 Default Value |  `10`
-| WHAT IS THE SUGGESTED RANGE?
+| <span class='reviewer'>reviewer: WHAT IS THE SUGGESTED RANGE?</span>
 Available Values | See [expression](#expression).
 
 
@@ -534,7 +474,7 @@ Available Values | See [expression](#expression).
 Description | If a default [marker-type](#marker-type-keyword) property is defined, this property indicates the height of the marker-type.
 Sample CartoCSS Code | `marker-height: 10.0;`
 Default Value |  `10`
-| WHAT IS THE SUGGESTED RANGE?
+| <span class='reviewer'>reviewer: WHAT IS THE SUGGESTED RANGE?</span>
 Available Values | See [expression](#expression)
 
 
@@ -761,8 +701,6 @@ Description | Enables you to wrap text with a character, rather than with a spac
 Sample CartoCSS Code | `shield-wrap-character: '_';`
 Default Value | `undefined
 Available Values | See [string](#string).
-Related Example | [Always break long city names (New Bedford Massachusetts) on two lines](https://www.mapbox.com/tilemill/docs/guides/styling-labels/#multi-line-labels) 
-| - *NEED TO PROVIDE CARTODB EXAMPLES (links to blocks, public maps, etc.)
 
 
 ##### shield-halo-fill `color`
@@ -772,8 +710,6 @@ Description | Specifies the color of the halo around the text.
 Sample CartoCSS Code | `shield-halo-fill: #FFFFFF;`
 Default Value | `#FFFFFF`, the halo color is white by default
 Available Values | See [color](#color).
-Related Example | [Design Control with Regular Expressions](https://www.mapbox.com/blog/design-control-with-regular-expressions-in-mapbox-studio/)
-|	NEED TO ADD OUR OWN SIMILAR EXAMPLE INSTEAD (links to blocks, public maps, etc.)
 
 
 ##### shield-halo-radius `float`
@@ -938,15 +874,6 @@ Description | A defined image file that renders the pattern of a line. The image
 Sample CartoCSS Code | `line-pattern-file: ur(cliff.png);`
 Default Value | none
 Available Values | See [uri](#uri).
-<<<<<<< HEAD
-Related Example | [Cliff lines](https://www.mapbox.com/tilemill/docs/guides/styling-lines/)
-| WE NEED OUR OWN EXAMPLE HERE (public maps, blocks, blogs, etc.)
-=======
-Related Examples | [Cliff lines](https://www.mapbox.com/tilemill/docs/guides/styling-lines/)
-| <span class='reviewer'>WE NEED OUR OWN EXAMPLE HERE (public maps, blocks, blogs, etc.) 
-
-can you ask mamata to provide you one?</span>
->>>>>>> 2400b71e8176e95fdc6f48ba47fe3600de2ff824
 
 
 ##### line-pattern-clip `boolean`
@@ -1120,7 +1047,7 @@ Description | Sets the filter factor used for rendering the datasource of the ra
 Sample CartoCSS Code | `raster-filter-factor: -1;`
 Default Value | `-1`, allows the datasource to determine the appropriate downscaling option.
 Available Values | See [float](#float).
-| **Note:  Higher numbers can improve the output of the scaled image, but may reduce the speed of downscaling.  
+| **Note:**  Higher numbers can improve the output of the scaled image, but may reduce the speed of downscaling.  
 
 
 ##### raster-scaling `keyword`
