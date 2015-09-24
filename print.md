@@ -4,6 +4,7 @@ title: CartoDB Documentation Print
 ---
 
 {% include introduction.html %}
+<<<<<<< HEAD
 ## CartoDB.js
 
 CartoDB offers a simple unified JavaScript library called CartoDB.js that lets you interact with the CartoDB service. This library allows you to connect to your stored visualizations, create new visualizations, add custom interaction, and access or query your raw data from a web browser; meaning, your applications just got a whole lot more powerful with a lot less code.
@@ -2446,6 +2447,8 @@ For this map, the multiple layers, order, and stylings are defined by the MapCon
   ]
 }
 {% endhighlight %}
+=======
+>>>>>>> master
 ## Import API
 
 A standard import stores the data, uploaded from files with the valid formats, as specified.

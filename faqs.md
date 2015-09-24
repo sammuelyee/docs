@@ -224,7 +224,7 @@ The legends option is available from the CartoDB sidebar. You can disable a lege
 
 ### How to modify the size of the marker in a non-bubble map?
 
-​From the CartoDB Editor, select *wizards* from the CartoDB sidebar and select *Category* as the map type (or select another non-bubble map type). Customize your map to correspond to your categories.
+​From the CartoDB Editor, select [*wizards*](cartodb-editor.html#wizards) from the CartoDB sidebar and select *Category* as the map type (or select another non-bubble map type). Customize your map to correspond to your categories.
 ​
 
 ​With respect to size, add the `marker-width` [CartoCSS property](cartodb-editor.html#marker-width-expression). Click *cartocss* from the CartoDB sidebar and apply the following style with the CartoCSS editor:
@@ -277,7 +277,7 @@ No. Each layer is related to a geometry. For example, if you need to map polygon
 
 ### How can I set different colors for my icon markers?
 
-You can set icons as markers for map points with the map wizard options (Click *wizards* from the CartoDB sidebar).  Additionally, if you are using SVG images (and/or any of the icons available through the map wizard options), you can apply different colors for a single icon. Click *cartocss* from the CartoDB sidebar to apply custom CartoCSS styling options to your map.
+You can set icons as markers for map points with the map wizard options (Click [*wizards*](cartodb-editor.html#wizards) from the CartoDB sidebar).  Additionally, if you are using SVG images (and/or any of the icons available through the map wizard options), you can apply different colors for a single icon. Click *cartocss* from the CartoDB sidebar to apply custom CartoCSS styling options to your map.
 
 The following example displays how to combine the [CartoCSS marker properties](cartodb-editor.html#markers) for `marker-file` and `marker-fill`: 
 
@@ -336,9 +336,11 @@ Map {
 
 If you have a dataset that contains a column that describes the date when an event occurred, you can map this dynamically by using the Torque map option. 
 
-- From the Maps view of a selected map, click *wizards* from the CartoDB sidebar
-- Select *Torque* as the map type
-- Ensure that *Time* is selected for the respective column
+- From the Maps view of a selected map, click [*wizards*](cartodb-editor.html#wizards) from the CartoDB sidebar
+	
+	The sidebar expands, displaying a list of style options based on your data.
+- Select [*Torque*](cartodb-editor.html#torque) as the map type
+- Select *time* as the Time Column value
 
 <p class="wrap-border"><img src="{{ '/img/layout/faqs/torque.png' | prepend: site.baseurl }}" alt="Torque" /></p>
 
@@ -357,16 +359,16 @@ Create a new dataset from the query results and choose a solid color as your bas
 **Tip:** If you are comfortable working with the viz.json object, you can add custom code to your js file to set the zoom level and disable panning. For example, see [Blocking panning with createVis](http://bl.ocks.org/iriberri/3c1b32c58a5fe4f4a886). For more details about SQL and PostGIS in CartoDB
 Queries to visualizations, see [The Map Academy](http://academy.cartodb.com/courses/04-sql-postgis.html) course.
 
-### How can I have interactivity in a Torque layer?
+### Can I apply interactivity with a Torque layer?
 
-Currently, Torque layers do not have interactivity options. However, you can add two Torque layers on a map to stimulate interactivity.
+[Torque](cartodb-editor.html#torque) layers do not have interactivity options. However, you can add two Torque layers on a map to stimulate interactivity.
 
 <p class="wrap-border"><img src="{{ '/img/layout/faqs/torque-interactivity.png' | prepend: site.baseurl }}" alt="How can I have interactivity in a torque layer" /></p>
 
 
 - Add one static layer where the marker opacity is very low (almost invisible) and enable infowindows for the layer
 - Add one Torque layer
-- In order to keep all points on the map, apply the cumulative option
+- In order to keep all points on the map, apply the *Cumulative* option
 
 ### Can I calculate from/to routes with CartoDB?
 
@@ -534,11 +536,11 @@ A modern browser is required in order to use the authoring tool to perform the m
 
 ### Does CartoDB have multi-user functionalities?
 
-If you are interested in multi-user accounts, our Enterprise plans offer team options for multi-user functionality. Contact [Sales](mailto:sales@cartodb.com) for more information.
+If you are interested in multi-user accounts, our [Enterprise plan](cartodb-editor.html#cartodb-enterprise) offers team options for multi-user functionality. Contact [Sales](mailto:sales@cartodb.com) for more information.
 
 ### Do Torque maps move polygons/polylines?
 
-No, Torque does not work with polygons. The Torque wizard is only available for **points**.  Alternatively, there are other options that you could use to show different polygons with respect of time:
+No, Torque does not work with polygons. The [Torque wizard](cartodb-editor.html#torque) is only available for **points**.  Alternatively, there are other options that you could use to show different polygons with respect to time:
 
 - The JavaScript API, [CartoDB.js](http://docs.cartodb.com/cartodb-platform/cartodb-js.html), enables you to add interactivity to your maps. Learn the basics of CartoDB.js from [The Map Academy](http://academy.cartodb.com/courses/03-cartodbjs-ground-up.html) course
 - In combination with our [SQL API](http://docs.cartodb.com/cartodb-platform/sql-api.html), you can build a time-slider and show different polygons depending on how they evolve with respect to time

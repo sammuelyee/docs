@@ -4,7 +4,7 @@
 </div>-->
 <!--<div style="font-size:12pt;color:magenta;">Writer Note_csobier: Docs/issue#4012
 </div>-->
-While you can use CartoCSS to customize your maps, CartoDB provides additional CartoCSS properties that you can apply to Torque style maps. Torque maps are typically used to display temporal data. You can add CartoCSS properties to [Torque](#cartocss---torque-maps), [Torque Category](#cartocss---torque-category-maps), and [Torque Heat](#cartocss---torque-heat-maps) maps.
+While you can use CartoCSS to customize your maps, CartoDB provides additional CartoCSS properties that you can apply to Torque style maps. Torque maps are typically used to display temporal data. You can add CartoCSS properties to [Torque](#cartocss---torque-maps), [Torque Category](#cartocss---torque-category-maps), and [Torque Heat](#cartocss---torque-heatmaps) maps.
 
 ####CartoCSS - Torque Maps
 
@@ -23,7 +23,6 @@ Description | Specifies the number of steps in your torque animation.
 Sample CartoCSS Code | `torque-frame-count: 512;`
 Default Value | undefined
 Available Values | See [numbers](#numbers).
-Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 	
 ##### torque-animation-duration `numbers`
 
@@ -33,7 +32,6 @@ Sample CartoCSS Code | `torque-animation-duration: 30;`
 Default Value | undefined
 Available Values | See [numbers](#numbers).
 | IS THERE A SPECIFIED RANGE?
-Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 
 ##### torque-time-attribute `string`
 
@@ -42,7 +40,6 @@ Description | Defines the name of the data column in your dataset.
 Sample CartoCSS Code | `torque-time-attribute: "cartodb_id";`
 Default Value | undefined
 Available Values | See [string](#string).
-Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 	
 ##### torque-aggregation-function `keyword
 
@@ -56,7 +53,7 @@ Available Values | `count(column_name), max(column_name), sum(column_name)`
 | SHOULD THESE AVAILABLE VALUES ACTUALLY BE EXPRESSIONS, AND NOT KEYWORDS? 
 | I WAS TOLD THAT THERE ARE ACTUALLY MOE AGGREGRATION FUNCTIONS THAT ARE SUPPORTED?  PLEASE ADVISE.
 |**Note:** Column data must be numeric.
-Related Examples | - Wiki page about [how spatial aggregation works](https://github.com/CartoDB/torque/wiki/How-spatial-aggregation-works).
+Related Example | Wiki page about [how spatial aggregation works](https://github.com/CartoDB/torque/wiki/How-spatial-aggregation-works).
 
 
 ##### torque-resolution `float`
@@ -67,8 +64,6 @@ Sample CartoCSS Code | `torque-resolution: 2;`
 Default Value | undefined
 Available Values | See [float](#float).
 | **Note:** Defining a larger number value applies more grids to your data.
-Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
-
 
 ##### torque-data-aggregation `keyword`
 
@@ -77,7 +72,6 @@ Description | Defines how Torque maps display past data. By default, linear data
 Sample CartoCSS Code | `torque-data-aggregation: linear;`
 Default Value | `linear`, does not leave any trace of past data.
 Available Values | `linear``cumulative`
-Related Examples | <list of links to public maps, tutorials, faqs, etc.> 
 	
 Once your data is aggregated, you can further customize your Torque animation options by changing the marker styles for each frame of your animation. Customize the options found under the frame-offset values and add additional frame-offsets.
 
@@ -91,25 +85,9 @@ The following example displays CartoCSS properties with a Torque map.
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/torquecartoCSS.png' | prepend: site.baseurl }}" alt="Torque CartoCSS" /></p>
 
-####CartoCSS - Torque Category Maps
+####CartoCSS - Torque Heatmaps
 
-While any of the [Torque CartoCSS properties](#cartocss---torque-maps) can be applied to a Torque Category map, the *torque-aggregration-function* contains different available values that are specific for Torque Category maps.
-
-##### torque-aggregation-function `keyword` (Torque Category only)
-
------------- | -------------
-Description | Torque Category applies a PostgreSQL command to find the values that appear most often in your data (in order to cluster your data accordingly).
-Sample CartoCSS Code | `torque-aggregation-function: "CDB_Math_Mode (torque_category)";`
-Default Value | `CDB_Math_Mode(torque_category)`
-Available Values | `count(column_name), max(column_name), sum(column_name)`
-Related Examples | - Wiki page about [how spatial aggregation works](https://github.com/CartoDB/torque/wiki/How-spatial-aggregation-works).
-
-The following example displays CartoCSS properties with a Torque Category map.
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/torquecartoCSScat.png' | prepend: site.baseurl }}" alt="Torque Category CartoCSS" /></p>
-
-####CartoCSS - Torque Heat Maps
-
-While any of the [Torque CartoCSS properties](#cartocss---torque-maps) can be applied to a Torque Heat map, the following CartoCSS properties can also be applied to Torque Heat maps.
+While any of the [Torque CartoCSS properties](#cartocss---torque-maps) can be applied to a Torque Heatmap, the following CartoCSS properties can also be applied to Torque Heatmaps.
 
 - [image-filters `functions`](cartodb-editor.html#image-filters-functions), enables you to define the color stop for your heatmap.
 
@@ -122,8 +100,24 @@ While any of the [Torque CartoCSS properties](#cartocss---torque-maps) can be ap
 **Note:** It is a known issue that certain marker properties are not supported when applied to Torque maps. Specifically, when the [marker-file](cartodb-editor.html#marker-file-uri) and [marker-fill](cartodb-editor.html#marker-fill-color) CartoCSS properties are applied, you cannot color a sprit) using the marker-fill value. You must create a sprite per color when applying these properties to Torque map.
 [http://gis.stackexchange.com/questions/137384/marker-file-for-torque-cartodb](http://gis.stackexchange.com/questions/137384/marker-file-for-torque-cartodb)
 
-DOES THE NOTE ONLY APPLY TO TORQUE AND TORQUE CATEGORY? THIS CONTRADICTS THIS TORQUE HEAT SECTION. ADDITIONALLY, WHAT DOES SPRITE MEAN AND WHAT IS AN EXAMPLE SYNTAX? I thought a sprite was one large, combined image as opposed to individual images. But maybe there is a sprite property I do not know about?
+DOES THE NOTE ONLY APPLY TO TORQUE AND TORQUE CATEGORY? THIS CONTRADICTS THIS TORQUE HEATMAP SECTION. ADDITIONALLY, WHAT DOES SPRITE MEAN AND WHAT IS AN EXAMPLE SYNTAX? I thought a sprite was one large, combined image as opposed to individual images. But maybe there is a sprite property I do not know about?
 
-The following example displays CartoCSS properties with a Torque Heat map.
+The following example displays CartoCSS properties with a Torque Heatmap.
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/torquecartoCSSheat.png' | prepend: site.baseurl }}" alt="Torque Heat CartoCSS" /></p>
+
+####CartoCSS - Torque Category Maps
+
+While any of the [Torque CartoCSS properties](#cartocss---torque-maps) can be applied to a Torque Category map, the *torque-aggregration-function* contains different available values that are specific for Torque Category maps.
+
+##### torque-aggregation-function `keyword` (Torque Category only)
+
+------------ | -------------
+Description | Torque Category applies a PostgreSQL command to find the values that appear most often in your data (in order to cluster your data accordingly).
+Sample CartoCSS Code | `torque-aggregation-function: "CDB_Math_Mode (torque_category)";`
+Default Value | `CDB_Math_Mode(torque_category)`
+Available Values | `count(column_name), max(column_name), sum(column_name)`
+Related Example | Wiki page about [how spatial aggregation works](https://github.com/CartoDB/torque/wiki/How-spatial-aggregation-works).
+
+The following example displays CartoCSS properties with a Torque Category map.
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/torquecartoCSScat.png' | prepend: site.baseurl }}" alt="Torque Category CartoCSS" /></p>

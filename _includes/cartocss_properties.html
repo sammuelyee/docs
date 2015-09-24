@@ -34,8 +34,7 @@ In addition to customizing the look of your maps using CartoCSS, Torque maps hav
 
 These common element CartoCSS properties can be applied to any layer in a map.
 
-| | [comp-op](#comp-op-keyword) | [direct-image-filters](#direct-image-filters-functions) | [image-filters](#image-filters-functions)
-| | [opacity float](#opacity-float) | 
+| | [comp-op](#comp-op-keyword) | [image-filters](#image-filters-functions)| [opacity float](#opacity-float) 
 
 ##### comp-op `keyword`
 
@@ -44,19 +43,9 @@ Description | The composite operation define how a layer behaves, relative to la
 Sample CartoCSS Code | `comp-op: src-over;`
 Default Value | `src-over`, adds the current layer on top of other layers.
 Available Values | `clear``src``dst``src-over``dst-over``src-in``dst-in``src-out``dst-out``src-atop``dst-atop``xor``plus``minus``multiply``screen``overlay``darken``lighten``color-dodge``color-burn``hard-light``soft-light``difference``exclusion``contrast``invert``invert-rgb``grain-merge``grain-extract``hue``saturation``color``value`
-Related Examples |  See [CartoCSS Composite Operations](cartodb-editor.html#cartocss-composite-operations) for a description of composite operation effects.  
+Related Example |  See [CartoCSS Composite Operations](cartodb-editor.html#cartocss-composite-operations) for a description of composite operation effects.  
 
 **Note:** The `comp-op` value can be applied as an overall style effect, or it can be applied to the specific symbolizer property, depending on the color blending operation you are trying to achieve. For details, see [Composite Operation Effects](cartodb-editor.html#composite-operation-effects).
-
-
-##### direct-image-filters `functions`
-
------------- | -------------
-Description | Applies an image filter directly to the main canvas. This can also be applied to a separate canvas by using the [image-filters function](cartodb-editor.html#image-filters-functions).
-Sample CartoCSS Code | `direct-image-filter: function (none);`
-Default Value |  `none` applies no filters.
-| IT DOESN'T ACTUALLY WORK IF I APPLY NONE IN THE CARTOCSS EDITOR, DOES IT JUST MEAN THAT THE VALUE ISN'T DEFINED? THERE ARE SEVERL MAPBOX DESCRIPTIONS THAT MENTION THIS.
-Available Values | See [functions](#functions).
 
 ##### image-filters `functions`
 
@@ -64,12 +53,10 @@ Description | A list of image filters that applies a defined style to the active
 Sample CartoCSS Code | `image-filters: functions(value, value, value);`
 Default Value |  `none`, no filters applied.
 Available Values | See [functions](#functions).
-Related Examples | You can add multiple image-filters to a layer, which creates a new active canvas and renders all of the defined styles, before compositing everything back into the main canvas. For example:
+Related Example | You can add multiple image-filters to a layer, which creates a new active canvas and renders all of the defined styles, before compositing everything back into the main canvas. For example:
 	| `image-filters:colorize-alpha(blue, cyan, green, yellow , orange, red);`
 	
 THIS EXAMPLE WORKS, but using 'none' and 'null' generates an error. Does none just mean that this feature is not applied by default (none is not a valid value)?
-
-**Tip:** For creating an image-filter for the main canvas, see [direct-image-filters](#direct-image-filters-functions)
 
 ##### opacity `float`
 
@@ -126,8 +113,8 @@ Description | Indicates how a directory path is rendered, based on if you are us
 Sample CartoCSS Code | `base: string;`
 Default Value |  This parameter string is empty by default, indicating that any relative paths to files referenced in styles, or layers, are interpreted relative to the application process.
 Available Values | See [string](#string).
-Related Examples |  - If a map loads from an in memory object, any relative paths used to reference files are understood as the intended directly path. 
-|  - If the map loads from a filesystem object, and the in memory object is *not* defined, the directory path is rendered based on the stylesheet directory.
+Related Examples |  If a map loads from an in memory object, any relative paths used to reference files are understood as the intended directly path. 
+|  If the map loads from a filesystem object, and the in memory object is *not* defined, the directory path is rendered based on the stylesheet directory.
 
 WHAT IS IN MEMORY OBJECT AND FILESYSTEM OBJECT? And what stylesheet are they referencing? The cartocss I assume. These definitions are confusing, I need more information and sample code.
 
@@ -333,19 +320,17 @@ Description | A pair of length values [a,b], where (a) is the dash length and (b
 Sample CartoCSS Code | `line-dasharray: none`
 Default Value |  `none`, a solid line appears.
 Available Values | See [numbers](#numbers).
-Related Examples | See [How to create dotted lines](faqs.html#how-to-create-dotted-lines-in-cartodb).
+Related Example | See [How to create dotted lines](faqs.html#how-to-create-dotted-lines-in-cartodb).
 
 
 ##### line-dash-offset `numbers`
 
-Description | Sets the line dash pattern offset, to create an animation display for the line.
+Description | Sets the line dash pattern offset (pixel on, pixel off, pixel on, etc.) to create an animation display for the line.
 Sample CartoCSS Code | `line-dash-offset: none;`
 Default Value |  `none`, a solid line appears.
 Available Values | See [numbers](#numbers).
 
-**Note:** This is a valid parameter for SVG but is currently not supported for rendering.
-
-WHAT DOES THIS MEAN? I NEED MORE INFO SO THAT I CAN WORDSMITH.
+**Note:** This is a valid parameter for SVG but is currently not supported for rendering. For example, a value of `0` indicates that there is no line, a value of `1` displays a line. A line-dash-offset value of `0 1 0 1 0 1` displays the line offset pattern. You can change the value by one pixel `1 0 1 0 1 0` to change the offset of the line.
 
 
 ##### line-miterlimit `float`
@@ -379,7 +364,6 @@ Available Values | See [float](#float).
 Description | Simplifies geometries by a given algorithm value.
 Sample CartoCSS Code | `line-simplify-algorithm: radial-distance;`
 Default Value | `radial-distance`, geometry is simplified using the radial distance algorithm.
-| PLEASE CONFIRM, THE ORIGINAL MAPBOX DESCRIPTION SAYS “geometry will not be simplified using the radial distance algorithm”. That seems incorrect to me based on this description.
 Available Values | `radial-distance` `zhao-saalfeld` `visvalingam-whyatt`
 
 
@@ -436,14 +420,14 @@ These CartoCSS properties can be applied to point, line and polygon layers.
 | | [marker-max-error](#marker-max-error-float) | [marker-transform](#marker-transform-functions) | [marker-clip](#marker-clip-boolean)
 | | [marker-smooth](#marker-smooth-float) | [marker-geometry-transform](#marker-geometry-transform-functions) | [marker-comp-op](#marker-comp-op-keyword)
 
-WHAT ABOUT MARKER STROKE?  THIS PROPERTY APPEARS AS A FIELD IN THE CARTODB WIZARD OPTIONS? Is Marker Stroke an applicable CartoCSS property?  It is not listed on the Mapbox reference page.
+WHAT ABOUT MARKER STROKE?  THIS PROPERTY APPEARS AS A FIELD IN THE CARTODB WIZARD OPTIONS? Is Marker Stroke an applicable CartoCSS property?  It seems to be a combination of different CartoCSS properties. Ideally, each of the map wizard styling options to match up with a CartoCSS property.
 
 ##### marker-file `uri`
 
 Description | Displays an SVG file at each marker placement. If no file is specified, an ellipse is shown for the marker.
 Sample CartoCSS Code | `marker-file: url(http://www.clipartbest.com/cliparts/nTX/AGX/nTXAGXyTB.svg);`
-Default Value |  `none`, an ellipse or circle (if the height is equal to the width) appears.
-| WHAT HAPPENS IF THE WIDTH DOES NOT EQUAL THE HEIGHT, and no SVG file is specified?
+Default Value |  `none`, an ellipse appears if the width does not equal the height.  
+| **Note:** If the height is equal to the width, a circle appears.
 Available Values | See [uri](#uri).
 
 
@@ -475,12 +459,11 @@ Available Values | See [color](#color).
 
 ##### marker-line-width `float`
 
-Description | The width of the stroke around a marker shape, in pixels. 
-| (This is positioned on the boundary, so high values can cover the area itself.)
-| WHAT DOES THIS MAPBOX DESCRIPTION MEAN?
+Description | The width of the line around the marker, in pixels, centered on the edge. 
 Sample CartoCSS Code | `marker-line-width: undefined;`
 Default Value |  undefined pixels
 Available Values | See [float](#float).
+Related Example | The marker-line-width is positioned on the boundary, so high values can cover the area itself. For example, if you have a marker with a width (diameter) of `4`and add a line width of `3`, 1.5 px of the line width appears on the inside of of the edge, covers the entire marker.
 
 
 ##### marker-line-opacity `float`
@@ -764,7 +747,7 @@ Description | Enables you to wrap text with a character, rather than with a spac
 Sample CartoCSS Code | `shield-wrap-character: '_';`
 Default Value | `undefined
 Available Values | See [string](#string).
-Related Examples | - [Always break long city names (New Bedford Massachusetts) on two lines](https://www.mapbox.com/tilemill/docs/guides/styling-labels/#multi-line-labels) 
+Related Example | [Always break long city names (New Bedford Massachusetts) on two lines](https://www.mapbox.com/tilemill/docs/guides/styling-labels/#multi-line-labels) 
 | - *NEED TO PROVIDE CARTODB EXAMPLES (links to blocks, public maps, etc.)
 
 
@@ -775,7 +758,7 @@ Description | Specifies the color of the halo around the text.
 Sample CartoCSS Code | `shield-halo-fill: #FFFFFF;`
 Default Value | `#FFFFFF`, the halo color is white by default
 Available Values | See [color](#color).
-Related Examples | [Design Control with Regular Expressions](https://www.mapbox.com/blog/design-control-with-regular-expressions-in-mapbox-studio/)
+Related Example | [Design Control with Regular Expressions](https://www.mapbox.com/blog/design-control-with-regular-expressions-in-mapbox-studio/)
 |	NEED TO ADD OUR OWN SIMILAR EXAMPLE INSTEAD (links to blocks, public maps, etc.)
 
 
@@ -941,7 +924,7 @@ Description | A defined image file that renders the pattern of a line. The image
 Sample CartoCSS Code | `line-pattern-file: ur(cliff.png);`
 Default Value | none
 Available Values | See [uri](#uri).
-Related Examples | [Cliff lines](https://www.mapbox.com/tilemill/docs/guides/styling-lines/)
+Related Example | [Cliff lines](https://www.mapbox.com/tilemill/docs/guides/styling-lines/)
 | WE NEED OUR OWN EXAMPLE HERE (public maps, blocks, blogs, etc.)
 
 
@@ -1177,7 +1160,7 @@ Description | A stop tag assigns raster data with colors and values.
 Sample CartoCSS Code | `raster-colorizer-stops: ',`
 Default Value | undefined
 Available Values | See [float](#float).
-Related Examples | [CartoDB blocks- raster demos](http://bl.ocks.org/rochoa/d3cf809120bda97d0826)
+Related Example | [CartoDB blocks- raster demos](http://bl.ocks.org/rochoa/d3cf809120bda97d0826)
 
 **Note:** Stop values must be listed in ascending order and contain a minimum value and associated color.
 		{% highlight bash %}
@@ -1494,7 +1477,6 @@ Description | Places text labels on top of points, along multiple line places, o
 Sample CartoCSS Code | `text-placement: point;`
 Default Value | `point`, the text label appears on the top of map points.
 Available Values | `point``line``vertex``interior`
-
 
 ##### text-placement-type `keyword`
 
