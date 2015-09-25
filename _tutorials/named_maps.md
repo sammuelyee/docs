@@ -44,6 +44,8 @@ There are four main steps:
 #### Tools
 
 + [curl commandline utility](http://curl.haxx.se/) -- installed by default on most Linux and OS X machines, accessible through [Cygwin](https://www.cygwin.com/) on PCs
+	
+	**Tip:** If you are running cURL commands through a PC console, note that Windows only supports double quotes "" for cUrl commands.
 + [POSTMAN REST client](https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm?hl=en) -- a Chrome extension that allows for easy API calls
 
 #### Documentation
@@ -112,6 +114,8 @@ Using the command line tool [curl](http://curl.haxx.se/), we create the map usin
 {% highlight sh %}
 curl 'https://{your_account_name}.cartodb.com/api/v1/map/named?api_key={your_api_key}' -H 'Content-Type: application/json' -d @config.json
 {% endhighlight %}
+
+**Tip:** If you are running cURL commands through a PC console, note that Windows only supports double quotes "" for cUrl commands.
 
 For instance, your API call might look like this:
 {% highlight sh %}
@@ -198,6 +202,8 @@ Named maps can be created, instantiated, updated, and deleted. You can also list
 curl -X GET 'https://{your_account_name}.cartodb.com/api/v1/map/named?api_key={your_api_key}'
 {% endhighlight %}
 
+**Tip:** If you are running cURL commands through a PC console, note that Windows only supports double quotes "" for cUrl commands.
+
 **Example reponse**
 
 {% highlight javascript %}
@@ -224,6 +230,8 @@ curl -X PUT \
   -d @new_config.json
 {% endhighlight %}
 
+**Tip:** If you are running cURL commands through a PC console, note that Windows only supports double quotes "" for cUrl commands.
+
 This would be useful if you later want to update your map with a different CartoCSS style or SQL statement. 
 
 Copy your previous configuration file into a new file called `new_config.json`. Now change your `cartocss` key to the following instead, but use all other options previously used.
@@ -239,6 +247,8 @@ Send your new config file to the server to update your map.
 {% highlight sh %}
 curl -X DELETE 'https://{your_account_name}.cartodb.com/api/v1/map/named/{template_name}?api_key={your_api_key}'
 {% endhighlight %}
+
+**Tip:** If you are running cURL commands through a PC console, note that Windows only supports double quotes "" for cUrl commands.
 
 ## Summary
 
