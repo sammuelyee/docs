@@ -8,7 +8,7 @@ js_asset: "editor"
 
 ### What databases are supported by CartoDB?
 
-The CartoDB geospatial database is built on the [PostgreSQL](http://www.postgresql.org/docs/9.1/static/) platform and supports advanced  [PostGIS](http://postgis.net/docs/manual-2.0/) capabilities. All of our tables include `the_geom` column, which is a geometry field that indexes geometries in the EPSG:4326 (WGS 1984) coordinate system. All tables also automatically generate and update `the_geom_webmercator` column, which references the column internally to quickly create tiles for maps.  The CartoDB Platform connects your database with the Map API and the SQL APIs so that you can interact with data remotely and access the most recent data libraries.
+The CartoDB geospatial database is built on the [PostgreSQL](http://www.postgresql.org/docs/9.1/static/) platform and supports advanced [PostGIS](http://postgis.net/docs/manual-2.0/) capabilities. All of our tables include `the_geom` column, which is a geometry field that indexes geometries with the EPSG:4326 (WGS 1984) coordinate system. All tables also automatically generate and update `the_geom_webmercator` column, which references the column internally to quickly create tiles for maps.  The CartoDB Platform connects your database with the Map API and the SQL APIs so that you can interact with data remotely and access the most recent data libraries.
 
 Optionally, CartoDB offers an Enterprise solution enabling you to connect your own database to our platform. Contact [Sales](mailto:sales@cartodb.com) for more information.
 

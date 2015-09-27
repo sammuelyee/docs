@@ -108,9 +108,15 @@ Optionally, you can add data manually or programmatically, with the Connect Data
 	
 	A blank dataset containing the default CartoDB columns and indexes are created and formatted. 
 	
-4. Use the CartoDB sidebar to add rows and columns to your dataset
-
 	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/create_empty_dataset_addrows.png' | prepend: site.baseurl }}" alt="Add rows and columns to an empty dataset" /></p>
+	
+4. Add rows and columns to your dataset with the [CartoDB sidebar](#cartodb-sidebar) options, or by using the context menu items
+
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/emptydataset_addcolumn.png' | prepend: site.baseurl }}" alt="Add column to an empty dataset" /></p>
+	
+	For example, the following options display how to add a row
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/emptydataset_addrow.png' | prepend: site.baseurl }}" alt="Add row to an empty dataset" /></p>
+	
 
 #### Use Case:  Connecting to an External Data Source (Twitter)
 
@@ -794,23 +800,30 @@ Delete map | Deletes the selected map
 
 ### CartoDB Sidebar
 
+The CartoDB sidebar enables you to access additional tools to help you customize your map data. The sidebar appears minimized by default from the Maps View. Clicking a sidebar option expands the options over your map.  This section describes the options available from the CartoDB sidebar.
+
+The CartoDB sidebar appears minimized by default. When an option is selected, the sidebar expands displaying the related options. You can switch between minimizing and maximizing the sidebar options. The following example displays a side-by-side view of the sidebar option minimized and maximized. 
+	
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/sidebar.png' | prepend: site.baseurl }}" alt="CartoDB Sidebar" /></p>
 
-The CartoDB sidebar is a toolkit that enables you to customize how data is displayed on your maps. Expand it to access your tools, and retract it to view your progress. Upon opening the sidebar, you'll notice a default data layer that syncs to your dataset. Add more layers to show more datasets at once.
 
-#### Custom SQL
+#### SQL
+
+[SQL](https://en.wikipedia.org/wiki/SQL) (Structured Query Language) is how applications request data from a database. The CartoDB geospatial database is built on the [PostgreSQL](http://www.postgresql.org/docs/9.1/static/) platform and supports advanced [PostGIS](http://postgis.net/docs/manual-2.0/) capabilities. PostGIS allows you to perform geospatial queries, such as finding data points within a given radius, the area of polygons in your dataset, and so on.
+
+SQL queries enable  you to:
+
+- Request simple queries (*i.e.* "request all records from this dataset")
+- Request queries that match certain conditions (*i.e.*  "request all records in which this field equals a certain value")
+- Request more complex queries that combine data from two or more datasets
+
+The *SQL* option is available from the CartoDB sidebar and displays when an SQL query is applied.
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/sqlquery.png' | prepend: site.baseurl }}" alt="SQL Query" /></p>
 
-[SQL](https://en.wikipedia.org/wiki/SQL) (Structured Query Language) is the way that many applications request data from a database. They can ask simple queries (*i.e.* "give me all records from this dataset"), queries that match certain conditions (*i.e.*  "give me all records in which this field equals a certain value"), or more complex queries that combine data from two or more datasets.
+When you connect a dataset and create a map, all of the data in the dataset is displayed by default. You can apply an custom SQL query, or use the [filters](#filters) option, to view specific data. 
 
-CartoDB is built on a database called [PostgreSQL](http://www.postgresql.org/), and the geospatial extension called [PostGIS](http://postgis.net/). PostGIS allows you to perform geospatial queries such as finding data points within a given radius, the area of polygons in your dataset, etc. The available queries and documentation can be found on the reference pages of [PostgreSQL](http://www.postgresql.org/docs/9.2/static/reference.html) and [PostGIS](http://postgis.net/docs/manual-2.0/reference.html).
-
-When you create a map and link a dataset to it, all of the data in that dataset will be displayed. To curate what data is shown, you may write a custom SQL query or use our filter functions.
-
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/filters.png' | prepend: site.baseurl }}" alt="Filters" /></p>
-
-In the SQL window, you are shown which query is being applied to your data and given the ability to modify it. Automatically, you will see the query that has been produced from the applied filter (Sidenote: this is also a fun way to learn SQL! We also have an SQL course in our [Map Academy](http://academy.cartodb.com/courses/04-sql-postgis.html)).
+**Tip:**  If you apply a filter, the related SQL code automatically appears in the custom SQL query. This enables you to view and modify what SQL queries are applied to your data.  See the [SQL and PostGIS in CartoDB](http://academy.cartodb.com/courses/04-sql-postgis.html) Map Academy course for more details about querying your data.
 
 #### Wizards
 
@@ -1155,6 +1168,8 @@ If you opt to create a custom legend from the "Template" field described above, 
 #### Filters
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/filter.png' | prepend: site.baseurl }}" alt="Filters" /></p>
+
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/filters.png' | prepend: site.baseurl }}" alt="Filters" /></p>
 
 Use the Filters section of the editor to select certain ranges of data to display. When working with numerical data, the Filter allows you to see the distribution of your data and select what range to include. To get started, pick the column from which you want to source data. If you're working with string (or text) data, you can search text to include/exclude. When you have date (or numeric) data, include or exclude certain periods of time. If you need to get more creative, different filters (on the same or on different columns) may be combined to feature unique data combinations of your choice.
 
