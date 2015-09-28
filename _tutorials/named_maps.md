@@ -45,7 +45,7 @@ There are four main steps:
 
 + [curl commandline utility](http://curl.haxx.se/) -- installed by default on most Linux and OS X machines, accessible through [Cygwin](https://www.cygwin.com/) on PCs
 	
-	**Tip:** If you are running cURL commands through a PC console, note that Windows only supports double quotes "" for cUrl commands.
+	**Tip:** If you are running cURL commands through a PC console, note that Windows only supports double quotes "" for cURL commands.
 + [POSTMAN REST client](https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm?hl=en) -- a Chrome extension that allows for easy API calls
 
 #### Documentation
@@ -115,7 +115,7 @@ Using the command line tool [curl](http://curl.haxx.se/), we create the map usin
 curl 'https://{your_account_name}.cartodb.com/api/v1/map/named?api_key={your_api_key}' -H 'Content-Type: application/json' -d @config.json
 {% endhighlight %}
 
-**Tip:** If you are running cURL commands through a PC console, note that Windows only supports double quotes "" for cUrl commands.
+**Tip:** If you are running cURL commands through a PC console, note that Windows only supports double quotes "" for cURL commands.
 
 For instance, your API call might look like this:
 {% highlight sh %}
@@ -202,7 +202,7 @@ Named maps can be created, instantiated, updated, and deleted. You can also list
 curl -X GET 'https://{your_account_name}.cartodb.com/api/v1/map/named?api_key={your_api_key}'
 {% endhighlight %}
 
-**Tip:** If you are running cURL commands through a PC console, note that Windows only supports double quotes "" for cUrl commands.
+**Tip:** If you are running cURL commands through a PC console, note that Windows only supports double quotes "" for cURL commands.
 
 **Example reponse**
 
@@ -230,7 +230,7 @@ curl -X PUT \
   -d @new_config.json
 {% endhighlight %}
 
-**Tip:** If you are running cURL commands through a PC console, note that Windows only supports double quotes "" for cUrl commands.
+**Tip:** If you are running cURL commands through a PC console, note that Windows only supports double quotes "" for cURL commands.
 
 This would be useful if you later want to update your map with a different CartoCSS style or SQL statement. 
 
@@ -248,7 +248,7 @@ Send your new config file to the server to update your map.
 curl -X DELETE 'https://{your_account_name}.cartodb.com/api/v1/map/named/{template_name}?api_key={your_api_key}'
 {% endhighlight %}
 
-**Tip:** If you are running cURL commands through a PC console, note that Windows only supports double quotes "" for cUrl commands.
+**Tip:** If you are running cURL commands through a PC console, note that Windows only supports double quotes "" for cURL commands.
 
 ## Summary
 
