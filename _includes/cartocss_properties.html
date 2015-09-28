@@ -29,8 +29,8 @@ In addition to customizing the look of your maps using CartoCSS, Torque maps hav
 
 | **Torque CartoCSS Properties:** | 
 ------------ | -------------
-| | [torque-frame-count](#torque-frame-count-numbers) | [torque-animation-duration](#torque-animation-duration-numbers) | [torque-time-attribute](#torque-time-attribute-string)
-| | [torque-aggregation-function](#torque-aggregation-function-keyword) | [torque-resolution](#torque-resolution-float) | [torque-data-aggregation](#torque-data-aggregation-keyword)
+| | [-torque-frame-count](#torque-frame-count-number) | [-torque-animation-duration](#torque-animation-duration-number) | [-torque-time-attribute](#torque-time-attribute-string)
+| | -[torque-aggregation-function](#torque-aggregation-function-keyword) | [-torque-resolution](#torque-resolution-float) | [-torque-data-aggregation](#torque-data-aggregation-keyword)
 
 
 #### Common Elements
@@ -1216,6 +1216,8 @@ Available Values | See [expression](#expression).
 
 
 ##### text-face-name `string`
+
+**Note:** A limited number of fonts can be applied directly through the CartoDB wizard. For details, see a list of [supported fonts](#supported-fonts). This CartoCSS property enables you to apply a larger range of fonts for your map label text.
 
 Description | The font name and style for the text-name label.
 Sample CartoCSS Code | `text-face-name: ‘Open Sans Bold’;`

@@ -8,79 +8,87 @@ While you can use CartoCSS to customize your maps, CartoDB provides additional C
 
 ####CartoCSS - Torque Maps
 
-The following CartoCSS properties can be applied to any Torque style maps.  Note that some values vary, depending on the type of Torque map you are creating.
+The following CartoCSS properties can be applied to any Torque style map.  Note that some values vary, depending on the type of Torque map you are creating.
 
 <span class='reviewer'>reviewer: IS THIS CORRECT, OR DO THESE PROPERTIES ONLY APPLY TO TORQUE MAPS? It looks like I can see all these properties (behind the scenes in the CartoCSS Editor) for all Torque style maps</span>
 
-| | [torque-frame-count](#torque-frame-count-numbers) | [torque-animation-duration](#torque-animation-duration-numbers) | [torque-time-attribute](#torque-time-attribute-string)
-| | [torque-aggregation-function](#torque-aggregation-function-keyword) | [torque-resolution](#torque-resolution-float) | [torque-data-aggregation](#torque-data-aggregation-keyword)
+
+| | [-torque-frame-count](#torque-frame-count-number) | [-torque-animation-duration](#torque-animation-duration-number) | [-torque-time-attribute](#torque-time-attribute-string)
+| | [-torque-aggregation-function](#torque-aggregation-function-keyword) | [-torque-resolution](#torque-resolution-float) | [-torque-data-aggregation](#torque-data-aggregation-keyword)
+
+**Note:** All Torque CartoCSS syntax is prefaced with a hypen.
 
 
-##### torque-frame-count `numbers`
+##### -torque-frame-count `number`
 
 ------------ | -------------
 Description | Specifies the number of steps in your torque animation.
-Sample CartoCSS Code | `torque-frame-count: 512;`
+Sample CartoCSS Code | `-torque-frame-count:512;`
 Default Value | undefined
+| <span class='reviewer'>reviewer: @andye's comment: it really undefined? Or depends on input data?</span>
 Available Values | See [numbers](#numbers).
 | **Tip** This is the *Steps* option from the Torque wizard.
 	
-##### torque-animation-duration `numbers`
+##### -torque-animation-duration `number`
 
 ------------ | -------------
 Description | Specifies the length of time for your animation, in seconds.
-Sample CartoCSS Code | `torque-animation-duration: 30;`
+Sample CartoCSS Code | `-torque-animation-duration:30;`
 Default Value | undefined
 Available Values | See [numbers](#numbers).
 | <span class='reviewer'>reviewer: IS THERE A SPECIFIED RANGE?</span>
+|  <span class='reviewer'>reviewer: @andye's comment: `0` indicates a large number, as in billions of seconds. @fdansv knows</span>
 | **Tip** This is the *Duration (secs)* option from the Torque map wizard.
 
+ <span class='reviewer'>reviewer: @andye's comment: This can be a real number (decimal) while frame count has to be an integer?</span>
 
-##### torque-time-attribute `string`
+##### -torque-time-attribute `string`
 
 ------------ | -------------
 Description | Defines the name of the data column in your dataset.
-Sample CartoCSS Code | `torque-time-attribute: "cartodb_id";`
+Sample CartoCSS Code | `-torque-time-attribute:"cartodb_id";`
 Default Value | undefined
 Available Values | See [string](#string).
 | **Tip** This is the *Time Column* option from the Torque map wizard.
 
 	
-##### torque-aggregation-function `keyword
+##### -torque-aggregation-function `keyword`
 
-***Note:** While this property can be applied to any Torque map, please note the different available values that should be applied if you are using a [Torque Category](#torque-aggregation-function-keyword-torque-category-only) map.
+***Note:** While this property can be applied to any Torque map, please note the different available values that should be applied if you are using a [Torque Category](#-torque-aggregation-function-keyword-torque-category-only) map.
 
 ------------ | -------------
-Description | Since Torque maps renders data in clusters, this property defines how values are displayed in each cluster of the map. For example, you can define: a maximum value, a count, or the total number of values in each cluster.
-Sample CartoCSS Code | `torque-aggregation-function: "count (cartodb_id)";`
-Default Value | undefined
+Description | Since Torque maps renders data in clusters, this property defines how values are displayed in each cluster of the map. Column data must be numeric. For example, you can define: a maximum value, a count, or the total number of values in each cluster.
+Sample CartoCSS Code | `-torque-aggregation-function: "count(cartodb_id)";`
+Default Value | `"count(cartodb_id)"`
 Available Values | `count(column_name), max(column_name), sum(column_name)`
 | <span class='reviewer'>reviewer: I WAS TOLD THAT THERE ARE ACTUALLY MORE AGGREGRATION FUNCTIONS THAT ARE SUPPORTED?  PLEASE ADVISE.</span>
-|**Note:** Column data must be numeric.
+|  <span class='reviewer'>reviewer: @andye's comment: Yes, see a large list here: [http://www.postgresql.org/docs/9.3/static/functions-aggregate.html](http://www.postgresql.org/docs/9.3/static/functions-aggregate.html)</span>
+| <span class='reviewer'>reviewer: csobier's comment: Can someone from product confirm that all these are supported in CartoDB?</span>
+| **Tip:** Functions can also combinations of functions and operations. For example, `log(1 + max(column_name))`
 Related Example | Wiki page about [how spatial aggregation works](https://github.com/CartoDB/torque/wiki/How-spatial-aggregation-works).
 
 
-##### torque-resolution `float`
+##### -torque-resolution `float`
 
 ------------ | -------------
 Description | Since Torque maps create a grid from your data and aggregates data to each cell of that grid, this property defines the width and height of each cell, in pixels. 
-Sample CartoCSS Code | `torque-resolution: 2;`
+Sample CartoCSS Code | `-torque-resolution:2;`
 Default Value | undefined
-Available Values | See [float](#float).
-| **Note:** Defining a larger number value applies more grids to your data.
-| **Tip** This is the *Resolution* option from the Torque map wizard.
+Available Values | Resolution values should be applied in powers of 2 (for example, `2` `4` `8` and so on). The maximum value is `256`.
+| **Note:** Defining a larger number applies a larger grid to your data.
+| **Tip:** This is the *Resolution* option from the Torque map wizard.
 
 
-##### torque-data-aggregation `keyword`
+##### -torque-data-aggregation `keyword`
 
 ------------ | -------------
 Description | Defines how Torque maps display past data. By default, linear data aggregation is applied, where no traces of past data appears. Optionally, you can show past data markers cumulatively.
-Sample CartoCSS Code | `torque-data-aggregation: linear;`
+Sample CartoCSS Code | `-torque-data-aggregation:linear;`
 Default Value | `linear`, does not leave any trace of past data.
 Available Values | `linear``cumulative`
 | **Tip** This is the *Cumulative* option from the Torque map wizard.
 
-Once your data is aggregated, you can further customize your Torque animation options by changing the marker styles for each frame of your animation. Customize the options found under the frame-offset values and add additional frame-offsets.
+Once your data is aggregated, you can further customize your Torque animation options by changing the marker styles for each frame of your animation. Customize the options found under the `[frame-offset=number]` section to add more styling properties and values.  **Tip:** `[frame-offset]` is set with the *Trails* option from the Torque map wizard.
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/torquecartoCSSframeoffset.png' | prepend: site.baseurl }}" alt="Torque CartoCSS Frame Offset" /></p>
 
@@ -113,14 +121,14 @@ The following example displays CartoCSS properties with a Torque Heatmap.
 
 ####CartoCSS - Torque Category Maps
 
-While any of the [Torque CartoCSS properties](#cartocss---torque-maps) can be applied to a Torque Category map, the *torque-aggregration-function* contains different available values that are specific for Torque Category maps.
+While any of the [Torque CartoCSS properties](#cartocss---torque-maps) can be applied to a Torque Category map, the `-torque-aggregration-function` contains different available values that are specific for Torque Category maps.
 
-##### torque-aggregation-function `keyword` (Torque Category only)
+##### -torque-aggregation-function `keyword` (Torque Category only)
 
 ------------ | -------------
 Description | Torque Category applies a PostgreSQL command to find the values that appear most often in your data (in order to cluster your data accordingly).
-Sample CartoCSS Code | `torque-aggregation-function: "CDB_Math_Mode (torque_category)";`
-Default Value | `CDB_Math_Mode(torque_category)`
+Sample CartoCSS Code | `-torque-aggregation-function:"CDB_Math_Mode (torque_category)";`
+Default Value | `"CDB_Math_Mode(torque_category)"`
 Available Values | `count(column_name), max(column_name), sum(column_name)`
 Related Example | Wiki page about [how spatial aggregation works](https://github.com/CartoDB/torque/wiki/How-spatial-aggregation-works).
 

@@ -1167,17 +1167,33 @@ CartoDB Logo | Enables you to include or hide the CartoDB logo on your map
 
 ### Supported Fonts
 
-- **DejaVu Sans**  
-Oblique, Bold, Oblique, Bold Oblique, Condensed, Condensed Oblique, Condensed Bold Oblique
+The following fonts can be selected from the map [wizard](#wizards), "Label Font" field, when label text is enabled for select map types:  *DejaVu Sans Book, unifont Medium, Open Sans Regular, Lato, Graduate, Gravitas One, Old Standard*.
 
-- **DejaVu Sans Serif**  
-Condensed, Condensed Italic, Book, Condensed Bold Italic, Italic
+Additionally, you can apply the `text-face-name: 'string'` property with [CartoCSS syntax](#text-face-name-string). *These are the font families and the supported weights for each font family.*
+
+- **Open Sans**  
+Light, Regular, Semibold, Bold, Extrabold, Light Italic, Italic, Semibold Italic, Bold Italic, Extrabold Italic
+
+- **DejaVu Sans**  
+ExtraLight, Book, Oblique, Bold, Bold Oblique, Condensed, Condensed Oblique, Condensed Bold, Condensed Bold Oblique, Condensed Italic, Condensed Bold Italic
+
+- **DejaVu Serif**  
+Book, Italic, Bold, Bold Italic, Condensed
+
+- **Lato**  
+Hairline,  Hairline Italic, Light, Light Italic, Regular, Italic, Bold, Bold Italic, Black, Black Italic
+
+- **Graduate**  
+Regular
+
+- **Gravitas One**  
+Regular
+
+- **Old Standard TT**  
+Regular, Italic, Bold
 
 - **Unifont**  
 Medium
-
-- **Open Sans**  
-Regular, Bold, Semibold, Light, Italic, Bold Italic, Semibold Italic, Light Italic
 
 ## Managing Your Data
 
