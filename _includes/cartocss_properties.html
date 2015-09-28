@@ -5,8 +5,6 @@ Each CartoCSS map category has its own configurable properties. You can apply mu
 
 ***Note:** CartoDB is currently maintaining this library of common properties since [Mapbox](https://github.com/mapbox/carto/blob/master/docs/latest.md) is no longer doing active development for CartoCSS.*
 
-<span class='reviewer'>reviewer: Do we want to reference the original source of these parameters? Turns out we do not support them all. Let me know if I should keep or remove this note.</span>
-
 
 | **CartoCSS Symbolizer:** |
 ------------ | ------------- |
@@ -25,7 +23,7 @@ Each CartoCSS map category has its own configurable properties. You can apply mu
 ------------ | -------------
 | | [Common Elements](#common-elements) | [Map Background and String Elements](#map-background-and-string-elements) | [Debug mode](#debug-mode-string)
 
-In addition to customizing the look of your maps using CartoCSS, Torque maps have specific properties that you can apply. For details, see [CartoCSS Properties for Torque Style Maps](cartodb-editor.html#cartocss-properties-for-torque-style-maps).
+In addition to customizing the look of your maps using CartoCSS, CartoDB provides additional CartoCSS properties that you can apply to Torque style maps. For details, see [CartoCSS Properties for Torque Style Maps](cartodb-editor.html#cartocss-properties-for-torque-style-maps).
 
 | **Torque CartoCSS Properties:** | 
 ------------ | -------------
@@ -139,7 +137,6 @@ Description | The level of antialiasing (smoothness of oversampling) of polygon 
 Sample CartoCSS Code | `polygon-gamma: 1; `
 Default Value |  `1`, is fully antialiased.
 Available Values | `0`, `1`, `2`, `3`, `4`, `5`
-| <span class='reviewer'>reviewer: WHY WOULDN'T ZERO REPRESENT FULLY ANTIALIASED THEN?</span>
 
 
 ##### polygon-gamma-method `keyword`
@@ -388,9 +385,8 @@ Available Values | See [uri](#uri).
 ##### marker-opacity `float`
 
 Description | Sets the overall opacity of the marker, overriding any stroke-opacity and fill-opacity settings.
-| <span class='reviewer'>reviewer: WHAT IS THE stroke-opacity property? That does not seem to be defined on its own?</span>
 Sample CartoCSS Code | `marker-opacity: 1;`
-Default Value |  `1`, the stroke-opacity and fill-opacity are used???
+Default Value |  `1`, the stroke-opacity and fill-opacity are used.
 Available Values | See [float](#float).
 
 
@@ -405,7 +401,6 @@ Available Values | See [float](#float).
 ##### marker-line-color `color`
 
 Description | The color of the stroke around a marker shape.
-| <span class='reviewer'>reviewer: IS STROKE commonly known or should we define it?</span>
 Sample CartoCSS Code | `marker-line-color: black;`
 Default Value |  `black`
 Available Values | See [color](#color).
@@ -465,7 +460,6 @@ Available Values | `arrow``ellipse`
 Description | If a default [marker-type](#marker-type-keyword) property is defined, this property indicates the width of the marker-type.
 Sample CartoCSS Code | `marker-width: 10.0;`
 Default Value |  `10`
-| <span class='reviewer'>reviewer: WHAT IS THE SUGGESTED RANGE?</span>
 Available Values | See [expression](#expression).
 
 
@@ -474,7 +468,6 @@ Available Values | See [expression](#expression).
 Description | If a default [marker-type](#marker-type-keyword) property is defined, this property indicates the height of the marker-type.
 Sample CartoCSS Code | `marker-height: 10.0;`
 Default Value |  `10`
-| <span class='reviewer'>reviewer: WHAT IS THE SUGGESTED RANGE?</span>
 Available Values | See [expression](#expression)
 
 
@@ -507,7 +500,6 @@ Available Values | See [boolean](#boolean).
 Description | The space between repeated markers, in pixels. If spacing is less than the marker size, or larger than the line segment length, no markers are displayed.
 Sample CartoCSS Code | `marker-line-spacing: spacing;`
 Default Value |  `100`
-| <span class='reviewer'>WHAT IS THE SUGGESTED RANGE?</span>
 Available Values | See [float](#float).
 
 

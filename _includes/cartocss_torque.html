@@ -1,5 +1,3 @@
-
-
 <!--<div style="font-size:12pt;color:magenta;">Writer Note_csobier: H2- Torque tilecube release, issue #4015
 </div>-->
 <!--<div style="font-size:12pt;color:magenta;">Writer Note_csobier: Docs/issue#4012
@@ -8,10 +6,7 @@ While you can use CartoCSS to customize your maps, CartoDB provides additional C
 
 ####CartoCSS - Torque Maps
 
-The following CartoCSS properties can be applied to any Torque style map.  Note that some values vary, depending on the type of Torque map you are creating.
-
-<span class='reviewer'>reviewer: IS THIS CORRECT, OR DO THESE PROPERTIES ONLY APPLY TO TORQUE MAPS? It looks like I can see all these properties (behind the scenes in the CartoCSS Editor) for all Torque style maps</span>
-
+The following CartoCSS properties can be applied to Torque style maps.  Note that some values vary, depending on the type of Torque map you are creating.
 
 | | [-torque-frame-count](#torque-frame-count-number) | [-torque-animation-duration](#torque-animation-duration-number) | [-torque-time-attribute](#torque-time-attribute-string)
 | | [-torque-aggregation-function](#torque-aggregation-function-keyword) | [-torque-resolution](#torque-resolution-float) | [-torque-data-aggregation](#torque-data-aggregation-keyword)
@@ -25,7 +20,6 @@ The following CartoCSS properties can be applied to any Torque style map.  Note 
 Description | Specifies the number of steps in your torque animation.
 Sample CartoCSS Code | `-torque-frame-count:512;`
 Default Value | undefined
-| <span class='reviewer'>reviewer: @andye's comment: it really undefined? Or depends on input data?</span>
 Available Values | See [numbers](#numbers).
 | **Tip** This is the *Steps* option from the Torque wizard.
 	
@@ -35,12 +29,9 @@ Available Values | See [numbers](#numbers).
 Description | Specifies the length of time for your animation, in seconds.
 Sample CartoCSS Code | `-torque-animation-duration:30;`
 Default Value | undefined
-Available Values | See [numbers](#numbers).
-| <span class='reviewer'>reviewer: IS THERE A SPECIFIED RANGE?</span>
-|  <span class='reviewer'>reviewer: @andye's comment: `0` indicates a large number, as in billions of seconds. @fdansv knows</span>
+Available Values | See [numbers](#numbers).  *This can also be a decimal - see [float](#float).*
 | **Tip** This is the *Duration (secs)* option from the Torque map wizard.
 
- <span class='reviewer'>reviewer: @andye's comment: This can be a real number (decimal) while frame count has to be an integer?</span>
 
 ##### -torque-time-attribute `string`
 
@@ -54,17 +45,15 @@ Available Values | See [string](#string).
 	
 ##### -torque-aggregation-function `keyword`
 
-***Note:** While this property can be applied to any Torque map, please note the different available values that should be applied if you are using a [Torque Category](#-torque-aggregation-function-keyword-torque-category-only) map.
+**Note:** Please note the different available values that should be applied if you are using a [Torque Category](#-torque-aggregation-function-keyword-torque-category-only) map.
 
 ------------ | -------------
 Description | Since Torque maps renders data in clusters, this property defines how values are displayed in each cluster of the map. Column data must be numeric. For example, you can define: a maximum value, a count, or the total number of values in each cluster.
 Sample CartoCSS Code | `-torque-aggregation-function: "count(cartodb_id)";`
 Default Value | `"count(cartodb_id)"`
 Available Values | `count(column_name), max(column_name), sum(column_name)`
-| <span class='reviewer'>reviewer: I WAS TOLD THAT THERE ARE ACTUALLY MORE AGGREGRATION FUNCTIONS THAT ARE SUPPORTED?  PLEASE ADVISE.</span>
-|  <span class='reviewer'>reviewer: @andye's comment: Yes, see a large list here: [http://www.postgresql.org/docs/9.3/static/functions-aggregate.html](http://www.postgresql.org/docs/9.3/static/functions-aggregate.html)</span>
-| <span class='reviewer'>reviewer: csobier's comment: Can someone from product confirm that all these are supported in CartoDB?</span>
-| **Tip:** Functions can also combinations of functions and operations. For example, `log(1 + max(column_name))`
+| **Note:** Since the CartoDB geospatial database is built on the PostgreSQL platform and supports advanced PostGIS capabilities, see [PostgreSQL Aggregate Functions](http://www.postgresql.org/docs/9.3/static/functions-aggregate.html) for additional supported values.
+| **Tip:** Functions can also be combinations of functions and operations. For example, `log(1 + max(column_name))`
 Related Example | Wiki page about [how spatial aggregation works](https://github.com/CartoDB/torque/wiki/How-spatial-aggregation-works).
 
 
@@ -110,10 +99,7 @@ While any of the [Torque CartoCSS properties](#cartocss---torque-maps) can be ap
 
 - [marker-width `expression`](cartodb-editor.html#marker-width-expression)
 
-**Note:** It is a known issue that certain marker properties are not supported when applied to Torque maps. Specifically, when the [marker-file](cartodb-editor.html#marker-file-uri) and [marker-fill](cartodb-editor.html#marker-fill-color) CartoCSS properties are applied, you cannot color a sprit) using the marker-fill value. You must create a sprite per color when applying these properties to Torque map.
-[http://gis.stackexchange.com/questions/137384/marker-file-for-torque-cartodb](http://gis.stackexchange.com/questions/137384/marker-file-for-torque-cartodb)
-
-<span class='reviewer'>reviewer: DOES THE NOTE ONLY APPLY TO TORQUE AND TORQUE CATEGORY? THIS CONTRADICTS THIS TORQUE HEATMAP SECTION. ADDITIONALLY, WHAT DOES SPRITE MEAN AND WHAT IS AN EXAMPLE SYNTAX? I thought a sprite was one large, combined image as opposed to individual images. But maybe there is a sprite property I do not know about?</span>
+**Note:** It is a [known issue](http://gis.stackexchange.com/questions/137384/marker-file-for-torque-cartodb) that certain marker properties are not supported when applied to Torque and Torque Category maps. Specifically, when the [marker-file](cartodb-editor.html#marker-file-uri) and [marker-fill](cartodb-editor.html#marker-fill-color) CartoCSS properties are applied, you cannot color a sprite using the marker-fill value. You must create a sprite per color when applying these properties to Torque map.  Optionally, change the map type to a Torque Heatmap as a workaround.
 
 The following example displays CartoCSS properties with a Torque Heatmap.
 
