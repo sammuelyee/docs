@@ -946,7 +946,7 @@ Column | {% include descrip_column.html %}
 Quantification | {% include descrip_quantification.html %}
 Radius (min-max) | Set the sizes of the smallest and largest markers, or bubbles, on your map.
 Bubble fill | Set the color and opacity of bubble markers.
-Bubble stroke | Edit the width of your points’ border or outline (a value between 0-40), the color (using Hex codes or by selecting a color from the color palette), and the opacity (a value between 0-1).
+Bubble stroke | Edit the width of your points’ border or outline (a value between 0-40), the color (using hex codes or by selecting a color from the color palette), and the opacity (a value between 0-1).
 Composite operation | {% include descrip_comp_op.html %}
 
 ##### Torque
@@ -1027,7 +1027,7 @@ Density Wizard Options | Description
 Method | Displays density with either the hexagon or rectangle shape.
 Buckets | {% include descrip_buckets.html %}
 Color ramp | {% include descrip_color_ramp.html %}
-Polygon Stroke | Edit the width of your points’ border or outline (a value between 0-40), the color (using Hex codes or by selecting a color from the color palette), and the opacity (a value between 0-1).
+Polygon Stroke | Edit the width of your points’ border or outline (a value between 0-40), the color (using hex codes or by selecting a color from the color palette), and the opacity (a value between 0-1).
 | <img src="{{ '/img/layout/cartodb-editor/polygon_stroke_color.png' | prepend: site.baseurl }}" alt="Select polygon stroke color" />
 Polygon size |  Adjust the size of the polygons on your map.
 Composite operation | {% include descrip_comp_op.html %}
@@ -1192,7 +1192,7 @@ Regular
 - **Old Standard TT**  
 Regular, Italic, Bold
 
-- **Unifont**  
+- **unifont**  
 Medium
 
 ## Managing Your Data

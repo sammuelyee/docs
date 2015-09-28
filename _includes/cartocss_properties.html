@@ -3,7 +3,7 @@
 
 Each CartoCSS map category has its own configurable properties. You can apply multiple symbolizers and properties to the same map layer. Navigate to a selected symbolizer to view a description of the CartoCSS property, sample CartoCSS code, the default value, and the available values. 
 
-***Note:** CartoDB is currently maintaining this library of common properties since [Mapbox](https://github.com/mapbox/carto/blob/master/docs/latest.md) is no longer doing active development for CartoCSS.*
+***Note:** CartoDB is currently maintaining this library of CartoCSS properties and values. This content was adapted from the open source material provided by [Mapbox](https://github.com/mapbox/carto/blob/master/docs/latest.md), who has ceased active development of CartoCSS documentation.*
 
 
 | **CartoCSS Symbolizer:** |
@@ -83,7 +83,7 @@ Available Values | See [uri](#uri).
 ##### background-image-comp-op `keyword`
 
 Description | Sets the compositing operation used to blend the image into the background.
-Sample CartoCSS Code | `background-image-comp-op `keyword``
+Sample CartoCSS Code | `background-image-comp-op keyword`
 Default Value |  `src-over`, the background image is placed on top of any existing `background-image`.
 Available Values | `clear``src``dst``src-over``dst-over``src-in``dst-in``src-out``dst-out``src-atop``dst-atop``xor``plus``minus``multiply``screen``overlay``darken``lighten``color-dodge``color-burn``hard-light``soft-light``difference``exclusion``contrast``invert``invert-rgb``grain-merge``grain-extract``hue``saturation``color``value`
 
@@ -108,7 +108,7 @@ Available Values | See [float](#float).
 
 #### Polygon
 
-These CartoCSS properties can be applied to areas and outlines of a polygon layer.
+These CartoCSS properties can be applied to the fill and outline of a polygon layer.
 
 | | [polygon-fill](#polygon-fill-color) | [polygon-opacity](#polygon-opacity-float) | [polygon-gamma](#polygon-gamma-float)
 | | [polygon-gamma-method](#polygon-gamma-method-keyword) | [polygon-clip](#polygon-clip-boolean)| [polygon-simplify](#polygon-simplify-float)
@@ -135,7 +135,8 @@ Available Values | See [float](#float).
 
 Description | The level of antialiasing (smoothness of oversampling) of polygon edges. A range of 0-5 represents the most antialiased to the least antialiased.
 Sample CartoCSS Code | `polygon-gamma: 1; `
-Default Value |  `1`, is fully antialiased.
+Default Value |  `1`, fully antialiased, where polygons do not appear jagged. 
+|**Tip:** If you notice that there are spaces between polygons on your map, enter anti-antialiased values, in increments closer to `0`.
 Available Values | `0`, `1`, `2`, `3`, `4`, `5`
 
 
@@ -185,7 +186,7 @@ Available Values | `0`, `1`
 ##### polygon-geometry-transform `functions`
 
 Description | Applies transformation functions to the geometry.
-Sample CartoCSS Code | `polygon-geometry-transform: none`
+Sample CartoCSS Code | `polygon-geometry-transform: none;`
 Default Value |  `none`, geometry is not transformed.
 Available Values | See [functions](#functions).
 
@@ -193,7 +194,7 @@ Available Values | See [functions](#functions).
 ##### polygon-comp-op `keyword`
 
 Description | The composite operation that defines how the symbolizer behaves relative to layers atop or below it.
-Sample CartoCSS Code | `polygon-comp-op: src-over`
+Sample CartoCSS Code | `polygon-comp-op: src-over;`
 Default Value |  `src-over`, adds the current symbolizer on top of other symbolizers.
 Available Values | `clear``src``dst``src-over``dst-over``src-in``dst-in``src-out``dst-out``src-atop``dst-atop``xor``plus``minus``multiply``screen``overlay``darken``lighten``color-dodge``color-burn``hard-light``soft-light``difference``exclusion``contrast``invert``invert-rgb``grain-merge``grain-extract``hue``saturation``color``value`
 
@@ -269,7 +270,7 @@ Available Values | `power``linear``none``threshold``multiply`
 ##### line-dasharray `numbers`
 
 Description | A pair of length values [a,b], where (a) is the dash length and (b) is the gap length. You can enter more than two values for more complex patterns.
-Sample CartoCSS Code | `line-dasharray: none`
+Sample CartoCSS Code | `line-dasharray: none;`
 Default Value |  `none`, a solid line appears.
 Available Values | See [numbers](#numbers).
 Related Example | See [How to create dotted lines](faqs.html#how-to-create-dotted-lines-in-cartodb).
@@ -331,7 +332,7 @@ Available Values | `0` `1`
 ##### line-offset `float`
 
 Description | Offsets a line parallel to its actual path, defined by a number in pixels. Positive values move the line left, negative values move it right (relative to the directionality of the line).
-Sample CartoCSS Code | `line-offset: 0:`
+Sample CartoCSS Code | `line-offset: 0;`
 Default Value |  `0`, no offset is applied.
 Available Values | See [float](#float).
 
@@ -384,9 +385,9 @@ Available Values | See [uri](#uri).
 
 ##### marker-opacity `float`
 
-Description | Sets the overall opacity of the marker, overriding any stroke-opacity and fill-opacity settings.
+Description | Sets the overall opacity of the marker, overriding any opacity and fill-opacity settings.
 Sample CartoCSS Code | `marker-opacity: 1;`
-Default Value |  `1`, the stroke-opacity and fill-opacity are used.
+Default Value |  `1`, the opacity and fill-opacity are applied.
 Available Values | See [float](#float).
 
 
@@ -394,7 +395,8 @@ Available Values | See [float](#float).
 
 Description | The fill opacity of the marker.
 Sample CartoCSS Code | `marker-fill-opacity: 1;`
-Default Value |  `1`, the fill-opacity is opaque.
+Default Value |  `1`, the fill-opacity is opaque. 
+|**Tip:** If you want to apply opacity to the entire symbol, apply the `marker-opacity` property. Similarly, for a line, apply the `marker-line-opacity` property.
 Available Values | See [float](#float).
 
 
@@ -412,7 +414,7 @@ Description | The width of the line around the marker, in pixels, centered on th
 Sample CartoCSS Code | `marker-line-width: undefined;`
 Default Value |  undefined pixels
 Available Values | See [float](#float).
-Related Example | The marker-line-width is positioned on the boundary, so high values can cover the area itself. For example, if you have a marker with a width (diameter) of `4`and add a line width of `3`, 1.5 px of the line width appears on the inside of of the edge, covers the entire marker.
+Related Example | The marker-line-width is positioned on the boundary, so high values can cover the area itself. For example, if you have a marker with a width (diameter) of `4`, and add a line width of `3`, 1.5 pixels of the line width appears on the inside of the edge, and covers the entire marker.
 
 
 ##### marker-line-opacity `float`
@@ -483,7 +485,7 @@ Available Values | See [color](#color).
 
 Description | Shows or hides overlapping markers on a map.
 Sample CartoCSS Code | `marker-allow-overlap: false;`
-Default Value |  `false`, does not allow markers to overlap. Overlapping markers are hidden.
+Default Value |  `false`, does not allow markers to overlap. Overlapping markers are not rendered if there are conflicts. Overlapping markers may appear when you zoom in, if there is room for markers to display.
 Available Values | See [boolean](#boolean).
 
 
@@ -498,8 +500,8 @@ Available Values | See [boolean](#boolean).
 ##### marker-spacing `float`
 
 Description | The space between repeated markers, in pixels. If spacing is less than the marker size, or larger than the line segment length, no markers are displayed.
-Sample CartoCSS Code | `marker-line-spacing: spacing;`
-Default Value |  `100`
+Sample CartoCSS Code | `marker-spacing: spacing;`
+Default Value |  `100`]
 Available Values | See [float](#float).
 
 
@@ -691,7 +693,7 @@ Available Values | See [boolean](#boolean).
 ------------ | -------------
 Description | Enables you to wrap text with a character, rather than with a space. This is especially useful for long text names.
 Sample CartoCSS Code | `shield-wrap-character: '_';`
-Default Value | `undefined
+Default Value | undefined
 Available Values | See [string](#string).
 
 
@@ -714,7 +716,7 @@ Available Values | See [float](#float).
 
 ##### shield-character-spacing `unsigned`
 
-Description | The horizontal space, in pixels, between point characters.
+Description | The horizontal space, in pixels, between text characters.
 Sample CartoCSS Code | `shield-character-spacing: unsigned;`
 Default Value | `0`
 Available Values | Unsigned integer.
@@ -789,7 +791,7 @@ Available Values | `left``middle``right``auto`
 ##### shield-vertical-alignment `keyword
 
 Description | The vertical alignment of the shield from its center point.
-Sample CartoCSS Code | `shield-vertical-alignment: middle'`
+Sample CartoCSS Code | `shield-vertical-alignment: middle;'`
 Default Value | `middle`
 Available Values | `top``middle``bottom``auto`
 
@@ -830,7 +832,7 @@ Available Values | `left``center``right``auto`
 ##### shield-transform `functions`
 
 Description | Defines SVG transformation functions to scale how shields appear.
-Sample CartoCSS Code | `shield-transform: none`
+Sample CartoCSS Code | `shield-transform: none;`
 Default Value | none
 Available Values | See [functions](#functions).
 | **Note:** Define values as per [SVG transformation definitions](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform)- which are values separated by whitespace and/or commas, from right to left.
@@ -1035,7 +1037,7 @@ Available Values | See [float](#float).
 
 ##### raster-filter-factor `float`
 
-Description | Sets the filter factor used for rendering the datasource of the raster. Used by the Raster or Gdal datasources to pre-downscale images using overviews. 
+Description | Sets the filter factor used for rendering the datasource of the raster. Used by the Raster or GDAL datasources to pre-downscale images using overviews. 
 Sample CartoCSS Code | `raster-filter-factor: -1;`
 Default Value | `-1`, allows the datasource to determine the appropriate downscaling option.
 Available Values | See [float](#float).
@@ -1096,21 +1098,12 @@ Available Values | See [float](#float).
 
 ##### raster-colorizer-stops `tags`
 
-Description | A stop tag assigns raster data with colors and values. 
-Sample CartoCSS Code | `raster-colorizer-stops: ',`
+Description | Assigns raster data values to colors. Stops must be listed in ascending order, and contain a minimum value, and the associated color.
+Sample CartoCSS Code | `raster-colorizer-stops:',`
+| **Tip:** See the related example for a complete CartoCSS syntax code example.
 Default Value | undefined
 Available Values | See [float](#float).
 Related Example | [CartoDB blocks- raster demos](http://bl.ocks.org/rochoa/d3cf809120bda97d0826)
-
-**Note:** Stop values must be listed in ascending order and contain a minimum value and associated color.
-		{% highlight bash %}
-	'raster-colorizer-stops:',
-	              '\tstop(42,#47443e)',
-	              '\tstop(70, #77654a)',
-	              '\tstop(100, rgb(85,107,50))',
-	              '\tstop(200, #47443e)',
-	              '\tstop(255, #47443e);'
-	{% endhighlight %}
 	
 	
 #### Point
@@ -1124,7 +1117,7 @@ These CartoCSS properties can be applied to style points on a map.
 
 ##### point-file `uri`
 
-Description | A defined image file that renders how a point appears.
+Description | A defined image path that renders how a point appears.
 Sample CartoCSS Code | `point-file: url (icons/example.png);`
 Default Value | none
 Available Values | See [uri](#uri).
@@ -1141,7 +1134,7 @@ Available Values | See [boolean](#boolean).
 ##### point-ignore-placement `boolean`
 
 Description | Prevents other placement properties from being rendered.
-Sample CartoCSS Code | `point-ignore-placement: 'false`
+Sample CartoCSS Code | `point-ignore-placement: false;`
 Default Value | `false`, does not store placement geometries in the collision detector cache of the bbox (bounding box).
 Available Values | See [boolean](#boolean).
 
@@ -1535,7 +1528,7 @@ CartoCSS accepts a variety of syntaxes for colors - HTML-style hex values, rgb, 
 	}
 	{% endhighlight %}
 
-**Note:**  Using Hsl [(hue, saturation, lightness)](http://mothereffinghsl.com/) color values are often easier than rgb()values. Carto also includes several color functions [borrowed from Less, a CSS pre-processor](http://lesscss.org/#-color-functions):
+**Note:**  Using hsl [(hue, saturation, lightness)](http://mothereffinghsl.com/) color values are often easier than rgb()values. Carto also includes several color functions [borrowed from Less, a CSS pre-processor](http://lesscss.org/#-color-functions):
 
 		{% highlight bash %}
 		// lighten and darken colors
