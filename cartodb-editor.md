@@ -1041,6 +1041,8 @@ Composite operation | {% include descrip_comp_op.html %}
   
 #### Infowindows
 
+The infowindows feature enables you to add click and hover information windows over select points on your published map.
+
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/infowindows.png' | prepend: site.baseurl }}" alt="Infowindows" /></p>
 
 ##### On-click infowindows
