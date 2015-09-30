@@ -49,36 +49,6 @@ The `comp-op` value can be applied as an overall style effect, or it can be appl
 
 **Note:** Any layers that appear above the source are unaffected by the `comp-op` value and are rendered normally.
 
-The following example displays the `comp-op` value applied as an overall map style. The style is applied first, then the map is rendered.
-
-{% highlight bash %}
-	// style-wide
-	#countries {
-	  line-color: #345;
-	  line-width: 4;
-	  polygon-fill: #fff;
-	  comp-op: overlay;
-	}
-	{% endhighlight %}
-
-
-Similarly, the following example shows the `comp-op` value applied as a symbolizer property to overlap objects, in this case, polygons. The style is applied to each overlapping polygon, and the layers underneath it.
-
-{% highlight bash %}
-	// symbolizer-specific
-	#countries {
-	  line-color: #345;
-	  line-width: 4;
-	  line-comp-op: overlay;
-	  polygon-fill: #fff;
-	  polygon-comp-op: overlay;
-	}
-	{% endhighlight %}
-
-You can view the side-by-side comparison of the composite operation effects, applied as a style or symbolizer value.  This is a Mapbox example of comp-op effects.
-
-<p class="wrap-border"><img src="{{ '/img/layout/common/comp_op_style_vs_symbolizer.png' | prepend: site.baseurl }}" alt="Composite Operation effects" /></p>
-
 #### CartoCSS `comp-op` Values
 
 {% include cartocss_comp_op_values.html %}
