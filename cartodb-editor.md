@@ -117,6 +117,7 @@ Optionally, you can add data manually or programmatically, with the Connect Data
 	For example, the following options display how to add a row
 	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/emptydataset_addrow.png' | prepend: site.baseurl }}" alt="Add row to an empty dataset" /></p>
 	
+Additionally, you can add coordinates to your dataset with the Add Feature option, available from the Map View of the CartoDB sidebar. For details, see [Add Feature](#add-feature).
 
 #### Use Case:  Connecting to an External Data Source (Twitter)
 
@@ -1194,9 +1195,10 @@ You can add and style a map legend for a published map. Map legends can be symbo
 	Template | Displays the template for the legend. The available legend template is based on your map type. Select *custom* to create your own legend.
 	|  **Tip:** To disable a legend for a map layer, select *none* as the legend template.
 	Title | Add a custom title for your legend, and show or hide the title.
-	Left Label | Show the label text to the left of your legend. You can also click the text to edit the left label name.
-	Right Label | Show the label text to the right of your legend. You can also click the text to edit the right label name.
-	| **Tip:** Other legend labels may appear depending on your map type. You can customize the legend labels for each element.
+	Left Label | Show the label text to the left of your legend. You can also edit the left label name.
+	Right Label | Show the label text to the right of your legend. You can also edit the right label name.
+	| **Tip:** Other legend labels may appear depending on your map type. You can customize the legend labels for each element. 
+	|  <img src="{{ '/img/layout/cartodb-editor/legend_edittext.png' | prepend: site.baseurl }}" alt="Edit legend label text" />
 	Colors | Set the colors of the individual items in your legend. You can also synchronize with your map marker colors, when applicable.  (Depending on your template, color options may vary).
 	| <img src="{{ '/img/layout/cartodb-editor/legend_color.png' | prepend: site.baseurl }}" alt="Legend color selector" />
 	| **Tip:** For some legend elements, you can also apply an image. Select *IMG* to select a symbol. You can also upload your own icons from this image option.
@@ -1246,13 +1248,39 @@ When you connect a dataset and create a map, all of the data in the dataset is d
 	
 	Your data refreshed as filters are applied.
 	
-You can apply multiple filters to your data and create a new dataset from your query, or clear your filtered data.  When you apply filters to published map, the filters are included in map output so you do not have to manipulate your data. The following example displays multiple filters applied to a dataset.
+You can apply multiple filters to your data and create a new dataset from your query, or clear your filtered data.  When you apply filters to published map, the filters are included in the map output. The following example displays multiple filters applied to a dataset.
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/filters_multiple.png' | prepend: site.baseurl }}" alt="Multiple filters applied" /></p>
 
 **Tip:** To view a video tutorial about filters, see [Introduction to data filters]({{ '/tutorials/filters.html' | prepend: site.baseurl }}).
 
-#### Add feature
-The *Add feature* option, available from the CartoDB sidebar for select data, enables you to add points lines or polygons to your  map. 
+#### Add Feature
+Typically, you add rows and columns to your dataset from the Data View.  The *Add feature* option, available from the CartoDB sidebar, enables you to add points. lines, or polygons directly on your map and add new coordinates to your dataset. As opposed to importing data, you can add points (lines, polygons) as you visualize features on the map. 
+
+1. From the Map View of a selected map, click *Add feature* from the CartoDB sidebar 
+
+	**Note:** The sidebar does *not* expand. The add feature action appears on your map.
+	
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/sidebar_addfeature.png' | prepend: site.baseurl }}" alt="Add feature from CartoDB sidebar" /></p>
+	
+	**Tip:** If you are starting from an [empty dataset](#create-an-empty-dataset), a dialog appears, guiding you to add points, lines, or polygons.
+	
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/addfeature.png' | prepend: site.baseurl }}" alt="Add feature dialog" /></p>
+	
+2. On your map, click where you would like to add the point, line, or polygon coordinates
+	
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/addfeature_polygon.png' | prepend: site.baseurl }}" alt="Add feature polygon" /></p>
+
+3. Click *done* to add the coordinates
+
+	Your map updates, displaying the added coordinates.  
+	
+4. Edit details of the coordinate. You can select fields for the infowindow, edit the metadata, edit the geometry, or delete the feature.
+
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/addfeature_edit.png' | prepend: site.baseurl }}" alt="Add feature edit coordinates" /></p>
+	
+	**Tip:** The number that appears for the added feature displays the corresponding row in the dataset. You can also edit the details for the added coordinates directly from the Data View.
+	
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/addfeature_dataview.png' | prepend: site.baseurl }}" alt="Add feature edit coordinates from Data View" /></p>
 
 ### Basemaps
 
