@@ -8,7 +8,7 @@ redirect_from:
 ---
 ## CartoDB Platform
 
-The CartoDB Platform is an open source tool to that enables you to build advanced, dynamic geospatial datasets and scalable maps. You can design maps with the CartoDB Editor and use the CartoDB APIs to embed these maps into your own website. The CartoDB SQL API interacts with your data so that you can query your datasets and insert, update, or delete records. Additionally, the CartoDB.JS (a JavaScript library) is available to help you develop and enhance your spatial applications.
+The CartoDB Platform is an open source tool to that enables you to build advanced, dynamic geospatial datasets and scalable maps. You can design maps with the CartoDB Editor and use the CartoDB APIs to embed these maps into your own website. See the descriptions below for an overview of the API features. Additionally, the CartoDB.JS (a JavaScript library) and the CartoCSS properties are available to help you develop and enhance your spatial applications.
 
 <ul class="platform-list">
   {% for platform_item in site.cartodb-platform %}
