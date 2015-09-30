@@ -235,7 +235,7 @@ The [legends](cartodb-editor.html#legends) option is available from the CartoDB 
 ​From the CartoDB Editor, select [*wizards*](cartodb-editor.html#wizards) from the CartoDB sidebar and select *Category* as the map type (or select another non-bubble map type). Customize your map to correspond to your categories.
 ​
 
-​With respect to size, add the `marker-width` property by applying CartoCSS parameters. Click *cartocss* from the CartoDB sidebar and apply the following style with the CartoCSS editor:
+​With respect to size, add the `marker-width` [CartoCSS property](cartodb-editor.html#marker-width-expression). Click *cartocss* from the CartoDB sidebar and apply the following style with the CartoCSS editor:
 ​
 	{% highlight scss %}
 #your_table_name {
@@ -257,7 +257,7 @@ The maximum number of layers per map depends on your CartoDB account. All plans 
 
 ### How to create dotted lines in CartoDB?
 
-Apply the `line-dasharray` CartoCSS property, as shown in the following example:
+Apply the `line-dasharray` [CartoCSS property](cartodb-editor.html#line-dasharray-numbers), as shown in the following example:
 
 {% highlight scss %}
 #your_table_name {
@@ -269,11 +269,10 @@ Apply the `line-dasharray` CartoCSS property, as shown in the following example:
 }
 {% endhighlight %}
 
-[Documentation](https://www.mapbox.com/carto/api/2.3.0/#line-dasharray)
 
 ### How can I get rid of the white border around the points on the map?
 
-Apply the zero value to the `marker-line-width` CartoCSS property, as shown in the following example:
+Apply the zero value to the `marker-line-width` [CartoCSS property](cartodb-editor.html#marker-line-width-float), as shown in the following example:
 
 {% highlight scss %}
 #your_table_name {
@@ -288,7 +287,7 @@ No. Each layer is related to a geometry. For example, if you need to map polygon
 
 You can set icons as markers for map points with the map wizard options (Click [*wizards*](cartodb-editor.html#wizards) from the CartoDB sidebar).  Additionally, if you are using SVG images (and/or any of the icons available through the map wizard options), you can apply different colors for a single icon. Click *cartocss* from the CartoDB sidebar to apply custom CartoCSS styling options to your map.
 
-The following example displays how to combine the CartoCSS properties for `marker-file` and `marker-fill`: 
+The following example displays how to combine the [CartoCSS marker properties](cartodb-editor.html#markers) for `marker-file` and `marker-fill`: 
 
 {% highlight scss %}
 #dataset {
@@ -329,7 +328,7 @@ As a workaround, use an HTTPS connection. HTTPS encrypts your data so that your 
 
 ### Why are my map labels cut off?
 
-If some of your labels have words that appear cut off at the tile edges, the buffer area in your map is too small. You can fix this by increasing the value of the `buffer-size` CartoCSS property. Click *cartocss* from the CartoDB sidebar and apply custom CartoCSS styling options to your map, as shown in the following example:
+If some of your labels have words that appear cut off at the tile edges, the buffer area in your map is too small. You can fix this by increasing the value of the `buffer-size` [CartoCSS property](cartodb-editor.html#buffer-size-float). Click *cartocss* from the CartoDB sidebar and apply custom CartoCSS styling options to your map, as shown in the following example:
 
 {% highlight scss %}
 Map {
@@ -545,7 +544,7 @@ A modern browser is required in order to use the authoring tool to perform the m
 
 ### Does CartoDB have multi-user functionalities?
 
-If you are interested in multi-user accounts, our Enterprise plans offer team options for multi-user functionality. Contact [Sales](mailto:sales@cartodb.com) for more information.
+If you are interested in multi-user accounts, our [Enterprise plan](cartodb-editor.html#cartodb-enterprise) offers team options for multi-user functionality. Contact [Sales](mailto:sales@cartodb.com) for more information.
 
 ### Do Torque maps move polygons/polylines?
 

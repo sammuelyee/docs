@@ -889,9 +889,9 @@ Marker Stroke |  {% include descrip_marker_stroke.html %}
 | **Note:** This option appears as *Polygon Stroke* when polygon data is detected by the map wizard.
 Composite operation | {% include descrip_comp_op.html %}
 Label Text | {% include descrip_label_text.html %} 
-| Label Offset - Change how far the label text sits from the marker. Positive values display the label below the marker, negative values display the label above the marker. If set to `0`, the marker appears directly under the corresponding label.
-| Label Overlap - Shows or hides overlapping labels. `false`, does not allow labels to overlap. Overlapping labels are hidden.
-| Label Placement - Places labels on top of points, along multiple line places, on the vertexes of points, or in the interior inside a point.
+| {% include descrip_label_offset.html %} 
+| {% include descrip_label_overlap.html %} 
+| {% include descrip_label_placement.html %} 
 
 **Note:** Conditional formatting is not supported for Simple maps.
 
@@ -929,9 +929,9 @@ Marker Stroke | {% include descrip_marker_stroke.html %}
 | **Note:** This option appears as *Polygon Stroke* when polygon data is detected by the map wizard.
 Composite operation | {% include descrip_comp_op.html %}
 Label Text | {% include descrip_label_text.html %} 
-| Label Offset - Change how far the label text sits from the marker. Positive values display the label below the marker, negative values display the label above the marker. If set to `0`, the marker appears directly under the corresponding label.
-| Label Overlap - Shows or hides overlapping labels. `false`, does not allow labels to overlap. Overlapping labels are hidden.
-| Label Placement - Places labels on top of points, along multiple line places, on the vertexes of points, or in the interior inside a point.
+| {% include descrip_label_offset.html %} 
+| {% include descrip_label_overlap.html %} 
+| {% include descrip_label_placement.html %}
 
 ##### Category
  {% include descrip_category.html %}
@@ -960,7 +960,7 @@ Column | {% include descrip_column.html %}
 Quantification | {% include descrip_quantification.html %}
 Radius (min-max) | Set the sizes of the smallest and largest markers, or bubbles, on your map.
 Bubble fill | Set the color and opacity of bubble markers.
-Bubble stroke | Edit the width of your points’ border or outline (a value between 0-40), the color (using Hex codes or by selecting a color from the color palette), and the opacity (a value between 0-1).
+Bubble stroke | Edit the width of your points’ border or outline (a value between 0-40), the color (using hex codes or by selecting a color from the color palette), and the opacity (a value between 0-1).
 Composite operation | {% include descrip_comp_op.html %}
 
 ##### Torque
@@ -981,6 +981,8 @@ Blend Mode | {% include descrip_blend_mode.html %}
 Trails | {% include descrip_trails.html %}
 Resolution | {% include descrip_resolution.html %}
 
+**Note:** You can also style Torque maps with CartoCSS properties. For details about Torque specific parameters, see [CartoCSS - Torque Maps](#cartocss---torque-maps).
+
 ##### Heatmap
 {% include descrip_heatmap.html %}
 
@@ -992,6 +994,8 @@ Marker size | Choose the size of your markers.
 Opacity | Sets the opacity for the heatmap, a value between 0-1.
 Animated | Displays temporal data into a linear Torque animation.
 Resolution | {% include descrip_resolution.html %}
+
+**Note:** You can also style Torque Heatmaps with CartoCSS properties. For details about Heatmap specific parameters, see [CartoCSS - Torque Heatmaps](#cartocss---torque-heatmaps).
 
 ##### Torque Category
 {% include descrip_torque_category.html %}
@@ -1012,6 +1016,8 @@ Blend Mode | {% include descrip_blend_mode.html %}
 Trails | {% include descrip_trails.html %}
 Resolution | {% include descrip_resolution.html %}
 List of detected map/legend items | {% include descrip_item_img_color.html %}
+
+**Note:** You can also style Torque Category maps with CartoCSS properties. For details about Torque Category specific parameters, see [CartoCSS - Torque Category Maps](#cartocss---torque-category-maps).
 
 ##### Intensity
 {% include descrip_intensity.html %}
@@ -1035,7 +1041,7 @@ Density Wizard Options | Description
 Method | Displays density with either the hexagon or rectangle shape.
 Buckets | {% include descrip_buckets.html %}
 Color ramp | {% include descrip_color_ramp.html %}
-Polygon Stroke | Edit the width of your points’ border or outline (a value between 0-40), the color (using Hex codes or by selecting a color from the color palette), and the opacity (a value between 0-1).
+Polygon Stroke | Edit the width of your points’ border or outline (a value between 0-40), the color (using hex codes or by selecting a color from the color palette), and the opacity (a value between 0-1).
 | <img src="{{ '/img/layout/cartodb-editor/polygon_stroke_color.png' | prepend: site.baseurl }}" alt="Select polygon stroke color" />
 Polygon size |  Adjust the size of the polygons on your map.
 Composite operation | {% include descrip_comp_op.html %}
@@ -1082,86 +1088,9 @@ You can add a pop-up information window over select points on your published map
 
 #### CartoCSS
 
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/cartocss.png' | prepend: site.baseurl }}" alt="CartoCSS" /></p>
+CartoCSS is the syntax language that enables you to customize the style of your map data. You can apply CartoCSS styles directly from the the Map View of the CartoDB Editor. For more details about CartoCSS, see [Customizing Maps with CartoCSS](#customizing-maps-with-cartocss).
 
-CartoCSS is the syntax language that allows users greater control over how their data appear on their maps. When you customize CartoCSS, you're able to control style settings like marker size, marker color, line stroke, and text display at a more granular level than the wizards permit. If you have used Cascading Style Sheets for styling webpages, then CartoCSS will be familiar, but there are key differences to note.
-
-CartoDB uses a flavor of CartoCSS developed by [Mapbox](https://www.mapbox.com/). Follow the links to check out some of their excellent documentation:
-
-- [CartoCSS API](https://www.mapbox.com/carto/api/2.3.0/)
-
-Learn the basics of CartoCSS and designing data for your maps with our [Introduction to map design]({{ '/courses/02-design-for-beginners.html' | prepend: site.academy-baseurl }}) course.
-
-CartoCSS options available to edit from the CartoDB Editor wizards include:
-
-- __Marker-fill:__ choose the color of your markers, the size of your markers and the transparency level of your markers (from 0 to 1)
-
-- __Marker-size:__ adjust the size of your markers
-
-- __Marker-stroke:__ adjust the border color of your markers, thickness of the border, and transparency (from 0 to 1)
-
-#### Torque CartoCSS
-In addition to being able to customize the look of your maps using CartoCSS, Torque maps have specific options you can change.
-
-##### Torque
-
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/torquecartoCSS.png' | prepend: site.baseurl }}" alt="Torque CartoCSS" /></p>
-
-- __Torque Frame Count:__ the number of steps in your torque animation.
-
-- __Torque Animation Duration:__ the length of your animation.
-
-- __Torque Time Attribute:__ the name of the date column in your dataset.
-
-- __Torque Aggregation Function:__ Torque renders your data in clusters, choose what value to show such as max values only, or count how many values are in each cluster.
-
-__Example functions:__ count(column_name), max(column_name), sum(column_name). Column data type must be numeric.
-
-Learn more about [how spatial aggregation works](https://github.com/CartoDB/torque/wiki/How-spatial-aggregation-works).
-
-- __Torque Resolution:__ Torque creates a grid from your data and aggregates data to each cell of that grid. Torque resolution determines width and height of each cell. Larger numbers will make your data more gridded.
-
-- __Torque Data Aggregation:__ two options, linear which does not leave a trace of past data, and cumulative which draws data markers cumulatively to show past data.
-
-##### Torque Category
-
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/torquecartoCSScat.png' | prepend: site.baseurl }}" alt="Torque Category CartoCSS" /></p>
-
-Torque Category has much of the same Torque CartoCSS in addition to a few different options available for customization.
-
-- __Torque Aggregation Function:__ Torque renders your data in clusters. Torque Category uses a PostgreSQL command, CDB_Math_Mode(torque_category) to find the values that appear most often in your data in order to cluster your data accordingly.
-
-Learn more about [how spatial aggregation works](https://github.com/CartoDB/torque/wiki/How-spatial-aggregation-works).
-
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/torquecartoCSSframeoffset.png' | prepend: site.baseurl }}" alt="Torque CartoCSS Frame Offset" /></p>
-
-Once your data is aggregated, you can further customize your Torque animation options by changing the marker styles for each frame of your animation by customizing the options found under the frame-offsets and adding additional frame-offsets.
-
-You can also select each cluster value to change marker styles based on your data categories. For instance, if you want to style the maximum value in your dataset to have different marker styles, you would change the marker styles for the maximum value in your animation, which you will find by looking at the values in your CartoCSS.
-
-##### Torque Heat
-
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/torquecartoCSSheat.png' | prepend: site.baseurl }}" alt="Torque Heat CartoCSS" /></p>
-
-Torque Heat has much of the same Torque CartoCSS in addition to a few different options available for customization.
-
-- __Image Filters:__ this option lets you determine the color stop for your heatmap.
-
-- __Marker File:__ CartoDB provides marker files for you, this option can’t be changed.
-
-- __Marker Fill Opacity:__ Change the opacity of the markers.
-
-- __Marker Width:__ Change the width of the markers.
-
-#### Composite Operations
-
-Composite operations style the way colors of overlapping markers interact with each other. You can think of them as blend modes or filters, similar to blend operations in Photoshop. Composite operations are available in the Simple, Choropleth, Bubble, Density, and Torque maps.
-
-The available options within the wizards interface include multiply, screen, overlay, darken, lighten, color-dodge, and color-burn. In addition, blend modes specific to Torque include lighter, multiply, source-over, and xor. For more information on the different options available, refer to the documentation on [Mapbox](https://www.mapbox.com/tilemill/docs/guides/comp-op/).
-
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/markercompop.png' | prepend: site.baseurl }}" alt="Marker CartoCSS Composite Operations" /></p>
-
-Customize the marker composite operations within the CartoCSS by editing the marker-comp-op option.
+{% include cartocss.html %}
 
 #### Legends
 You can add and style a map legend for a published map. Map legends can be symbols and text that describe your map data.  You can add a legend title, apply label text for the legend and define how the label text appears. You can also customize the color of your legend elements.  Each map type has a default legend template that you can apply and personalize. Additionally, you can create custom legends with HTML code directly from the CartoDB Editor. Legends is available from the CartoDB sidebar of the Map View.   
@@ -1262,7 +1191,7 @@ Typically, you add rows and columns to your dataset from the Data View.  The *Ad
 	
 	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/sidebar_addfeature.png' | prepend: site.baseurl }}" alt="Add feature from CartoDB sidebar" /></p>
 	
-	**Tip:** If you are starting from an [empty dataset](#create-an-empty-dataset), a dialog appears, guiding you to add points, lines, or polygons.
+	**Tip:** If you are starting from an [empty dataset](#create-an-empty-dataset), a dialog appears, indicating that you can add points, lines, or polygons.
 	
 	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/addfeature.png' | prepend: site.baseurl }}" alt="Add feature dialog" /></p>
 	
@@ -1358,17 +1287,33 @@ CartoDB Logo | Enables you to include or hide the CartoDB logo on your map
 
 ### Supported Fonts
 
-- **DejaVu Sans**  
-Oblique, Bold, Oblique, Bold Oblique, Condensed, Condensed Oblique, Condensed Bold Oblique
+The following fonts can be selected from the map [wizard](#wizards), "Label Font" field, when label text is enabled for select map types:  *DejaVu Sans Book, unifont Medium, Open Sans Regular, Lato, Graduate, Gravitas One, Old Standard*.
 
-- **DejaVu Sans Serif**  
-Condensed, Condensed Italic, Book, Condensed Bold Italic, Italic
-
-- **Unifont**  
-Medium
+Additionally, you can apply the `text-face-name: 'string'` property with [CartoCSS syntax](#text-face-name-string). *These are the font families and the supported weights for each font family.*
 
 - **Open Sans**  
-Regular, Bold, Semibold, Light, Italic, Bold Italic, Semibold Italic, Light Italic
+Light, Regular, Semibold, Bold, Extrabold, Light Italic, Italic, Semibold Italic, Bold Italic, Extrabold Italic
+
+- **DejaVu Sans**  
+ExtraLight, Book, Oblique, Bold, Bold Oblique, Condensed, Condensed Oblique, Condensed Bold, Condensed Bold Oblique, Condensed Italic, Condensed Bold Italic
+
+- **DejaVu Serif**  
+Book, Italic, Bold, Bold Italic, Condensed
+
+- **Lato**  
+Hairline,  Hairline Italic, Light, Light Italic, Regular, Italic, Bold, Bold Italic, Black, Black Italic
+
+- **Graduate**  
+Regular
+
+- **Gravitas One**  
+Regular
+
+- **Old Standard TT**  
+Regular, Italic, Bold
+
+- **unifont**  
+Medium
 
 ## Managing Your Data
 
@@ -1675,7 +1620,7 @@ When executing SQL either in the user interface or through the SQL API, you may 
 
 ### CartoCSS Errors
 
-CartoCSS styling is generally simple, making typos or forgetting quotations are common oversights. In cases when you are editing CartoCSS through the user interface, errors are reported back via the CartoCSS input window. From there, it is typically not difficult to discover where you messed up. More often than not, users forget to end lines with semi-colons, use quotes, and close brackets and braces. Simple proofreading is best practice.
+{% include cartocss_errors.html %}
 
 ## Your Account
 
@@ -1877,3 +1822,31 @@ Organization settings contain your organization profile information, the authent
 - Click *Billing* to view your organization's payment or billing details for your Enterprise account
 
 This concludes the Enterprise account options.
+
+## Customizing Maps with CartoCSS
+
+{% include cartocss_description.html %}
+
+### [Apply CartoCSS with the CartoCSS Editor](#cartocss)
+
+*Click the title heading of this section to view the CartoDB Editor procedure.*
+
+###  CartoCSS Properties
+
+{% include cartocss_properties.html %}
+
+###  CartoCSS Properties for Torque Style Maps
+
+{% include cartocss_torque.html %}
+
+###  CartoCSS Best Practices
+
+{% include cartocss_best_practices.html %}
+
+###  CartoCSS Errors
+
+{% include cartocss_errors.html %}
+
+### CartoCSS Composite Operations
+
+{% include cartocss_comp_op.html %}

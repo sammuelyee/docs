@@ -1,0 +1,19 @@
+<!--<div style="font-size:12pt;color:magenta;">Writer Note_csobier: This include file is used in CartoDB Editor/Error Codes and Solutions/CartoCSS Errors
+</div>-->
+
+Entering CartoCSS styling is simple. Most common errors are a caused by typos and missing formatting.  If you are using the [CartoCSS Editor](cartodb-editor.html#apply-cartocss-with-the-cartocss-editor), you are notified which line of code is invalid. You can also click the *undo* and *redo* arrow buttons after entering code changes in the CartoCSS Editor.
+
+Always apply the following format when entering CartoCSS code and be mindful of any quotes, brackets, and end line semi-colons.
+	
+		{% highlight bash %}
+	#layer_name {
+		cartocss-property-name: value;
+		cartocss-property-name: value;
+		cartocss-property-name: value;
+		cartocss-property-name: value;
+	}
+	{% endhighlight %}
+
+**Note:** If you are entering CartoCSS syntax for Torque specific properties, all [Torque CartoCSS](#cartocss-properties-for-torque-style-maps) syntax is prefaced with a hypen.
+	
+**Tip:** See [CartoCSS Best Practices](cartodb-editor.html#cartocss-best-practices) for suggestions about how to structure your CartoCSS syntax.
