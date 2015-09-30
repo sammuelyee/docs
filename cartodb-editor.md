@@ -1191,7 +1191,7 @@ Typically, you add rows and columns to your dataset from the Data View.  The *Ad
 	
 	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/sidebar_addfeature.png' | prepend: site.baseurl }}" alt="Add feature from CartoDB sidebar" /></p>
 	
-	**Tip:** If you are starting from an [empty dataset](#create-an-empty-dataset), a dialog appears, guiding you to add points, lines, or polygons.
+	**Tip:** If you are starting from an [empty dataset](#create-an-empty-dataset), a dialog appears, indicating that you can add points, lines, or polygons.
 	
 	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/addfeature.png' | prepend: site.baseurl }}" alt="Add feature dialog" /></p>
 	
