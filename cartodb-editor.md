@@ -108,9 +108,16 @@ Optionally, you can add data manually or programmatically, with the Connect Data
 	
 	A blank dataset containing the default CartoDB columns and indexes are created and formatted. 
 	
-4. Use the CartoDB sidebar to add rows and columns to your dataset
-
 	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/create_empty_dataset_addrows.png' | prepend: site.baseurl }}" alt="Add rows and columns to an empty dataset" /></p>
+	
+4. Add rows and columns to your dataset with the [CartoDB sidebar](#cartodb-sidebar) options, or by using the context menu items
+
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/emptydataset_addcolumn.png' | prepend: site.baseurl }}" alt="Add column to an empty dataset" /></p>
+	
+	For example, the following options display how to add a row
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/emptydataset_addrow.png' | prepend: site.baseurl }}" alt="Add row to an empty dataset" /></p>
+	
+Additionally, you can add coordinates to your dataset with the Add Feature option, available from the Map View of the CartoDB sidebar. For details, see [Add Feature](#add-feature).
 
 #### Use Case:  Connecting to an External Data Source (Twitter)
 
@@ -794,23 +801,30 @@ Delete map | Deletes the selected map
 
 ### CartoDB Sidebar
 
+The CartoDB sidebar enables you to access additional tools to help you customize your map data. The sidebar appears minimized by default from the Maps View. Clicking a sidebar option expands the options over your map.  This section describes the options available from the CartoDB sidebar.
+
+The CartoDB sidebar appears minimized by default. When an option is selected, the sidebar expands displaying the related options. You can switch between minimizing and maximizing the sidebar options. The following example displays a side-by-side view of the sidebar option minimized and maximized. 
+	
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/sidebar.png' | prepend: site.baseurl }}" alt="CartoDB Sidebar" /></p>
 
-The CartoDB sidebar is a toolkit that enables you to customize how data is displayed on your maps. Expand it to access your tools, and retract it to view your progress. Upon opening the sidebar, you'll notice a default data layer that syncs to your dataset. Add more layers to show more datasets at once.
 
-#### Custom SQL
+#### SQL
+
+[SQL](https://en.wikipedia.org/wiki/SQL) (Structured Query Language) is how applications request data from a database. The CartoDB geospatial database is built on the [PostgreSQL](http://www.postgresql.org/docs/9.1/static/) platform and supports advanced [PostGIS](http://postgis.net/docs/manual-2.0/) capabilities. PostGIS allows you to perform geospatial queries, such as finding data points within a given radius, the area of polygons in your dataset, and so on.
+
+SQL queries enable  you to:
+
+- Request simple queries (*i.e.* "request all records from this dataset")
+- Request queries that match certain conditions (*i.e.*  "request all records in which this field equals a certain value")
+- Request more complex queries that combine data from two or more datasets
+
+The *SQL* option is available from the CartoDB sidebar and displays when an SQL query is applied.
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/sqlquery.png' | prepend: site.baseurl }}" alt="SQL Query" /></p>
 
-[SQL](https://en.wikipedia.org/wiki/SQL) (Structured Query Language) is the way that many applications request data from a database. They can ask simple queries (*i.e.* "give me all records from this dataset"), queries that match certain conditions (*i.e.*  "give me all records in which this field equals a certain value"), or more complex queries that combine data from two or more datasets.
+When you connect a dataset and create a map, all of the data in the dataset is displayed by default. You can apply an custom SQL query, or use the [filters](#filters) option, to view specific data. 
 
-CartoDB is built on a database called [PostgreSQL](http://www.postgresql.org/), and the geospatial extension called [PostGIS](http://postgis.net/). PostGIS allows you to perform geospatial queries such as finding data points within a given radius, the area of polygons in your dataset, etc. The available queries and documentation can be found on the reference pages of [PostgreSQL](http://www.postgresql.org/docs/9.2/static/reference.html) and [PostGIS](http://postgis.net/docs/manual-2.0/reference.html).
-
-When you create a map and link a dataset to it, all of the data in that dataset will be displayed. To curate what data is shown, you may write a custom SQL query or use our filter functions.
-
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/filters.png' | prepend: site.baseurl }}" alt="Filters" /></p>
-
-In the SQL window, you are shown which query is being applied to your data and given the ability to modify it. Automatically, you will see the query that has been produced from the applied filter (Sidenote: this is also a fun way to learn SQL! We also have an SQL course in our [Map Academy](http://academy.cartodb.com/courses/04-sql-postgis.html)).
+**Tip:**  If you apply a filter, the related SQL code automatically appears in the custom SQL query. This enables you to view and modify what SQL queries are applied to your data.  See the [SQL and PostGIS in CartoDB](http://academy.cartodb.com/courses/04-sql-postgis.html) Map Academy course for more details about querying your data.
 
 #### Wizards
 
@@ -1034,21 +1048,43 @@ Composite operation | {% include descrip_comp_op.html %}
   
 #### Infowindows
 
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/infowindows.png' | prepend: site.baseurl }}" alt="Infowindows" /></p>
+You can add a pop-up information window over select points on your published map, either by clicking on the point or hovering your mouse over a point. You can choose which data points appear in the infowindow, style the infowindow color and width, display the default title of the points, or add custom title labels for each point. Additionally, you can create custom infowindows with HTML code directly from the CartoDB Editor. Infowindows is available from the CartoDB sidebar of the Map View.   
 
-##### On-click infowindows
+1. From the Map View of a selected map, click *infowindows* from the CartoDB sidebar  
 
-On-click infowindows will appear when a point or polygon is clicked. They display data of your choosing and you may customize the way your windows appear by selecting from a variety of color combinations via the drop-down menu. To the right, you will notice a numeric selector that allows you to adjust the width (in pixels) of your infowindows.
+	**Note:** infowindows are not supported for every map type. Depending on the map type selected from the [wizard](#wizards), the infowindow option may be disabled.
+	
+	The sidebar expands, displaying the infowindows options.
+	
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/infowindows.png' | prepend: site.baseurl }}" alt="Infowindows" /></p>
+	
+2.  You can add infowindows for *Click* actions or for *Hover* actions 
 
-To choose which data columns to display, toggle the slider to the right of each column title. Once your column is "on", you may select to show the column title on your map by checking the box.
+	**Tip:** Click between the subtabs to style either the click infowindow or the hover infowinodow
 
-Further customization features include display order adjustments via column drags, changing column names by selecting the icon above the list, and the option to use Custom HTML by clicking on the "</>" button. See the image below for reference.
+	Infowindow Options | Description
+	------------ | -------------
+	infowindow style | The drop-down list displays infowindow style options.
+	| **Tip:** You can apply a custom image header to an infowindow. For details, see [How to add my own images to infowindows?](faqs.html#how-to-add-custom-images-to-infowindows)
+	infowindow width | The width field enables you to change the size of the infowindow, in pixels.
+	Enable data points | Each of the data points on the map is listed, you can enable the data point to appear with the slider button
+	Change the order of labels | You can change the order of the labels that appear. Left-click and drag a data label up or down in the infowindow options
+	| <img src="{{ '/img/layout/cartodb-editor/infowindow_changeorder.png' | prepend: site.baseurl }}" alt="change the order of the infowindow data points" />
+	Hide the label title | When a data point is enabled, and the title checkbox is selected, the default title of the data point appears in the infowindow. You can deselect the title checkbox to hide the title from the infowindow.  The data point value still appears when clicked (or hovered).
+	Change title label | To create custom labels for infowindow data points, click *Change title labels* from the infowindow toolbar and type in your own label name. Click *Toggle fields and titles* to return to the original view.
+	| <img src="{{ '/img/layout/cartodb-editor/infowindow_label.png' | prepend: site.baseurl }}" alt="change title label in infowindow" />
+	Change HTML |  If you want to create your own custom infowindow, click *Change HTML* from the infowindow toolbar. Apply [custom HTML code](faqs.html#how-to-customize-infowindows) to create and style your own infowindow. 
+	| <img src="{{ '/img/layout/common/infowindow_changehtml.png' | prepend: site.baseurl }}" alt="Infowindow Change HTML" />
+	| There is a tip icon next the width field when *Change HTML* is selected from infowindows.
+	| <img src="{{ '/img/layout/common/infowindow_htmltip.png' | prepend: site.baseurl }}" alt="Infowindow Change HTML tip icon" />
+	| Click to view additional guidelines and examples for creating HTML infowindows.
+	| <img src="{{ '/img/layout/common/infowindow_html_tipdialog.png' | prepend: site.baseurl }}" alt="Templating infowindows dialog" />
 
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/infowindow.png' | prepend: site.baseurl }}" alt="On-click infowindows" /></p>
+3. Click [*Publish*](#publish-and-share-your-map) to view your map and click (or hover) over points to view the infowindow
 
-##### On-hover infowindows
-
-On-hover infowindows display when your cursor is "hovering" above an infowindow. They display data of your choosing and can be edited in the same ways as on-click infowindows.
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/infowindow_published.png' | prepend: site.baseurl }}" alt="Infowindow on click" /></p>
+	
+**Tip** If you receive an error message while trying to view an infowindow, ensure that you have the correct connection setup. For details, see [Why is my infowindow showing an error?](faqs.html#why-is-my-infowindow-showing-an-error)
 
 #### CartoCSS
 
@@ -1057,39 +1093,123 @@ CartoCSS is the syntax language that enables you to customize the style of your 
 {% include cartocss.html %}
 
 #### Legends
+You can add and style a map legend for a published map. Map legends can be symbols and text that describe your map data.  You can add a legend title, apply label text for the legend and define how the label text appears. You can also customize the color of your legend elements.  Each map type has a default legend template that you can apply and personalize. Additionally, you can create custom legends with HTML code directly from the CartoDB Editor. Legends is available from the CartoDB sidebar of the Map View.   
 
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/legends.png' | prepend: site.baseurl }}" alt="Legends" /></p>
+1. From the Map View of a selected map, click *legends* from the CartoDB sidebar 
 
-The Legends section of the Editor allows you to access and design your map's legend. Legends are most meaningful for maps that use wizards other than Simple, as they are best used to explain what different data symbology indicates. You can edit the following elements:
+	The sidebar expands, displaying the legend template options.
 
-- **Template**  
-Select the template that you would like to use for the legend. The default legend will be named after the wizard, or you can select "custom" to create your own using HTML.
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/legends.png' | prepend: site.baseurl }}" alt="Legends" /></p>
+		
+2.  Select a template from the drop-down list to enable your legend options
 
-- **Title**  
-Set the title of your legend.
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/legend_template.png' | prepend: site.baseurl }}" alt="Legend Template drop-down list" /></p>
+		
+	- Click *none* to disable the legend for the map layer
+	- Click *custom* to apply your own custom legend	
+	- Click the legend template name based on your map type
 
-- **Left Label**  
-This option appears when using wizards except for Density, Category, and Torque. Use it to set the label on the left of your legend.
+	**Note:** The available legend templates are dependent on the map type. When you select a map type from the [wizard](#wizards), the corresponding template name is automatically applied in the legend section. 
+	
+3.  Select and style your legend options
 
-- **Right Label**  
-This option appears when using wizards with the exceptions of Density, Category, and Torque. Use it to set the label on the right of your legend.
+	Legend options vary, depending on your map type. The following side-by-side example shows the *intensity* legend template options, and the *custom* legend template options.
+	
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/legend_template_selected.png' | prepend: site.baseurl }}" alt="Legend Template selected" /></p>
 
-- **Colors**  
-Set the colors of the individual items in your legend and be sure that they synchronize with the colors of  your map markers.
+	The following legend options may appear.
 
-##### Legends HTML Styling
+	Legend Options | Description
+	------------ | -------------
+	Template | Displays the template for the legend. The available legend template is based on your map type. Select *custom* to create your own legend.
+	|  **Tip:** To disable a legend for a map layer, select *none* as the legend template.
+	Title | Add a custom title for your legend, and show or hide the title.
+	Left Label | Show the label text to the left of your legend. You can also edit the left label name.
+	Right Label | Show the label text to the right of your legend. You can also edit the right label name.
+	| **Tip:** Other legend labels may appear depending on your map type. You can customize the legend labels for each element. 
+	|  <img src="{{ '/img/layout/cartodb-editor/legend_edittext.png' | prepend: site.baseurl }}" alt="Edit legend label text" />
+	Colors | Set the colors of the individual items in your legend. You can also synchronize with your map marker colors, when applicable.  (Depending on your template, color options may vary).
+	| <img src="{{ '/img/layout/cartodb-editor/legend_color.png' | prepend: site.baseurl }}" alt="Legend color selector" />
+	| **Tip:** For some legend elements, you can also apply an image. Select *IMG* to select a symbol. You can also upload your own icons from this image option.
+	Change HTML |  If you want to create your own custom legend, click *Change HTML* from the legends toolbar. Apply custom HTML code to create and style your own legend. 
+	| **Note:** Select *custom* from the Template drop-down list to apply HTML code to a custom template.  *While you can change the HTML code for an existing template, we recommend that you create a custom template if you are going to change the HTML code.*
+	| <img src="{{ '/img/layout/cartodb-editor/legend_changehtml.png' | prepend: site.baseurl }}" alt="Legent Change HTML" />
+	|  Click *Toggle fields and titles* to return to the original legends view.
+	| <img src="{{ '/img/layout/cartodb-editor/legend_toggle.png' | prepend: site.baseurl }}" alt="Legent Toggle fields and titles" />
 
-If you opt to create a custom legend from the "Template" field described above, then you can create your own legend from scratch using HTML. Alternatively, you can edit an existing template with HTML. HTML gives you the most precise control over legend elements.
+4. Click [*Publish*](#publish-and-share-your-map) to view your legend on your map
+
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/legend_output.png' | prepend: site.baseurl }}" alt="Example Legend on a published map" /></p>
+	
+	**Tip:** To view other beautiful maps, see the CartoDB [Gallery](https://cartodb.com/gallery/) page.
 
 #### Filters
 
-<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/filter.png' | prepend: site.baseurl }}" alt="Filters" /></p>
+When you connect a dataset and create a map, all of the data in the dataset is displayed by default. You can use the filters option to view specific data, or specify a range of data to include or exclude.  The filters option is available from the CartoDB sidebar from the Data View and Map View, for both maps and datasets.
 
-Use the Filters section of the editor to select certain ranges of data to display. When working with numerical data, the Filter allows you to see the distribution of your data and select what range to include. To get started, pick the column from which you want to source data. If you're working with string (or text) data, you can search text to include/exclude. When you have date (or numeric) data, include or exclude certain periods of time. If you need to get more creative, different filters (on the same or on different columns) may be combined to feature unique data combinations of your choice.
+**Note:**  If you apply a filter, the related SQL code automatically appears in the custom SQL query. This enables you to view and modify what SQL queries are applied to your data.  See the [SQL and PostGIS in CartoDB](http://academy.cartodb.com/courses/04-sql-postgis.html) Map Academy course for more details about querying your data.
 
-CartoDB uses SQL to pull different data from your datasets. Click on the SQL section of the Editor (near the top of the pull-out tray) to see what SQL queries were applied. You can also edit and create your own.
+1. From the Data View (or Map View), in CartoDB, click *filters* from the CartoDB sidebar 
 
-For a quick video primer, take a look at our [filter tutorial]({{ '/tutorials/filters.html' | prepend: site.baseurl }}).
+	The sidebar expands, enabling you to start filtering your data.
+
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/filters.png' | prepend: site.baseurl }}" alt="Filters" /></p>
+
+2. Select a column to filter to your data
+
+	A list of columns from your dataset appears in the drop-down list.  
+	
+	**Tip:** The lettered box next to the column name indicates the type of value for the data. For example, *N* are number values, *S* are string values, and *D* are date values.
+	
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/filter_selectcolumn.png' | prepend: site.baseurl }}" alt="Select column drop-down list" /></p>
+	
+	
+	Optionally, if you are in the Data View, you can use the column context menu to filter by the selected column.
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/filter_by_this_column.png' | prepend: site.baseurl }}" alt="Data View_filter by this column" /></p>
+	
+3.  Include or exclude a specified range of results, as part of the filtered data  
+
+	- For numerical data, select a range to include in your map.  Left-click the slider button and drag the edges to change the range of data
+	<img src="{{ '/img/layout/cartodb-editor/filters_range.png' | prepend: site.baseurl }}" alt=" Select a range of data" />
+	
+	- For string (or text) data, enter a value to include or exclude, as part of the filtered data
+	<img src="{{ '/img/layout/cartodb-editor/filter_bysearch.png' | prepend: site.baseurl }}" alt=" Filter by search value" />
+	
+	Your data refreshed as filters are applied.
+	
+You can apply multiple filters to your data and create a new dataset from your query, or clear your filtered data.  When you apply filters to published map, the filters are included in the map output. The following example displays multiple filters applied to a dataset.
+<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/filters_multiple.png' | prepend: site.baseurl }}" alt="Multiple filters applied" /></p>
+
+**Tip:** To view a video tutorial about filters, see [Introduction to data filters]({{ '/tutorials/filters.html' | prepend: site.baseurl }}).
+
+#### Add Feature
+Typically, you add rows and columns to your dataset from the Data View.  The *Add feature* option, available from the CartoDB sidebar, enables you to add points. lines, or polygons directly on your map and add new coordinates to your dataset. As opposed to importing data, you can add points (lines, polygons) as you visualize features on the map. 
+
+1. From the Map View of a selected map, click *Add feature* from the CartoDB sidebar 
+
+	**Note:** The sidebar does *not* expand. The add feature action appears on your map.
+	
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/sidebar_addfeature.png' | prepend: site.baseurl }}" alt="Add feature from CartoDB sidebar" /></p>
+	
+	**Tip:** If you are starting from an [empty dataset](#create-an-empty-dataset), a dialog appears, guiding you to add points, lines, or polygons.
+	
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/addfeature.png' | prepend: site.baseurl }}" alt="Add feature dialog" /></p>
+	
+2. On your map, click where you would like to add the point, line, or polygon coordinates
+	
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/addfeature_polygon.png' | prepend: site.baseurl }}" alt="Add feature polygon" /></p>
+
+3. Click *done* to add the coordinates
+
+	Your map updates, displaying the added coordinates.  
+	
+4. Edit details of the coordinate. You can select fields for the infowindow, edit the metadata, edit the geometry, or delete the feature.
+
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/addfeature_edit.png' | prepend: site.baseurl }}" alt="Add feature edit coordinates" /></p>
+	
+	**Tip:** The number that appears for the added feature displays the corresponding row in the dataset. You can also edit the details for the added coordinates directly from the Data View.
+	
+	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/addfeature_dataview.png' | prepend: site.baseurl }}" alt="Add feature edit coordinates from Data View" /></p>
 
 ### Basemaps
 

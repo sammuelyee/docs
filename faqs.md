@@ -8,7 +8,7 @@ js_asset: "editor"
 
 ### What databases are supported by CartoDB?
 
-The CartoDB geospatial database is built on the [PostgreSQL](http://www.postgresql.org/docs/9.1/static/) platform and supports advanced  [PostGIS](http://postgis.net/docs/manual-2.0/) capabilities. All of our tables include `the_geom` column, which is a geometry field that indexes geometries in the EPSG:4326 (WGS 1984) coordinate system. All tables also automatically generate and update `the_geom_webmercator` column, which references the column internally to quickly create tiles for maps.  The CartoDB Platform connects your database with the Map API and the SQL APIs so that you can interact with data remotely and access the most recent data libraries.
+The CartoDB geospatial database is built on the [PostgreSQL](http://www.postgresql.org/docs/9.1/static/) platform and supports advanced [PostGIS](http://postgis.net/docs/manual-2.0/) capabilities. All of our tables include `the_geom` column, which is a geometry field that indexes geometries with the EPSG:4326 (WGS 1984) coordinate system. All tables also automatically generate and update `the_geom_webmercator` column, which references the column internally to quickly create tiles for maps.  The CartoDB Platform connects your database with the Map API and the SQL APIs so that you can interact with data remotely and access the most recent data libraries.
 
 Optionally, CartoDB offers an Enterprise solution enabling you to connect your own database to our platform. Contact [Sales](mailto:sales@cartodb.com) for more information.
 
@@ -194,31 +194,39 @@ Click *Apply query* , *the_geom* coordinates are split into the appropriate lati
 
 ## Maps
 
-### How to add my own images to infowindows?
+### How to add custom images to infowindows?
 
 To use your own images for customizing your infowindows at CartoDB:
 
 1. Select [*infowindow*](cartodb-editor.html#infowindows) from the CartoDB sidebar of your maps dashboard
 
-2. Select *image header* 
+2. Select *image header* from the drop-down list
 
 3. Ensure that you have a 'string' column in your dataset and define the column with the URL of the image you want to show in the image header
 
-4. From the infowindow panel, a list of all the dataset columns appear. Click and drag this defined URL column to be the first column in the infowindow list and activate the column (with the slider button)
+4. From the infowindows options, a list of all the dataset columns appear. Click and drag this defined URL column to be the first column in the infowindow list and activate the column (with the slider button)
 
-<p class="wrap-border"><img src="{{ '/img/layout/faqs/image-infowindow.png' | prepend: site.baseurl }}" alt="How to add my own images to infowindows" /></p>
+<p class="wrap-border"><img src="{{ '/img/layout/faqs/image-infowindow.png' | prepend: site.baseurl }}" alt="How to add custom images to infowindows" /></p>
 
 ### How to customize infowindows?
 
-The map infowindows panel enables you to toggle the view with the *Change HTML* option. You can edit the layout, write static content, and embed external resources directly in the HTML code. Click *Apply* to apply your custom HTML code to the infowindow. 
+The map infowindows options enable you to toggle the view with the *Change HTML* option. You can edit the layout, write static content, and embed external resources directly in the HTML code. Click *Apply* to apply your custom HTML code to the infowindow.  [Infowindows](cartodb-editor.html#infowindows) is available from the CartoDB sidebar of the Map View.
 
-<p class="wrap-border"><img src="{{ '/img/layout/faqs/infowindow_changehtml.png' | prepend: site.baseurl }}" alt="Infowindow Change HTML" /></p>
+<p class="wrap-border"><img src="{{ '/img/layout/common/infowindow_changehtml.png' | prepend: site.baseurl }}" alt="Infowindow Change HTML" /></p>
 
-**Tip:** For more information, see the [Full editing of infowindow HTML](http://blog.cartodb.com/post/61664564416/full-editing-of-infowindow-html) blogpost.
+There is a tip icon next the width field when *Change HTML* is selected from infowindows.
+<p class="wrap-border"><img src="{{ '/img/layout/common/infowindow_htmltip.png' | prepend: site.baseurl }}" alt="Infowindow Change HTML tip icon" /></p>
+
+Click to view additional guidelines and examples for creating HTML infowindows.
+<p class="wrap-border"><img src="{{ '/img/layout/common/infowindow_html_tipdialog.png' | prepend: site.baseurl }}" alt="Templating infowindows dialog" /></p>
+
+<!--writer note_csobier: Part of this content and images are shared with the cartodb editor/infowindows doc. I could not use an include file because the editor uses this content in a procedure, the faqs does not. The paragraph indentation doesn't match and appears as code in faqs so I am forced to duplicate this content-->
+
+**Tip:** For more information about infowindows, see the [Full editing of infowindow HTML](http://blog.cartodb.com/post/61664564416/full-editing-of-infowindow-html) blogpost.
 
 ### How can I delete legends or combine them?
 
-The legends option is available from the CartoDB sidebar. You can disable a legend from a layer by selecting *none* as the Template option. If you want to merge the legends, apply *custom* from the Template drop-down menu. This option enables you to build a custom legend.
+The [legends](cartodb-editor.html#legends) option is available from the CartoDB sidebar. You can disable a legend from a layer by selecting *none* as the Template option. If you want to merge the legends, apply *custom* from the Template drop-down menu. This option enables you to build a custom legend.
 
 <p class="wrap-border"><img src="{{ '/img/layout/faqs/delete-legends.png' | prepend: site.baseurl }}" alt="How can I delete legends" /></p>
 
@@ -314,7 +322,7 @@ You can remove the "POWERED BY CARTODB" text and the CartoDB logo from your maps
 
 ### Why is my infowindow showing an error?
 
-If you are working on your map through a connection that is behind a firewall or proxy, some requests may be blocked. If requests are blocked, some parts of your map will not load. In some cases, this indicates that information you are trying to display in your infowindow will not appear.
+If you are working on your map through a connection that is behind a firewall or proxy, some requests may be blocked. If requests are blocked, some parts of your map will not load. In some cases, this indicates that information you are trying to display in your infowindow will not appear. Infowindows is available from the CartoDB sidebar of the Map View. For details, see [infowindows](cartodb-editor.html#infowindows) in the CartoDB Editor documentation.
 
 As a workaround, use an HTTPS connection. HTTPS encrypts your data so that your firewall or proxy will not block these specific CartoDB requests.
 
@@ -366,7 +374,7 @@ Queries to visualizations, see [The Map Academy](http://academy.cartodb.com/cour
 <p class="wrap-border"><img src="{{ '/img/layout/faqs/torque-interactivity.png' | prepend: site.baseurl }}" alt="How can I have interactivity in a torque layer" /></p>
 
 
-- Add one static layer where the marker opacity is very low (almost invisible) and enable infowindows for the layer
+- Add one static layer where the marker opacity is very low (almost invisible)
 - Add one Torque layer
 - In order to keep all points on the map, apply the *Cumulative* option
 
