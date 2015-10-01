@@ -199,10 +199,12 @@ Here is a really fun use-case for CartoDB: what are the 10 closest database entr
 
 <div class="code-title">DISTANCE SORT</div>
 {% highlight sql %}
-SELECT ST_X(ST_Centroid(the_geom)) as longitude,ST_Y(ST_Centroid(the_geom)) as latitude, description, ST_Distance(the_geom::geography, ST_PointFromText('POINT(-73.999548 40.71954)', 4326)::geography) AS distance FROM {table_name} ORDER BY distance ASC LIMIT 10
+SELECT ST_X(ST_Centroid(the_geom)) as longitude,ST_Y(ST_Centroid(the_geom)) as latitude, description, ST_Distance(the_geom::geography, ST_PointFromText('POINT(-73.999548 40.71954)', 4326)::geography) AS distance FROM {table_name} ORDER BY the_geom <-> ST_PointFromText('POINT(-73.999548 40.71954)', 4326) LIMIT 10
 {% endhighlight %}
 
 In this statement, we extract the longitude and latitude from geometries using the `ST_X` and `ST_Y` functions respectively. Then we are calculating the `ST_Distance` of each record to a POINT that we define on the fly. Finally you can see that we are ordering the results by the calculated distance in ASC (ascendent) and LIMITing to the closest 10 points.
+
+**Note:** The ORDER BY clause includes the `<->` distance operator as a PostGIS bounding box index. This operator only returns sorted index results when it is combined with the ORDER BY clause, and a defined LIMIT, drastically improving performance. For more details, see [Indexed Nearest Neighbour Search in PostGIS](http://boundlessgeo.com/2011/09/indexed-nearest-neighbour-search-in-postgis/).
 
 ### Common Table Expression
 

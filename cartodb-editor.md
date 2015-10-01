@@ -1141,7 +1141,7 @@ You can add and style a map legend for a published map. Map legends can be symbo
 
 	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/legend_output.png' | prepend: site.baseurl }}" alt="Example Legend on a published map" /></p>
 	
-	**Tip:** To view other beautiful maps, see the CartoDB [Gallery](https://cartodb.com/gallery/) page.
+	**Tip:** To view other example maps, see the CartoDB [Gallery](https://cartodb.com/gallery/) page.
 
 #### Filters
 
