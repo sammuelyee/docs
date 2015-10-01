@@ -1026,6 +1026,8 @@ These CartoCSS properties can be applied to raster (grid) data layers on a map.
 | | [raster-mesh-size](#raster-mesh-size-unsigned) | [raster-comp-op](#raster-comp-op-keyword) | [raster-colorizer-default-mode](#raster-colorizer-default-mode-keyword)
 | | [raster-colorizer-default-color](#raster-colorizer-default-color-color) | [raster-colorizer-epsilon](#raster-colorizer-epsilon-float) | [raster-colorizer-stops](#raster-colorizer-stops-tags)
 
+***Note:** Raster CartoCSS symbolizer properties are only supported when using the [Maps API](http://docs.cartodb.com/cartodb-platform/maps-api.html) with [CartoDB.JS](http://docs.cartodb.com/cartodb-platform/cartodb-js.html), and not with the CartoDB Editor.*
+
 
 ##### raster-opacity `float`
 
@@ -1404,6 +1406,7 @@ Description | Enables you to change the orientation of the text label.
 Sample CartoCSS Code | `text-orientation: undefined;`
 Default Value | undefined
 Available Values | See [expression](#expression).
+Related Example | See the public map, [Mexico City Performance Test (2.0)](https://team.cartodb.com/u/mforrest/viz/773f5a16-469c-11e5-bcc8-0e018d66dc29/public_map) for an example of rotated text labels.
 
 
 ##### text-placement `keyword`
