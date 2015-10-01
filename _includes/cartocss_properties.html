@@ -33,20 +33,20 @@ In addition to customizing the look of your maps using CartoCSS, CartoDB provide
 
 #### Common Elements
 
-These common element CartoCSS properties can be applied to any layer in a map.
+These common element CartoCSS properties can be applied to any feature layer in a map.
 
 | | [comp-op](#comp-op-keyword) | [image-filters](#image-filters-functions)| [opacity float](#opacity-float) 
 
 ##### comp-op `keyword`
 
 ------------ | -------------
-Description | The composite operation define how a layer behaves, relative to layers atop and below it. For example, you can style the way colors of overlapping markers interact. 
+Description | The composite operation define how a layer behaves, relative to the layers around it. For example, you can style the way colors of overlapping markers interact. 
 Sample CartoCSS Code | `comp-op: src-over;`
 Default Value | `src-over`, adds the current layer on top of other layers.
 Available Values | `clear``src``dst``src-over``dst-over``src-in``dst-in``src-out``dst-out``src-atop``dst-atop``xor``plus``minus``multiply``screen``overlay``darken``lighten``color-dodge``color-burn``hard-light``soft-light``difference``exclusion``contrast``invert``invert-rgb``grain-merge``grain-extract``hue``saturation``color``value`
 Related Example |  See [CartoCSS Composite Operations](cartodb-editor.html#cartocss-composite-operations) for a description of composite operation effects.  
 
-**Note:** The `comp-op` value can be applied as an overall style effect, or it can be applied to the specific symbolizer property, depending on the color blending operation you are trying to achieve. For details, see [Composite Operation Effects](cartodb-editor.html#composite-operation-effects).
+**Note:** The `comp-op` value can be applied as an overall style effect, or it can be applied to the specific symbolizer property, depending on the color blending (or alpha blending) operation that you are trying to achieve. For details, see [Composite Operation Effects](cartodb-editor.html#composite-operation-effects).
 
 ##### image-filters `functions`
 
@@ -411,8 +411,8 @@ Available Values | See [color](#color).
 ##### marker-line-width `float`
 
 Description | The width of the line around the marker, in pixels, centered on the edge. 
-Sample CartoCSS Code | `marker-line-width: undefined;`
-Default Value |  undefined pixels
+Sample CartoCSS Code | `marker-line-width: 1;`
+Default Value |  A defined pixel
 Available Values | See [float](#float).
 Related Example | The marker-line-width is positioned on the boundary, so high values can cover the area itself. For example, if you have a marker with a width (diameter) of `4`, and add a line width of `3`, 1.5 pixels of the line width appears on the inside of the edge, and covers the entire marker.
 
@@ -500,7 +500,7 @@ Available Values | See [boolean](#boolean).
 ##### marker-spacing `float`
 
 Description | The space between repeated markers, in pixels. If spacing is less than the marker size, or larger than the line segment length, no markers are displayed.
-Sample CartoCSS Code | `marker-spacing: spacing;`
+Sample CartoCSS Code | `marker-spacing: 100;`
 Default Value |  `100`]
 Available Values | See [float](#float).
 
@@ -517,7 +517,7 @@ Available Values | See [float](#float).
 ##### marker-transform `functions`
 
 Description | Defines SVG transformation functions to scale how markers appear.
-Sample CartoCSS Code | `marker-transform: functions;`
+Sample CartoCSS Code | `marker-transform: scale (2,2);`
 Default Value |  no transformation applied by default.
 Available Values | See [functions](#functions).
 | **Note:** Define values as per [SVG transformation definitions](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform)- which are values separated by whitespace and/or commas, from right to left.
