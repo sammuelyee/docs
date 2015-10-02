@@ -1128,7 +1128,7 @@ These CartoCSS properties can be applied to style points on a map.
 ##### point-file `uri`
 
 Description | A defined image path that renders how a point appears.
-Sample CartoCSS Code | `point-file: url (icons/example.png);`
+Sample CartoCSS Code | `point-file: url(http://www.image.com/image.png);`
 Default Value | none
 Available Values | See [uri](#uri).
 
@@ -1602,6 +1602,8 @@ A uniform resource identifier (URI) is a string of characters used to identify t
 		marker-file: url('marker.png');
 		}
 	{% endhighlight %}
+
+**Note:** In CartoDB, images applied through CartoCSS cannot be selected from folders. You can define a resource of the image location with this URI value.
 
 #### String
 
