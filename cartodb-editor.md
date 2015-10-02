@@ -1243,10 +1243,10 @@ Additionally, you can apply the `text-face-name: 'string'` property with [CartoC
 Light, Regular, Semibold, Bold, Extrabold, Light Italic, Italic, Semibold Italic, Bold Italic, Extrabold Italic
 
 - **DejaVu Sans**  
-ExtraLight, Book, Oblique, Bold, Bold Oblique, Condensed, Condensed Oblique, Condensed Bold, Condensed Bold Oblique, Condensed Italic, Condensed Bold Italic
+ExtraLight, Book, Oblique, Bold, Bold Oblique, Condensed, Condensed Oblique, Condensed Bold, Condensed Bold Oblique
 
 - **DejaVu Serif**  
-Book, Italic, Bold, Bold Italic, Condensed
+Book, Italic, Bold, Bold Italic, Condensed, Condensed Italic, Condensed Bold, Condensed Bold Italic
 
 - **Lato**  
 Hairline,  Hairline Italic, Light, Light Italic, Regular, Italic, Bold, Bold Italic, Black, Black Italic
