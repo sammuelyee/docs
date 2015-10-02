@@ -3,47 +3,47 @@
 
 Each CartoCSS map category has its own configurable properties. You can apply multiple symbolizers and properties to the same map layer. Navigate to a selected symbolizer to view a description of the CartoCSS property, sample CartoCSS code, the default value, and the available values. 
 
-***Note:** CartoDB is currently maintaining this library of CartoCSS properties and values. This content was adapted from the open source material provided by [Mapbox](https://github.com/mapbox/carto/blob/master/docs/latest.md), who has ceased active development of CartoCSS documentation.*
+**Note:** CartoDB is currently maintaining this library of CartoCSS properties and values. This content was adapted from the open source material provided by [Mapbox](https://github.com/mapbox/carto/blob/master/docs/latest.md), who has ceased active development of CartoCSS documentation.*
 
 
-| **CartoCSS Symbolizer:** |
------------- | ------------- |
-| | [Polygon](#polygon) (polygon) | [Line](#line) (lines and polygons)| [Markers](#markers) (points, lines, and polygons)
-| | [Shield](#shield) (points and lines) | [Line Pattern](#line-pattern) (lines and polygons) | [Polygon Pattern](#polygon-pattern) (polygons) 
-| | [Raster](#raster) (grid data layers) | [Point](#point) (points) | [Text](#text) (points, lines, and polygons)
-| | [Building](#building) |
+**CartoCSS Symbolizer:** | 
+--- | ---
+[Polygon](#polygon) (polygon) | [Line](#line) (lines and polygons)| [Markers](#markers) (points, lines, and polygons)
+[Shield](#shield) (points and lines) | [Line Pattern](#line-pattern) (lines and polygons) | [Polygon Pattern](#polygon-pattern) (polygons) 
+[Raster](#raster) (grid data layers) | [Point](#point) (points) | [Text](#text) (points, lines, and polygons)
+[Building](#building) |
 
-| **CartoCSS Values:** |
------------- | -------------
-| | [Color](#color) | [Float](#float) | [URI](#uri) |
-| | [String](#string) | [Boolean](#boolean) | [Expression](#expression) |
-| | [Numbers](#numbers) | [Percentages](#percentages) | [Functions](#functions)
+**CartoCSS Values:** | 
+--- | ---
+[Color](#color) | [Float](#float) | [URI](#uri)
+[String](#string) | [Boolean](#boolean) | [Expression](#expression)
+[Numbers](#numbers) | [Percentages](#percentages) | [Functions](#functions)
 
-| **Other CartoCSS Parameters:** | 
------------- | -------------
-| | [Common Elements](#common-elements) | [Map Background and String Elements](#map-background-and-string-elements) | [Debug mode](#debug-mode-string)
+**Other CartoCSS Parameters:** | 
+--- | ---
+[Common Elements](#common-elements) | [Map Background and String Elements](#map-background-and-string-elements) | [Debug mode](#debug-mode-string)
 
 In addition to customizing the look of your maps using CartoCSS, CartoDB provides additional CartoCSS properties that you can apply to Torque style maps. For details, see [CartoCSS Properties for Torque Style Maps](cartodb-editor.html#cartocss-properties-for-torque-style-maps).
 
-| **Torque CartoCSS Properties:** | 
------------- | -------------
-| | [-torque-frame-count](#torque-frame-count-number) | [-torque-animation-duration](#torque-animation-duration-number) | [-torque-time-attribute](#torque-time-attribute-string)
-| | -[torque-aggregation-function](#torque-aggregation-function-keyword) | [-torque-resolution](#torque-resolution-float) | [-torque-data-aggregation](#torque-data-aggregation-keyword)
+**Torque CartoCSS Properties:** | 
+--- | ---
+[-torque-frame-count](#torque-frame-count-number) | [-torque-animation-duration](#torque-animation-duration-number) | [-torque-time-attribute](#torque-time-attribute-string)
+-[torque-aggregation-function](#torque-aggregation-function-keyword) | [-torque-resolution](#torque-resolution-float) | [-torque-data-aggregation](#torque-data-aggregation-keyword)
 
 
 #### Common Elements
 
 These common element CartoCSS properties can be applied to any feature layer in a map. A feature layer is any data layer that contains points, lines, or polygons (not a basemap). 
 
-| | [comp-op](#comp-op-keyword) | [image-filters](#image-filters-functions)| [opacity float](#opacity-float) 
+[comp-op](#comp-op-keyword) | [image-filters](#image-filters-functions)| [opacity float](#opacity-float)
 
 ##### comp-op `keyword`
 
------------- | -------------
+--- | ---
 Description | The composite operation define how a layer behaves, relative to the layers around it. For example, you can style the way colors of overlapping markers interact. 
 Sample CartoCSS Code | `comp-op: src-over;`
 Default Value | `src-over`, adds the current layer on top of other layers.
-Available Values | `clear``src``dst``src-over``dst-over``src-in``dst-in``src-out``dst-out``src-atop``dst-atop``xor``plus``minus``multiply``screen``overlay``darken``lighten``color-dodge``color-burn``hard-light``soft-light``difference``exclusion``contrast``invert``invert-rgb``grain-merge``grain-extract``hue``saturation``color``value`
+Available Values | `clear` `src` `dst` `src-over` `dst-over` `src-in` `dst-in` `src-out` `dst-out` `src-atop` `dst-atop` `xor` `plus` `minus` `multiply` `screen` `overlay` `darken` `lighten` `color-dodge` `color-burn` `hard-light` `soft-light` `difference` `exclusion` `contrast` `invert` `invert-rgb` `grain-merge` `grain-extract` `hue` `saturation` `color` `value`
 Related Example |  See [CartoCSS Composite Operations](cartodb-editor.html#cartocss-composite-operations) for a description of composite operation effects.  
 
 **Note:** The `comp-op` value can be applied as an overall style effect, or it can be applied to the specific symbolizer property, depending on the color blending (or alpha blending) operation that you are trying to achieve. For details, see [Composite Operation Effects](cartodb-editor.html#composite-operation-effects).
@@ -68,8 +68,8 @@ Available Values | See [float](#float).
 
 These generic CartoCSS background and string element properties can be applied to any layer in a map.
 
-| | [background-image](#background-image-uri) | [background-image-comp-op](#background-image-comp-op-keyword) | [background-image-opacity](#background-image-opacity-float)
-| | [buffer-size](#buffer-size-float) | 
+[background-image](#background-image-uri) | [background-image-comp-op](#background-image-comp-op-keyword) | [background-image-opacity](#background-image-opacity-float)
+[buffer-size](#buffer-size-float) | 
 
 
 ##### background-image `uri`
@@ -85,7 +85,7 @@ Available Values | See [uri](#uri).
 Description | Sets the compositing operation used to blend the image into the background.
 Sample CartoCSS Code | `background-image-comp-op keyword`
 Default Value |  `src-over`, the background image is placed on top of any existing `background-image`.
-Available Values | `clear``src``dst``src-over``dst-over``src-in``dst-in``src-out``dst-out``src-atop``dst-atop``xor``plus``minus``multiply``screen``overlay``darken``lighten``color-dodge``color-burn``hard-light``soft-light``difference``exclusion``contrast``invert``invert-rgb``grain-merge``grain-extract``hue``saturation``color``value`
+Available Values | `clear` `src` `dst` `src-over` `dst-over` `src-in` `dst-in` `src-out` `dst-out` `src-atop` `dst-atop` `xor` `plus` `minus` `multiply` `screen` `overlay` `darken` `lighten` `color-dodge` `color-burn` `hard-light` `soft-light` `difference` `exclusion` `contrast` `invert` `invert-rgb` `grain-merge` `grain-extract` `hue` `saturation` `color` `value`
 
 
 ##### background-image-opacity `float`
@@ -110,10 +110,10 @@ Available Values | See [float](#float).
 
 These CartoCSS properties can be applied to the fill and outline of a polygon layer.
 
-| | [polygon-fill](#polygon-fill-color) | [polygon-opacity](#polygon-opacity-float) | [polygon-gamma](#polygon-gamma-float)
-| | [polygon-gamma-method](#polygon-gamma-method-keyword) | [polygon-clip](#polygon-clip-boolean)| [polygon-simplify](#polygon-simplify-float)
-| | [polygon-simplify-algorithm](#polygon-simplify-algorithm-keyword) | [polygon-smooth](#polygon-smooth-float) | [polygon-geometry-transform](#polygon-geometry-transform-functions)
-| | [polygon-comp-op](#polygon-comp-op-keyword) 
+[polygon-fill](#polygon-fill-color) | [polygon-opacity](#polygon-opacity-float) | [polygon-gamma](#polygon-gamma-float)
+[polygon-gamma-method](#polygon-gamma-method-keyword) | [polygon-clip](#polygon-clip-boolean)| [polygon-simplify](#polygon-simplify-float)
+[polygon-simplify-algorithm](#polygon-simplify-algorithm-keyword) | [polygon-smooth](#polygon-smooth-float) | [polygon-geometry-transform](#polygon-geometry-transform-functions)
+[polygon-comp-op](#polygon-comp-op-keyword) | 
 
 ##### polygon-fill `color`
 
@@ -145,7 +145,7 @@ Available Values | `0`, `1`, `2`, `3`, `4`, `5`
 Description | An anti-grain geometry method that represents a 2D rendering library, specific to controlling the quality of antialiasing and used to calculate pixel gamma (pow(x,gamma), which produces slightly smoother line and polygon antialiasing than the &#x27;linear&#x27; method.
 Sample CartoCSS Code | `polygon-gamma-method: power;`
 Default Value |  `power`
-Available Values | `power``linear``none``threshold``multiply`
+Available Values | `power` `linear` `none` `threshold` `multiply`
 
 **Tip:** Mapnik uses this method in combination with the &#x27;gamma&#x27; value (which defaults to 1). These methods are documented in the the [AGG GitHub source](https://github.com/mapnik/mapnik/blob/master/deps/agg/include/agg_gamma_functions.h).
 
@@ -171,7 +171,7 @@ Available Values | See [float](#float).
 Description | Simplifies geometries by a given algorithm value.
 Sample CartoCSS Code | `polygon-simplify-algorithm: radial-distance;`
 Default Value |  `radial-distance`, geometry is simplified using the radial distance algorithm.
-Available Values | `radial-distance``zhao-saalfeld``visvalingam-whyatt`
+Available Values | `radial-distance` `zhao-saalfeld` `visvalingam-whyatt`
 
 
 ##### polygon-smooth `float`
@@ -196,19 +196,19 @@ Available Values | See [functions](#functions).
 Description | The composite operation that defines how the symbolizer behaves relative to layers atop or below it.
 Sample CartoCSS Code | `polygon-comp-op: src-over;`
 Default Value |  `src-over`, adds the current symbolizer on top of other symbolizers.
-Available Values | `clear``src``dst``src-over``dst-over``src-in``dst-in``src-out``dst-out``src-atop``dst-atop``xor``plus``minus``multiply``screen``overlay``darken``lighten``color-dodge``color-burn``hard-light``soft-light``difference``exclusion``contrast``invert``invert-rgb``grain-merge``grain-extract``hue``saturation``color``value`
+Available Values | `clear` `src` `dst` `src-over` `dst-over` `src-in` `dst-in` `src-out` `dst-out` `src-atop` `dst-atop` `xor` `plus` `minus` `multiply` `screen` `overlay` `darken` `lighten` `color-dodge` `color-burn` `hard-light` `soft-light` `difference` `exclusion` `contrast` `invert` `invert-rgb` `grain-merge` `grain-extract` `hue` `saturation` `color` `value`
 
 
 #### Line
 
 These CartoCSS properties can be applied to both line and polygon layers.
 
-| | [line-color](#line-color-color) | [line-width](#line-width-float) | [line-opacity](#line-opacity-float)
-| | [line-join](#line-join-keyword) | [line-cap](#line-cap-keyword) | [line-gamma](#line-gamma-float)
-| | [line-gamma-method](#line-gamma-method-keyword) | [line-dasharray](#line-dasharray-numbers) | [line-dash-offset](#line-dash-offset-numbers)
-| | [line-miterlimit](#line-miterlimit-float) | [line-clip](#line-clip-boolean) | [line-simplify](#line-simplify-float)
-| | [line-simplify-algorithm](#line-simplify-algorithm-keyword) | [lime-smooth](#line-smooth-float) | [line-offset](#line-offset-float)
-| | [line-rasterizer](#line-rasterizer-keyword) | [line-geometry-transform](#line-geometry-transform-functions) | [line-comp-op](#line-comp-op-keyword)
+[line-color](#line-color-color) | [line-width](#line-width-float) | [line-opacity](#line-opacity-float)
+[line-join](#line-join-keyword) | [line-cap](#line-cap-keyword) | [line-gamma](#line-gamma-float)
+[line-gamma-method](#line-gamma-method-keyword) | [line-dasharray](#line-dasharray-numbers) | [line-dash-offset](#line-dash-offset-numbers)
+[line-miterlimit](#line-miterlimit-float) | [line-clip](#line-clip-boolean) | [line-simplify](#line-simplify-float)
+[line-simplify-algorithm](#line-simplify-algorithm-keyword) | [lime-smooth](#line-smooth-float) | [line-offset](#line-offset-float)
+[line-rasterizer](#line-rasterizer-keyword) | [line-geometry-transform](#line-geometry-transform-functions) | [line-comp-op](#line-comp-op-keyword)
 
 ##### line-color `color`
 
@@ -239,7 +239,7 @@ Available Values | See [float](#float).
 Description | The behavior of lines when joined on a map.
 Sample CartoCSS Code | `line-join: miter;`
 Default Value |  `miter`, joins the edges at the corners.
-Available Values | `miter``round``bevel`
+Available Values | `miter` `round` `bevel`
 
 
 ##### line-cap `keyword`
@@ -247,7 +247,7 @@ Available Values | `miter``round``bevel`
 Description | The display of line endings.
 Sample CartoCSS Code | `line-cap: butt;`
 Default Value |  `butt`, the ends of lines are squared off at the endpoints.
-Available Values | `butt``round``square`
+Available Values | `butt` `round` `square`
 
 
 ##### line-gamma `float`
@@ -262,7 +262,7 @@ Available Values | `0-1`. See [float](#float).
 Description | An anti-grain geometry method that represents a 2D rendering library, specific to controlling the quality of antialiasing and used to calculate pixel gamma (pow(x,gamma), which produces slightly smoother line and polygon antialiasing than the &#x27;linear&#x27; method.
 Sample CartoCSS Code | `line-gamma-method: power;`
 Default Value |  `power`
-Available Values | `power``linear``none``threshold``multiply`
+Available Values | `power` `linear` `none` `threshold` `multiply`
 
 **Tip:** Mapnik uses this method in combination with the &#x27;gamma&#x27; value (which defaults to 1). These methods are documented in the the [AGG GitHub source](https://github.com/mapnik/mapnik/blob/master/deps/agg/include/agg_gamma_functions.h).
 
@@ -325,8 +325,7 @@ Available Values | `radial-distance` `zhao-saalfeld` `visvalingam-whyatt`
 Description | Smooths out geometry angles.
 Sample CartoCSS Code | `line-smooth: 0;`
 Default Value |  `0`, no smoothing is applied.
-Available Values | `0` `1`
-| **Note:** 0 indicates no smoothing is applied. 1 indicates that it is fully smoothed. Values greater than 1 produce wild, looping geometries. It is suggested to use a range between 0-1 for this value.
+Available Values | `0` `1`<br><br>**Note:** 0 indicates no smoothing is applied. 1 indicates that it is fully smoothed. Values greater than 1 produce wild, looping geometries. It is suggested to use a range between 0-1 for this value.
 
 
 ##### line-offset `float`
@@ -342,7 +341,7 @@ Available Values | See [float](#float).
 Description | Exposes an alternate AGG (Anti-Grain Geometry) rendering method that sacrifices some accuracy for speed.
 Sample CartoCSS Code | `line-rasterizer: full;`
 Default Value |  `full`
-Available Values | `full``fast`
+Available Values | `full` `fast`
 
 
 ##### line-geometry-transform `functions`
@@ -358,20 +357,20 @@ Available Values | See [functions](#functions).
 Description | The composite operation that defines how the symbolizer behaves relative to layers atop or below it.
 Sample CartoCSS Code | `line-comp-op: src-over;`
 Default Value |  `src-over`, adds the current symbolizer on top of other symbolizers.
-Available Values | `clear``src``dst``src-over``dst-over``src-in``dst-in``src-out``dst-out``src-atop``dst-atop``xor``plus``minus``multiply``screen``overlay``darken``lighten``color-dodge``color-burn``hard-light``soft-light``difference``exclusion``contrast``invert``invert-rgb``grain-merge``grain-extract``hue``saturation``color``value`
+Available Values | `clear` `src` `dst` `src-over` `dst-over` `src-in` `dst-in` `src-out` `dst-out` `src-atop` `dst-atop` `xor` `plus` `minus` `multiply` `screen` `overlay` `darken` `lighten` `color-dodge` `color-burn` `hard-light` `soft-light` `difference` `exclusion` `contrast` `invert` `invert-rgb` `grain-merge` `grain-extract` `hue` `saturation` `color` `value`
 
 
 #### Markers
 
 These CartoCSS properties can be applied to point, line and polygon layers.
 
-| | [marker-file](#marker-file-uri) | [marker-opacity](#marker-opacity-float) | [marker-fill-opacity](#marker-fill-opacity-float)
-| | [marker-line-color](#marker-line-color-color) | [marker-line-width](#marker-line-width-float) | [marker-line-opacity](#marker-line-opacity-float)
-| | [marker-placement](#marker-placement-keyword) | [marker-multi-policy](#marker-multi-policy-keyword) | [marker-type](#marker-type-keyword)
-| | [marker-width](#marker-width-expression) | [marker-height](#marker-height-expression) | [marker-fill](#marker-fill-color)
-| | [marker-allow-overlap](#marker-allow-overlap-boolean) | [marker-ignore-placement](#marker-ignore-placement-boolean) | [marker-spacing](#marker-spacing-float)
-| | [marker-max-error](#marker-max-error-float) | [marker-transform](#marker-transform-functions) | [marker-clip](#marker-clip-boolean)
-| | [marker-smooth](#marker-smooth-float) | [marker-geometry-transform](#marker-geometry-transform-functions) | [marker-comp-op](#marker-comp-op-keyword)
+[marker-file](#marker-file-uri) | [marker-opacity](#marker-opacity-float) | [marker-fill-opacity](#marker-fill-opacity-float)
+[marker-line-color](#marker-line-color-color) | [marker-line-width](#marker-line-width-float) | [marker-line-opacity](#marker-line-opacity-float)
+[marker-placement](#marker-placement-keyword) | [marker-multi-policy](#marker-multi-policy-keyword) | [marker-type](#marker-type-keyword)
+[marker-width](#marker-width-expression) | [marker-height](#marker-height-expression) | [marker-fill](#marker-fill-color)
+[marker-allow-overlap](#marker-allow-overlap-boolean) | [marker-ignore-placement](#marker-ignore-placement-boolean) | [marker-spacing](#marker-spacing-float)
+[marker-max-error](#marker-max-error-float) | [marker-transform](#marker-transform-functions) | [marker-clip](#marker-clip-boolean)
+[marker-smooth](#marker-smooth-float) | [marker-geometry-transform](#marker-geometry-transform-functions) | [marker-comp-op](#marker-comp-op-keyword)
 
 
 ##### marker-file `uri`
@@ -430,7 +429,7 @@ Available Values | See [float](#float).
 Description | Places markers on a point, in the center of a polygon, or on a line.
 Sample CartoCSS Code | `marker-placement: point;`
 Default Value | `point`, places markers at the center point (centroid) of the geometry.
-Available Values | `point``line``interior`
+Available Values | `point` `line` `interior`
 | **Note:** If placing markers on a line, markers appear multiple times along a line. You can apply &#x27;interior&#x27; to ensure correct placement on a line. Points placed on polygons are forced to be inside the polygon interior.
 
 **Tip**: See the note for how this property interacts with the [Marker-multi-policy](#marker-multi-policy-keyword).
@@ -441,7 +440,7 @@ Available Values | `point``line``interior`
 Description | Enables you to control the rendering behavior for multi-geometries.
 Sample CartoCSS Code | `marker-multi-policy: each;`
 Default Value |  `each`, all geometries display a marker.
-Available Values | `each``whole``largest`
+Available Values | `each` `whole` `largest`
 | whole - indicates that the aggregate centroid between all geometries is applied
 | largest - indicates that only the largest (by bounding box areas) renders a marker (similar to default text labeling behavior)
 
@@ -453,8 +452,9 @@ Available Values | `each``whole``largest`
 Description | Sets the default marker-type. If a SVG file is not defined with the [marker-file](#marker-file-uri) property, an arrow, ellipse, or circle (if height is equal to width) is rendered. 
 Sample CartoCSS Code | `marker-type: ellipse;`
 Default Value |  `ellipse`
-Available Values | `arrow``ellipse`
-| **Note:** If the height is equal to the width, a circle appears.
+Available Values | `arrow` `ellipse`<br><br>
+
+**Note:** If the height is equal to the width, a circle appears.
 
 
 ##### marker-width `expression`
@@ -511,7 +511,8 @@ Description | The maximum difference between the actual marker placement and the
 Sample CartoCSS Code | `marker-max-error: 0.2;`
 Default Value |  `0.2`
 Available Values | See [float](#float).
-| **Note:**  Setting a high value can resolve placement conflicts with other symbolizers and improve rendering performance.
+
+**Note:**  Setting a high value can resolve placement conflicts with other symbolizers and improve rendering performance.
 
 
 ##### marker-transform `functions`
@@ -520,7 +521,8 @@ Description | Defines SVG transformation functions to scale how markers appear.
 Sample CartoCSS Code | `marker-transform: scale (2,2);`
 Default Value |  no transformation applied by default.
 Available Values | See [functions](#functions).
-| **Note:** Define values as per [SVG transformation definitions](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform)- which are values separated by whitespace and/or commas, from right to left.
+
+**Note:** Define values as per [SVG transformation definitions](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform)- which are values separated by whitespace and/or commas, from right to left.
 
 
 ##### marker-clip `boolean`
@@ -537,7 +539,8 @@ Description | Smooths out geometry angles.
 Sample CartoCSS Code | `marker-smooth: float;`
 Default Value | `0`, no smoothing is applied.
 Available Values | See [float](#float).
-| **Note:** 0 indicates no smoothing is applied. 1 indicates that it is fully smoothed. Values greater than 1 produce wild, looping geometries. It is suggested to use a range between 0-1 for this value.
+
+**Note:** 0 indicates no smoothing is applied. 1 indicates that it is fully smoothed. Values greater than 1 produce wild, looping geometries. It is suggested to use a range between 0-1 for this value.
 
 
 ##### marker-geometry-transform `functions`
@@ -553,24 +556,24 @@ Available Values | See [functions](#functions).
 Description | The composite operation that defines how the symbolizer behaves relative to layers atop or below it.
 Sample CartoCSS Code | `marker-comp-op: src-over;`
 Default Value | `src-over`, adds the current symbolizer on top of other symbolizers.
-Available Values | `clear``src``dst``src-over``dst-over``src-in``dst-in``src-out``dst-out``src-atop``dst-atop``xor``plus``minus``multiply``screen``overlay``darken``lighten``color-dodge``color-burn``hard-light``soft-light``difference``exclusion``contrast``invert``invert-rgb``grain-merge``grain-extract``hue``saturation``color``value`
+Available Values | `clear` `src` `dst` `src-over` `dst-over` `src-in` `dst-in` `src-out` `dst-out` `src-atop` `dst-atop` `xor` `plus` `minus` `multiply` `screen` `overlay` `darken` `lighten` `color-dodge` `color-burn` `hard-light` `soft-light` `difference` `exclusion` `contrast` `invert` `invert-rgb` `grain-merge` `grain-extract` `hue` `saturation` `color` `value`
 
 
 #### Shield
 If you are displaying road shields on a map (for example, highway markers), these CartoCSS properties define the shield styling.
 
-| | [shield-file](#shield-file-uri) | [shield-name](#shield-name-expression) | [shield-face-name](#shield-face-name-string)
-| | [shield-unlock-image](#shield-unlock-image-boolean) | [shield-size](#shield-size-float) | [shield-fill](#shield-fill-color)
-| | [shield-placement](#shield-placement-keyword) | [shield-avoid-edges](#shield-avoid-edges-boolean) | [shield-allow-overlap](#shield-allow-overlap-boolean)
-| | [shield-min-distance](#shield-min-distance-float) | [shield-spacing](#shield-spacing-float) | [shield-min-padding](#shield-min-padding-float)
-| | [shield-wrap-width](#shield-wrap-width-unsigned) | [shield-wrap-before](#shield-wrap-before-boolean) | [shield-wrap-character](#shield-wrap-character-string)
-| | [shield-halo-fill](#shield-halo-fill-color) | [shield-halo-radius](#shield-halo-radius-float) | [shield-character-spacing](#shield-character-spacing-unsigned)
-| | [shield-line-spacing](#shield-line-spacing-unsigned) | [shield-text-dx](#shield-text-dx-float) | [shield-text-dy](#shield-text-dy-float)
-| | [shield-dx](#shield-dx-float) | [shield-dy](#shield-dy-float) | [shield-opacity](#shield-opacity-float)
-| | [shield-text-opacity](#shield-text-opacity-float) | [shield-horizontal-alignment](#shield-horizontal-alignment-keyword) | [shield-vertical-alignment](#shield-vertical-alignment-keyword)
-| | [shield-placement-type](#shield-placement-type-keyword) | [shield-placements](#shield-placements-string) | [shield-text-transform](#shield-text-transform-keyword)
-| | [shield-justify-alignment](#shield-justify-alignment-keyword) | [shield-transform](#shield-transform-functions) | [shield-clip](#shield-clip-boolean)
-| | [shield-comp-op](#shield-comp-op-keyword) 
+[shield-file](#shield-file-uri) | [shield-name](#shield-name-expression) | [shield-face-name](#shield-face-name-string)
+[shield-unlock-image](#shield-unlock-image-boolean) | [shield-size](#shield-size-float) | [shield-fill](#shield-fill-color)
+[shield-placement](#shield-placement-keyword) | [shield-avoid-edges](#shield-avoid-edges-boolean) | [shield-allow-overlap](#shield-allow-overlap-boolean)
+[shield-min-distance](#shield-min-distance-float) | [shield-spacing](#shield-spacing-float) | [shield-min-padding](#shield-min-padding-float)
+[shield-wrap-width](#shield-wrap-width-unsigned) | [shield-wrap-before](#shield-wrap-before-boolean) | [shield-wrap-character](#shield-wrap-character-string)
+[shield-halo-fill](#shield-halo-fill-color) | [shield-halo-radius](#shield-halo-radius-float) | [shield-character-spacing](#shield-character-spacing-unsigned)
+[shield-line-spacing](#shield-line-spacing-unsigned) | [shield-text-dx](#shield-text-dx-float) | [shield-text-dy](#shield-text-dy-float)
+[shield-dx](#shield-dx-float) | [shield-dy](#shield-dy-float) | [shield-opacity](#shield-opacity-float)
+[shield-text-opacity](#shield-text-opacity-float) | [shield-horizontal-alignment](#shield-horizontal-alignment-keyword) | [shield-vertical-alignment](#shield-vertical-alignment-keyword)
+[shield-placement-type](#shield-placement-type-keyword) | [shield-placements](#shield-placements-string) | [shield-text-transform](#shield-text-transform-keyword)
+[shield-justify-alignment](#shield-justify-alignment-keyword) | [shield-transform](#shield-transform-functions) | [shield-clip](#shield-clip-boolean)
+[shield-comp-op](#shield-comp-op-keyword) | | 
 
 ##### shield-file `uri`
 
@@ -628,7 +631,7 @@ Available Values | See [color](#color).
 Description | Places shields on top of points, along multiple line places, on the vertexes of polygons, or in the interior inside a polygon.
 Sample CartoCSS Code | `shield-placement: point;`
 Default Value | `point`, the shield appears on the top of map points.
-Available Values | `point``line``vertex``interior`
+Available Values | `point` `line` `vertex` `interior`
 
 
 ##### shield-avoid-edges `boolean`
@@ -690,7 +693,7 @@ Available Values | See [boolean](#boolean).
 
 ##### shield-wrap-character `string`
 
------------- | -------------
+--- | ---
 Description | Enables you to wrap text with a character, rather than with a space. This is especially useful for long text names.
 Sample CartoCSS Code | `shield-wrap-character: '_';`
 Default Value | undefined
@@ -699,7 +702,7 @@ Available Values | See [string](#string).
 
 ##### shield-halo-fill `color`
 
------------- | -------------
+--- | ---
 Description | Specifies the color of the halo around the text.
 Sample CartoCSS Code | `shield-halo-fill: #FFFFFF;`
 Default Value | `#FFFFFF`, the halo color is white by default
@@ -785,7 +788,7 @@ Available Values | See [float](#float).
 Description | The horizontal alignment of the shield from its center point.
 Sample CartoCSS Code | `shield-horizontal-alignment auto;`
 Default Value | `auto`
-Available Values | `left``middle``right``auto`
+Available Values | `left` `middle` `right` `auto`
 
 
 ##### shield-vertical-alignment `keyword
@@ -793,7 +796,7 @@ Available Values | `left``middle``right``auto`
 Description | The vertical alignment of the shield from its center point.
 Sample CartoCSS Code | `shield-vertical-alignment: middle;'`
 Default Value | `middle`
-Available Values | `top``middle``bottom``auto`
+Available Values | `top` `middle` `bottom` `auto`
 
 
 ##### shield-placement-type `keyword`
@@ -801,7 +804,7 @@ Available Values | `top``middle``bottom``auto`
 Description | Enables you to reposition and resize the shield to avoid overlaps.
 Sample CartoCSS Code | `shield-placement-type: dummy;`
 Default Value | `dummy`, turns off and disables this feature.
-Available Values | `dummy``simple`
+Available Values | `dummy` `simple`
 | **Note:** The `simple` value is the shield placement string used for basic algorithms.
 
 
@@ -818,7 +821,7 @@ Available Values | See [string](#string).
 Description | Identifies the text case of the shield-name.
 Sample CartoCSS Code | `shield-text-transform: none;`
 Default Value | `none`
-Available Values | `none``uppercase``lowercase``capitalize`
+Available Values | `none` `uppercase` `lowercase` `capitalize`
 
 
 ##### shield-justify-alignment `keyword`
@@ -826,7 +829,7 @@ Available Values | `none``uppercase``lowercase``capitalize`
 Description | Defines how the shield-name text is aligned.
 Sample CartoCSS Code | `shield-justify-alignment: auto;`
 Default Value | `auto`
-Available Values | `left``center``right``auto`
+Available Values | `left` `center` `right` `auto`
 
 
 ##### shield-transform `functions`
@@ -851,16 +854,16 @@ Available Values | See [boolean](#boolean).
 Description | The composite operation that defines how the symbolizer behaves relative to layers atop or below it.
 Sample CartoCSS Code | `shield-comp-op: src-over;`
 Default Value | `src-over`, adds the current symbolizer on top of other symbolizers.
-Available Values | `clear``src``dst``src-over``dst-over``src-in``dst-in``src-out``dst-out``src-atop``dst-atop``xor``plus``minus``multiply``screen``overlay``darken``lighten``color-dodge``color-burn``hard-light``soft-light``difference``exclusion``contrast``invert``invert-rgb``grain-merge``grain-extract``hue``saturation``color``value`
+Available Values | `clear` `src` `dst` `src-over` `dst-over` `src-in` `dst-in` `src-out` `dst-out` `src-atop` `dst-atop` `xor` `plus` `minus` `multiply` `screen` `overlay` `darken` `lighten` `color-dodge` `color-burn` `hard-light` `soft-light` `difference` `exclusion` `contrast` `invert` `invert-rgb` `grain-merge` `grain-extract` `hue` `saturation` `color` `value`
 
 
 #### Line-Pattern
 
 These CartoCSS pattern properties can be applied to both line and polygon elements on a map.
 
-| | [line-pattern-file](#line-pattern-file-uri) | [line-pattern-clip](#line-pattern-clip-boolean) | [line-pattern-simplify](#line-pattern-simplify-float)
-| | [line-pattern-simplify-algorithm](#line-pattern-simplify-algorithm-keyword) | [line-pattern-smooth](#line-pattern-smooth-float) | [line-pattern-offset](#line-pattern-offset-float)
-| | [line-pattern-geometry-transform](#line-pattern-geometry-transform-functions) | [line-pattern-comp-op](#line-pattern-comp-op-keyword) |
+[line-pattern-file](#line-pattern-file-uri) | [line-pattern-clip](#line-pattern-clip-boolean) | [line-pattern-simplify](#line-pattern-simplify-float)
+[line-pattern-simplify-algorithm](#line-pattern-simplify-algorithm-keyword) | [line-pattern-smooth](#line-pattern-smooth-float) | [line-pattern-offset](#line-pattern-offset-float)
+[line-pattern-geometry-transform](#line-pattern-geometry-transform-functions) | [line-pattern-comp-op](#line-pattern-comp-op-keyword) |
 
 ##### line-pattern-file `uri`
 
@@ -891,7 +894,7 @@ Available Values | See [float](#float).
 Description | Simplifies geometries by a given algorithm value.
 Sample CartoCSS Code | `line-pattern-simplify-algorithm: radial-distance;`
 Default Value | `radial-distance`, geometry is simplified using the radial distance algorithm.
-Available Values | `radial-distance``zhao-saalfeld``visvalingam-whyatt`
+Available Values | `radial-distance` `zhao-saalfeld` `visvalingam-whyatt`
 
 
 ##### line-pattern-smooth `float`
@@ -899,7 +902,7 @@ Available Values | `radial-distance``zhao-saalfeld``visvalingam-whyatt`
 Description | Smooths out geometry angles for line patterns.
 Sample CartoCSS Code | `line-pattern-smooth: 0;`
 Default Value | `0`,  no smoothing is applied.
-Available Values | `0``1`
+Available Values | `0` `1`
 | **Note**: 0 indicates no smoothing is applied. 1 indicates that it is fully smoothed. Values greater than 1 produce wild, looping geometries. It is suggested to use a range between 0-1 for this value.
 
 
@@ -924,17 +927,17 @@ Available Values | See [functions](#functions).
 Description | The composite operation that defines how the symbolizer behaves relative to layers atop or below it.
 Sample CartoCSS Code | `line-pattern-comp-op: src-over;`
 Default Value | `src-over`, adds the current symbolizer on top of other symbolizers.
-Available Values | `clear``src``dst``src-over``dst-over``src-in``dst-in``src-out``dst-out``src-atop``dst-atop``xor``plus``minus``multiply``screen``overlay``darken``lighten``color-dodge``color-burn``hard-light``soft-light``difference``exclusion``contrast``invert``invert-rgb``grain-merge``grain-extract``hue``saturation``color``value`
+Available Values | `clear` `src` `dst` `src-over` `dst-over` `src-in` `dst-in` `src-out` `dst-out` `src-atop` `dst-atop` `xor` `plus` `minus` `multiply` `screen` `overlay` `darken` `lighten` `color-dodge` `color-burn` `hard-light` `soft-light` `difference` `exclusion` `contrast` `invert` `invert-rgb` `grain-merge` `grain-extract` `hue` `saturation` `color` `value`
 
 
 #### Polygon-Pattern
 
 These CartoCSS pattern properties can be applied to both line and polygon elements on a map.
 
-| | [polygon-pattern-file](#polygon-pattern-file-uri) | [polygon-pattern-alignment](#polygon-pattern-alignment-keyword) | [polygon-pattern-gamma](#polygon-pattern-gamma-float)
-| | [polygon-pattern-opacity](#polygon-pattern-opacity-float) | [polygon-pattern-clip](#polygon-pattern-clip-boolean) | [polygon-pattern-simplify](#polygon-pattern-simplify-float)
-| | [polygon-pattern-simplify-algorithm](#polygon-pattern-simplify-algorithm-keyword) | [polygon-pattern-smooth](#polygon-pattern-smooth-float) | [polygon-pattern-geometry-transform](#polygon-pattern-geometry-transform-functions)
-| | [polygon-pattern-comp-op](#polygon-pattern-comp-op-keyword) | 
+[polygon-pattern-file](#polygon-pattern-file-uri) | [polygon-pattern-alignment](#polygon-pattern-alignment-keyword) | [polygon-pattern-gamma](#polygon-pattern-gamma-float)
+[polygon-pattern-opacity](#polygon-pattern-opacity-float) | [polygon-pattern-clip](#polygon-pattern-clip-boolean) | [polygon-pattern-simplify](#polygon-pattern-simplify-float)
+[polygon-pattern-simplify-algorithm](#polygon-pattern-simplify-algorithm-keyword) | [polygon-pattern-smooth](#polygon-pattern-smooth-float) | [polygon-pattern-geometry-transform](#polygon-pattern-geometry-transform-functions)
+[polygon-pattern-comp-op](#polygon-pattern-comp-op-keyword)
 
 
 ##### polygon-pattern-file `uri`
@@ -950,7 +953,7 @@ Available Values | See [uri](#uri).
 Description | Specifies if the polygon-pattern-fill aligns with the map layer.
 Sample CartoCSS Code | `polygon-pattern-alignment: local;`
 Default Value | `local`
-Available Values | `local``global`
+Available Values | `local` `global`
 
 
 ##### polygon-pattern-gamma `float`
@@ -958,7 +961,7 @@ Available Values | `local``global`
 Description | The level of antialiasing (smoothness of oversampling) of polygon pattern edges. A range of 0-5 represents the most antialiased to the least antialiased.
 Sample CartoCSS Code | `polygon-pattern-gamma: 1;`
 Default Value | `1`, is fully antialiased.
-Available Values | `0``1``2``3``4``5`
+Available Values | `0` `1` `2` `3` `4` `5`
 
 
 ##### polygon-pattern-opacity `float`
@@ -990,7 +993,7 @@ Available Values | See [float](#float).
 Description | Simplifies geometries by a given algorithm value.
 Sample CartoCSS Code | `polygon-pattern-simplify-algorithm: radial-distance;`
 Default Value | `radial-distance`, geometry is simplified using the radial distance algorithm.
-Available Values | `radial-distance``zhao-saalfeld``visvalingam-whyatt`
+Available Values | `radial-distance` `zhao-saalfeld` `visvalingam-whyatt`
 
 
 ##### polygon-pattern-smooth `float`
@@ -998,7 +1001,7 @@ Available Values | `radial-distance``zhao-saalfeld``visvalingam-whyatt`
 Description | Smooths out geometry angles.
 Sample CartoCSS Code | `polygon-pattern-smooth: 0;`
 Default Value | `0`, no smoothing is applied.
-Available Values | `0``1`
+Available Values | `0` `1`
 | **Note**: 0 indicates no smoothing is applied. 1 indicates that it is fully smoothed. Values greater than 1 produce wild, looping geometries. It is suggested to use a range between 0-1 for this value.
 
 
@@ -1015,18 +1018,18 @@ Available Values | See [functions](#functions).
 Description | The composite operation that defines how the symbolizer behaves relative to layers atop or below it.
 Sample CartoCSS Code | `polygon-pattern-comp-op: src-over;`
 Default Value | `src-over`, adds the current symbolizer on top of other symbolizers.
-Available Values | `clear``src``dst``src-over``dst-over``src-in``dst-in``src-out``dst-out``src-atop``dst-atop``xor``plus``minus``multiply``screen``overlay``darken``lighten``color-dodge``color-burn``hard-light``soft-light``difference``exclusion``contrast``invert``invert-rgb``grain-merge``grain-extract``hue``saturation``color``value`
+Available Values | `clear` `src` `dst` `src-over` `dst-over` `src-in` `dst-in` `src-out` `dst-out` `src-atop` `dst-atop` `xor` `plus` `minus` `multiply` `screen` `overlay` `darken` `lighten` `color-dodge` `color-burn` `hard-light` `soft-light` `difference` `exclusion` `contrast` `invert` `invert-rgb` `grain-merge` `grain-extract` `hue` `saturation` `color` `value`
 
 
 #### Raster
 
 These CartoCSS properties can be applied to raster (grid) data layers on a map.
 
-| | [raster-opacity](#raster-opacity-float) | [raster-filter-factor](#raster-filter-factor-float) | [raster-scaling](#raster-scaling-keyword)
-| | [raster-mesh-size](#raster-mesh-size-unsigned) | [raster-comp-op](#raster-comp-op-keyword) | [raster-colorizer-default-mode](#raster-colorizer-default-mode-keyword)
-| | [raster-colorizer-default-color](#raster-colorizer-default-color-color) | [raster-colorizer-epsilon](#raster-colorizer-epsilon-float) | [raster-colorizer-stops](#raster-colorizer-stops-tags)
+[raster-opacity](#raster-opacity-float) | [raster-filter-factor](#raster-filter-factor-float) | [raster-scaling](#raster-scaling-keyword)
+[raster-mesh-size](#raster-mesh-size-unsigned) | [raster-comp-op](#raster-comp-op-keyword) | [raster-colorizer-default-mode](#raster-colorizer-default-mode-keyword)
+[raster-colorizer-default-color](#raster-colorizer-default-color-color) | [raster-colorizer-epsilon](#raster-colorizer-epsilon-float) | [raster-colorizer-stops](#raster-colorizer-stops-tags)
 
-***Note:** Raster CartoCSS symbolizer properties are only supported when using the [Maps API](http://docs.cartodb.com/cartodb-platform/maps-api.html) with [CartoDB.JS](http://docs.cartodb.com/cartodb-platform/cartodb-js.html), and not with the CartoDB Editor.*
+**Note:** Raster CartoCSS symbolizer properties are only supported when using the [Maps API](http://docs.cartodb.com/cartodb-platform/maps-api.html) with [CartoDB.JS](http://docs.cartodb.com/cartodb-platform/cartodb-js.html), and not with the CartoDB Editor.*
 
 
 ##### raster-opacity `float`
@@ -1043,7 +1046,8 @@ Description | Sets the filter factor used for rendering the datasource of the ra
 Sample CartoCSS Code | `raster-filter-factor: -1;`
 Default Value | `-1`, allows the datasource to determine the appropriate downscaling option.
 Available Values | See [float](#float).
-| **Note:**  Higher numbers can improve the output of the scaled image, but may reduce the speed of downscaling.  
+
+**Note:**  Higher numbers can improve the output of the scaled image, but may reduce the speed of downscaling.  
 
 
 ##### raster-scaling `keyword`
@@ -1051,8 +1055,9 @@ Available Values | See [float](#float).
 Description | The algorithm applied to scale the resolution of the raster layer.
 Sample CartoCSS Code | `raster-scaling: near;`
 Default Value | `near`
-Available Values | `near``fast``bilinear``bilinear8``bicubic``spline16``spline36``hanning``hamming``hermite``kaiser``quadric``catrom``gaussian``bessel``mitchell``sinc``lanczos``blackman`
-| **Note:** While the 'lanczos' value may render the best quality, the `bilinear` value actually produces the best compromise between speed and accuracy.
+Available Values | `near` `fast` `bilinear` `bilinear8` `bicubic` `spline16` `spline36` `hanning` `hamming` `hermite` `kaiser` `quadric` `catrom` `gaussian` `bessel` `mitchell` `sinc` `lanczos` `blackman`
+
+**Note:** While the 'lanczos' value may render the best quality, the `bilinear` value actually produces the best compromise between speed and accuracy.
 
 
 ##### raster-mesh-size `unsigned`
@@ -1061,7 +1066,8 @@ Description | Specifies a reduced resolution mesh for raster reprojection. The t
 Sample CartoCSS Code | `raster-mesh-size: 16;`
 Default Value | `16`, the reprojected mesh is 1&#x2F;16 of the resolution of the source image.
 Available Values | Unsigned integer
-| **Note:**  While values defined greater than the default (`16`) may produce faster reprojection, the image may be distorted.
+
+**Note:**  While values defined greater than the default (`16`) may produce faster reprojection, the image may be distorted.
 
 
 ##### raster-comp-op `keyword`
@@ -1069,7 +1075,7 @@ Available Values | Unsigned integer
 Description | The composite operation that defines how the symbolizer behaves relative to layers atop or below it. 
 Sample CartoCSS Code | `raster-comp-op: src-over;` 
 Default Value | `src-over`, adds the current symbolizer on top of other symbolizers.
-Available Values | `clear``src``dst``src-over``dst-over``src-in``dst-in``src-out``dst-out``src-atop``dst-atop``xor``plus``minus``multiply``screen``overlay``darken``lighten``color-dodge``color-burn``hard-light``soft-light``difference``exclusion``contrast``invert``invert-rgb``grain-merge``grain-extract``hue``saturation``color``value`
+Available Values | `clear` `src` `dst` `src-over` `dst-over` `src-in` `dst-in` `src-out` `dst-out` `src-atop` `dst-atop` `xor` `plus` `minus` `multiply` `screen` `overlay` `darken` `lighten` `color-dodge` `color-burn` `hard-light` `soft-light` `difference` `exclusion` `contrast` `invert` `invert-rgb` `grain-merge` `grain-extract` `hue` `saturation` `color` `value`
 
 
 ##### raster-colorizer-default-mode `keyword`
@@ -1077,7 +1083,7 @@ Available Values | `clear``src``dst``src-over``dst-over``src-in``dst-in``src-out
 Description | Sets the default coloring mode of the raster. 
 Sample CartoCSS Code | `raster-colorizer-default-mode:linear;`
 Default Value | undefined
-Available Values | `discrete``linear``exact`
+Available Values | `discrete` `linear` `exact`
 
 
 ##### raster-colorizer-default-color `color`
@@ -1094,8 +1100,10 @@ Description | Assigns an epsilon value to the raster colorizer. An epsilon value
 Sample CartoCSS Code | `raster-colorizer-epsilon:0.41;`
 Default Value | undefined
 Available Values | See [float](#float).
-| **Note:** Epsilon values must be listed in ascending order and contain a minimum value and associated color. 
-| Additionally, you can also include the color-mode as a third argument. For example: `stop(100,#fff, exact)`
+
+**Note:** Epsilon values must be listed in ascending order and contain a minimum value and associated color.
+
+Additionally, you can also include the color-mode as a third argument. For example: `stop(100,#fff, exact)`
 
 
 ##### raster-colorizer-stops `tags`
@@ -1112,9 +1120,9 @@ Related Example | [CartoDB blocks- raster demos](http://bl.ocks.org/rochoa/d3cf8
 
 These CartoCSS properties can be applied to style points on a map.
 
-| | [point-file](#point-file-uri) | [point-allow-overlap](#point-allow-overlap-boolean) | [point-ignore-placement](#point-ignore-placement-boolean)
-| | [point-opacity](#point-opacity-float) | [point-placement](#point-placement-keyword) | [point-transform](#point-transform-functions)
-| | [point-comp-op](#point-comp-op-keyword) | 
+[point-file](#point-file-uri) | [point-allow-overlap](#point-allow-overlap-boolean) | [point-ignore-placement](#point-ignore-placement-boolean)
+[point-opacity](#point-opacity-float) | [point-placement](#point-placement-keyword) | [point-transform](#point-transform-functions)
+[point-comp-op](#point-comp-op-keyword) | 
 
 
 ##### point-file `uri`
@@ -1146,7 +1154,7 @@ Available Values | See [boolean](#boolean).
 Description | Sets the overall opacity of the point.
 Sample CartoCSS Code | `point-opacity: 1;`
 Default Value | `1`, the point is fully opaque.
-Available Values | `0``1`
+Available Values | `0` `1`
 
 
 ##### point-placement `keyword`
@@ -1154,7 +1162,7 @@ Available Values | `0``1`
 Description | Determines how points are placed.
 Sample CartoCSS Code | `point-placement: centroid;`
 Default Value | `centroid`
-Available Values | `centroid``interior`
+Available Values | `centroid` `interior`
 | **Note:** Centroid calculates the geometric center of a polygon (which can outside of the polygon). Interior is always placed inside of a polygon.
 
 
@@ -1172,24 +1180,24 @@ Available Values | See [functions](#functions).
 Description | The composite operation that defines how the symbolizer behaves relative to layers atop or below it.
 Sample CartoCSS Code | `point-comp-op: src-over;`
 Default Value | `src-over`, adds the current symbolizer on top of other symbolizers.
-Available Values | `clear``src``dst``src-over``dst-over``src-in``dst-in``src-out``dst-out``src-atop``dst-atop``xor``plus``minus``multiply``screen``overlay``darken``lighten``color-dodge``color-burn``hard-light``soft-light``difference``exclusion``contrast``invert``invert-rgb``grain-merge``grain-extract``hue``saturation``color``value`
+Available Values | `clear` `src` `dst` `src-over` `dst-over` `src-in` `dst-in` `src-out` `dst-out` `src-atop` `dst-atop` `xor` `plus` `minus` `multiply` `screen` `overlay` `darken` `lighten` `color-dodge` `color-burn` `hard-light` `soft-light` `difference` `exclusion` `contrast` `invert` `invert-rgb` `grain-merge` `grain-extract` `hue` `saturation` `color` `value`
 
 
 #### Text
 Defines the text label properties on the map.
 
-| | [text-name](#text-name-expression) | [text-face-name](#text-face-name-string) | [text-size](#text-size-float)
-| | [text-ratio](#text-ratio-unsigned) | [text-wrap-width](#text-wrap-width-unsigned) | [text-wrap-before](#text-wrap-before-boolean)
-| | [text-wrap-character](#text-wrap-character-string) | [text-spacing](#text-spacing-unsigned) | [text-character-spacing](#text-character-spacing-float)
-| | [text-line-spacing](#text-line-spacing-unsigned) | [text-label-position-tolerance](#text-label-position-tolerance-unsigned) | [text-max-char-angle-delta](#text-max-char-angle-delta-float)
-| | [text-fill](#text-fill-color) | [text-opacity](#text-opacity-float) | [text-halo-fill](#text-halo-fill-color)
-| | [text-halo-radius](#text-halo-radius-float) | [text-halo-rasterizer](#text-halo-rasterizer-keyword) | [text-dx](#text-dx-float)
-| | [text-dy](#text-dy-float) | [text-vertical-alignment](#text-vertical-alignment-keyword) | [text-avoid-edges](#text-avoid-edges-boolean)
-| | [text-min-distance](#text-min-distance-float) | [text-min-padding](#text-min-padding-float) | [text-min-path-length](#text-min-path-length-float)
-| | [text-allow-overlap](#text-allow-overlap-boolean) | [text-orientation](#text-orientation-expression) | [text-placement](#text-placement-keyword)
-| | [text-placement-type](#text-placement-type-keyword) | [text-placements](#text-placements-string) | [text-transform](#text-transform-keyword)
-| | [text-horizontal-alignment](#text-horizontal-alignment-keyword) | [text-align](#text-align-keyword) | [text-clip](#text-clip-boolean)
-| | [text-comp-op](#text-comp-op-keyword) | 
+[text-name](#text-name-expression) | [text-face-name](#text-face-name-string) | [text-size](#text-size-float)
+[text-ratio](#text-ratio-unsigned) | [text-wrap-width](#text-wrap-width-unsigned) | [text-wrap-before](#text-wrap-before-boolean)
+[text-wrap-character](#text-wrap-character-string) | [text-spacing](#text-spacing-unsigned) | [text-character-spacing](#text-character-spacing-float)
+[text-line-spacing](#text-line-spacing-unsigned) | [text-label-position-tolerance](#text-label-position-tolerance-unsigned) | [text-max-char-angle-delta](#text-max-char-angle-delta-float)
+[text-fill](#text-fill-color) | [text-opacity](#text-opacity-float) | [text-halo-fill](#text-halo-fill-color)
+[text-halo-radius](#text-halo-radius-float) | [text-halo-rasterizer](#text-halo-rasterizer-keyword) | [text-dx](#text-dx-float)
+[text-dy](#text-dy-float) | [text-vertical-alignment](#text-vertical-alignment-keyword) | [text-avoid-edges](#text-avoid-edges-boolean)
+[text-min-distance](#text-min-distance-float) | [text-min-padding](#text-min-padding-float) | [text-min-path-length](#text-min-path-length-float)
+[text-allow-overlap](#text-allow-overlap-boolean) | [text-orientation](#text-orientation-expression) | [text-placement](#text-placement-keyword)
+[text-placement-type](#text-placement-type-keyword) | [text-placements](#text-placements-string) | [text-transform](#text-transform-keyword)
+[text-horizontal-alignment](#text-horizontal-alignment-keyword) | [text-align](#text-align-keyword) | [text-clip](#text-clip-boolean)
+[text-comp-op](#text-comp-op-keyword) | 
 
 
 
@@ -1290,9 +1298,14 @@ Description | The maximum angle change allowed between adjacent characters in a 
 Sample CartoCSS Code | `text-max-char-angle-delta: 22.5;`
 Default Value | `22.5`
 Available Values | See [float](#float).
-| **Note:** Internally, the value is converted to the default value (`22.5`), by applying the following radian algorithm:
-| `22.5*math.pi&#x2F;180.0`
-| The higher the value, the fewer labels are placed around sharp corners.
+
+**Note:** Internally, the value is converted to the default value (`22.5`), by applying the following radian algorithm:
+
+```
+22.5*math.pi&#x2F;180.0
+```
+
+The higher the value, the fewer labels are placed around sharp corners.
 
 
 ##### text-fill `color`
@@ -1308,7 +1321,7 @@ Available Values | See [color](#color).
 Description | The opacity of the text label.
 Sample CartoCSS Code | `text-opacity: 1;`
 Default Value | `1`, fully opaque
-Available Values | `0``1`
+Available Values | `0` `1`
 
 
 ##### text-halo-fill `color`
@@ -1332,7 +1345,7 @@ Available Values | See [float](#float).
 Description | Exposes an alternate AGG (Anti-Grain Geometry) rendering method that sacrifices some accuracy for speed.
 Sample CartoCSS Code | `text-halo-rasterizer: full;`
 Default Value | `full`
-Available Values | `full``fast`
+Available Values | `full` `fast`
 
 
 ##### text-dx `float`
@@ -1356,8 +1369,9 @@ Available Values | See [float](#flat).
 Description | The vertical alignment of the text label from its center point.
 Sample CartoCSS Code | `text-vertical-alignment: auto;`
 Default Value | `auto`
-Available Values | `top``middle``bottom``auto`
-| **Note:** The default value is affected by the dy (text down) value. If the dy value&gt;0, the vertical alignment value is `bottom`. If the dy value&lt;0, the vertical alignment is `top`.
+Available Values | `top` `middle` `bottom` `auto`
+
+**Note:** The default value is affected by the dy (text down) value. If the dy value&gt;0, the vertical alignment value is `bottom`. If the dy value&lt;0, the vertical alignment is `top`.
 
 
 ##### text-avoid-edges `boolean`
@@ -1414,15 +1428,16 @@ Related Example | See the public map, [Mexico City Performance Test (2.0)](https
 Description | Places text labels on top of points, along multiple line places, on the vertexes of polygons, or in the interior inside a polygon.
 Sample CartoCSS Code | `text-placement: point;`
 Default Value | `point`, the text label appears on the top of map points.
-Available Values | `point``line``vertex``interior`
+Available Values | `point` `line` `vertex` `interior`
 
 ##### text-placement-type `keyword`
 
 Description | Enables you to reposition and resize the text label to avoid overlaps.
 Sample CartoCSS Code | `text-placement-type: dummy;`
 Default Value | `dummy`, turns off and disables this feature.
-Available Values | `dummy``simple`
-| **Note**: The simple value is the text label placement string used for basic algorithms.
+Available Values | `dummy` `simple`
+
+**Note**: The simple value is the text label placement string used for basic algorithms.
 
 
 ##### text-placements `string`
@@ -1438,7 +1453,7 @@ Available Values | See [string](#string).
 Description | Identifies the text case of the text label.
 Sample CartoCSS Code | `text-transform: none;`
 Default Value | `none`
-Available Values | `none``uppercase``lowercase``capitalize`
+Available Values | `none` `uppercase` `lowercase` `capitalize`
 
 
 ##### text-horizontal-alignment `keyword`
@@ -1446,7 +1461,7 @@ Available Values | `none``uppercase``lowercase``capitalize`
 Description | The horizontal alignment of the text label from its center point.
 Sample CartoCSS Code | `text-horizontal-alignment: auto;`
 Default Value | `auto`
-Available Values | `left``middle``right``auto`
+Available Values | `left` `middle` `right` `auto`
 
 
 ##### text-align `keyword`
@@ -1454,7 +1469,7 @@ Available Values | `left``middle``right``auto`
 Description | Defines how text labels are justified, relative to the [text-placement-type](#text-placement-type-keyword) property.
 Sample CartoCSS Code | `text-align: auto;`
 Default Value | `auto`, text is centered by default except when [text-placement-type](#text-placement-type-keyword) value is `simple`, then the text is justified automatically depending on where the text can fit [text-placements](#text-placements-string).
-Available Values | `left``right``center``auto`
+Available Values | `left` `right` `center` `auto`
 
 
 ##### text-clip `boolean`
@@ -1470,7 +1485,7 @@ Available Values | See [boolean](#boolean).
 Description | The composite operation that defines how the symbolizer behaves relative to layers atop or below it.
 Sample CartoCSS Code | `text-comp-op: src-over;`
 Default Value | `src-over`, adds the current symbolizer on top of other symbolizers.
-Available Values | `clear``src``dst``src-over``dst-over``src-in``dst-in``src-out``dst-out``src-atop``dst-atop``xor``plus``minus``multiply``screen``overlay``darken``lighten``color-dodge``color-burn``hard-light``soft-light``difference``exclusion``contrast``invert``invert-rgb``grain-merge``grain-extract``hue``saturation``color``value`
+Available Values | `clear` `src` `dst` `src-over` `dst-over` `src-in` `dst-in` `src-out` `dst-out` `src-atop` `dst-atop` `xor` `plus` `minus` `multiply` `screen` `overlay` `darken` `lighten` `color-dodge` `color-burn` `hard-light` `soft-light` `difference` `exclusion` `contrast` `invert` `invert-rgb` `grain-merge` `grain-extract` `hue` `saturation` `color` `value`
 
 
 #### Building

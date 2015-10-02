@@ -1,0 +1,2 @@
+_image / pattern_ - Select *IMG* to select a marker image or polygon pattern. You can also upload your own icons and patterns from these image options.
+| <img src="{{ '/img/layout/cartodb-editor/wizard_select_img.png' | prepend: site.baseurl }}" alt="Select img" />

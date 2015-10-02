@@ -1,0 +1,1 @@
+_size_ - The size of the marker in a numeric value between 0-40. (**Note:** The size option is not applicable for polygons).

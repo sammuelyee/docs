@@ -82,7 +82,7 @@ To prevent your data from undesired changes, you can lock your datasets and maps
 
 There are several methods to lock a dataset or map. 
 
-***Note:** The following example describes how to lock a dataset, but the same procedure applies to maps. Options are applicable based on the selected dashboard.*
+**Note:** The following example describes how to lock a dataset, but the same procedure applies to maps. Options are applicable based on the selected dashboard.*
 
 1. Click *Your datasets* from your dashboard drop-down menu
 	
@@ -396,7 +396,7 @@ You can use code to apply CartoDB.js, in combination with Leaflet, to create ove
 
 ## Sharing Maps
 
-{% include sharingmaps.html %}
+{% include sharingmaps.md %}
 
 ### How to print maps in CartoDB?
 
