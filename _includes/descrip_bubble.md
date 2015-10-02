@@ -1,0 +1,1 @@
+Scales the radius of markers, based on a numeric value (as a defined column from your dataset). Bubble maps are not supported with polygons.<br><br>**Tip:** Bubble maps are useful for comparing numeric values associated with a certain point, such as the population sizes of cities.

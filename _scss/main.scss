@@ -497,29 +497,25 @@
   table {
     width: 100%;
     margin: 24px 0;
-    font: 13px/1.3 "Proxima Nova Rg";
-    color: #999;
+    font: 15px/1.2 'Proxima Nova Rg';
+    color: #555;
+  }
 
-    tr {
-      width: 100%;
+  table thead {
+    background: #f9f9f9;
+  }
 
-      td {
-        padding: 14px;
+  table th, 
+  table td {
+    padding: 13px 20px;
+    border: 1px solid #ddd;
+  }
 
-        &:first-child {
-          font-family: "Proxima Nova Bd";
-          color: #666;
-        }
-
-        &:last-child {
-          border-left: 1px solid #E5E5E5;
-        }
-      }
-
-      &:nth-child(odd) {
-        background: #F2F2F2;
-      }
-    }
+  table th,
+  table tr td:first-child {
+    vertical-align: top;
+    color: #333;
+    width: 180px;
   }
 
   code {

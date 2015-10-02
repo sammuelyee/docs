@@ -19,10 +19,8 @@ There is a shortcut for selecting a composite operation value, directly from the
 	
 	Map Type | Available Composite Operation Values
 	--- | ---
-	Simple, Choropleth, Bubble, Density | `none` `multiply` `screen` `overlay` `darken` `lighten` `color-dodge` `color-burn`
-	| **Note:** These options appear in the *Composite operation* drop-down list.
-	Torque, Torque Category | `lighter` `multiply` `source-over` `xor`
-	| **Note:** These options appear in the *Blend Mode* drop-down list.
+	Simple, Choropleth, Bubble, Density | `none``multiply``screen``overlay``darken``lighten``color-dodge``color-burn`<br><br>**Note:** These options appear in the *Composite operation* drop-down list.
+	Torque, Torque Category | `lighter``multiply``source-over``xor`<br><br>**Note:** These options appear in the *Blend Mode* drop-down list.
 	
 	See [CartoCSS `comp-op` Values](cartodb-editor.html#cartocss-comp-op-values) for a complete description of these composite operation effects.
 	

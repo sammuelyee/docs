@@ -12,13 +12,10 @@ redirect_from:
 The CartoDB Editor is a dashboard that contains your datasets and your maps. The following workflow highlights how you can create a map from your dashboard in 30 seconds.
 
 Workflow | Details
------------- | -------------
-Create a new dataset | You can upload your dataset using any of the [supported file formats](#supported-file-formats), connect to a public dataset from the [Data Library](#data-library), or create an [empty dataset](#create-an-empty-dataset). 
-| For details, see [Connect Dataset](#connect-dataset).
-Visualize your data and create a map | The CartoDB Editor contains many features that guide you through the process of creating a map and selecting how your data appears. You can also customize the style of your map.
-| For details about some of the CartoDB Editor features, see [Data Visualization](#data-visualization), [Edit Maps](#edit-map-options), [Wizards](#wizards), and [Managing Your Data](#managing-your-data).
-Publish and share your map | Once you visualize and publish a map, you can get a link to share the map, embed it to a website or blog, or add your map to another application.
-| For details, see [Publish and Share Your Map](#publish-and-share-your-map)
+--- | ---
+Create a new dataset | You can upload your dataset using any of the [supported file formats](#supported-file-formats), connect to a public dataset from the [Data Library](#data-library), or create an [empty dataset](#create-an-empty-dataset).<br><br>For details, see [Connect Dataset](#connect-dataset).
+Visualize your data and create a map | The CartoDB Editor contains many features that guide you through the process of creating a map and selecting how your data appears. You can also customize the style of your map.<br><br>For details about some of the CartoDB Editor features, see [Data Visualization](#data-visualization), [Edit Maps](#edit-map-options), [Wizards](#wizards), and [Managing Your Data](#managing-your-data).
+Publish and share your map | Once you visualize and publish a map, you can get a link to share the map, embed it to a website or blog, or add your map to another application.<br><br>For details, see [Publish and Share Your Map](#publish-and-share-your-map)
 
 **Tip:** You can also view guided lessons of the map workflow from [The Map Academy](http://academy.cartodb.com/), or begin using our [open source APIs](http://docs.cartodb.com/cartodb-platform.html).
 
@@ -53,17 +50,14 @@ You can import data from a local file (or public URL), connect to an external da
 	The following connect dataset options are available.
 
 	Connect Dataset | Description
-	------------ | -------------
-	Data file | Drag and drop a file directly onto the Connect dataset dialog to add it, or click *BROWSE* to select a local file to upload. You can also enter and submit a public URL to upload data from.
-	| **Tip:** See a list of [Supported File Formats](#supported-file-formats).
+	--- | ---
+	Data file | Drag and drop a file directly onto the Connect dataset dialog to add it, or click *BROWSE* to select a local file to upload. You can also enter and submit a public URL to upload data from.<br><br>**Tip:** See a list of [Supported File Formats](#supported-file-formats).
 	Google Drive | Connect a dataset by syncing to an external Google Drive. For details, see [Syncing Datasets](#syncing-datasets).
-	Dropbox | Connect to a dataset by syncing to a external Dropbox. For details, see [Syncing Datasets](#syncing-datasets).
-		| **Note:** Some file formats are not supported with Dropbox. Select *Dropbox* to view which file formats are available (CSV, XLS).
+	Dropbox | Connect to a dataset by syncing to a external Dropbox. For details, see [Syncing Datasets](#syncing-datasets).<br><br>**Note:** Some file formats are not supported with Dropbox. Select *Dropbox* to view which file formats are available (CSV, XLS).
 	Twitter | Connect to a Twitter datasource by enabling the Twitter Connector. For details, see [Use Case: Connecting to an External Data Source (Twitter)](#use-case--connecting-to-an-external-data-source-twitter).
 	MailChimp | Connect to external MailChimp campaigns with the MailChimp connector. You can access your MailChimp account and create maps and datasets based on the data stored from your mailing lists.
 	Instagram | Connect to your Instagram photos or videos with the Instagram connector. 
-	ArcGIS Server&trade; | Import your data from an ArcGIS Server&trade; instance by submitting your ArcGIS Server table URL.
-	|  **Note:** Ensure that you are using ArcGIS Server&trade; version 10.1 or higher.
+	ArcGIS Server&trade; | Import your data from an ArcGIS Server&trade; instance by submitting your ArcGIS Server table URL.<br><br>**Note:** Ensure that you are using ArcGIS Server&trade; version 10.1 or higher.
 	Salesforce | Connect to you Salesforce data by enabling the Salesforce Connector and import your data from a Salesforce URL.
 	
 4. For any external services, you must enable these connectors before you can connect to an external dataset. 
@@ -163,13 +157,10 @@ The following procedure describes how to connect  twitter data to a dataset afte
 	These options enable you to enter different trend options for your Twitter data.   
 	
 	Twitter Trend Options | Description
-	------------ | -------------
+	--- | ---
 	Category 1-4 | Represents search terms for different hashtags or keywords separated by commas. You can enter up to four search terms using the Category fields
-	From / to | Displays the from and to time range for your requested data. By default, it is set to search for the last 30 days
-	| Depending on your account settings, you can click the calendar icon to open the calendar and select a different date range. Additionally, you can indicate the hour and minute for the selected date range
-	| <img src="/img/layout/cartodb-editor/twitter_calendarpopup.png" alt="Twitter Date Range" />
-	Use | Displays the amount of Twitter credits allocated to your account. You can use the slider to increase or decrease the percentage of credits to use
-			     | 	**Note:** You can [contact CartoDB](mailto:sales@cartodbcom) to update your Twitter credits at any time  
+	From / to | Displays the from and to time range for your requested data. By default, it is set to search for the last 30 days<br><br>Depending on your account settings, you can click the calendar icon to open the calendar and select a different date range. Additionally, you can indicate the hour and minute for the selected date range<br><br><img src="/img/layout/cartodb-editor/twitter_calendarpopup.png" alt="Twitter Date Range" />
+	Use | Displays the amount of Twitter credits allocated to your account. You can use the slider to increase or decrease the percentage of credits to use<br><br>**Note:** You can [contact CartoDB](mailto:sales@cartodbcom) to update your Twitter credits at any time  
 	
 	**Tip:** Note the following [(tips and tricks](#tips-and-tricks-for-using-twitter-data)) when entering category search terms and selecting Twitter trends.
 		 
@@ -345,14 +336,11 @@ CartoDB supports a large number of data types and file formats. The following ta
 **Tip:** It is high recommended that you compress your files before importing them. CartoDB supports .ZIP and .GZ (which includes .TAR.GZ and .TGZ) for compressing and archiving files.
 
 Supported File Format | Description
------------- | -------------
-.CSV, .TSV | Comma-separated values and tab-separated values.  This is the preferred file format when importing datasets to CartoDB
-| **Note:** When importing sheets with tabular formats, the first row must contain your column headers.
-.SHP | ESRI shapefiles
-| **Note:** For shapefiles, the .ZIP file must contain the .SHP, .DBF, .SHX and .PRJ files, all prefixed with same name. For example: a `ne_10m_populated_places.zip` file would contain `ne_10m_populated_places.shp`, `ne_10m_populated_places.dbf`, `ne_10m_populated_places.shx` and `ne_10m_populated_places.prj`).*
+--- | ---
+.CSV, .TSV | Comma-separated values and tab-separated values.  This is the preferred file format when importing datasets to CartoDB<br><br>**Note:** When importing sheets with tabular formats, the first row must contain your column headers.
+.SHP | ESRI shapefiles<br><br>**Note:** For shapefiles, the .ZIP file must contain the .SHP, .DBF, .SHX and .PRJ files, all prefixed with same name. For example: a `ne_10m_populated_places.zip` file would contain `ne_10m_populated_places.shp`, `ne_10m_populated_places.dbf`, `ne_10m_populated_places.shx` and `ne_10m_populated_places.prj`).*
 .KML, .KMZ | Google Earth Format
-.XLS, .XLSX | Excel Spreadsheet
-|**Note:** It is a known issue that uploading Excel files takes significantly longer to import to CartoDB. It is recommended to save your .XLS or .XLSX files as .CSV files, for the best performance.
+.XLS, .XLSX | Excel Spreadsheet<br><br>**Note:** It is a known issue that uploading Excel files takes significantly longer to import to CartoDB. It is recommended to save your .XLS or .XLSX files as .CSV files, for the best performance.
 .GEOJSON | GeoJSON
 .GPX | GPS Exchange Format
 .OSM, .BZ2 | Open Street Map dump
@@ -406,7 +394,7 @@ The following procedure describes how to change the sort order of your datasets 
 The following sort options are available from the datasets toolbar.
 
 Sort Options | Description
------------- | -------------
+--- | ---
 <img src="{{ '/img/layout/cartodb-editor/orderbydate.png' | prepend: site.baseurl }}" alt="Order by date" />| Order by date. This is the default setting and indicates the date that the dataset was created or imported
 <img src="{{ '/img/layout/cartodb-editor/orderbyvisits.png' | prepend: site.baseurl }}" alt="Order by visits" /> | Order by visits. This is only applicable for your public shared maps
 <img src="{{ '/img/layout/cartodb-editor/orderbylikes.png' | prepend: site.baseurl }}" alt="Order by likes" /> | Order by likes
@@ -424,7 +412,7 @@ The following image, and table, display the available dataset privacy options.
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/privacy_datasetprivacyoptions.png' | prepend: site.baseurl }}" alt="Dataset Privacy Options" /></p>
 
 Dataset Privacy Option | Description
------------- | -------------
+--- | ---
 Public | Available to anyone on the internet and viewable from your public profile page on CartoDB
 With link | Indicates that only people who have a link to the dataset are able to access it
 Private | A private dataset that is only visible to you
@@ -519,7 +507,7 @@ You can edit the attributes for each dataset and add metadata for your data. Thi
 	The following dataset metadata options are available.
 	
 	Map Attribute | Description
-	------------ | -------------
+	--- | ---
 	Dataset name | The name of the dataset. Note to be as specific as possible if your dataset is public
 	Description | Describe the content and purpose of your dataset
 	Source | Enter any details about the original source of the data
@@ -621,15 +609,14 @@ The following options are available from the *Edit* menu of the Data View or Map
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/dataset_edit_menu.png' | prepend: site.baseurl }}" alt="Dataset Edit Options" /></p>
 
 Dataset Edit Menu Option | Description
------------- | -------------
+--- | ---
 Export | Export your dataset for use offline. For details, see how to [(Export Data](#export-data))
 Georeference |  Edit your dataset and apply georeferencing coordinates to transform your data. For details, see [(Georeference Data](#georeference-data))
 Duplicate dataset |  Creates a duplicate of your dataset so that you have a backup copy of it. Note that changes applied to a duplicate dataset are not applied to the original
 Merge with dataset |  Merge your current dataset with another existing dataset by performing a *column join* (merges two datasets based on a shared value) or a *spatial join* (merges two datasets based on a number of intersecting records). For details, see [(Merging Data](#merging-data))
 Change privacy | You can protect your dataset and identify the privacy setting. For details, see [(Dataset Privacy Settings](#dataset-privacy))
 Lock dataset | To prevent your data from undesired changes, you can lock a dataset and hide it from your dashboard. For details, see the Frequently Asked Questions about [how to lock a dataset or map](http://docs.cartodb.com/faqs.html#how-can-i-lock-a-datasetmap)
-Delete this dataset | Delete the selected dataset. For details, see [(Delete Dataset](#delete-dataset))
-| **Note:** Deleting a dataset also deletes any connected maps to the dataset
+Delete this dataset | Delete the selected dataset. For details, see [(Delete Dataset](#delete-dataset))<br><br>**Note:** Deleting a dataset also deletes any connected maps to the dataset
 
 ## Maps
 
@@ -643,7 +630,7 @@ The following image, and table, display the available map privacy options.
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/privacy_mapprivacyoptions.png' | prepend: site.baseurl }}" alt="Map privacy options" /></p>
 
 Map Privacy Option | Description
------------- | -------------
+--- | ---
 Public | Available to anyone on the internet and viewable from your public profile page on CartoDB
 With link | Indicates that only people who have a URL to the map are able to access it. This type of map is not viewable from your public profile
 Password protected |  Indicates that map is password protected. When selecting this option, type a password and click *SAVE SETTINGS*. This type of map is not viewable without the password and does not appear from your public profile
@@ -690,7 +677,7 @@ The following procedure describes how to edit metadata for a map.
 	The following map metadata options are available.
 	
 	Map Attribute | Description
-	------------ | -------------
+	--- | ---
 	Map name | The name of the map. Note to be as specific as possible if this is a public map
 	Description | Describe the content and purpose of your map. You can also add license information in this field if you are sharing your map
 	Tags | Tags enable you to group your maps by project or theme
@@ -791,7 +778,7 @@ The following options are available from the *Edit* menu of the Data View or Map
 **Tip:** These edit options are separate from the [(map display options](#displaying-map-options)), accessible from the bottom of a selected map. 
 
 Map Edit Menu Options | Description
------------- | -------------
+--- | ---
 Export layer | A dataset appears as a layer on your map. You can export the dataset layer for use offline. This process is identical to exporting a dataset once you select *Export layer* from the Edit menu. For details, see how to [(Export Data](#export-data))
 Georeference layer |  Edit your map and apply georeferencing coordinates to transform your data. This process is identical to the georeferencing dataset options once you select *Georeference layer* from the Edit menu. For details, see [(Georeference Data](#georeference-data))
 Duplicate map |  Creates a duplicate of your map so that you have a backup copy of it. Note that changes applied to a duplicate map are not applied to the original
@@ -857,194 +844,177 @@ The CartoDB map wizard is an interface that enables you to quickly style your da
 	The following map types are available, depending on your data.
 
 	Map Type | Wizard Options
-	------------ | -------------
-	Simple | {% include descrip_simple.html %} For details about all Simple styling options available from the wizard, see [Simple](#simple).|
-	Cluster | {% include descrip_cluster.html %} For details about all Cluster styling options available from the wizard, see [Cluster](#cluster).
-	Choropleth | {% include descrip_choropleth.html %} For details about all Choropleth styling options available from the wizard, see [Choropleth](#choropleth).
-	Category | {% include descrip_category.html %}  For details about all Category styling options available from the wizard, see [Category](#category).
-	Bubble | {% include descrip_bubble.html %} For details about all Bubble styling options available from the wizard, see [Bubble](#bubble).
-	Torque | {% include descrip_torque.html %} For details about all Torque styling options available from the wizard, see [Torque](#torque).
-	Heatmap | {% include descrip_heatmap.html %} For details about all Heatmap styling options available from the wizard, see [Heatmap](#heatmap).
-	Torque Cat | {% include descrip_torque_category.html %} For details about all Torque Category styling options available from the wizard, see [Torque Category](#torque-category).	
-	Intensity | {% include descrip_intensity.html %} For details about all Intensity styling options available from the wizard, see [Intensity](#intensity).
-	Density | {% include descrip_density.html %}  For details about all Density styling options available from the wizard, see [Density](#density).
+	--- | ---
+	Simple | {% include descrip_simple.md %} For details about all Simple styling options available from the wizard, see [Simple](#simple).
+	Cluster | {% include descrip_cluster.md %} For details about all Cluster styling options available from the wizard, see [Cluster](#cluster).
+	Choropleth | {% include descrip_choropleth.md %} For details about all Choropleth styling options available from the wizard, see [Choropleth](#choropleth).
+	Category | {% include descrip_category.md %}  For details about all Category styling options available from the wizard, see [Category](#category).
+	Bubble | {% include descrip_bubble.md %} For details about all Bubble styling options available from the wizard, see [Bubble](#bubble).
+	Torque | {% include descrip_torque.md %} For details about all Torque styling options available from the wizard, see [Torque](#torque).
+	Heatmap | {% include descrip_heatmap.md %} For details about all Heatmap styling options available from the wizard, see [Heatmap](#heatmap).
+	Torque Cat | {% include descrip_torque_category.md %} For details about all Torque Category styling options available from the wizard, see [Torque Category](#torque-category).
+	Intensity | {% include descrip_intensity.md %} For details about all Intensity styling options available from the wizard, see [Intensity](#intensity).
+	Density | {% include descrip_density.md %}  For details about all Density styling options available from the wizard, see [Density](#density).
 
 5. When you choose options from the wizard, the selected styling is automatically applied to your map
 
 ##### Simple
- {% include descrip_simple.html %} The following style options are available for Simple maps.
+ {% include descrip_simple.md %} The following style options are available for Simple maps.
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/simple.png' | prepend: site.baseurl }}" alt="Simple Wizard" /></p>
 
 **Note:** Depending on your data, options appear as marker or polygon.
 
 Simple Wizard Options | Description
------------- | -------------
-Marker Fill | Contains all fill options for the point (point size, point image/pattern, point color, and point opacity). 
-| {% include descrip_marker_size.html %}
-| {% include descrip_select_img.html %} 
-| {% include descrip_select_color.html %} 
-| {% include descrip_opacity.html %} 
-Marker Stroke |  {% include descrip_marker_stroke.html %} 
-| **Note:** This option appears as *Polygon Stroke* when polygon data is detected by the map wizard.
-Composite operation | {% include descrip_comp_op.html %}
-Label Text | {% include descrip_label_text.html %} 
-| {% include descrip_label_offset.html %} 
-| {% include descrip_label_overlap.html %} 
-| {% include descrip_label_placement.html %} 
+--- | ---
+Marker Fill | Contains all fill options for the point (point size, point image/pattern, point color, and point opacity).<br><br>{% include descrip_marker_size.md %}<br><br>{% include descrip_select_img.md %}<br><br>{% include descrip_select_color.md %}<br><br>{% include descrip_opacity.md %} 
+Marker Stroke<br><br>{% include descrip_marker_stroke.md %}<br><br>**Note:** This option appears as *Polygon Stroke* when polygon data is detected by the map wizard.
+Composite operation | {% include descrip_comp_op.md %}
+Label Text | {% include descrip_label_text.md %}<br><br>{% include descrip_label_offset.md %}<br><br>{% include descrip_label_overlap.md %}<br><br>{% include descrip_label_placement.md %} 
 
 **Note:** Conditional formatting is not supported for Simple maps.
 
 ##### Cluster
-{% include descrip_cluster.html %} 
+{% include descrip_cluster.md %} 
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/cluster.png' | prepend: site.baseurl }}" alt="Cluster Wizard" /></p>
 
 Cluster Wizard Options | Description
------------- | -------------
-Buckets | {% include descrip_buckets.html %} 
-Marker Fill | Contains the fill options for the point (point color and point opacity). 
-| {% include descrip_marker_fill_color.html %} 
-| {% include descrip_opacity.html %} 
-Marker Stroke | {% include descrip_marker_stroke.html %} 
+--- | ---
+Buckets | {% include descrip_buckets.md %} 
+Marker Fill | Contains the fill options for the point (point color and point opacity).<br><br>{% include descrip_marker_fill_color.md %}<br><br>{% include descrip_opacity.md %} 
+Marker Stroke | {% include descrip_marker_stroke.md %} 
 Marker size | The size of your markers, in pixels.
 Label Font | Select the label font and color. 
-Label Halo | {% include descrip_label_halo.html %} 
+Label Halo | {% include descrip_label_halo.md %} 
 
 ##### Choropleth
-{% include descrip_choropleth.html %}
+{% include descrip_choropleth.md %}
  
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/choro.png' | prepend: site.baseurl }}" alt="Choropleth Wizard" /></p>
 
 **Note:** Depending on your data, options appear as marker or polygon.
 
 Choropleth Wizard Options | Description
------------- | -------------
-Column | {% include descrip_column.html %} 
-Buckets | {% include descrip_buckets.html %}
-Quantification | {% include descrip_quantification.html %}
-Color Ramp | {% include descrip_color_ramp.html %}
+--- | ---
+Column | {% include descrip_column.md %} 
+Buckets | {% include descrip_buckets.md %}
+Quantification | {% include descrip_quantification.md %}
+Color Ramp | {% include descrip_color_ramp.md %}
 Marker Width | The width of the marker.
-Marker Stroke | {% include descrip_marker_stroke.html %} 
+Marker Stroke | {% include descrip_marker_stroke.md %} 
 | **Note:** This option appears as *Polygon Stroke* when polygon data is detected by the map wizard.
-Composite operation | {% include descrip_comp_op.html %}
-Label Text | {% include descrip_label_text.html %} 
-| {% include descrip_label_offset.html %} 
-| {% include descrip_label_overlap.html %} 
-| {% include descrip_label_placement.html %}
+Composite operation | {% include descrip_comp_op.md %}
+Label Text | {% include descrip_label_text.md %}<br><br>{% include descrip_label_offset.md %}<br><br>{% include descrip_label_overlap.md %}<br><br>{% include descrip_label_placement.md %}
 
 ##### Category
- {% include descrip_category.html %}
+ {% include descrip_category.md %}
  
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/category.png' | prepend: site.baseurl }}" alt="Category Wizard" /></p>
 
 **Note:** Depending on your data, options appear as marker or polygon.
 
 Category Wizard Options | Description
------------- | -------------
-Column | {% include descrip_column.html %}
-Marker Fill | Contains the fill options for the point size (a value between 0-40) and the point opacity (a value between 0-1).
-| **Note:** This option appears as *Polygon Fill* when polygon data is detected by the map wizard.
-Marker Stroke |  {% include descrip_marker_stroke.html %} 
-| **Note:** This option appears as *Polygon Stroke* when polygon data is detected by the map wizard.
-List of detected map/legend items |  {% include descrip_item_img_color.html %}
+--- | ---
+Column | {% include descrip_column.md %}
+Marker Fill | Contains the fill options for the point size (a value between 0-40) and the point opacity (a value between 0-1).<br><br>**Note:** This option appears as *Polygon Fill* when polygon data is detected by the map wizard.
+Marker Stroke |  {% include descrip_marker_stroke.md %}<br><br>**Note:** This option appears as *Polygon Stroke* when polygon data is detected by the map wizard.
+List of detected map/legend items |  {% include descrip_item_img_color.md %}
 
 ##### Bubble
-{% include descrip_bubble.html %} 
+{% include descrip_bubble.md %} 
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/bubble.png' | prepend: site.baseurl }}" alt="Bubble Wizard" /></p>
 
 Bubble Wizard Options | Description
------------- | -------------
-Column | {% include descrip_column.html %} 
-Quantification | {% include descrip_quantification.html %}
+--- | ---
+Column | {% include descrip_column.md %} 
+Quantification | {% include descrip_quantification.md %}
 Radius (min-max) | Set the sizes of the smallest and largest markers, or bubbles, on your map.
 Bubble fill | Set the color and opacity of bubble markers.
 Bubble stroke | Edit the width of your points’ border or outline (a value between 0-40), the color (using hex codes or by selecting a color from the color palette), and the opacity (a value between 0-1).
-Composite operation | {% include descrip_comp_op.html %}
+Composite operation | {% include descrip_comp_op.md %}
 
 ##### Torque
-{% include descrip_torque.html %}
+{% include descrip_torque.md %}
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/torque1.png' | prepend: site.baseurl }}" alt="Torque Wizard" /></p>
 
 Torque Wizard Options | Description
------------- | -------------
+--- | ---
 Cumulative | Determines whether points remain on your map throughout the animation, or fade away.
-Time Column | {% include descrip_time_column.html %}
-Marker type | {% include descrip_marker_type.html %}
+Time Column | {% include descrip_time_column.md %}
+Marker type | {% include descrip_marker_type.md %}
 Marker Fill | Contains the fill options for the point size (a numeric value between 0-40), point color, and point opacity (a value between 0-1). 
-Marker Stroke | {% include descrip_marker_stroke.html %} 
-Duration (sec) | {% include descrip_duration.html %}
-Steps | {% include descrip_steps.html %}
-Blend Mode | {% include descrip_blend_mode.html %}
-Trails | {% include descrip_trails.html %}
-Resolution | {% include descrip_resolution.html %}
+Marker Stroke | {% include descrip_marker_stroke.md %} 
+Duration (sec) | {% include descrip_duration.md %}
+Steps | {% include descrip_steps.md %}
+Blend Mode | {% include descrip_blend_mode.md %}
+Trails | {% include descrip_trails.md %}
+Resolution | {% include descrip_resolution.md %}
 
 **Note:** You can also style Torque maps with CartoCSS properties. For details about Torque specific parameters, see [CartoCSS - Torque Maps](#cartocss---torque-maps).
 
 ##### Heatmap
-{% include descrip_heatmap.html %}
+{% include descrip_heatmap.md %}
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/torqueheat.png' | prepend: site.baseurl }}" alt="Torque Heat Wizard" /></p>
 
 Heatmap Wizard Options | Description
------------- | -------------
+--- | ---
 Marker size | Choose the size of your markers.
 Opacity | Sets the opacity for the heatmap, a value between 0-1.
 Animated | Displays temporal data into a linear Torque animation.
-Resolution | {% include descrip_resolution.html %}
+Resolution | {% include descrip_resolution.md %}
 
 **Note:** You can also style Torque Heatmaps with CartoCSS properties. For details about Heatmap specific parameters, see [CartoCSS - Torque Heatmaps](#cartocss---torque-heatmaps).
 
 ##### Torque Category
-{% include descrip_torque_category.html %}
+{% include descrip_torque_category.md %}
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/torquecategory.png' | prepend: site.baseurl }}" alt="Torque Category Wizard" /></p>
 
 Torque Cat Wizard Options | Description
------------- | -------------
-Time Column | {% include descrip_time_column.html %}
-| **Note**: If you select Torque Category as the map type, ensure your SQL query is not using `torque_category` as a column name, to prevent unexpected behaviors.
-Marker type | {% include descrip_marker_type.html %}
-Category Column | {% include descrip_column.html %}
+--- | ---
+Time Column | {% include descrip_time_column.md %}<br><br>**Note**: If you select Torque Category as the map type, ensure your SQL query is not using `torque_category` as a column name, to prevent unexpected behaviors.
+Marker type | {% include descrip_marker_type.md %}
+Category Column | {% include descrip_column.md %}
 Marker Fill |  Contains the fill options for the point size (a numeric value between 0-40), point color, and point opacity (a value between 0-1). 
-Marker Stroke | {% include descrip_marker_stroke.html %} 
-Duration (sec)|  {% include descrip_duration.html %}
-Steps | {% include descrip_steps.html %}
-Blend Mode | {% include descrip_blend_mode.html %}
-Trails | {% include descrip_trails.html %}
-Resolution | {% include descrip_resolution.html %}
-List of detected map/legend items | {% include descrip_item_img_color.html %}
+Marker Stroke | {% include descrip_marker_stroke.md %} 
+Duration (sec)|  {% include descrip_duration.md %}
+Steps | {% include descrip_steps.md %}
+Blend Mode | {% include descrip_blend_mode.md %}
+Trails | {% include descrip_trails.md %}
+Resolution | {% include descrip_resolution.md %}
+List of detected map/legend items | {% include descrip_item_img_color.md %}
 
 **Note:** You can also style Torque Category maps with CartoCSS properties. For details about Torque Category specific parameters, see [CartoCSS - Torque Category Maps](#cartocss---torque-category-maps).
 
 ##### Intensity
-{% include descrip_intensity.html %}
+{% include descrip_intensity.md %}
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/intensity.png' | prepend: site.baseurl }}" alt="Intensity Wizard" /></p>
 
 Intensity Wizard Options | Description
------------- | -------------
+--- | ---
 Marker Fill | Contains the fill options for the point size (a numeric value between 0-40), point color, and point opacity (a value between 0-1). 
-Marker Stroke |  {% include descrip_marker_stroke.html %} 
+Marker Stroke |  {% include descrip_marker_stroke.md %} 
 
 ##### Density
-{% include descrip_density.html %}
+{% include descrip_density.md %}
 
 <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/density.png' | prepend: site.baseurl }}" alt="Density Wizard" /></p>
 
 **Tip:** When Density is selected as the map type, infowindow options are disabled. If you need to apply [infowindows](#infowindows) functionality, select *Intensity* as the map type instead.
 
 Density Wizard Options | Description
------------- | -------------
+--- | ---
 Method | Displays density with either the hexagon or rectangle shape.
-Buckets | {% include descrip_buckets.html %}
-Color ramp | {% include descrip_color_ramp.html %}
-Polygon Stroke | Edit the width of your points’ border or outline (a value between 0-40), the color (using hex codes or by selecting a color from the color palette), and the opacity (a value between 0-1).
-| <img src="{{ '/img/layout/cartodb-editor/polygon_stroke_color.png' | prepend: site.baseurl }}" alt="Select polygon stroke color" />
+Buckets | {% include descrip_buckets.md %}
+Color ramp | {% include descrip_color_ramp.md %}
+Polygon Stroke | Edit the width of your points’ border or outline (a value between 0-40), the color (using hex codes or by selecting a color from the color palette), and the opacity (a value between 0-1).<br><br><img src="{{ '/img/layout/cartodb-editor/polygon_stroke_color.png' | prepend: site.baseurl }}" alt="Select polygon stroke color" />
 Polygon size |  Adjust the size of the polygons on your map.
-Composite operation | {% include descrip_comp_op.html %}
+Composite operation | {% include descrip_comp_op.md %}
   
 #### Infowindows
 
@@ -1063,22 +1033,14 @@ You can add a pop-up information window over select points on your published map
 	**Tip:** Click between the subtabs to style either the click infowindow or the hover infowinodow
 
 	Infowindow Options | Description
-	------------ | -------------
-	infowindow style | The drop-down list displays infowindow style options.
-	| **Tip:** You can apply a custom image header to an infowindow. For details, see [How to add my own images to infowindows?](faqs.html#how-to-add-custom-images-to-infowindows)
+	--- | ---
+	infowindow style | The drop-down list displays infowindow style options.<br><br>**Tip:** You can apply a custom image header to an infowindow. For details, see [How to add my own images to infowindows?](faqs.html#how-to-add-custom-images-to-infowindows)
 	infowindow width | The width field enables you to change the size of the infowindow, in pixels.
 	Enable data points | Each of the data points on the map is listed, you can enable the data point to appear with the slider button
-	Change the order of labels | You can change the order of the labels that appear. Left-click and drag a data label up or down in the infowindow options
-	| <img src="{{ '/img/layout/cartodb-editor/infowindow_changeorder.png' | prepend: site.baseurl }}" alt="change the order of the infowindow data points" />
+	Change the order of labels | You can change the order of the labels that appear. Left-click and drag a data label up or down in the infowindow options<br><br><img src="{{ '/img/layout/cartodb-editor/infowindow_changeorder.png' | prepend: site.baseurl }}" alt="change the order of the infowindow data points" />
 	Hide the label title | When a data point is enabled, and the title checkbox is selected, the default title of the data point appears in the infowindow. You can deselect the title checkbox to hide the title from the infowindow.  The data point value still appears when clicked (or hovered).
-	Change title label | To create custom labels for infowindow data points, click *Change title labels* from the infowindow toolbar and type in your own label name. Click *Toggle fields and titles* to return to the original view.
-	| <img src="{{ '/img/layout/cartodb-editor/infowindow_label.png' | prepend: site.baseurl }}" alt="change title label in infowindow" />
-	Change HTML |  If you want to create your own custom infowindow, click *Change HTML* from the infowindow toolbar. Apply [custom HTML code](faqs.html#how-to-customize-infowindows) to create and style your own infowindow. 
-	| <img src="{{ '/img/layout/common/infowindow_changehtml.png' | prepend: site.baseurl }}" alt="Infowindow Change HTML" />
-	| There is a tip icon next the width field when *Change HTML* is selected from infowindows.
-	| <img src="{{ '/img/layout/common/infowindow_htmltip.png' | prepend: site.baseurl }}" alt="Infowindow Change HTML tip icon" />
-	| Click to view additional guidelines and examples for creating HTML infowindows.
-	| <img src="{{ '/img/layout/common/infowindow_html_tipdialog.png' | prepend: site.baseurl }}" alt="Templating infowindows dialog" />
+	Change title label | To create custom labels for infowindow data points, click *Change title labels* from the infowindow toolbar and type in your own label name. Click *Toggle fields and titles* to return to the original view.<br><br><img src="{{ '/img/layout/cartodb-editor/infowindow_label.png' | prepend: site.baseurl }}" alt="change title label in infowindow" />
+	Change HTML |  If you want to create your own custom infowindow, click *Change HTML* from the infowindow toolbar. Apply [custom HTML code](faqs.html#how-to-customize-infowindows) to create and style your own infowindow.<br><br><img src="{{ '/img/layout/common/infowindow_changehtml.png' | prepend: site.baseurl }}" alt="Infowindow Change HTML" /><br><br>There is a tip icon next the width field when *Change HTML* is selected from infowindows.<br><br><img src="{{ '/img/layout/common/infowindow_htmltip.png' | prepend: site.baseurl }}" alt="Infowindow Change HTML tip icon" /><br><br>Click to view additional guidelines and examples for creating HTML infowindows.<br><br><img src="{{ '/img/layout/common/infowindow_html_tipdialog.png' | prepend: site.baseurl }}" alt="Templating infowindows dialog" />
 
 3. Click [*Publish*](#publish-and-share-your-map) to view your map and click (or hover) over points to view the infowindow
 
@@ -1090,7 +1052,7 @@ You can add a pop-up information window over select points on your published map
 
 CartoCSS is the syntax language that enables you to customize the style of your map data. You can apply CartoCSS styles directly from the the Map View of the CartoDB Editor. For more details about CartoCSS, see [Customizing Maps with CartoCSS](#customizing-maps-with-cartocss).
 
-{% include cartocss.html %}
+{% include cartocss.md %}
 
 #### Legends
 You can add and style a map legend for a published map. Map legends can be symbols and text that describe your map data.  You can add a legend title, apply label text for the legend and define how the label text appears. You can also customize the color of your legend elements.  Each map type has a default legend template that you can apply and personalize. Additionally, you can create custom legends with HTML code directly from the CartoDB Editor. Legends is available from the CartoDB sidebar of the Map View.   
@@ -1120,22 +1082,13 @@ You can add and style a map legend for a published map. Map legends can be symbo
 	The following legend options may appear.
 
 	Legend Options | Description
-	------------ | -------------
-	Template | Displays the template for the legend. The available legend template is based on your map type. Select *custom* to create your own legend.
-	|  **Tip:** To disable a legend for a map layer, select *none* as the legend template.
+	--- | ---
+	Template | Displays the template for the legend. The available legend template is based on your map type. Select *custom* to create your own legend.<br><br>**Tip:** To disable a legend for a map layer, select *none* as the legend template.
 	Title | Add a custom title for your legend, and show or hide the title.
 	Left Label | Show the label text to the left of your legend. You can also edit the left label name.
-	Right Label | Show the label text to the right of your legend. You can also edit the right label name.
-	| **Tip:** Other legend labels may appear depending on your map type. You can customize the legend labels for each element. 
-	|  <img src="{{ '/img/layout/cartodb-editor/legend_edittext.png' | prepend: site.baseurl }}" alt="Edit legend label text" />
-	Colors | Set the colors of the individual items in your legend. You can also synchronize with your map marker colors, when applicable.  (Depending on your template, color options may vary).
-	| <img src="{{ '/img/layout/cartodb-editor/legend_color.png' | prepend: site.baseurl }}" alt="Legend color selector" />
-	| **Tip:** For some legend elements, you can also apply an image. Select *IMG* to select a symbol. You can also upload your own icons from this image option.
-	Change HTML |  If you want to create your own custom legend, click *Change HTML* from the legends toolbar. Apply custom HTML code to create and style your own legend. 
-	| **Note:** Select *custom* from the Template drop-down list to apply HTML code to a custom template.  *While you can change the HTML code for an existing template, we recommend that you create a custom template if you are going to change the HTML code.*
-	| <img src="{{ '/img/layout/cartodb-editor/legend_changehtml.png' | prepend: site.baseurl }}" alt="Legent Change HTML" />
-	|  Click *Toggle fields and titles* to return to the original legends view.
-	| <img src="{{ '/img/layout/cartodb-editor/legend_toggle.png' | prepend: site.baseurl }}" alt="Legent Toggle fields and titles" />
+	Right Label | Show the label text to the right of your legend. You can also edit the right label name.<br><br>**Tip:** Other legend labels may appear depending on your map type. You can customize the legend labels for each element.<br><br> <img src="{{ '/img/layout/cartodb-editor/legend_edittext.png' | prepend: site.baseurl }}" alt="Edit legend label text" />
+	Colors | Set the colors of the individual items in your legend. You can also synchronize with your map marker colors, when applicable.  (Depending on your template, color options may vary).<br><br><img src="{{ '/img/layout/cartodb-editor/legend_color.png' | prepend: site.baseurl }}" alt="Legend color selector" /><br><br>**Tip:** For some legend elements, you can also apply an image. Select *IMG* to select a symbol. You can also upload your own icons from this image option.
+	Change HTML |  If you want to create your own custom legend, click *Change HTML* from the legends toolbar. Apply custom HTML code to create and style your own legend.<br><br>**Note:** Select *custom* from the Template drop-down list to apply HTML code to a custom template.  *While you can change the HTML code for an existing template, we recommend that you create a custom template if you are going to change the HTML code.*<br><br><img src="{{ '/img/layout/cartodb-editor/legend_changehtml.png' | prepend: site.baseurl }}" alt="Legent Change HTML" /><br><br> Click *Toggle fields and titles* to return to the original legends view.<br><br><img src="{{ '/img/layout/cartodb-editor/legend_toggle.png' | prepend: site.baseurl }}" alt="Legent Toggle fields and titles" />
 
 4. Click [*Publish*](#publish-and-share-your-map) to view your legend on your map
 
@@ -1238,12 +1191,8 @@ Apart from the default basemaps offered in CartoDB, you may integrate third-part
   <p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/add_custom_basemap.png' | prepend: site.baseurl }}" alt="Add custom basemap option" /></p>  
 
   External Basemap Resource | Description  
-  ------------ | -------------
-  XYZ | XYZ Templates enable you to access many other basemaps, including those from OpenStreetMap and Stamen. Insert the basemap URLs and click *ADD BASEMAP*. For example:
-  | **Stamen Toner:** `http://{s}.stamen.com/toner/{z}/{x}/{y}.jpg`
-  | **Stamen Terrain:** `http://{s}.stamen.com/terrain/{z}/{x}/{y}.jpg`
-  | **Stamen Watercolor:** `http://tile.stamen.com/watercolor/{z}/{x}/{y}.jpg`
-  | **OSM:** `http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png`
+  --- | ---
+  XYZ | XYZ Templates enable you to access many other basemaps, including those from OpenStreetMap and Stamen. Insert the basemap URLs and click *ADD BASEMAP*. For example:<br><br>**Stamen Toner:** `http://{s}.stamen.com/toner/{z}/{x}/{y}.jpg`<br><br>**Stamen Terrain:** `http://{s}.stamen.com/terrain/{z}/{x}/{y}.jpg`<br><br>**Stamen Watercolor:** `http://tile.stamen.com/watercolor/{z}/{x}/{y}.jpg`<br><br>**OSM:** `http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png`
   WMS/WMTS | A WMS, or Web Map Service, enables you to connect to online generated map images by a map server using data from a GIS database. Insert your WMS/WMTS URL and click *GET LAYERS*. For example, [WMS baselayer](http://nationalatlas.gov/infodocs/wms_intro.html).
   | **Note:** Currently, CartoDB only supports WMS files containing data that uses [EPSG:900913 (Web Mercator)](https://en.wikipedia.org/wiki/Web_Mercator) or [EPSG:3857](http://en.wikipedia.org/wiki/Web_Mercator#EPSG:3857) coordinates.
   NASA | Enables you to select a basemap provided by NASA Worldview. Select a date from which you want a global basemap and indicate Day (a day map changes based on the day selected) or Night
@@ -1269,7 +1218,7 @@ In addition to changing your basemap, you can also control which options are vis
 **Tip:** Some options are only active when viewing your map from your public profile page, not from the preview map of your dashboard.
 
 Map Option | Description
------------- | -------------
+--- | ---
 Fixed tile | Displays your map title on the map
 Fixed description | Displays your map description on the map
 Search box | Displays a search box on the map, enabling you to search for data points
@@ -1278,12 +1227,11 @@ Scroll wheel zoom | Displays the ability to zoom with the scroll wheel of your m
 Layer selector | Enables you to display the visible layers on the map
 Legends | Displays any map legends. For details about how to create legends, see [(Legends](#legends))
 Fullscreen | Enables you to view the map in fullscreen mode
-CartoDB Logo | Enables you to include or hide the CartoDB logo on your map
-| **Note:** Based on your [(account settings](faqs.html#how-do-i-remove-the-cartodb-logo-from-my-map)), this option may not be enabled.
+CartoDB Logo | Enables you to include or hide the CartoDB logo on your map<br><br>Note:** Based on your [(account settings](faqs.html#how-do-i-remove-the-cartodb-logo-from-my-map)), this option may not be enabled.
 
 ### Publish and Share Your Map
 
-{% include sharingmaps.html %}
+{% include sharingmaps.md %}
 
 ### Supported Fonts
 
@@ -1350,18 +1298,13 @@ CartoDB understands that geocoding is essential to data management. You can edit
 	The following table describes the available georeference data categories.
 	
 	Georeference Category | Description
-	------------ | -------------
-	Long/Lat Columns | When uploading a dataset, the map automatically renders the marker and polygon values as the latitude and longitude coordinates. To identify a georeference data point, select the specific longitude and latitude column from the drop-down menu
-	| The following image displays the default georeference data options, with *Lon/Lat Columns* selected. 
-	| <img src="{{ '/img/layout/cartodb-editor/georeference_lon_lat.png' | prepend: site.baseurl }}" alt="Georeference Longitude and Latitude Coordinates" />
-	| **Tip:** Click the georeference category name to refresh the view and display the related options.
+	--- | ---
+	Long/Lat Columns | When uploading a dataset, the map automatically renders the marker and polygon values as the latitude and longitude coordinates. To identify a georeference data point, select the specific longitude and latitude column from the drop-down menu<br><br>The following image displays the default georeference data options, with *Lon/Lat Columns* selected.<br><br><img src="{{ '/img/layout/cartodb-editor/georeference_lon_lat.png' | prepend: site.baseurl }}" alt="Georeference Longitude and Latitude Coordinates" /><br><br>**Tip:** Click the georeference category name to refresh the view and display the related options.
 	City Name | Click *City Names* to view the georeference city name options, and select the column where your city names are stored in your dataset. To improve the accuracy of the georeference data, you can also indicate the administrative region and country (if known)
-	Admin. Regions | Click *Admin. Regions* to view the georeference administrative region options, and select the column where your region names are stored in your dataset. If the selected region column is not country data, you can also indicate the column where this type of data is stored
-	|  **Note:**  The CartoDB database automatically loads polygon region data for states and municipalities.
+	Admin. Regions | Click *Admin. Regions* to view the georeference administrative region options, and select the column where your region names are stored in your dataset. If the selected region column is not country data, you can also indicate the column where this type of data is stored<br><br>**Note:**  The CartoDB database automatically loads polygon region data for states and municipalities.
 	Postal Codes |  Click *Postal Codes* to view the georeference postal code options, and select the column where your postal codes are stored in your dataset. To improve the accuracy of the georeference data, you can also indicate the country where the postal codes are located (if known)
 	IP Addresses |  Click *IP Addresses* to view the georeference IP Address name options, and select the column where your IP Addresses are stored in your dataset. This enables you to convert IP Addresses into geographical locations on your map
-	Street Addresses |  Click *Street Addresses* to view the georeference street address options, and select the column where your street addresses are stored in your dataset. To improve the accuracy of the georeference data, you can also indicate the state/province and country (if known)
-	| **Note:** Street address data is allocated to your account and based on a permitted amount of credits per month. Any geocode matches to the indicated street address consumes credits from your account.
+	Street Addresses |  Click *Street Addresses* to view the georeference street address options, and select the column where your street addresses are stored in your dataset. To improve the accuracy of the georeference data, you can also indicate the state/province and country (if known)<br><br>**Note:** Street address data is allocated to your account and based on a permitted amount of credits per month. Any geocode matches to the indicated street address consumes credits from your account.
 	
 5. Click *CONTINUE* to save and apply the georeference data coordinates  
 
@@ -1684,7 +1627,7 @@ Click SAVE CHANGES after editing any of your account settings.
 
 You can delete your account through the [account](#account) options page. [Contact us](mailto:sales@cartodb.com) if you have any questions before deleting your account.
 
-***Note:** Deleting your account permanently removes all of your maps and datasets, they cannot be recovered.* 
+**Note:** Deleting your account permanently removes all of your maps and datasets, they cannot be recovered.* 
 
 ### API Key
 
@@ -1825,7 +1768,7 @@ This concludes the Enterprise account options.
 
 ## Customizing Maps with CartoCSS
 
-{% include cartocss_description.html %}
+{% include cartocss_description.md %}
 
 ### [Apply CartoCSS with the CartoCSS Editor](#cartocss)
 
@@ -1833,15 +1776,15 @@ This concludes the Enterprise account options.
 
 ###  CartoCSS Properties
 
-{% include cartocss_properties.html %}
+{% include cartocss_properties.md %}
 
 ###  CartoCSS Properties for Torque Style Maps
 
-{% include cartocss_torque.html %}
+{% include cartocss_torque.md %}
 
 ###  CartoCSS Best Practices
 
-{% include cartocss_best_practices.html %}
+{% include cartocss_best_practices.md %}
 
 ###  CartoCSS Errors
 
@@ -1849,4 +1792,4 @@ This concludes the Enterprise account options.
 
 ### CartoCSS Composite Operations
 
-{% include cartocss_comp_op.html %}
+{% include cartocss_comp_op.md %}

@@ -23,7 +23,7 @@ sed -i.bak -E 's/^```(.+)/{% highlight \1 %}/g' Map-API.md
 sed -i.bak -E 's/^```/{% endhighlight %}/g' Map-API.md
 cat Map-API.md >> print.md
 
-cat _includes/import.html >> print.md
+cat _includes/import.md >> print.md
 
 rm API-js.md
 rm API-sql.md
