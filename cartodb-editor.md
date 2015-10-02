@@ -117,7 +117,7 @@ Optionally, you can add data manually or programmatically, with the Connect Data
 	For example, the following options display how to add a row
 	<p class="wrap-border"><img src="{{ '/img/layout/cartodb-editor/emptydataset_addrow.png' | prepend: site.baseurl }}" alt="Add row to an empty dataset" /></p>
 	
-Additionally, you can add coordinates to your dataset with the Add Feature option, available from the Map View of the CartoDB sidebar. For details, see [Add Feature](#add-feature).
+Additionally, you can add point, line, and polygon coordinates to your dataset with the Add Feature option, available from the Map View of the CartoDB sidebar. For details, see [Add Feature](#add-feature).
 
 #### Use Case:  Connecting to an External Data Source (Twitter)
 

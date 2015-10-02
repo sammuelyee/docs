@@ -33,7 +33,7 @@ In addition to customizing the look of your maps using CartoCSS, CartoDB provide
 
 #### Common Elements
 
-These common element CartoCSS properties can be applied to any feature layer in a map.
+These common element CartoCSS properties can be applied to any feature layer in a map. A feature layer is any data layer that contains points, lines, or polygons (not a basemap). 
 
 | | [comp-op](#comp-op-keyword) | [image-filters](#image-filters-functions)| [opacity float](#opacity-float) 
 
@@ -411,7 +411,7 @@ Available Values | See [color](#color).
 ##### marker-line-width `float`
 
 Description | The width of the line around the marker, in pixels, centered on the edge. 
-Sample CartoCSS Code | `marker-line-width: 1;`
+Sample CartoCSS Code | `marker-line-width: 2;`
 Default Value |  A defined pixel
 Available Values | See [float](#float).
 Related Example | The marker-line-width is positioned on the boundary, so high values can cover the area itself. For example, if you have a marker with a width (diameter) of `4`, and add a line width of `3`, 1.5 pixels of the line width appears on the inside of the edge, and covers the entire marker.
