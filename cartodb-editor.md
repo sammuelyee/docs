@@ -866,7 +866,7 @@ The CartoDB map wizard is an interface that enables you to quickly style your da
 **Note:** Depending on your data, options appear as marker or polygon.
 
 Simple Wizard Options | Description
---- | ---
+--- | --- | ---
 Marker Fill | Contains all fill options for the point (point size, point image/pattern, point color, and point opacity).<br><br>{% include descrip_marker_size.md %}<br><br>{% include descrip_select_img.md %}<br><br>{% include descrip_select_color.md %}<br><br>{% include descrip_opacity.md %} 
 Marker Stroke<br><br>{% include descrip_marker_stroke.md %}<br><br>**Note:** This option appears as *Polygon Stroke* when polygon data is detected by the map wizard.
 Composite operation | {% include descrip_comp_op.md %}
