@@ -863,7 +863,7 @@ These CartoCSS pattern properties can be applied to both line and polygon elemen
 
 [line-pattern-file](#line-pattern-file-uri) | [line-pattern-clip](#line-pattern-clip-boolean) | [line-pattern-simplify](#line-pattern-simplify-float)
 [line-pattern-simplify-algorithm](#line-pattern-simplify-algorithm-keyword) | [line-pattern-smooth](#line-pattern-smooth-float) | [line-pattern-offset](#line-pattern-offset-float)
-[line-pattern-geometry-transform](#line-pattern-geometry-transform-functions) | [line-pattern-comp-op](#line-pattern-comp-op-keyword) |
+[line-pattern-geometry-transform](#line-pattern-geometry-transform-functions) | [line-pattern-comp-op](#line-pattern-comp-op-keyword) | 
 
 ##### line-pattern-file `uri`
 
@@ -937,7 +937,7 @@ These CartoCSS pattern properties can be applied to both line and polygon elemen
 [polygon-pattern-file](#polygon-pattern-file-uri) | [polygon-pattern-alignment](#polygon-pattern-alignment-keyword) | [polygon-pattern-gamma](#polygon-pattern-gamma-float)
 [polygon-pattern-opacity](#polygon-pattern-opacity-float) | [polygon-pattern-clip](#polygon-pattern-clip-boolean) | [polygon-pattern-simplify](#polygon-pattern-simplify-float)
 [polygon-pattern-simplify-algorithm](#polygon-pattern-simplify-algorithm-keyword) | [polygon-pattern-smooth](#polygon-pattern-smooth-float) | [polygon-pattern-geometry-transform](#polygon-pattern-geometry-transform-functions)
-[polygon-pattern-comp-op](#polygon-pattern-comp-op-keyword)
+[polygon-pattern-comp-op](#polygon-pattern-comp-op-keyword) |  | 
 
 
 ##### polygon-pattern-file `uri`

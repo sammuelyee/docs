@@ -866,9 +866,9 @@ The CartoDB map wizard is an interface that enables you to quickly style your da
 **Note:** Depending on your data, options appear as marker or polygon.
 
 Simple Wizard Options | Description
---- | --- | ---
+--- | ---
 Marker Fill | Contains all fill options for the point (point size, point image/pattern, point color, and point opacity).<br><br>{% include descrip_marker_size.md %}<br><br>{% include descrip_select_img.md %}<br><br>{% include descrip_select_color.md %}<br><br>{% include descrip_opacity.md %} 
-Marker Stroke<br><br>{% include descrip_marker_stroke.md %}<br><br>**Note:** This option appears as *Polygon Stroke* when polygon data is detected by the map wizard.
+Marker Stroke | {% include descrip_marker_stroke.md %}<br><br>**Note:** This option appears as *Polygon Stroke* when polygon data is detected by the map wizard.
 Composite operation | {% include descrip_comp_op.md %}
 Label Text | {% include descrip_label_text.md %}<br><br>{% include descrip_label_offset.md %}<br><br>{% include descrip_label_overlap.md %}<br><br>{% include descrip_label_placement.md %} 
 
@@ -1227,7 +1227,7 @@ Scroll wheel zoom | Displays the ability to zoom with the scroll wheel of your m
 Layer selector | Enables you to display the visible layers on the map
 Legends | Displays any map legends. For details about how to create legends, see [(Legends](#legends))
 Fullscreen | Enables you to view the map in fullscreen mode
-CartoDB Logo | Enables you to include or hide the CartoDB logo on your map<br><br>Note:** Based on your [(account settings](faqs.html#how-do-i-remove-the-cartodb-logo-from-my-map)), this option may not be enabled.
+CartoDB Logo | Enables you to include or hide the CartoDB logo on your map<br><br>**Note:** Based on your [(account settings](faqs.html#how-do-i-remove-the-cartodb-logo-from-my-map)), this option may not be enabled.
 
 ### Publish and Share Your Map
 
