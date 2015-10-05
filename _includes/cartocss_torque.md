@@ -30,7 +30,7 @@ Available Values | See [numbers](#numbers).
 Description | Specifies the length of time for your animation, in seconds.
 Sample CartoCSS Code | `-torque-animation-duration:30;`
 Default Value | undefined
-Available Values | See [numbers](#numbers).  *This can also be a decimal - see [float](#float).*
+Available Values | See [numbers](#numbers). *This can also be a decimal - see [float](#float).*
 
 **Tip** This is the *Duration (secs)* option from the Torque map wizard.
 
@@ -38,8 +38,7 @@ Available Values | See [numbers](#numbers).  *This can also be a decimal - see [
 ##### -torque-time-attribute `string`
 
 --- | ---
-Description | Defines the name of the date column in your dataset. This column can be an
-integer *or* a date.
+Description | Defines the name of the date column in your dataset. This column can be an integer *or* a date.
 Sample CartoCSS Code | `-torque-time-attribute:"cartodb_id";`
 Default Value | undefined
 Available Values | See [string](#string).
