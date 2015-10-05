@@ -38,7 +38,8 @@ Available Values | See [numbers](#numbers).  *This can also be a decimal - see [
 ##### -torque-time-attribute `string`
 
 --- | ---
-Description | Defines the name of the date column in your dataset. The column needs to be of type date.
+Description | Defines the name of the date column in your dataset. This column can be an
+integer *or* a date.
 Sample CartoCSS Code | `-torque-time-attribute:"cartodb_id";`
 Default Value | undefined
 Available Values | See [string](#string).
