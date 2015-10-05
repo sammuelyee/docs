@@ -943,27 +943,8 @@ These CartoCSS pattern properties can be applied to both line and polygon elemen
 ##### polygon-pattern-file `uri`
 
 Description | A defined image file that renders the pattern fill within a polygon.
-<<<<<<< Local Changes
-<<<<<<< Local Changes
-<<<<<<< Local Changes
-<<<<<<< Local Changes
-<<<<<<< Local Changes
+
 Sample CartoCSS Code | `polygon-pattern-file:  url('http://com.cartodb.users-assets.production.s3.amazonaws.com/patterns/diagonal_1px_med.png');`
-=======
-Sample CartoCSS Code | `polygon-pattern-file: none;`
->>>>>>> External Changes
-=======
-Sample CartoCSS Code | `polygon-pattern-file: none;`
->>>>>>> External Changes
-=======
-Sample CartoCSS Code | `polygon-pattern-file: none;`
->>>>>>> External Changes
-=======
-Sample CartoCSS Code | `polygon-pattern-file: none;`
->>>>>>> External Changes
-=======
-Sample CartoCSS Code | `polygon-pattern-file: none;`
->>>>>>> External Changes
 Default Value | none
 Available Values | See [uri](#uri).
 
@@ -1054,8 +1035,6 @@ These CartoCSS properties can be applied to raster (grid) data layers on a map.
 
 ##### raster-opacity `float`
 
-<<<<<<< Local Changes
-Description | The opacity of the raster symbolizer on top=======
 Description | The opacity of the raster symbolizer on top of other symbolizers.
 Sample CartoCSS Code | `raster-opacity: 1;`
 Default Value | `1`, the raster is opaque.
@@ -1459,9 +1438,6 @@ Sample CartoCSS Code | `text-placement-type: dummy;`
 Default Value | `dummy`, turns off and disables this feature.
 Available Values | `dummy` `simple`
 
-<<<<<<< Local Changes
-**Note**: The simp>>>>>>> External Changes
-=======
 **Note**: The simple value is the text label placement string used for basic algorithms.
 
 
