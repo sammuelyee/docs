@@ -75,7 +75,7 @@ These generic CartoCSS background and string element properties can be applied t
 ##### background-image `uri`
 
 Description | An image that appears as the map background. This image appears underneath any other applied styles on the map.
-Sample CartoCSS Code | `background-image: uri;`
+Sample CartoCSS Code | `background-image: url(imageurl);`
 Default Value |  This parameter is not applied by default. The default background image is transparent.
 Available Values | See [uri](#uri).
 
@@ -578,7 +578,7 @@ If you are displaying road shields on a map (for example, highway markers), thes
 ##### shield-file `uri`
 
 Description | The shield-file property is required before defining any shield styles. Define an image file to render the shield image.
-Sample CartoCSS Code | `shield-file: url('marker.svg');`
+Sample CartoCSS Code | `shield-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/mamataakella/assets/20150924175307shield2.png');`
 Default Value |  none
 Available Values | See [uri](#uri).
 
@@ -868,7 +868,7 @@ These CartoCSS pattern properties can be applied to both line and polygon elemen
 ##### line-pattern-file `uri`
 
 Description | A defined image file that renders the pattern of a line. The image repeats along the line.
-Sample CartoCSS Code | `line-pattern-file: ur(cliff.png);`
+Sample CartoCSS Code | `line-pattern-file: url(http://com.cartodb.users-assets.production.s3.amazonaws.com/patterns/diagonal_1px_med.png);`
 Default Value | none
 Available Values | See [uri](#uri).
 
@@ -943,7 +943,7 @@ These CartoCSS pattern properties can be applied to both line and polygon elemen
 ##### polygon-pattern-file `uri`
 
 Description | A defined image file that renders the pattern fill within a polygon.
-Sample CartoCSS Code | `polygon-pattern-file: none;`
+Sample CartoCSS Code | `polygon-pattern-file:  url(http://com.cartodb.users-assets.production.s3.amazonaws.com/patterns/diagonal_1px_med.png);`
 Default Value | none
 Available Values | See [uri](#uri).
 
@@ -1597,9 +1597,9 @@ You can also apply simple math using float number values. For example:
 
 A uniform resource identifier (URI) is a string of characters used to identify the name of a resource, typically a path on your computer or an internet address. Similar to using an URL, you can use HTML. Quotes to define a URI (although not required, it is suggested).
 
-		{% highlight bash %}
+		{% highlight bash %}  
 		#markers {
-		marker-file: url('marker.png');
+		marker-file: url(`http://com.cartodb.users-assets.production.s3.amazonaws.com/simpleicon/map43.svg`);
 		}
 	{% endhighlight %}
 
