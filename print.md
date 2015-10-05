@@ -4,7 +4,6 @@ title: CartoDB Documentation Print
 ---
 
 {% include introduction.html %}
-<<<<<<< HEAD
 ## CartoDB.js
 
 CartoDB offers a simple unified JavaScript library called CartoDB.js that lets you interact with the CartoDB service. This library allows you to connect to your stored visualizations, create new visualizations, add custom interaction, and access or query your raw data from a web browser; meaning, your applications just got a whole lot more powerful with a lot less code.
@@ -1459,16 +1458,16 @@ Anytime you wish to push a stable version of your site to the web though, you ca
 alert(cartodb.VERSION)
 {% endhighlight %}
 
-Once you know which version of CartoDB.js you're using, you can point your site to that release. If the current version of CartoDB.js is 3.15.5, the URL would be:
+Once you know which version of CartoDB.js you're using, you can point your site to that release. If the current version of CartoDB.js is 3.15.8, the URL would be:
 
 {% highlight html %}
-<script src="http://libs.cartocdn.com/cartodb.js/v3/3.15.5/cartodb.js"></script>
+<script src="http://libs.cartocdn.com/cartodb.js/v3/3.15.8/cartodb.js"></script>
 {% endhighlight %}
 
 You can do the same for the CSS documents we provide:
 
 {% highlight html %}
-<link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/3.12.3/themes/css/cartodb.css" />
+<link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/3.15.8/themes/css/cartodb.css" />
 {% endhighlight %}
 ## Maps API
 
@@ -2447,8 +2446,6 @@ For this map, the multiple layers, order, and stylings are defined by the MapCon
   ]
 }
 {% endhighlight %}
-=======
->>>>>>> master
 ## Import API
 
 A standard import stores the data, uploaded from files with the valid formats, as specified.
@@ -2505,7 +2502,7 @@ curl -v -H "Content-Type: application/json" -d '{"url":"https://examplehost.com/
 "https://documentation.cartodb.com/api/v1/imports/?api_key=3102343c42da0f1ffe6014594acea8b1c4e7fd64"`
 {% endhighlight %}
 
-The response to this request would have the following format, yielding a success import:
+The response to this request would have the following format, returning a success value if the import process is correctly enqueued:
 
 <div class="code-title">RESPONSE</div>
 {% highlight javascript %}
