@@ -54,7 +54,7 @@ curl -v -H "Content-Type: application/json" -d '{"url":"https://examplehost.com/
 "https://documentation.cartodb.com/api/v1/imports/?api_key=3102343c42da0f1ffe6014594acea8b1c4e7fd64"`
 {% endhighlight %}
 
-The response to this request would have the following format, yielding a success import:
+The response to this request would have the following format, returning a success value if the import process is correctly enqueued:
 
 <div class="code-title">RESPONSE</div>
 {% highlight javascript %}
